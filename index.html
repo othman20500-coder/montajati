@@ -38,9 +38,6 @@
   section{padding-block:40px}
   h2{font-family:var(--head);font-weight:500;font-size:26px;margin:0 0 4px;color:var(--green-2)}
   .sub{color:var(--muted);margin:0 0 20px;font-size:15px}
-  .filters{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 20px}
-  .filters button{font:inherit;font-size:13px;padding:5px 13px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted);cursor:pointer}
-  .filters button[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
 
   /* بطاقة المشروع */
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
@@ -83,16 +80,15 @@
 </style>
 
 <div class="band"><div class="in" lang="ar">
-  <h1 class="who">عثمان <span>· مشاريعي</span></h1>
+  <h1 class="who">عثمان <span>· منتجاتي</span></h1>
   <p class="line">أبني منصات وأدوات رقمية عربية من الفكرة حتى الإطلاق: منظومات إدارية، تطبيقات أسرية وتدريبية، ومنتجات مالية شخصية.</p>
   <nav class="dock" id="dock" aria-label="روابط سريعة"></nav>
 </div></div>
 
 <div class="wrap" lang="ar">
 <section id="projects">
-  <h2>المشاريع</h2>
-  <p class="sub">سبعة مشاريع من مجلد «مشاريعي». اضغط على مجال للفلترة.</p>
-  <div class="filters" id="filters"></div>
+  <h2>منتجاتي</h2>
+  <p class="sub">سبعة منتجات رقمية، لكل منها شعاره وصورته وروابطه.</p>
   <div class="grid" id="grid"></div>
 </section>
 
@@ -115,7 +111,7 @@
 const DATA = {
   dock: [
     { label: "GitHub",    href: "https://github.com/othman20500-coder", icon: "git" },
-    { label: "المشاريع",  href: "#projects",                    icon: "grid" },
+    { label: "المنتجات",  href: "#projects",                    icon: "grid" },
     { label: "المواقع",   href: "#links-sec",                   icon: "globe" },
     { label: "الملفات",   href: "https://onedrive.live.com/",   icon: "folder" },
     { label: "التصاميم",  href: "https://www.figma.com/files",  icon: "pen" },
@@ -197,14 +193,12 @@ function toast(msg){ const t = document.getElementById("toast"); t.textContent =
 
 document.getElementById("dock").append(...DATA.dock.map(d => el(`<a href="${esc(d.href)}"${d.href.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}>${ICON[d.icon] || ""}${esc(d.label)}</a>`)));
 
-const domains = ["الكل", ...new Set(DATA.projects.map(p => p.domain))];
-const filters = document.getElementById("filters"), grid = document.getElementById("grid");
-let active = "الكل";
+const grid = document.getElementById("grid");
 function initials(p){ return (p.en || p.name).trim().split(/\s+/).map(w => w[0]).join("").slice(0,2).toUpperCase(); }
 
 function renderGrid(){
   grid.innerHTML = "";
-  DATA.projects.filter(p => active === "الكل" || p.domain === active).forEach(p => {
+  DATA.projects.forEach(p => {
     const [label, color] = ST[p.status] || ST.wip;
     const card = el(`<article class="card">
       <div class="shot">${p.shot ? `<img src="${esc(p.shot)}" alt="لقطة من ${esc(p.name)}">` : `<div class="ph">صورة من المشروع</div>`}<span class="st" style="--c:${color}">${label}</span></div>
@@ -228,11 +222,6 @@ function renderGrid(){
     grid.append(card);
   });
 }
-domains.forEach(d => {
-  const b = el(`<button type="button" aria-pressed="${d===active}">${esc(d)}</button>`);
-  b.onclick = () => { active = d; filters.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); renderGrid(); };
-  filters.append(b);
-});
 renderGrid();
 
 document.getElementById("links").append(...DATA.links.map(l => el(`<a href="${esc(l.href)}" target="_blank" rel="noopener"><span>${esc(l.label)}</span><small>${esc(l.note)}</small></a>`)));
