@@ -1,230 +1,537 @@
-<title>Portfolio Hub</title>
+<title>عثمان الشهري</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap">
 <style>
   :root{
-    --bg:#EEF3EE;        /* عاجي بميل أخضر */
-    --card:#FFFFFF;
-    --ink:#10241D;       /* نص داكن أخضر */
-    --muted:#5C7068;
-    --line:#D6E0D8;
-    --green:#0F5F4C;     /* زمردي: اللون الأساسي */
-    --green-2:#0B4B3C;
-    --green-soft:#DCEBE4;
-    --saffron:#E9A23B;   /* زعفراني: التمييز */
-    --saffron-soft:#FBEBD2;
-    --ok:#1F9D6A; --wip:#D08A1E; --arch:#7A8A83;
-    --head:"Reem Kufi","IBM Plex Sans Arabic",sans-serif;
-    --body:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
-    color-scheme:light;
+    --bg:#EEF3EE; --card:#FFFFFF; --ink:#10241D; --muted:#5C7068; --line:#D6E0D8;
+    --green:#0F5F4C; --green-2:#0B4B3C; --green-deep:#07322A; --green-soft:#DCEBE4;
+    --saffron:#E9A23B; --saffron-soft:#FBEBD2;
+    --ok:#1F9D6A; --wip:#D08A1E; --arch:#7A8A83; --idea:#3F6FB5;
+    --head:"Reem Kufi","IBM Plex Sans Arabic",sans-serif; --body:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
+    --ease:cubic-bezier(.2,.7,.2,1); color-scheme:light;
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.85;padding-inline:20px;padding-block:0 72px}
-  .wrap{direction:rtl;max-width:1080px;margin-inline:auto}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.85;padding-inline:20px;padding-block:0 64px}
   a{color:inherit;text-decoration:none}
   a:focus-visible,button:focus-visible{outline:2px solid var(--saffron);outline-offset:2px}
+  button{font:inherit;cursor:pointer}
+  .wrap{direction:rtl;max-width:1100px;margin-inline:auto}
+  [hidden]{display:none!important}
 
-  /* رأس ملوّن */
-  .band{background:linear-gradient(135deg,var(--green) 0%,var(--green-2) 100%);color:#fff;border-radius:0 0 22px 22px;padding:56px 32px 40px;margin-inline:-20px;position:relative;overflow:hidden}
-  .band::after{content:"";position:absolute;inset-inline-start:-80px;top:-120px;width:360px;height:360px;border-radius:50%;background:var(--saffron);opacity:.18;filter:blur(20px)}
-  .band .in{direction:rtl;max-width:1080px;margin-inline:auto;position:relative}
-  .who{font-family:var(--head);font-weight:700;font-size:clamp(36px,6.5vw,64px);line-height:1.15;margin:0}
-  .who span{color:var(--saffron)}
-  .line{font-size:18px;font-weight:300;color:rgba(255,255,255,.82);max-width:58ch;margin:12px 0 0}
-  .dock{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 0}
-  .dock a{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);font-size:14px;transition:background .2s,transform .2s}
-  .dock a:hover{background:var(--saffron);color:var(--ink);transform:translateY(-2px)}
-  .dock svg{width:16px;height:16px}
+  /* ===== الافتتاحية ===== */
+  #intro{position:fixed;inset:0;z-index:100;background:var(--green-deep);color:#fff;display:grid;place-items:center;direction:rtl;text-align:center;transition:opacity .6s var(--ease),visibility .6s}
+  #intro.done{opacity:0;visibility:hidden;pointer-events:none}
+  #intro .tl{width:min(70vw,520px);height:2px;background:rgba(255,255,255,.15);position:relative;margin:0 auto 34px;overflow:hidden}
+  #intro .tl::after{content:"";position:absolute;inset:0;background:var(--saffron);transform:translateX(100%);animation:tl 2.2s var(--ease) forwards .2s}
+  @keyframes tl{to{transform:translateX(0)}}
+  #intro .ph{font-family:var(--head);font-weight:700;font-size:clamp(30px,6vw,60px);line-height:1.3;margin:0;opacity:0;transform:translateY(10px);animation:up .9s var(--ease) forwards 1.4s}
+  #intro .ph b{color:var(--saffron);font-weight:700}
+  #intro .sub{font-weight:300;color:rgba(255,255,255,.75);margin:12px 0 0;opacity:0;animation:up .8s var(--ease) forwards 2.2s}
+  #intro .go{margin-top:30px;display:inline-flex;gap:10px;align-items:center;background:var(--saffron);color:var(--ink);border:0;border-radius:999px;padding:12px 26px;font-weight:600;font-size:16px;opacity:0;animation:up .8s var(--ease) forwards 2.9s}
+  #intro .skip{position:absolute;top:20px;inset-inline-start:22px;background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:6px 14px;font-size:13px}
+  @keyframes up{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){#intro .tl::after,#intro .ph,#intro .sub,#intro .go{animation:none;opacity:1;transform:none}}
 
-  section{padding-block:40px}
-  h2{font-family:var(--head);font-weight:500;font-size:26px;margin:0 0 4px;color:var(--green-2)}
-  .sub{color:var(--muted);margin:0 0 20px;font-size:15px}
+  /* ===== الترويسة ===== */
+  .top{position:sticky;top:0;z-index:50;background:rgba(238,243,238,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-inline:-20px;padding-inline:20px}
+  .top .in{direction:rtl;max-width:1100px;margin-inline:auto;display:flex;align-items:center;gap:14px;min-height:60px;flex-wrap:wrap}
+  .brand{font-family:var(--head);font-weight:700;font-size:20px;color:var(--green-2);display:inline-flex;align-items:center;gap:8px}
+  .brand i{width:10px;height:10px;border-radius:50%;background:var(--saffron);display:inline-block}
+  .nav{display:flex;gap:2px;flex-wrap:wrap}
+  .nav a{padding:6px 12px;border-radius:8px;font-size:14px;color:var(--muted)}
+  .nav a.on,.nav a:hover{background:var(--green-soft);color:var(--green-2)}
+  .tools{margin-inline-start:auto;display:flex;gap:8px;align-items:center}
+  .kbtn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 10px;font-size:13px;color:var(--muted)}
+  .kbtn kbd{font:inherit;font-size:11px;border:1px solid var(--line);border-radius:4px;padding:0 5px;color:var(--ink)}
+  .mode{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+  .mode button{border:0;background:transparent;padding:6px 11px;font-size:13px;color:var(--muted)}
+  .mode button[aria-pressed="true"]{background:var(--green);color:#fff}
 
-  /* بطاقة المشروع */
+  /* ===== عام ===== */
+  section{padding-block:56px;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:0}
+  h1,h2,h3{font-family:var(--head);font-weight:500;line-height:1.35;margin:0}
+  h2{font-size:28px;color:var(--green-2)}
+  .eyebrow{font-size:12.5px;letter-spacing:.04em;color:var(--saffron);font-weight:600;margin:0 0 6px}
+  .sub{color:var(--muted);margin:6px 0 24px;max-width:62ch}
+  .reveal{transform:translateY(14px);transition:transform .7s var(--ease)}
+  .reveal.in{transform:none}
+  .pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:3px 10px;border-radius:999px;border:1px solid currentColor;color:var(--c,var(--muted));background:#fff}
+  .pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+
+  /* ===== البطل ===== */
+  .hero{padding-block:70px 50px;position:relative;overflow:hidden;margin-inline:-20px;padding-inline:20px;background:linear-gradient(135deg,var(--green) 0%,var(--green-2) 60%,var(--green-deep) 100%);color:#fff;border-radius:0 0 26px 26px}
+  .hero .light{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(233,162,59,.28),transparent 60%);top:-200px;inset-inline-start:-160px;pointer-events:none;transition:transform .6s var(--ease)}
+  .hero .in{direction:rtl;max-width:1100px;margin-inline:auto;position:relative}
+  .hero h1{font-weight:700;font-size:clamp(34px,6vw,62px);line-height:1.2}
+  .hero h1 b{color:var(--saffron);font-weight:700}
+  .hero p{font-weight:300;font-size:18px;color:rgba(255,255,255,.82);max-width:60ch;margin:14px 0 0}
+  .paths{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}
+  @media (max-width:760px){.paths{grid-template-columns:1fr}}
+  .path{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:18px;color:#fff;transition:transform .3s var(--ease),background .3s}
+  .path:hover{transform:translateY(-4px);background:rgba(255,255,255,.14)}
+  .path b{display:block;font-family:var(--head);font-size:19px;font-weight:500;margin-bottom:4px}
+  .path span{font-size:13.5px;color:rgba(255,255,255,.75)}
+  .path em{display:block;font-style:normal;color:var(--saffron);margin-top:10px;font-size:13px}
+
+  /* ===== الخريطة ===== */
+  .map{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+  @media (max-width:820px){.map{grid-template-columns:1fr}}
+  .map svg{width:100%;height:auto;display:block;max-width:100%}
+  .map .node{cursor:pointer}
+  .map .node circle{fill:#fff;stroke:var(--line);stroke-width:1.5;transition:all .3s}
+  .map .node text{font-family:var(--body);font-size:12.5px;fill:var(--ink);text-anchor:middle;pointer-events:none}
+  .map .node.on circle,.map .node:hover circle{fill:var(--green);stroke:var(--green)}
+  .map .node.on text,.map .node:hover text{fill:#fff}
+  .map line{stroke:var(--line);stroke-width:1.5;transition:stroke .3s}
+  .map line.on{stroke:var(--saffron);stroke-width:2.5}
+  .mapinfo{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;min-height:220px}
+  .mapinfo h3{font-size:20px;color:var(--green-2)}
+  .mapinfo p{color:var(--muted);font-size:14px;margin:6px 0 14px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:6px 10px 6px 12px;font-size:13.5px;background:#fff;transition:border-color .2s,transform .2s}
+  .chip:hover{border-color:var(--green);transform:translateY(-2px)}
+  .chip img{width:22px;height:22px;object-fit:contain;border-radius:6px}
+  .chip .ini{width:22px;height:22px;border-radius:6px;background:var(--green-soft);color:var(--green);font-family:var(--head);font-size:12px;display:grid;place-items:center}
+
+  /* ===== البطاقات ===== */
+  .sectors{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 20px}
+  .sectors button{font-size:13px;padding:5px 13px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted)}
+  .sectors button[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 0 rgba(16,36,29,.04);transition:transform .25s,box-shadow .25s}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s;cursor:pointer}
   .card:hover{transform:translateY(-4px);box-shadow:0 18px 36px -22px rgba(15,95,76,.45)}
   .shot{aspect-ratio:16/9;background:linear-gradient(135deg,var(--green-soft),#F6F1E6);position:relative;overflow:hidden}
-  .shot img{width:100%;height:100%;object-fit:cover;display:block}
-  .shot .ph{position:absolute;inset:0;display:grid;place-items:center;color:var(--green);font-size:13px;opacity:.7}
-  .shot .st{position:absolute;top:10px;inset-inline-start:10px;font-size:11.5px;padding:3px 10px;border-radius:999px;background:#fff;color:var(--c);border:1px solid currentColor;display:inline-flex;align-items:center;gap:6px}
-  .shot .st::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+  .shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--ease)}
+  .card:hover .shot img{transform:scale(1.04)}
+  .shot .pill{position:absolute;top:10px;inset-inline-start:10px}
   .head{display:flex;align-items:center;gap:12px;padding:14px 16px 0}
-  .logo{width:48px;height:48px;border-radius:12px;flex:none;background:var(--green-soft);display:grid;place-items:center;overflow:hidden;border:1px solid var(--line)}
-  .logo img{width:100%;height:100%;object-fit:contain;display:block;padding:3px}
-  .logo b{font-family:var(--head);font-size:20px;color:var(--green)}
-  .head h3{font-family:var(--head);font-weight:500;font-size:19px;margin:0;line-height:1.3}
-  .head small{display:block;font-size:12.5px;color:var(--muted);font-weight:400}
-  .card p{margin:0;padding:8px 16px 0;color:var(--muted);font-size:14px;line-height:1.7;flex:1}
-  .tech{display:flex;flex-wrap:wrap;gap:5px;padding:10px 16px 0}
-  .tech span{font-size:11px;color:var(--green);background:var(--green-soft);padding:2px 8px;border-radius:4px;direction:ltr}
-  .acts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:14px 16px 16px}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;font:inherit;font-size:13px;font-weight:500;padding:9px 6px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
-  .btn svg{width:16px;height:16px;flex:none}
-  .btn.open{background:var(--green);border-color:var(--green);color:#fff}
-  .btn.open:hover{background:var(--green-2)}
-  .btn.git:hover{background:var(--ink);border-color:var(--ink);color:#fff}
-  .btn.dir:hover{background:var(--saffron-soft);border-color:var(--saffron);color:#7A4E0A}
-  .btn[hidden]{display:none}
-  .toast{position:fixed;bottom:22px;inset-inline-start:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;direction:rtl;max-width:calc(100vw - 40px);text-align:center}
-  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  .logo{width:46px;height:46px;border-radius:12px;flex:none;background:var(--green-soft);display:grid;place-items:center;overflow:hidden;border:1px solid var(--line)}
+  .logo img{width:100%;height:100%;object-fit:contain;padding:3px}
+  .logo b{font-family:var(--head);font-size:18px;color:var(--green)}
+  .head h3{font-size:19px}
+  .head small{display:block;font-size:12.5px;color:var(--muted)}
+  .card p{margin:0;padding:8px 16px 0;color:var(--muted);font-size:14px;line-height:1.7}
+  .story{padding:10px 16px 0;display:grid;gap:6px;font-size:13.5px}
+  .story div{display:grid;grid-template-columns:64px 1fr;gap:8px}
+  .story b{color:var(--green-2);font-weight:600}
+  .story span{color:var(--muted)}
+  body.brief .story{display:none}
+  .lk{display:flex;flex-wrap:wrap;gap:6px;padding:14px 16px 16px;margin-top:auto}
+  .lk a,.lk span{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;padding:6px 10px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink)}
+  .lk a.pri{background:var(--green);border-color:var(--green);color:#fff}
+  .lk a:hover{border-color:var(--green)}
+  .lk span{color:var(--muted);border-style:dashed}
+  .lk svg{width:14px;height:14px}
 
-  .links{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
-  .links a{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:14px}
-  .links a small{color:var(--muted);font-size:12px}
-  .links a:hover{border-color:var(--green)}
-  .contact{display:flex;flex-wrap:wrap;gap:10px}
+  /* ===== صفحة المشروع ===== */
+  .proj{max-width:900px}
+  .proj .back{font-size:14px;color:var(--muted);display:inline-flex;gap:6px;align-items:center;margin-bottom:18px}
+  .proj .cover{aspect-ratio:16/8;border-radius:16px;overflow:hidden;background:var(--green-soft);border:1px solid var(--line);position:relative}
+  .proj .cover img{width:100%;height:100%;object-fit:cover;display:block}
+  .proj .cover .pill{position:absolute;top:14px;inset-inline-start:14px}
+  .proj .title{display:flex;align-items:center;gap:14px;margin:22px 0 4px}
+  .proj .title .logo{width:56px;height:56px}
+  .proj h1{font-size:clamp(26px,4vw,38px);color:var(--green-2)}
+  .proj .meta{color:var(--muted);font-size:14px}
+  .proj .lead{font-size:17px;margin:14px 0 26px;max-width:66ch}
+  .arc{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:0 0 30px}
+  .arc div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;position:relative}
+  .arc div::before{content:"";position:absolute;top:0;inset-inline-start:16px;width:34px;height:3px;background:var(--saffron);border-radius:0 0 3px 3px}
+  .arc b{display:block;font-family:var(--head);font-weight:500;color:var(--green-2);margin:6px 0 4px;font-size:16px}
+  .arc span{font-size:14px;color:var(--muted);line-height:1.7}
+  .stages{position:relative;padding-inline-start:22px;margin:0 0 30px;list-style:none}
+  .stages::before{content:"";position:absolute;inset-inline-start:6px;top:6px;bottom:6px;width:2px;background:var(--line)}
+  .stages::after{content:"";position:absolute;inset-inline-start:6px;top:6px;width:2px;height:0;background:var(--saffron);transition:height 1.6s var(--ease)}
+  .stages.in::after{height:calc(100% - 12px)}
+  .stages li{position:relative;padding:4px 0 12px;font-size:14.5px}
+  .stages li::before{content:"";position:absolute;inset-inline-start:-22px;top:12px;width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid var(--saffron)}
+  .stages li small{display:block;color:var(--muted);font-size:12.5px}
+  .share{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .share button,.share a{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 12px;font-size:13.5px}
+  .legend{font-size:12.5px;color:var(--muted);margin-top:14px}
+  .legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-inline-end:4px;vertical-align:-1px}
+
+  /* ===== عن / الأثر / الآن ===== */
+  .about{display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
+  @media (max-width:820px){.about{grid-template-columns:1fr}}
+  .roles{display:grid;gap:10px}
+  .role{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .role b{display:block;font-family:var(--head);font-weight:500;color:var(--green-2)}
+  .role span{font-size:14px;color:var(--muted)}
+  .caps{display:flex;flex-wrap:wrap;gap:8px}
+  .caps span{padding:6px 12px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;background:#fff;color:var(--muted)}
+  .contact{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
   .contact a{padding:10px 18px;border-radius:10px;border:1px solid var(--line);background:#fff;font-size:14px}
   .contact a.main{background:var(--saffron);border-color:var(--saffron);color:var(--ink);font-weight:600}
-  footer{color:var(--muted);font-size:12px;padding-top:12px;direction:rtl}
-  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+  .nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+  .num{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 16px;text-align:center}
+  .num b{display:block;font-family:var(--head);font-size:40px;color:var(--green);line-height:1.1;font-variant-numeric:tabular-nums}
+  .num span{font-size:13.5px;color:var(--muted)}
+  .now{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  .now div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+  .now b{display:block;font-size:12.5px;color:var(--saffron);font-weight:600;margin-bottom:4px}
+  .now p{margin:0;font-size:14.5px}
+  .now small{color:var(--muted);font-size:12.5px}
+
+  /* ===== النوافذ ===== */
+  .modal{position:fixed;inset:0;z-index:90;background:rgba(7,50,42,.55);display:grid;place-items:start center;padding:8vh 16px;direction:rtl}
+  .box{background:#fff;border-radius:16px;width:min(640px,100%);box-shadow:0 30px 80px -30px rgba(0,0,0,.5);overflow:hidden}
+  .box input{width:100%;border:0;border-bottom:1px solid var(--line);padding:16px 18px;font:inherit;font-size:16px;outline:0;background:transparent}
+  .box ul{list-style:none;margin:0;padding:8px;max-height:52vh;overflow:auto}
+  .box li{padding:10px 12px;border-radius:10px;display:flex;align-items:center;gap:10px;font-size:14.5px;cursor:pointer}
+  .box li:hover,.box li.sel{background:var(--green-soft)}
+  .box li small{margin-inline-start:auto;color:var(--muted);font-size:12px}
+  .box .hint{padding:10px 18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+  .box .ans{padding:14px 18px;font-size:14.5px;line-height:1.8;border-top:1px solid var(--line);max-height:50vh;overflow:auto}
+  .box .ans .chips{margin-top:10px}
+  .toast{position:fixed;bottom:22px;inset-inline-start:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;direction:rtl;z-index:95}
+  .toast.show{opacity:1;transform:translateX(-50%)}
+  footer{color:var(--muted);font-size:12.5px;padding-top:28px;direction:rtl;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+
+  @media print{
+    #intro,.top,.share,.back,footer,.toast,.modal{display:none!important}
+    body{background:#fff;padding:0}
+    .proj .cover{aspect-ratio:16/7}
+    section{border:0;padding-block:12px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.reveal{transform:none}}
 </style>
 
-<div class="band"><div class="in" lang="ar">
-  <h1 class="who">عثمان <span>· منتجاتي</span></h1>
-  <p class="line">أبني منصات وأدوات رقمية عربية من الفكرة حتى الإطلاق: منظومات إدارية، تطبيقات أسرية وتدريبية، ومنتجات مالية شخصية.</p>
-  <nav class="dock" id="dock" aria-label="روابط سريعة"></nav>
-</div></div>
-
-<div class="wrap" lang="ar">
-<section id="projects">
-  <h2>منتجاتي</h2>
-  <p class="sub">سبعة منتجات رقمية، لكل منها شعاره وصورته وروابطه.</p>
-  <div class="grid" id="grid"></div>
-</section>
-
-<section id="links-sec">
-  <h2>المنصات والملفات</h2>
-  <p class="sub">كل ما تعود إليه يوميًا.</p>
-  <div class="links" id="links"></div>
-</section>
-
-<section id="contact">
-  <h2>تواصل</h2>
-  <div class="contact" id="contact"></div>
-</section>
-<footer id="foot"></footer>
+<div id="intro" role="dialog" aria-label="افتتاحية">
+  <button class="skip" id="skip">تجاوز</button>
+  <div>
+    <div class="tl"></div>
+    <p class="ph">من <b>الفكرة</b> إلى <b>الأثر</b>.</p>
+    <p class="sub">منتجات رقمية عربية تُصنع لتُستخدم.</p>
+    <button class="go" id="go">استكشف الأعمال ←</button>
+  </div>
 </div>
+
+<header class="top"><div class="in">
+  <a class="brand" href="#/"><i></i>عثمان الشهري</a>
+  <nav class="nav" id="nav">
+    <a href="#/works" data-r="works">الأعمال</a>
+    <a href="#/about" data-r="about">عن عثمان</a>
+    <a href="#/impact" data-r="impact">الأثر</a>
+    <a href="#/now" data-r="now">الآن</a>
+    <a href="" id="officeLink" target="_blank" rel="noopener">المكتب الخاص</a>
+  </nav>
+  <div class="tools">
+    <div class="mode" role="group" aria-label="وضع العرض"><button id="mBrief" aria-pressed="true">مختصر</button><button id="mDeep" aria-pressed="false">موسّع</button></div>
+    <button class="kbtn" id="kOpen">بحث وأوامر <kbd>⌘K</kbd></button>
+    <button class="kbtn" id="askOpen">اسأل</button>
+  </div>
+</div></header>
+
+<main id="app" class="wrap"></main>
+<footer class="wrap"><span>© <span id="yr"></span> عثمان الشهري · من الفكرة إلى الأثر</span><span>المحتوى يُحدَّث من ملف بيانات واحد.</span></footer>
 <div class="toast" id="toast" role="status"></div>
 
 <script>
-/* ===================== عدّل بياناتك هنا فقط ===================== */
-const DATA = {
-  dock: [
-    { label: "GitHub",    href: "https://github.com/othman20500-coder", icon: "git" },
-    { label: "المنتجات",  href: "#projects",                    icon: "grid" },
-    { label: "المواقع",   href: "#links-sec",                   icon: "globe" },
-    { label: "الملفات",   href: "https://onedrive.live.com/",   icon: "folder" },
-    { label: "التصاميم",  href: "https://www.figma.com/files",  icon: "pen" },
-    { label: "الأدوات",   href: "#links-sec",                   icon: "tool" },
-  ],
-  // status: live | wip | concept | archived
-  // logo و shot: صور مأخوذة من صفحات المشاريع نفسها (مجلد assets). logoBg اختياري لخلفية الشعار.
-  // dir: مسار المجلد على جهازك كما هو في Windows.
-  projects: [
-    { name: "مُهلة", en: "Muhla", domain: "أدوات", status: "live",
-      desc: "لوحة واحدة لكل ما له تاريخ انتهاء: وثائق، تأمينات، ضمانات، اشتراكات ومواعيد. تقويم هجري وميلادي معًا، وإدخال بسطر واحد، وتنبيه مسبق.",
-      tech: ["HTML/JS","localStorage","ICS","Hijri"], logo: "assets/logo-muhla.png", shot: "assets/muhla.png",
-      live: "https://othman20500-coder.github.io/muhla/", repo: "https://github.com/othman20500-coder/Muhla",
-      dir: "C:\\Users\\othma\\OneDrive\\Desktop\\مشاريعي\\Muhla" },
-    { name: "مِراس", en: "Maras Lab", domain: "تدريب", status: "live",
-      desc: "مختبر الفاعلية: حزمة تفاعلية من نحو خمسين صفحة لبرنامج تدريبي، مع نظام ألعاب، وجواز سفر، وبروتوكولات، وحزمة تعمل دون إنترنت.",
-      tech: ["HTML","CSS Motion","Netlify","Offline"], logo: "assets/logo-maras.png", logoBg: "#0B1020", shot: "assets/maras.png",
-      live: "https://maras-lab.netlify.app", repo: "https://github.com/othman20500-coder/Maras",
-      dir: "C:\\Users\\othma\\OneDrive\\Desktop\\مشاريعي\\Maras\\maras-v63-parallel" },
-    { name: "منظومة رَصْد", en: "Rasd v7.3", domain: "إدارة", status: "live",
-      desc: "منظومة للقيادة الاستراتيجية: مهام ومشاريع وفريق ومؤشرات أداء، بواجهة PHP/MySQL منشورة على othmana.sa ونسخة تشغيل محلية.",
-      tech: ["PHP","MySQL","Python","Sheets"], logo: "assets/logo-rasd.png", shot: "assets/shot-rasd.png",
-      live: "https://othmana.sa/rasd/", repo: "https://github.com/othman20500-coder/Rasd",
-      dir: "C:\\Users\\othma\\OneDrive\\Desktop\\مشاريعي\\Rasd" },
-    { name: "عائلتنا", en: "Ailatna", domain: "منصات", status: "wip",
-      desc: "عالمنا الأسري التفاعلي: لوحة مهام ونقاط، رحلة القيم، تحديات، مكتبة، وبنك عائلي. واجهة كرتونية تعمل محليًا وخادم Node + MySQL.",
-      tech: ["Node","MySQL","HTML/JS"], logo: "assets/logo-family.png", shot: "assets/family.png",
-      live: "https://app.othmana.sa", repo: "https://github.com/othman20500-coder/ailatna",
-      dir: "C:\\Users\\othma\\OneDrive\\Desktop\\مشاريعي\\Family" },
-    { name: "ميزان", en: "Mizan", domain: "مالية", status: "wip",
-      desc: "نظام تشغيل الثروة الشخصية: محفظة، زكاة، توافق شرعي، إعادة توازن، أهداف وتقارير. Monorepo بمحرك مالي وحزم قرار مختبرة.",
-      tech: ["Next.js 14","TypeScript","Tailwind","Monorepo"], logo: "assets/logo-mizan.png", shot: "assets/shot-mizan.png",
-      live: "http://100.90.19.126:3000", repo: "https://github.com/othman20500-coder/mizan",
-      dir: "C:\\Users\\othma\\OneDrive\\Desktop\\مشاريعي\\Mizan" },
-    { name: "منصة الأندية الشبابية", en: "Youth Clubs", domain: "منصات", status: "wip",
-      desc: "خلفية متعددة المستأجرين لجمعية صناعة القدرات: مصادقة JWT، صلاحيات حسب الدور، عزل الأندية، ومركز موافقات بدورة عمل حقيقية.",
-      tech: ["Node","JWT","RBAC","PWA"], logo: "assets/logo-youth.png", shot: "assets/shot-youth.png",
-      live: "https://youth-clubs-platform.onrender.com", repo: "https://github.com/othman20500-coder/Youth-clubs",
-      dir: "C:\\Users\\othma\\OneDrive\\Desktop\\مشاريعي\\Youth-clubs\\youth-clubs-platform" },
-    { name: "فرص", en: "Furas", domain: "حكومي", status: "concept",
-      desc: "شراكات تصنع أثرًا: منصة مقترحة لوزارة النقل تعرض 32 فرصة شراكة مجتمعية على القطاع الخاص، ببحث ومقارنة وطلب شراكة وقصص أثر، بهوية بصرية معتمدة.",
-      tech: ["HTML/JS","هوية فرص","32 فرصة"], logo: "assets/logo-furas.png", shot: "assets/furas.png",
-      live: "https://furas.netlify.app", repo: "https://github.com/othman20500-coder/Furas",
-      dir: "C:\\Users\\othma\\OneDrive\\Desktop\\مشاريعي\\Furas" },
-  ],
-  links: [
-    { label: "GitHub",     note: "othman20500-coder",   href: "https://github.com/othman20500-coder" },
-    { label: "othmana.sa", note: "الموقع الشخصي",       href: "https://othmana.sa" },
-    { label: "Netlify",    note: "المواقع المنشورة",    href: "https://app.netlify.com/" },
-    { label: "OneDrive",   note: "الملفات والمستندات",  href: "https://onedrive.live.com/" },
-    { label: "Figma",      note: "التصاميم",            href: "https://www.figma.com/files" },
-    { label: "Notion",     note: "الملاحظات",           href: "https://www.notion.so/" },
-    { label: "Gamma",      note: "العروض",              href: "https://gamma.app/" },
-  ],
+/* ============================ البيانات ============================ */
+const SITE = {
+  name: "عثمان الشهري",
+  office: "office.html",   // النسخة الشخصية (المكتب الخاص)
+  line: "أبني منصات وأدوات رقمية عربية من الفكرة حتى الإطلاق، مع القطاع الحكومي وغير الربحي وللاستخدام الشخصي.",
   contact: [
-    { label: "راسلني",  href: "mailto:you@example.com", main: true },
-    { label: "واتساب",  href: "https://wa.me/9665XXXXXXXX" },
+    { label: "راسلني", href: "mailto:othman20500@gmail.com", main: true },
+    { label: "GitHub", href: "https://github.com/othman20500-coder" },
     { label: "LinkedIn", href: "https://www.linkedin.com/" },
   ],
+  roles: [
+    { t: "تصميم المنتج", d: "من تعريف المشكلة إلى النموذج التفاعلي والهوية البصرية." },
+    { t: "التطوير والنشر", d: "واجهات عربية RTL، خدمات خلفية، ونشر على Netlify وRender وخوادم خاصة." },
+    { t: "التحليل والوثائق", d: "وثائق تعريف ونطاق، دراسات مقارنة، وتصميم معماري قبل أي سطر كود." },
+  ],
+  caps: ["Next.js","Node","PHP/MySQL","Python","Tailwind","تصميم RTL","الهوية البصرية","الوثائق التنفيذية","التقويم الهجري","الأتمتة"],
+  partners: ["وزارة النقل والخدمات اللوجستية","مؤسسة مجتمع روشن","جمعية صناعة القدرات الشبابية"],
+  now: [
+    { k: "أعمل الآن على", v: "فرص: نموذج تفاعلي منشور وهوية معتمدة، بانتظار قرار الاعتماد.", d: "سبتمبر 2026" },
+    { k: "آخر تحديث", v: "مِراس: مزامنة تطبيق المختبر مع آخر نسخة تشغيل.", d: "11 سبتمبر 2026" },
+    { k: "أختبر", v: "ميزان: محرك مالي يحسب المحفظة والزكاة وإعادة التوازن من دفتر واحد.", d: "قيد التطوير" },
+    { k: "القادم", v: "توحيد ملفات المنتجات كلها في مكتب رقمي واحد قابل للبحث.", d: "" },
+  ],
 };
-/* ================================================================= */
 
-const ICON = {
-  open:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1h5"/></svg>',
-  git:   '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A12 12 0 000 12.6c0 5.3 3.4 9.9 8.2 11.5.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.4-5.5-6.1 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.3 11.3 0 016 0C17.3 4.7 18.3 5 18.3 5c.7 1.6.3 2.9.1 3.2.8.9 1.2 2 1.2 3.3 0 4.7-2.8 5.8-5.5 6.1.4.4.8 1.1.8 2.3v3.4c0 .3.2.7.8.6A12 12 0 0024 12.6 12 12 0 0012 .5z"/></svg>',
-  folder:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>',
-  grid:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>',
-  globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>',
-  pen:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5zM2 2l7.6 7.6"/></svg>',
-  tool:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.8-3.8a6 6 0 01-7.9 7.9l-6.9 6.9a2.1 2.1 0 01-3-3l6.9-6.9a6 6 0 017.9-7.9z"/></svg>',
+const SECTORS = {
+  gov:   { name: "العمل الحكومي",        d: "منصات ووثائق تُعدّ للجهات الحكومية بمعايير الاعتماد." },
+  npo:   { name: "القطاع غير الربحي",    d: "أدوات تشغيل وبرامج تدريبية للجمعيات والمؤسسات الأهلية." },
+  youth: { name: "الشباب",               d: "منصات تخدم الأندية والبرامج الشبابية." },
+  social:{ name: "الابتكار الاجتماعي",   d: "حلول تربط الشركات والأسر والمجتمع بأثر قابل للقياس." },
+  digital:{ name: "المنتجات الرقمية",    d: "تطبيقات شخصية وعائلية تُستخدم يوميًا." },
+  mgmt:  { name: "الإدارة والقيادة",     d: "منظومات متابعة للقيادة الاستراتيجية." },
+  know:  { name: "المنتجات المعرفية",    d: "حزم تدريبية، عروض، وأدلة ميسّرين." },
 };
-const ST = { live:["مباشر","var(--ok)"], wip:["قيد العمل","var(--wip)"], concept:["مقترح","#3F6FB5"], archived:["مؤرشف","var(--arch)"] };
-const el = (h) => { const t = document.createElement("template"); t.innerHTML = h.trim(); return t.content.firstChild; };
-const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const isLocal = location.protocol === "file:";
-const toFileUrl = (p) => "file:///" + p.replace(/\\/g, "/").split("/").map(encodeURIComponent).join("/");
-let toastTimer;
-function toast(msg){ const t = document.getElementById("toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(toastTimer); toastTimer = setTimeout(()=>t.classList.remove("show"), 2600); }
 
-document.getElementById("dock").append(...DATA.dock.map(d => el(`<a href="${esc(d.href)}"${d.href.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}>${ICON[d.icon] || ""}${esc(d.label)}</a>`)));
+// access: public | restricted (يحتاج صلاحية) | internal (لا يظهر للزائر)
+const PROJECTS = [
+  { slug:"furas", name:"فرص", en:"Furas", status:"concept", sectors:["gov","social"], year:"2026",
+    logo:"assets/logo-furas.png", shot:"assets/furas.png",
+    summary:"شراكات تصنع أثرًا: منصة مقترحة لوزارة النقل تعرض 32 فرصة شراكة مجتمعية على القطاع الخاص.",
+    story:{ challenge:"فرص الشراكة المجتمعية في قطاع النقل غير معروضة للشركات بصيغة موحدة، فتضيع بين المراسلات.", idea:"منصة واحدة تعرض الفرص بحقول موحدة، وتتيح التصفية والمقارنة وطلب الشراكة حتى تقرير الأثر.", role:"الفكرة، وثيقة التعريف والنطاق، الدراسة المقارنة، النموذج التفاعلي، والهوية البصرية.", done:"وثيقتان معتمدتان للعرض، ونموذج تفاعلي منشور يعرض 32 فرصة بفلاتر عاملة، وهوية «فرص» كاملة.", impact:"مقترح مرفوع للاعتماد. قاعدته: لا يُعرض رقم غير موثّق." },
+    stages:[ ["وثيقة التعريف والنطاق","2026"],["الدراسة المقارنة ومواصفات التصميم","2026"],["النموذج التفاعلي","سبتمبر 2026"],["الهوية البصرية والنشر","15 سبتمبر 2026"],["قرار الاعتماد","قادم"] ],
+    links:[ {t:"live",label:"النموذج المنشور",href:"https://furas.netlify.app",access:"public"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/Furas",access:"restricted"}, {t:"report",label:"وثيقة التعريف",href:"",access:"internal"} ] },
 
-const grid = document.getElementById("grid");
-function initials(p){ return (p.en || p.name).trim().split(/\s+/).map(w => w[0]).join("").slice(0,2).toUpperCase(); }
+  { slug:"maras", name:"مِراس", en:"Maras Lab", status:"live", sectors:["npo","know"], year:"2026",
+    logo:"assets/logo-maras.png", logoBg:"#0B1020", shot:"assets/maras.png",
+    summary:"مختبر الفاعلية: برنامج تدريبي تفاعلي لمؤسسة مجتمع روشن يحوّل المعرفة إلى فعل.",
+    story:{ challenge:"المشكلة ليست نقص المعرفة بل وهم المعرفة: المتدرب يعرف ما يجب أن يفعله ولا يفعله.", idea:"مختبر لا قاعة: مهام ميدانية، جواز سفر، بروتوكولات، ونظام ألعاب يقيس الفعل لا الحضور.", role:"تصميم التجربة والمحتوى، وبناء الحزمة التقنية كاملة، ونظام الميسّرين.", done:"نحو خمسين صفحة تفاعلية، حزمة ميسّر بعروض قابلة للتحرير، نسخة تعمل دون إنترنت، ونشر على Netlify.", impact:"جاهز للتشغيل مع الدفعة الأولى." },
+    stages:[ ["الإطار والمفهوم","أغسطس 2026"],["الحزمة التفاعلية v1","18 أغسطس 2026"],["حزمة الميسّر والعروض","25 أغسطس 2026"],["تحديثات التطبيق","11 سبتمبر 2026"] ],
+    links:[ {t:"live",label:"المختبر",href:"https://maras-lab.netlify.app",access:"public"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/Maras",access:"restricted"}, {t:"deck",label:"عروض الميسّر",href:"",access:"restricted"} ] },
 
-function renderGrid(){
-  grid.innerHTML = "";
-  DATA.projects.forEach(p => {
-    const [label, color] = ST[p.status] || ST.wip;
-    const card = el(`<article class="card">
-      <div class="shot">${p.shot ? `<img src="${esc(p.shot)}" alt="لقطة من ${esc(p.name)}">` : `<div class="ph">صورة من المشروع</div>`}<span class="st" style="--c:${color}">${label}</span></div>
-      <div class="head">
-        <div class="logo"${p.logoBg ? ` style="background:${esc(p.logoBg)};border-color:${esc(p.logoBg)}"` : ""}>${p.logo ? `<img src="${esc(p.logo)}" alt="شعار ${esc(p.name)}">` : `<b>${esc(initials(p))}</b>`}</div>
-        <h3>${esc(p.name)}<small>${esc(p.en || "")}${p.en ? " · " : ""}${esc(p.domain)}</small></h3>
-      </div>
-      <p>${esc(p.desc)}</p>
-      <div class="tech">${(p.tech||[]).map(t => `<span>${esc(t)}</span>`).join("")}</div>
-      <div class="acts">
-        <a class="btn open" ${p.live ? `href="${esc(p.live)}" target="_blank" rel="noopener"` : "hidden"}>${ICON.open}فتح</a>
-        <a class="btn git"  ${p.repo ? `href="${esc(p.repo)}" target="_blank" rel="noopener"` : "hidden"}>${ICON.git}GitHub</a>
-        <a class="btn dir"  ${p.dir  ? `href="${toFileUrl(p.dir)}" title="${esc(p.dir)}"` : "hidden"}>${ICON.folder}المجلد</a>
-      </div></article>`);
-    const dirBtn = card.querySelector(".btn.dir");
-    if (p.dir && !isLocal) dirBtn.addEventListener("click", async (e) => {
-      e.preventDefault();
-      try { await navigator.clipboard.writeText(p.dir); toast("تم نسخ مسار المجلد. الصقه في شريط عنوان Explorer."); }
-      catch { toast(p.dir); }
-    });
-    grid.append(card);
-  });
+  { slug:"youth", name:"منصة الأندية الشبابية", en:"Youth Clubs", status:"wip", sectors:["youth","npo"], year:"2026",
+    logo:"assets/logo-youth.png", shot:"assets/shot-youth.png",
+    summary:"خلفية متعددة المستأجرين لجمعية صناعة القدرات: مصادقة، صلاحيات حسب الدور، ومركز موافقات.",
+    story:{ challenge:"جمعية واحدة تدير عدة أندية، وكل نادٍ يحتاج بياناته وصلاحياته ودورة موافقاته.", idea:"وحدة مركزية وأندية معزولة على خلفية واحدة، بمركز موافقات له دورة عمل حقيقية.", role:"التحليل والتصميم المعماري، وتطوير الخلفية والاختبارات والنشر.", done:"API بمصادقة JWT وصلاحيات RBAC، اختبارات آلية على GitHub Actions، نشر على Render، وواجهة دخول PWA.", impact:"مغذّاة ببيانات الجمعية الفعلية، والواجهة تُربط في المرحلة التالية." },
+    stages:[ ["وثيقة التحليل والتصميم المعماري","2026"],["الخلفية والاختبارات","2026"],["النشر على Render","2026"],["ربط الواجهة","قادم"] ],
+    links:[ {t:"live",label:"المنصة",href:"https://youth-clubs-platform.onrender.com",access:"public"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/Youth-clubs",access:"restricted"} ] },
+
+  { slug:"rasd", name:"منظومة رَصْد", en:"Rasd v7.3", status:"live", sectors:["mgmt"], year:"2026",
+    logo:"assets/logo-rasd.png", shot:"assets/shot-rasd.png",
+    summary:"منظومة للقيادة الاستراتيجية: مهام ومشاريع وفريق ومؤشرات أداء في شاشة واحدة.",
+    story:{ challenge:"متابعة المهام والمشاريع والمؤشرات موزعة بين جداول ورسائل، فتغيب الصورة الكاملة عن القيادة.", idea:"منظومة ويب خفيفة بواجهة عربية تربط المهام بالمشاريع بالفريق بالمؤشرات.", role:"التصميم والتطوير والنشر والتشغيل.", done:"الإصدار 7.3 منشور على خادم خاص بواجهة PHP/MySQL، ونسخة تشغيل محلية.", impact:"نسخة إنتاجية عاملة محمية بكلمة مرور." },
+    stages:[ ["النسخة الأولى","مايو 2026"],["ربط قاعدة البيانات والصلاحيات","2026"],["الإصدار 7.3","2026"] ],
+    links:[ {t:"live",label:"المنظومة",href:"https://othmana.sa/rasd/",access:"restricted"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/Rasd",access:"restricted"} ] },
+
+  { slug:"ailatna", name:"عائلتنا", en:"Ailatna", status:"wip", sectors:["digital","social"], year:"2026",
+    logo:"assets/logo-family.png", shot:"assets/family.png",
+    summary:"عالمنا الأسري التفاعلي: مهام ونقاط، رحلة قيم، تحديات، مكتبة، وبنك عائلي.",
+    story:{ challenge:"تربية القيم في البيت تحتاج تكرارًا ومتابعة، والتطبيقات المتاحة إما ألعاب أو قوائم مهام جافة.", idea:"عالم كرتوني للأسرة: كل مهمة صغيرة تنمّي شجرة الأسرة وتقرّبها من هدف الأسبوع.", role:"الفكرة والتصميم والتطوير كاملًا: الواجهة والخادم ومحرك النمو القيمي.", done:"واجهة تعمل محليًا بلا خادم، وخادم Node + MySQL للحسابات والمزامنة والنقاط والمهام، منشور على نطاق خاص.", impact:"يُختبر داخل الأسرة أولًا قبل أي توسّع." },
+    stages:[ ["الواجهة الكرتونية","2026"],["الخادم ومحرك الرحلات","2026"],["النشر الخاص","2026"] ],
+    links:[ {t:"live",label:"المنصة",href:"https://app.othmana.sa",access:"public"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/ailatna",access:"restricted"} ] },
+
+  { slug:"mizan", name:"ميزان", en:"Mizan", status:"wip", sectors:["digital"], year:"2026",
+    logo:"assets/logo-mizan.png", shot:"assets/shot-mizan.png",
+    summary:"نظام تشغيل الثروة الشخصية: محفظة، زكاة، توافق شرعي، إعادة توازن، وأهداف.",
+    story:{ challenge:"القرارات المالية الشخصية موزعة بين محفظة وزكاة وتوافق شرعي وأهداف، ولا شيء يجمعها.", idea:"دفتر واحد يُسقط منه كل شيء: العائد، الزكاة، الانحراف عن الأهداف، وقرار اليوم.", role:"التصميم والتطوير: المحرك المالي وحزم القرار والواجهة.", done:"Monorepo بمحرك مالي وحزم قرار مختبرة، وواجهة Next.js بنظام تصميم «السِّجِلّ الهادئ» بوضعين.", impact:"قيد التطوير للاستخدام الشخصي." },
+    stages:[ ["اكتشاف وتوثيق 15 وثيقة","2026"],["المحرك المالي وحزم القرار","2026"],["الواجهة","قيد التطوير"] ],
+    links:[ {t:"live",label:"التطبيق",href:"http://100.90.19.126:3000",access:"internal"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/mizan",access:"restricted"} ] },
+
+  { slug:"muhla", name:"مُهلة", en:"Muhla", status:"live", sectors:["digital"], year:"2026",
+    logo:"assets/logo-muhla.png", shot:"assets/muhla.png",
+    summary:"لوحة واحدة لكل ما له تاريخ انتهاء، بتقويم هجري وميلادي وإدخال بسطر واحد.",
+    story:{ challenge:"وثائق وتأمينات وضمانات واشتراكات تنتهي في تواريخ متفرقة، وتضيع بين التطبيقات.", idea:"صفحة واحدة بلا خادم تفهم الجملة كما تُقال: «تأمين السيارة ينتهي ١٢/٣/٢٠٢٧ ذكرني قبل شهر».", role:"التصميم والتطوير كاملًا.", done:"منشورة على GitHub Pages: إدخال ذكي، تقويمان، تكرار وتجديد، تصدير ICS، وإشعارات المتصفح.", impact:"البيانات لا تغادر جهاز المستخدم." },
+    stages:[ ["النسخة الأولى","2026"],["هوية بصرية جديدة وإدخال بالصورة والصوت","2026"],["نشر عام","2026"] ],
+    links:[ {t:"live",label:"التطبيق",href:"https://othman20500-coder.github.io/muhla/",access:"public"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/Muhla",access:"restricted"} ] },
+];
+/* ================================================================== */
+
+const ST = { live:["مكتمل ومنشور","var(--ok)"], wip:["تحت التطوير","var(--wip)"], concept:["مقترح قيد الاعتماد","var(--idea)"], archived:["مؤرشف","var(--arch)"] };
+const LT = { live:"فتح المنصة", repo:"GitHub", deck:"العرض التقديمي", report:"التقرير", brand:"الهوية", local:"ملف خاص" };
+const IC = {
+  live:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1h5"/></svg>',
+  repo:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A12 12 0 000 12.6c0 5.3 3.4 9.9 8.2 11.5.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.4-5.5-6.1 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.3 11.3 0 016 0C17.3 4.7 18.3 5 18.3 5c.7 1.6.3 2.9.1 3.2.8.9 1.2 2 1.2 3.3 0 4.7-2.8 5.8-5.5 6.1.4.4.8 1.1.8 2.3v3.4c0 .3.2.7.8.6A12 12 0 0024 12.6 12 12 0 0012 .5z"/></svg>',
+  deck:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12"/><path d="M12 16v4M8 20h8M7 12l3-3 3 2 4-4"/></svg>',
+  report:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6M9 16h6"/></svg>',
+  lock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>',
+  back:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+};
+const el = h => { const t=document.createElement("template"); t.innerHTML=h.trim(); return t.content.firstChild; };
+const esc = s => String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const ini = p => (p.en||p.name).trim().split(/\s+/).map(w=>w[0]).join("").slice(0,2).toUpperCase();
+const logoHtml = (p,cls="logo") => `<div class="${cls}"${p.logoBg?` style="background:${p.logoBg};border-color:${p.logoBg}"`:""}>${p.logo?`<img src="${esc(p.logo)}" alt="">`:`<b>${esc(ini(p))}</b>`}</div>`;
+const pill = s => { const [l,c]=ST[s]||ST.wip; return `<span class="pill" style="--c:${c}">${l}</span>`; };
+let toastT; const toast = m => { const t=document.getElementById("toast"); t.textContent=m; t.classList.add("show"); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove("show"),2600); };
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ----- الروابط بحسب الصلاحية ----- */
+function linksHtml(p){
+  return p.links.map(l => {
+    if (l.access === "internal") return "";
+    if (l.access === "restricted" || !l.href) return `<span title="يحتاج صلاحية">${IC.lock}${esc(l.label||LT[l.t])} · يحتاج صلاحية</span>`;
+    return `<a class="${l.t==="live"?"pri":""}" href="${esc(l.href)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${IC[l.t]||IC.report}${esc(l.label||LT[l.t])}</a>`;
+  }).join("");
 }
-renderGrid();
+function cardHtml(p){
+  return `<article class="card" data-slug="${p.slug}" tabindex="0" role="link" aria-label="${esc(p.name)}">
+    <div class="shot">${p.shot?`<img src="${esc(p.shot)}" alt="">`:""}${pill(p.status)}</div>
+    <div class="head">${logoHtml(p)}<h3>${esc(p.name)}<small>${esc(p.en)} · ${p.sectors.map(s=>SECTORS[s].name).join(" · ")}</small></h3></div>
+    <p>${esc(p.summary)}</p>
+    <div class="story"><div><b>التحدي</b><span>${esc(p.story.challenge)}</span></div><div><b>دوري</b><span>${esc(p.story.role)}</span></div><div><b>النتيجة</b><span>${esc(p.story.impact)}</span></div></div>
+    <div class="lk">${linksHtml(p)}<a href="#/p/${p.slug}" onclick="event.stopPropagation()">القصة كاملة</a></div>
+  </article>`;
+}
 
-document.getElementById("links").append(...DATA.links.map(l => el(`<a href="${esc(l.href)}" target="_blank" rel="noopener"><span>${esc(l.label)}</span><small>${esc(l.note)}</small></a>`)));
-document.getElementById("contact").append(...DATA.contact.map(c => el(`<a href="${esc(c.href)}" class="${c.main ? "main" : ""}">${esc(c.label)}</a>`)));
-document.getElementById("foot").textContent = `© ${new Date().getFullYear()} · صفحة شخصية`;
+/* ----- الصفحات ----- */
+const V = {};
+V.home = () => `
+  <div class="hero" id="hero"><div class="light" id="light"></div><div class="in">
+    <p class="eyebrow">عثمان الشهري · منتجات رقمية عربية</p>
+    <h1>من <b>الفكرة</b> إلى <b>الأثر</b>.</h1>
+    <p>${esc(SITE.line)}</p>
+    <div class="paths">
+      <a class="path" href="#/about"><b>تعرّف عليّ</b><span>الأدوار، المجالات، وطريقة العمل.</span><em>عن عثمان ←</em></a>
+      <a class="path" href="#/works"><b>استكشف الأعمال</b><span>${PROJECTS.length} منتجات بقصصها وروابطها.</span><em>الأعمال ←</em></a>
+      <a class="path" href="${esc(SITE.office)}" target="_blank" rel="noopener"><b>ادخل إلى المكتب</b><span>الملفات والمجلدات والروابط الخاصة.</span><em>النسخة الشخصية ←</em></a>
+    </div>
+  </div></div>
+  <section class="reveal"><p class="eyebrow">خريطة الأعمال</p><h2>منظومة واحدة، ستة مجالات</h2><p class="sub">مرّر على مجال لترى منتجاته. كل منتج قد ينتمي لأكثر من مجال.</p>
+    <div class="map"><div id="mapSvg"></div><div class="mapinfo" id="mapInfo"></div></div>
+  </section>
+  <section class="reveal"><p class="eyebrow">مختارات</p><h2>ثلاثة أعمال تلخّص الطريقة</h2><p class="sub">تحدٍّ واضح، فكرة محددة، ونتيجة قابلة للتحقق.</p>
+    <div class="grid">${["furas","maras","youth"].map(s=>cardHtml(PROJECTS.find(p=>p.slug===s))).join("")}</div>
+  </section>
+  <section class="reveal"><p class="eyebrow">الأثر بالأرقام</p><h2>أرقام محسوبة من المحتوى نفسه</h2><div class="nums" id="nums">${numsHtml()}</div></section>
+  <section class="reveal"><p class="eyebrow">الآن</p><h2>ماذا أعمل هذه الأيام؟</h2><div class="now">${nowHtml()}</div></section>`;
+
+let sector = "all";
+V.works = () => `
+  <section><p class="eyebrow">الأعمال</p><h2>المنتجات والمنصات</h2><p class="sub">اختر مجالًا أو اعرض الكل. الوضع «موسّع» في الأعلى يُظهر التحدي والدور والنتيجة داخل كل بطاقة.</p>
+    <div class="sectors" id="secBtns">${[["all","الكل"],...Object.entries(SECTORS).map(([k,v])=>[k,v.name])].map(([k,n])=>`<button data-s="${k}" aria-pressed="${k===sector}">${n}</button>`).join("")}</div>
+    <div class="grid" id="worksGrid">${PROJECTS.filter(p=>sector==="all"||p.sectors.includes(sector)).map(cardHtml).join("")}</div>
+  </section>`;
+
+V.project = slug => {
+  const p = PROJECTS.find(x=>x.slug===slug); if(!p) return `<section><h2>لم أجد هذا المنتج</h2><p class="sub"><a href="#/works">العودة إلى الأعمال</a></p></section>`;
+  const st = p.story;
+  return `<section class="proj">
+    <a class="back" href="#/works">${IC.back} كل الأعمال</a>
+    <div class="cover">${p.shot?`<img src="${esc(p.shot)}" alt="">`:""}${pill(p.status)}</div>
+    <div class="title">${logoHtml(p)}<div><h1>${esc(p.name)}</h1><div class="meta">${esc(p.en)} · ${p.sectors.map(s=>SECTORS[s].name).join(" · ")} · ${esc(p.year)}</div></div></div>
+    <p class="lead">${esc(p.summary)}</p>
+    <div class="arc">
+      <div><b>التحدي</b><span>${esc(st.challenge)}</span></div>
+      <div><b>الفكرة</b><span>${esc(st.idea)}</span></div>
+      <div><b>دوري</b><span>${esc(st.role)}</span></div>
+      <div><b>ما أُنجز</b><span>${esc(st.done)}</span></div>
+      <div><b>الأثر</b><span>${esc(st.impact)}</span></div>
+    </div>
+    <h2 style="font-size:20px;margin-bottom:12px">المراحل</h2>
+    <ol class="stages" id="stages">${p.stages.map(([l,d])=>`<li>${esc(l)}<small>${esc(d)}</small></li>`).join("")}</ol>
+    <h2 style="font-size:20px;margin-bottom:10px">الروابط</h2>
+    <div class="lk" style="padding:0">${linksHtml(p)}</div>
+    <p class="legend"><i style="background:var(--green)"></i>رابط عام &nbsp; <i style="background:#fff;border:1px dashed var(--muted)"></i>يحتاج صلاحية &nbsp; الملفات الداخلية لا تظهر في هذه النسخة.</p>
+    <div class="share"><button id="copyLink">نسخ رابط هذا المنتج</button><button id="printBtn">حفظ PDF مختصر</button><a href="mailto:?subject=${encodeURIComponent(p.name)}&body=${encodeURIComponent(location.href)}">إرسال بالبريد</a></div>
+  </section>`;
+};
+
+V.about = () => `<section class="about">
+  <div><p class="eyebrow">عن عثمان</p><h2>أصنع منتجات تُستخدم، لا عروضًا تُنسى</h2><p class="sub">${esc(SITE.line)}</p>
+    <div class="roles">${SITE.roles.map(r=>`<div class="role"><b>${esc(r.t)}</b><span>${esc(r.d)}</span></div>`).join("")}</div>
+    <div class="contact">${SITE.contact.map(c=>`<a href="${esc(c.href)}" class="${c.main?"main":""}">${esc(c.label)}</a>`).join("")}</div>
+  </div>
+  <div><h3 style="font-size:18px;color:var(--green-2);margin-bottom:10px">المجالات</h3><div class="chips" style="margin-bottom:22px">${Object.entries(SECTORS).map(([k,v])=>`<a class="chip" href="#/works" onclick="sector='${k}'">${esc(v.name)}</a>`).join("")}</div>
+    <h3 style="font-size:18px;color:var(--green-2);margin-bottom:10px">القدرات</h3><div class="caps">${SITE.caps.map(c=>`<span>${esc(c)}</span>`).join("")}</div>
+    <h3 style="font-size:18px;color:var(--green-2);margin:22px 0 10px">جهات عملت معها</h3><div class="caps">${SITE.partners.map(c=>`<span>${esc(c)}</span>`).join("")}</div>
+  </div></section>`;
+
+function numsHtml(){
+  const live = PROJECTS.filter(p=>p.status==="live").length;
+  const secs = new Set(PROJECTS.flatMap(p=>p.sectors)).size;
+  const pub = PROJECTS.filter(p=>p.links.some(l=>l.access==="public"&&l.href)).length;
+  return [[PROJECTS.length,"منتجات ومنصات"],[live,"منشورة ومكتملة"],[pub,"متاحة برابط عام"],[secs,"مجالات عمل"],[SITE.partners.length,"جهات شريكة"]].map(([n,l])=>`<div class="num"><b data-n="${n}">0</b><span>${l}</span></div>`).join("");
+}
+const nowHtml = () => SITE.now.map(n=>`<div><b>${esc(n.k)}</b><p>${esc(n.v)}</p>${n.d?`<small>${esc(n.d)}</small>`:""}</div>`).join("");
+V.impact = () => `<section><p class="eyebrow">الأثر</p><h2>الأثر بالأرقام</h2><p class="sub">كل رقم هنا محسوب من بيانات المنتجات في هذه الصفحة، ولا يُضاف رقم عن مستفيدين أو جهات إلا بمصدر موثّق.</p><div class="nums" id="nums">${numsHtml()}</div>
+  <h3 style="font-size:18px;color:var(--green-2);margin:30px 0 10px">حسب المجال</h3><div class="grid">${Object.entries(SECTORS).map(([k,v])=>{const ps=PROJECTS.filter(p=>p.sectors.includes(k)); return `<div class="mapinfo" style="min-height:0"><h3>${esc(v.name)}</h3><p>${esc(v.d)}</p><div class="chips">${ps.map(chip).join("")||"<span class='legend'>لا منتجات بعد</span>"}</div></div>`;}).join("")}</div></section>`;
+V.now = () => `<section><p class="eyebrow">الآن</p><h2>ماذا أعمل هذه الأيام؟</h2><p class="sub">قسم يتجدد كل أسبوعين تقريبًا.</p><div class="now">${nowHtml()}</div></section>`;
+
+const chip = p => `<a class="chip" href="#/p/${p.slug}">${p.logo?`<img src="${esc(p.logo)}" alt=""${p.logoBg?` style="background:${p.logoBg}"`:""}>`:`<span class="ini">${esc(ini(p))}</span>`}${esc(p.name)}</a>`;
+
+/* ----- الخريطة ----- */
+function buildMap(){
+  const host=document.getElementById("mapSvg"), info=document.getElementById("mapInfo"); if(!host) return;
+  const keys=Object.keys(SECTORS), W=520, H=420, cx=W/2, cy=H/2, R=150;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="خريطة الأعمال">`;
+  const pos=keys.map((k,i)=>{const a=-Math.PI/2+i*2*Math.PI/keys.length; return [k,cx+R*Math.cos(a),cy+R*Math.sin(a)];});
+  pos.forEach(([k,x,y])=>s+=`<line data-k="${k}" x1="${cx}" y1="${cy}" x2="${x}" y2="${y}"/>`);
+  s+=`<circle cx="${cx}" cy="${cy}" r="46" fill="var(--green)"/><text x="${cx}" y="${cy+5}" text-anchor="middle" style="font-family:var(--head);font-size:15px;fill:#fff">عثمان</text>`;
+  pos.forEach(([k,x,y])=>s+=`<g class="node" data-k="${k}" tabindex="0"><circle cx="${x}" cy="${y}" r="42"/><text x="${x}" y="${y+4}">${SECTORS[k].name.split(" ").length>2?SECTORS[k].name.replace(" ", " "):SECTORS[k].name}</text></g>`);
+  s+=`</svg>`; host.innerHTML=s;
+  const show=k=>{ host.querySelectorAll(".node").forEach(n=>n.classList.toggle("on",n.dataset.k===k)); host.querySelectorAll("line").forEach(l=>l.classList.toggle("on",l.dataset.k===k)); const ps=PROJECTS.filter(p=>p.sectors.includes(k)); info.innerHTML=`<h3>${esc(SECTORS[k].name)}</h3><p>${esc(SECTORS[k].d)}</p><div class="chips">${ps.map(chip).join("")}</div>`; };
+  host.querySelectorAll(".node").forEach(n=>{ n.addEventListener("mouseenter",()=>show(n.dataset.k)); n.addEventListener("focus",()=>show(n.dataset.k)); n.addEventListener("click",()=>{sector=n.dataset.k; location.hash="#/works";}); });
+  show("gov");
+}
+
+/* ----- التوجيه ----- */
+const app=document.getElementById("app");
+function route(){
+  const h=location.hash.replace(/^#\/?/,""); const [r,arg]=h.split("/");
+  document.body.classList.toggle("brief", localStorage.getItem("mode")!=="deep");
+  document.getElementById("mBrief").setAttribute("aria-pressed", document.body.classList.contains("brief"));
+  document.getElementById("mDeep").setAttribute("aria-pressed", !document.body.classList.contains("brief"));
+  let html;
+  if(r==="p") html=V.project(arg); else if(V[r]) html=V[r](); else html=V.home();
+  app.innerHTML=html; window.scrollTo({top:0,behavior:"instant"});
+  document.querySelectorAll("#nav a[data-r]").forEach(a=>a.classList.toggle("on",a.dataset.r===r));
+  app.querySelectorAll(".card").forEach(c=>{ const go=()=>location.hash="#/p/"+c.dataset.slug; c.addEventListener("click",go); c.addEventListener("keydown",e=>{if(e.key==="Enter")go();}); });
+  app.querySelectorAll("#secBtns button").forEach(b=>b.onclick=()=>{sector=b.dataset.s; route();});
+  const cp=document.getElementById("copyLink"); if(cp) cp.onclick=async()=>{ try{await navigator.clipboard.writeText(location.href); toast("تم نسخ الرابط.");}catch{toast(location.href);} };
+  const pr=document.getElementById("printBtn"); if(pr) pr.onclick=()=>window.print();
+  if(r===""||r===undefined||r==="home") buildMap();
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); if(e.target.id==="nums"||e.target.querySelector?.("[data-n]")) countUp(e.target); io.unobserve(e.target);} }),{threshold:.2});
+  app.querySelectorAll(".reveal,.stages,#nums").forEach(x=>io.observe(x));
+  const hero=document.getElementById("hero"), light=document.getElementById("light");
+  if(hero&&!reduced) hero.addEventListener("pointermove",e=>{ const b=hero.getBoundingClientRect(); light.style.transform=`translate(${e.clientX-b.left-260+160}px,${e.clientY-b.top-260+200}px)`; });
+}
+function countUp(root){ root.querySelectorAll("[data-n]").forEach(b=>{ const n=+b.dataset.n; if(reduced){b.textContent=n;return;} const t0=performance.now(); const step=t=>{const k=Math.min(1,(t-t0)/900); b.textContent=Math.round(n*(1-Math.pow(1-k,3))); if(k<1) requestAnimationFrame(step);}; requestAnimationFrame(step); }); }
+addEventListener("hashchange",route);
+
+/* ----- الوضعان ----- */
+document.getElementById("mBrief").onclick=()=>{localStorage.setItem("mode","brief");route();};
+document.getElementById("mDeep").onclick=()=>{localStorage.setItem("mode","deep");route();};
+
+/* ----- الافتتاحية ----- */
+const intro=document.getElementById("intro");
+const endIntro=()=>{intro.classList.add("done"); try{sessionStorage.setItem("intro","1");}catch{}};
+document.getElementById("skip").onclick=endIntro;
+document.getElementById("go").onclick=()=>{endIntro(); location.hash="#/works";};
+let seen=false; try{seen=sessionStorage.getItem("intro")==="1";}catch{}
+if(seen||reduced||(location.hash&&location.hash!=="#/")) intro.classList.add("done"); else setTimeout(endIntro,6500);
+
+/* ----- ⌘K ----- */
+const cmds=[
+  ...PROJECTS.map(p=>({t:`افتح ${p.name}`,s:"منتج",go:()=>location.hash="#/p/"+p.slug,k:`${p.name} ${p.en} ${p.summary}`})),
+  ...Object.entries(SECTORS).map(([k,v])=>({t:`اعرض أعمال ${v.name}`,s:"مجال",go:()=>{sector=k;location.hash="#/works";},k:v.name})),
+  {t:"اذهب إلى GitHub",s:"رابط",go:()=>open("https://github.com/othman20500-coder","_blank"),k:"github"},
+  {t:"افتح المكتب الخاص",s:"رابط",go:()=>open(SITE.office,"_blank"),k:"office مكتب ملفات"},
+  {t:"عن عثمان",s:"صفحة",go:()=>location.hash="#/about",k:"about خبرات"},
+  {t:"الأثر بالأرقام",s:"صفحة",go:()=>location.hash="#/impact",k:"impact"},
+  {t:"ماذا أعمل الآن",s:"صفحة",go:()=>location.hash="#/now",k:"now الآن"},
+  {t:"وضع موسّع",s:"عرض",go:()=>{localStorage.setItem("mode","deep");route();},k:"deep"},
+  {t:"وضع مختصر",s:"عرض",go:()=>{localStorage.setItem("mode","brief");route();},k:"brief"},
+  ...PROJECTS.flatMap(p=>p.links.filter(l=>l.access==="public"&&l.href).map(l=>({t:`${l.label||LT[l.t]} · ${p.name}`,s:"رابط عام",go:()=>open(l.href,"_blank"),k:`${p.name} ${l.label}`}))),
+];
+let modal=null; const closeModal=()=>{modal?.remove();modal=null;};
+function openK(){
+  closeModal(); modal=el(`<div class="modal"><div class="box"><input id="kq" placeholder="اكتب: افتح مِراس، اعرض أعمال النقل، اذهب إلى GitHub…" autocomplete="off"><ul id="kl"></ul><div class="hint">↑↓ للتنقل · Enter للتنفيذ · Esc للإغلاق</div></div></div>`);
+  document.body.append(modal); const q=modal.querySelector("#kq"), ul=modal.querySelector("#kl"); let sel=0, cur=[];
+  const norm=s=>s.toLowerCase().replace(/[ً-ْ]/g,"").replace(/[أإآ]/g,"ا").replace(/ة/g,"ه").replace(/ى/g,"ي");
+  const render=()=>{ const v=norm(q.value.trim()); cur=cmds.filter(c=>!v||norm(c.t+" "+c.k).includes(v)).slice(0,10); sel=Math.min(sel,Math.max(0,cur.length-1)); ul.innerHTML=cur.map((c,i)=>`<li class="${i===sel?"sel":""}">${esc(c.t)}<small>${esc(c.s)}</small></li>`).join("")||`<li><small>لا نتائج</small></li>`; ul.querySelectorAll("li").forEach((li,i)=>li.onclick=()=>{cur[i]&&(closeModal(),cur[i].go());}); };
+  q.oninput=()=>{sel=0;render();}; q.onkeydown=e=>{ if(e.key==="ArrowDown"){sel=Math.min(sel+1,cur.length-1);render();} else if(e.key==="ArrowUp"){sel=Math.max(sel-1,0);render();} else if(e.key==="Enter"&&cur[sel]){closeModal();cur[sel].go();} };
+  modal.onclick=e=>{if(e.target===modal)closeModal();}; render(); q.focus();
+}
+document.getElementById("kOpen").onclick=openK;
+addEventListener("keydown",e=>{ if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){e.preventDefault();openK();} if(e.key==="Escape")closeModal(); });
+
+/* ----- اسأل (يجيب من محتوى الصفحة فقط) ----- */
+function answer(qs){
+  const norm=s=>s.toLowerCase().replace(/[ً-ْ]/g,"").replace(/[أإآ]/g,"ا").replace(/ة/g,"ه").replace(/ى/g,"ي");
+  const q=norm(qs);
+  const has=(...ws)=>ws.some(w=>q.includes(norm(w)));
+  if(has("تواصل","تعاون","اتصال","بريد","ايميل","كيف اتواصل")) return {t:"للتعاون أو الاستفسار:", ps:[], links:SITE.contact};
+  if(has("خبره","خبرات","من هو","من عثمان","مجالات","ادوار","دور")) return {t:`يعمل عثمان في ${Object.keys(SECTORS).length} مجالات: ${Object.values(SECTORS).map(s=>s.name).join("، ")}. أدواره: ${SITE.roles.map(r=>r.t).join("، ")}.`, ps:[]};
+  if(has("شريك","شركاء","جهات","عمل مع")) return {t:`الجهات التي عمل معها بحسب المنتجات: ${SITE.partners.join("، ")}.`, ps:[]};
+  if(has("الان","حاليا","هذه الايام","تعمل على")) return {t:SITE.now.map(n=>`${n.k}: ${n.v}`).join(" "), ps:[]};
+  const secHits=Object.entries(SECTORS).filter(([k,v])=>has(v.name, ...v.name.split(" ").filter(w=>w.length>3)));
+  const extra={gov:["حكومي","وزاره","نقل"],npo:["جمعيه","مؤسسه","غير ربحي","الربحي"],youth:["شباب","انديه","نادي"],digital:["تطبيق","رقمي","منتجات"],social:["اسره","عائله","مجتمع","اثر"],mgmt:["قياده","اداره","مهام","مؤشرات"],know:["تدريب","عرض","دليل","معرفي"]};
+  Object.entries(extra).forEach(([k,ws])=>{ if(has(...ws)&&!secHits.some(([kk])=>kk===k)) secHits.push([k,SECTORS[k]]); });
+  const pHits=PROJECTS.filter(p=>has(p.name,p.en,p.slug));
+  if(pHits.length) return {t:pHits.map(p=>`${p.name}: ${p.summary} التحدي: ${p.story.challenge} النتيجة: ${p.story.impact}`).join("\n"), ps:pHits};
+  if(secHits.length){ const ps=PROJECTS.filter(p=>p.sectors.some(s=>secHits.some(([k])=>k===s))); return {t:`المنتجات المرتبطة بـ${secHits.map(([,v])=>v.name).join(" و")} (${ps.length}):`, ps}; }
+  if(has("ابرز","اهم","افضل","منشور","مكتمل")) return {t:"المنتجات المنشورة والمكتملة:", ps:PROJECTS.filter(p=>p.status==="live")};
+  return {t:"لا أجد إجابة عن هذا في المحتوى المعتمد في الصفحة. جرّب: «ما خبرة عثمان في القطاع غير الربحي؟» أو «اعرض المنتجات المرتبطة بالنقل» أو «كيف أتعاون معه؟»", ps:[]};
+}
+function openAsk(){
+  closeModal(); modal=el(`<div class="modal"><div class="box"><input id="aq" placeholder="اسأل عن الخبرات أو المنتجات أو التعاون…" autocomplete="off"><div class="ans" id="aa">أجيب من محتوى هذه الصفحة فقط. أمثلة: ما خبرة عثمان في القطاع غير الربحي؟ · اعرض المنتجات المرتبطة بالنقل · ما أبرز المنتجات الرقمية؟ · كيف يمكن التعاون معه؟</div></div></div>`);
+  document.body.append(modal); const q=modal.querySelector("#aq"), out=modal.querySelector("#aa");
+  q.onkeydown=e=>{ if(e.key!=="Enter"||!q.value.trim()) return; const a=answer(q.value); out.innerHTML=`<div>${esc(a.t).replace(/\n/g,"<br>")}</div>${a.ps?.length?`<div class="chips">${a.ps.map(chip).join("")}</div>`:""}${a.links?`<div class="chips">${a.links.map(c=>`<a class="chip" href="${esc(c.href)}">${esc(c.label)}</a>`).join("")}</div>`:""}`; out.querySelectorAll("a").forEach(x=>x.addEventListener("click",closeModal)); };
+  modal.onclick=e=>{if(e.target===modal)closeModal();}; q.focus();
+}
+document.getElementById("askOpen").onclick=openAsk;
+
+document.getElementById("officeLink").href=SITE.office;
+document.getElementById("yr").textContent=new Date().getFullYear();
+route();
 </script>
