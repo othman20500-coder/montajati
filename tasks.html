@@ -56,7 +56,7 @@
   .top .search kbd{margin-inline-start:auto}
   .top .right{display:flex;align-items:center;gap:6px}
   kbd{font:500 11px/1 var(--body);border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:3px 6px;background:var(--card);color:var(--muted);direction:ltr;display:inline-block}
-  .btn{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:8px;border:1px solid var(--line);background:var(--card);font-weight:500;font-size:14px;transition:background var(--t-fast),border-color var(--t-fast),transform var(--t-fast)}
+  .btn{display:inline-flex;align-items:center;gap:6px;height:34px;white-space:nowrap;padding:0 12px;border-radius:8px;border:1px solid var(--line);background:var(--card);font-weight:500;font-size:14px;transition:background var(--t-fast),border-color var(--t-fast),transform var(--t-fast)}
   .btn:hover{border-color:var(--brand);background:var(--card-2)}
   .btn:active{transform:scale(.98)}
   .btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}
@@ -112,6 +112,26 @@
   .cap.over .bar i{background:var(--danger);animation:blink .6s 1}
   @keyframes blink{50%{opacity:.4}}
   .cap .meta{display:flex;gap:14px;font-size:12px;color:var(--muted);margin-top:6px}
+
+  /* ===== الطقس والمواعيد ===== */
+  .ritual{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);border-radius:var(--radius);padding:10px 14px;margin-bottom:14px;font-size:14px;animation:pop var(--t-slow) var(--ease)}
+  .ritual .btns{display:flex;gap:6px}
+  .events{display:flex;flex-direction:column;gap:4px;margin-bottom:14px}
+  .events .ev{display:flex;gap:10px;align-items:center;font-size:13.5px;padding:6px 12px;border-radius:8px;background:repeating-linear-gradient(135deg,var(--card-2) 0 6px,var(--card) 6px 12px);border-inline-start:3px solid var(--muted)}
+  .events .ev .tm{color:var(--muted);font-size:12.5px;white-space:nowrap}
+  .review{display:flex;flex-direction:column;gap:6px;max-height:min(50vh,420px);overflow:auto;margin:4px 0 12px}
+  .review .r{display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-size:14px;background:var(--bg)}
+  .review .r .t{flex:1;min-width:0}
+  .review .r .t small{display:block;color:var(--muted);font-size:12px}
+  .review .r .btn{height:28px;padding:0 9px;font-size:12.5px}
+  .review .r.gone{animation:leave 300ms var(--ease) forwards}
+  .summary{font-size:15px;line-height:1.8}
+  .summary b{color:var(--brand)}
+  .task{touch-action:pan-y}
+  .task.swiping{transition:none}
+  .task .swipe-hint{position:absolute;inset-block:0;display:flex;align-items:center;padding:0 14px;font-size:13px;font-weight:600;border-radius:8px;opacity:0;pointer-events:none}
+  .task .swipe-hint.done{inset-inline-end:0;color:var(--ok)}
+  .task .swipe-hint.later{inset-inline-start:0;color:var(--muted)}
 
   /* ===== أهم 3 ===== */
   .top3{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:10px 14px;margin-bottom:14px}
@@ -189,7 +209,8 @@
   .blk:hover{box-shadow:var(--shadow-1)}
   .blk.moving{box-shadow:var(--shadow-2);opacity:.9;z-index:5}
   .blk.done{opacity:.55;text-decoration:line-through}
-  .blk.event{background:repeating-linear-gradient(135deg,var(--card-2) 0 6px,var(--card) 6px 12px);border-inline-start-color:var(--muted)}
+  .blk.event{background:repeating-linear-gradient(135deg,var(--card-2) 0 6px,var(--card) 6px 12px);border-inline-start-color:var(--muted);cursor:default;pointer-events:none;text-align:end}
+  .blk.conflict{inset-inline-end:42%}
   .blk .tm{font-size:11px;color:var(--muted)}
   .blk .rs{position:absolute;bottom:0;inset-inline:0;height:8px;cursor:ns-resize}
   .blk.conflict{outline:2px solid var(--warn)}
@@ -355,6 +376,8 @@
     .top .search kbd{display:none}
     .top .right .lbl{display:none}
     .tiles{grid-template-columns:1fr 1fr}
+    .vhead{flex-direction:column;align-items:stretch;gap:10px}
+    .vhead .actions{flex-wrap:wrap}
     .cap-more{grid-template-columns:1fr 1fr}
     .keys{grid-template-columns:1fr}
     .task .acts{opacity:1}
@@ -437,7 +460,7 @@ const PCOLORS=['var(--p1)','var(--p2)','var(--p3)','var(--p4)','var(--p5)','var(
 /* ---------- المخزن ---------- */
 const KEY='mahami.v1';
 let storageOK=true;
-const blank=()=>({v:1,tasks:[],ideas:[],projects:[],sessions:[],outcomes:{},settings:{hours:6,theme:'auto',pomo:false},meta:{lastArchive:today(),seeded:false}});
+const blank=()=>({v:1,tasks:[],ideas:[],projects:[],sessions:[],events:[],outcomes:{},settings:{hours:6,theme:'auto',pomo:false,ritual:true},meta:{lastArchive:today(),seeded:false,ritualDone:null,shutdownDone:null,icsName:null}});
 let S=blank();
 function load(){
   try{const raw=localStorage.getItem(KEY);if(raw){const d=JSON.parse(raw);S={...blank(),...d,settings:{...blank().settings,...(d.settings||{})},meta:{...blank().meta,...(d.meta||{})}};}}
@@ -468,6 +491,33 @@ const openTasks=()=>S.tasks.filter(t=>t.status==='open'&&!t.archived);
 const dayTasks=d=>S.tasks.filter(t=>!t.archived&&t.work_date===d&&(t.status==='open'||(t.done_at&&t.done_at.slice(0,10)===d)));
 const estOf=t=>t.estimate_min||t.duration_min||20;
 const nextOrder=d=>Math.max(0,...S.tasks.filter(t=>t.work_date===d).map(t=>t.order||0))+1;
+const dayEvents=d=>(S.events||[]).filter(e=>e.date===d).sort((a,b)=>(a.start??-1)-(b.start??-1));
+const eventsMin=d=>dayEvents(d).filter(e=>!e.allDay).reduce((s,e)=>s+Math.max(0,e.end-e.start),0);
+
+/* ---------- تقويم ICS (قراءة فقط) ---------- */
+function parseICS(text){
+  const lines=text.replace(/\r\n?/g,'\n').split('\n');const un=[];
+  for(const l of lines){if(/^[ \t]/.test(l)&&un.length)un[un.length-1]+=l.slice(1);else un.push(l);}
+  const out=[];let cur=null,skipped=0;
+  const toLocal=(v,params)=>{
+    const m=v.match(/^(\d{4})(\d{2})(\d{2})(?:T(\d{2})(\d{2})(\d{2})?(Z)?)?$/);if(!m)return null;
+    if(!m[4])return {date:`${m[1]}-${m[2]}-${m[3]}`,min:null};
+    let d;if(m[7])d=new Date(Date.UTC(+m[1],+m[2]-1,+m[3],+m[4],+m[5],+(m[6]||0)));else d=new Date(+m[1],+m[2]-1,+m[3],+m[4],+m[5],+(m[6]||0));
+    return {date:iso(d),min:d.getHours()*60+d.getMinutes()};
+  };
+  for(const l of un){
+    if(l==='BEGIN:VEVENT'){cur={};continue;}
+    if(l==='END:VEVENT'){if(cur){if(cur.rrule)skipped++;else if(cur.s){const allDay=cur.s.min==null;const e={id:uid(),title:cur.title||'موعد',date:cur.s.date,allDay,start:allDay?null:cur.s.min,end:allDay?null:(cur.e&&cur.e.date===cur.s.date?cur.e.min:(cur.s.min+60))};out.push(e);}}cur=null;continue;}
+    if(!cur)continue;
+    const i=l.indexOf(':');if(i<0)continue;const head=l.slice(0,i),val=l.slice(i+1);const name=head.split(';')[0];
+    if(name==='SUMMARY')cur.title=val.replace(/\\,/g,',').replace(/\\n/g,' ').trim();
+    else if(name==='DTSTART')cur.s=toLocal(val,head);
+    else if(name==='DTEND')cur.e=toLocal(val,head);
+    else if(name==='RRULE')cur.rrule=true;
+  }
+  const lo=addDays(today(),-30),hi=addDays(today(),120);
+  return {events:out.filter(e=>e.date>=lo&&e.date<=hi),skipped,total:out.length};
+}
 
 /* ---------- محلل اللغة الطبيعية ---------- */
 const norm=w=>w.replace(/[ً-ْـ]/g,'').replace(/[أإآ]/g,'ا').replace(/ة$/,'ه').replace(/ى$/,'ي').toLowerCase();
@@ -614,7 +664,11 @@ function setProject(id,pid){const t=S.tasks.find(x=>x.id===id);if(!t)return;cons
 function setPriority(id,p){const t=S.tasks.find(x=>x.id===id);if(!t)return;t.priority=p;save();}
 function deleteTask(id){const i=S.tasks.findIndex(x=>x.id===id);if(i<0)return;const t=S.tasks[i];S.tasks.splice(i,1);pushUndo('حذف',()=>S.tasks.push(t));save();if(U.detail===id)U.detail=null;render();toast('حُذفت',{undo:true});}
 function unschedule(id){const t=S.tasks.find(x=>x.id===id);if(!t)return;const prev={start_at:t.start_at};t.start_at=null;pushUndo('إلغاء الجدولة',()=>Object.assign(t,prev));save();}
-function conflictsOf(date,start,dur,exclude){return dayTasks(date).filter(t=>t.id!==exclude&&t.start_at!=null&&t.status==='open'&&start<t.start_at+(t.duration_min||30)&&t.start_at<start+dur);}
+function conflictsOf(date,start,dur,exclude){
+  const ts=dayTasks(date).filter(t=>t.id!==exclude&&t.start_at!=null&&t.status==='open'&&start<t.start_at+(t.duration_min||30)&&t.start_at<start+dur);
+  const ev=dayEvents(date).filter(e=>!e.allDay&&start<e.end&&e.start<start+dur);
+  return [...ts,...ev];
+}
 function nextFree(date,from,dur,exclude){let s=Math.ceil(from/15)*15;for(let g=0;g<200;g++){if(!conflictsOf(date,s,dur,exclude).length)return s;s+=15;if(s+dur>24*60)return null;}return null;}
 
 /* ---------- Toast ---------- */
@@ -642,7 +696,7 @@ const FILTERS={
   waiting:{t:'بانتظار رد',fn:t=>t.tags.some(x=>/^(انتظار|waiting|wait)$/.test(norm(x)))}
 };
 function go(h){location.hash=h;}
-function route(){U.route=location.hash||'#/day';U.sel=null;U.selIdx=-1;if(U.route==='#/timeline'&&!U.tlDate)U.tlDate=today();render();}
+function route(){U.route=location.hash||'#/day';U.sel=null;U.selIdx=-1;U.tlScrolled=false;if(U.route==='#/timeline'&&!U.tlDate)U.tlDate=today();render();}
 window.addEventListener('hashchange',route);
 
 /* ---------- الرسم ---------- */
@@ -704,14 +758,19 @@ function viewDay(){
   const t=today();const all=dayTasks(t).sort((a,b)=>(a.order||0)-(b.order||0));
   const open=all.filter(x=>x.status==='open'),done=all.filter(x=>x.status!=='open');
   const planned=open.reduce((s,x)=>s+estOf(x),0)+done.reduce((s,x)=>s+estOf(x),0);
-  const avail=S.settings.hours*60;
+  const evMin=eventsMin(t);const avail=Math.max(60,S.settings.hours*60-evMin);
+  const evs=dayEvents(t);
+  const leftovers=openTasks().filter(x=>x.work_date&&x.work_date<t);
+  const showRitual=S.settings.ritual&&S.meta.ritualDone!==t&&leftovers.length>0;
   const actual=S.sessions.filter(s=>s.started_at.slice(0,10)===t).reduce((s,x)=>s+x.minutes,0);
   const pct=avail?Math.round(planned/avail*100):0;
   const cls=pct>100?'over':pct>=80?'warn':'';
   const oc=S.outcomes[t]||['','',''];
   const first=!S.tasks.length&&!S.ideas.length;
-  return `<div class="vhead"><div><h2>يومي</h2><div class="sub">${fmtDate(t)}</div></div><div class="actions"><button class="btn sm ghost" data-go="#/timeline">الخط الزمني</button><button class="btn sm primary" data-capture>+ مهمة <kbd style="background:transparent;color:#fff;border-color:rgba(255,255,255,.4)">Q</kbd></button></div></div>
-  <div class="cap ${cls}"><div class="row"><span>السعة</span><span><b>${fmtDur(planned)||'0د'}</b> من ${fmtDur(avail)} · فعلي <b>${fmtDur(actual)||'0د'}</b> · <b>${done.filter(x=>x.status==='done').length}/${all.length}</b></span></div><div class="bar"><i style="width:${clamp(pct,0,100)}%"></i></div>${pct>100?`<div class="meta"><span style="color:var(--danger)">زيادة ${fmtDur(planned-avail)} عن المتاح</span></div>`:''}</div>
+  return `<div class="vhead"><div><h2>يومي</h2><div class="sub">${fmtDate(t)}</div></div><div class="actions">${all.length?`<button class="btn sm ghost" id="shutdownBtn">إغلاق اليوم</button>`:''}<button class="btn sm ghost" data-go="#/timeline">الخط الزمني</button><button class="btn sm primary" data-capture>+ مهمة <kbd style="background:transparent;color:#fff;border-color:rgba(255,255,255,.4)">Q</kbd></button></div></div>
+  ${showRitual?`<div class="ritual"><div><b>صباح الخير.</b> بقيت ${leftovers.length} ${leftovers.length===1?'مهمة':leftovers.length<=10?'مهام':'مهمة'} من الأيام الماضية. قرّر مصيرها قبل أن تخطط.</div><div class="btns"><button class="btn sm primary" id="ritualGo">راجعها</button><button class="btn sm ghost" id="ritualSkip">ليس الآن</button></div></div>`:''}
+  <div class="cap ${cls}"><div class="row"><span>السعة</span><span><b>${fmtDur(planned)||'0د'}</b> من ${fmtDur(avail)}${evMin?' بعد المواعيد':''} · فعلي <b>${fmtDur(actual)||'0د'}</b> · <b>${done.filter(x=>x.status==='done').length}/${all.length}</b></span></div><div class="bar"><i style="width:${clamp(pct,0,100)}%"></i></div>${pct>100?`<div class="meta"><span style="color:var(--danger)">زيادة ${fmtDur(planned-avail)} عن المتاح</span></div>`:''}</div>
+  ${evs.length?`<div class="events">${evs.map(e=>`<div class="ev"><span class="tm">${e.allDay?'اليوم كله':fmtTime(e.start)+' – '+fmtTime(e.end)}</span><span class="t">${esc(e.title)}</span></div>`).join('')}</div>`:''}
   <div class="top3"><h4>★ أهم ثلاث نتائج لليوم</h4>${[0,1,2].map(i=>`<div class="line"><span>${oc[i]?'★':'☆'}</span><input data-i="${i}" value="${esc(oc[i])}" placeholder="${['ما الذي يجعل اليوم ناجحًا؟','…','…'][i]}"></div>`).join('')}</div>
   <div class="sec">المهام <button data-panel-toggle>اقتراحات (${suggestions().length}) ⇤</button></div>
   <div class="list" id="dayList" data-drop-day="${t}">${open.length?listHTML(open,{showDate:false,ctx:'day'}):(first?emptyState('مرحبًا. ما أول شيء تريد إنجازه؟',`<button class="btn primary" data-capture>أضف مهمة</button><button class="btn" id="seedBtn">جرّب ببيانات تجريبية</button>`):emptyState('يومك فارغ. اسحب من الاقتراحات، أو اضغط <kbd>Q</kbd> لإضافة مهمة.',suggestions().length?`<button class="btn" id="sugg3">اقترح 3 مهام</button>`:''))}</div>
@@ -798,10 +857,13 @@ function viewTimeline(){
   const blocks=dayTasks(d).filter(x=>x.start_at!=null);
   const hours=[...Array(TL_END-TL_START)].map((_,i)=>`<div>${pad(TL_START+i)}:00</div>`).join('');
   const bl=blocks.map(x=>{const top=(x.start_at-TL_START*60)/60*64,h=Math.max(22,(x.duration_min||30)/60*64);const conf=conflictsOf(d,x.start_at,x.duration_min||30,x.id).length>0;return `<div class="blk ${x.status!=='open'?'done':''} ${conf?'conflict':''}" data-id="${x.id}" style="top:${top}px;height:${h}px;--pc:${pcolor(x)}"><div>${esc(x.title)}</div><div class="tm">${fmtTime(x.start_at)} – ${fmtTime(x.start_at+(x.duration_min||30))}</div><span class="rs"></span></div>`;}).join('');
-  const nowl=d===t&&nowMin()>=TL_START*60?`<div class="nowline" style="top:${(nowMin()-TL_START*60)/60*64}px"></div>`:'';
+  const evb=dayEvents(d).filter(e=>!e.allDay).map(e=>{const top=(e.start-TL_START*60)/60*64,h=Math.max(22,(e.end-e.start)/60*64);return `<div class="blk event" style="top:${top}px;height:${h}px" title="${esc(e.title)}"><div>${esc(e.title)}</div><div class="tm">${fmtTime(e.start)} – ${fmtTime(e.end)}</div></div>`;}).join('');
+  const allDay=dayEvents(d).filter(e=>e.allDay);
+  const nowl=d===t&&nowMin()>=TL_START*60?`<div class="nowline" id="nowline" style="top:${(nowMin()-TL_START*60)/60*64}px"></div>`:'';
   return `<div class="vhead"><div><h2>الخط الزمني</h2><div class="sub">${fmtDate(d)}${d===t?' · اليوم':''}</div></div><div class="actions"><button class="btn sm ghost" id="tlPrev">→</button><button class="btn sm ghost" id="tlToday">اليوم</button><button class="btn sm ghost" id="tlNext">←</button><button class="btn sm" data-panel-toggle>غير مجدول ⇤</button></div></div>
   <div class="week">${week.map(w=>`<button data-tl="${w}" class="${w===d?'sel':''} ${w===t?'today':''}"><span>${DAYS_SHORT[fromISO(w).getDay()]}</span><b>${fromISO(w).getDate()}</b>${dayTasks(w).some(x=>x.start_at!=null)?'<span class="d"></span>':''}</button>`).join('')}</div>
-  <div class="tl-wrap"><div class="tl-hours">${hours}</div><div class="tl-col" id="tlCol" style="height:${(TL_END-TL_START)*64}px" data-date="${d}">${bl}${nowl}</div></div>
+  ${allDay.length?`<div class="events">${allDay.map(e=>`<div class="ev"><span class="tm">اليوم كله</span><span class="t">${esc(e.title)}</span></div>`).join('')}</div>`:''}
+  <div class="tl-wrap"><div class="tl-hours">${hours}</div><div class="tl-col" id="tlCol" style="height:${(TL_END-TL_START)*64}px" data-date="${d}">${evb}${bl}${nowl}</div></div>
   <p class="muted" style="font-size:12.5px;margin-top:10px">اسحب مهمة من لوحة «غير مجدول» إلى ساعة. اسحب الكتلة لتغيير البداية، وحافتها السفلى لتغيير المدة. <kbd>←</kbd><kbd>→</kbd> للتنقل، <kbd>T</kbd> لليوم.</p>`;
 }
 function afterTimeline(){
@@ -823,6 +885,7 @@ function afterTimeline(){
     if(conf.length){const nf=nextFree(date,s,dur,id);toast(`يتعارض مع «${conf[0].title}»`,{kind:'warn',action:nf!=null?{label:`ضعها ${fmtTime(nf)}`,fn:()=>{moveToDay(id,date,{start:nf});render();}}:null});}
     else toast(`جُدولت ${fmtTime(s)}`,{undo:true});});
   // تحريك وتغيير حجم الكتل
+  if(!U.tlScrolled){U.tlScrolled=true;const nl=$('#nowline');if(nl)setTimeout(()=>nl.scrollIntoView({block:'center',behavior:'instant'}),0);}
   $$('.blk',col).forEach(b=>{
     const id=b.dataset.id;const t=S.tasks.find(x=>x.id===id);if(!t)return;
     b.addEventListener('pointerdown',e=>{
@@ -856,8 +919,9 @@ function renderPanel(){
   }else if(U.route==='#/timeline'){
     const d=U.tlDate;
     const un=[...dayTasks(d).filter(x=>x.start_at==null&&x.status==='open'),...openTasks().filter(x=>!x.work_date&&x.bucket==='now')];
-    p.innerHTML=`<h3>غير مجدول <span class="n">${un.length}</span></h3>${un.length?`<div class="sugg unsched">${un.map(x=>`<div class="s" draggable="true" data-id="${x.id}" style="--pc:${pcolor(x)}"><span class="t">${esc(x.title)}</span><span class="why">${x.work_date===d?'☀ اليوم':'▣ الوارد'} · ~${fmtDur(x.estimate_min||x.duration_min||30)}</span></div>`).join('')}</div><div class="hint">اسحب إلى ساعة في العمود</div>`:`<p class="muted" style="font-size:13.5px">كل مهام اليوم مجدولة.</p>`}`;
+    p.innerHTML=`<h3>غير مجدول <span class="n">${un.length}</span></h3>${un.length?`<div class="sugg unsched">${un.map(x=>`<div class="s" draggable="true" data-id="${x.id}" style="--pc:${pcolor(x)}"><span class="t">${esc(x.title)}</span><span class="why">${x.work_date===d?'☀ اليوم':'▣ الوارد'} · ~${fmtDur(x.estimate_min||x.duration_min||30)}</span><button data-sched="${x.id}" class="tip" data-tip="اختر وقتًا">⏱</button></div>`).join('')}</div><div class="hint">اسحب إلى ساعة في العمود، أو اضغط ⏱ لاختيار وقت</div>`:`<p class="muted" style="font-size:13.5px">كل مهام اليوم مجدولة.</p>`}`;
     app.classList.remove('panel-collapsed');
+    $$('[data-sched]',p).forEach(b=>b.onclick=()=>timeModal(b.dataset.sched,d));
   }else{p.innerHTML='';app.classList.add('panel-collapsed');}
   $$('.s[draggable]',p).forEach(el=>{el.addEventListener('dragstart',e=>{U.dragId=el.dataset.id;e.dataTransfer.setData('text/plain',el.dataset.id);e.dataTransfer.effectAllowed='move';});el.addEventListener('dragend',()=>{U.dragId=null;});});
 }
@@ -917,6 +981,9 @@ function bindList(){
   $$('[data-panel-toggle]',m).forEach(b=>b.onclick=()=>{U.panelOpen=!U.panelOpen;$('#app').classList.toggle('panel-collapsed');renderPanel();});
   $$('[data-toggle-done]',m).forEach(b=>b.onclick=()=>{U.showDone=!U.showDone;renderMain();});
   const seed=$('#seedBtn');if(seed)seed.onclick=seedDemo;
+  const rg=$('#ritualGo');if(rg)rg.onclick=morningReview;
+  const rs=$('#ritualSkip');if(rs)rs.onclick=()=>{S.meta.ritualDone=today();save();renderMain();};
+  const sd=$('#shutdownBtn');if(sd)sd.onclick=shutdownDay;
   const s3=$('#sugg3');if(s3)s3.onclick=()=>{suggestions().slice(0,3).forEach(s=>moveToDay(s.t.id,today()));render();toast('أُضيفت 3 مهام',{undo:true});};
   const ap=$('#addProj');if(ap)ap.onclick=()=>projectModal();
   const ep=$('#editProj');if(ep)ep.onclick=()=>projectModal(U.route.slice(11));
@@ -929,6 +996,18 @@ function bindList(){
       const act=a.dataset.act;if(act==='toggle'){const t=S.tasks.find(x=>x.id===id);t.status==='open'?completeTask(id):reopen(id);}
       else if(act==='open')openDetail(id);else if(act==='focus')startFocus(id);else if(act==='wont')wontDo(id);else if(act==='reopen')reopen(id);else if(act==='today'){moveToDay(id,today());render();toast('أُضيفت إلى اليوم',{undo:true});}});
     row.addEventListener('dblclick',e=>{if(!e.target.closest('[data-act]')||e.target.closest('.title'))inlineEdit(row);});
+    // إيماءات اللمس: يسار = تمّت، يمين = لاحقًا
+    if(matchMedia('(pointer:coarse)').matches){
+      let sx=0,sy=0,dx=0,active=false;
+      row.addEventListener('touchstart',e=>{if(e.target.closest('[data-act]'))return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;dx=0;active=true;},{passive:true});
+      row.addEventListener('touchmove',e=>{if(!active)return;const x=e.touches[0].clientX-sx,y=e.touches[0].clientY-sy;if(Math.abs(y)>Math.abs(x)&&Math.abs(x)<10){active=false;return;}dx=x;row.classList.add('swiping');row.style.transform=`translateX(${clamp(dx,-120,120)}px)`;
+        let h=$('.swipe-hint',row);if(!h){row.insertAdjacentHTML('beforeend','<span class="swipe-hint done">✓ تمّت</span><span class="swipe-hint later">لاحقًا ◷</span>');}
+        $('.swipe-hint.done',row).style.opacity=dx<-40?1:0;$('.swipe-hint.later',row).style.opacity=dx>40?1:0;},{passive:true});
+      row.addEventListener('touchend',()=>{if(!active)return;active=false;row.classList.remove('swiping');row.style.transform='';
+        if(dx<-80){const t=S.tasks.find(x=>x.id===id);if(t&&t.status==='open')completeTask(id);}
+        else if(dx>80){const t=S.tasks.find(x=>x.id===id);if(t&&t.status==='open'){setBucket(id,'later');render();toast('نُقلت إلى لاحقًا',{undo:true});}}
+        else $$('.swipe-hint',row).forEach(h=>h.style.opacity=0);});
+    }
     row.addEventListener('dragstart',e=>{U.dragId=id;e.dataTransfer.setData('text/plain',id);e.dataTransfer.effectAllowed='move';setTimeout(()=>row.classList.add('dragging'),0);});
     row.addEventListener('dragend',()=>{U.dragId=null;row.classList.remove('dragging');$$('.drop-before,.drop-after').forEach(x=>x.classList.remove('drop-before','drop-after'));});
     row.addEventListener('dragover',e=>{if(!U.dragId||U.dragId===id)return;const list=row.parentElement;if(!list.dataset.dropDay&&!list.dataset.dropBucket&&!list.dataset.dropProject)return;e.preventDefault();const r=row.getBoundingClientRect();const before=e.clientY<r.top+r.height/2;row.classList.toggle('drop-before',before);row.classList.toggle('drop-after',!before);});
@@ -1043,7 +1122,7 @@ function openCmd(){
     {t:'انتقل إلى يومي',k:'G D',ic:'☀',fn:()=>go('#/day')},{t:'انتقل إلى الخط الزمني',k:'G T',ic:'▤',fn:()=>go('#/timeline')},{t:'انتقل إلى الأفكار',k:'G I',ic:'✦',fn:()=>go('#/ideas')},{t:'انتقل إلى التقدم',k:'G P',ic:'◔',fn:()=>go('#/progress')},
     {t:'الوارد',k:'',ic:'▣',fn:()=>go('#/inbox')},{t:'القادم',k:'',ic:'⇥',fn:()=>go('#/upcoming')},{t:'لاحقًا',k:'',ic:'◷',fn:()=>go('#/later')},{t:'يومًا ما',k:'',ic:'☁',fn:()=>go('#/someday')},
     {t:'ابدأ التركيز على المهمة المحددة',k:'F',ic:'▶',fn:()=>startFocus(U.sel)},{t:'التقاط سريع',k:'Q',ic:'+',fn:()=>openCapture()},{t:'التقاط فكرة',k:'',ic:'✦',fn:()=>openCapture({mode:'idea'})},
-    {t:'مشروع جديد',k:'',ic:'●',fn:()=>projectModal()},{t:'الإعدادات',k:'',ic:'⚙',fn:()=>settingsModal()},{t:'الاختصارات',k:'?',ic:'?',fn:()=>helpModal()},{t:'تصدير JSON',k:'',ic:'⇩',fn:exportJSON},
+    {t:'مشروع جديد',k:'',ic:'●',fn:()=>projectModal()},{t:'إغلاق اليوم',k:'',ic:'☾',fn:shutdownDay},{t:'مراجعة ما بقي من أمس',k:'',ic:'↩',fn:morningReview},{t:'الإعدادات',k:'',ic:'⚙',fn:()=>settingsModal()},{t:'الاختصارات',k:'?',ic:'?',fn:()=>helpModal()},{t:'تصدير JSON',k:'',ic:'⇩',fn:exportJSON},
     {t:'تبديل الوضع الداكن',k:'',ic:'◐',fn:()=>{S.settings.theme=document.documentElement.dataset.theme==='dark'||(S.settings.theme==='auto'&&matchMedia('(prefers-color-scheme:dark)').matches)?'light':'dark';save();applyTheme();}},
     ...Object.entries(FILTERS).map(([k,f])=>({t:'فلتر: '+f.t,k:'',ic:'▫',fn:()=>go('#/filter/'+k)})),
     ...S.projects.filter(p=>!p.archived).map(p=>({t:'مشروع: '+p.name,k:'',ic:'●',fn:()=>go('#/project/'+p.id)}))
@@ -1070,6 +1149,52 @@ function openCmd(){
   build();
 }
 function closeLayers(){$('#layers').innerHTML='';}
+
+/* ---------- المراجعة: الصباح والإغلاق ---------- */
+function reviewModal({title,sub,tasks,actions,onDone}){
+  closeLayers();
+  const row=t=>`<div class="r" data-id="${t.id}"><span class="t">${esc(t.title)}<small>${[t.work_date?relDate(t.work_date):'',t.project_id&&proj(t.project_id)?'#'+proj(t.project_id).name:'',t.estimate_min?'~'+fmtDur(t.estimate_min):''].filter(Boolean).join(' · ')}</small></span>${actions.map((a,i)=>`<button class="btn ${i===0?'primary':''}" data-a="${i}">${a.l}</button>`).join('')}</div>`;
+  $('#layers').innerHTML=`<div class="layer" id="rv"><div class="box modal"><h3>${esc(title)}</h3><p class="muted" style="margin:-6px 0 10px;font-size:13px">${sub}</p><div class="review">${tasks.map(row).join('')}</div><div class="btns"><button class="btn ghost" id="rvClose">إغلاق</button></div></div></div>`;
+  let left=tasks.length;
+  const finish=()=>{closeLayers();onDone&&onDone();};
+  $$('.review .r').forEach(r=>{$$('[data-a]',r).forEach(b=>b.onclick=()=>{actions[+b.dataset.a].fn(r.dataset.id);r.classList.add('gone');setTimeout(()=>{r.remove();if(--left<=0)finish();},280);});});
+  $('#rvClose').onclick=finish;
+  $('.review .btn')?.focus();
+}
+function morningReview(){
+  const t=today();const leftovers=openTasks().filter(x=>x.work_date&&x.work_date<t).sort((a,b)=>a.work_date.localeCompare(b.work_date));
+  reviewModal({title:'ما بقي من الأيام الماضية',sub:'قرار واحد لكل مهمة. لا شيء يُرحَّل بصمت.',tasks:leftovers,
+    actions:[{l:'اليوم',fn:id=>moveToDay(id,t)},{l:'لاحقًا',fn:id=>setBucket(id,'later')},{l:'لن أفعل',fn:id=>setStatus(id,'wont_do')}],
+    onDone:()=>{S.meta.ritualDone=t;save();render();toast('الآن اختر ما يستحق يومك من الاقتراحات');}});
+}
+function shutdownDay(){
+  const t=today();const all=dayTasks(t);const open=all.filter(x=>x.status==='open');
+  const summary=()=>{
+    const done=all.filter(x=>x.status==='done').length;
+    const planned=all.reduce((s,x)=>s+estOf(x),0);const actual=S.sessions.filter(s=>s.started_at.slice(0,10)===t).reduce((s,x)=>s+x.minutes,0);
+    const est=all.filter(x=>x.status==='done'&&x.estimate_min&&x.actual_min);const acc=est.length?Math.round(est.reduce((s,x)=>s+x.actual_min,0)/est.reduce((s,x)=>s+x.estimate_min,0)*100):null;
+    const oc=(S.outcomes[t]||[]).filter(Boolean);
+    closeLayers();
+    $('#layers').innerHTML=`<div class="layer" id="sd"><div class="box modal"><h3>إغلاق اليوم</h3><div class="summary">أنجزت <b>${done}</b> من <b>${all.length}</b>.<br>الفعلي <b>${fmtDur(actual)||'0د'}</b> مقابل مخطط <b>${fmtDur(planned)||'0د'}</b>${acc!=null?`، وتقديرك كان <b>${acc}%</b> من الواقع${acc>115?' (متفائل)':acc<85?' (متحفظ)':' (دقيق)'}`:''}.${oc.length?`<br>أهم نتائجك: ${oc.map(esc).join('، ')}.`:''}<br><span class="muted" style="font-size:13px">يومك الجديد يبدأ فارغًا. نم جيدًا.</span></div><div class="btns"><button class="btn primary" id="sdClose">تم</button></div></div></div>`;
+    S.meta.shutdownDone=t;save();$('#sdClose').onclick=()=>{closeLayers();render();};
+  };
+  if(!open.length){summary();return;}
+  reviewModal({title:'المتبقي من اليوم',sub:'ما لم يُنجز لا يبقى في «يومي». قرّر أين يذهب.',tasks:open,
+    actions:[{l:'غدًا',fn:id=>moveToDay(id,addDays(t,1))},{l:'لاحقًا',fn:id=>setBucket(id,'later')},{l:'لن أفعل',fn:id=>setStatus(id,'wont_do')}],onDone:summary});
+}
+function timeModal(id,date){
+  const t=S.tasks.find(x=>x.id===id);if(!t)return;closeLayers();
+  const s=t.start_at??Math.max(TL_START*60,Math.ceil(nowMin()/15)*15);
+  $('#layers').innerHTML=`<div class="layer" id="tm"><div class="box modal"><h3>جدولة «${esc(t.title)}»</h3><p class="muted" style="margin:-6px 0 10px;font-size:13px">${fmtDate(date)}</p>
+    <div class="f"><span>يبدأ</span><input type="time" id="tmStart" value="${pad(Math.floor(s/60))}:${pad(s%60)}" style="height:34px;border:1px solid var(--line);border-radius:6px;background:var(--bg);padding:0 8px"></div>
+    <div class="f"><span>المدة (دقائق)</span><input type="number" id="tmDur" min="5" step="5" value="${t.duration_min||t.estimate_min||30}"></div>
+    <div class="btns"><button class="btn primary" id="tmOk">جدولة</button><button class="btn ghost" id="tmCancel">إلغاء</button></div></div></div>`;
+  $('#tmStart').focus();
+  $('#tmCancel').onclick=closeLayers;
+  $('#tmOk').onclick=()=>{const [h,m]=$('#tmStart').value.split(':').map(Number);if(isNaN(h))return;const st=h*60+m,dur=clamp(+$('#tmDur').value||30,5,720);closeLayers();moveToDay(id,date,{start:st,dur});const conf=conflictsOf(date,st,dur,id);render();
+    if(conf.length){const nf=nextFree(date,st,dur,id);toast(`يتعارض مع «${conf[0].title}»`,{kind:'warn',action:nf!=null?{label:`ضعها ${fmtTime(nf)}`,fn:()=>{moveToDay(id,date,{start:nf});render();}}:null});}else toast(`جُدولت ${fmtTime(st)}`,{undo:true});};
+  $('#tm').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();$('#tmOk').click();}});
+}
 
 /* ---------- الطبقات: نوافذ صغيرة ---------- */
 function miniModal(title,opts,cb,withDate=false){
@@ -1099,12 +1224,18 @@ function settingsModal(){
     <div class="f"><span>ساعات اليوم المتاحة<small>يُبنى عليها شريط السعة</small></span><input type="number" id="sHours" min="1" max="16" value="${s.hours}"></div>
     <div class="f"><span>المظهر</span><select id="sTheme"><option value="auto" ${s.theme==='auto'?'selected':''}>تلقائي</option><option value="light" ${s.theme==='light'?'selected':''}>فاتح</option><option value="dark" ${s.theme==='dark'?'selected':''}>داكن</option></select></div>
     <div class="f"><span>وضع 25/5 في التركيز<small>بدل المؤقت الحر</small></span><input type="checkbox" id="sPomo" ${s.pomo?'checked':''}></div>
+    <div class="f"><span>مراجعة الصباح<small>شريط يظهر أول فتح في اليوم إن بقيت مهام من أمس</small></span><input type="checkbox" id="sRitual" ${s.ritual?'checked':''}></div>
+    <div class="f"><span>التقويم (قراءة فقط)<small>${S.meta.icsName?`${esc(S.meta.icsName)} · ${(S.events||[]).length} موعدًا`:'استورد ملف .ics من Google أو Outlook أو Apple لتظهر مواعيدك في الخط الزمني وتُخصم من السعة'}</small></span><span style="display:flex;gap:6px"><button class="btn sm" id="sIcs">استيراد .ics</button>${S.meta.icsName?`<button class="btn sm ghost" id="sIcsClear">إزالة</button>`:''}</span><input type="file" id="sIcsFile" accept=".ics,text/calendar" hidden></div>
     <div class="f"><span>البيانات<small>${S.tasks.length} مهمة · ${S.ideas.length} فكرة · ${S.projects.length} مشروع · محفوظة في هذا المتصفح فقط</small></span></div>
     <div class="btns"><button class="btn" id="sExport">تصدير JSON</button><button class="btn" id="sImport">استيراد JSON</button><input type="file" id="sFile" accept="application/json" hidden><button class="btn ghost" id="sSeed">بيانات تجريبية</button><button class="btn ghost" id="sWipe" style="color:var(--danger);margin-inline-start:auto">مسح الكل</button></div>
     <div class="btns"><button class="btn primary" id="sClose">تم</button></div></div></div>`;
   $('#sHours').onchange=e=>{s.hours=clamp(+e.target.value||6,1,16);save();};
   $('#sTheme').onchange=e=>{s.theme=e.target.value;save();applyTheme();};
   $('#sPomo').onchange=e=>{s.pomo=e.target.checked;save();};
+  $('#sRitual').onchange=e=>{s.ritual=e.target.checked;save();};
+  $('#sIcs').onclick=()=>$('#sIcsFile').click();
+  $('#sIcsFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const res=parseICS(r.result);S.events=res.events;S.meta.icsName=f.name;save();closeLayers();render();toast(`استُورد ${res.events.length} موعدًا${res.skipped?` · تُجوهل ${res.skipped} متكررًا`:''}`);}catch{toast('تعذّر قراءة الملف',{kind:'warn'});}};r.readAsText(f);};
+  const ic=$('#sIcsClear');if(ic)ic.onclick=()=>{S.events=[];S.meta.icsName=null;save();closeLayers();render();};
   $('#sExport').onclick=exportJSON;
   $('#sImport').onclick=()=>$('#sFile').click();
   $('#sFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!d.tasks)throw 0;S={...blank(),...d};save();closeLayers();render();toast('تم الاستيراد');}catch{toast('ملف غير صالح',{kind:'warn'});}};r.readAsText(f);};
@@ -1218,6 +1349,7 @@ function seedDemo(){
   add({title:'تعلّم تصميم الحركة',bucket:'someday'});
   add({title:'حجز موعد الصيانة',estimate_min:10});
   add({title:'اجتماع الفريق الأسبوعي',work_date:addDays(t,2),start_at:11*60,duration_min:60,repeat:{rule:'weekly',from:'due'}});
+  S.events=[{id:uid(),title:'اجتماع مجلس الجمعية',date:t,allDay:false,start:13*60,end:14*60},{id:uid(),title:'مراجعة الطبيب',date:addDays(t,1),allDay:false,start:9*60+30,end:10*60+30},{id:uid(),title:'إجازة',date:addDays(t,4),allDay:true,start:null,end:null}];S.meta.icsName='demo.ics';
   const d=add({title:'ترتيب ملفات المشروع',project_id:p2.id,work_date:t,estimate_min:15,status:'done',done_at:new Date().toISOString(),actual_min:12});
   S.sessions.push({id:uid(),task_id:d.id,started_at:new Date(Date.now()-3600000).toISOString(),minutes:12,kind:'focus'});
   ['تجربة إعلان قصير لمنتج X','سلسلة منشورات عن رحلة المنتج','هل نحتاج نشرة بريدية؟'].forEach((x,i)=>S.ideas.push({id:uid(),text:x,created_at:new Date(Date.now()-i*7200000).toISOString(),archived:false,snooze:null}));
