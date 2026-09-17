@@ -356,7 +356,16 @@
   .keys{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px;font-size:13.5px}
   .keys div{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--line-2)}
   .keys kbd+kbd{margin-inline-start:3px}
-  .banner{background:var(--accent-soft);color:#7A4E0A;font-size:13px;padding:6px 16px;text-align:center}
+  .banner{background:var(--accent-soft);color:#7A4E0A;font-size:13px;padding:6px 16px;text-align:center;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap}
+  .banner .btn{height:26px;padding:0 10px;font-size:12.5px}
+  .rules{display:flex;flex-direction:column;gap:8px;margin:8px 0 12px}
+  .rule{display:grid;grid-template-columns:1fr 1fr auto;gap:6px;align-items:center}
+  .rule select,.rule input{height:32px;min-width:0;width:100%;border:1px solid var(--line);border-radius:6px;background:var(--bg);padding:0 8px;font-size:13px}
+  .rule button{color:var(--muted);width:28px;height:28px;border-radius:6px}
+  .rule button:hover{background:var(--card-2);color:var(--danger)}
+  .fm-name{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+  .fm-name input{flex:1;height:34px;border:1px solid var(--line);border-radius:6px;background:var(--bg);padding:0 8px}
+  .fm-name select{height:34px;border:1px solid var(--line);border-radius:6px;background:var(--bg);padding:0 8px}
 
   /* ===== الجوال ===== */
   .tabbar,.fab{display:none}
@@ -402,6 +411,7 @@
 </head>
 <body>
 <div id="banner" class="banner" hidden>التخزين المحلي غير متاح في هذا المتصفح، التغييرات لن تُحفظ.</div>
+<div id="syncBanner" class="banner" hidden></div>
 <header class="top">
   <a class="brand" href="#/day"><i></i><span>مهامي</span></a>
   <button class="search" id="openCmd" aria-label="ابحث أو أضف"><span>⌕</span><span>ابحث أو أضف…</span><kbd>⌘K</kbd></button>
@@ -460,7 +470,7 @@ const PCOLORS=['var(--p1)','var(--p2)','var(--p3)','var(--p4)','var(--p5)','var(
 /* ---------- المخزن ---------- */
 const KEY='mahami.v1';
 let storageOK=true;
-const blank=()=>({v:1,tasks:[],ideas:[],projects:[],sessions:[],events:[],outcomes:{},settings:{hours:6,theme:'auto',pomo:false,ritual:true},meta:{lastArchive:today(),seeded:false,ritualDone:null,shutdownDone:null,icsName:null}});
+const blank=()=>({v:1,tasks:[],ideas:[],projects:[],sessions:[],events:[],filters:[],outcomes:{},settings:{hours:6,theme:'auto',pomo:false,ritual:true},meta:{lastArchive:today(),seeded:false,ritualDone:null,shutdownDone:null,icsName:null,updated_at:0}});
 let S=blank();
 function load(){
   try{const raw=localStorage.getItem(KEY);if(raw){const d=JSON.parse(raw);S={...blank(),...d,settings:{...blank().settings,...(d.settings||{})},meta:{...blank().meta,...(d.meta||{})}};}}
@@ -472,7 +482,81 @@ let saveT=null;
 function save(){
   if(!storageOK)return;
   clearTimeout(saveT);
-  saveT=setTimeout(()=>{try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){toast('لم يُحفظ · المساحة ممتلئة أو التخزين معطّل',{kind:'warn'});}},80);
+  saveT=setTimeout(()=>{S.meta.updated_at=Date.now();try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){toast('لم يُحفظ · المساحة ممتلئة أو التخزين معطّل',{kind:'warn'});}syncWrite();},80);
+}
+
+/* ---------- مزامنة عبر ملف (File System Access) ---------- */
+const SYNC={handle:null,writing:false,lastWrite:0,timer:null,state:'off'}; // off | linked | needs-permission | error
+const idb={
+  open:()=>new Promise((res,rej)=>{const r=indexedDB.open('mahami-sync',1);r.onupgradeneeded=()=>r.result.createObjectStore('kv');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error);}),
+  get:async k=>{try{const db=await idb.open();return await new Promise((res,rej)=>{const t=db.transaction('kv').objectStore('kv').get(k);t.onsuccess=()=>res(t.result);t.onerror=()=>rej(t.error);});}catch{return null;}},
+  set:async(k,v)=>{try{const db=await idb.open();await new Promise((res,rej)=>{const t=db.transaction('kv','readwrite').objectStore('kv').put(v,k);t.onsuccess=res;t.onerror=()=>rej(t.error);});}catch{}}
+};
+async function syncLink(){
+  if(!('showSaveFilePicker' in window)){toast('المتصفح لا يدعم ربط الملفات. استخدم Chrome أو Edge على سطح المكتب.',{kind:'warn'});return;}
+  try{
+    const h=await window.showSaveFilePicker({suggestedName:'mahami-sync.json',types:[{description:'JSON',accept:{'application/json':['.json']}}]});
+    SYNC.handle=h;await idb.set('handle',h);SYNC.state='linked';
+    const f=await h.getFile();const txt=await f.text();
+    if(txt.trim()){await syncMerge(txt);}else{await syncWriteNow();}
+    render();toast('رُبط ملف المزامنة · سيُحدَّث تلقائيًا');
+  }catch(e){if(e&&e.name!=='AbortError'){SYNC.state='error';toast('تعذّر ربط الملف',{kind:'warn'});}}
+}
+async function syncUnlink(){SYNC.handle=null;SYNC.state='off';await idb.set('handle',null);render();}
+async function syncInit(){
+  const h=await idb.get('handle');if(!h)return;SYNC.handle=h;
+  try{const p=await h.queryPermission({mode:'readwrite'});SYNC.state=p==='granted'?'linked':'needs-permission';}catch{SYNC.state='needs-permission';}
+  if(SYNC.state==='linked')await syncRead();
+  renderSyncBanner();
+}
+async function syncReconnect(){
+  if(!SYNC.handle)return;
+  try{const p=await SYNC.handle.requestPermission({mode:'readwrite'});if(p==='granted'){SYNC.state='linked';await syncRead();render();toast('اتصل ملف المزامنة');}else toast('لم يُمنح الإذن',{kind:'warn'});}catch{SYNC.state='error';}
+  renderSyncBanner();
+}
+async function syncMerge(txt){
+  let d;try{d=JSON.parse(txt);}catch{toast('ملف المزامنة تالف · أُبقيت النسخة المحلية',{kind:'warn'});return;}
+  if(!d||!d.tasks)return;
+  const remote=d.meta?.updated_at||0,local=S.meta.updated_at||0;
+  if(remote>local){S={...blank(),...d,settings:{...blank().settings,...(d.settings||{})},meta:{...blank().meta,...(d.meta||{})}};try{localStorage.setItem(KEY,JSON.stringify(S));}catch{}render();toast('حُمّلت نسخة أحدث من ملف المزامنة');}
+  else if(local>remote)await syncWriteNow();
+}
+async function syncRead(){
+  if(!SYNC.handle||SYNC.state!=='linked')return;
+  try{const f=await SYNC.handle.getFile();if(f.lastModified<=SYNC.lastWrite)return;await syncMerge(await f.text());}
+  catch(e){SYNC.state='error';renderSyncBanner();}
+}
+function syncWrite(){if(!SYNC.handle||SYNC.state!=='linked')return;clearTimeout(SYNC.timer);SYNC.timer=setTimeout(syncWriteNow,1000);}
+async function syncWriteNow(){
+  if(!SYNC.handle||SYNC.state!=='linked'||SYNC.writing)return;SYNC.writing=true;
+  try{const w=await SYNC.handle.createWritable();await w.write(JSON.stringify(S));await w.close();SYNC.lastWrite=Date.now()+50;}
+  catch(e){SYNC.state='error';renderSyncBanner();toast('فشلت الكتابة إلى ملف المزامنة · التغييرات محفوظة محليًا',{kind:'warn'});}
+  finally{SYNC.writing=false;}
+}
+function renderSyncBanner(){
+  const b=$('#syncBanner');if(!b)return;
+  if(SYNC.state==='needs-permission'){b.hidden=false;b.innerHTML='ملف المزامنة يحتاج إذنًا بعد إعادة فتح الصفحة. <button class="btn sm" id="syncReconnect">أعد الاتصال</button>';$('#syncReconnect').onclick=syncReconnect;}
+  else if(SYNC.state==='error'){b.hidden=false;b.innerHTML='تعذّر الوصول إلى ملف المزامنة. التغييرات محفوظة محليًا فقط. <button class="btn sm" id="syncReconnect">حاول مجددًا</button>';$('#syncReconnect').onclick=syncReconnect;}
+  else b.hidden=true;
+}
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')syncRead();});
+window.addEventListener('focus',()=>syncRead());
+
+/* ---------- تصدير إلى التقويم ---------- */
+function buildICS(){
+  const t=today(),hi=addDays(t,7);
+  const ts=S.tasks.filter(x=>!x.archived&&x.status==='open'&&x.start_at!=null&&x.work_date&&x.work_date>=t&&x.work_date<=hi);
+  if(!ts.length)return null;
+  const dt=(d,m)=>d.replace(/-/g,'')+'T'+pad(Math.floor(m/60))+pad(m%60)+'00';
+  const escI=s=>String(s).replace(/\\/g,'\\\\').replace(/\n/g,'\\n').replace(/[,;]/g,m=>'\\'+m);
+  const stamp=new Date().toISOString().replace(/[-:]/g,'').slice(0,15)+'Z';
+  const body=ts.map(x=>`BEGIN:VEVENT\r\nUID:${x.id}@mahami\r\nDTSTAMP:${stamp}\r\nDTSTART:${dt(x.work_date,x.start_at)}\r\nDTEND:${dt(x.work_date,x.start_at+(x.duration_min||30))}\r\nSUMMARY:${escI(x.title)}${x.project_id&&proj(x.project_id)?`\r\nCATEGORIES:${escI(proj(x.project_id).name)}`:''}${x.notes?`\r\nDESCRIPTION:${escI(x.notes)}`:''}\r\nEND:VEVENT`).join('\r\n');
+  return {ics:`BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//mahami//tasks//AR\r\nCALSCALE:GREGORIAN\r\n${body}\r\nEND:VCALENDAR\r\n`,n:ts.length};
+}
+function exportICS(){
+  const r=buildICS();if(!r){toast('لا كتل مجدولة في الأيام السبعة القادمة');return;}
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([r.ics],{type:'text/calendar'}));a.download=`mahami-${today()}.ics`;a.click();
+  toast(`صُدّرت ${r.n} كتلة إلى ملف .ics · استورده في تقويمك`);
 }
 function nightlyArchive(){
   const t=today();
@@ -695,6 +779,48 @@ const FILTERS={
   quick:{t:'≤ 15 دقيقة',fn:t=>(t.estimate_min||t.duration_min)&&(t.estimate_min||t.duration_min)<=15},
   waiting:{t:'بانتظار رد',fn:t=>t.tags.some(x=>/^(انتظار|waiting|wait)$/.test(norm(x)))}
 };
+/* ---------- الفلاتر المخصصة (أي/كل) ---------- */
+const RULE_TYPES={
+  project:{l:'المشروع',vals:()=>S.projects.filter(p=>!p.archived).map(p=>[p.id,p.name]),test:(t,v)=>t.project_id===v},
+  tag:{l:'الوسم يحوي',input:'text',test:(t,v)=>t.tags.some(x=>norm(x).includes(norm(v||'')))},
+  priority:{l:'الأولوية',vals:()=>[[1,'!1 عاجل'],[2,'!2 مهم'],[3,'!3 عادي'],[0,'بلا']],test:(t,v)=>t.priority===+v},
+  date:{l:'تاريخ العمل',vals:()=>[['today','اليوم'],['week','خلال 7 أيام'],['late','متأخر'],['none','بلا تاريخ'],['any','له تاريخ']],test:(t,v)=>{const d=today();if(v==='today')return t.work_date===d;if(v==='week')return t.work_date&&t.work_date>=d&&t.work_date<=addDays(d,7);if(v==='late')return t.work_date&&t.work_date<d;if(v==='none')return !t.work_date;return !!t.work_date;}},
+  deadline:{l:'التسليم',vals:()=>[['today','اليوم'],['soon','خلال 3 أيام'],['late','متأخر'],['none','بلا'],['any','له موعد']],test:(t,v)=>{const d=today();if(v==='today')return t.deadline===d;if(v==='soon')return t.deadline&&t.deadline>=d&&t.deadline<=addDays(d,3);if(v==='late')return t.deadline&&t.deadline<d;if(v==='none')return !t.deadline;return !!t.deadline;}},
+  estimate:{l:'التقدير ≤ دقائق',input:'number',test:(t,v)=>{const e=t.estimate_min||t.duration_min;return !!e&&e<=(+v||0);}},
+  bucket:{l:'المجموعة',vals:()=>[['now','الآن'],['later','لاحقًا'],['someday','يومًا ما']],test:(t,v)=>t.bucket===v},
+  scheduled:{l:'الجدولة',vals:()=>[['yes','مجدولة بوقت'],['no','بلا وقت']],test:(t,v)=>(t.start_at!=null)===(v==='yes')},
+  title:{l:'العنوان يحوي',input:'text',test:(t,v)=>norm(t.title).includes(norm(v||''))}
+};
+function matchFilter(f,t){const rs=(f.rules||[]).filter(r=>RULE_TYPES[r.f]);if(!rs.length)return true;const res=rs.map(r=>!!RULE_TYPES[r.f].test(t,r.v));return f.match==='any'?res.some(Boolean):res.every(Boolean);}
+function filterModal(id=null){
+  closeLayers();
+  const f=id?S.filters.find(x=>x.id===id):null;
+  const draft={name:f?.name||'',match:f?.match||'all',rules:f?JSON.parse(JSON.stringify(f.rules)):[{f:'date',v:'today'}]};
+  $('#layers').innerHTML=`<div class="layer" id="fm"><div class="box modal"><h3>${f?'تحرير الفلتر':'فلتر جديد'}</h3>
+    <div class="fm-name"><input id="fmName" placeholder="اسم الفلتر" value="${esc(draft.name)}"><select id="fmMatch"><option value="all" ${draft.match==='all'?'selected':''}>كل الشروط</option><option value="any" ${draft.match==='any'?'selected':''}>أي شرط</option></select></div>
+    <div class="rules" id="fmRules"></div>
+    <div class="btns"><button class="btn sm ghost" id="fmAdd">+ شرط</button><span style="flex:1"></span><span class="muted" id="fmCount" style="font-size:12.5px"></span></div>
+    <div class="btns"><button class="btn primary" id="fmSave">حفظ</button><button class="btn ghost" id="fmCancel">إلغاء</button>${f?`<button class="btn ghost" id="fmDel" style="margin-inline-start:auto;color:var(--danger)">حذف الفلتر</button>`:''}</div></div></div>`;
+  const drawRules=()=>{
+    $('#fmRules').innerHTML=draft.rules.map((r,i)=>{const T=RULE_TYPES[r.f];const ctl=T.input?`<input type="${T.input}" data-v="${i}" value="${esc(r.v??'')}" placeholder="${T.input==='number'?'15':'…'}">`:`<select data-v="${i}">${T.vals().map(([v,l])=>`<option value="${esc(v)}" ${String(r.v)===String(v)?'selected':''}>${esc(l)}</option>`).join('')}</select>`;
+      return `<div class="rule"><select data-f="${i}">${Object.entries(RULE_TYPES).map(([k,x])=>`<option value="${k}" ${k===r.f?'selected':''}>${x.l}</option>`).join('')}</select>${ctl}<button data-x="${i}" title="حذف الشرط">×</button></div>`;}).join('')||'<p class="muted" style="font-size:13px;margin:0">بلا شروط: يعرض كل المهام المفتوحة.</p>';
+    $$('#fmRules [data-f]').forEach(s=>s.onchange=()=>{const i=+s.dataset.f;const T=RULE_TYPES[s.value];draft.rules[i]={f:s.value,v:T.input?'':(T.vals()[0]?.[0]??'')};drawRules();});
+    $$('#fmRules [data-v]').forEach(s=>{const h=()=>{draft.rules[+s.dataset.v].v=s.value;count();};s.onchange=h;s.oninput=h;});
+    $$('#fmRules [data-x]').forEach(b=>b.onclick=()=>{draft.rules.splice(+b.dataset.x,1);drawRules();});
+    count();
+  };
+  const count=()=>{draft.match=$('#fmMatch').value;const n=openTasks().filter(t=>matchFilter(draft,t)).length;$('#fmCount').textContent=`${n} مهمة مطابقة الآن`;};
+  drawRules();
+  $('#fmMatch').onchange=count;
+  $('#fmAdd').onclick=()=>{draft.rules.push({f:'tag',v:''});drawRules();};
+  $('#fmCancel').onclick=closeLayers;
+  $('#fmSave').onclick=()=>{const name=$('#fmName').value.trim();if(!name){$('#fmName').focus();return;}draft.match=$('#fmMatch').value;
+    if(f){Object.assign(f,{name,match:draft.match,rules:draft.rules});}else{const nf={id:uid(),name,match:draft.match,rules:draft.rules};S.filters.push(nf);id=nf.id;}
+    save();closeLayers();go('#/filter/'+id);render();};
+  const del=$('#fmDel');if(del)del.onclick=()=>{if(confirm('حذف الفلتر؟'))
+    {S.filters=S.filters.filter(x=>x.id!==id);save();closeLayers();go('#/day');}};
+  $('#fmName').focus();
+}
 function go(h){location.hash=h;}
 function route(){U.route=location.hash||'#/day';U.sel=null;U.selIdx=-1;U.tlScrolled=false;if(U.route==='#/timeline'&&!U.tlDate)U.tlDate=today();render();}
 window.addEventListener('hashchange',route);
@@ -708,7 +834,9 @@ function renderSide(){
   let html='<div class="grp">'+['#/day','#/timeline','#/ideas','#/progress'].map(h=>item(h,VIEWS[h].t,VIEWS[h].ic,cnt[h])).join('')+'</div>';
   html+='<div class="grp"><h4>القوائم</h4>'+['#/inbox','#/upcoming','#/later','#/someday'].map(h=>item(h,VIEWS[h].t,VIEWS[h].ic,cnt[h],'data-drop="'+h+'"')).join('')+'</div>';
   html+='<div class="grp"><h4>المشاريع</h4>'+S.projects.filter(p=>!p.archived).sort((a,b)=>a.order-b.order).map(p=>{const n=openTasks().filter(t=>t.project_id===p.id).length;return `<button class="nav-item ${U.route==='#/project/'+p.id?'active':''}" data-go="#/project/${p.id}" data-drop="project:${p.id}"><span class="dot" style="background:${p.color}"></span><span>${esc(p.name)}</span>${n?`<span class="n">${n}</span>`:''}</button>`;}).join('')+`<button class="nav-item" id="addProj"><span class="ic">+</span><span>مشروع</span></button></div>`;
-  html+='<div class="grp"><h4>الفلاتر</h4>'+Object.entries(FILTERS).map(([k,f])=>{const n=openTasks().filter(f.fn).length;return `<button class="nav-item ${U.route==='#/filter/'+k?'active':''}" data-go="#/filter/${k}"><span class="ic">▫</span><span>${f.t}</span>${n?`<span class="n">${n}</span>`:''}</button>`;}).join('')+'</div>';
+  html+='<div class="grp"><h4>الفلاتر</h4>'+Object.entries(FILTERS).map(([k,f])=>{const n=openTasks().filter(f.fn).length;return `<button class="nav-item ${U.route==='#/filter/'+k?'active':''}" data-go="#/filter/${k}"><span class="ic">▫</span><span>${f.t}</span>${n?`<span class="n">${n}</span>`:''}</button>`;}).join('')
+    +(S.filters||[]).map(f=>{const n=openTasks().filter(t=>matchFilter(f,t)).length;return `<button class="nav-item ${U.route==='#/filter/'+f.id?'active':''}" data-go="#/filter/${f.id}"><span class="ic">◈</span><span>${esc(f.name)}</span>${n?`<span class="n">${n}</span>`:''}</button>`;}).join('')
+    +`<button class="nav-item" id="addFilter"><span class="ic">+</span><span>فلتر</span></button></div>`;
   $('#side').innerHTML=html;
   $$('#tabbar [data-go]').forEach(b=>b.classList.toggle('active',b.dataset.go===U.route));
 }
@@ -747,8 +875,8 @@ function renderMain(){
   else if(r==='#/timeline')m.innerHTML=viewTimeline();
   else if(r==='#/ideas')m.innerHTML=viewIdeas();
   else if(r==='#/progress')m.innerHTML=viewProgress();
-  else if(r.startsWith('#/project/'))m.innerHTML=viewProject(r.slice(11));
-  else if(r.startsWith('#/filter/'))m.innerHTML=viewFilter(r.slice(10));
+  else if(r.startsWith('#/project/'))m.innerHTML=viewProject(r.slice(10));
+  else if(r.startsWith('#/filter/'))m.innerHTML=viewFilter(r.slice(9));
   else m.innerHTML=viewList(r);
   if(r==='#/timeline')afterTimeline();
   if(r==='#/day'){$$('.top3 input').forEach(inp=>inp.onchange=()=>{const arr=S.outcomes[today()]||['','',''];arr[+inp.dataset.i]=inp.value;S.outcomes[today()]=arr;save();});}
@@ -802,9 +930,12 @@ function viewList(r){
   return `<div class="vhead"><div><h2>${esc(title)}</h2><div class="sub">${sub}</div></div><div class="actions"><button class="btn sm primary" data-capture>+ مهمة</button></div></div><div class="list" data-drop-bucket="${r.slice(2)}">${tasks.length?listHTML(tasks,{ctx:'list'}):emptyState(empty)}</div>`;
 }
 function viewFilter(k){
-  const f=FILTERS[k];if(!f)return '';
-  const tasks=openTasks().filter(f.fn).sort((a,b)=>(a.work_date||'9').localeCompare(b.work_date||'9')||b.priority-a.priority);
-  return `<div class="vhead"><div><h2>${f.t}</h2><div class="sub">فلتر · ${tasks.length}</div></div></div><div class="list">${tasks.length?listHTML(tasks,{ctx:'filter'}):emptyState('لا نتائج لهذا الفلتر.')}</div>`;
+  const b=FILTERS[k];const c=(S.filters||[]).find(x=>x.id===k);
+  if(!b&&!c)return emptyState('الفلتر غير موجود.');
+  const fn=b?b.fn:t=>matchFilter(c,t);
+  const tasks=openTasks().filter(fn).sort((a,b2)=>(a.work_date||'9').localeCompare(b2.work_date||'9')||b2.priority-a.priority);
+  const desc=c?`${c.match==='any'?'أي شرط':'كل الشروط'}: ${c.rules.map(r=>RULE_TYPES[r.f]?.l+' '+(RULE_TYPES[r.f]?.vals?(RULE_TYPES[r.f].vals().find(([v])=>String(v)===String(r.v))?.[1]||''):r.v)).join(' · ')}`:'فلتر افتراضي';
+  return `<div class="vhead"><div><h2>${esc(b?b.t:c.name)}</h2><div class="sub">${esc(desc)} · ${tasks.length}</div></div><div class="actions">${c?`<button class="btn sm ghost" id="editFilter">تحرير</button>`:''}<button class="btn sm primary" data-capture>+ مهمة</button></div></div><div class="list">${tasks.length?listHTML(tasks,{ctx:'filter'}):emptyState('لا نتائج لهذا الفلتر.',c?'<button class="btn" id="editFilter2">عدّل الشروط</button>':'')}</div>`;
 }
 function viewProject(id){
   const p=proj(id);if(!p)return emptyState('المشروع غير موجود.');
@@ -986,7 +1117,9 @@ function bindList(){
   const sd=$('#shutdownBtn');if(sd)sd.onclick=shutdownDay;
   const s3=$('#sugg3');if(s3)s3.onclick=()=>{suggestions().slice(0,3).forEach(s=>moveToDay(s.t.id,today()));render();toast('أُضيفت 3 مهام',{undo:true});};
   const ap=$('#addProj');if(ap)ap.onclick=()=>projectModal();
-  const ep=$('#editProj');if(ep)ep.onclick=()=>projectModal(U.route.slice(11));
+  const af=$('#addFilter');if(af)af.onclick=()=>filterModal();
+  $$('#editFilter,#editFilter2').forEach(b=>b.onclick=()=>filterModal(U.route.slice(9)));
+  const ep=$('#editProj');if(ep)ep.onclick=()=>projectModal(U.route.slice(10));
   const ii=$('#ideaIn');if(ii){const add=()=>{const v=ii.value.trim();if(!v)return;S.ideas.push({id:uid(),text:v,created_at:new Date().toISOString(),archived:false,snooze:null});save();ii.value='';renderMain();renderSide();$('#ideaIn').focus();};ii.onkeydown=e=>{if(e.key==='Enter')add();};$('#ideaAdd').onclick=add;}
   $$('[data-tri]',m).forEach(b=>b.onclick=()=>triage(b.dataset.tri));
   // صفوف المهام
@@ -1122,7 +1255,7 @@ function openCmd(){
     {t:'انتقل إلى يومي',k:'G D',ic:'☀',fn:()=>go('#/day')},{t:'انتقل إلى الخط الزمني',k:'G T',ic:'▤',fn:()=>go('#/timeline')},{t:'انتقل إلى الأفكار',k:'G I',ic:'✦',fn:()=>go('#/ideas')},{t:'انتقل إلى التقدم',k:'G P',ic:'◔',fn:()=>go('#/progress')},
     {t:'الوارد',k:'',ic:'▣',fn:()=>go('#/inbox')},{t:'القادم',k:'',ic:'⇥',fn:()=>go('#/upcoming')},{t:'لاحقًا',k:'',ic:'◷',fn:()=>go('#/later')},{t:'يومًا ما',k:'',ic:'☁',fn:()=>go('#/someday')},
     {t:'ابدأ التركيز على المهمة المحددة',k:'F',ic:'▶',fn:()=>startFocus(U.sel)},{t:'التقاط سريع',k:'Q',ic:'+',fn:()=>openCapture()},{t:'التقاط فكرة',k:'',ic:'✦',fn:()=>openCapture({mode:'idea'})},
-    {t:'مشروع جديد',k:'',ic:'●',fn:()=>projectModal()},{t:'إغلاق اليوم',k:'',ic:'☾',fn:shutdownDay},{t:'مراجعة ما بقي من أمس',k:'',ic:'↩',fn:morningReview},{t:'الإعدادات',k:'',ic:'⚙',fn:()=>settingsModal()},{t:'الاختصارات',k:'?',ic:'?',fn:()=>helpModal()},{t:'تصدير JSON',k:'',ic:'⇩',fn:exportJSON},
+    {t:'مشروع جديد',k:'',ic:'●',fn:()=>projectModal()},{t:'فلتر جديد',k:'',ic:'◈',fn:()=>filterModal()},{t:'إغلاق اليوم',k:'',ic:'☾',fn:shutdownDay},{t:'مراجعة ما بقي من أمس',k:'',ic:'↩',fn:morningReview},{t:'تصدير الأسبوع إلى التقويم (.ics)',k:'',ic:'▤',fn:exportICS},{t:'الإعدادات',k:'',ic:'⚙',fn:()=>settingsModal()},{t:'الاختصارات',k:'?',ic:'?',fn:()=>helpModal()},{t:'تصدير JSON',k:'',ic:'⇩',fn:exportJSON},
     {t:'تبديل الوضع الداكن',k:'',ic:'◐',fn:()=>{S.settings.theme=document.documentElement.dataset.theme==='dark'||(S.settings.theme==='auto'&&matchMedia('(prefers-color-scheme:dark)').matches)?'light':'dark';save();applyTheme();}},
     ...Object.entries(FILTERS).map(([k,f])=>({t:'فلتر: '+f.t,k:'',ic:'▫',fn:()=>go('#/filter/'+k)})),
     ...S.projects.filter(p=>!p.archived).map(p=>({t:'مشروع: '+p.name,k:'',ic:'●',fn:()=>go('#/project/'+p.id)}))
@@ -1227,6 +1360,8 @@ function settingsModal(){
     <div class="f"><span>مراجعة الصباح<small>شريط يظهر أول فتح في اليوم إن بقيت مهام من أمس</small></span><input type="checkbox" id="sRitual" ${s.ritual?'checked':''}></div>
     <div class="f"><span>التقويم (قراءة فقط)<small>${S.meta.icsName?`${esc(S.meta.icsName)} · ${(S.events||[]).length} موعدًا`:'استورد ملف .ics من Google أو Outlook أو Apple لتظهر مواعيدك في الخط الزمني وتُخصم من السعة'}</small></span><span style="display:flex;gap:6px"><button class="btn sm" id="sIcs">استيراد .ics</button>${S.meta.icsName?`<button class="btn sm ghost" id="sIcsClear">إزالة</button>`:''}</span><input type="file" id="sIcsFile" accept=".ics,text/calendar" hidden></div>
     <div class="f"><span>البيانات<small>${S.tasks.length} مهمة · ${S.ideas.length} فكرة · ${S.projects.length} مشروع · محفوظة في هذا المتصفح فقط</small></span></div>
+    <div class="f"><span>المزامنة بين الأجهزة<small>${SYNC.state==='linked'?'مرتبط بملف · يُكتب بعد كل تغيير ويُقرأ عند العودة للصفحة. الأحدث يفوز.':SYNC.state==='needs-permission'?'مرتبط بملف لكنه يحتاج إذنًا':'اربط ملف JSON في مجلد Drive أو iCloud أو OneDrive على هذا الجهاز، وافتح الملف نفسه من الجهاز الآخر. يعمل في Chrome وEdge على سطح المكتب.'}</small></span><span style="display:flex;gap:6px">${SYNC.state==='off'||SYNC.state==='error'&&!SYNC.handle?`<button class="btn sm" id="sSyncLink">ربط ملف</button>`:SYNC.state==='needs-permission'||SYNC.state==='error'?`<button class="btn sm" id="sSyncRe">أعد الاتصال</button><button class="btn sm ghost" id="sSyncOff">فك الربط</button>`:`<button class="btn sm ghost" id="sSyncOff">فك الربط</button>`}</span></div>
+    <div class="f"><span>الكتابة إلى التقويم<small>ملف .ics بكتل الأيام السبعة القادمة، يُستورد في Google أو Apple أو Outlook</small></span><button class="btn sm" id="sIcsOut">تصدير .ics</button></div>
     <div class="btns"><button class="btn" id="sExport">تصدير JSON</button><button class="btn" id="sImport">استيراد JSON</button><input type="file" id="sFile" accept="application/json" hidden><button class="btn ghost" id="sSeed">بيانات تجريبية</button><button class="btn ghost" id="sWipe" style="color:var(--danger);margin-inline-start:auto">مسح الكل</button></div>
     <div class="btns"><button class="btn primary" id="sClose">تم</button></div></div></div>`;
   $('#sHours').onchange=e=>{s.hours=clamp(+e.target.value||6,1,16);save();};
@@ -1236,6 +1371,10 @@ function settingsModal(){
   $('#sIcs').onclick=()=>$('#sIcsFile').click();
   $('#sIcsFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const res=parseICS(r.result);S.events=res.events;S.meta.icsName=f.name;save();closeLayers();render();toast(`استُورد ${res.events.length} موعدًا${res.skipped?` · تُجوهل ${res.skipped} متكررًا`:''}`);}catch{toast('تعذّر قراءة الملف',{kind:'warn'});}};r.readAsText(f);};
   const ic=$('#sIcsClear');if(ic)ic.onclick=()=>{S.events=[];S.meta.icsName=null;save();closeLayers();render();};
+  $('#sIcsOut').onclick=exportICS;
+  const sl=$('#sSyncLink');if(sl)sl.onclick=()=>{closeLayers();syncLink();};
+  const sr=$('#sSyncRe');if(sr)sr.onclick=()=>{closeLayers();syncReconnect();};
+  const so=$('#sSyncOff');if(so)so.onclick=()=>{syncUnlink();closeLayers();toast('فُك ربط ملف المزامنة');};
   $('#sExport').onclick=exportJSON;
   $('#sImport').onclick=()=>$('#sFile').click();
   $('#sFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!d.tasks)throw 0;S={...blank(),...d};save();closeLayers();render();toast('تم الاستيراد');}catch{toast('ملف غير صالح',{kind:'warn'});}};r.readAsText(f);};
@@ -1367,6 +1506,7 @@ document.addEventListener('click',e=>{const g=e.target.closest('[data-go]');if(g
 load();nightlyArchive();
 if(!location.hash)location.hash='#/day';
 route();
+syncInit();
 setInterval(()=>{if(U.route==='#/timeline'&&!U.dragId)renderMain();},60000);
 </script>
 </body>
