@@ -438,7 +438,7 @@
 <button class="fab" id="fab" aria-label="أضف مهمة">+</button>
 
 <div id="layers"></div>
-<div class="toasts" id="toasts"></div>
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
 
 <script>
 /* =========================================================
@@ -461,6 +461,9 @@ const DAYS_AR=['الأحد','الاثنين','الثلاثاء','الأربعا�
 const DAYS_SHORT=['أحد','اثنين','ثلاثاء','أربعاء','خميس','جمعة','سبت'];
 const MONTHS_AR=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
 const fmtDate=(s,{weekday=true,month=true}={})=>{const d=fromISO(s);return `${weekday?DAYS_AR[d.getDay()]+' ':''}${d.getDate()}${month?' '+MONTHS_AR[d.getMonth()]:''}`;};
+let hijriFmt=null;try{hijriFmt=new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura-nu-latn',{day:'numeric',month:'long',year:'numeric'});}catch{}
+const hijri=s=>{if(!hijriFmt||!S.settings.hijri)return '';try{return hijriFmt.format(fromISO(s)).replace(/\s*هـ$/,'');}catch{return '';}};
+const fullDate=s=>{const h=hijri(s);return fmtDate(s)+(h?` · ${h}`:'');};
 const relDate=s=>{const t=today();const n=diffDays(s,t);if(n===0)return 'اليوم';if(n===1)return 'غدًا';if(n===-1)return 'أمس';if(n>1&&n<7)return DAYS_AR[fromISO(s).getDay()];return fmtDate(s,{weekday:false});};
 const fmtTime=m=>{if(m==null)return '';let h=Math.floor(m/60),mi=m%60;const ap=h<12?'ص':'م';h=h%12||12;return `${h}:${pad(mi)} ${ap}`;};
 const fmtDur=m=>{if(!m)return '';if(m<60)return `${m}د`;const h=Math.floor(m/60),r=m%60;return r?`${h}س ${r}د`:`${h}س`;};
@@ -470,19 +473,57 @@ const PCOLORS=['var(--p1)','var(--p2)','var(--p3)','var(--p4)','var(--p5)','var(
 /* ---------- المخزن ---------- */
 const KEY='mahami.v1';
 let storageOK=true;
-const blank=()=>({v:1,tasks:[],ideas:[],projects:[],sessions:[],events:[],filters:[],outcomes:{},settings:{hours:6,theme:'auto',pomo:false,ritual:true},meta:{lastArchive:today(),seeded:false,ritualDone:null,shutdownDone:null,icsName:null,updated_at:0}});
+const blank=()=>({v:2,tasks:[],ideas:[],projects:[],sessions:[],events:[],filters:[],deleted:[],outcomes:{},settings:{hours:6,theme:'auto',pomo:false,ritual:true,hijri:true},meta:{lastArchive:today(),seeded:false,ritualDone:null,shutdownDone:null,icsName:null,updated_at:0}});
+const COLLS=['tasks','ideas','projects','sessions','events','filters'];
 let S=blank();
+const hydrate=d=>({...blank(),...d,settings:{...blank().settings,...(d.settings||{})},meta:{...blank().meta,...(d.meta||{})}});
 function load(){
-  try{const raw=localStorage.getItem(KEY);if(raw){const d=JSON.parse(raw);S={...blank(),...d,settings:{...blank().settings,...(d.settings||{})},meta:{...blank().meta,...(d.meta||{})}};}}
+  try{const raw=localStorage.getItem(KEY);if(raw){S=hydrate(JSON.parse(raw));}}
   catch(e){storageOK=false;}
   try{localStorage.setItem(KEY+'.t','1');localStorage.removeItem(KEY+'.t');}catch(e){storageOK=false;}
   if(!storageOK)$('#banner').hidden=false;
+  snapshot();
+}
+/* لقطة لكل كيان كي تُختم التعديلات بوقتها (u) وتُسجَّل الحذوفات كعلامات، لأجل الدمج بين الأجهزة */
+const SNAP={};
+const sig=it=>{const {u,...rest}=it;return JSON.stringify(rest);};
+function snapshot(){COLLS.forEach(c=>{SNAP[c]={};(S[c]||[]).forEach(it=>{SNAP[c][it.id]=sig(it);});});}
+function stampChanges(){
+  const now=Date.now();
+  COLLS.forEach(c=>{
+    const seen=new Set();
+    (S[c]||[]).forEach(it=>{seen.add(it.id);const j=sig(it);if(SNAP[c][it.id]!==j){it.u=now;SNAP[c][it.id]=j;}});
+    Object.keys(SNAP[c]).forEach(id=>{if(!seen.has(id)){S.deleted.push({id,c,u:now});delete SNAP[c][id];}});
+  });
+  if(S.deleted.length>800)S.deleted=S.deleted.slice(-500);
 }
 let saveT=null;
 function save(){
   if(!storageOK)return;
   clearTimeout(saveT);
-  saveT=setTimeout(()=>{S.meta.updated_at=Date.now();try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){toast('لم يُحفظ · المساحة ممتلئة أو التخزين معطّل',{kind:'warn'});}syncWrite();},80);
+  saveT=setTimeout(()=>{stampChanges();S.meta.updated_at=Date.now();try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){toast('لم يُحفظ · المساحة ممتلئة أو التخزين معطّل',{kind:'warn'});}syncWrite();},80);
+}
+/* دمج نسخة بعيدة: لكل كيان الأحدث يفوز، وعلامة الحذف الأحدث تحذف. يعيد عدد التغييرات المحلية */
+function mergeState(remote){
+  let changes=0;const now=Date.now();
+  const tomb=(list,id)=>list.find(x=>x.id===id);
+  const allDel=[...(S.deleted||[]),...(remote.deleted||[])];
+  COLLS.forEach(c=>{
+    const loc=new Map((S[c]||[]).map(x=>[x.id,x]));
+    (remote[c]||[]).forEach(r=>{
+      const l=loc.get(r.id);const lt=tomb(S.deleted||[],r.id);
+      if(!l){if(!lt||(r.u||0)>lt.u){loc.set(r.id,r);changes++;}}
+      else if((r.u||0)>(l.u||0)){loc.set(r.id,r);changes++;}
+    });
+    (remote.deleted||[]).forEach(d=>{const l=loc.get(d.id);if(l&&d.u>(l.u||0)){loc.delete(d.id);changes++;}});
+    S[c]=[...loc.values()];
+  });
+  const seenT=new Map();allDel.forEach(d=>{const p=seenT.get(d.id);if(!p||d.u>p.u)seenT.set(d.id,d);});S.deleted=[...seenT.values()].slice(-500);
+  const remoteNewer=(remote.meta?.updated_at||0)>(S.meta.updated_at||0);
+  if(remoteNewer){S.outcomes={...S.outcomes,...(remote.outcomes||{})};S.settings={...S.settings,...(remote.settings||{})};S.meta={...S.meta,...(remote.meta||{}),updated_at:Math.max(S.meta.updated_at||0,remote.meta?.updated_at||0)};changes++;}
+  else{S.outcomes={...(remote.outcomes||{}),...S.outcomes};}
+  snapshot();
+  return changes;
 }
 
 /* ---------- مزامنة عبر ملف (File System Access) ---------- */
@@ -517,9 +558,14 @@ async function syncReconnect(){
 async function syncMerge(txt){
   let d;try{d=JSON.parse(txt);}catch{toast('ملف المزامنة تالف · أُبقيت النسخة المحلية',{kind:'warn'});return;}
   if(!d||!d.tasks)return;
-  const remote=d.meta?.updated_at||0,local=S.meta.updated_at||0;
-  if(remote>local){S={...blank(),...d,settings:{...blank().settings,...(d.settings||{})},meta:{...blank().meta,...(d.meta||{})}};try{localStorage.setItem(KEY,JSON.stringify(S));}catch{}render();toast('حُمّلت نسخة أحدث من ملف المزامنة');}
-  else if(local>remote)await syncWriteNow();
+  const remote=hydrate(d);
+  const beforeSig=JSON.stringify([S.tasks,S.ideas,S.projects,S.events,S.filters,S.outcomes]);
+  const changes=mergeState(remote);
+  const localChanged=JSON.stringify([S.tasks,S.ideas,S.projects,S.events,S.filters,S.outcomes])!==beforeSig;
+  if(localChanged){try{localStorage.setItem(KEY,JSON.stringify(S));}catch{}render();toast(`دُمجت ${changes} تغييرًا من ملف المزامنة`);}
+  // اكتب النسخة المدمجة دائمًا كي يتقارب الطرفان
+  const remoteSig=JSON.stringify([remote.tasks,remote.ideas,remote.projects,remote.events,remote.filters]);
+  if(remoteSig!==JSON.stringify([S.tasks,S.ideas,S.projects,S.events,S.filters]))await syncWriteNow();
 }
 async function syncRead(){
   if(!SYNC.handle||SYNC.state!=='linked')return;
@@ -895,7 +941,7 @@ function viewDay(){
   const cls=pct>100?'over':pct>=80?'warn':'';
   const oc=S.outcomes[t]||['','',''];
   const first=!S.tasks.length&&!S.ideas.length;
-  return `<div class="vhead"><div><h2>يومي</h2><div class="sub">${fmtDate(t)}</div></div><div class="actions">${all.length?`<button class="btn sm ghost" id="shutdownBtn">إغلاق اليوم</button>`:''}<button class="btn sm ghost" data-go="#/timeline">الخط الزمني</button><button class="btn sm primary" data-capture>+ مهمة <kbd style="background:transparent;color:#fff;border-color:rgba(255,255,255,.4)">Q</kbd></button></div></div>
+  return `<div class="vhead"><div><h2>يومي</h2><div class="sub">${fullDate(t)}</div></div><div class="actions">${all.length?`<button class="btn sm ghost" id="shutdownBtn">إغلاق اليوم</button>`:''}<button class="btn sm ghost" data-go="#/timeline">الخط الزمني</button><button class="btn sm primary" data-capture>+ مهمة <kbd style="background:transparent;color:#fff;border-color:rgba(255,255,255,.4)">Q</kbd></button></div></div>
   ${showRitual?`<div class="ritual"><div><b>صباح الخير.</b> بقيت ${leftovers.length} ${leftovers.length===1?'مهمة':leftovers.length<=10?'مهام':'مهمة'} من الأيام الماضية. قرّر مصيرها قبل أن تخطط.</div><div class="btns"><button class="btn sm primary" id="ritualGo">راجعها</button><button class="btn sm ghost" id="ritualSkip">ليس الآن</button></div></div>`:''}
   <div class="cap ${cls}"><div class="row"><span>السعة</span><span><b>${fmtDur(planned)||'0د'}</b> من ${fmtDur(avail)}${evMin?' بعد المواعيد':''} · فعلي <b>${fmtDur(actual)||'0د'}</b> · <b>${done.filter(x=>x.status==='done').length}/${all.length}</b></span></div><div class="bar"><i style="width:${clamp(pct,0,100)}%"></i></div>${pct>100?`<div class="meta"><span style="color:var(--danger)">زيادة ${fmtDur(planned-avail)} عن المتاح</span></div>`:''}</div>
   ${evs.length?`<div class="events">${evs.map(e=>`<div class="ev"><span class="tm">${e.allDay?'اليوم كله':fmtTime(e.start)+' – '+fmtTime(e.end)}</span><span class="t">${esc(e.title)}</span></div>`).join('')}</div>`:''}
@@ -991,7 +1037,7 @@ function viewTimeline(){
   const evb=dayEvents(d).filter(e=>!e.allDay).map(e=>{const top=(e.start-TL_START*60)/60*64,h=Math.max(22,(e.end-e.start)/60*64);return `<div class="blk event" style="top:${top}px;height:${h}px" title="${esc(e.title)}"><div>${esc(e.title)}</div><div class="tm">${fmtTime(e.start)} – ${fmtTime(e.end)}</div></div>`;}).join('');
   const allDay=dayEvents(d).filter(e=>e.allDay);
   const nowl=d===t&&nowMin()>=TL_START*60?`<div class="nowline" id="nowline" style="top:${(nowMin()-TL_START*60)/60*64}px"></div>`:'';
-  return `<div class="vhead"><div><h2>الخط الزمني</h2><div class="sub">${fmtDate(d)}${d===t?' · اليوم':''}</div></div><div class="actions"><button class="btn sm ghost" id="tlPrev">→</button><button class="btn sm ghost" id="tlToday">اليوم</button><button class="btn sm ghost" id="tlNext">←</button><button class="btn sm" data-panel-toggle>غير مجدول ⇤</button></div></div>
+  return `<div class="vhead"><div><h2>الخط الزمني</h2><div class="sub">${fullDate(d)}${d===t?' · اليوم':''}</div></div><div class="actions"><button class="btn sm ghost" id="tlPrev">→</button><button class="btn sm ghost" id="tlToday">اليوم</button><button class="btn sm ghost" id="tlNext">←</button><button class="btn sm" data-panel-toggle>غير مجدول ⇤</button></div></div>
   <div class="week">${week.map(w=>`<button data-tl="${w}" class="${w===d?'sel':''} ${w===t?'today':''}"><span>${DAYS_SHORT[fromISO(w).getDay()]}</span><b>${fromISO(w).getDate()}</b>${dayTasks(w).some(x=>x.start_at!=null)?'<span class="d"></span>':''}</button>`).join('')}</div>
   ${allDay.length?`<div class="events">${allDay.map(e=>`<div class="ev"><span class="tm">اليوم كله</span><span class="t">${esc(e.title)}</span></div>`).join('')}</div>`:''}
   <div class="tl-wrap"><div class="tl-hours">${hours}</div><div class="tl-col" id="tlCol" style="height:${(TL_END-TL_START)*64}px" data-date="${d}">${evb}${bl}${nowl}</div></div>
@@ -1357,6 +1403,7 @@ function settingsModal(){
     <div class="f"><span>ساعات اليوم المتاحة<small>يُبنى عليها شريط السعة</small></span><input type="number" id="sHours" min="1" max="16" value="${s.hours}"></div>
     <div class="f"><span>المظهر</span><select id="sTheme"><option value="auto" ${s.theme==='auto'?'selected':''}>تلقائي</option><option value="light" ${s.theme==='light'?'selected':''}>فاتح</option><option value="dark" ${s.theme==='dark'?'selected':''}>داكن</option></select></div>
     <div class="f"><span>وضع 25/5 في التركيز<small>بدل المؤقت الحر</small></span><input type="checkbox" id="sPomo" ${s.pomo?'checked':''}></div>
+    <div class="f"><span>التاريخ الهجري<small>بجانب الميلادي في رأس اليوم</small></span><input type="checkbox" id="sHijri" ${s.hijri?'checked':''}></div>
     <div class="f"><span>مراجعة الصباح<small>شريط يظهر أول فتح في اليوم إن بقيت مهام من أمس</small></span><input type="checkbox" id="sRitual" ${s.ritual?'checked':''}></div>
     <div class="f"><span>التقويم (قراءة فقط)<small>${S.meta.icsName?`${esc(S.meta.icsName)} · ${(S.events||[]).length} موعدًا`:'استورد ملف .ics من Google أو Outlook أو Apple لتظهر مواعيدك في الخط الزمني وتُخصم من السعة'}</small></span><span style="display:flex;gap:6px"><button class="btn sm" id="sIcs">استيراد .ics</button>${S.meta.icsName?`<button class="btn sm ghost" id="sIcsClear">إزالة</button>`:''}</span><input type="file" id="sIcsFile" accept=".ics,text/calendar" hidden></div>
     <div class="f"><span>البيانات<small>${S.tasks.length} مهمة · ${S.ideas.length} فكرة · ${S.projects.length} مشروع · محفوظة في هذا المتصفح فقط</small></span></div>
@@ -1368,6 +1415,7 @@ function settingsModal(){
   $('#sTheme').onchange=e=>{s.theme=e.target.value;save();applyTheme();};
   $('#sPomo').onchange=e=>{s.pomo=e.target.checked;save();};
   $('#sRitual').onchange=e=>{s.ritual=e.target.checked;save();};
+  $('#sHijri').onchange=e=>{s.hijri=e.target.checked;save();};
   $('#sIcs').onclick=()=>$('#sIcsFile').click();
   $('#sIcsFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const res=parseICS(r.result);S.events=res.events;S.meta.icsName=f.name;save();closeLayers();render();toast(`استُورد ${res.events.length} موعدًا${res.skipped?` · تُجوهل ${res.skipped} متكررًا`:''}`);}catch{toast('تعذّر قراءة الملف',{kind:'warn'});}};r.readAsText(f);};
   const ic=$('#sIcsClear');if(ic)ic.onclick=()=>{S.events=[];S.meta.icsName=null;save();closeLayers();render();};
@@ -1377,9 +1425,9 @@ function settingsModal(){
   const so=$('#sSyncOff');if(so)so.onclick=()=>{syncUnlink();closeLayers();toast('فُك ربط ملف المزامنة');};
   $('#sExport').onclick=exportJSON;
   $('#sImport').onclick=()=>$('#sFile').click();
-  $('#sFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!d.tasks)throw 0;S={...blank(),...d};save();closeLayers();render();toast('تم الاستيراد');}catch{toast('ملف غير صالح',{kind:'warn'});}};r.readAsText(f);};
+  $('#sFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!d.tasks)throw 0;const n=mergeState(hydrate(d));save();closeLayers();render();toast(`تم الاستيراد · ${n} تغييرًا`);}catch{toast('ملف غير صالح',{kind:'warn'});}};r.readAsText(f);};
   $('#sSeed').onclick=()=>{seedDemo();closeLayers();};
-  $('#sWipe').onclick=()=>{if(confirm('مسح كل البيانات نهائيًا؟ صدّر نسخة أولًا.')){S=blank();save();closeLayers();render();}};
+  $('#sWipe').onclick=()=>{if(confirm('مسح كل البيانات نهائيًا؟ صدّر نسخة أولًا.')){S=blank();snapshot();save();closeLayers();render();}};
   $('#sClose').onclick=()=>{closeLayers();render();};
 }
 function exportJSON(){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(S,null,1)],{type:'application/json'}));a.download=`mahami-${today()}.json`;a.click();toast('صُدّرت نسخة');}
@@ -1507,7 +1555,11 @@ load();nightlyArchive();
 if(!location.hash)location.hash='#/day';
 route();
 syncInit();
-setInterval(()=>{if(U.route==='#/timeline'&&!U.dragId)renderMain();},60000);
+U.today=today();
+setInterval(()=>{
+  if(today()!==U.today){U.today=today();nightlyArchive();U.tlDate=today();render();toast('يوم جديد. يومك يبدأ فارغًا.');return;}
+  if(U.route==='#/timeline'&&!U.dragId&&!$('#layers').children.length)renderMain();
+},60000);
 </script>
 </body>
 </html>
