@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="الأندلس">
+  <rect width="96" height="96" rx="20" fill="#173F7A"/>
+  <path d="M22 78 V46 A26 26 0 1 1 74 46 V78" fill="none" stroke="#E4B33B" stroke-width="7" stroke-linecap="round"/>
+  <path d="M34 78 V50 A14 14 0 1 1 62 50 V78" fill="#1E9C8B"/>
+  <circle cx="48" cy="24" r="4" fill="#F7F5EF"/>
+</svg>

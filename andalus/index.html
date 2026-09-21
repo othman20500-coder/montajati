@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="zellij" data-audience="general">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>الأندلس: نموذج تصوري</title>
+<meta name="description" content="نموذج تفاعلي لتصور منصة الأندلس الرقمية: خريطة زمنية، خط زمني، صفحات كيانات مترابطة، ثلاثة اتجاهات بصرية، ونظام ادعاء ومصدر.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600&family=Tajawal:wght@300;400;500;700&display=swap">
+<style>
+  /* ===== الرموز الوظيفية الثابتة عبر السمات ===== */
+  :root{
+    --fact:#1F9D6A; --disputed:#D08A1E; --inference:#3F6FB5; --myth:#8A8F98;
+    --era-wulat:#8C6D3F; --era-imara:#2E7D5B; --era-khilafa:#1F5FA8; --era-tawaif:#B2632B;
+    --era-murabit:#5B3F8C; --era-muwahhid:#8C2F39; --era-nasrid:#B8912E; --era-morisco:#5C6B73;
+    --christian:#C9C2B3;
+    --r-s:8px; --r-m:14px; --r-l:24px; --ease:cubic-bezier(.2,.7,.2,1);
+  }
+  /* ===== الاتجاه ب: الزليج (الأساس) ===== */
+  :root, :root[data-theme="zellij"]{
+    --bg:#F7F5EF; --card:#FFFFFF; --ink:#14202E; --muted:#5B6673; --line:#DCD8CC;
+    --brand:#173F7A; --brand-2:#1E9C8B; --accent:#E4B33B; --soft:#E6EEF7;
+    --head:"Reem Kufi","IBM Plex Sans Arabic",sans-serif; --body:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
+    --pattern:radial-gradient(circle at 1px 1px, rgba(23,63,122,.08) 1px, transparent 0); --pattern-size:22px 22px;
+    --hero-bg:linear-gradient(135deg,#173F7A 0%,#1E9C8B 100%); --hero-ink:#fff;
+    --shadow:0 18px 36px -22px rgba(23,63,122,.45); color-scheme:light;
+  }
+  /* ===== الاتجاه أ: المخطوط ===== */
+  :root[data-theme="manuscript"]{
+    --bg:#F4ECDC; --card:#FBF6EA; --ink:#2B1D12; --muted:#6E5A46; --line:#D9CBB2;
+    --brand:#1F4E79; --brand-2:#9B2D20; --accent:#B5893A; --soft:#EFE3CB;
+    --head:"Amiri","Noto Naskh Arabic",serif; --body:"Noto Naskh Arabic","Amiri",serif;
+    --pattern:linear-gradient(transparent 31px, rgba(43,29,18,.06) 32px); --pattern-size:100% 32px;
+    --hero-bg:linear-gradient(135deg,#EADBBE 0%,#F4ECDC 100%); --hero-ink:#2B1D12;
+    --shadow:0 18px 36px -22px rgba(43,29,18,.4); color-scheme:light;
+  }
+  :root[data-theme="manuscript"] body{font-size:17.5px}
+  :root[data-theme="manuscript"] .card,:root[data-theme="manuscript"] .panel{border:1px solid var(--accent);outline:3px double var(--line);outline-offset:-6px}
+  /* ===== الاتجاه ج: الليل الأندلسي ===== */
+  :root[data-theme="night"]{
+    --bg:#0E1420; --card:#151D2B; --ink:#DCE3EA; --muted:#94A0AE; --line:#26303F;
+    --brand:#C77D3A; --brand-2:#4E6B4A; --accent:#E3A65A; --soft:#1B2536;
+    --head:"Tajawal","IBM Plex Sans Arabic",sans-serif; --body:"Tajawal","IBM Plex Sans Arabic",sans-serif;
+    --pattern:radial-gradient(ellipse at 50% 0%, rgba(199,125,58,.14), transparent 60%); --pattern-size:100% 100%;
+    --hero-bg:radial-gradient(ellipse at 30% 20%, #2B2418 0%, #0E1420 60%); --hero-ink:#F1E9DC;
+    --shadow:0 30px 50px -30px rgba(0,0,0,.8); color-scheme:dark;
+  }
+  :root[data-theme="night"] body{font-size:17px}
+  :root[data-theme="night"] h1,:root[data-theme="night"] h2{font-weight:700;letter-spacing:.01em}
+
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg) var(--pattern);background-size:var(--pattern-size);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.85;padding-inline:16px;padding-block:0 64px;transition:background .4s,color .4s}
+  a{color:inherit;text-decoration:none} button{font:inherit;cursor:pointer;color:inherit}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  [hidden]{display:none!important}
+  .wrap{max-width:1140px;margin-inline:auto}
+  h1,h2,h3,h4{font-family:var(--head);font-weight:500;line-height:1.3;margin:0}
+  h2{font-size:26px;color:var(--brand)} h3{font-size:19px}
+  .eyebrow{font-size:12.5px;letter-spacing:.04em;color:var(--brand-2);font-weight:600;margin:0 0 6px}
+  .sub{color:var(--muted);margin:6px 0 20px;max-width:64ch}
+  section{padding-block:40px;border-bottom:1px solid var(--line)} section:last-of-type{border-bottom:0}
+
+  /* ===== الترويسة ===== */
+  .top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-inline:-16px;padding-inline:16px}
+  .top .in{max-width:1140px;margin-inline:auto;display:flex;align-items:center;gap:12px;min-height:58px;flex-wrap:wrap}
+  .brand{font-family:var(--head);font-weight:700;font-size:21px;color:var(--brand);display:inline-flex;align-items:center;gap:8px}
+  .brand i{width:12px;height:12px;background:var(--accent);display:inline-block;transform:rotate(45deg)}
+  .nav{display:flex;gap:2px;flex-wrap:wrap}
+  .nav a{padding:6px 11px;border-radius:var(--r-s);font-size:14px;color:var(--muted)}
+  .nav a.on,.nav a:hover{background:var(--soft);color:var(--brand)}
+  .tools{margin-inline-start:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--r-s);overflow:hidden;background:var(--card)}
+  .seg button{border:0;background:transparent;padding:6px 10px;font-size:12.5px;color:var(--muted)}
+  .seg button[aria-pressed="true"]{background:var(--brand);color:#fff}
+  .kbtn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--card);border-radius:var(--r-s);padding:6px 10px;font-size:13px;color:var(--muted)}
+  .kbtn kbd{font:inherit;font-size:11px;border:1px solid var(--line);border-radius:4px;padding:0 5px}
+
+  /* ===== البطل ===== */
+  .hero{position:relative;overflow:hidden;margin-inline:-16px;padding:56px 16px 40px;background:var(--hero-bg);color:var(--hero-ink);border-radius:0 0 var(--r-l) var(--r-l)}
+  .hero .in{max-width:1140px;margin-inline:auto;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+  @media (max-width:860px){.hero .in{grid-template-columns:1fr}}
+  .hero h1{font-size:clamp(32px,5.5vw,56px);font-weight:700;line-height:1.2}
+  .hero h1 b{color:var(--accent);font-weight:700}
+  .hero p{font-weight:300;font-size:17px;opacity:.85;max-width:56ch;margin:12px 0 0}
+  .hero .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+  .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid transparent;border-radius:999px;padding:10px 20px;font-weight:600;font-size:14.5px;background:var(--accent);color:#14202E}
+  .btn.ghost{background:transparent;color:inherit;border-color:currentColor;opacity:.9}
+  .hero .mapbox{background:rgba(0,0,0,.12);border:1px solid rgba(255,255,255,.18);border-radius:var(--r-m);padding:10px}
+  :root[data-theme="manuscript"] .hero .mapbox{background:rgba(43,29,18,.05);border-color:var(--accent)}
+
+  /* ===== شريط الزمن ===== */
+  .timebar{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;margin-top:12px}
+  .timebar input[type=range]{width:100%;accent-color:var(--accent)}
+  .timebar .year{font-family:var(--head);font-size:22px;min-width:150px;text-align:center}
+  .timebar .year small{display:block;font-family:var(--body);font-size:12px;opacity:.75}
+  .eras{display:flex;height:10px;border-radius:999px;overflow:hidden;margin-top:6px}
+  .eras span{display:block;height:100%}
+  .eralegend{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:8px;font-size:12px;opacity:.9}
+  .eralegend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-inline-end:5px;vertical-align:middle}
+
+  /* ===== الخريطة ===== */
+  .map{width:100%;height:auto;display:block}
+  .map .land{fill:color-mix(in srgb,var(--card) 70%,var(--soft));stroke:var(--line);stroke-width:1.2}
+  :root[data-theme="night"] .map .land{fill:#1B2536;stroke:#34405A}
+  .map .sea{fill:transparent}
+  .map .frontier{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:6 5;opacity:.85}
+  .map .city{cursor:pointer}
+  .map .city circle{stroke:#fff;stroke-width:1.5;transition:r .3s var(--ease),fill .4s}
+  .map .city text{font-family:var(--body);font-size:11px;fill:var(--ink);pointer-events:none;paint-order:stroke;stroke:var(--bg);stroke-width:3px;stroke-linejoin:round}
+  .map .city.dim{opacity:.18}
+  .map .battle{cursor:pointer}
+  .map .battle path{fill:var(--disputed);stroke:#fff;stroke-width:1}
+  .map .note{font-size:10.5px;fill:var(--muted);font-family:var(--body)}
+  .hero .map text{fill:var(--hero-ink);stroke:none}
+
+  /* ===== البطاقات ===== */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:14px 16px;transition:transform .3s var(--ease),box-shadow .3s;position:relative}
+  a.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+  .card .type{font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px}
+  .card .type i{width:8px;height:8px;border-radius:2px;background:var(--c,var(--brand));display:inline-block}
+  .card h3{margin-top:4px;color:var(--brand)}
+  .card .d{font-size:13px;color:var(--muted)}
+  .card p{margin:6px 0 0;font-size:14px;color:var(--ink);opacity:.9}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:18px}
+  .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:start}
+  @media (max-width:860px){.cols{grid-template-columns:1fr}}
+
+  /* ===== شارة الادعاء ولوحة المصدر ===== */
+  .claim{position:relative}
+  .claim .b{display:inline-block;width:10px;height:10px;border-radius:50%;margin-inline-start:4px;vertical-align:middle;cursor:pointer;border:2px solid var(--card);box-shadow:0 0 0 1px var(--line)}
+  .b.fact{background:var(--fact)} .b.disputed{background:var(--disputed)} .b.inference{background:var(--inference)} .b.myth{background:var(--myth)}
+  .prov{position:fixed;inset-inline-start:0;inset-block:0;width:min(420px,100%);background:var(--card);border-inline-end:1px solid var(--line);box-shadow:var(--shadow);z-index:80;padding:22px;overflow:auto;transform:translateX(100%);transition:transform .35s var(--ease)}
+  html[dir=ltr] .prov{transform:translateX(-100%)}
+  .prov.open{transform:none!important}
+  .prov h3{color:var(--brand);margin-bottom:6px}
+  .prov .st{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;padding:3px 10px;border-radius:999px;border:1px solid currentColor;margin-bottom:12px}
+  .prov .x{position:absolute;top:14px;inset-inline-end:14px;border:1px solid var(--line);background:transparent;border-radius:999px;width:32px;height:32px}
+  .src{border:1px solid var(--line);border-radius:var(--r-s);padding:10px 12px;margin-top:10px;font-size:13.5px;background:var(--soft)}
+  .src b{display:block;color:var(--brand)}
+  .src q{display:block;color:var(--muted);font-style:italic;margin-top:4px}
+  .tier{display:inline-block;font-size:11px;border-radius:4px;padding:0 6px;border:1px solid var(--line);margin-inline-start:6px}
+  .counter{border-inline-start:3px solid var(--disputed);padding-inline-start:10px;margin-top:12px;font-size:13.5px}
+  .veil{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:70;opacity:0;pointer-events:none;transition:opacity .3s}
+  .veil.on{opacity:1;pointer-events:auto}
+
+  /* ===== شريط العصر ===== */
+  .ribbon{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;background:var(--card);border:1px solid var(--line);border-inline-start:6px solid var(--era,var(--brand));border-radius:var(--r-m);padding:10px 14px;font-size:13.5px;margin-bottom:18px}
+  .ribbon b{font-family:var(--head);font-size:16px;color:var(--brand)}
+  .ribbon .dual{color:var(--muted)}
+  .rail h3{display:flex;align-items:center;gap:8px;margin:22px 0 10px;font-size:17px}
+  .rail h3 i{width:10px;height:10px;border-radius:2px;background:var(--c);display:inline-block}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:5px 10px;font-size:13.5px;background:var(--card);transition:border-color .2s,transform .2s}
+  .chip:hover{border-color:var(--brand);transform:translateY(-2px)}
+  .chip small{color:var(--muted)}
+  .names{display:flex;flex-wrap:wrap;gap:6px 14px;color:var(--muted);font-size:13.5px}
+  .names b{color:var(--ink);font-weight:500}
+  .tl{position:relative;padding-inline-start:18px;border-inline-start:2px solid var(--line);display:grid;gap:12px;margin-top:10px}
+  .tl div{position:relative;font-size:14px}
+  .tl div::before{content:"";position:absolute;inset-inline-start:-24px;top:9px;width:10px;height:10px;border-radius:50%;background:var(--era,var(--brand));border:2px solid var(--card)}
+  .tl b{color:var(--brand);font-weight:600}
+  .tl small{color:var(--muted)}
+
+  /* ===== الخط الزمني السينمائي ===== */
+  .strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px 4px 18px}
+  .strip .card{min-width:260px;scroll-snap-align:start;border-top:6px solid var(--era)}
+  .density{display:inline-flex;gap:4px}
+  .density button{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--muted)}
+  .density button[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+
+  /* ===== الجمهور ===== */
+  .kids-only,.scholar-only{display:none}
+  :root[data-audience="kids"] .kids-only{display:block}
+  :root[data-audience="kids"] .general-only,:root[data-audience="kids"] .scholar-only{display:none}
+  :root[data-audience="scholar"] .scholar-only{display:block}
+  :root[data-audience="kids"] body{font-size:18px}
+  :root[data-audience="kids"] .card h3{font-size:22px}
+  .scholar-box{border:1px dashed var(--line);border-radius:var(--r-s);padding:10px 12px;font-size:13.5px;color:var(--muted);margin-top:12px}
+
+  /* ===== البحث ===== */
+  .cmd{position:fixed;inset:0;z-index:90;display:none;place-items:start center;padding-top:12vh;background:rgba(0,0,0,.45)}
+  .cmd.on{display:grid}
+  .cmd .box{width:min(640px,94vw);background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;box-shadow:var(--shadow)}
+  .cmd input{width:100%;border:0;border-bottom:1px solid var(--line);padding:14px 16px;font:inherit;font-size:17px;background:transparent;color:inherit;outline:0}
+  .cmd .res{max-height:50vh;overflow:auto}
+  .cmd .res a{display:flex;gap:10px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);font-size:14.5px}
+  .cmd .res a:hover{background:var(--soft)}
+  .cmd .res a i{width:8px;height:8px;border-radius:2px;background:var(--c);display:inline-block}
+  .cmd .res small{color:var(--muted);margin-inline-start:auto}
+
+  /* ===== نظام التصميم ===== */
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+  .sw{border:1px solid var(--line);border-radius:var(--r-s);overflow:hidden;font-size:12px;background:var(--card)}
+  .sw i{display:block;height:44px}
+  .sw span{display:block;padding:6px 8px;color:var(--muted)}
+  .spec{display:grid;grid-template-columns:150px 1fr;gap:6px 12px;font-size:14px}
+  .spec b{color:var(--brand);font-weight:600}
+  .wire{border:2px dashed var(--line);border-radius:var(--r-m);padding:12px;background:var(--card);font-size:12.5px;color:var(--muted);display:grid;gap:8px}
+  .wire div{border:1px solid var(--line);border-radius:6px;padding:8px;background:var(--soft)}
+  .wire .row{display:grid;grid-template-columns:1fr 1fr;gap:8px;border:0;padding:0;background:transparent}
+  .note{font-size:12.5px;color:var(--muted);border-inline-start:3px solid var(--accent);padding-inline-start:10px;margin-top:12px}
+  .game{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:16px}
+  .game .opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .game .opts button{border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:7px 14px}
+  .game .opts button.ok{background:var(--fact);color:#fff;border-color:var(--fact)}
+  .game .opts button.no{background:var(--disputed);color:#fff;border-color:var(--disputed)}
+  footer{color:var(--muted);font-size:13px;padding-top:24px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+  @media print{.top,.prov,.veil,.cmd{display:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><div class="in">
+    <a class="brand" href="#/"><i></i> الأندلس <small style="font-family:var(--body);font-weight:400;font-size:12px;color:var(--muted)">نموذج تصوري</small></a>
+    <nav class="nav" id="nav">
+      <a href="#/map">الخريطة</a><a href="#/timeline">الزمن</a><a href="#/people">الأشخاص</a><a href="#/places">الأماكن</a><a href="#/museum">المتحف</a><a href="#/stories">القصص</a><a href="#/play">ألعاب</a><a href="#/design">نظام التصميم</a>
+    </nav>
+    <div class="tools">
+      <div class="seg" id="theme" title="الاتجاه البصري">
+        <button data-t="zellij" aria-pressed="true">الزليج</button><button data-t="manuscript" aria-pressed="false">المخطوط</button><button data-t="night" aria-pressed="false">الليل</button>
+      </div>
+      <div class="seg" id="aud" title="الجمهور">
+        <button data-a="kids" aria-pressed="false">استكشاف</button><button data-a="general" aria-pressed="true">عام</button><button data-a="scholar" aria-pressed="false">باحث</button>
+      </div>
+      <button class="kbtn" id="kbtn">ابحث <kbd>⌘K</kbd></button>
+    </div>
+  </div></header>
+
+  <main id="app"></main>
+
+  <footer>
+    نموذج تصوري لمنصة الأندلس الرقمية · البيانات هنا توضيحية لعرض النموذج، وكل ادعاء فيها يمر بسجل الادعاءات قبل أي نشر فعلي · جزء من مشروع «منتجاتي».
+  </footer>
+</div>
+
+<div class="veil" id="veil"></div>
+<aside class="prov" id="prov" aria-label="كيف نعرف هذا؟"></aside>
+<div class="cmd" id="cmd"><div class="box"><input id="q" placeholder="ابحث في الأشخاص والأماكن والأحداث والوثائق… أو اكتب سنة مثل 1085"><div class="res" id="res"></div></div></div>
+
+<script>
+/* =========================================================
+   البيانات التوضيحية للنموذج. البنية تطابق data/schema.json.
+   ملاحظة منهجية: التواريخ هنا من مراجع قياسية (EI2، Kennedy 1996، Harvey 1990/2005)
+   وتُعامل في المنصة الفعلية كادعاءات تمر بسجل الادعاءات والمراجعة قبل النشر.
+   ========================================================= */
+const ERAS = [
+  { id:"era:wulat",    name:"الفتح والولاة",        from:711,  to:756,  c:"var(--era-wulat)" },
+  { id:"era:imara",    name:"الإمارة الأموية",        from:756,  to:929,  c:"var(--era-imara)" },
+  { id:"era:khilafa",  name:"خلافة قرطبة",           from:929,  to:1031, c:"var(--era-khilafa)" },
+  { id:"era:tawaif",   name:"ملوك الطوائف",          from:1031, to:1091, c:"var(--era-tawaif)" },
+  { id:"era:murabit",  name:"المرابطون",             from:1091, to:1147, c:"var(--era-murabit)" },
+  { id:"era:muwahhid", name:"الموحدون والطوائف الثالثة", from:1147, to:1238, c:"var(--era-muwahhid)" },
+  { id:"era:nasrid",   name:"مملكة غرناطة",          from:1238, to:1492, c:"var(--era-nasrid)" },
+  { id:"era:morisco",  name:"المدجنون والموريسكيون", from:1492, to:1614, c:"var(--era-morisco)" },
+];
+const SOURCES = {
+  "src:kennedy-1996":{ title:"Muslim Spain and Portugal: A Political History of al-Andalus", author:"Hugh Kennedy", year:"1996", pub:"Longman", tier:"A", kind:"كتاب أكاديمي", lang:"EN" },
+  "src:ei2":{ title:"Encyclopaedia of Islam, Second Edition", author:"Brill (مداخل متعددة)", year:"1960–2007", pub:"Brill", tier:"A", kind:"موسوعة أكاديمية", lang:"EN" },
+  "src:harvey-1990":{ title:"Islamic Spain, 1250 to 1500", author:"L. P. Harvey", year:"1990", pub:"University of Chicago Press", tier:"A", kind:"كتاب أكاديمي", lang:"EN" },
+  "src:harvey-2005":{ title:"Muslims in Spain, 1500 to 1614", author:"L. P. Harvey", year:"2005", pub:"University of Chicago Press", tier:"A", kind:"كتاب أكاديمي", lang:"EN" },
+  "src:sanjuan-2013":{ title:"La conquista islámica de la península ibérica y la tergiversación del pasado", author:"Alejandro García Sanjuán", year:"2013", pub:"Marcial Pons", tier:"A", kind:"كتاب أكاديمي", lang:"ES" },
+  "src:unesco":{ title:"قائمة التراث العالمي (UNESCO World Heritage List)", author:"UNESCO", year:"—", pub:"whc.unesco.org", tier:"B", kind:"مؤسسة دولية", lang:"EN/FR" },
+  "src:ledger":{ title:"سجل الادعاءات: بانتظار التوثيق", author:"فريق التحرير", year:"2026", pub:"—", tier:"C", kind:"داخلي", lang:"AR" },
+};
+const CLAIMS = {
+  "c:conquest-711":{ text:"بدأ الفتح الإسلامي لشبه الجزيرة الإيبيرية سنة 92هـ/711م.", status:"fact", sources:[{src:"src:kennedy-1996",loc:"الفصل الأول"},{src:"src:ei2",loc:"مدخل al-Andalus"}], counter:[] },
+  "c:conquest-narratives":{ text:"تفاصيل الفتح (دور طارق وموسى، قصة يوليان، حجم الجيوش) تعتمد على روايات متأخرة مختلف على قيمتها.", status:"disputed", sources:[{src:"src:sanjuan-2013",loc:"الفصول 2–4"}], counter:[{position:"أطروحة «الإنكار» (Olagüe ثم González Ferrín): لم يقع فتح عسكري أصلًا. يرفضها أغلب المؤرخين.", sources:[{src:"src:sanjuan-2013",loc:"نقد الأطروحة"}]}] },
+  "c:emirate-756":{ text:"أسس عبد الرحمن الداخل الإمارة الأموية المستقلة في قرطبة سنة 138هـ/756م.", status:"fact", sources:[{src:"src:kennedy-1996",loc:"الفصل الثاني"},{src:"src:ei2",loc:"مدخل ʿAbd al-Raḥmān I"}], counter:[] },
+  "c:caliphate-929":{ text:"أعلن عبد الرحمن الثالث الخلافة وتلقّب بأمير المؤمنين سنة 316هـ/929م.", status:"fact", sources:[{src:"src:kennedy-1996",loc:"الفصل الرابع"},{src:"src:ei2",loc:"مدخل ʿAbd al-Raḥmān III"}], counter:[] },
+  "c:zahra-936":{ text:"بدأ بناء مدينة الزهراء سنة 325هـ/936م.", status:"fact", sources:[{src:"src:ei2",loc:"مدخل Madīnat al-Zahrāʾ"}], counter:[] },
+  "c:library-400k":{ text:"«مكتبة الحكم المستنصر ضمت 400 ألف مجلد».", status:"myth", sources:[{src:"src:ledger",loc:"الرقم يرد في مصادر وسيطة ويتناقله المتأخرون؛ لا يمكن التحقق منه ويُعرض كرواية شائعة مع نقده"}], counter:[{position:"المؤرخون المحدثون يعدّون الرقم مبالغة أدبية شائعة في المصادر الوسيطة.", sources:[{src:"src:ledger",loc:"يُستكمل بمرجع محدد قبل النشر"}]}] },
+  "c:fitna-1009":{ text:"اندلعت الفتنة في قرطبة سنة 399هـ/1009م وانتهت بإلغاء الخلافة سنة 422هـ/1031م.", status:"fact", sources:[{src:"src:kennedy-1996",loc:"الفصل الخامس"}], counter:[] },
+  "c:toledo-1085":{ text:"دخل ألفونسو السادس طليطلة سنة 478هـ/1085م.", status:"fact", sources:[{src:"src:kennedy-1996",loc:"الفصل السادس"}], counter:[] },
+  "c:zallaqa-date":{ text:"وقعت معركة الزلاقة في 12 رجب 479هـ / 23 أكتوبر 1086م.", status:"fact", sources:[{src:"src:kennedy-1996",loc:"الفصل السادس"},{src:"src:ei2",loc:"مدخل al-Zallāḳa"}], counter:[] },
+  "c:zallaqa-numbers":{ text:"أعداد الجيوش في الزلاقة كما ترد في المصادر الوسيطة مبالغ فيها ولا يمكن الجزم بها.", status:"disputed", sources:[{src:"src:kennedy-1996",loc:"الفصل السادس"}], counter:[{position:"بعض المصادر الوسيطة تذكر أرقامًا بمئات الآلاف.", sources:[{src:"src:ledger",loc:"تُحصر الروايات وتُعرض كمدى"}]}] },
+  "c:navas-1212":{ text:"هُزم الموحدون في معركة العقاب (Las Navas de Tolosa) سنة 609هـ/1212م.", status:"fact", sources:[{src:"src:kennedy-1996",loc:"الفصل الثامن"},{src:"src:ei2",loc:"مدخل al-ʿIḳāb"}], counter:[] },
+  "c:cordoba-1236":{ text:"دخل فرناندو الثالث قرطبة سنة 633هـ/1236م.", status:"fact", sources:[{src:"src:kennedy-1996",loc:"الفصل التاسع"}], counter:[] },
+  "c:nasrid-1238":{ text:"دخل محمد بن الأحمر غرناطة سنة 635هـ/1238م مؤسسًا الدولة النصرية.", status:"fact", sources:[{src:"src:harvey-1990",loc:"الفصل الثاني"}], counter:[] },
+  "c:seville-1248":{ text:"استسلمت إشبيلية لفرناندو الثالث سنة 646هـ/1248م.", status:"fact", sources:[{src:"src:kennedy-1996",loc:"الفصل التاسع"}], counter:[] },
+  "c:granada-1492":{ text:"سُلِّمت غرناطة في 2 يناير 1492م (2 ربيع الأول 897هـ).", status:"fact", sources:[{src:"src:harvey-1990",loc:"الفصل الأخير"}], counter:[] },
+  "c:expulsion-1609":{ text:"صدر مرسوم طرد الموريسكيين سنة 1609م ونُفّذ على مراحل حتى 1614م.", status:"fact", sources:[{src:"src:harvey-2005",loc:"الفصل العاشر"}], counter:[] },
+  "c:expulsion-numbers":{ text:"عدد المطرودين تقديري ويتراوح بين مصادر حديثة مختلفة.", status:"disputed", sources:[{src:"src:harvey-2005",loc:"الفصل العاشر"}], counter:[{position:"التقديرات تختلف باختلاف منهج العدّ (السجلات الرسمية مقابل التقدير السكاني).", sources:[{src:"src:harvey-2005",loc:"الفصل العاشر"}]}] },
+  "c:cordoba-unesco":{ text:"المركز التاريخي لقرطبة مسجل في قائمة التراث العالمي (1984، وُسّع 1994).", status:"fact", sources:[{src:"src:unesco",loc:"Historic Centre of Cordoba, ref 313"}], counter:[] },
+  "c:ibnhazm-life":{ text:"وُلد ابن حزم في قرطبة سنة 384هـ/994م وتوفي سنة 456هـ/1064م.", status:"fact", sources:[{src:"src:ei2",loc:"مدخل Ibn Ḥazm"}], counter:[] },
+  "c:ibnhazm-death-place":{ text:"توفي ابن حزم في ضيعة أهله بمنت ليشم قرب لبلة.", status:"inference", sources:[{src:"src:ei2",loc:"مدخل Ibn Ḥazm"}], counter:[] },
+  "c:mutamid":{ text:"حكم المعتمد بن عبّاد إشبيلية 461–484هـ / 1069–1091م ونُفي إلى أغمات.", status:"fact", sources:[{src:"src:ei2",loc:"مدخل al-Muʿtamid"}], counter:[] },
+  "c:averroes":{ text:"وُلد ابن رشد في قرطبة سنة 520هـ/1126م وتوفي في مراكش سنة 595هـ/1198م.", status:"fact", sources:[{src:"src:ei2",loc:"مدخل Ibn Rushd"}], counter:[] },
+};
+const E = {}; // الكيانات
+function add(o){ E[o.id]=o; return o; }
+// أماكن (lat, lon)
+add({id:"pl:cordoba",type:"Place",name:{ar:"قرطبة",lat:"Corduba",es:"Córdoba"},lat:37.88,lon:-4.78,kind:"مدينة",founded:711,summary:[["عاصمة الإمارة ثم الخلافة الأموية، وأكبر مدن الأندلس في القرن العاشر.","c:emirate-756"],["دخلها فرناندو الثالث سنة 1236م.","c:cordoba-1236"],["مركزها التاريخي تراث عالمي.","c:cordoba-unesco"]],control:[[711,1031,"muslim"],[1031,1236,"muslim"],[1236,1700,"christian"]],kids:"قرطبة كانت أكبر مدينة في الأندلس، فيها جامع مشهور بأقواسه الحمراء والبيضاء.",scholar:"تُعرض هنا الخلافات حول حجم المدينة وسكانها؛ الأرقام الوسيطة تُعرض كمدى لا كرقم."});
+add({id:"pl:zahra",type:"Place",name:{ar:"مدينة الزهراء",es:"Medina Azahara"},lat:37.89,lon:-4.87,kind:"مدينة قصرية",founded:936,summary:[["مدينة قصرية بناها عبد الرحمن الثالث ابتداءً من 936م.","c:zahra-936"]],control:[[936,1010,"muslim"]]});
+add({id:"pl:seville",type:"Place",name:{ar:"إشبيلية",lat:"Hispalis",es:"Sevilla"},lat:37.39,lon:-5.99,kind:"مدينة",founded:711,summary:[["عاصمة بني عبّاد في عصر الطوائف، ثم عاصمة الموحدين في الأندلس.","c:mutamid"],["استسلمت سنة 1248م.","c:seville-1248"]],control:[[711,1248,"muslim"],[1248,1700,"christian"]]});
+add({id:"pl:granada",type:"Place",name:{ar:"غرناطة",es:"Granada"},lat:37.18,lon:-3.60,kind:"مدينة",founded:711,summary:[["عاصمة الدولة النصرية من 1238م.","c:nasrid-1238"],["سُلّمت سنة 1492م.","c:granada-1492"]],control:[[711,1492,"muslim"],[1492,1700,"christian"]]});
+add({id:"pl:toledo",type:"Place",name:{ar:"طليطلة",lat:"Toletum",es:"Toledo"},lat:39.86,lon:-4.03,kind:"مدينة",founded:711,summary:[["عاصمة القوط، ثم مدينة حدودية كبرى، ثم عاصمة بني ذي النون.","c:toledo-1085"],["دخلها ألفونسو السادس سنة 1085م.","c:toledo-1085"]],control:[[711,1085,"muslim"],[1085,1700,"christian"]]});
+add({id:"pl:zaragoza",type:"Place",name:{ar:"سرقسطة",lat:"Caesaraugusta",es:"Zaragoza"},lat:41.65,lon:-0.88,kind:"مدينة",founded:714,summary:[["عاصمة الثغر الأعلى، وبني هود في عصر الطوائف.","c:conquest-711"]],control:[[714,1118,"muslim"],[1118,1700,"christian"]]});
+add({id:"pl:malaga",type:"Place",name:{ar:"مالقة",es:"Málaga"},lat:36.72,lon:-4.42,kind:"مدينة",founded:711,summary:[["ميناء غرناطة الكبير في العصر النصري.","c:nasrid-1238"]],control:[[711,1487,"muslim"],[1487,1700,"christian"]]});
+add({id:"pl:almeria",type:"Place",name:{ar:"ألمرية",es:"Almería"},lat:36.83,lon:-2.46,kind:"مدينة",founded:955,summary:[["ميناء الخلافة، وبها كان ابن حزم فترة.","c:ibnhazm-life"]],control:[[955,1147,"muslim"],[1147,1157,"christian"],[1157,1489,"muslim"],[1489,1700,"christian"]]});
+add({id:"pl:valencia",type:"Place",name:{ar:"بلنسية",es:"Valencia"},lat:39.47,lon:-0.38,kind:"مدينة",founded:711,summary:[["مركز الطوائف الشرقية؛ دخلها جايمي الأول سنة 1238م.","c:nasrid-1238"]],control:[[711,1238,"muslim"],[1238,1700,"christian"]]});
+add({id:"pl:badajoz",type:"Place",name:{ar:"بطليوس",es:"Badajoz"},lat:38.88,lon:-6.97,kind:"مدينة",founded:875,summary:[["عاصمة بني الأفطس في عصر الطوائف، وقربها وقعت الزلاقة.","c:zallaqa-date"]],control:[[875,1230,"muslim"],[1230,1700,"christian"]]});
+add({id:"pl:lisbon",type:"Place",name:{ar:"لشبونة",es:"Lisboa"},lat:38.72,lon:-9.14,kind:"مدينة",founded:711,summary:[["سقطت سنة 1147م.","c:conquest-711"]],control:[[711,1147,"muslim"],[1147,1700,"christian"]]});
+add({id:"pl:murcia",type:"Place",name:{ar:"مرسية",es:"Murcia"},lat:37.99,lon:-1.13,kind:"مدينة",founded:825,summary:[["مركز الشرق الأندلسي في القرن الثالث عشر.","c:nasrid-1238"]],control:[[825,1243,"muslim"],[1243,1700,"christian"]]});
+add({id:"pl:ceuta",type:"Place",name:{ar:"سبتة",es:"Ceuta"},lat:35.89,lon:-5.32,kind:"مدينة",founded:711,summary:[["بوابة العبور بين العدوتين.","c:conquest-711"]],control:[[711,1415,"muslim"],[1415,1700,"christian"]]});
+add({id:"pl:fes",type:"Place",name:{ar:"فاس",es:"Fez"},lat:34.03,lon:-5.00,kind:"مدينة",founded:789,summary:[["مقصد المهاجرين الأندلسيين وعاصمة المرينيين.","c:conquest-711"]],control:[[789,1700,"muslim"]]});
+add({id:"pl:leon",type:"Place",name:{ar:"ليون",es:"León"},lat:42.6,lon:-5.57,kind:"مدينة",founded:711,summary:[["عاصمة مملكة ليون المسيحية.","c:conquest-711"]],control:[[711,760,"muslim"],[760,1700,"christian"]]});
+add({id:"pl:barcelona",type:"Place",name:{ar:"برشلونة",es:"Barcelona"},lat:41.39,lon:2.17,kind:"مدينة",founded:711,summary:[["فُتحت 717م تقريبًا واستعادها الفرنجة 801م.","c:conquest-711"]],control:[[717,801,"muslim"],[801,1700,"christian"]]});
+// ميادين معارك
+add({id:"pl:guadalete",type:"Place",name:{ar:"وادي لكة",es:"Guadalete"},lat:36.55,lon:-6.05,kind:"ميدان معركة",founded:711,summary:[["موقع المعركة الأولى؛ الموقع الدقيق مختلف عليه.","c:conquest-narratives"]],battle:true});
+add({id:"pl:zallaqa",type:"Place",name:{ar:"الزلاقة",es:"Sagrajas"},lat:38.95,lon:-6.85,kind:"ميدان معركة",founded:1086,summary:[["ميدان معركة 1086م قرب بطليوس.","c:zallaqa-date"]],battle:true});
+add({id:"pl:navas",type:"Place",name:{ar:"العقاب",es:"Las Navas de Tolosa"},lat:38.28,lon:-3.58,kind:"ميدان معركة",founded:1212,summary:[["ميدان معركة 1212م.","c:navas-1212"]],battle:true});
+// أشخاص
+add({id:"p:abdrahman1",type:"Person",name:{ar:"عبد الرحمن الداخل",en:"ʿAbd al-Raḥmān I"},born:731,died:788,roles:["أمير"],era:"era:imara",summary:[["أموي نجا من العباسيين وأسس الإمارة في قرطبة 756م.","c:emirate-756"]],edges:[["ruled","s:umayyad-cordoba","756–788"],["lived_in","pl:cordoba"],["participated_in","e:emirate-756","مؤسس"]],kids:"هرب من دمشق وهو شاب، وقطع الصحراء والبحر حتى وصل الأندلس وصار أميرها."});
+add({id:"p:abdrahman3",type:"Person",name:{ar:"عبد الرحمن الناصر",en:"ʿAbd al-Raḥmān III"},born:891,died:961,roles:["أمير","خليفة"],era:"era:khilafa",summary:[["أعلن الخلافة سنة 929م.","c:caliphate-929"],["بدأ بناء مدينة الزهراء سنة 936م.","c:zahra-936"]],edges:[["ruled","s:umayyad-cordoba","912–961"],["born_in","pl:cordoba"],["participated_in","e:caliphate-929","المُعلِن"],["patron_of","pl:zahra"]]});
+add({id:"p:hakam2",type:"Person",name:{ar:"الحكم المستنصر",en:"al-Ḥakam II"},born:915,died:976,roles:["خليفة"],era:"era:khilafa",summary:[["خليفة عُرف برعاية العلم والكتب.","c:library-400k"]],edges:[["ruled","s:umayyad-cordoba","961–976"],["born_in","pl:cordoba"]],scholar:"رقم «400 ألف مجلد» يُعرض في المنصة كرواية شائعة غير مثبتة مع نقدها."});
+add({id:"p:ibnhazm",type:"Person",name:{ar:"ابن حزم",en:"Ibn Ḥazm"},born:994,died:1064,roles:["فقيه","أديب","مؤرخ"],era:"era:tawaif",summary:[["وُلد في قرطبة 994م وتوفي 1064م.","c:ibnhazm-life"],["توفي في منت ليشم.","c:ibnhazm-death-place"]],edges:[["born_in","pl:cordoba"],["lived_in","pl:almeria"],["lived_in","pl:seville"],["authored","w:tawq"],["participated_in","e:fitna-1009","شاهد"]],kids:"كتب كتابًا عن الحب والصداقة اسمه «طوق الحمامة» وهو ما زال يُقرأ حتى اليوم."});
+add({id:"p:mutamid",type:"Person",name:{ar:"المعتمد بن عبّاد",en:"al-Muʿtamid"},born:1040,died:1095,roles:["ملك طائفة","شاعر"],era:"era:tawaif",summary:[["حكم إشبيلية 1069–1091م ونُفي إلى أغمات.","c:mutamid"]],edges:[["ruled","s:abbadid","1069–1091"],["lived_in","pl:seville"],["participated_in","e:zallaqa-1086","طرف"]]});
+add({id:"p:yusuf",type:"Person",name:{ar:"يوسف بن تاشفين",en:"Yūsuf b. Tāshfīn"},born:1009,died:1106,roles:["أمير المسلمين"],era:"era:murabit",summary:[["قائد المرابطين في الزلاقة 1086م.","c:zallaqa-date"]],edges:[["ruled","s:almoravid","1061–1106"],["participated_in","e:zallaqa-1086","قائد"]]});
+add({id:"p:alfonso6",type:"Person",name:{ar:"ألفونسو السادس",en:"Alfonso VI"},born:1040,died:1109,roles:["ملك قشتالة وليون"],era:"era:tawaif",summary:[["دخل طليطلة 1085م.","c:toledo-1085"],["هُزم في الزلاقة 1086م.","c:zallaqa-date"]],edges:[["participated_in","e:toledo-1085","قائد"],["participated_in","e:zallaqa-1086","قائد"]]});
+add({id:"p:averroes",type:"Person",name:{ar:"ابن رشد",en:"Averroes"},born:1126,died:1198,roles:["فيلسوف","قاضٍ","طبيب"],era:"era:muwahhid",summary:[["وُلد في قرطبة 1126م وتوفي في مراكش 1198م.","c:averroes"]],edges:[["born_in","pl:cordoba"],["lived_in","pl:seville"]],kids:"فيلسوف شرح كتب أرسطو حتى سُمّي في أوروبا «الشارح»."});
+add({id:"p:ibnahmar",type:"Person",name:{ar:"محمد بن الأحمر",en:"Muḥammad I of Granada"},born:1195,died:1273,roles:["سلطان"],era:"era:nasrid",summary:[["مؤسس الدولة النصرية 1238م.","c:nasrid-1238"]],edges:[["ruled","s:nasrid","1238–1273"],["lived_in","pl:granada"],["participated_in","e:nasrid-1238","مؤسس"]]});
+add({id:"p:ibnkhatib",type:"Person",name:{ar:"لسان الدين بن الخطيب",en:"Ibn al-Khaṭīb"},born:1313,died:1374,roles:["وزير","مؤرخ","شاعر"],era:"era:nasrid",summary:[["وزير غرناطة ومؤرخها في «الإحاطة».","c:nasrid-1238"]],edges:[["lived_in","pl:granada"],["died_in","pl:fes"]]});
+// دول
+add({id:"s:umayyad-cordoba",type:"Polity",name:{ar:"الأمويون في قرطبة"},from:756,to:1031,capital:"pl:cordoba",summary:[["إمارة 756–929م ثم خلافة 929–1031م.","c:caliphate-929"]]});
+add({id:"s:abbadid",type:"Polity",name:{ar:"بنو عبّاد (إشبيلية)"},from:1023,to:1091,capital:"pl:seville",summary:[["أقوى طوائف الجنوب.","c:mutamid"]]});
+add({id:"s:almoravid",type:"Polity",name:{ar:"المرابطون"},from:1091,to:1147,capital:"pl:fes",summary:[["وحّدوا الأندلس مع المغرب بعد الزلاقة.","c:zallaqa-date"]]});
+add({id:"s:nasrid",type:"Polity",name:{ar:"بنو نصر (غرناطة)"},from:1238,to:1492,capital:"pl:granada",summary:[["آخر دولة إسلامية في الأندلس.","c:nasrid-1238"]]});
+// أحداث
+add({id:"e:conquest-711",type:"Event",name:{ar:"بداية الفتح"},year:711,kind:"فتح",era:"era:wulat",place:"pl:guadalete",summary:[["بدأ الفتح سنة 711م.","c:conquest-711"],["تفاصيله مختلف عليها.","c:conquest-narratives"]],weight:3});
+add({id:"e:emirate-756",type:"Event",name:{ar:"تأسيس الإمارة الأموية"},year:756,kind:"تأسيس",era:"era:imara",place:"pl:cordoba",summary:[["أسس عبد الرحمن الداخل الإمارة.","c:emirate-756"]],weight:3});
+add({id:"e:caliphate-929",type:"Event",name:{ar:"إعلان الخلافة"},year:929,kind:"تحول سياسي",era:"era:khilafa",place:"pl:cordoba",summary:[["أعلن عبد الرحمن الثالث الخلافة.","c:caliphate-929"]],weight:3});
+add({id:"e:zahra-936",type:"Event",name:{ar:"بدء بناء مدينة الزهراء"},year:936,kind:"بناء",era:"era:khilafa",place:"pl:zahra",summary:[["بدأ البناء سنة 936م.","c:zahra-936"]],weight:2});
+add({id:"e:fitna-1009",type:"Event",name:{ar:"الفتنة وسقوط الخلافة"},year:1009,end:1031,kind:"تحول سياسي",era:"era:khilafa",place:"pl:cordoba",summary:[["فتنة 1009–1031م.","c:fitna-1009"]],weight:3});
+add({id:"e:toledo-1085",type:"Event",name:{ar:"سقوط طليطلة"},year:1085,kind:"حصار",era:"era:tawaif",place:"pl:toledo",summary:[["دخلها ألفونسو السادس.","c:toledo-1085"]],weight:3});
+add({id:"e:zallaqa-1086",type:"Event",name:{ar:"معركة الزلاقة"},year:1086,kind:"معركة",era:"era:tawaif",place:"pl:zallaqa",summary:[["23 أكتوبر 1086م.","c:zallaqa-date"],["أعداد الجيوش مختلف عليها.","c:zallaqa-numbers"]],weight:3,before:["e:toledo-1085"],after:["e:navas-1212"]});
+add({id:"e:navas-1212",type:"Event",name:{ar:"معركة العقاب"},year:1212,kind:"معركة",era:"era:muwahhid",place:"pl:navas",summary:[["هزيمة الموحدين 1212م.","c:navas-1212"]],weight:3});
+add({id:"e:cordoba-1236",type:"Event",name:{ar:"سقوط قرطبة"},year:1236,kind:"حصار",era:"era:muwahhid",place:"pl:cordoba",summary:[["دخلها فرناندو الثالث.","c:cordoba-1236"]],weight:2});
+add({id:"e:nasrid-1238",type:"Event",name:{ar:"تأسيس مملكة غرناطة"},year:1238,kind:"تأسيس",era:"era:nasrid",place:"pl:granada",summary:[["دخل ابن الأحمر غرناطة.","c:nasrid-1238"]],weight:3});
+add({id:"e:seville-1248",type:"Event",name:{ar:"سقوط إشبيلية"},year:1248,kind:"حصار",era:"era:nasrid",place:"pl:seville",summary:[["استسلمت المدينة.","c:seville-1248"]],weight:2});
+add({id:"e:granada-1492",type:"Event",name:{ar:"تسليم غرناطة"},year:1492,kind:"معاهدة",era:"era:nasrid",place:"pl:granada",summary:[["2 يناير 1492م.","c:granada-1492"]],weight:3});
+add({id:"e:expulsion-1609",type:"Event",name:{ar:"طرد الموريسكيين"},year:1609,end:1614,kind:"هجرة قسرية",era:"era:morisco",place:"pl:valencia",summary:[["مرسوم 1609م.","c:expulsion-1609"],["الأعداد تقديرية.","c:expulsion-numbers"]],weight:3});
+// وثائق ومصنفات وآثار
+add({id:"w:tawq",type:"Work",name:{ar:"طوق الحمامة"},author:"p:ibnhazm",year:1027,summary:[["رسالة في الحب ومعانيه كتبها ابن حزم في شاطبة.","c:ibnhazm-life"]]});
+add({id:"d:muqtabis",type:"Document",name:{ar:"المقتبس لابن حيان"},author:"ابن حيان القرطبي (ت 1076م)",summary:[["المصدر الأساس لتاريخ الإمارة والخلافة؛ وصلنا ناقصًا.","c:caliphate-929"]],holding:{institution:"نسخ في مكتبات متعددة (تُوثَّق بالأرقام المكتبية في سجل المصادر)",iiif:""}});
+add({id:"d:capitulations",type:"Document",name:{ar:"شروط تسليم غرناطة"},author:"1491م",summary:[["الاتفاق الذي سُلّمت بموجبه غرناطة.","c:granada-1492"]],holding:{institution:"الأرشيفات الإسبانية (تُوثَّق)",iiif:""}});
+add({id:"a:mughira",type:"Artifact",name:{ar:"علبة المغيرة العاجية"},year:968,summary:[["علبة عاجية من مدينة الزهراء، 968م، محفوظة في متحف اللوفر.","c:zahra-936"]],holding:{institution:"متحف اللوفر، باريس",license:"صورة تُستخدم بترخيص المتحف"}});
+add({id:"a:vase",type:"Artifact",name:{ar:"جرة الغزلان"},year:1400,summary:[["جرة نصرية كبيرة من قصر الحمراء.","c:nasrid-1238"]],holding:{institution:"متحف الحمراء، غرناطة",license:"غير معروف"}});
+// روابط عكسية
+const EDGES=[]; Object.values(E).forEach(o=>(o.edges||[]).forEach(([rel,to,role])=>EDGES.push({from:o.id,rel,to,role})));
+Object.values(E).filter(o=>o.type==="Event").forEach(ev=>EDGES.push({from:ev.id,rel:"took_place_at",to:ev.place}));
+Object.values(E).filter(o=>o.type==="Work").forEach(w=>EDGES.push({from:w.author,rel:"authored",to:w.id}));
+const REL={ruled:"حكم",born_in:"وُلد في",died_in:"توفي في",lived_in:"عاش في",participated_in:"شارك في",authored:"ألّف",patron_of:"رعى",took_place_at:"وقع في"};
+const TYPE={Person:["شخص","var(--era-khilafa)"],Place:["مكان","var(--era-imara)"],Event:["حدث","var(--era-muwahhid)"],Polity:["دولة","var(--era-murabit)"],Document:["وثيقة","var(--era-wulat)"],Work:["مصنَّف","var(--era-tawaif)"],Artifact:["أثر","var(--era-nasrid)"]};
+
+/* ===== أدوات ===== */
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const hijri=g=>Math.round((g-622)*33/32); // تقريب للنموذج فقط؛ المنصة تخزّن التاريخين معًا
+const dual=(g,e)=>`${g}م / ${hijri(g)}هـ${e?` – ${e}م / ${hijri(e)}هـ`:""} <small title="التقويم الهجري هنا تقريبي في النموذج">≈</small>`;
+const eraOf=y=>ERAS.find(e=>y>=e.from&&y<e.to)||ERAS[ERAS.length-1];
+const href=id=>`#/${id.split(":")[0]}/${id.split(":")[1]}`;
+const claimSpan=(text,cid)=>{const c=CLAIMS[cid];return `<span class="claim">${esc(text)}<i class="b ${c?c.status:"myth"}" data-c="${cid}" title="كيف نعرف هذا؟" role="button" tabindex="0"></i></span>`;};
+const summaryHtml=o=>(o.summary||[]).map(([t,c])=>claimSpan(t,c)).join(" ");
+const card=o=>{const [tn,tc]=TYPE[o.type]||["",""];const d=o.type==="Person"?`${o.born}–${o.died}م`:o.type==="Event"?dual(o.year,o.end):o.type==="Polity"?`${o.from}–${o.to}م`:o.year?`${o.year}م`:o.kind||"";
+  return `<a class="card" href="${href(o.id)}" style="--c:${tc}"><div class="type"><i></i>${tn}</div><h3>${esc(o.name.ar)}</h3><div class="d">${d}</div><p>${(o.summary||[]).slice(0,1).map(([t])=>esc(t)).join("")}</p></a>`;};
+const chip=id=>{const o=E[id];if(!o)return `<span class="chip">${esc(id)}</span>`;return `<a class="chip" href="${href(id)}">${esc(o.name.ar)} <small>${TYPE[o.type][0]}</small></a>`;};
+const related=id=>{const out={};EDGES.forEach(e=>{if(e.from===id){(out[E[e.to]?.type]??=[]).push({id:e.to,rel:REL[e.rel]||e.rel,role:e.role});}if(e.to===id){(out[E[e.from]?.type]??=[]).push({id:e.from,rel:REL[e.rel]||e.rel,role:e.role,rev:true});}});return out;};
+const rail=id=>{const r=related(id);const order=["Person","Place","Event","Polity","Work","Document","Artifact"];return `<div class="rail">${order.filter(t=>r[t]?.length).map(t=>`<h3 style="--c:${TYPE[t][1]}"><i></i>${TYPE[t][0]}</h3><div class="chips">${r[t].map(x=>`<a class="chip" href="${href(x.id)}">${esc(E[x.id].name.ar)} <small>${x.rev?"":x.rel} ${x.role?"· "+esc(x.role):""}</small></a>`).join("")}</div>`).join("")}</div>`;};
+const ribbon=(y,e)=>{const er=eraOf(y);return `<div class="ribbon" style="--era:${er.c}"><b>${er.name}</b><span class="dual">${dual(y,e)}</span><a href="#/timeline?y=${y}" class="chip">افتح على خط الزمن</a><a href="#/map?y=${y}" class="chip">افتح على الخريطة</a></div>`;};
+const audienceBox=o=>`${o.kids?`<div class="kids-only panel" style="margin-top:14px;font-size:18px">🧭 ${esc(o.kids)}</div>`:""}${o.scholar?`<div class="scholar-only scholar-box">ملاحظة للباحث: ${esc(o.scholar)}</div>`:""}<div class="scholar-only scholar-box">أدوات الباحث: <a href="#" onclick="return false">تصدير JSON</a> · <a href="#" onclick="return false">BibTeX</a> · <a href="#" onclick="return false">تاريخ التعديلات</a> · <a href="#" onclick="return false">الإبلاغ عن خطأ</a> · المعرّفات: Wikidata، VIAF، PUA (تُضاف عند المواءمة)</div>`;
+
+/* ===== الخريطة ===== */
+const X=lon=>(lon+10)*60, Y=lat=>(44-lat)*65;
+const IBERIA=[[-1.8,43.4],[-3.8,43.5],[-5.7,43.6],[-7.7,43.8],[-9.3,43.0],[-8.9,42.0],[-8.7,41.2],[-9.4,39.4],[-9.5,38.7],[-8.8,37.9],[-9.0,37.0],[-7.4,37.2],[-6.9,37.2],[-6.3,36.6],[-5.6,36.0],[-5.3,36.1],[-4.4,36.7],[-2.5,36.8],[-1.9,37.2],[-0.7,37.6],[-0.5,38.4],[0.2,38.8],[-0.3,39.5],[0.9,41.0],[2.2,41.4],[3.2,42.3],[3.0,42.7],[0.5,42.8]];
+const MAGHREB=[[-10,33.2],[-9.8,33.6],[-8.5,33.3],[-7.6,33.6],[-6.8,34.0],[-6.3,35.2],[-5.9,35.8],[-5.3,35.9],[-4.4,35.2],[-2.9,35.3],[-1.9,35.1],[-0.6,35.7],[0.3,36.1],[1.5,36.5],[3.0,36.8],[4,36.9],[4,33.2]];
+// خطوط حدود تقريبية توضيحية للنموذج فقط (ليست بيانات موثقة): [سنة، نقاط]
+const FRONTIERS=[[750,[[-9.0,43.2],[-6,43.0],[-3,42.9],[0,42.6],[3,42.4]]],[900,[[-9.2,41.4],[-6,41.3],[-3,41.6],[-1.5,42.4],[0.5,41.8],[3.1,42.2]]],[1000,[[-9.2,41.2],[-6,41.2],[-3,41.4],[-1.5,42.2],[0.5,41.6],[3.1,42.0]]],[1090,[[-9.3,39.6],[-6.5,39.8],[-4.5,40.1],[-2.8,40.6],[-1,41.5],[0.4,41.3],[3.1,42.0]]],[1150,[[-9.3,39.2],[-7,39.4],[-4.5,39.6],[-2.5,39.8],[-0.4,40.0],[0.9,40.6]]],[1230,[[-9.0,37.2],[-7,37.9],[-5,38.2],[-3.5,38.4],[-1.5,38.6],[-0.3,39.4]]],[1260,[[-6.2,36.6],[-5.2,36.9],[-4.4,37.4],[-3.0,37.6],[-2.0,37.4],[-1.7,36.9]]],[1492,null]];
+function frontierFor(y){let f=null;for(const [yr,pts] of FRONTIERS){if(y>=yr)f=pts;}return f;}
+function ctrl(o,y){for(const [a,b,w] of (o.control||[])){if(y>=a&&y<b)return w;}return null;}
+function mapSvg(y,opts={}){
+  const path=pts=>pts.map((p,i)=>`${i?"L":"M"}${X(p[0]).toFixed(1)},${Y(p[1]).toFixed(1)}`).join("")+"Z";
+  const fr=frontierFor(y);
+  const cities=Object.values(E).filter(o=>o.type==="Place"&&!o.battle);
+  const battles=Object.values(E).filter(o=>o.type==="Place"&&o.battle);
+  return `<svg class="map" viewBox="0 0 840 700" role="img" aria-label="خريطة الأندلس سنة ${y}">
+    <path class="land" d="${path(IBERIA)}"/><path class="land" d="${path(MAGHREB)}"/>
+    ${fr?`<path class="frontier" d="${fr.map((p,i)=>`${i?"L":"M"}${X(p[0]).toFixed(1)},${Y(p[1]).toFixed(1)}`).join("")}"/>`:""}
+    ${cities.map(o=>{const c=ctrl(o,y);const exists=y>=o.founded;const fill=c==="muslim"?eraOf(y).c:c==="christian"?"var(--christian)":"var(--muted)";
+      return `<a class="city ${exists?"":"dim"}" href="${href(o.id)}"><circle cx="${X(o.lon)}" cy="${Y(o.lat)}" r="${o.id==="pl:cordoba"||o.id==="pl:granada"||o.id==="pl:seville"?8:5.5}" fill="${fill}"/><text x="${X(o.lon)+9}" y="${Y(o.lat)+4}">${esc(o.name.ar)}</text></a>`;}).join("")}
+    ${battles.filter(b=>Math.abs(b.founded-y)<=40).map(b=>`<a class="battle" href="${href(b.id)}"><path d="M${X(b.lon)},${Y(b.lat)-8} l7,12 h-14z"/><text x="${X(b.lon)+9}" y="${Y(b.lat)+4}" class="note">⚔ ${esc(b.name.ar)} ${b.founded}</text></a>`).join("")}
+    <text x="12" y="688" class="note">الحدود خط تقريبي توضيحي في النموذج؛ في المنصة تُبنى من علاقات controlled_by الموثقة وتُوسم بدرجة اليقين.</text>
+  </svg>`;
+}
+const erasBar=()=>`<div class="eras">${ERAS.map(e=>`<span style="width:${(e.to-e.from)/(1614-711)*100}%;background:${e.c}" title="${e.name}"></span>`).join("")}</div><div class="eralegend">${ERAS.map(e=>`<span><i style="background:${e.c}"></i>${e.name} ${e.from}–${e.to}</span>`).join("")}</div>`;
+const timeBar=(y,id)=>`<div class="timebar"><span>711</span><input type="range" min="711" max="1614" value="${y}" id="${id}" aria-label="السنة"><span>1614</span></div><div class="year" id="${id}-y" style="text-align:center;font-family:var(--head);font-size:22px;margin-top:6px">${y}م <small style="font-family:var(--body);font-size:12px;opacity:.75">${hijri(y)}هـ تقريبًا · ${eraOf(y).name}</small></div>${erasBar()}`;
+function yearSnapshot(y){const evs=Object.values(E).filter(o=>o.type==="Event").sort((a,b)=>Math.abs(a.year-y)-Math.abs(b.year-y)).slice(0,3);const rulers=Object.values(E).filter(o=>o.type==="Polity"&&y>=o.from&&y<o.to);const people=Object.values(E).filter(o=>o.type==="Person"&&y>=o.born&&y<=o.died);
+  return `<div class="panel"><p class="eyebrow">ماذا كان يحدث سنة ${y}م؟</p><div class="chips">${rulers.map(r=>chip(r.id)).join("")||"<span class='chip'>لا دولة إسلامية مسجلة في النموذج لهذه السنة</span>"}</div><h3 style="margin-top:12px">أقرب الأحداث</h3><div class="chips">${evs.map(e=>`<a class="chip" href="${href(e.id)}">${esc(e.name.ar)} <small>${e.year}م</small></a>`).join("")}</div><h3 style="margin-top:12px">أحياء في هذه السنة</h3><div class="chips">${people.map(p=>chip(p.id)).join("")||"<span class='chip'>لا أشخاص في النموذج لهذه السنة</span>"}</div></div>`;}
+
+/* ===== الصفحات ===== */
+const V={};
+V.home=()=>`
+<section class="hero"><div class="in">
+  <div>
+    <p class="eyebrow" style="color:var(--accent)">موسوعة · أطلس زمني · متحف رقمي · تجربة تعليمية</p>
+    <h1>قِف في الأندلس، <b>في أي سنة تختار</b></h1>
+    <p>حرّك الزمن فتتغير الخريطة والحكام والمدن والوثائق. كل جملة هنا تحمل مصدرها وحالتها: حقيقة مستقرة، أو رواية مختلف عليها، أو استنتاج.</p>
+    <div class="cta"><a class="btn" href="#/stories">ابدأ برحلة سردية</a><a class="btn ghost" href="#/map">استكشف الخريطة</a><a class="btn ghost" href="#/people">ابحث في الأشخاص</a></div>
+    <div style="margin-top:22px">${timeBar(960,"heroY")}</div>
+  </div>
+  <div class="mapbox" id="heroMap">${mapSvg(960)}</div>
+</div></section>
+<section><div id="heroSnap">${yearSnapshot(960)}</div></section>
+<section><p class="eyebrow">ثلاثة مداخل</p><h2>كل كيان بوابة إلى غيره</h2><p class="sub">الشخص يقودك إلى المكان، والمكان إلى الحدث، والحدث إلى الوثيقة، والوثيقة إلى الأثر. لا صفحة مسدودة.</p>
+  <div class="grid">${["p:ibnhazm","pl:cordoba","e:zallaqa-1086","d:muqtabis","a:mughira","s:nasrid"].map(id=>card(E[id])).join("")}</div></section>
+<section><p class="eyebrow">كيف نتحقق؟</p><h2>أربع حالات لكل جملة</h2>
+  <div class="grid">
+    <div class="card"><h3><i class="b fact"></i> حقيقة مستقرة</h3><p>يدعمها مصدر من المرتبة A أو B بنصه ونطاقه. مثال: ${claimSpan("أُعلنت الخلافة سنة 929م","c:caliphate-929")}</p></div>
+    <div class="card"><h3><i class="b disputed"></i> رواية مختلف عليها</h3><p>تُعرض الأقوال كلها بمصادرها. مثال: ${claimSpan("تفاصيل الفتح سنة 711م","c:conquest-narratives")}</p></div>
+    <div class="card"><h3><i class="b inference"></i> استنتاج</h3><p>قراءة للمؤرخين لا نص صريح. مثال: ${claimSpan("مكان وفاة ابن حزم","c:ibnhazm-death-place")}</p></div>
+    <div class="card"><h3><i class="b myth"></i> رواية شائعة غير مثبتة</h3><p>تُذكر لتُنقد لا لتُروَّج. مثال: ${claimSpan("مكتبة الحكم 400 ألف مجلد","c:library-400k")}</p></div>
+  </div><p class="note">انقر على أي نقطة ملونة في الموقع لفتح لوحة «كيف نعرف هذا؟».</p></section>`;
+
+V.map=(q)=>{const y=+(q.y||960);return `<section><p class="eyebrow">الخريطة الزمنية</p><h2>الأندلس سنة <span id="mapYear">${y}</span>م</h2><p class="sub">لون المدينة يتبع الدولة المسيطرة في السنة المختارة (لون العصر للإسلامية، رمادي للمسيحية). المثلثات معارك في نطاق 40 سنة.</p>
+  ${timeBar(y,"mapY")}<div class="panel" id="mapBox" style="margin-top:14px">${mapSvg(y)}</div><div id="mapSnap" style="margin-top:14px">${yearSnapshot(y)}</div>
+  <div class="scholar-only scholar-box">للباحث: البديل النصي للخريطة هو قائمة الأماكن بحالتها في السنة المختارة (تُولَّد تلقائيًا)، وتصدير GeoJSON للقطة الزمنية.</div></section>`;};
+
+V.timeline=(q)=>{const y=+(q.y||0);const d=q.d||"read";const evs=Object.values(E).filter(o=>o.type==="Event").filter(e=>d==="glance"?e.weight===3:true).sort((a,b)=>a.year-b.year);
+  return `<section><p class="eyebrow">الخط الزمني السينمائي</p><h2>ثمانية عصور، فصول فيلم واحد</h2><p class="sub">ثلاث كثافات: نظرة (الأحداث المفصلية)، قراءة (كل أحداث النموذج)، بحث (مع الفلاتر في المنصة الكاملة).</p>
+  <div class="density"><button aria-pressed="${d==="glance"}" onclick="location.hash='#/timeline?d=glance'">نظرة</button><button aria-pressed="${d==="read"}" onclick="location.hash='#/timeline?d=read'">قراءة</button><button aria-pressed="false" disabled title="في المنصة الكاملة">بحث</button></div>
+  ${erasBar()}
+  <div class="strip">${evs.map(e=>`<a class="card" href="${href(e.id)}" style="--era:${eraOf(e.year).c};${y===e.year?"outline:2px solid var(--accent)":""}"><div class="type">${esc(e.kind)} · ${eraOf(e.year).name}</div><h3>${esc(e.name.ar)}</h3><div class="d">${dual(e.year,e.end)}</div><p>${(e.summary||[]).map(([t,c])=>claimSpan(t,c)).join(" ")}</p></a>`).join("")}</div>
+  <p class="note">الأحداث ذات المدى (مثل الفتنة أو الطرد) تُعرض في المنصة كشريط لا كنقطة، والمختلف على تاريخها بحافة ضبابية.</p></section>`;};
+
+V.people=()=>`<section><p class="eyebrow">الأشخاص</p><h2>حكام وعلماء وأدباء</h2><div class="grid">${Object.values(E).filter(o=>o.type==="Person").sort((a,b)=>a.born-b.born).map(card).join("")}</div></section>`;
+V.places=()=>`<section><p class="eyebrow">الأماكن</p><h2>مدن ومعالم وميادين</h2><div class="grid">${Object.values(E).filter(o=>o.type==="Place").map(card).join("")}</div></section>`;
+V.museum=()=>`<section><p class="eyebrow">المتحف الرقمي</p><h2>الآثار والوثائق والمصنفات</h2><p class="sub">كل قطعة تحمل مكان حفظها الحالي ورخصة صورتها؛ لا تُعرض صورة بلا ترخيص واضح. في المنصة تُعرض المخطوطات عبر IIIF من مكتباتها مباشرة.</p><div class="grid">${Object.values(E).filter(o=>["Artifact","Document","Work"].includes(o.type)).map(card).join("")}</div></section>`;
+
+V.stories=()=>{const scenes=[["دمشق، 750م","سقوط الأمويين في المشرق، وشاب من البيت الأموي ينجو.",null],["شمال إفريقيا، 750–755م","سنوات التخفي والترحال بين القبائل البربرية.","p:abdrahman1"],["المنكب، 755م","العبور إلى الأندلس.","pl:malaga"],["قرطبة، 756م","المعركة على قرطبة وتأسيس الإمارة.","e:emirate-756"]];
+  return `<section><p class="eyebrow">رحلة سردية</p><h2>«الصقر»: من دمشق إلى قرطبة</h2><p class="sub">قصة من أربعة مشاهد. كل مشهد يشير إلى كيان في الرسم المعرفي، وتنتهي القصة بشاشة «ما الذي يقوله المؤرخون؟». (في المنصة الكاملة: شاشة كاملة لكل مشهد مع الخريطة والوسائط والصوت.)</p>
+  <div class="strip">${scenes.map(([t,d,id],i)=>`<div class="card" style="--era:var(--era-imara);min-width:300px"><div class="type">مشهد ${i+1}</div><h3>${esc(t)}</h3><p>${esc(d)}</p>${id?`<div class="chips" style="margin-top:8px">${chip(id)}</div>`:""}</div>`).join("")}
+  <div class="card" style="--era:var(--fact);min-width:300px"><div class="type">الخاتمة</div><h3>ما الذي يقوله المؤرخون؟</h3><p>${claimSpan("تأسيس الإمارة سنة 756م","c:emirate-756")} · تفاصيل الرحلة نفسها تعتمد على روايات لاحقة وتُعرض في المنصة بحالتها.</p></div></div>
+  <div class="grid" style="margin-top:14px">${[["رحلة ابن جبير","مسار الرحلة على الخريطة مع مقتطفات من نصه."],["يوم سقطت الخلافة","الفتنة 1009–1031م بأصوات متعددة."],["الليلة الأخيرة في الحمراء","شروط التسليم ونصوصها."],["المفاتيح","الموريسكيون من التنصير القسري إلى الطرد."]].map(([t,d])=>`<div class="card"><div class="type">قصة قادمة</div><h3>${t}</h3><p>${d}</p></div>`).join("")}</div></section>`;};
+
+V.play=()=>{const y=[800,960,1100,1300][Math.floor(Math.random()*4)];const ans=eraOf(y).name;const opts=[...new Set([ans,...ERAS.map(e=>e.name).sort(()=>Math.random()-.5).slice(0,3)])].sort(()=>Math.random()-.5);
+  return `<section><p class="eyebrow">ألعاب معرفية</p><h2>كل سؤال يُبنى من الرسم المعرفي ويعرض مصدره</h2>
+  <div class="grid">
+    <div class="game"><div class="type">أين أنت؟</div><h3>سنة ${y}م، أنت في قرطبة. ما العصر؟</h3><div class="opts" id="g1">${opts.map(o=>`<button data-ok="${o===ans}">${o}</button>`).join("")}</div><p class="note" id="g1n">الإجابة مبنية على حدود العصور في النموذج (حالة: حقيقة مستقرة في المنصة بمصادرها).</p></div>
+    <div class="game"><div class="type">رتّب الأحداث</div><h3>في المنصة: بطاقات تُسحب لترتيبها زمنيًا</h3><div class="chips">${["e:toledo-1085","e:zallaqa-1086","e:navas-1212","e:granada-1492"].map(chip).join("")}</div><p class="note">المصدر: حقل التاريخ في كل حدث.</p></div>
+    <div class="game"><div class="type">من قال؟</div><h3>«طوق الحمامة» من مؤلفه؟</h3><div class="chips">${chip("p:ibnhazm")}${chip("p:averroes")}${chip("p:ibnkhatib")}</div><p class="note">المصدر: علاقة authored.</p></div>
+    <div class="game"><div class="type">متحف الجيب</div><h3>اجمع القطع باستكشاف الأماكن</h3><div class="chips">${chip("a:mughira")}${chip("a:vase")}</div><p class="note">كل قطعة تحمل متحفها ورخصتها.</p></div>
+  </div></section>`;};
+
+V.design=()=>`<section><p class="eyebrow">نظام التصميم</p><h2>ثلاثة اتجاهات، رموز واحدة</h2><p class="sub">بدّل الاتجاه من الترويسة (الزليج / المخطوط / الليل) لترى الصفحة كلها تتغير. الألوان الوظيفية (حالات الادعاء والعصور) ثابتة عبر الاتجاهات كي لا يتغير معنى اللون.</p>
+  <h3>ألوان الحالة</h3><div class="swatches"><div class="sw"><i style="background:var(--fact)"></i><span>حقيقة مستقرة</span></div><div class="sw"><i style="background:var(--disputed)"></i><span>مختلف عليها</span></div><div class="sw"><i style="background:var(--inference)"></i><span>استنتاج</span></div><div class="sw"><i style="background:var(--myth)"></i><span>شائعة غير مثبتة</span></div></div>
+  <h3 style="margin-top:18px">ألوان العصور</h3><div class="swatches">${ERAS.map(e=>`<div class="sw"><i style="background:${e.c}"></i><span>${e.name}</span></div>`).join("")}</div>
+  <h3 style="margin-top:18px">ألوان الاتجاه الحالي</h3><div class="swatches">${["--bg","--card","--ink","--muted","--brand","--brand-2","--accent","--soft"].map(v=>`<div class="sw"><i style="background:var(${v})"></i><span>${v}</span></div>`).join("")}</div>
+  <h3 style="margin-top:18px">الخطوط</h3><div class="panel"><div style="font-family:var(--head);font-size:34px">عنوان: الأندلس بين التاريخ والرواية</div><div style="font-family:var(--body);font-size:16px">متن: في سنة 316هـ/929م أعلن عبد الرحمن الثالث الخلافة في قرطبة، وهو ما تتفق عليه المصادر الأساسية والدراسات الحديثة.</div></div>
+  <h3 style="margin-top:18px">المكوّنات</h3><div class="spec"><b>EntityCard</b><span>بطاقة كيان: نوع، اسم، تاريخان، سطر</span><b>ClaimBadge</b><span>نقطة ملونة بعد الجملة تفتح لوحة المصدر</span><b>ProvenancePanel</b><span>«كيف نعرف هذا؟»: المصدر، الموضع، المرتبة، الأقوال المخالفة</span><b>EraRibbon</b><span>شريط العصر والسنة في أعلى كل صفحة كيان</span><b>TimeSlider</b><span>شريط الزمن 711–1614 يزامن الخريطة والقوائم</span><b>DualDate</b><span>التاريخ بالتقويمين مع درجة اليقين</span><b>RelationRail</b><span>قضبان الروابط المولَّدة من الحواف</span><b>AudienceSwitch</b><span>استكشاف / عام / باحث</span></div>
+  <h3 style="margin-top:18px">Wireframes</h3>
+  <div class="grid">
+    <div class="wire"><b>الصفحة الرئيسية</b><div>ترويسة + مفاتيح الاتجاه والجمهور + ⌘K</div><div class="row"><div>H1 + شريط الزمن + مداخل</div><div>خريطة حية</div></div><div>«ماذا كان يحدث سنة …؟»</div><div>بطاقات المداخل الستة</div><div>كيف نتحقق؟</div></div>
+    <div class="wire"><b>صفحة مدينة</b><div>EraRibbon</div><div class="row"><div>NameStack + ملخص بشارات + الحالة اليوم</div><div>خريطة مصغرة + صور مرخصة</div></div><div>شريط زمن المدينة</div><div>RelationRail: أشخاص · أحداث · وثائق · آثار</div><div>الخلافات والأساطير</div><div>المصادر · صدّر</div></div>
+    <div class="wire"><b>صفحة شخصية</b><div>EraRibbon</div><div class="row"><div>الاسم والأدوار + ملخص</div><div>خريطة مسار الحياة</div></div><div>خط الحياة فوق الأحداث السياسية</div><div>الشيوخ والتلاميذ · المصنفات · المخطوطات · الأماكن</div><div>المصادر · المعرّفات</div></div>
+    <div class="wire"><b>صفحة حدث</b><div>EraRibbon + التاريخ بشارة</div><div class="row"><div>ملخص + الأطراف</div><div>خريطة المعركة ▶ + تنبيه الأعداد</div></div><div>قبل ← بعد</div><div>الروايات: مصادر أولية وقراءات حديثة</div><div>RelationRail</div></div>
+  </div></section>`;
+
+V.entity=(id)=>{const o=E[id];if(!o)return `<section><h2>لم أجد هذا الكيان</h2><p class="sub"><a href="#/">العودة</a></p></section>`;const [tn,tc]=TYPE[o.type];
+  let head="",extra="";
+  if(o.type==="Place"){head=ribbon(state.y);extra=`<div class="cols"><div><div class="names"><b>${esc(o.name.ar)}</b>${o.name.lat?`<span>اللاتيني: ${esc(o.name.lat)}</span>`:""}${o.name.es?`<span>اليوم: ${esc(o.name.es)}</span>`:""}<span>${esc(o.kind)}</span><span>${o.lat.toFixed(2)}°, ${o.lon.toFixed(2)}°</span></div><p style="margin-top:10px">${summaryHtml(o)}</p>${audienceBox(o)}
+      <h3 style="margin-top:18px">شريط زمن المكان</h3><div class="tl">${Object.values(E).filter(e=>e.type==="Event"&&e.place===id).sort((a,b)=>a.year-b.year).map(e=>`<div style="--era:${eraOf(e.year).c}"><b><a href="${href(e.id)}">${esc(e.name.ar)}</a></b> <small>${dual(e.year,e.end)}</small></div>`).join("")||"<div>لا أحداث في النموذج</div>"}</div></div>
+      <div class="panel"><p class="eyebrow">الموقع سنة ${state.y}م</p>${mapSvg(state.y)}<p class="note">في المنصة: مخطط المدينة في السنة المختارة (المسجد، القصر، الأسوار) كطبقة فوق الخريطة الحالية، وصور IIIF مرخصة.</p></div></div>`;}
+  else if(o.type==="Person"){head=ribbon(o.born,o.died);extra=`<div class="cols"><div><div class="names"><b>${esc(o.name.ar)}</b>${o.name.en?`<span>${esc(o.name.en)}</span>`:""}<span>${(o.roles||[]).join(" · ")}</span></div><p style="margin-top:10px">${summaryHtml(o)}</p>${audienceBox(o)}</div>
+      <div class="panel"><p class="eyebrow">مسار الحياة</p>${mapSvg(o.born+20)}<p class="note">في المنصة: خط الرحلة بين أماكن الإقامة (born_in → lived_in → died_in) مع سنواتها، وشبكة الشيوخ والتلاميذ.</p></div></div>`;}
+  else if(o.type==="Event"){head=ribbon(o.year,o.end);const parts=EDGES.filter(e=>e.to===id&&e.rel==="participated_in");extra=`<div class="cols"><div><p>${summaryHtml(o)}</p><h3 style="margin-top:14px">الأطراف</h3><div class="chips">${parts.map(p=>`<a class="chip" href="${href(p.from)}">${esc(E[p.from].name.ar)} <small>${esc(p.role||"")}</small></a>`).join("")||"<span class='chip'>تُستكمل</span>"}</div>
+      ${(o.before||o.after)?`<h3 style="margin-top:14px">قبل ← بعد</h3><div class="chips">${(o.before||[]).map(chip).join("")}<span class="chip" style="border-color:var(--accent)">${esc(o.name.ar)}</span>${(o.after||[]).map(chip).join("")}</div>`:""}
+      ${audienceBox(o)}</div><div class="panel"><p class="eyebrow">المكان</p>${mapSvg(o.year)}${o.kind==="معركة"?`<p class="note">خريطة المعركة على مراحل ▶ تُضاف في المنصة، مع تنبيه ثابت: أعداد الجيوش تُعرض كمدى بمصادره.</p>`:""}</div></div>`;}
+  else {extra=`<p>${summaryHtml(o)}</p>${o.holding?`<div class="panel" style="margin-top:12px"><b>مكان الحفظ:</b> ${esc(o.holding.institution)}${o.holding.license?` · <b>الرخصة:</b> ${esc(o.holding.license)}`:""}${o.holding.iiif?` · IIIF`:` · <span class="scholar-only" style="display:inline">الرقم المكتبي ورابط IIIF يُضافان عند التوثيق</span>`}</div>`:""}${o.capital?`<div class="chips" style="margin-top:12px"><span class="chip">العاصمة: ${esc(E[o.capital].name.ar)}</span><span class="chip">${o.from}–${o.to}م</span></div>`:""}${audienceBox(o)}`;}
+  return `<section><p class="eyebrow" style="color:${tc}">${tn}</p><h2>${esc(o.name.ar)}</h2>${head}${extra}${rail(id)}
+  <h3 style="margin-top:22px">المصادر المستخدمة في هذه الصفحة</h3><div class="chips">${[...new Set((o.summary||[]).flatMap(([,c])=>(CLAIMS[c]?.sources||[]).map(s=>s.src)))].map(s=>`<span class="chip">${esc(SOURCES[s].author)}، ${esc(SOURCES[s].year)} <small>مرتبة ${SOURCES[s].tier}</small></span>`).join("")}</div>
+  <p class="note">اقترح تصحيحًا · آخر مراجعة: 2026-09-21 (نموذج)</p></section>`;};
+
+/* ===== لوحة المصدر ===== */
+const STATUS={fact:["حقيقة مستقرة","var(--fact)"],disputed:["رواية مختلف عليها","var(--disputed)"],inference:["استنتاج","var(--inference)"],myth:["رواية شائعة غير مثبتة","var(--myth)"]};
+function openProv(cid){const c=CLAIMS[cid];if(!c)return;const [sn,sc]=STATUS[c.status];
+  document.getElementById("prov").innerHTML=`<button class="x" id="provX" aria-label="إغلاق">✕</button><p class="eyebrow">كيف نعرف هذا؟</p><h3>${esc(c.text)}</h3><span class="st" style="color:${sc}"><i class="b ${c.status}"></i>${sn}</span>
+    ${c.sources.map(s=>{const S=SOURCES[s.src];return `<div class="src"><b>${esc(S.title)}<span class="tier">مرتبة ${S.tier}</span></b>${esc(S.author)} · ${esc(S.year)} · ${esc(S.pub)} · ${esc(S.kind)} · ${esc(S.lang)}<q>الموضع: ${esc(s.loc)}</q></div>`;}).join("")}
+    ${c.counter.length?`<div class="counter"><b>الأقوال المخالفة</b>${c.counter.map(k=>`<p style="margin:6px 0">${esc(k.position)}<br><small style="color:var(--muted)">${k.sources.map(s=>esc(SOURCES[s.src].title)+" · "+esc(s.loc)).join(" ؛ ")}</small></p>`).join("")}</div>`:""}
+    <p class="note">المراجع: فريق التحرير (نموذج) · آخر مراجعة 2026-09-21 · <a href="#" onclick="return false">الإبلاغ عن خطأ</a> · <a href="#" onclick="return false">نسخ الاستشهاد</a></p>
+    <div class="scholar-only scholar-box">JSON للادعاء: <code>${esc(cid)}</code> · يُصدَّر مع المصادر بصيغة CSL-JSON في المنصة.</div>`;
+  document.getElementById("prov").classList.add("open");document.getElementById("veil").classList.add("on");document.getElementById("provX").onclick=closeProv;}
+function closeProv(){document.getElementById("prov").classList.remove("open");document.getElementById("veil").classList.remove("on");}
+document.getElementById("veil").onclick=closeProv;
+document.addEventListener("click",e=>{const b=e.target.closest(".b[data-c]");if(b){e.preventDefault();openProv(b.dataset.c);}});
+document.addEventListener("keydown",e=>{const b=e.target.closest?.(".b[data-c]");if(b&&(e.key==="Enter"||e.key===" ")){e.preventDefault();openProv(b.dataset.c);}if(e.key==="Escape"){closeProv();document.getElementById("cmd").classList.remove("on");}if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){e.preventDefault();openCmd();}});
+
+/* ===== البحث ===== */
+function openCmd(){const c=document.getElementById("cmd");c.classList.add("on");const q=document.getElementById("q");q.value="";q.focus();search("");}
+document.getElementById("kbtn").onclick=openCmd;document.getElementById("cmd").onclick=e=>{if(e.target.id==="cmd")e.currentTarget.classList.remove("on");};
+document.getElementById("q").oninput=e=>search(e.target.value);
+function search(s){s=s.trim();const res=document.getElementById("res");if(/^\d{3,4}$/.test(s)){const y=+s;res.innerHTML=`<a href="#/map?y=${y}"><i style="--c:var(--accent)"></i>ماذا كان يحدث سنة ${y}م؟<small>الخريطة</small></a><a href="#/timeline?y=${y}"><i style="--c:var(--accent)"></i>سنة ${y}م على خط الزمن<small>الزمن</small></a>`;return;}
+  const hits=Object.values(E).filter(o=>!s||o.name.ar.includes(s)||(o.name.en||"").toLowerCase().includes(s.toLowerCase())||(o.name.es||"").toLowerCase().includes(s.toLowerCase())).slice(0,12);
+  res.innerHTML=hits.map(o=>`<a href="${href(o.id)}" style="--c:${TYPE[o.type][1]}"><i></i>${esc(o.name.ar)}<small>${TYPE[o.type][0]}</small></a>`).join("")||`<a href="#/"><i></i>لا نتائج<small></small></a>`;}
+document.getElementById("res").onclick=()=>document.getElementById("cmd").classList.remove("on");
+
+/* ===== السمات والجمهور ===== */
+const state={y:960};
+function seg(id,attr,key){const el=document.getElementById(id);el.onclick=e=>{const b=e.target.closest("button");if(!b)return;el.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));document.documentElement.setAttribute(attr,b.dataset[key]);try{localStorage.setItem(attr,b.dataset[key]);}catch(_){}};
+  let saved=null;try{saved=localStorage.getItem(attr);}catch(_){}if(saved){document.documentElement.setAttribute(attr,saved);el.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x.dataset[key]===saved));}}
+seg("theme","data-theme","t");seg("aud","data-audience","a");
+
+/* ===== التوجيه ===== */
+function route(){const h=location.hash||"#/";const [path,qs]=h.slice(1).split("?");const q=Object.fromEntries(new URLSearchParams(qs||""));const seg=path.split("/").filter(Boolean);const app=document.getElementById("app");
+  document.querySelectorAll("#nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#/"+(seg[0]||"")));
+  let html="";
+  if(!seg.length)html=V.home();
+  else if(V[seg[0]]&&seg.length===1)html=V[seg[0]](q);
+  else if(seg.length===2)html=V.entity(seg[0]+":"+seg[1]);
+  else html=V.home();
+  app.innerHTML=html;window.scrollTo({top:0});
+  const bind=(id,onY)=>{const r=document.getElementById(id);if(!r)return;r.oninput=()=>{const y=+r.value;state.y=y;document.getElementById(id+"-y").innerHTML=`${y}م <small style="font-family:var(--body);font-size:12px;opacity:.75">${hijri(y)}هـ تقريبًا · ${eraOf(y).name}</small>`;onY(y);};};
+  bind("heroY",y=>{document.getElementById("heroMap").innerHTML=mapSvg(y);document.getElementById("heroSnap").innerHTML=yearSnapshot(y);});
+  bind("mapY",y=>{document.getElementById("mapBox").innerHTML=mapSvg(y);document.getElementById("mapSnap").innerHTML=yearSnapshot(y);document.getElementById("mapYear").textContent=y;});
+  if(q.y)state.y=+q.y;
+  const g=document.getElementById("g1");if(g)g.onclick=e=>{const b=e.target.closest("button");if(!b)return;g.querySelectorAll("button").forEach(x=>x.disabled=true);b.classList.add(b.dataset.ok==="true"?"ok":"no");document.getElementById("g1n").innerHTML=(b.dataset.ok==="true"?"صحيح. ":"ليس كذلك. ")+"المصدر: حدود العصور في الرسم المعرفي (Kennedy 1996، EI2). في المنصة تُعرض شارة الادعاء هنا.";};
+}
+window.addEventListener("hashchange",route);route();
+</script>
+</body>
+</html>
