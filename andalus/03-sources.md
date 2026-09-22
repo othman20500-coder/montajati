@@ -6,15 +6,17 @@
 >
 > **ما حدث في جلسة البحث (2026-09-21):** حاول الباحثان جلب كل رابط مباشرة للتأكد من أنه حيّ ومن نص ترخيصه، لكن سياسة الشبكة في بيئة العمل حجبت الاتصال بجميع نطاقات المكتبات والمتاحف والناشرين المجرَّبة (gallica.bnf.fr، bdh.bne.es، qdl.qa، fihrist.org.uk، marco.ox.ac.uk، archive.org، digital.csic.es، pares.mcu.es، csic.es، metmuseum.org، si.edu، europeana.eu، tandfonline.com، brill.com، pleiades.stoa.org، getty.edu، cerl.org، وحتى wikipedia.org وwikidata.org) برسالة `EGRESS_BLOCKED` / `403 CONNECT`، ثم نفدت حصة البحث الشبكي (200 بحث) قبل استكمال الفئات. **النتيجة: لم يُجلب أي رابط في هذا الفصل مباشرة.**
 >
+> **الجولة الثانية (2026-09-22):** أُجريت جولة تحقق ثانية بالبحث الشبكي فقط (50 بحثًا) غطّت الخرائط التاريخية (§3.9)، والوثائقيات والصوتيات (§3.10)، وتراخيص الاستخدام (§3.2، §3.6، §3.7، §3.11)، وروابط البوابات الرئيسية (§3.1، §3.2، §3.4، §3.5). الجلب المباشر ظل محجوبًا ولم يُحاوَل؛ الدليل هو عنوان النتيجة ومقتطفها كما أعادهما محرك البحث، فلا ترتفع أي حالة فوق (ب)، ولم تُقرأ أي صفحة ترخيص من موقعها. ما نُقل بين علامتي تنصيص إنجليزي/إسباني في أعمدة الحقوق هو نص المقتطف لا نص الصفحة الأصلية. **النتيجة: لا يزال لم يُجلب أي رابط في هذا الفصل مباشرة.**
+>
 > **علامتا التحقق في كل جدول:**
-> - **(ب)** = ظهر الرابط بعنوانه ومقتطف من محتواه في نتائج محرك البحث بتاريخ 2026-09-21 ولم يُجلب مباشرة؛ أي أن الصفحة كانت مفهرسة وحية عند الفهرسة، لا أنها فُتحت.
+> - **(ب)** = ظهر الرابط بعنوانه ومقتطف من محتواه في نتائج محرك البحث بتاريخ 2026-09-21 أو 2026-09-22 ولم يُجلب مباشرة؛ أي أن الصفحة كانت مفهرسة وحية عند الفهرسة، لا أنها فُتحت.
 > - **(م)** = من المعرفة المرجعية للباحث؛ لم يظهر في نتائج البحث ولم يُجلب. يُعامل كمرشّح فقط.
 >
-> **حقوق الاستخدام:** عمود الحقوق ينقل حرفيًا ما ورد في مقتطفات البحث أو ما دوّنه الباحث مع علامة (م)، وحيث لم يرد شيء كُتب «غير معروف» ولم يُفترض أي ترخيص. تراخيص Gallica وBDH وQDL وDigital Bodleian وLeiden وBerlin وWikidata وWikimedia Commons وArchnet وIAPH وCER.es وmuseosdeandalucia.es وalhambra-patronato.es **لم تُقرأ من مواقعها**.
+> **حقوق الاستخدام:** عمود الحقوق ينقل حرفيًا ما ورد في مقتطفات البحث أو ما دوّنه الباحث مع علامة (م)، وحيث لم يرد شيء كُتب «غير معروف» ولم يُفترض أي ترخيص. تراخيص Gallica وBDH وQDL وDigital Bodleian وLeiden وBerlin وQalamos وWikidata وWikimedia Commons وArchnet وIAPH وCER.es وmuseosdeandalucia.es ومدينة الزهراء وalhambra-patronato.es وCambridge CUDL وDavid Rumsey وIGN وPUA-STAR (Zenodo) ظهرت مقتطفات نصوصها في نتائج البحث بتاريخ 2026-09-22 (ب) لكنها **لم تُقرأ من مواقعها**. تراخيص إعادة الاستخدام لقاعدة PUA الحية وHATA وTonegawa وFihrist بقيت «غير معروف» بعد الجولتين.
 >
 > **بيانات الطبعات وأرقام الحفظ:** بيانات الطبعات في §3.1 من المعرفة المرجعية (م) ما لم تُوسم بـ(ب)؛ طبعات مشهورة لكنها لم تُؤكَّد ببليوغرافيًا (WorldCat/BNE/Dialnet) في هذه الجلسة. لم يُخترع أي رقم حفظ أو طبعة أو ISSN.
 >
-> **فئات لم تُبحث إطلاقًا:** (1) الخرائط التاريخية؛ (2) الوثائقيات والبودكاست؛ (3) متاحف وجامعات عدة (Museo de Málaga، Museo de Almería، الموقع الرسمي لـ Hispanic Society وThe David Collection؛ جامعات غرناطة وإشبيلية وقرطبة وكامبريدج وأكسفورد وSOAS)؛ (4) «قسم الدراسات الأندلسية بجامعة القاهرة» و«معهد الدراسات الأندلسية بالمغرب» (لم يُعثر على ما يؤكد وجودهما بهذين الاسمين). ما ورد منها في §3.4 و§3.6 و§3.9 و§3.10 مرشّحات موسومة (م) لا أكثر.
+> **فئات لم تُبحث في الجولة الأولى:** (1) الخرائط التاريخية و(2) الوثائقيات والبودكاست — **غُطّيتا بالبحث في الجولة الثانية (2026-09-22)** وما فيهما الآن موسوم (ب) حيث ظهر و(م) حيث لم يظهر؛ (3) متاحف وجامعات عدة: الموقع الرسمي لـ Hispanic Society وThe David Collection وجامعات غرناطة وإشبيلية وقرطبة وكامبريدج وأكسفورد وSOAS لم تُبحث بعد، أما Museo de Málaga وMuseo de Almería فتأكد رابطاهما في الجولة الثانية عبر صفحتي copyright (ب)؛ (4) «قسم الدراسات الأندلسية بجامعة القاهرة» و«معهد الدراسات الأندلسية بالمغرب» (لم يُعثر على ما يؤكد وجودهما بهذين الاسمين). ما بقي منها موسومًا (م) في §3.4 و§3.6 و§3.10 مرشّحات لا أكثر.
 >
 > **توصية ملزمة:** قبل نشر أي بطاقة مصدر تُجرى جولة تحقق ثانية من بيئة غير محجوبة: جلب الرابط، قراءة نص الترخيص، ومطابقة بيانات الطبعة بصفحة الناشر أو فهرس مكتبة. **لا تُرفع أي علامة من (م) إلى (ب)، ولا من (ب) إلى «مُتحقق»، إلا بجلب فعلي موثَّق بتاريخه في حقل `url_checked`.**
 
@@ -82,7 +84,7 @@
 
 | الجهة/المؤلف | العنوان | الرابط (مع العلامة) | نوع المادة | اللغة | مستوى الموثوقية | حقوق الاستخدام | ملاحظات |
 |---|---|---|---|---|---|---|---|
-| ابن حزم (ت 456هـ/1064م) | جمهرة أنساب العرب؛ طوق الحمامة؛ نقط العروس؛ الرسائل | غير معروف (يُتداول أن مخطوط الطوق الوحيد Leiden Or. 927 — (م) غير محقق) | أنساب/أدب/رسائل | عربي | A | الطوق (Pétrof): ملك عام؛ الرسائل (عباس): محفوظة | ط: الجمهرة: Lévi-Provençal 1948 / عبد السلام هارون 1962؛ الطوق: Pétrof 1914، ترجمات Nykl 1931، Arberry 1953، García Gómez 1952؛ الرسائل: إحسان عباس 1980–83 (م) |
+| ابن حزم (ت 456هـ/1064م) | جمهرة أنساب العرب؛ طوق الحمامة؛ نقط العروس؛ الرسائل | مخطوط طوق الحمامة الوحيد Leiden Or. 927 (ب) — انظر §3.2 (رابط الصورة الرقمية للمخطوط نفسه لم يظهر)؛ الباقي غير معروف | أنساب/أدب/رسائل | عربي | A | الطوق (Pétrof): ملك عام؛ الرسائل (عباس): محفوظة | ط: الجمهرة: Lévi-Provençal 1948 / عبد السلام هارون 1962؛ الطوق: Pétrof 1914، ترجمات Nykl 1931، Arberry 1953، García Gómez 1952؛ الرسائل: إحسان عباس 1980–83 (م) |
 | ابن سهل (ت 486هـ/1093م) | الأحكام الكبرى | غير معروف | نوازل | عربي | A | غير معروف | ط: رشيد النعيمي، الرياض 1997 (م). نوازل قرطبية |
 | ابن رشد الجد (ت 520هـ/1126م) | الفتاوى | غير معروف | فتاوى | عربي | A | غير معروف | ط: المختار التليلي، بيروت 1987 (م) |
 | ابن عبدون (ق 12م) | رسالة في الحسبة | غير معروف | حسبة | عربي | A | غير معروف | ط: Lévi-Provençal 1934؛ ترجمة García Gómez & Lévi-Provençal, *Sevilla a comienzos del siglo XII*, 1948 (م) |
@@ -98,7 +100,7 @@
 | مجهول (ق 12م) | *Chronica Adefonsi Imperatoris* | غير معروف | حولية | لاتيني | A | غير معروف | ط: A. Maya Sánchez، CCCM 71، 1990 (م) |
 | Rodrigo Jiménez de Rada (ق 13م) | *Historia de rebus Hispanie*؛ *Historia Arabum* | دراسة e-Spania: https://journals.openedition.org/e-spania/274?lang=en (ب) | تاريخ | لاتيني | A | e-Spania: وصول مفتوح | ط: Fernández Valverde، CCCM 72، 1987؛ *Historia Arabum*: Lozano Sánchez 1974/1993 (م). *Historia Arabum* تعتمد مصدرًا عربيًا (ابن حيّان) لتاريخ الإمارة الأموية (ب) |
 | Lucas de Tuy (ق 13م) | *Chronicon mundi* | غير معروف | حولية | لاتيني | A | غير معروف | ط: E. Falque، CCCM 74، 2003 (م) |
-| ألفونسو العاشر (ق 13م) | *Primera Crónica General* / *Estoria de España* | غير معروف | تاريخ ملكي | قشتالي | A | غير معروف | ط: Menéndez Pidal 1906 / 1955؛ *Estoria de Espanna Digital* (U. Birmingham, A. Ward, 2016) (م). تجميع ملكي يتضمن مادة الرازي |
+| ألفونسو العاشر (ق 13م) | *Primera Crónica General* / *Estoria de España* | *Estoria de Espanna Digital*: https://blog.bham.ac.uk/estoriadigital/ (ب)؛ https://www.birmingham.ac.uk/research/centres-institutes/research-in-modern-languages/estoria-de-espanna-digital (ب)؛ Transcribe Estoria: https://transcribeestoria.bham.ac.uk/en/about/ (ب) | تاريخ ملكي | قشتالي | A | غير معروف (لم يرد ترخيص للطبعة الرقمية في المقتطفات) | ط: Menéndez Pidal 1906 / 1955 (م)؛ *Estoria de Espanna Digital: A digital critical edition of the Estoria de Espanna de Alfonso X el Sabio* (University of Birmingham؛ تمويل AHRC؛ المحرر العام Aengus Ward؛ محررون: Fiona Maguire، Enrique Jerez Cabrero، Bárbara Bordalejo، Polly Duxfield، Christian Kusi Obodum، Ricardo Pichel Gotérrez) (ب): «tagged transcriptions and images of the five principal manuscripts, an edited version of the first (of three) redaction of the chronicle and a reader's text … first such digital edition of a large scale work of medieval Iberian prose»؛ سنة 2016 المدوَّنة سابقًا لم ترد في المقتطفات (م). تجميع ملكي يتضمن مادة الرازي |
 | مجهول (ق 14م) | *Crónica del moro Rasis* | غير معروف | ترجمة تاريخ مفقود | قشتالي | A | حقوق محفوظة | ط: Catalán & de Andrés 1975 (م). انظر الرازي |
 | جاومي الأول (ق 13م) | *Llibre dels fets* | غير معروف (المخطوط الرئيس: Biblioteca de la Universitat de Barcelona ms. 1 (1343) — (م) غير محقق) | سيرة ذاتية ملكية | قطلاني | A | غير معروف | ط: J. Bruguera، برشلونة: Barcino 1991؛ ترجمة D. Smith & H. Buffery, *The Book of Deeds of James I of Aragon*, Ashgate 2003 (م) |
 | Hernando del Pulgar (ق 15م) | *Crónica de los Reyes Católicos* | غير معروف | حولية | قشتالي | A | غير معروف | ط: Carriazo 1943 (م) |
@@ -114,23 +116,23 @@
 
 | الجهة/المؤلف | العنوان | الرابط (مع العلامة) | نوع المادة | اللغة | مستوى الموثوقية | حقوق الاستخدام | ملاحظات |
 |---|---|---|---|---|---|---|---|
-| BnF – Gallica | *Nuzhat al-mushtāq*, MS Arabe 2221 (الإدريسي) | https://gallica.bnf.fr/ark:/12148/btv1b6000547t (ب)؛ Biblissima: https://portail.biblissima.fr/ark:/43093/mdatace63c4e13a5b602e1bf055ff5c62df488e7ca55f (ب) | مخطوط مرقمن كامل | عربي | B | Gallica: إعادة الاستخدام غير التجاري حرّة للمواد في الملك العام، والتجاري يتطلب ترخيصًا (م — يحتاج تحقق) | ورق، 352 ورقة، 26×21 سم، مصور للعالم و68 خريطة؛ أقدم نسخة معروفة باقية (ب) |
+| BnF – Gallica | *Nuzhat al-mushtāq*, MS Arabe 2221 (الإدريسي) | https://gallica.bnf.fr/ark:/12148/btv1b6000547t (ب)؛ Biblissima: https://portail.biblissima.fr/ark:/43093/mdatace63c4e13a5b602e1bf055ff5c62df488e7ca55f (ب) | مخطوط مرقمن كامل | عربي | B | Gallica (ب): «Non-commercial reuse of digitized documents is free and gratuitous, provided that the source 'Source gallica.bnf.fr / Bibliothèque nationale de France' is cited … Commercial reuse … is paid and subject to a license»؛ الشروط: https://gallica.bnf.fr/accueil/fr/html/conditions-dutilisation-de-gallica (ب) — لم تُقرأ من الموقع | ورق، 352 ورقة، 26×21 سم، مصور للعالم و68 خريطة؛ أقدم نسخة معروفة باقية (ب) |
 | BnF – Archives et manuscrits | سجل Arabe 2221 | https://archivesetmanuscrits.bnf.fr/ark:/12148/cc209771 (ب) | وصف فهرسي | فرنسي | B | بيانات وصفية | — |
 | BnF | *Akhbār majmūʿa* — المخطوط الوحيد | غير معروف (الرقم المتداول: Arabe 1867 — (م) يحتاج تحقق) | مخطوط | عربي | B | غير معروف | ويكيبيديا (C) تؤكد حفظه في BnF دون ذكر الرقم (ب) |
-| Bodleian / Oxford MARCO | نسخة المقتبس لابن حيّان (ق 14–15م) | https://marco.ox.ac.uk/ark:29072/x0js956f943p (ب) | سجل فهرسي (وجود صور رقمية غير مؤكد) | عربي | B | Digital Bodleian عادةً CC BY-NC 4.0 عبر IIIF (م — يحتاج تحقق) | لم يُتأكد أي سِفر من المقتبس |
-| Bodleian / Oxford MARCO | نسخة *Nuzhat al-mushtāq* | https://marco.ox.ac.uk/ark:29072/x0fx719m78rt (ب) | سجل فهرسي | عربي | B | كما أعلاه (م) | — |
+| Bodleian / Oxford MARCO | نسخة المقتبس لابن حيّان (ق 14–15م) | https://marco.ox.ac.uk/ark:29072/x0js956f943p (ب) | سجل فهرسي (وجود صور رقمية غير مؤكد) | عربي | B | Digital Bodleian (ب): «Most of the images on Digital Bodleian are made available under a Creative Commons non-commercial license, with attribution (CC-BY-NC 4.0)»؛ الإسناد: الرقم + «Bodleian Libraries, University of Oxford»؛ «not all content in Digital Bodleian is covered by this license, such as material owned by Oxford colleges. You should always check an individual item's copyright»؛ الشروط: https://digital.bodleian.ox.ac.uk/terms/ (ب) | لم يُتأكد أي سِفر من المقتبس |
+| Bodleian / Oxford MARCO | نسخة *Nuzhat al-mushtāq* | https://marco.ox.ac.uk/ark:29072/x0fx719m78rt (ب) | سجل فهرسي | عربي | B | كما أعلاه (ب) | — |
 | Library of Congress (WDL) | نسخة رقمية من نزهة المشتاق | https://www.loc.gov/item/2021667394/ (ب) | مخطوط مرقمن | عربي | B | متفاوت حسب الجهة المانحة | — |
-| Fihrist (UK) | الفهرس الموحد لمخطوطات العالم الإسلامي في 23 مكتبة بريطانية (منها بودليان) | https://www.fihrist.org.uk/ (ب — الرئيسية غير مجلوبة؛ سجلات فرعية ظهرت)؛ MS. Bodl. Or. 295: https://www.fihrist.org.uk/catalog/manuscript_10586 (ب)؛ MS. Marsh 537: https://www.fihrist.org.uk/catalog/manuscript_1131 (ب) | فهرس موحد | إنجليزي/عربي | B (مشروع Oxford/Cambridge) | بيانات وصفية مفتوحة (م) | نقطة البدء للمجموعات البريطانية |
+| Fihrist (UK) | الفهرس الموحد لمخطوطات العالم الإسلامي في 23 مكتبة بريطانية (منها بودليان) | https://www.fihrist.org.uk/ (ب — الرئيسية غير مجلوبة؛ سجلات فرعية ظهرت)؛ MS. Bodl. Or. 295: https://www.fihrist.org.uk/catalog/manuscript_10586 (ب)؛ MS. Marsh 537: https://www.fihrist.org.uk/catalog/manuscript_1131 (ب) | فهرس موحد | إنجليزي/عربي | B (مشروع Oxford/Cambridge) | غير معروف — وصف «بيانات وصفية مفتوحة» (م) لم يتأكد؛ لم يرد ترخيص في المقتطفات وملف LICENSE في المستودع لم يظهر | نقطة البدء للمجموعات البريطانية. مستودع ملفات TEI للفهرس: https://github.com/fihristorg/fihrist-mss (ب)؛ README (ب، انظر المصادر): «contains the underlying XML files for the FIHRIST, a union Catalogue of Manuscripts from the Islamicate World» |
 | Real Academia de la Historia | فاكسيميلي المقتبس II-1 (1999) + مخطوط مجموعة Emilio García Gómez | https://publicaciones.rah.es/producto/la-primera-decada-del-reinado-de-al-hakam-i-segun-el-muqtabis-ii-1-de-ben-hayyan-de-cordoba-m-469-h-1076-j-c/ (ب) | فاكسيميلي مطبوع + مخطوط | عربي/إسباني | B | حقوق محفوظة (منشور) | الفاكسيميلي نُفّذ في 29 يونيو 1999؛ الأصل مخطوط «متأخر» مودَع في الأكاديمية (ب) |
 | Real Biblioteca del Monasterio de El Escorial (Patrimonio Nacional) | المجموعة العربية (~2000 مجلد) | غير معروف (لا بوابة IIIF شاملة) | مخطوطات | عربي | B | غير معروف | معظمها من مكتبة السلطان مولاي زيدان ضُمّت إلى مكتبة فيليب الثالث عام 1612؛ أهم مجموعة عربية في إسبانيا (H-Net (ب)). مثال سجل مفهرس خارجيًا: Escorial ár. 916 في PAL: https://ptolemaeus.badw.de/ms/687 (ب) |
-| Derenbourg / Lévi-Provençal | *Les manuscrits arabes de l'Escurial* (1884–1928): I (1884)؛ II وIII (1903 وما بعده)؛ III (لاهوت/جغرافيا/تاريخ) راجعه وحدّثه E. Lévi-Provençal | Gallica I: https://gallica.bnf.fr/ark:/12148/bpt6k5439265m (ب)؛ II fasc. 1: https://gallica.bnf.fr/ark:/12148/bpt6k5439468j (ب)؛ III: https://gallica.bnf.fr/ark:/12148/bpt6k54454712 (ب)؛ IA: https://archive.org/details/p2lesmanuscarab02dereuoft (ب)؛ HathiTrust: https://catalog.hathitrust.org/Record/000886463 (ب)؛ Wellcome: https://wellcomecollection.org/works/a4gxrfed (ب) | فهرس مطبوع مرقمن | فرنسي | A (تحقيق كلاسيكي) | ملك عام (نشر قبل 1929) | أرقام المخطوطات (ár. …) تُؤخذ منه؛ دليل ميشيغان يذكر أن الفهارس متاحة PDF: https://guides.lib.umich.edu/islamicmsstudies/onlinecatalogues (ب) |
-| Qatar Digital Library (BL / Qatar Foundation) | بوابة + مقال «Andalusī and Maghribī Scholarship» | https://www.qdl.qa/en (ب)؛ https://www.qdl.qa/en/andalus%C4%AB-and-maghrib%C4%AB-scholarship-legacy-arabic-spain (ب)؛ مدونة BL 2014 (ب، انظر المصادر) | بوابة رقمية | عربي/إنجليزي | B | غالبًا Open Government Licence أو علامة الملك العام (م — يحتاج تحقق) | تركيزها تاريخ الخليج وتاريخ العلوم لا التواريخ الأندلسية |
+| Derenbourg / Lévi-Provençal | *Les manuscrits arabes de l'Escurial* (1884–1928): I (1884)؛ II وIII (1903 وما بعده)؛ III (لاهوت/جغرافيا/تاريخ) راجعه وحدّثه E. Lévi-Provençal | Gallica I: https://gallica.bnf.fr/ark:/12148/bpt6k5439265m (ب)؛ II fasc. 1: https://gallica.bnf.fr/ark:/12148/bpt6k5439468j (ب)؛ III: https://gallica.bnf.fr/ark:/12148/bpt6k54454712 (ب)؛ IA: https://archive.org/details/p2lesmanuscarab02dereuoft (ب)؛ HathiTrust: https://catalog.hathitrust.org/Record/000886463 (ب)؛ Wellcome: https://wellcomecollection.org/works/a4gxrfed (ب) | فهرس مطبوع مرقمن | فرنسي | A (تحقيق كلاسيكي) | ملك عام (نشر قبل 1929)؛ حالة Full view في HathiTrust لم ترد في المقتطف | أرقام المخطوطات (ár. …) تُؤخذ منه؛ دليل ميشيغان يذكر أن الفهارس متاحة PDF: https://guides.lib.umich.edu/islamicmsstudies/onlinecatalogues (ب). سجل HathiTrust تأكد مجددًا في 2026-09-22 (ب): «Hartwig Derenbourg (1844-1908) authored this work, which was published in Paris by E. Leroux in 1884»؛ فهرسا Princeton: https://catalog.princeton.edu/catalog/99102128223506421 (ب) وStanford SearchWorks: https://searchworks.stanford.edu/view/3270112 (ب) |
+| Qatar Digital Library (BL / Qatar Foundation) | بوابة + مقال «Andalusī and Maghribī Scholarship» | https://www.qdl.qa/en (ب)؛ https://www.qdl.qa/en/andalus%C4%AB-and-maghrib%C4%AB-scholarship-legacy-arabic-spain (ب)؛ مدونة BL 2014 (ب، انظر المصادر) | بوابة رقمية | عربي/إنجليزي | B | متعدد الطبقات (ب): Crown copyright (ترجمات/مواد موظفي التاج) — «Crown copyright applies to works, and translations … may be used in accordance with the Open Government Licence»؛ مواد «Public Domain» بحسب اعتقاد المكتبة («Content marked 'Public Domain' consists of materials … in the public domain in most territories»)؛ مواد بحقوق طرف ثالث؛ مواد بـ CC؛ نص عام يمنع البيع/النسخ بلا إذن «except where permitted». الرخصة تُقرأ لكل سجل: https://www.qdl.qa/en/copyright-ethical-terms-reuse (ب)؛ https://qdl.qa/en/terms-use (ب) | تركيزها تاريخ الخليج وتاريخ العلوم لا التواريخ الأندلسية |
 | Qatar National Library | مخطوط 20 ورقة من صحيح البخاري بخط أندلسي (1174–1175م) | https://www.qnl.qa/en/explore/digital-collections (ب) | مخطوط مرقمن | عربي | B | غير معروف | شاهد على الخط الأندلسي |
-| Leiden University Libraries | Digital Collections (مخطوطات شرقية) | https://digitalcollections.universiteitleiden.nl/ (م) | بوابة IIIF | متعدد | B | كثير منها ملك عام (م) | يُتداول أن مخطوط طوق الحمامة الوحيد Leiden Or. 927 (م — يحتاج تحقق)؛ لم تظهر مخطوطات أندلسية محددة في البحث |
-| Staatsbibliothek zu Berlin / Qalamos | Digitalisierte Sammlungen + Qalamos | https://digital.staatsbibliothek-berlin.de/ (م)؛ https://www.qalamos.net/ (م) | بوابة IIIF + فهرس | ألماني/عربي | B | ملك عام غالبًا (م) | Qalamos يجمع فهارس المخطوطات الشرقية في ألمانيا؛ لم تظهر مخطوطات أندلسية محددة |
-| Digital Bodleian | بوابة الصور | https://digital.bodleian.ox.ac.uk/ (م) | بوابة IIIF | — | B | CC BY-NC 4.0 افتراضيًا (م) | — |
-| Cambridge Digital Library | بوابة الصور | https://cudl.lib.cam.ac.uk/ (م) | بوابة IIIF | — | B | CC BY-NC (م) | — |
-| Biblioteca Digital Hispánica (BNE) | بوابة المكتبة الوطنية الإسبانية | https://bdh.bne.es/bnesearch/ (م) | بوابة رقمية | إسباني | B | ملك عام مع الإشارة إلى المصدر (م) | تضم مخطوطات عربية BNE ومطبوعات ق 16–17 (مثل Mármol Carvajal) |
+| Leiden University Libraries | Digital Collections (مخطوطات شرقية) | https://digitalcollections.universiteitleiden.nl/ (ب)؛ دليل الاستخدام: https://www.library.universiteitleiden.nl/subject-guides/how-to-use-digital-collections (ب)؛ مقال Code4Lib عن نطاقات الوصول: https://journal.code4lib.org/articles/13588 (ب) | بوابة IIIF | إنجليزي/هولندي | B | نطاقات وصول متعددة (ب): «multiple permission scopes including: Access with ULCN account … viewing and streaming rights only, and access and download rights for everyone»؛ المواد المحمية تتطلب إذن صاحب الحق؛ لا رخصة موحدة للملك العام في المقتطفات | **تأكد (ب)** أن Or. 927 هو المخطوط الوحيد لطوق الحمامة لابن حزم (مؤرخ 738هـ/1338م؛ من مجموعة Levinus Warner منذ 1665) و«also available digitally»: دليل المجموعة العربية https://collectionguides.universiteitleiden.nl/resources/ubl071 (ب)؛ https://digitalcollections.universiteitleiden.nl/view/item/1887319 (ب)؛ رابط الصورة الرقمية للمخطوط نفسه لم يظهر. لم تظهر مخطوطات أندلسية أخرى محددة |
+| Staatsbibliothek zu Berlin (SPK) / Qalamos | Digitalisierte Sammlungen + Qalamos | https://digital.staatsbibliothek-berlin.de/ (ب — الرئيسية ضمنًا؛ الظاهر: البحث https://digital.staatsbibliothek-berlin.de/suche/ (ب) وصفحة الشروط https://digital.staatsbibliothek-berlin.de/nutzungsbedingungen (ب))؛ https://www.qalamos.net/ (ب)؛ مثال سجل: https://www.qalamos.net/receive/MyMssWork_work_00002926 (ب)؛ DFG GEPRIS: https://gepris.dfg.de/gepris/projekt/430973116?language=en (ب) | بوابة IIIF + فهرس موحد | ألماني/إنجليزي/عربي | B | Berlin (ب): «Public Domain Mark 1.0» لما نُشر قبل 1920 — «endeavors to make all digitized works published before 1920 available to the public under a Public Domain Mark 1.0 license» («free use of the scans for any purposes»)؛ استثناءات لما بعد 1920؛ الرخصة تظهر في البيانات الببليوغرافية الكاملة لكل مادة؛ سياسة الوصول المفتوح: https://staatsbibliothek-berlin.de/die-staatsbibliothek/open-access (ب). Qalamos (ب): «The metadata on qalamos.net is licensed under CC0 1.0 Universal» — للبيانات الوصفية فقط؛ الصور بحسب المكتبة المالكة | Qalamos: بوابة مخطوطات التقاليد الآسيوية والأفريقية في ألمانيا (SBB + Universität Leipzig وشركاء؛ تمويل DFG؛ إطلاق 28 يونيو 2022؛ ~175,000 سجل / 120,000 قطعة بحسب مارس 2023) — «pools the metadata and digital copies of manuscripts … from over 20 German institutions» (ب)؛ لم تظهر مخطوطات أندلسية محددة |
+| Digital Bodleian | بوابة الصور | https://digital.bodleian.ox.ac.uk/ (ب)؛ الشروط: https://digital.bodleian.ox.ac.uk/terms/ (ب)؛ FAQ: https://digital.bodleian.ox.ac.uk/faq/ (ب) | بوابة IIIF | إنجليزي | B | «Most of the images on Digital Bodleian are made available under a Creative Commons non-commercial license, with attribution (CC-BY-NC 4.0)» (ب)؛ ليست كل المواد مشمولة (مثل مواد الكليات) — تُفحص حقوق كل مادة؛ الإسناد: الرقم + «Bodleian Libraries, University of Oxford» | — |
+| Cambridge Digital Library | بوابة الصور | https://cudl.lib.cam.ac.uk/ (ب)؛ الشروط: https://cudl.lib.cam.ac.uk/terms/ (ب)؛ https://cudl.lib.cam.ac.uk/about/ (ب) | بوابة IIIF | إنجليزي | B | شخصي غير تجاري؛ الرخصة لكل مادة (ب): «may be accessed, downloaded and printed for personal and non-commercial use»؛ «provides images, texts and metadata for download and reuse where copyright and licensing permit» — **لم تتأكد CC BY-NC كرخصة عامة** (كانت مدوَّنة (م)) | الرخص على مستوى المادة/المجموعة |
+| Biblioteca Digital Hispánica (BNE) | بوابة المكتبة الوطنية الإسبانية | https://bdh.bne.es/bnesearch/Search.do (ب)؛ الحقوق: https://www.bne.es/es/servicios/reproduccion-documentos/uso-reproducciones (ب)؛ خبر BNE عن الاستخدام التجاري المجاني (ب، انظر المصادر)؛ datos.gob.es: https://datos.gob.es/en/catalogo/ea0019768-biblioteca-digital-documentos-en-dominio-publico1 (ب) | بوابة رقمية | إسباني | B | (ب) صور الملك العام في BDH وHemeroteca Digital «bajo una licencia de Reconocimiento 4.0 Internacional de Creative Commons o equivalente»؛ «El uso de dichas imágenes es gratuito y no requiere autorización previa (independientemente de si es uso público no comercial, comercial o académico)»؛ يلزم ذكر «Biblioteca Nacional de España» — أفضل مما دُوّن سابقًا («ملك عام مع الإسناد (م)») | تضم مخطوطات عربية BNE ومطبوعات ق 16–17 (مثل Mármol Carvajal) وخرائط (§3.9). ظهر أيضًا اسم «BNE Digital» (bnedigital.bne.es) كواجهة أحدث — يحتاج تحقق |
 | Biblioteca Digital AECID (Biblioteca Islámica) | مخطوطات عربية مرقمنة من مجموعات إسبانية | غير معروف الرابط الدقيق (ذُكرت في دليل ميشيغان (ب) ودليل AUB: https://aub.edu.lb.libguides.com/c.php?g=276485&p=1842810 (ب)) | بوابة رقمية | عربي/إسباني | B | غير معروف | — |
 | Internet Archive | *al-Muqtabis* (نسخة غير محددة الطبعة) | https://archive.org/details/almuqtabas (ب) | نص مرقمن OCR | عربي | C | غير معروف | تحقق من الطبعة قبل الاستشهاد |
 | Internet Archive | Gayangos, *History of the Mohammedan Dynasties in Spain* (1840–43) | https://archive.org/details/bub_gb_Ie7TAAAAMAAJ (ب) | مطبوع مرقمن | إنجليزي | A (ترجمة كلاسيكية) | ملك عام | مختصرة ومعاد ترتيبها (§3.1) |
@@ -199,8 +201,8 @@
 | CSIC | Instituto de Lenguas y Culturas del Mediterráneo y Oriente Próximo (ILC)، مدريد | https://ilc.csic.es/en (ب)؛ https://cchs.csic.es/en/org-structure/institute-languages-cultures-mediterranean-near-east-ilc (ب) | مركز بحث + ناشر Al-Qanṭara | إسباني/إنجليزي | B (منتجاته A) | غير معروف | خلف Instituto de Filología منذ 2007؛ سلسلة «Estudios Árabes e Islámicos» بإدارة Maribel Fierro. منظومة CSIC (Fuentes Arábico-Hispanas، Al-Qanṭara، PUA/HATA) العمود الفقري للتحقيق الأندلسي |
 | Casa de Velázquez | École des hautes études hispaniques et ibériques (EHEHI)، مدريد | https://www.casadevelazquez.org/en/ (ب) | مركز بحث فرنسي | فرنسي/إسباني | B | غير معروف | ملتزمة بالعلم المفتوح والإنسانيات الرقمية؛ ناشر *Mélanges* (§3.8) |
 | Real Academia de la Historia | الأكاديمية الملكية للتاريخ | https://www.rah.es/ (م)؛ https://bibliotecadigital.rah.es/ (م) | أكاديمية وطنية | إسباني/عربي | B | غير معروف | تحفظ مجموعة García Gómez (ب) ومجموعة Gayangos (م)؛ انظر §3.2 |
-| ALECSO / جامعة الدول العربية | معهد المخطوطات العربية، القاهرة | https://www.malecso.org/ (ب)؛ https://www.malecso.org/institute/who-we-are (ب) | معهد مخطوطات (فهرسة وتحقيق) | عربي | B | غير معروف | أُنشئ 1946؛ أُلحق بالألكسو مطلع السبعينيات؛ مقره القاهرة منذ 1991 |
-| Biblioteca Virtual Miguel de Cervantes (U. Alicante) | نصوص إسبانية وقطلانية (تواريخ قشتالة وأراغون) | https://www.cervantesvirtual.com/ (م) | مكتبة رقمية أكاديمية | إسباني/قطلاني | B | حقوق الطبعات محفوظة غالبًا (م) | — |
+| ALECSO / جامعة الدول العربية | معهد المخطوطات العربية | https://www.malecso.org/ (ب)؛ https://www.malecso.org/institute/who-we-are (ب)؛ النظام الأساسي: https://www.malecso.org/institute/infrastructure (ب)؛ صفحة الألكسو (ب، انظر المصادر) | معهد مخطوطات (فهرسة وتحقيق) | عربي | B | غير معروف | «founded in 1946 under the umbrella of the Arab League» (ب)؛ أُلحق بالألكسو مطلع السبعينيات (م). **تعارض في المقر (ب):** النظام الأساسي يذكر «The main headquarters of the institute are located in the State of Kuwait» بينما أخبار الموقع (2026/02/02) تذكر «معهد المخطوطات العربية بالقاهرة» — يُسجَّل: المقر: القاهرة (فعليًا) / الكويت (بحسب النظام الأساسي) — يحتاج تحقق؛ «مقره القاهرة منذ 1991» المدوَّن سابقًا (م). للمعهد «المكتبة الصوتية» (§3.10) |
+| Biblioteca Virtual Miguel de Cervantes (U. Alicante) | نصوص إسبانية وقطلانية (تواريخ قشتالة وأراغون) | https://www.cervantesvirtual.com/ (ب)؛ Marco legal: https://www.cervantesvirtual.com/marco-legal/ (ب) | مكتبة رقمية أكاديمية | إسباني/قطلاني | B | غير معروف (ب — المقتطف يذكر «General Conditions of Use» بلا تفصيل للحقوق على النصوص؛ «حقوق الطبعات محفوظة غالبًا» المدوَّن سابقًا (م)) | مؤسسة 1999 (جامعة أليكانتي برعاية Banco Santander وFundación Marcelino Botín) (ب): «The website is owned by the University of Alicante and the institutions participating in the project … operates under General Conditions of Use». بوابة فرعية لـ Fondo Antiguo جامعة إشبيلية: https://www.cervantesvirtual.com/portales/universidad_de_sevilla/fondos_digitales/ (ب) |
 | Universidad de Granada | قسم الدراسات السامية، ناشر MEAH-AI | https://www.ugr.es/ (م) | جامعة | إسباني | B | غير معروف | لم يُبحث؛ مرشّح |
 | Universidad de Sevilla / Universidad de Córdoba | أقسام الدراسات العربية والإسلامية | https://www.us.es/ (م)؛ https://www.uco.es/ (م) | جامعة | إسباني | B | غير معروف | لم يُبحث؛ مرشّح |
 | Cambridge / Oxford / SOAS | أقسام الدراسات الشرقية/الإسلامية | https://www.ames.cam.ac.uk/ (م)؛ https://www.orinst.ox.ac.uk/ (م)؛ https://www.soas.ac.uk/ (م) | جامعة | إنجليزي | B | غير معروف | لم يُبحث؛ مرشّح |
@@ -211,16 +213,16 @@
 | الجهة/المؤلف | العنوان | الرابط (مع العلامة) | نوع المادة | اللغة | مستوى الموثوقية | حقوق الاستخدام | ملاحظات |
 |---|---|---|---|---|---|---|---|
 | Patronato de la Alhambra y Generalife (Junta de Andalucía) | Archivo de la Alhambra (وثائق من ق 15م فصاعدًا، صور، مخططات) | https://www.alhambra-patronato.es/descubrir/investigacion/archivo (ب)؛ RIA: https://www.alhambra-patronato.es/ria/ (ب)؛ Portal de Archivos de Andalucía: https://www.juntadeandalucia.es/cultura/archivos/alhambra (ب)؛ صفحتا Colecciones وServicios وخبر صحفي يونيو 2025 (ب، انظر المصادر) | أرشيف مرقمن جزئيًا | إسباني | B | مجاني للاطلاع؛ إعادة الاستخدام غير معروفة | **أرقام الرقمنة:** 28,739 وثيقة مرقمنة متاحة مجانًا عبر @rchivaWeb من أصل 42,142 وثيقة مفهرسة؛ 53,000 صورة فوتوغرافية و12,500 مخطط و321 رسمًا مرقمنًا (ب). الخبر الصحفي يُستخدم كخبر فقط (C) |
-| Ministerio de Cultura – PARES | Portal de Archivos Españoles (المدخل إلى AHN وAGS وACA) | https://pares.mcu.es/ParesBusquedas20/catalogo/find?idAut=102548&archivo=9&tipoAsocAut=1&nomAut=Inquisidores (ب)؛ https://pares.mcu.es/ParesBusquedas20/catalogo/description/178103 (ب) | بوابة أرشيفية موحدة | إسباني | B | إعادة استخدام حكومية مفتوحة مع الإسناد (م — يحتاج تحقق) | وصف ورقمنة لوثائق محاكم التفتيش في AHN |
+| Ministerio de Cultura – PARES | Portal de Archivos Españoles (المدخل إلى AHN وAGS وACA) | الرئيسية: https://pares.mcu.es/index.html (ب)؛ https://pares.culturaydeporte.gob.es/ (ب)؛ صفحة الوزارة: https://www.cultura.gob.es/cultura/archivos/bases-de-datos/portal-de-archivos-espanoles-pares.html (ب)؛ https://pares.mcu.es/ParesBusquedas20/catalogo/find?idAut=102548&archivo=9&tipoAsocAut=1&nomAut=Inquisidores (ب)؛ https://pares.mcu.es/ParesBusquedas20/catalogo/description/178103 (ب) | بوابة أرشيفية موحدة | إسباني | B | إعادة استخدام حكومية مفتوحة مع الإسناد (م — يحتاج تحقق؛ لم يرد نص إعادة استخدام في مقتطفات 2026-09-22) | وصف ورقمنة لوثائق محاكم التفتيش في AHN. (ب): «offers free access to digitized images of Spanish Archives and was opened in 2007. In May 2016, it was updated to PARES 2.0, with more than 33.9 million digital images». ظهر نطاق ثالث pares.cultura.gob.es في روابط أخرى؛ يُعتمد mcu.es مع ملاحظة التحويل |
 | Archivo Histórico Nacional (AHN) | Sección Inquisición (Consejo de Inquisición؛ محاكم طليطلة، بلنسية…) | https://www.cultura.gob.es/en/cultura/areas/archivos/mc/archivos/ahn/actualidad/destacados/2017/asociacion-amigos/curso-inquisicion.html (ب)؛ دراسة UCM (ب، انظر المصادر) | أرشيف | إسباني | B | كما PARES | قسم التفتيش تكوّن من 1896 بنقل مجموعات سيمانكاس وألكالا ثم سلاسل المكتبة الوطنية 1914؛ محاضر ضد موريسكيي بلنسية في legajos 548–556 (ب) |
-| Archivo General de Simancas (AGS) | Patronato Real، Cámara de Castilla، Guerra Antigua (غرناطة والموريسكيون) | https://www.cultura.gob.es/cultura/areas/archivos/mc/archivos/ags/portada.html (م) | أرشيف | إسباني | B | كما PARES | يُذكر أن capitulaciones غرناطة 1491 في Patronato Real (م — يحتاج تحقق) |
-| Archivo de la Corona de Aragón (ACA) | Cancillería؛ وثائق المدجّنين في أراغون وبلنسية | https://www.cultura.gob.es/cultura/areas/archivos/mc/archivos/aca/portada.html (م) | أرشيف | لاتيني/قطلاني/أراغوني | B | كما PARES | — |
+| Archivo General de Simancas (AGS) | Patronato Real، Cámara de Castilla، Guerra Antigua (غرناطة والموريسكيون) | https://www.cultura.gob.es/cultura/areas/archivos/mc/archivos/ags/portada.html (ب)؛ Patronato Real في PARES: http://pares.mcu.es/ParesBusquedas20/catalogo/description/13789 (ب) | أرشيف | إسباني | B | كما PARES | capitulaciones غرناطة في Patronato Real — تأكد (ب): «there are copies of the Granada capitulations with a seal of office in the Patronato section of the Archivo General de Simancas»؛ «Patronato Real is the oldest collection … including oaths, capitulations, international treaties» |
+| Archivo de la Corona de Aragón (ACA) | Cancillería؛ وثائق المدجّنين في أراغون وبلنسية | https://www.cultura.gob.es/archivos-aca/portada.html (ب)؛ Registros de la Real Cancillería في PARES: https://pares.cultura.gob.es/ParesBusquedas20/catalogo/description/1593584 (ب)؛ Archivo Real (Real Cancillería): https://pares.mcu.es/ParesBusquedas20/catalogo/description/120476 (ب) | أرشيف | لاتيني/قطلاني/أراغوني | B | كما PARES | **الرابط تغيّر:** القديم (…/mc/archivos/aca/portada.html) (م) لم يظهر واستُبدل. (ب): «descriptions and digital reproductions of the oldest parchments of the archive (fund of the Real Cancillería) have been published in the PARES portal—2,433 documents dated between the mid-ninth and mid-twelfth centuries» |
 | Archivo Histórico Provincial de Zaragoza (DARA Aragón) | محكمة تفتيش سرقسطة | https://dara.aragon.es/opac/apjz/documentos_4_inquisicion.html (ب) | أرشيف | إسباني | B (إقليمية) | غير معروف | — |
 | Archivo de la Real Chancillería de Granada | دعاوى الموريسكيين | https://www.juntadeandalucia.es/cultura/archivos/ (م — الرابط الفرعي غير معروف) | أرشيف | إسباني | B (إقليمية) | غير معروف | — |
 | Real Academia de la Historia | المكتبة والمخطوطات (García Gómez؛ Gayangos (م)) | https://bibliotecadigital.rah.es/ (م) | مكتبة/أرشيف | إسباني/عربي | B | غير معروف | انظر §3.4 |
-| Biblioteca Nacional de España | BNE + Biblioteca Digital Hispánica (BDH) | https://www.bne.es/es (م)؛ https://bdh.bne.es/ (م) | مكتبة وطنية | إسباني | B | ملك عام مع الإسناد (م) | ترخيص BDH لم يُقرأ |
-| Bibliothèque nationale de France | Gallica + Archives et manuscrits | https://gallica.bnf.fr/ (م)؛ https://archivesetmanuscrits.bnf.fr/ (م) | مكتبة وطنية | فرنسي | B | غير تجاري حرّ (م) | انظر §3.2 |
-| HathiTrust | مطبوعات ما قبل 1929 (Codera, Dozy, Lafuente, Gayangos, Derenbourg) | https://catalog.hathitrust.org/ (م) | مكتبة رقمية | متعدد | B (اتحاد مكتبات أكاديمية) | ملك عام (Full view للولايات المتحدة؛ قد يختلف خارجها) | — |
+| Biblioteca Nacional de España | BNE + Biblioteca Digital Hispánica (BDH) | https://www.bne.es/es (م)؛ https://bdh.bne.es/bnesearch/Search.do (ب) | مكتبة وطنية | إسباني | B | (ب) صور الملك العام «bajo una licencia de Reconocimiento 4.0 Internacional de Creative Commons o equivalente»؛ مجاني بلا إذن مسبق للاستخدام غير التجاري والتجاري والأكاديمي؛ يلزم ذكر «Biblioteca Nacional de España» — انظر §3.2 | نص ترخيص BDH ظهر في مقتطفات البحث 2026-09-22 ولم يُقرأ من الموقع؛ مجموعة «Geografía y mapas» في §3.9 |
+| Bibliothèque nationale de France | Gallica + Archives et manuscrits | https://gallica.bnf.fr/ (ب — ظهر ضمنًا عبر صفحة À propos)؛ https://archivesetmanuscrits.bnf.fr/ (م)؛ الشروط: https://gallica.bnf.fr/accueil/fr/html/conditions-dutilisation-de-gallica (ب) | مكتبة وطنية | فرنسي | B | (ب) إعادة الاستخدام غير التجاري حرّة ومجانية مع الإسناد «Source gallica.bnf.fr / Bibliothèque nationale de France»؛ التجاري مدفوع بترخيص | انظر §3.2 |
+| HathiTrust | مطبوعات ما قبل 1929 (Codera, Dozy, Lafuente, Gayangos, Derenbourg) | https://catalog.hathitrust.org/ (م)؛ سجل Derenbourg: https://catalog.hathitrust.org/Record/000886463 (ب) | مكتبة رقمية | متعدد | B (اتحاد مكتبات أكاديمية) | ملك عام (Full view للولايات المتحدة؛ قد يختلف خارجها) | حالة Full view لسجل Derenbourg لم ترد في المقتطف (§3.2) |
 | Internet Archive | نسخ رقمية متنوعة | https://archive.org/ (م) | مكتبة رقمية | متعدد | C (حالة الحقوق تختلف بحسب النسخة) | متفاوت | تحقق من الطبعة |
 | Library of Congress (WDL) | الإدريسي وغيره | https://www.loc.gov/item/2021667394/ (ب) | مكتبة وطنية | — | B | متفاوت حسب الجهة المانحة | — |
 | معهد المخطوطات العربية (ALECSO)؛ QDL؛ QNL | انظر §3.4 و§3.2 | — | — | — | B | — | — |
@@ -231,11 +233,11 @@
 
 | الجهة/المؤلف | العنوان | الرابط (مع العلامة) | نوع المادة | اللغة | مستوى الموثوقية | حقوق الاستخدام | ملاحظات |
 |---|---|---|---|---|---|---|---|
-| Patronato de la Alhambra y Generalife | Museo de la Alhambra | https://www.alhambra-patronato.es/en/discover/alhambra-y-generalife/museum/museo-de-la-alhambra (ب)؛ المجموعات (ب، انظر المصادر) | متحف | إسباني/إنجليزي | B | غير معروف (نص الحقوق لم يُقرأ) | الطابق الأرضي من قصر كارلوس الخامس منذ 1995؛ فن إسباني-إسلامي (نصري خاصة)؛ نحو 105,000 قطعة مفهرسة من أكثر من 240,000 |
-| Ministerio de Cultura (España) | Museo Arqueológico Nacional (MAN)، مدريد — الكتالوج عبر DOMUS وشبكة CER.es | https://www.man.es/man/coleccion/catalogo-general.html (ب)؛ المسكوكات الأندلسية: https://www.man.es/man/coleccion/catalogos-tematicos/moneda-andalusi.html (ب)؛ CER.es: https://ceres.mcu.es/pages/SimpleSearch?Museo=MANA (ب) | متحف + كتالوج رقمي | إسباني | B | غير معروف («specific information about licensing terms … was not explicitly detailed») | **المسكوكات الأندلسية ≈17,000 قطعة** (من الفتح إلى بني نصر)، أضيفت 239 قطعة مؤخرًا |
-| Junta de Andalucía | Conjunto Arqueológico Madinat al-Zahra ومتحفه | https://www.museosdeandalucia.es/web/conjuntoarqueologicomadinatalzahra (ب)؛ Google Arts & Culture (C) (ب، §3.11) | موقع أثري + متحف | إسباني | B | غير معروف | تراث عالمي 2018؛ المعرض الدائم في 4 كتل |
-| Junta de Andalucía | Museo Arqueológico y Etnológico de Córdoba | https://www.museosdeandalucia.es/web/museoarqueologicodecordoba (ب)؛ الأرصدة: https://www.museosdeandalucia.es/web/museoarqueologicodecordoba/acceso-a-fondos (ب) | متحف | إسباني | B | غير معروف | مبنى جديد 2009، افتتاح 2011؛ الوصول عبر DOMUS |
-| Junta de Andalucía | Museo de Málaga / Museo de Almería | https://www.museosdeandalucia.es/web/museodemalaga (م)؛ https://www.museosdeandalucia.es/web/museodealmeria (م) | متحف | إسباني | B | غير معروف | لم يُبحث؛ مرشّح |
+| Patronato de la Alhambra y Generalife | Museo de la Alhambra | https://www.alhambra-patronato.es/en/discover/alhambra-y-generalife/museum/museo-de-la-alhambra (ب)؛ المجموعات (ب، انظر المصادر) | متحف | إسباني/إنجليزي | B | حقوق محفوظة كليًا (ب): «Modification, reproduction, transformation, distribution, public communication and in general any form of partial or total exploitation of the website is not permitted … only … by virtue of express authorization from the PATRONATO»؛ لا يُسمح بأي استنساخ/توزيع/تحويل إلا بإذن صريح مع الإشارة إلى الملكية؛ Aviso legal: https://www.alhambra-patronato.es/aviso-legal (ب)؛ لائحة الزيارة والتسويق والاستخدامات العامة (BOJA 2016/192): https://www.juntadeandalucia.es/boja/2016/192/25 (ب) — يشمل صور الموقع والأرشيف (RIA) ما لم يُنص على غير ذلك في السجل؛ الربط فقط | الطابق الأرضي من قصر كارلوس الخامس منذ 1995؛ فن إسباني-إسلامي (نصري خاصة)؛ نحو 105,000 قطعة مفهرسة من أكثر من 240,000 |
+| Ministerio de Cultura (España) | Museo Arqueológico Nacional (MAN)، مدريد — الكتالوج عبر DOMUS وشبكة CER.es | https://www.man.es/man/coleccion/catalogo-general.html (ب)؛ المسكوكات الأندلسية: https://www.man.es/man/coleccion/catalogos-tematicos/moneda-andalusi.html (ب)؛ CER.es: https://ceres.mcu.es/pages/SimpleSearch?Museo=MAN (ب — الفصل كان يستخدم Museo=MANA والظاهر في البحث Museo=MAN؛ صُحّح)؛ شروط CER.es: https://ceres.mcu.es/pages/issued.jsp (ب) | متحف + كتالوج رقمي | إسباني | B | CER.es (ب): استخدام شخصي/تعليمي غير تجاري فقط — «Private reproductions of the contents are permitted as long as they are destined exclusively for personal or educational use, non-commercial and non-profit, and are not transferred to third parties»؛ «The Ministry of Culture is the owner of images, texts … and reserves the exclusive exercise of exploitation rights»؛ أي استخدام آخر بإذن الوزارة أو الجهة المالكة — عمليًا: الربط بصفحة السجل فقط؛ لا نسخ للصور بلا إذن كتابي | **المسكوكات الأندلسية ≈17,000 قطعة** (من الفتح إلى بني نصر)، أضيفت 239 قطعة مؤخرًا |
+| Junta de Andalucía | Conjunto Arqueológico Madinat al-Zahra ومتحفه | https://www.museosdeandalucia.es/web/conjuntoarqueologicomadinatalzahra (ب)؛ Google Arts & Culture (C) (ب، §3.11) | موقع أثري + متحف | إسباني | B | (ب) «La reproducción total o parcial de las imágenes está prohibida»؛ «Las imágenes, textos, gráficos y todos los elementos contenidos en la página web son propiedad intelectual de la Consejería» (Consejería de Cultura y Patrimonio Histórico)؛ Copyright: https://www.museosdeandalucia.es/web/conjuntoarqueologicomadinatalzahra/copyright (ب) | تراث عالمي 2018؛ المعرض الدائم في 4 كتل. **بديل مفتوح ظهر (ب):** صور قطع مدينة الزهراء في مستودع IAPH مثل https://repositorio.iaph.es/handle/11532/134974 (تاج عمود Salón Rico) برخص CC — انظر §3.11 |
+| Junta de Andalucía | Museo Arqueológico y Etnológico de Córdoba | https://www.museosdeandalucia.es/web/museoarqueologicodecordoba (ب)؛ الأرصدة: https://www.museosdeandalucia.es/web/museoarqueologicodecordoba/acceso-a-fondos (ب) | متحف | إسباني | B | كما بوابة museosdeandalucia.es (ب — صفحة Copyright موحدة لكل متحف؛ لم تظهر صفحة هذا المتحف بعينها): استخدام شخصي غير تجاري فقط؛ الحقوق الحصرية للـ Consejería | مبنى جديد 2009، افتتاح 2011؛ الوصول عبر DOMUS |
+| Junta de Andalucía (Consejería de Cultura y Patrimonio Histórico) | Museo de Málaga / Museo de Almería | https://www.museosdeandalucia.es/web/museodemalaga (ب)؛ https://www.museosdeandalucia.es/web/museodealmeria (ب)؛ Copyright: https://www.museosdeandalucia.es/web/museodemalaga/copyright (ب)؛ https://www.museosdeandalucia.es/web/museodealmeria/copyright (ب) | متحف | إسباني | B | (ب) استخدام شخصي غير تجاري فقط: «Only personal and non-commercial use of the content … is authorized»؛ «reserves exclusive exercise of intellectual property exploitation rights» — الحقوق الحصرية للـ Consejería | تأكد الرابطان في جولة 2026-09-22 عبر صفحتي copyright الفرعيتين (كانا (م)) |
 | Musée du Louvre | Louvre Collections | https://collections.louvre.fr/en/ (ب)؛ CGU: https://collections.louvre.fr/en/page/cgu (ب)؛ JSON: https://collections.louvre.fr/en/page/documentationJSON (ب)؛ أسئلة الصور (ب، انظر المصادر) | قاعدة مقتنيات + JSON | فرنسي/إنجليزي | B | **شروط خاصة (CGU)**: «Downloading or re-use … is possible under specific terms and conditions»؛ التجاري/التحريري للصور عبر Rmn-GP؛ حظر التنقيب النصي/البياني لأعمال ADAGP؛ ليست CC | كل سجل له نسخة JSON بإضافة «.json» إلى عنوانه |
 | The Metropolitan Museum of Art | Met Open Access + Collection API | https://www.metmuseum.org/hubs/open-access (ب)؛ https://metmuseum.github.io/ (ب)؛ https://www.metmuseum.org/perspectives/open-access-at-the-met (ب) | متحف + API مفتوح | إنجليزي | B | **CC0** للبيانات ولصور الأعمال في الملك العام | منذ فبراير 2017؛ «makes images of public-domain artworks and basic data on all accessioned works … available for unrestricted use under Creative Commons Zero (CC0)»؛ ≈406,000 صورة؛ API RESTful/JSON؛ CSV للعمل الجملي |
 | Victoria and Albert Museum | Explore the Collections + Collections API v2 (صور عبر IIIF Image API) | https://developers.vam.ac.uk/ (ب)؛ https://developers.vam.ac.uk/guide/v2/welcome.html (ب)؛ https://developers.vam.ac.uk/guide/v2/images/introduction.html (ب)؛ شروط V&A PDF (ب، انظر المصادر) | متحف + API | إنجليزي | B | **شروط V&A القسم 9/9.3** (ليست CC؛ استخدام غير تجاري محدود بلا إذن؛ التجاري برسوم: مطبوعات >4,000 نسخة، بث، مواقع تجارية…) | — |
@@ -245,18 +247,18 @@
 | Hispanic Society of America، نيويورك | الخزف الإسباني-الإسلامي (Hispano-Moresque) والمنسوجات (ق 13–15م)؛ الكتالوج المطبوع 1915 (E. A. Barber) | https://hispanicsociety.org/ (م)؛ الكتالوج 1915: https://archive.org/details/hispanomoresquep00hisp_0 (ب)؛ https://catalog.hathitrust.org/Record/005822206 (ب) | متحف + كتالوج قديم رقمي | إنجليزي | B (الكتالوج 1915: C كمرجع قديم) | غير معروف (الكتالوج 1915 في الملك العام على الأرجح؛ لم يُتحقق) | الموقع الرسمي لم يُتحقق |
 | Instituto Valencia de Don Juan، مدريد | مؤسسة 1916؛ >9,000 قطعة (خزف ذو بريق معدني، منسوجات إسبانية-إسلامية، سلاح)؛ أرشيف 40,000 وثيقة؛ 62,225 وحدة فوتوغرافية | https://institutovalenciadedonjuan.es/ (ب)؛ دراسة في نشرة MAN (ب، انظر المصادر) | متحف/معهد | إسباني | B | غير معروف | — |
 
-**استنتاج:** المتاحف الإسبانية الأندلسية (Alhambra، MAN/CER.es، مدينة الزهراء، قرطبة) لم يظهر لها نص ترخيص واضح؛ الأنسب الربط بصفحات الكتالوج لا نسخ الصور حتى يُقرأ نص حقوقها. Louvre وV&A: الربط وعرض البيانات الوصفية ممكن، أما عرض الصور فيقتضي مراجعة الشروط لا افتراض حرية الاستخدام.
+**استنتاج:** المتاحف الإسبانية الأندلسية أظهرت في جولة 2026-09-22 نصوص حقوق مقيِّدة (ب): Alhambra حقوق محفوظة كليًا؛ CER.es/MAN ومتاحف Junta (قرطبة، مالقة، ألمرية) ومدينة الزهراء استخدام شخصي غير تجاري فقط؛ فالأنسب الربط بصفحات الكتالوج لا نسخ الصور، والبديل المفتوح لقطع مدينة الزهراء مستودع IAPH (§3.11). Louvre وV&A: الربط وعرض البيانات الوصفية ممكن، أما عرض الصور فيقتضي مراجعة الشروط لا افتراض حرية الاستخدام.
 
 ## 3.7 قواعد البيانات
 
 | الجهة/المؤلف | العنوان | الرابط (مع العلامة) | نوع المادة | اللغة | مستوى الموثوقية | حقوق الاستخدام | ملاحظات |
 |---|---|---|---|---|---|---|---|
-| EEA-CSIC (M. L. Ávila ثم Luis Molina) | **PUA – Prosopografía de los Ulemas de al-Andalus** | https://www.eea.csic.es/pua/ (ب)؛ «Ulemas v1.7»: https://archivo.eea.csic.es/pua/ (ب)؛ صفحة المشروع ومقال RHD وتكييف STAR في Zenodo: https://zenodo.org/records/11351456 (ب، انظر المصادر) | قاعدة بروسوبوغرافية | إسباني | A | وصول مجاني («The database can be accessed freely, consulting all records and performing searches»)؛ **ترخيص إعادة الاستخدام: غير معروف** | نحو **11,600** عالم أندلسي (ق 2–9هـ/8–15م) من كتب التراجم؛ بيانات ديموغرافية واجتماعية وثقافية مع إحالات مفصلة للمصادر؛ بدأ 2011. الإحالة بروابط عميقة ممكنة؛ الاستيراد الجملي يتطلب إذنًا/رخصة لم تتأكد؛ منشور Zenodo قد يحمل رخصة قابلة للفحص |
-| CSIC (ILC/EEA)؛ إدارة Maribel Fierro | **HATA – Historia de los Autores y Transmisores Andalusíes** | https://eea.csic.es/red/hata (ب)؛ وثيقة التعريف PDF وDialnet ومقال Al-Qanṭara (ب، انظر المصادر)؛ رابط قديم: http://kohepocu.cchs.csic.es/ (م) | قاعدة بيو-ببليوغرافية | إسباني | A | غير معروف | بدأ 1988؛ نُشر CSIC مدريد 2014؛ >5,000 عالم أندلسي وأعمالهم مرتبة بحسب الفروع العلمية وزمنيًا؛ ق 2/8–9/15؛ **لا يشمل** المدجنين والموريسكيين ولا الإنتاج العربي لليهود والنصارى |
+| EEA-CSIC (M. L. Ávila ثم Luis Molina) | **PUA – Prosopografía de los Ulemas de al-Andalus** | https://www.eea.csic.es/pua/ (ب)؛ «Ulemas v1.7»: https://archivo.eea.csic.es/pua/ (ب)؛ صفحة المشروع ومقال RHD وتكييف STAR في Zenodo: https://zenodo.org/records/11351456 (ب، انظر المصادر) | قاعدة بروسوبوغرافية | إسباني | A | قاعدة PUA الحية: وصول مجاني («The database can be accessed freely, consulting all records and performing searches»)؛ **ترخيص إعادة الاستخدام: غير معروف**. تكييف STAR على Zenodo (11351456) (ب): «Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International» — للمجموعة المنشورة على Zenodo فقط | نحو **11,600** عالم أندلسي (ق 2–9هـ/8–15م) من كتب التراجم؛ بيانات ديموغرافية واجتماعية وثقافية مع إحالات مفصلة للمصادر؛ بدأ 2011. الإحالة بروابط عميقة ممكنة؛ الاستيراد الجملي من القاعدة الحية يتطلب إذنًا/رخصة لم تتأكد. منشور Zenodo «Adaptación de Prosopografía de Ulemas de al-Andalus al modelo STAR» (Ávila / Molina / Penelas؛ STAR/LOD؛ «presented at the I Workshop CLARIAH-CM … 2025») يحمل CC BY-NC-SA 4.0 (ب — وردت في مقتطف نتيجة البحث؛ تُقرأ من صفحة Zenodo) |
+| CSIC (ILC/EEA)؛ إدارة Maribel Fierro | **HATA – Historia de los Autores y Transmisores Andalusíes** | https://eea.csic.es/red/hata (ب)؛ وثيقة التعريف PDF وDialnet ومقال Al-Qanṭara (ب، انظر المصادر)؛ الرابط القديم: http://kohepocu.cchs.csic.es/ (ب — حي في الفهرسة؛ http لا https)؛ http://kohepocu.cchs.csic.es/hata_kohepocu (ب)؛ H-Net: https://networks.h-net.org/node/8330/discussions/60069/hata-and-pua (ب) | قاعدة بيو-ببليوغرافية | إسباني | A | «open for free consultation» (ب: «The al-Andalus section (HATA) is open for free consultation … contact Maribel Fierro»)؛ **ترخيص إعادة الاستخدام: غير معروف** | بدأ 1988؛ نُشر CSIC مدريد 2014؛ >5,000 عالم أندلسي وأعمالهم مرتبة بحسب الفروع العلمية وزمنيًا؛ ق 2/8–9/15؛ **لا يشمل** المدجنين والموريسكيين ولا الإنتاج العربي لليهود والنصارى |
 | EEA-CSIC | Redes de sabios andalusíes (RTSA) | https://rtsa.eea.csic.es/en/home/ (ب) | شبكات علماء | إنجليزي/إسباني | A | غير معروف | ظهر دون قراءة المحتوى |
 | EEA-CSIC + Patronato de la Alhambra | **Corpus Epigráfico de la Alhambra y el Generalife** | FUNCI: https://funci.org/el-corpus-epigrafico-de-la-alhambra/ (ب)؛ alhambradegranada.org (ب، انظر المصادر) | كوربوس إبيغرافي (وسائط منفصلة) | إسباني/عربي | A (المصدران الرابطان: C) | غير معروف | كل النقوش العربية في الحمراء (طبوغرافيًا وفيلولوجيًا وفنيًا)؛ صدر على DVD؛ نحو ثلث النقوش على قرص تفاعلي مع ترجمة إسبانية؛ وُعد بنشر جزء منه على الإنترنت عند اكتمال المشروع (2011) |
 | Carmen Barceló (Universitat de València) | «Corpus Epigráfico Andalusí: un proyecto» | https://www.academia.edu/15851493/Corpus_Epigr%C3%A1fico_Andalus%C3%AD_un_proyecto (ب) | ورقة مشروع | إسباني | C (منصة مشاركة) | غير معروف | **حالة الإبيغرافيا:** لم يُعثر على قاعدة إبيغرافية أندلسية شاملة على الإنترنت؛ «comprehensive online digital databases for all al-Andalus epigraphy remain an ongoing goal». فراغ يمكن للمنصة أن تشير إليه |
-| EEA-CSIC | **Coins of al-Andalus – Tonegawa Collection** | https://tonegawa.eea.csic.es/ (ب)؛ وصف ثانوي NumisWiki (C): https://www.forumancientcoins.com/numiswiki/view.asp?key=tonegawa+collection (ب) | نميات رقمية | إنجليزي | B (استضافة CSIC) | غير معروف رسميًا؛ مصدر ثانوي يصفه بأنه «open online and expressly anti-copyright collection of images» — يلزم التأكد من نص الموقع | الولاة، الإمارة، الخلافة، الطوائف، المرابطون، الموحدون، غرناطة، أختام وأوزان. مرشّح ممتاز بشرط قراءة تصريح الحقوق على الموقع نفسه |
+| EEA-CSIC | **Coins of al-Andalus – Tonegawa Collection** | https://tonegawa.eea.csic.es/ (ب)؛ وصف ثانوي NumisWiki (C): https://www.forumancientcoins.com/numiswiki/view.asp?key=tonegawa+collection (ب) | نميات رقمية | إنجليزي | B (استضافة CSIC) | **غير معروف** (ب): الموقع يعرض «COPYRIGHT © 2016 ESCUELA DE ESTUDIOS ÁRABES» فقط بلا رخصة صريحة («the search results do not contain specific information about whether the images are available for free use»)؛ وصف NumisWiki الثانوي «open online and expressly anti-copyright collection of images» لم يتأكد — يُعامل كحقوق محفوظة حتى المراسلة | الولاة، الإمارة، الخلافة، الطوائف، المرابطون، الموحدون، غرناطة، أختام وأوزان. خبر الاستضافة: https://www.eea.csic.es/laac-noticias/el-sitio-web-de-la-eea-aloja-la-coleccion-tonegawa/ (ب)؛ نسخة مرآة ظهرت في feluses.ucm.es (C). مرشّح ممتاز بشرط قراءة تصريح الحقوق على الموقع نفسه |
 | Universidad de Cádiz | Numisdata | http://wwwondercoins.uca.es/web_numisdata/ (ب) | قاعدة نميات | إسباني | B | غير معروف | لقى نقدية من **العصور القديمة** في غرب المتوسط؛ **ليس متخصصًا في الأندلس** |
 | ISAW (NYU) وآخرون | **Pleiades** | https://pleiades.stoa.org/ (ب)؛ https://pleiades.stoa.org/places (ب)؛ البيانات: https://github.com/isawnyu/pleiades.datasets (ب) | معجم جغرافي مفتوح | إنجليزي | A | **CC-BY** («Pleiades data is distributed under the terms of a Creative Commons Attribution license (CC-BY)») | تغطية واسعة للعالم اليوناني-الروماني «ويتوسع زمنيًا ومكانيًا وثقافيًا»؛ تغطيته للأماكن الأندلسية غير محدَّدة |
 | Pelagios Network | Recogito وحزمة Pleiades لـ Recogito | https://github.com/pelagios/recogito2-places-pleiades (ب)؛ ورقة 2016 (ب، انظر المصادر) | أدوات ربط جغرافي | إنجليزي | A | غير معروف | — |
@@ -264,9 +266,9 @@
 | Toponomasticon Hispaniae | أسماء الأماكن في إيبيريا | https://toponhisp.org/es/bibliografia/prosopografia-de-los-ulemas-de-al-andalus (ب) | معجم طوبونيمي | إسباني | A/B | غير معروف | يحيل إلى PUA في ببليوغرافيته؛ لم يُقرأ المحتوى |
 | Getty Research Institute | **Getty Vocabularies (AAT, TGN, ULAN, CONA, IA)** | https://www.getty.edu/research/tools/vocabularies/ (ب)؛ https://vocab.getty.edu/ (ب)؛ LOD والتنزيل (ب، انظر المصادر) | مفردات موحَّدة (LOD) | إنجليزي | B | **ODC-By 1.0** («Getty Vocabulary data in all formats are available under the Open Data Commons Attribution License (ODC-By) 1.0») مع نسبة العمل إلى J. Paul Getty Trust | JSON/RDF/N3/N-Triples وتنزيلات كاملة شهرية |
 | CERL | **CERL Thesaurus** | https://data.cerl.org/thesaurus/ (ب)؛ https://www.cerl.org/resources/cerl_thesaurus/main (ب) | ملف استناد | متعدد | B | **Etalab Open Licence** (يعادل ODC-BY / CC-BY 2.0 بحسب CERL) | أشكال أسماء أماكن الطباعة والأشخاص والهيئات في المطبوعات قبل منتصف ق 19 بأشكالها اللاتينية والمتغيرة |
-| Wikimedia Foundation | Wikidata (مثال: Al-Qanṭara Q15759353) | https://www.wikidata.org/wiki/Q15759353 (ب) | قاعدة معرفة مفتوحة | متعدد | C (تحرير جماعي) | غير معروف — لم يُقرأ نص الترخيص | نطاق البيانات الأندلسية لم يُفحص |
+| Wikimedia Foundation | Wikidata (مثال: Al-Qanṭara Q15759353) | https://www.wikidata.org/wiki/Q15759353 (ب)؛ الترخيص: https://www.wikidata.org/wiki/Wikidata:Licensing (ب) | قاعدة معرفة مفتوحة | متعدد | C (تحرير جماعي) | **CC0** للبيانات المهيكلة (ب): «All structured data in the main, property and lexeme namespaces is made available under the Creative Commons CC0 License»؛ «When any Wikidata user makes a contribution to Wikidata, that user applies a CC0 license to their contribution»؛ النصوص في النطاقات الأخرى CC BY-SA 4.0 — نص الترخيص لم يُقرأ من الموقع | نطاق البيانات الأندلسية لم يُفحص |
 
-**استنتاج:** للأشخاص، PUA وHATA هما المرجعان المهيكلان (إحالة بروابط عميقة واستخدام معرّفاتهما كمفاتيح). للأماكن، لا قاعدة أندلسية متخصصة مؤكدة؛ الحل العملي الربط الثلاثي Getty TGN (ODC-By) + Pleiades (CC-BY) + Wikidata (ترخيصه لم يُقرأ)، مع بناء معجم أندلسي داخلي.
+**استنتاج:** للأشخاص، PUA وHATA هما المرجعان المهيكلان (إحالة بروابط عميقة واستخدام معرّفاتهما كمفاتيح). للأماكن، لا قاعدة أندلسية متخصصة مؤكدة؛ الحل العملي الربط الثلاثي Getty TGN (ODC-By) + Pleiades (CC-BY) + Wikidata (CC0 للبيانات المهيكلة (ب))، مع بناء معجم أندلسي داخلي.
 
 ## 3.8 الدوريات العلمية
 
@@ -284,26 +286,38 @@
 
 ## 3.9 الخرائط التاريخية
 
-> **لم تُبحث هذه الفئة في الجلسة** (نفدت حصة البحث). ما يلي مرشّحات من المعرفة المرجعية موسومة (م) بلا تراخيص ولا محتوى محقق؛ لا يُدرج أي منها في المنصة قبل جولة تحقق مستقلة. المادة الخرائطية الوحيدة الموثقة (ب) هي خرائط مخطوط الإدريسي Arabe 2221 (68 خريطة ومصور للعالم) الواردة في §3.2.
+> **جولة 2026-09-22:** بُحثت هذه الفئة بالبحث الشبكي فقط؛ ما يلي ظهر في نتائج البحث (ب) ولم يُجلب، ولم تُقرأ أي صفحة ترخيص من موقعها. لم تظهر خريطة أندلسية بعينها في أي من هذه المجموعات، فالتغطية الأندلسية تحتاج بحثًا داخل كل مجموعة قبل الإدراج في المنصة. المادة الخرائطية الوحيدة الموثقة (ب) بمحتواها هي خرائط مخطوط الإدريسي Arabe 2221 (68 خريطة ومصور للعالم) الواردة في §3.2. يُضاف Category:Maps_of_Al-Andalus في Wikimedia Commons (§3.11) كمدخل ثانوي (C) لكل ملف رخصته. **«Atlas de historia de al-Andalus» لم يظهر أي كتاب بهذا العنوان.**
 
 | الجهة/المؤلف | العنوان | الرابط (مع العلامة) | نوع المادة | اللغة | مستوى الموثوقية | حقوق الاستخدام | ملاحظات |
 |---|---|---|---|---|---|---|---|
-| David Rumsey Map Collection (Stanford) | مجموعة خرائط رقمية | https://www.davidrumsey.com/ (م) | خرائط | إنجليزي | B | غير معروف | لم يُتحقق من الرابط |
-| Old Maps Online | بوابة بحث في خرائط المكتبات | https://www.oldmapsonline.org/ (م) | بوابة خرائط | إنجليزي | B | غير معروف | لم يُتحقق من الرابط |
-| Instituto Geográfico Nacional (España) | Cartoteca | https://www.ign.es/web/ign/portal/cartoteca (م) | خرائط | إسباني | B | غير معروف | لم يُتحقق من الرابط |
-| Biblioteca Nacional de España | Biblioteca Digital Hispánica (تشمل خرائط) | https://bdh.bne.es/ (م) | مكتبة رقمية | إسباني | B | غير معروف | لم يُتحقق من الرابط |
-| — | «Atlas de historia de al-Andalus» | غير معروف | — | — | — | — | **لم يُتحقق من وجوده بهذا العنوان**؛ لا يُدرج قبل التحقق |
+| David Rumsey Map Center, Stanford Libraries | David Rumsey Historical Map Collection | https://www.davidrumsey.com/ (ب)؛ الحقوق: https://www.davidrumsey.com/about/copyright-and-permissions (ب) | خرائط رقمية مرقمنة | إنجليزي | B | «Creative Commons BY-NC-SA 3.0» (ب): «Images from the website may be reproduced or transmitted, but not for commercial use»؛ «give credit, link to the license and mention any changes made … non-commercial purposes … same terms»؛ الإسناد: «David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries»؛ التجاري بمراسلة carto@davidrumsey.com | مقتطف صفحة الحقوق ظهر في البحث ولم يُقرأ من الموقع؛ لا يشير المقتطف إلى تغطية أندلسية محددة — يلزم بحث داخل المجموعة عن خرائط إسبانيا/الأندلس قبل الإدراج |
+| OldMapsOnline (Klokan Technologies) | Old Maps Online — بوابة بحث/مجمِّع خرائط المكتبات | https://www.oldmapsonline.org/en (ب)؛ الشروط: https://www.oldmapsonline.org/en/terms (ب)؛ دليل «How digital map copyright works»: https://www.oldmapsonline.org/en/help/oldmapsonline/how-digital-map-copyright-works-org-9 (ب) | بوابة بحث/مجمِّع | إنجليزي | B/C (مجمِّع) | (ب) «Map images are subject to copyright by host institutions; for conditions see the Terms of Use for individual host institutions»؛ «for specific rules on using an image, users should refer to the Terms of Use of the institution» | بوابة توجيه لا مصدر صور؛ الحقوق تُقرأ عند المكتبة المالكة لكل خريطة |
+| IGN / CNIG (Ministerio de Transportes) | Buscador del Catálogo de la Cartoteca del IGN (خرائط مرقمنة) + Centro de Descargas CNIG | https://www.ign.es/web/catalogo-cartoteca/ (ب)؛ https://www.ign.es/web/catalogo-cartoteca/search-in-map.html (ب)؛ https://centrodedescargas.cnig.es/ (ب) | خرائط وأطالس مرقمنة (ق 15–19) JPG/PDF | إسباني | B | بحسب المقتطف (ب): سياسة بيانات IGN (Orden FOM/2807/2015) «licencia compatible con CC-BY 4.0»؛ «Downloads are free and unrestricted when mentioning the origin and ownership of the data (CC-BY 4.0 license)» | «maps preserved in the IGN Cartoteca from the 15th to 19th centuries of Spain and different parts of the world … JPG images and PDF documents». الرابط القديم (https://www.ign.es/web/ign/portal/cartoteca) (م) لم يظهر واستُبدل بـ/web/catalogo-cartoteca/. نص الترخيص ورد عبر مصادر وسيطة (History Lab / cartografiadigital.es) لا من ign.es مباشرة؛ يلزم قراءة الترخيص من صفحة CNIG قبل النسخ |
+| Biblioteca Nacional de España | مجموعة «Geografía y mapas» (تُستشار في BNE Digital/BDH) | https://www.bne.es/es/colecciones/geografia-mapas (ب)؛ https://bdh.bne.es/bnesearch/Search.do (ب) | خرائط مخطوطة ومطبوعة وأطالس | إسباني | B | انظر بند BDH في §3.2 و§3.5 (ب): صور الملك العام «bajo una licencia de Reconocimiento 4.0 Internacional de Creative Commons o equivalente»، بما فيه الاستخدام التجاري، مع ذكر «Biblioteca Nacional de España» | (ب) «The BNE maintains a Geography and Maps collection that can be consulted in BNE Digital, including manuscript maps, printed/ancient maps, atlases…»؛ لم تظهر خريطة أندلسية بعينها — التغطية للأندلس تحتاج بحثًا داخل BDH |
+| Instituto de Estadística y Cartografía de Andalucía (IECA، Junta de Andalucía) | CARTOTECA. Cartografía histórica de Andalucía | https://ws089.juntadeandalucia.es/institutodeestadisticaycartografia/cartoteca/ (ب)؛ https://www.juntadeandalucia.es/institutodeestadisticaycartografia/dega/cartoteca-cartografia-historica-de-andalucia (ب)؛ مجموعة بيانات على datos.gob.es: https://datos.gob.es/en/catalogo/a01002820-cartografia-historica-de-andalucia (ب) | كتالوج + صور خرائط قابلة للتنزيل بدقات مختلفة | إسباني | B | غير معروف (مدرجة في بوابة البيانات المفتوحة datos.gob.es؛ رخصة المجموعة لم ترد في المقتطف) | إضافة جديدة في جولة 2026-09-22؛ (ب) «cataloging and digitization of cartographic documents from the Andalusian territory prior to 1970 … more than 158,000 historical maps … downloading of their images in different resolutions». أهم مورد خرائطي إقليمي ظهر في الجولة؛ يحتاج قراءة رخصة المجموعة على datos.gob.es/بوابة Junta |
+| Biblioteca de la Universidad de Sevilla | Expobus: Cartografía histórica (معرض افتراضي) + كتاب *Cartografía Histórica en la Biblioteca de la Universidad de Sevilla* (Editorial US) | https://expobus.us.es/cartografia/ (ب)؛ https://editorial.us.es/es/detalle-libro/719090/cartografia-historica-en-la-biblioteca-de-la-universidad-de-sevilla (ب)؛ Dialnet: https://dialnet.unirioja.es/servlet/libro?codigo=411065 (ب) | معرض رقمي + كتب مرقمنة (ق 15–18) | إسباني | B | غير معروف | (ب) «5,000 maps from the 15th to 18th centuries with their images … links to complete digitalized books»؛ لم تُذكر Cartoteca بهذا الاسم — المادة ضمن Fondo Antiguo وكتالوج Fama؛ لا خرائط أندلسية محددة في المقتطف. بوابة Fondo Antiguo داخل Cervantes Virtual (§3.4) |
+| Junta de Andalucía / IECA؛ Díaz Quidiello, J. | *Atlas de la Historia del Territorio de Andalucía* (ISBN 9788475952093 بحسب Marcial Pons) | https://www.juntadeandalucia.es/institutodeestadisticaycartografia/atlasterritorio/at/atlas_bloque3.html (ب)؛ Marcial Pons (C): https://www.marcialpons.es/libros/atlas-de-la-historia-del-territorio-de-andalucia/9788475952093/ (ب) | أطلس مطبوع/رقمي | إسباني | B (Junta) | غير معروف | (ب) «more than 800 maps and illustrations … the most complete compendium of historical maps of Andalucía … between the 2nd century and the year 1900»؛ البلوك 3 يغطي الأندلس من الأمويين إلى غرناطة؛ سنة النشر لم ترد في المقتطفات. بديل ظهر في البحث عن «Atlas de historia de al-Andalus» |
+| Larousse Editorial | *Atlas Histórico de España* (ISBN 9788416984237 بحسب Amazon) | Amazon (C): https://amazon.com/-/es/Larousse-Editorial/dp/8416984239 (ب) | أطلس مطبوع | إسباني | C (تجاري؛ الرابط صفحة بيع) | غير معروف | (ب) «más de 100 mapas»؛ سنة النشر لم ترد في المقتطفات. بديل ثانٍ ظهر في البحث عن «Atlas de historia de al-Andalus» |
+| — | «Atlas de historia de al-Andalus» | غير معروف | — | — | — | — | **لم يظهر أي كتاب بهذا العنوان في بحث 2026-09-22**؛ يبقى (م) ولا يُدرج؛ البديلان الظاهران (ب) هما *Atlas de la Historia del Territorio de Andalucía* و*Atlas Histórico de España* أعلاه |
 
 ## 3.10 التسجيلات الصوتية والوثائقيات
 
-> **لم تُبحث هذه الفئة في الجلسة** (نفدت حصة البحث). لم يتسنَّ التحقق من أي وثائقي أو بودكاست، ولا تُدرج عناوين قبل التحقق لتجنّب اختلاق بيانات. الجدول يسجل الجهات المرشّحة للبحث فقط.
+> **جولة 2026-09-22:** بُحثت هذه الفئة بالبحث الشبكي فقط؛ ما يلي ظهر في نتائج البحث (ب) ولم يُجلب. **لم يرد أي ترخيص صريح لأي وثائقي أو بودكاست**، فكلها تُربط ولا تُنسخ. لم يظهر أي وثائقي من إنتاج BBC أو RTVE عن الأندلس تحديدًا، ولم تظهر حلقة In Our Time عن الأندلس؛ تبقى هذه الجهات مرشّحات (م). تصحيحان عن الجولة الأولى: *When the Moors Ruled in Europe* من Channel 4 لا BBC، و*El legado andalusí* من Canal Sur وشركائه لا RTVE. نسخ YouTube/topdocumentaryfilms غير الرسمية (D) لا تُربط.
 
 | الجهة/المؤلف | العنوان | الرابط (مع العلامة) | نوع المادة | اللغة | مستوى الموثوقية | حقوق الاستخدام | ملاحظات |
 |---|---|---|---|---|---|---|---|
-| BBC | غير معروف (لم يُبحث) | غير معروف (م) | وثائقيات/بودكاست | إنجليزي | B (مرشّح) | غير معروف | لم يُتحقق من أي عنوان |
-| RTVE | غير معروف (لم يُبحث) | غير معروف (م) | وثائقيات | إسباني | B (مرشّح) | غير معروف | لم يُتحقق من أي عنوان |
-| الجزيرة الوثائقية | غير معروف (لم يُبحث) | غير معروف (م) | وثائقيات | عربي | B (مرشّح) | غير معروف | لم يُتحقق من أي عنوان |
-| ARTE | غير معروف (لم يُبحث) | غير معروف (م) | وثائقيات | فرنسي/ألماني | B (مرشّح) | غير معروف | لم يُتحقق من أي عنوان |
+| Unity Productions Foundation + Gardner Films (إخراج/إنتاج Robert Gardner؛ كتابة Carrie Gardner)؛ بث PBS | *Cities of Light: The Rise and Fall of Islamic Spain* (2007، ساعتان)؛ النسخة الفرنسية/الألمانية على ARTE بعنوان *Al Andalus, l'Espagne et le temps des califes* | https://www.upf.tv/films/cities-of-light/ (ب)؛ https://www.islamicspain.tv/the-film/ (ب)؛ PBS SoCal: https://www.pbssocal.org/shows/cities-of-light-the-rise-and-fall-of-islamic-spain (ب)؛ IMDb tt1047890 (C)؛ fr.wikipedia للنسخة الفرنسية (C) (ب، انظر المصادر) | وثائقي تلفزيوني | إنجليزي (نسخة فرنسية/ألمانية) | B (منظمة غير ربحية + PBS) | غير معروف (حقوق محفوظة؛ لا ترخيص في المقتطفات) | (ب) «The two-hour documentary by PBS first aired in 2007. It was co-produced by Unity Productions Foundation and Gardner Films»؛ «first broadcast on PBS, then on ARTE» (fr.wikipedia، C). يُدرج كبند واحد بعنوانين. رابط UPF ظهر لكن صفحة الحقوق لا |
+| Channel 4 (UK)؛ تقديم Bettany Hughes؛ إخراج Timothy Copestake؛ إنتاج Rowan Deacon | *When the Moors Ruled in Europe* (2005؛ جزءان) | https://www.bettanyhughes.co.uk/single-post/2005/08/01/When-The-Moors-Ruled-Europe (ب)؛ Wikipedia (C): https://en.wikipedia.org/wiki/When_the_Moors_Ruled_in_Europe (ب)؛ IMDb tt2162745 (C) | وثائقي تلفزيوني | إنجليزي | B (بث عام) / C (روابط ويكيبيديا/IMDb) | غير معروف | **الجهة Channel 4 لا BBC** (كان BBC مرشّحًا في الجولة الأولى): (ب) «first broadcast on Channel 4 on Saturday, November 5, 2005, and was filmed in … Granada, Cordoba, and the Moroccan city of Fes» |
+| ARTE | *Al-Andalus, une civilisation légendaire* (2019) | Ciné-Dossiers (ملف تربوي): https://www.cine-dossiers.fr/dossiers-pedagogiques/al-andalus-une-civilisation-legendaire/ (ب)؛ رابط ARTE الرسمي لم يظهر (نسخة YouTube غير رسمية ظهرت ولا تُربط) | وثائقي تلفزيوني | فرنسي/ألماني | B (ARTE) / C (الرابط الظاهر) | غير معروف | (ب) «Al-Andalus, Une Civilisation Légendaire - Documentaire Histoire & Archéologie - Arte (2019)» / «Pendant huit siècles, juifs, chrétiens et musulmans…». الجزيرة الوثائقية نشرت نقدًا لفيلم «الأندلس حضارة أسطورية» (2023/6/25، انظر المصادر) يبدو أنه الفيلم نفسه مدبلجًا — يحتاج تحقق. ظهر أيضًا *Al Andalus, l'Espagne musulmane vue du ciel* (ARTE؛ عبر oumma.com (C)) بلا سنة ولا رابط رسمي — يبقى (م) |
+| الجزيرة الوثائقية | *ثلاثية الأندلس* (3 أجزاء؛ الجزء 1 «حكاية الشاطئين»)؛ خبر الإطلاق 2019-01-02 | خبر الإطلاق: https://doc.aljazeera.net/news/2019/1/2/ثلاثية-الأندلس-الجزيرة-الوثائقية-تحك… (ب — الرابط مبتور في المقتطف)؛ الجزيرة نت: https://www.aljazeera.net/arts/2019/1/2/… (ب)؛ الحلقة 1: https://www.ajnet.me/video/2019/1/3/ثلاثية-الأندلس-1-حكاية-الشاطئين (ب). الروابط العربية طويلة ومرمّزة؛ تُثبَّت من الموقع عند الجلب | سلسلة وثائقية | عربي | B | غير معروف (حقوق شبكة الجزيرة) | (ب) «الجزيرة الوثائقية تحكي الرواية المفقودة لسقوط الأندلس … قصة الأندلس في العصر العربي التي لم تعد تذكر في كتب التاريخ الإسباني». ظهر أيضًا «قافلة المخطوطات الأندلسية» (عُرض على الجزيرة الوثائقية؛ المصدر مدونة C — يبقى (م)) |
+| Ático Siete + Canal Sur + 2M (التلفزيون العمومي المغربي) + Fundación El Legado Andalusí + Consejería de Cultura (Junta de Andalucía) | *El legado andalusí* (15 حلقة: 8 كرونولوجية + 6 موضوعية × 30 دقيقة + حلقة عامة ساعة) | FilmAffinity (C): https://www.filmaffinity.com/us/film457360.html (ب)؛ Canal Sur: https://www.canalsur.es/Ellegado-5334.html (ب — ظهر بعنوان «El legado» فقط ولم يُتأكد أنه للسلسلة نفسها)؛ thetvdb (C) | سلسلة وثائقية | إسباني | B (Canal Sur/Junta) / C (الروابط الظاهرة) | غير معروف | **الجهة Canal Sur وشركاؤها لا RTVE** (كان RTVE مرشّحًا في الجولة الأولى): (ب) «La serie fue realizada en 2002 por Ático Siete, Canal Sur, 2M (TV pública de Marruecos), Fundación El Legado Andalusí y la Consejería de Cultura». **السنة متعارضة: 1999 (FilmAffinity) / 2002 (المقتطف الآخر)** — تُسجَّل «1999/2002 (متعارض)» |
+| Canal Historia (España) | *Al-Ándalus: El legado* (6 حلقات × ساعة) | Zenda: https://www.zendalibros.com/al-andalus-el-legado-una-serie-documental-de-canal-historia/ (ب)؛ لا رابط رسمي للقناة | سلسلة وثائقية | إسباني | C (قناة تجارية؛ الرابط مجلة ثقافية) | غير معروف | (ب) «six episodes of one hour each … Each episode focuses on an Andalusian scholar … more than eighty experts … more than thirty historical locations»؛ سنة الإنتاج لم ترد في المقتطف — غير معروف |
+| Ottoman History Podcast (أكاديمي مستقل) | «Legacies of al-Andalus» (2020؛ Chris Gratien مع Fahad Bishara وJeannie Miller وMohamad Ballan)؛ «The Lyrical Archive of al-Andalus» (حلقة 338، 2017؛ Shireen Hamza مع Anna C. Cruz) | https://www.ottomanhistorypodcast.com/2020/11/andalus.html (ب)؛ https://www.ottomanhistorypodcast.com/2017/11/the-lyrical-archive-of-al-andalus.html (ب)؛ وسم al-Andalus: https://www.ottomanhistorypodcast.com/search/label/al-Andalus (ب) | بودكاست | إنجليزي | B (باحثون أكاديميون؛ منصة مستقلة) | غير معروف | (ب) «explores the first centuries of Muslim life in al-Andalus and the legacies not just for Iberia but also for the rest of Europe and the Islamic world»؛ السنتان مستنتجتان من مسار الرابط (2020/11، 2017/11) |
+| David Cot (مستقل) | *The History of Spain Podcast*: ح21 Formation and Society of al-Andalus؛ ح23 Fall of the Umayyad Caliphate؛ ح30 Reforms of Abd al-Rahman II؛ ح40 Economy of al-Andalus؛ ح41 Caliphal Córdoba and Medina Azahara؛ ح44 Slavery and Jews of al-Andalus | https://podcasts.apple.com/us/podcast/the-history-of-spain-podcast/id1441884628 (ب)؛ https://creators.spotify.com/pod/show/david-cot (ب) | بودكاست | إنجليزي | C (هاوٍ/مستقل غير أكاديمي) | غير معروف | (ب) «hosted by David Cot … Episode 40: Economy of al-Andalus … Episode 41: Caliphal Córdoba and Medina Azahara». ظهرت أيضًا حلقات تجارية: Gone Medieval «The Rise and Fall of Al-Andalus» وDan Snow's History Hit «The Rise & Fall of The Moors in Spain» (Acast؛ C) بلا سنوات في المقتطفات |
+| Casa Árabe (مؤسسة عامة إسبانية) | «Ciencia en al-Ándalus» — مشاركة Camilo Álvarez de Morales (EEA-CSIC) | https://casaarabe.es/eventos-arabes/show/ciencia-en-al-andalus (ب)؛ SoundCloud: https://m.soundcloud.com/casaarabe/ciencia-en-al-andalus (ب) | تسجيل صوتي لفعالية | إسباني | B | غير معروف | (ب) «Camilo Álvarez de Morales is a scientific researcher at the School of Arabic Studies (CSIC) who specialized in the history of Arab medicine». لم يظهر بودكاست رسمي لـ EEA-CSIC (كان CSIC مرشّحًا)؛ ظهرت قناة YouTube «ESCUELA DE ESTUDIOS ÁRABES» (https://www.youtube.com/channel/UCG0KvRRFYWXzu0zVsNTfdcw) ومحاضرة «¿Qué era al-Andalus?» في Delegación CSIC Andalucía (https://delegacion.andalucia.csic.es/conferencias/que-era-al-andalus/) — كلاهما (ب) بلا سنة |
+| معهد المخطوطات العربية (ALECSO) | «المكتبة الصوتية» (الكتاب الصوتي) | https://www.malecso.org/releases/الكتاب-الصوتي (ب) | مورد صوتي | عربي | B | غير معروف | ظهر في البحث بلا تفاصيل؛ مرشّح صوتي يحتاج فحص المحتوى (§3.4) |
+| BBC (بما فيه *In Our Time*) | غير معروف | غير معروف (م) | وثائقيات/بودكاست | إنجليزي | B (مرشّح) | غير معروف | لم يظهر في البحث (م): لم يظهر أي وثائقي BBC عن الأندلس ولا حلقة In Our Time مخصصة له في بحث 2026-09-22؛ *When the Moors Ruled in Europe* من Channel 4 لا BBC |
+| RTVE | غير معروف | غير معروف (م) | وثائقيات | إسباني | B (مرشّح) | غير معروف | لم يظهر في البحث (م): لم يظهر أي وثائقي RTVE عن الأندلس تحديدًا؛ ظهرت *Memoria de España* (RTVE) كسلسلة عامة لتاريخ إسبانيا فقط بلا رابط رسمي (م)؛ *El legado andalusí* من Canal Sur وشركائه لا RTVE |
 
 ## 3.11 الصور والمقتنيات الرقمية المفتوحة
 
@@ -317,13 +331,13 @@
 | Museum With No Frontiers | Discover Islamic Art – Virtual Museum | https://islamicart.museumwnf.org/pm_partner.php?id=Mus21%3Bdn&type=museum&theme=EPM (ب) | متحف افتراضي | إنجليزي وغيرها | B/C | غير معروف | شركاء منهم The David Collection |
 | Google Arts & Culture | صفحات شركاء: Madinat al-Zahra؛ MIA Doha | https://artsandculture.google.com/partner/conjunto-arqueologico-de-madinat-al-zahra (ب)؛ https://artsandculture.google.com/partner/the-museum-of-islamic-art-qatar (ب) | صور عالية الدقة | متعدد | C (منصة تجارية؛ المحتوى من المتاحف) | غير معروف (عادة غير قابلة لإعادة الاستخدام) | — |
 | Internet Archive | كتالوجات قديمة (*Hispano-Moresque Pottery* 1915) ومراجع عربية (عنان) | https://archive.org/details/hispanomoresquep00hisp_0 (ب)؛ https://archive.org/details/0053212 (ب) | كتب رقمية | متعدد | C (حالة الحقوق تختلف) | غير معروف | — |
-| Wikimedia Commons | Category:Al-Andalus | https://commons.wikimedia.org/wiki/Category:Al-Andalus (م) | صور مجتمعية | متعدد | C | غير معروف (لم يُقرأ الترخيص) | لم يُتحقق من الرابط |
-| Archnet (MIT/AKTC) | العمارة الإسلامية | https://www.archnet.org/ (م) | صور + توثيق معماري | إنجليزي | B | غير معروف | لم يُتحقق من الرابط ولا من الترخيص |
-| IAPH (Junta de Andalucía) | Guía Digital del Patrimonio Cultural de Andalucía | https://guiadigital.iaph.es/ (م) | قاعدة تراث | إسباني | B | غير معروف | لم يُتحقق من الرابط ولا من الترخيص |
+| Wikimedia Commons (Wikimedia Foundation/المجتمع) | Category:Al-Andalus وفروعها (Maps of Al-Andalus، Art of Al-Andalus by museum، Architecture، Manuscripts، People) | https://commons.wikimedia.org/wiki/Category:Al-Andalus (ب)؛ https://commons.wikimedia.org/wiki/Category:Maps_of_Al-Andalus (ب)؛ سياسة الترخيص: https://commons.wikimedia.org/wiki/Commons:Licensing (ب)؛ إعادة الاستخدام: https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia (ب) | صور مجتمعية | متعدد | C | لكل ملف رخصته (ب): «usually CC BY, CC BY-SA, or GFDL) or in the public domain»؛ «almost all content hosted on Wikimedia Commons may be freely reused subject to certain restrictions»؛ الإسناد بحسب ما يحدده صاحب الحق — نص الترخيص لم يُقرأ من الموقع | يلزم قراءة رخصة كل ملف؛ Category:Maps_of_Al-Andalus مفيد لـ §3.9 |
+| Archnet (Aga Khan Documentation Center at MIT + Aga Khan Trust for Culture) | العمارة الإسلامية | https://www.archnet.org/ (ب)؛ About: https://www.archnet.org/pages/about (ب)؛ FAQ: https://libraries.mit.edu/akdc/archnet/archnet-guide-faq/ (ب) | صور + توثيق معماري | إنجليزي | B | (ب) «freely available for research or educational use»؛ «Copyright varies for images»؛ «for information about reproduction for publication, users should contact the Aga Khan Documentation Center» (akdc@mit.edu) — ليست رخصة CC | الربط والعرض التعليمي ممكن؛ النشر بإذن |
+| Instituto Andaluz del Patrimonio Histórico (IAPH، Junta de Andalucía) | Repositorio de Activos Digitales (Activos Digitales IAPH) | https://repositorio.iaph.es/ (ب)؛ الدليل: https://repositorio.iaph.es/ayuda (ب)؛ datos.gob.es: https://datos.gob.es/en/catalogo/a01002820-repositorio-de-activos-digitales-del-iaph (ب)؛ الرابط السابق https://guiadigital.iaph.es/ (م) لم يظهر | مستودع صور ووثائق تراثية | إسباني | B | بحسب المقتطف (ب): «Some items use the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 license … Other materials use the Creative Commons Attribution-ShareAlike 4.0 license»؛ الإسناد «Fondo Gráfico del IAPH»؛ لكل مادة ملف licenciaIAPH.txt | الرخصة تُقرأ لكل سجل على حدة. مثال أندلسي: تاج عمود Salón Rico بمدينة الزهراء https://repositorio.iaph.es/handle/11532/134974 (ب) — البديل المفتوح لصور مدينة الزهراء (§3.6) |
 
 ## 3.12 ما يمكن إعادة استخدامه قانونيًا الآن
 
-أربعة مصادر فقط ثبت نصّيًا في مقتطفات البحث أنها مفتوحة تمامًا (Met، Smithsonian، Europeana للبيانات الوصفية، Getty)، ويضاف إليها ما دخل الملك العام بحكم تاريخ نشره. كل ما عداها يُربط إليه ولا يُنسخ.
+بعد جولة 2026-09-22 ثبت نصّيًا في مقتطفات البحث (ب) — لا بقراءة الترخيص من موقعه — أن المفتوح تمامًا هو: Met وSmithsonian وEuropeana (البيانات الوصفية) وGetty وPleiades وCERL، ويُضاف إليها الآن Wikidata (CC0 للبيانات المهيكلة) وQalamos (CC0 للبيانات الوصفية) وBDH (CC BY 4.0 أو ما يعادله لصور الملك العام بما فيه التجاري) وBerlin (Public Domain Mark 1.0 لما قبل 1920)، ثم ما دخل الملك العام بحكم تاريخ نشره. وتليها طبقة الرخص المقيَّدة القابلة للاستخدام بشروط: Gallica (غير تجاري مع الإسناد)، Digital Bodleian (CC BY-NC 4.0)، David Rumsey (CC BY-NC-SA 3.0)، IGN (متوافق مع CC BY 4.0 عبر مصادر وسيطة)، IAPH (CC BY-NC-SA 3.0 / CC BY-SA 4.0 بحسب المادة)، PUA-STAR على Zenodo (CC BY-NC-SA 4.0)، Wikimedia Commons (لكل ملف رخصته). كل ما عداها يُربط إليه ولا يُنسخ.
 
 | المصدر | الرخصة | ما يُستخدم منه في المنصة | القيد |
 |---|---|---|---|
@@ -333,12 +347,28 @@
 | Getty Vocabularies (AAT/TGN/ULAN) (ب) | ODC-By 1.0 | معرّفات الأماكن والمصطلحات والأعلام كمفاتيح ربط | نسبة العمل إلى J. Paul Getty Trust |
 | Pleiades (ب) | CC-BY | معرّفات وإحداثيات الأماكن القديمة المستمرة في العصر الأندلسي | الإسناد؛ تغطية الأماكن الأندلسية غير محدَّدة |
 | CERL Thesaurus (ب) | Etalab Open Licence (≈ ODC-BY / CC-BY 2.0 بحسب CERL) | أشكال أسماء الأماكن والأشخاص في المطبوعات القديمة | الإسناد |
+| Wikidata (ب) | CC0 للبيانات المهيكلة (النطاقات الرئيسية والخصائص والمفردات)؛ النصوص في النطاقات الأخرى CC BY-SA 4.0 | المعرّفات والبيانات المهيكلة للأعلام والأماكن والمصنفات كمفاتيح ربط | مرتبة C (تحرير جماعي) — لا تُستشهد في ادعاء متنازع عليه؛ نص الترخيص لم يُقرأ من الموقع |
+| Qalamos (ب) | CC0 1.0 Universal للبيانات الوصفية | البيانات الوصفية لمخطوطات المكتبات الألمانية (أكثر من 20 مؤسسة) | الصور بحسب المكتبة المالكة؛ لم تظهر مخطوطات أندلسية محددة |
+| Staatsbibliothek zu Berlin (ب) | Public Domain Mark 1.0 لما نُشر قبل 1920 («free use of the scans for any purposes») | صور المخطوطات والمطبوعات الموسومة بها | استثناءات لما بعد 1920؛ الرخصة تُقرأ في البيانات الببليوغرافية الكاملة لكل مادة |
+| BDH – Biblioteca Digital Hispánica (ب) | CC BY 4.0 أو ما يعادله لصور الملك العام (بما فيه الاستخدام التجاري والأكاديمي) | صور مخطوطات ومطبوعات وخرائط BNE في الملك العام (مثل Mármol Carvajal، مجموعة Geografía y mapas) + بياناتها | ذكر «Biblioteca Nacional de España»؛ يقتصر على الملك العام؛ النص ظهر في المقتطف ولم يُقرأ من الموقع |
 | Al-Qanṭara (ب) | CC BY 4.0 (بحسب مقتطف الدورية/MIAR) | الاقتباس والربط بمقالاتها | الإسناد؛ نص الترخيص لم يُقرأ من الموقع |
-| طبعات القرن 19 المرقمنة: Derenbourg (ب)، Gayangos (ب)، Codera/BAH (م)، Lafuente 1867 (م)، Tornberg (م)، بولاق/Quatremère (م) | ملك عام (نشر قبل 1929) | نشر النسخ أو الربط بها؛ استخراج أرقام الحفظ من Derenbourg | قد يختلف خارج الولايات المتحدة (HathiTrust: Full view للولايات المتحدة)؛ روابط Codera/Lafuente/Tornberg غير محققة |
-| Gallica – Arabe 2221 (ب) | إعادة استخدام غير تجاري حرّة (م — يحتاج تحقق) | عرض صور المخطوط في سياق غير تجاري بعد التحقق | التجاري يتطلب ترخيصًا؛ نص Gallica لم يُقرأ |
+| طبعات القرن 19 المرقمنة: Derenbourg (ب)، Gayangos (ب)، Codera/BAH (م)، Lafuente 1867 (م)، Tornberg (م)، بولاق/Quatremère (م) | ملك عام (نشر قبل 1929) | نشر النسخ أو الربط بها؛ استخراج أرقام الحفظ من Derenbourg | قد يختلف خارج الولايات المتحدة (HathiTrust: Full view للولايات المتحدة؛ حالة Full view لسجل Derenbourg لم ترد في المقتطف)؛ روابط Codera/Lafuente/Tornberg غير محققة |
+| Gallica – Arabe 2221 (ب) | إعادة الاستخدام غير التجاري حرّة ومجانية مع الإسناد «Source gallica.bnf.fr / Bibliothèque nationale de France» (ب) | عرض صور المخطوط في سياق غير تجاري مع الإسناد | التجاري مدفوع بترخيص؛ نص Gallica ظهر في مقتطف البحث ولم يُقرأ من الموقع |
+| Digital Bodleian (ب) | CC BY-NC 4.0 لمعظم الصور | صور المخطوطات غير تجاريًا مع الإسناد (الرقم + «Bodleian Libraries, University of Oxford») | ليست كل المواد مشمولة (مواد الكليات)؛ تُفحص حقوق كل مادة |
+| David Rumsey Map Collection (ب) | CC BY-NC-SA 3.0 | صور الخرائط التاريخية غير تجاريًا مع الإسناد والمشاركة بالمثل | الإسناد «David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries»؛ التجاري بمراسلة carto@davidrumsey.com؛ التغطية الأندلسية غير محددة |
+| IGN Cartoteca / CNIG (ب) | «licencia compatible con CC-BY 4.0» (Orden FOM/2807/2015) بحسب مصادر وسيطة | خرائط IGN المرقمنة مع ذكر المصدر والملكية | نص الترخيص ورد عبر History Lab / cartografiadigital.es لا من ign.es؛ يُقرأ من CNIG قبل النسخ |
+| IAPH – Activos Digitales (ب) | CC BY-NC-SA 3.0 أو CC BY-SA 4.0 بحسب المادة | صور القطع والمعالم الأندلسية (مثل مدينة الزهراء) بعد قراءة licenciaIAPH.txt لكل مادة | الإسناد «Fondo Gráfico del IAPH»؛ مواد BY-NC-SA غير تجارية |
+| PUA – تكييف STAR على Zenodo (ب) | CC BY-NC-SA 4.0 | مجموعة البيانات STAR/LOD للعلماء الأندلسيين غير تجاريًا مع الإسناد والمشاركة بالمثل | لا تمتد إلى قاعدة PUA الحية؛ الرخصة وردت في مقتطف البحث وتُقرأ من Zenodo |
+| Wikimedia Commons (ب) | لكل ملف رخصته (CC BY / CC BY-SA / GFDL / ملك عام) | الصور والخرائط (Category:Maps_of_Al-Andalus) بعد قراءة رخصة كل ملف | مرتبة C؛ الإسناد بحسب صاحب الحق |
+| Archnet (ب) | «freely available for research or educational use»؛ ليست CC | الربط والعرض التعليمي | النشر بمراسلة akdc@mit.edu؛ حقوق الصور متفاوتة |
+| Qatar Digital Library (ب) | متعدد الطبقات: OGL لمواد التاج؛ «Public Domain»؛ طرف ثالث؛ CC | ما وُسم Public Domain أو OGL أو CC بعد قراءة حالة كل سجل | لا افتراض عام؛ النص العام يمنع البيع/النسخ بلا إذن «except where permitted» |
+| Cambridge Digital Library (ب) | شخصي غير تجاري؛ الرخصة لكل مادة | الربط؛ التنزيل للاستخدام الشخصي غير التجاري | لم تتأكد CC BY-NC كرخصة عامة |
+| Leiden Digital Collections (ب) | نطاقات وصول متعددة | الربط؛ التنزيل حيث «access and download rights for everyone» | لا رخصة موحدة للملك العام؛ المواد المحمية بإذن صاحب الحق |
 | Louvre (ب)، V&A (ب) | شروط خاصة (CGU؛ القسم 9/9.3) — ليست CC | الربط + البيانات الوصفية | عرض الصور يقتضي مراجعة الشروط؛ التجاري عبر Rmn-GP / برسوم |
-| PUA، HATA (ب) | وصول مجاني؛ ترخيص إعادة الاستخدام غير معروف | روابط عميقة إلى السجلات + المعرّفات كمفاتيح | الاستيراد الجملي يتطلب إذنًا؛ تلزم مراسلة EEA-CSIC |
-| Alhambra، MAN/CER.es، مدينة الزهراء، قرطبة، Tonegawa (ب) | غير معروف | الربط بصفحات الكتالوج فقط | لا نسخ للصور حتى يُقرأ نص الحقوق؛ وصف Tonegawa بـ«anti-copyright» ثانوي غير رسمي |
+| PUA الحية، HATA (ب) | وصول مجاني («accessed freely» / «open for free consultation»)؛ ترخيص إعادة الاستخدام غير معروف | روابط عميقة إلى السجلات + المعرّفات كمفاتيح | الاستيراد الجملي يتطلب إذنًا؛ تلزم مراسلة EEA-CSIC / Maribel Fierro |
+| Alhambra، MAN/CER.es، مدينة الزهراء، قرطبة، مالقة، ألمرية (ب) | حقوق محفوظة كليًا (Alhambra) / استخدام شخصي غير تجاري فقط (CER.es، museosdeandalucia.es) | الربط بصفحات الكتالوج فقط | لا نسخ للصور بلا إذن كتابي؛ Alhambra يمنع أي استنساخ إلا بإذن صريح من Patronato |
+| Tonegawa (ب) | غير معروف («COPYRIGHT © 2016 ESCUELA DE ESTUDIOS ÁRABES» فقط) | الربط فقط | وصف «anti-copyright» ثانوي غير رسمي لم يتأكد؛ يُعامل كحقوق محفوظة حتى المراسلة |
+| Fihrist، IECA Cartoteca، Atlas del Territorio، الوثائقيات والبودكاست (§3.10) | غير معروف | الربط فقط | لم يرد ترخيص في المقتطفات |
 
 ## 3.13 نموذج بطاقة المصدر في المنصة
 
@@ -367,7 +397,7 @@
 
 ## المصادر
 
-كل الروابط أدناه إما ظهرت في نتائج محرك البحث بتاريخ 2026-09-21 ولم تُجلب مباشرة (ب)، أو من المعرفة المرجعية ولم تُتحقق (م). لا يوجد رابط واحد في هذا الفصل جُلب فعليًا.
+كل الروابط أدناه إما ظهرت في نتائج محرك البحث بتاريخ 2026-09-21 أو 2026-09-22 ولم تُجلب مباشرة (ب)، أو من المعرفة المرجعية ولم تُتحقق (م). لا يوجد رابط واحد في هذا الفصل جُلب فعليًا. روابط جولة 2026-09-22 أُدمجت في أقسامها وأُضيفت لها أقسام «الخرائط» و«الوثائقيات والصوتيات» و«صفحات التراخيص والشروط».
 
 **المصادر الأولية والمخطوطات**
 - https://marco.ox.ac.uk/ark:29072/x0js956f943p (ب)
@@ -413,17 +443,37 @@
 - https://archive.org/details/nafhaltib00maqq (ب)
 - https://www.academia.edu/3117064/Picnic_at_Madinat_al_Zahra (ب)
 - https://en.wikipedia.org/wiki/Ibn_Hayyan (ب)
-- https://digitalcollections.universiteitleiden.nl/ (م)
-- https://digital.staatsbibliothek-berlin.de/ (م)
-- https://www.qalamos.net/ (م)
-- https://digital.bodleian.ox.ac.uk/ (م)
-- https://cudl.lib.cam.ac.uk/ (م)
-- https://bdh.bne.es/bnesearch/ (م)
+- https://digitalcollections.universiteitleiden.nl/ (ب)
+- https://www.library.universiteitleiden.nl/subject-guides/how-to-use-digital-collections (ب)
+- https://journal.code4lib.org/articles/13588 (ب)
+- https://collectionguides.universiteitleiden.nl/resources/ubl071 (ب)
+- https://digitalcollections.universiteitleiden.nl/view/item/1887319 (ب)
+- https://digital.staatsbibliothek-berlin.de/ (ب — الرئيسية ضمنًا)
+- https://digital.staatsbibliothek-berlin.de/suche/ (ب)
+- https://www.qalamos.net/ (ب)
+- https://www.qalamos.net/receive/MyMssWork_work_00002926 (ب)
+- https://gepris.dfg.de/gepris/projekt/430973116?language=en (ب)
+- https://www.bsb-muenchen.de/en/about-us/article/qalamos-das-neue-deutschlandweite-portal-fuer-handschriften-aus-asiatischen-und-afrikanischen-schrifttraditionen-geht-live0-4762/ (ب)
+- https://digital.bodleian.ox.ac.uk/ (ب)
+- https://cudl.lib.cam.ac.uk/ (ب)
+- https://cudl.lib.cam.ac.uk/about/ (ب)
+- https://bdh.bne.es/bnesearch/Search.do (ب)
+- https://datos.gob.es/en/catalogo/ea0019768-biblioteca-digital-documentos-en-dominio-publico1 (ب)
+- https://github.com/fihristorg/fihrist-mss (ب)
+- https://github.com/fihristorg/fihrist-mss/blob/master/README.md (ب)
+- https://catalog.princeton.edu/catalog/99102128223506421 (ب)
+- https://searchworks.stanford.edu/view/3270112 (ب)
+- https://blog.bham.ac.uk/estoriadigital/ (ب)
+- https://www.birmingham.ac.uk/research/centres-institutes/research-in-modern-languages/estoria-de-espanna-digital (ب)
+- https://research.birmingham.ac.uk/en/publications/estoria-de-espanna-digital-a-digital-critical-edition-of-the-esto/ (ب)
+- https://transcribeestoria.bham.ac.uk/en/about/ (ب)
 - https://shamela.ws/ (م)
 - https://www.alwaraq.net/ (م)
 - https://www.e-corpus.org/ (م)
 - https://www.ibntufayl.org/ (م)
-- http://kohepocu.cchs.csic.es/ (م)
+- http://kohepocu.cchs.csic.es/ (ب)
+- http://kohepocu.cchs.csic.es/hata_kohepocu (ب)
+- https://networks.h-net.org/node/8330/discussions/60069/hata-and-pua (ب)
 
 **المكتبات الوطنية والأرشيفات**
 - https://www.alhambra-patronato.es/descubrir/investigacion/archivo (ب)
@@ -437,20 +487,30 @@
 - https://www.cultura.gob.es/en/cultura/areas/archivos/mc/archivos/ahn/actualidad/destacados/2017/asociacion-amigos/curso-inquisicion.html (ب)
 - https://revistas.ucm.es/index.php/CHMO/en/article/download/45850/43093/73965 (ب)
 - https://dara.aragon.es/opac/apjz/documentos_4_inquisicion.html (ب)
-- https://www.cultura.gob.es/cultura/areas/archivos/mc/archivos/ags/portada.html (م)
-- https://www.cultura.gob.es/cultura/areas/archivos/mc/archivos/aca/portada.html (م)
+- https://pares.mcu.es/index.html (ب)
+- https://pares.culturaydeporte.gob.es/ (ب)
+- https://www.cultura.gob.es/cultura/archivos/bases-de-datos/portal-de-archivos-espanoles-pares.html (ب)
+- https://www.cultura.gob.es/cultura/areas/archivos/mc/archivos/ags/portada.html (ب)
+- http://pares.mcu.es/ParesBusquedas20/catalogo/description/13789 (ب)
+- https://www.cultura.gob.es/archivos-aca/portada.html (ب)
+- https://pares.cultura.gob.es/ParesBusquedas20/catalogo/description/1593584 (ب)
+- https://pares.mcu.es/ParesBusquedas20/catalogo/description/120476 (ب)
 - https://www.juntadeandalucia.es/cultura/archivos/ (م)
 - https://www.rah.es/ (م)
 - https://bibliotecadigital.rah.es/ (م)
 - https://www.bne.es/es (م)
-- https://bdh.bne.es/ (م)
-- https://gallica.bnf.fr/ (م)
+- https://gallica.bnf.fr/ (ب — ضمنًا عبر صفحة À propos)
 - https://archivesetmanuscrits.bnf.fr/ (م)
-- https://www.cervantesvirtual.com/ (م)
+- https://www.cervantesvirtual.com/ (ب)
+- https://www.cervantesvirtual.com/marco-legal/ (ب)
+- https://www.cervantesvirtual.com/portales/universidad_de_sevilla/fondos_digitales/ (ب)
 - https://catalog.hathitrust.org/ (م)
 - https://archive.org/ (م)
 - https://www.malecso.org/ (ب)
 - https://www.malecso.org/institute/who-we-are (ب)
+- https://www.malecso.org/institute/infrastructure (ب)
+- https://www.alecso.org/nsite/ar/معهد-المخطوطات-العربية (ب)
+- https://www.malecso.org/releases/الكتاب-الصوتي (ب)
 
 **قواعد البيانات ومراكز البحث والجامعات**
 - https://www.eea.csic.es/ (ب)
@@ -470,6 +530,7 @@
 - https://cchs.csic.es/en/org-structure/institute-languages-cultures-mediterranean-near-east-ilc (ب)
 - https://tonegawa.eea.csic.es/ (ب)
 - https://www.forumancientcoins.com/numiswiki/view.asp?key=tonegawa+collection (ب)
+- https://www.eea.csic.es/laac-noticias/el-sitio-web-de-la-eea-aloja-la-coleccion-tonegawa/ (ب)
 - https://funci.org/el-corpus-epigrafico-de-la-alhambra/ (ب)
 - https://www.alhambradegranada.org/es/info/noticiasdelaalhambra/905.asp (ب)
 - https://www.academia.edu/15851493/Corpus_Epigr%C3%A1fico_Andalus%C3%AD_un_proyecto (ب)
@@ -542,13 +603,19 @@
 - https://www.alhambra-patronato.es/en/discover/alhambra-y-generalife/museum/museo-de-la-alhambra/colecciones (ب)
 - https://www.man.es/man/coleccion/catalogo-general.html (ب)
 - https://www.man.es/man/coleccion/catalogos-tematicos/moneda-andalusi.html (ب)
-- https://ceres.mcu.es/pages/SimpleSearch?Museo=MANA (ب)
+- https://ceres.mcu.es/pages/SimpleSearch?Museo=MAN (ب — كان مدوَّنًا Museo=MANA)
+- https://ceres.mcu.es/pages/issued.jsp (ب)
+- https://www.alhambra-patronato.es/aviso-legal (ب)
+- https://www.juntadeandalucia.es/boja/2016/192/25 (ب)
+- https://www.museosdeandalucia.es/web/conjuntoarqueologicomadinatalzahra/copyright (ب)
 - https://www.museosdeandalucia.es/web/conjuntoarqueologicomadinatalzahra (ب)
 - https://artsandculture.google.com/partner/conjunto-arqueologico-de-madinat-al-zahra (ب)
 - https://www.museosdeandalucia.es/web/museoarqueologicodecordoba (ب)
 - https://www.museosdeandalucia.es/web/museoarqueologicodecordoba/acceso-a-fondos (ب)
-- https://www.museosdeandalucia.es/web/museodemalaga (م)
-- https://www.museosdeandalucia.es/web/museodealmeria (م)
+- https://www.museosdeandalucia.es/web/museodemalaga (ب)
+- https://www.museosdeandalucia.es/web/museodealmeria (ب)
+- https://www.museosdeandalucia.es/web/museodemalaga/copyright (ب)
+- https://www.museosdeandalucia.es/web/museodealmeria/copyright (ب)
 - https://collections.louvre.fr/en/ (ب)
 - https://collections.louvre.fr/en/page/cgu (ب)
 - https://collections.louvre.fr/en/page/documentationJSON (ب)
@@ -583,9 +650,18 @@
 - https://www.europeana.eu/en/rights/terms-of-use (ب)
 - https://pro.europeana.eu/page/available-rights-statements (ب)
 - https://europeana.atlassian.net/wiki/spaces/EF/pages/2360508417/Europeana+API+FAQ (ب)
-- https://commons.wikimedia.org/wiki/Category:Al-Andalus (م)
-- https://www.archnet.org/ (م)
-- https://guiadigital.iaph.es/ (م)
+- https://commons.wikimedia.org/wiki/Category:Al-Andalus (ب)
+- https://commons.wikimedia.org/wiki/Category:Maps_of_Al-Andalus (ب)
+- https://commons.wikimedia.org/wiki/Commons:Licensing (ب)
+- https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia (ب)
+- https://www.archnet.org/ (ب)
+- https://www.archnet.org/pages/about (ب)
+- https://libraries.mit.edu/akdc/archnet/archnet-guide-faq/ (ب)
+- https://repositorio.iaph.es/ (ب)
+- https://repositorio.iaph.es/ayuda (ب)
+- https://repositorio.iaph.es/handle/11532/134974 (ب)
+- https://datos.gob.es/en/catalogo/a01002820-repositorio-de-activos-digitales-del-iaph (ب)
+- https://guiadigital.iaph.es/ (م — لم يظهر في بحث 2026-09-22)
 
 **المعاجم الجغرافية والمفردات الموحَّدة**
 - https://pleiades.stoa.org/ (ب)
@@ -601,8 +677,66 @@
 - https://data.cerl.org/thesaurus/ (ب)
 - https://www.cerl.org/resources/cerl_thesaurus/main (ب)
 - https://www.wikidata.org/wiki/Q15759353 (ب)
+- https://www.wikidata.org/wiki/Wikidata:Licensing (ب)
 
-**الخرائط (مرشّحات غير محققة)**
-- https://www.davidrumsey.com/ (م)
-- https://www.oldmapsonline.org/ (م)
-- https://www.ign.es/web/ign/portal/cartoteca (م)
+**الخرائط (جولة 2026-09-22)**
+- https://www.davidrumsey.com/ (ب)
+- https://www.davidrumsey.com/about/copyright-and-permissions (ب)
+- https://www.oldmapsonline.org/en (ب)
+- https://www.oldmapsonline.org/en/terms (ب)
+- https://www.oldmapsonline.org/en/help/oldmapsonline/how-digital-map-copyright-works-org-9 (ب)
+- https://www.ign.es/web/catalogo-cartoteca/ (ب)
+- https://www.ign.es/web/catalogo-cartoteca/search-in-map.html (ب)
+- https://centrodedescargas.cnig.es/ (ب)
+- https://historylab.es/map-library-of-the-national-geographic-institute-ign/ (ب — مصدر وسيط لنص ترخيص IGN)
+- https://www.cartografiadigital.es/2020/10/nuevo-producto-ign-cartografia-antigua.html (ب — مصدر وسيط لنص ترخيص IGN)
+- https://www.ign.es/web/ign/portal/cartoteca (م — لم يظهر في بحث 2026-09-22)
+- https://www.bne.es/es/colecciones/geografia-mapas (ب)
+- https://ws089.juntadeandalucia.es/institutodeestadisticaycartografia/cartoteca/ (ب)
+- https://www.juntadeandalucia.es/institutodeestadisticaycartografia/dega/cartoteca-cartografia-historica-de-andalucia (ب)
+- https://datos.gob.es/en/catalogo/a01002820-cartografia-historica-de-andalucia (ب)
+- https://expobus.us.es/cartografia/ (ب)
+- https://editorial.us.es/es/detalle-libro/719090/cartografia-historica-en-la-biblioteca-de-la-universidad-de-sevilla (ب)
+- https://dialnet.unirioja.es/servlet/libro?codigo=411065 (ب)
+- https://www.juntadeandalucia.es/institutodeestadisticaycartografia/atlasterritorio/at/atlas_bloque3.html (ب)
+- https://www.marcialpons.es/libros/atlas-de-la-historia-del-territorio-de-andalucia/9788475952093/ (ب)
+- https://amazon.com/-/es/Larousse-Editorial/dp/8416984239 (ب)
+
+**الوثائقيات والصوتيات (جولة 2026-09-22)**
+- https://www.upf.tv/films/cities-of-light/ (ب)
+- https://www.islamicspain.tv/the-film/ (ب)
+- https://www.pbssocal.org/shows/cities-of-light-the-rise-and-fall-of-islamic-spain (ب)
+- https://fr.wikipedia.org/wiki/Al_Andalus,_l'Espagne_et_le_temps_des_califes (ب)
+- https://www.bettanyhughes.co.uk/single-post/2005/08/01/When-The-Moors-Ruled-Europe (ب)
+- https://en.wikipedia.org/wiki/When_the_Moors_Ruled_in_Europe (ب)
+- https://www.cine-dossiers.fr/dossiers-pedagogiques/al-andalus-une-civilisation-legendaire/ (ب)
+- https://oumma.com/al-andalus-lespagne-musulmane-vue-du-ciel-arte/ (ب)
+- https://doc.aljazeera.net/news/2019/1/2/… (ثلاثية الأندلس) (ب — الرابط مبتور في المقتطف)
+- https://www.aljazeera.net/arts/2019/1/2/… (ثلاثية الأندلس) (ب — الرابط مبتور في المقتطف)
+- https://www.ajnet.me/video/2019/1/3/ثلاثية-الأندلس-1-حكاية-الشاطئين (ب)
+- https://doc.aljazeera.net/cinema/2023/6/25/… (الأندلس حضارة أسطورية) (ب — الرابط مبتور في المقتطف)
+- https://www.filmaffinity.com/us/film457360.html (ب)
+- https://www.canalsur.es/Ellegado-5334.html (ب)
+- https://www.zendalibros.com/al-andalus-el-legado-una-serie-documental-de-canal-historia/ (ب)
+- https://www.ottomanhistorypodcast.com/2020/11/andalus.html (ب)
+- https://www.ottomanhistorypodcast.com/2017/11/the-lyrical-archive-of-al-andalus.html (ب)
+- https://www.ottomanhistorypodcast.com/search/label/al-Andalus (ب)
+- https://podcasts.apple.com/us/podcast/the-history-of-spain-podcast/id1441884628 (ب)
+- https://creators.spotify.com/pod/show/david-cot (ب)
+- https://shows.acast.com/gone-medieval/episodes/the-rise-and-fall-of-al-andalus (ب)
+- https://casaarabe.es/eventos-arabes/show/ciencia-en-al-andalus (ب)
+- https://m.soundcloud.com/casaarabe/ciencia-en-al-andalus (ب)
+- https://www.youtube.com/channel/UCG0KvRRFYWXzu0zVsNTfdcw (ب)
+- https://delegacion.andalucia.csic.es/conferencias/que-era-al-andalus/ (ب)
+
+**صفحات التراخيص والشروط (جولة 2026-09-22)**
+- https://gallica.bnf.fr/accueil/fr/html/conditions-dutilisation-de-gallica (ب)
+- https://digital.bodleian.ox.ac.uk/terms/ (ب)
+- https://digital.bodleian.ox.ac.uk/faq/ (ب)
+- https://www.bne.es/es/servicios/reproduccion-documentos/uso-reproducciones (ب)
+- https://www.bne.es/es/noticias/0430-bne-permitira-uso-comercial-gratuito-imagenes-digitalizadas-obras-dominio-publico (ب)
+- https://www.qdl.qa/en/copyright-ethical-terms-reuse (ب)
+- https://qdl.qa/en/terms-use (ب)
+- https://digital.staatsbibliothek-berlin.de/nutzungsbedingungen (ب)
+- https://staatsbibliothek-berlin.de/die-staatsbibliothek/open-access (ب)
+- https://cudl.lib.cam.ac.uk/terms/ (ب)
