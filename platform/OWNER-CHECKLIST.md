@@ -2,25 +2,25 @@
 
 كل بند مستقل ويمكن تنفيذه بأي ترتيب، والترتيب أدناه هو الأنفع. الأزمنة تقديرية.
 
-## 1. ربط Netlify بالمستودع (دقيقتان، مرة واحدة)
-الوضع الحالي: الموقع `montajati` على Netlify نُشر يدويًا من سطر الأوامر في 17 سبتمبر 2026 وغير مربوط بـGitHub، فلا يُنشر أي دمج تلقائيًا.
+## 1. ربط مشروع Netlify الجديد بالمستودع (دقيقتان، مرة واحدة)
+المشروع `andalus-atlas` أُنشئ في حسابك على Netlify (2026-09-24) وهو فارغ حتى يُربط بالمستودع. موقع «منتجاتي» يبقى كما هو ولا يُمس.
 
-1. افتح https://app.netlify.com/projects/montajati وسجّل الدخول بحساب Google نفسه.
+1. افتح https://app.netlify.com/projects/andalus-atlas وسجّل الدخول بحساب Google نفسه.
 2. من القائمة الجانبية: **Project configuration** ← **Build & deploy** ← قسم **Continuous deployment** ← زر **Link repository**.
 3. اختر **GitHub**، ثم اسمح لتطبيق Netlify بالوصول إلى المستودع `othman20500-coder/montajati` إن طُلب.
-4. الإعدادات: الفرع **main**، أمر البناء **فارغ**، مجلد النشر **.** (نقطة واحدة = جذر المستودع). احفظ.
+4. الإعدادات: الفرع **main**، **Base directory** = `andalus`، أمر البناء **فارغ**، **Publish directory** = `andalus`. احفظ.
 5. سيبدأ نشر تلقائي فورًا. بعد اكتماله افتح:
-   - https://montajati.netlify.app/andalus/ يجب أن تفتح منصة الأندلس.
-   - https://montajati.netlify.app/office.html يجب أن تعطي 404 (ملف `_redirects` يعمل).
-   - https://montajati.netlify.app/platform/README.md يجب أن تعطي 404.
+   - https://andalus-atlas.netlify.app/ يجب أن تفتح منصة الأندلس.
+   - https://andalus-atlas.netlify.app/#/atlas?story=STORY-ZALLAQA&step=1&tab=sto الزلاقة على مراحل.
+   - https://andalus-atlas.netlify.app/data/graph.prototype.js يجب أن تعطي 404.
 6. أخبرني «Netlify مربوط» لأفحص الصفحات كلها وأرسل لك ما أجده.
 
 بديل مؤقت دون ربط (من جهازك، داخل مجلد المستودع بعد `git pull`):
 ```
 npm i -g netlify-cli
 netlify login
-netlify link --id cd5cd6a9-b8ea-4637-915c-9fcc8d93f071
-netlify deploy --prod --dir .
+netlify link --id 524f9b42-94e6-4c35-9612-aea577addcb8
+netlify deploy --prod --dir andalus
 ```
 
 ## 2. حماية الفرع الرئيسي (دقيقتان)
