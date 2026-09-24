@@ -1,0 +1,29 @@
+[
+ 200,
+ [
+  {
+   "entity_id": "PLC-CORDOBA",
+   "entity_type": "Place",
+   "preferred_name_ar": "قرطبة",
+   "preferred_name_latn": "Córdoba"
+  },
+  {
+   "entity_id": "PLC-CORDOBA-WH",
+   "entity_type": "Place",
+   "preferred_name_ar": "وسط قرطبة التاريخي",
+   "preferred_name_latn": "Historic Centre of Cordoba"
+  },
+  {
+   "entity_id": "POL-001",
+   "entity_type": "Polity",
+   "preferred_name_ar": "إمارة قرطبة الأموية",
+   "preferred_name_latn": "Umayyad Emirate of Córdoba"
+  },
+  {
+   "entity_id": "POL-002",
+   "entity_type": "Polity",
+   "preferred_name_ar": "خلافة قرطبة",
+   "preferred_name_latn": "Caliphate of Córdoba"
+  }
+ ]
+]

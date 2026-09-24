@@ -1,0 +1,47 @@
+[
+ {
+  "assertion_id": "AST-012",
+  "claim_id": "CLM-001",
+  "relation": "يدعم التاريخ"
+ },
+ {
+  "assertion_id": "AST-027",
+  "claim_id": "CLM-001",
+  "relation": "نفس الادعاء بصياغة الفرع"
+ },
+ {
+  "assertion_id": "AST-003",
+  "claim_id": "CLM-001",
+  "relation": "حد العصر"
+ },
+ {
+  "assertion_id": "AST-013",
+  "claim_id": "ATLAS-CLM01",
+  "relation": "تاريخ بدء البناء"
+ },
+ {
+  "assertion_id": "AST-015",
+  "claim_id": "ATLAS-CLM01",
+  "relation": "يدقق صيغة UNESCO للخراب: دخول البربر 401هـ ثم الخراب التام 414–416هـ"
+ },
+ {
+  "assertion_id": "AST-025",
+  "claim_id": "ATLAS-CLM01",
+  "relation": "الهوية والموقع"
+ },
+ {
+  "assertion_id": "AST-024",
+  "claim_id": "ATLAS-CLM02",
+  "relation": "هوية قرطبة"
+ },
+ {
+  "assertion_id": "AST-G29",
+  "claim_id": "ATLAS-CLM03",
+  "relation": "الحمراء"
+ },
+ {
+  "assertion_id": "AST-G30",
+  "claim_id": "ATLAS-CLM03",
+  "relation": "جنة العريف"
+ }
+]

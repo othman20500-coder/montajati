@@ -1,0 +1,9 @@
+﻿polity_id,الاسم,Name,النوع,البداية,النهاية,العاصمة (place_id),العصر (period_id)
+POL-001,إمارة قرطبة الأموية,Umayyad Emirate of Córdoba,إمارة,756,929,PLC-001,PRD-02
+POL-002,خلافة قرطبة,Caliphate of Córdoba,خلافة,929,1031,PLC-001,PRD-03
+POL-003,طائفة إشبيلية,Taifa of Seville,طائفة,,,PLC-004,PRD-04
+POL-004,طائفة سرقسطة,Taifa of Zaragoza,طائفة,,,PLC-006,PRD-04
+POL-005,طائفة دانية,Taifa of Dénia,طائفة,,,PLC-008,PRD-04
+POL-006,الدولة المرابطية في الأندلس,Almoravid rule in al-Andalus,دولة,,,,PRD-05
+POL-007,الدولة الموحدية في الأندلس,Almohad rule in al-Andalus,دولة,,,,PRD-06
+POL-008,مملكة غرناطة النصرية,Nasrid Kingdom of Granada,مملكة,,1492,PLC-003,PRD-07

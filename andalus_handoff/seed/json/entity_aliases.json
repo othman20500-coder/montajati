@@ -1,0 +1,82 @@
+[
+ {
+  "alias_id": "ALIAS-TOLEDO-AR",
+  "entity_id": "PLC-TOLEDO",
+  "alias": "طليطلة",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "طليطلة"
+ },
+ {
+  "alias_id": "ALIAS-TOLEDO-LA",
+  "entity_id": "PLC-TOLEDO",
+  "alias": "Toledo",
+  "script": "Latin",
+  "language": "es/en",
+  "normalized": "toledo"
+ },
+ {
+  "alias_id": "ALIAS-GERARD-01",
+  "entity_id": "PER-GERARD-CREMONA",
+  "alias": "Gerardus Cremonensis",
+  "script": "Latin",
+  "language": "la",
+  "normalized": "gerardus cremonensis"
+ },
+ {
+  "alias_id": "ALIAS-GUND-01",
+  "entity_id": "PER-GUNDISSALINUS",
+  "alias": "Domingo Gundisalvo",
+  "script": "Latin",
+  "language": "es",
+  "normalized": "domingo gundisalvo"
+ },
+ {
+  "alias_id": "ALIAS-IBNDAUD-01",
+  "entity_id": "PER-ABRAHAM-IBN-DAUD",
+  "alias": "Avendauth",
+  "script": "Latin",
+  "language": "la",
+  "normalized": "avendauth"
+ },
+ {
+  "alias_id": "ALIAS-JILYANI-01",
+  "entity_id": "PER-AL-JILYANI",
+  "alias": "al-Ǧilyānī",
+  "script": "Latin transliteration",
+  "language": "ar-latn",
+  "normalized": "al-jilyani"
+ },
+ {
+  "alias_id": "ALIAS-GRANADA-01",
+  "entity_id": "PLC-GRANADA",
+  "alias": "غرناطة",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "غرناطة"
+ },
+ {
+  "alias_id": "ALIAS-DAMASCUS-01",
+  "entity_id": "PLC-DAMASCUS",
+  "alias": "دمشق",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "دمشق"
+ },
+ {
+  "alias_id": "ALIAS-IBNRAZIN-01",
+  "entity_id": "PER-IBN-RAZIN",
+  "alias": "Ibn Razīn al-Tuŷībī",
+  "script": "Latin transliteration",
+  "language": "ar-latn",
+  "normalized": "ibn razin al tujibi"
+ },
+ {
+  "alias_id": "ALIAS-ROMANCE-01",
+  "entity_id": "LANG-ROM-AND",
+  "alias": "الروماندلسي / الرومانسية الأندلسية",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "الرومانسية الاندلسية"
+ }
+]

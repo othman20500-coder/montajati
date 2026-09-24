@@ -1,0 +1,164 @@
+{
+  "version": "v1.2",
+  "passed": 26,
+  "total": 26,
+  "checks": [
+    {
+      "name": "sqlite_integrity",
+      "pass": true,
+      "observed": "ok",
+      "target": "ok"
+    },
+    {
+      "name": "foreign_keys",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "claim_source_links",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "claim_evidence_links",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "claims_have_evidence",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "claims_have_sources",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "quiz_claim_links",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "learning_claim_links",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "owner_roles",
+      "pass": true,
+      "observed": 6,
+      "target": ">=6"
+    },
+    {
+      "name": "maintenance_ownership",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "critical_watchlist",
+      "pass": true,
+      "observed": 8,
+      "target": ">=8"
+    },
+    {
+      "name": "watchlist_health_snapshot",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "critical_source_usable",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "attestation_assertion_links",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "assertions_have_attestations",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "no_unresolved_conflicts",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "attestation_quote_and_locator",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "tenure_date_logic",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "period_bounds_logic",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "no_hijacked_domains",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "crosswalk_targets_exist",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "place_coordinate_provenance",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "claim_confidence",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "claim_last_verified",
+      "pass": true,
+      "observed": 0,
+      "target": 0
+    },
+    {
+      "name": "release_gates",
+      "pass": true,
+      "observed": "8/8",
+      "target": "8/8"
+    },
+    {
+      "name": "release_manifest",
+      "pass": true,
+      "observed": 1,
+      "target": 1
+    }
+  ],
+  "status": "PASS"
+}

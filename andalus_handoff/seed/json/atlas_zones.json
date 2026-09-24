@@ -1,0 +1,42 @@
+[
+ {
+  "zone_id": "ZONE-CORDOBA-CORE",
+  "label_ar": "عنقود قرطبة الأموي",
+  "min_year": 750,
+  "max_year": 1031,
+  "theme": "politics,urban",
+  "cartographic_status": "analytical envelope — NOT a historical boundary",
+  "geometry_geojson": "{\"type\": \"Polygon\", \"coordinates\": [[[-4.95, 37.8], [-4.65, 37.8], [-4.65, 38.0], [-4.95, 38.0], [-4.95, 37.8]]]}",
+  "note_ar": "مظروف تحليلي يربط قرطبة وشقندة ومدينة الزهراء؛ لا يمثل حدود الكورة أو الخلافة."
+ },
+ {
+  "zone_id": "ZONE-EAST-EARLY",
+  "label_ar": "عنقود الشرق الأندلسي المبكر",
+  "min_year": 711,
+  "max_year": 1031,
+  "theme": "archaeology,religion",
+  "cartographic_status": "analytical envelope — NOT a historical boundary",
+  "geometry_geojson": "{\"type\": \"Polygon\", \"coordinates\": [[[-1.55, 38.65], [0.15, 38.65], [0.15, 40.45], [-1.55, 40.45], [-1.55, 38.65]]]}",
+  "note_ar": "مظروف بصري لمواقع المساجد المبكرة وبايرين وشيريسا؛ ليس إقليمًا إداريًا."
+ },
+ {
+  "zone_id": "ZONE-SE-URBAN",
+  "label_ar": "عنقود الجنوب الشرقي الحضري",
+  "min_year": 800,
+  "max_year": 1300,
+  "theme": "urban,economy",
+  "cartographic_status": "analytical envelope — NOT a historical boundary",
+  "geometry_geojson": "{\"type\": \"Polygon\", \"coordinates\": [[[-4.7, 36.45], [-1.0, 36.45], [-1.0, 38.2], [-4.7, 38.2], [-4.7, 36.45]]]}",
+  "note_ar": "تجميع تحليلي لبجّانة وألمرية وغرناطة ومرسية ومالقة؛ لا يمثل دولة أو حدودًا تاريخية."
+ },
+ {
+  "zone_id": "ZONE-GRANADA-NASRID",
+  "label_ar": "عنقود غرناطة النصرية",
+  "min_year": 1238,
+  "max_year": 1492,
+  "theme": "palace,urban,heritage",
+  "cartographic_status": "analytical envelope — NOT a historical boundary",
+  "geometry_geojson": "{\"type\": \"Polygon\", \"coordinates\": [[[-3.75, 37.05], [-3.45, 37.05], [-3.45, 37.3], [-3.75, 37.3], [-3.75, 37.05]]]}",
+  "note_ar": "مظروف عرض حول غرناطة والحمراء؛ ليس حدود مملكة بني نصر."
+ }
+]

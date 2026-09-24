@@ -1,0 +1,292 @@
+[
+ {
+  "evidence_id": "EVD-FELUS-711",
+  "evidence_type": "Coin",
+  "label_ar": "فلوس فتح الأندلس، ومنها قطعة 711–712م",
+  "date_text": "711-712",
+  "place_entity_id": "PLC-CORDOBA",
+  "description_ar": "مصدر نقدي منخفض القيمة يُستخدم كقرينة على مسارات الفتح والضم والتبادل.",
+  "confidence": "عالٍ",
+  "source_id": "SRC-8585EF64FC"
+ },
+ {
+  "evidence_id": "EVD-JEWISH-MAT",
+  "evidence_type": "ObjectSet",
+  "label_ar": "مجموعة الثقافة المادية اليهودية في MAN",
+  "date_text": "Medieval Iberia",
+  "place_entity_id": null,
+  "description_ar": "توضح صعوبة إسناد الهوية الدينية بالأسلوب وحده وأهمية النقوش والسياق.",
+  "confidence": "عالٍ",
+  "source_id": "SRC-08093EBC7F"
+ },
+ {
+  "evidence_id": "EVD-PECHINA-URBAN",
+  "evidence_type": "Archaeology",
+  "label_ar": "حي بَجّانة: مساكن وشوارع ومحلات وورش",
+  "date_text": "9-10c",
+  "place_entity_id": "PLC-PECHINA",
+  "description_ar": "سياق حضري فوق/بعد مركز خزف مزجج مبكر.",
+  "confidence": "عالٍ",
+  "source_id": "SRC-88C32727FD"
+ },
+ {
+  "evidence_id": "EVD-COOKBOOKS-13C",
+  "evidence_type": "TextCorpus",
+  "label_ar": "كتابا الطبخ الأندلسيان في القرن 13",
+  "date_text": "13c",
+  "place_entity_id": null,
+  "description_ar": "مصدران أوليان للوصفات والتقنيات وعادات المائدة والصلات مع المغرب.",
+  "confidence": "عالٍ",
+  "source_id": "SRC-D8B41C5711"
+ },
+ {
+  "evidence_id": "EVD-LEON-ARCH",
+  "evidence_type": "Architecture",
+  "label_ar": "قوس قصر ملوك ليون",
+  "date_text": "1370s",
+  "place_entity_id": "PLC-LEON",
+  "description_ar": "قوس بزخارف ونقوش عربية من تقاليد أندلسية في قصر ملكي قشتالي.",
+  "confidence": "عالٍ",
+  "source_id": "SRC-94CFFFD3D1"
+ },
+ {
+  "evidence_id": "EVD-TOLEDO-TRANS",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "برنامج الترجمة العربية-اللاتينية في طليطلة",
+  "date_text": "12c",
+  "place_entity_id": "PLC-TOLEDO",
+  "description_ar": "توثيق نشاط Gerard وGundissalinus وشبكات تعاون الترجمة.",
+  "confidence": "متوسط-عالٍ",
+  "source_id": "SRC-E29AF5E30C"
+ },
+ {
+  "evidence_id": "EVD-AMOI-JILYANI",
+  "evidence_type": "RouteCase",
+  "label_ar": "مسار الجِلياني من غرناطة إلى دمشق",
+  "date_text": "before 1206",
+  "place_entity_id": "PLC-DAMASCUS",
+  "description_ar": "حالة AMOI-II لانتقال شخص وعمل ومعرفة من الأندلس إلى المشرق.",
+  "confidence": "عالٍ",
+  "source_id": "SRC-9264D9F9B0"
+ },
+ {
+  "evidence_id": "EVD-KHARJAS-CS",
+  "evidence_type": "LiteraryCorpus",
+  "label_ar": "Corpus الخرجات العربية-الرومانسية وتحليل التبديل اللغوي",
+  "date_text": "11-14c",
+  "place_entity_id": null,
+  "description_ar": "دراسة كمية لـ43 خرجة تسجل 104 حالات تبديل لغوي.",
+  "confidence": "عالٍ",
+  "source_id": "SRC-F0F86304B1"
+ },
+ {
+  "evidence_id": "EVD-MANISES",
+  "evidence_type": "CraftObjectSet",
+  "label_ar": "خزف البريق المعدني في مانيسس",
+  "date_text": "14-15c",
+  "place_entity_id": "PLC-MANISES",
+  "description_ar": "امتداد لتقنيات أندلسية/نصرية في ورش بعد انتقال السلطة.",
+  "confidence": "عالٍ",
+  "source_id": "SRC-2D2113D7F8"
+ },
+ {
+  "evidence_id": "EVD-UNESCO-MADINAT",
+  "evidence_type": "HERITAGE/ARCH",
+  "label_ar": "مدينة الزهراء — عقار UNESCO",
+  "date_text": "منتصف 10م؛ دمار 1009–1010",
+  "place_entity_id": "PLC-MADINAT-ZAHRA",
+  "description_ar": "موقع حضري أموي كامل نسبيًا، مع طرق ومياه ومبانٍ وأشياء يومية.",
+  "confidence": "عالٍ جدًا",
+  "source_id": "SRC-FF27E1A80B"
+ },
+ {
+  "evidence_id": "EVD-UNESCO-CORDOBA",
+  "evidence_type": "HERITAGE/ARCH",
+  "label_ar": "وسط قرطبة التاريخي — UNESCO",
+  "date_text": "8–10م وما بعده",
+  "place_entity_id": "PLC-CORDOBA-WH",
+  "description_ar": "موقع حضري يضم الجامع الكبير وسياقات الخلافة.",
+  "confidence": "عالٍ جدًا",
+  "source_id": "SRC-B819B01BE2"
+ },
+ {
+  "evidence_id": "EVD-UNESCO-GRANADA",
+  "evidence_type": "HERITAGE/ARCH",
+  "label_ar": "الحمراء وجنة العريف والبيازين — UNESCO",
+  "date_text": "13–15م أساسًا",
+  "place_entity_id": "PLC-ALHAMBRA-WH",
+  "description_ar": "عقار مركب يضم مدينة قصر وحيًا وسيطًا ومقرًا ريفيًا.",
+  "confidence": "عالٍ جدًا",
+  "source_id": "SRC-F650A5BEAE"
+ },
+ {
+  "evidence_id": "EVD-UNESCO-SEVILLE",
+  "evidence_type": "HERITAGE/ARCH",
+  "label_ar": "قصر إشبيلية والجيرالدا — UNESCO",
+  "date_text": "القرن 10–13م وما بعده",
+  "place_entity_id": "PLC-SEVILLE",
+  "description_ar": "شهادة معمارية متعددة الطبقات: نواة قصر من القرن العاشر، عناصر من القصر الموحدي، ومئذنة الجيرالدا المرتبطة بالمسجد السابق.",
+  "confidence": "عالٍ جدًا",
+  "source_id": "SRC-5CED25F7F5"
+ },
+ {
+  "evidence_id": "EVD-PKT-ARC-CLM01",
+  "evidence_type": "VERIFICATION_PACKET",
+  "label_ar": "حزمة تحقق ARC-CLM01",
+  "date_text": null,
+  "place_entity_id": null,
+  "description_ar": "تطبيع طبقة التحقق: هما من أقدم أمثلة دور العبادة الإسلامية المؤرخة أثريًا في شبه الجزيرة، ويرجح بناؤهما في العقود الوسطى من القرن الثامن.",
+  "confidence": "مطابق لثقة Claim",
+  "source_id": "SRC-1990D2E895"
+ },
+ {
+  "evidence_id": "EVD-PKT-ARC-CLM03",
+  "evidence_type": "VERIFICATION_PACKET",
+  "label_ar": "حزمة تحقق ARC-CLM03",
+  "date_text": null,
+  "place_entity_id": null,
+  "description_ar": "تطبيع طبقة التحقق: تصف EEA بذرتين مؤرختين بالنصف الأول من القرن 11 بأنها أقدم دليل معروف حتى يونيو 2026 في الأندلس؛ لكن أدبيات 2023 سجلت الدخن اللؤلؤي في سياقات إسلامية إيبيرية من 11–12م، لذا تبقى أولوية بايرين قابلة للمراجعة عند نشر الدراسة التفصيلية.",
+  "confidence": "مطابق لثقة Claim",
+  "source_id": "SRC-3498AB3076"
+ },
+ {
+  "evidence_id": "EVD-PKT-ARC-CLM04",
+  "evidence_type": "VERIFICATION_PACKET",
+  "label_ar": "حزمة تحقق ARC-CLM04",
+  "date_text": null,
+  "place_entity_id": null,
+  "description_ar": "تطبيع طبقة التحقق: توثق حفريات بَجّانة/پتشينة فرنًا متخصصًا لإنتاج الخزف المزجج عمل في النصف الثاني من القرن التاسع، ثم أُهمل وحل فوقه/بعده حي إسلامي يضم مساكن وشوارع ومحلات وورش.",
+  "confidence": "مطابق لثقة Claim",
+  "source_id": "SRC-88C32727FD"
+ },
+ {
+  "evidence_id": "EVD-PKT-CLM-001",
+  "evidence_type": "VERIFICATION_PACKET",
+  "label_ar": "حزمة تحقق CLM-001",
+  "date_text": null,
+  "place_entity_id": null,
+  "description_ar": "تطبيع طبقة التحقق: أعلن عبد الرحمن الثالث نفسه خليفة في 16 يناير 929م؛ وتظهر النقود المعاصرة التحول في الألقاب والسيادة.",
+  "confidence": "مطابق لثقة Claim",
+  "source_id": "SRC-326B573BBA"
+ },
+ {
+  "evidence_id": "EVD-PKT-CLM-002",
+  "evidence_type": "VERIFICATION_PACKET",
+  "label_ar": "حزمة تحقق CLM-002",
+  "date_text": null,
+  "place_entity_id": null,
+  "description_ar": "تطبيع طبقة التحقق: لا يوجد ما يكفي لنشر حرق السفن كواقعة ثابتة. الرواية تظهر في تقاليد متأخرة، والبحث الحديث يتعامل معها كأسطورة/رواية موضع شك.",
+  "confidence": "مطابق لثقة Claim",
+  "source_id": "SRC-FA9D2D9443"
+ },
+ {
+  "evidence_id": "EVD-PKT-CLM-010",
+  "evidence_type": "VERIFICATION_PACKET",
+  "label_ar": "حزمة تحقق CLM-010",
+  "date_text": null,
+  "place_entity_id": null,
+  "description_ar": "تطبيع طبقة التحقق: يُعتمد منهجيًا على الجمع بين النقد والأختام والآثار والنصوص لأن جزءًا كبيرًا من الروايات المكتوبة عن الفتح متأخر زمنيًا، كما يظهر بوضوح في دراسة المساجد المبكرة وفي تقليد حرق السفن.",
+  "confidence": "مطابق لثقة Claim",
+  "source_id": "SRC-1990D2E895"
+ },
+ {
+  "evidence_id": "EVD-PKT-CLM-018",
+  "evidence_type": "VERIFICATION_PACKET",
+  "label_ar": "حزمة تحقق CLM-018",
+  "date_text": null,
+  "place_entity_id": null,
+  "description_ar": "تطبيع طبقة التحقق: لا تُعامل أخبار مجموعة بوصفها شاهدًا معاصرًا مباشرًا لفتح الأندلس؛ يبين تحليل لويس مولينا أن رواية فتح محددة فيها ترجع إلى أحمد الرازي في القرن العاشر، وأن الكتاب تركيب من مواد تاريخية أقدم لا من مواد تأريخية من الدرجة الأولى.",
+  "confidence": "مطابق لثقة Claim",
+  "source_id": "SRC-C60B7F01E7"
+ },
+ {
+  "evidence_id": "EVD-PKT-CLM-MS01",
+  "evidence_type": "VERIFICATION_PACKET",
+  "label_ar": "حزمة تحقق CLM-MS01",
+  "date_text": null,
+  "place_entity_id": null,
+  "description_ar": "تطبيع طبقة التحقق: مخطوط ابن ليون الزراعي، المؤلف سنة 1348م والمحفوظ في EEA-CSIC، واحد من خمس نسخ باقية، وهو بحسب EEA النسخة الوحيدة الكاملة والوحيدة التي تحتوي حواشي هامشية؛ لذلك يُعامل بوصفه شاهدًا أوليًا مهمًا على المعرفة الزراعية الأندلسية المتأخرة.",
+  "confidence": "مطابق لثقة Claim",
+  "source_id": "SRC-62278995F4"
+ },
+ {
+  "evidence_id": "EVD-PKT-CLM-MS02",
+  "evidence_type": "VERIFICATION_PACKET",
+  "label_ar": "حزمة تحقق CLM-MS02",
+  "date_text": null,
+  "place_entity_id": null,
+  "description_ar": "تطبيع طبقة التحقق: بحسب بيانات EEA المحدثة في 26 مايو 2026، تضم المجموعة 130 عملًا عربيًا مخطوطًا في 75 مجلدًا، وكودكسًا عبريًا يضم 9 أعمال، و31 وثيقة عربية غرناطية ومغربية، و8 مخطوطات قشتالية. تُحفظ الأرقام مع تاريخ التحقق لأنها قابلة للتغير.",
+  "confidence": "مطابق لثقة Claim",
+  "source_id": "SRC-3D20624E74"
+ },
+ {
+  "evidence_id": "EVD-PKT-RUR-CLM02",
+  "evidence_type": "VERIFICATION_PACKET",
+  "label_ar": "حزمة تحقق RUR-CLM02",
+  "date_text": null,
+  "place_entity_id": null,
+  "description_ar": "تطبيع طبقة التحقق: تشير الدراسة osteoarchaeological لعينة من 35 هيكلًا من Xaresa إلى مرونة في توزيع العمل وأهمية أعمال الصيانة والرعاية، ولا يجوز تعميمها على كل نساء الأندلس.",
+  "confidence": "مطابق لثقة Claim",
+  "source_id": "SRC-EF1A9587DD"
+ },
+ {
+  "evidence_id": "EVD-PKT-RUR-CLM03",
+  "evidence_type": "VERIFICATION_PACKET",
+  "label_ar": "حزمة تحقق RUR-CLM03",
+  "date_text": null,
+  "place_entity_id": null,
+  "description_ar": "تطبيع طبقة التحقق: يكشف الحي الأندلسي المحفوظ عند سفح قصبة ألمرية، مع دراسات مشروع GLOBALM، عن مدينة ذات نشاط إنتاجي وتجاري واسع ارتكز على بنية مينائية وصناعة نسيجية واتصالات قوية؛ ويُعرض هذا بوصفه استنتاجًا من الحي والثقافة المادية والبحث متعدد التخصصات.",
+  "confidence": "مطابق لثقة Claim",
+  "source_id": "SRC-BDD32C0DDC"
+ },
+ {
+  "evidence_id": "EVD-PKT-RUR-CLM04",
+  "evidence_type": "VERIFICATION_PACKET",
+  "label_ar": "حزمة تحقق RUR-CLM04",
+  "date_text": null,
+  "place_entity_id": null,
+  "description_ar": "تطبيع طبقة التحقق: الحفر الواسع لنحو 22,000م² والمؤرخ 750–818م يوفر سجلًا مباشرًا للتخطيط الحضري والثقافة المادية والحياة اليومية قبل تدمير الربض.",
+  "confidence": "مطابق لثقة Claim",
+  "source_id": "SRC-22B631316C"
+ },
+ {
+  "evidence_id": "EVD-PKT-RUR-CLM06",
+  "evidence_type": "VERIFICATION_PACKET",
+  "label_ar": "حزمة تحقق RUR-CLM06",
+  "date_text": null,
+  "place_entity_id": null,
+  "description_ar": "تطبيع طبقة التحقق: تُعتمد PUA كمصدر أساسي للأشخاص لأنها تضم أكثر من 11,600 شخصية من معاجم التراجم الأندلسية، ويُعتمد HATA للأعمال المؤلفة والمنقولة في الأندلس بين القرنين الثامن والخامس عشر؛ ويستخدم AMOI الربط بين HATA وPUA أساسًا لدراسة انتقال المعرفة.",
+  "confidence": "مطابق لثقة Claim",
+  "source_id": "SRC-F86CF814B9"
+ },
+ {
+  "evidence_id": "EVD-PKT-SOC-CLM01",
+  "evidence_type": "VERIFICATION_PACKET",
+  "label_ar": "حزمة تحقق SOC-CLM01",
+  "date_text": null,
+  "place_entity_id": null,
+  "description_ar": "تطبيع طبقة التحقق: العلاقات بين المسلمين والمسيحيين واليهود كانت متغيرة زمانيًا ومكانيًا ومؤسسيًا؛ التعاون والتداخل والتوتر والتراتبية كلها موثقة، لذلك تُرفض السردية الأحادية.",
+  "confidence": "مطابق لثقة Claim",
+  "source_id": "SRC-CB6B8DB2B7"
+ },
+ {
+  "evidence_id": "EVD-PKT-SOC-CLM06",
+  "evidence_type": "VERIFICATION_PACKET",
+  "label_ar": "حزمة تحقق SOC-CLM06",
+  "date_text": null,
+  "place_entity_id": null,
+  "description_ar": "تطبيع طبقة التحقق: صبح (940–999م) حالة استثنائية موثقة لامرأة من أصل مسترق وصلت إلى مكانة سياسية وثقافية بارزة في البلاط الأموي؛ يثبت نقش بُرطمانها العاجي سنة 964م صلتها المباشرة بالبلاط، وتعرض المصادر المتحفية دورها اللاحق بوصفها sayyida وفاعلة في القرار السياسي. لا تعمم حالتها على وضع النساء كله.",
+  "confidence": "مطابق لثقة Claim",
+  "source_id": "SRC-385ADC829F"
+ },
+ {
+  "evidence_id": "EVD-PKT-SOC-CLM09",
+  "evidence_type": "VERIFICATION_PACKET",
+  "label_ar": "حزمة تحقق SOC-CLM09",
+  "date_text": null,
+  "place_entity_id": null,
+  "description_ar": "تطبيع طبقة التحقق: تشير مادة MAN إلى استخدام واسع للنقد في الأندلس في الضرائب والجيش والتجارة والمعاملات اليومية، وإلى تداول الدراهم خارج الأندلس؛ وتُفصل كثافة الاستخدام ومسارات التداول لاحقًا بحسب الفترة والمنطقة.",
+  "confidence": "مطابق لثقة Claim",
+  "source_id": "SRC-0DBB04D925"
+ }
+]

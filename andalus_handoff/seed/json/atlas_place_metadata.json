@@ -1,0 +1,370 @@
+[
+ {
+  "entity_id": "PLC-CORDOBA",
+  "period_group": "cross_period",
+  "theme": "politics,urban,knowledge",
+  "historical_status": "verified_claim_linked",
+  "display_priority": 100,
+  "note_ar": "عاصمة أموية ومحور متعدد الطبقات."
+ },
+ {
+  "entity_id": "PLC-CORDOBA-WH",
+  "period_group": "early_caliphate",
+  "theme": "urban,heritage",
+  "historical_status": "verified_site",
+  "display_priority": 100,
+  "note_ar": "عقار UNESCO؛ مرساة تمثيلية."
+ },
+ {
+  "entity_id": "PLC-MADINAT-ZAHRA",
+  "period_group": "caliphate",
+  "theme": "politics,urban,heritage",
+  "historical_status": "verified_site",
+  "display_priority": 100,
+  "note_ar": "مدينة خلافية مؤرخة مؤسسيًا."
+ },
+ {
+  "entity_id": "PLC-SAQUNDA",
+  "period_group": "early",
+  "theme": "urban,archaeology",
+  "historical_status": "verified_claim_linked",
+  "display_priority": 95,
+  "note_ar": "الإحداثية الحالية مرساة قرطبة وليست نقطة الحفر."
+ },
+ {
+  "entity_id": "PLC-GRANADA",
+  "period_group": "cross_period",
+  "theme": "politics,knowledge",
+  "historical_status": "verified_claim_linked",
+  "display_priority": 100,
+  "note_ar": "مدينة متعددة الطبقات ومسار معرفة."
+ },
+ {
+  "entity_id": "PLC-ALHAMBRA-WH",
+  "period_group": "nasrid_late",
+  "theme": "urban,heritage",
+  "historical_status": "verified_site",
+  "display_priority": 100,
+  "note_ar": "عقار UNESCO مركب."
+ },
+ {
+  "entity_id": "PLC-PECHINA",
+  "period_group": "early",
+  "theme": "urban,economy,archaeology",
+  "historical_status": "verified_claim_linked",
+  "display_priority": 95,
+  "note_ar": "خزف وحي حضري."
+ },
+ {
+  "entity_id": "PLC-ALMARIYYA",
+  "period_group": "taifa_empires",
+  "theme": "urban,economy,archaeology",
+  "historical_status": "verified_claim_linked",
+  "display_priority": 95,
+  "note_ar": "ميناء وصناعة واتصال تجاري."
+ },
+ {
+  "entity_id": "PLC-XERESA",
+  "period_group": "caliphate_to_empires",
+  "theme": "society,archaeology",
+  "historical_status": "verified_claim_linked",
+  "display_priority": 90,
+  "note_ar": "مجتمع فلاحي ودراسة عظمية."
+ },
+ {
+  "entity_id": "PLC-BAIREN",
+  "period_group": "caliphate_to_taifa",
+  "theme": "archaeology,economy",
+  "historical_status": "verified_claim_linked",
+  "display_priority": 85,
+  "note_ar": "حصن ودليل نباتي؛ المرساة تقريبية."
+ },
+ {
+  "entity_id": "PLC-EL-MOLON",
+  "period_group": "early",
+  "theme": "religion,archaeology",
+  "historical_status": "verified_claim_linked",
+  "display_priority": 85,
+  "note_ar": "فضاء ديني مبكر؛ المرساة تقريبية."
+ },
+ {
+  "entity_id": "PLC-TOSSAL-VILA",
+  "period_group": "early",
+  "theme": "religion,archaeology",
+  "historical_status": "verified_claim_linked",
+  "display_priority": 85,
+  "note_ar": "فضاء ديني مبكر؛ المرساة تقريبية."
+ },
+ {
+  "entity_id": "PLC-TOLEDO",
+  "period_group": "legacy_transfer",
+  "theme": "knowledge,translation",
+  "historical_status": "verified_claim_linked",
+  "display_priority": 90,
+  "note_ar": "محور ترجمة ونقل معرفة."
+ },
+ {
+  "entity_id": "PLC-DAMASCUS",
+  "period_group": "legacy_transfer",
+  "theme": "knowledge,migration",
+  "historical_status": "verified_claim_linked",
+  "display_priority": 80,
+  "note_ar": "محطة شرقية في شبكة انتقال المعرفة."
+ },
+ {
+  "entity_id": "PLC-LEON",
+  "period_group": "legacy_transfer",
+  "theme": "court,art",
+  "historical_status": "verified_claim_linked",
+  "display_priority": 70,
+  "note_ar": "ثقافة بلاط متداخلة."
+ },
+ {
+  "entity_id": "PLC-MANISES",
+  "period_group": "legacy_transfer",
+  "theme": "craft,legacy",
+  "historical_status": "verified_claim_linked",
+  "display_priority": 70,
+  "note_ar": "استمرار حرف وتقنيات بعد تغير السلطة."
+ },
+ {
+  "entity_id": "PLC-SEVILLE",
+  "period_group": "taifa_empires",
+  "theme": "politics,urban,heritage,legacy",
+  "historical_status": "verified_claim_linked",
+  "display_priority": 95,
+  "note_ar": "مرساة مدينة حديثة مرتبطة بـClaim معماري موثق؛ لا تمثل موضع القصر أو الجيرالدا بدقة أثرية."
+ },
+ {
+  "entity_id": "PLC-ZARAGOZA",
+  "period_group": "cross_period",
+  "theme": "reference",
+  "historical_status": "gazetteer_candidate",
+  "display_priority": 30,
+  "note_ar": "مرساة مكانية مرشحة؛ الدور التاريخي ينتظر Claim موثقًا."
+ },
+ {
+  "entity_id": "PLC-VALENCIA",
+  "period_group": "cross_period",
+  "theme": "reference",
+  "historical_status": "gazetteer_candidate",
+  "display_priority": 30,
+  "note_ar": "مرساة مكانية مرشحة؛ الدور التاريخي ينتظر Claim موثقًا."
+ },
+ {
+  "entity_id": "PLC-MALAGA",
+  "period_group": "cross_period",
+  "theme": "reference",
+  "historical_status": "gazetteer_candidate",
+  "display_priority": 30,
+  "note_ar": "مرساة مكانية مرشحة؛ الدور التاريخي ينتظر Claim موثقًا."
+ },
+ {
+  "entity_id": "PLC-MURCIA",
+  "period_group": "cross_period",
+  "theme": "reference",
+  "historical_status": "gazetteer_candidate",
+  "display_priority": 30,
+  "note_ar": "مرساة مكانية مرشحة؛ الدور التاريخي ينتظر Claim موثقًا."
+ },
+ {
+  "entity_id": "PLC-PALMA",
+  "period_group": "cross_period",
+  "theme": "reference",
+  "historical_status": "gazetteer_candidate",
+  "display_priority": 30,
+  "note_ar": "مرساة مكانية مرشحة؛ الدور التاريخي ينتظر Claim موثقًا."
+ },
+ {
+  "entity_id": "PLC-ALICANTE",
+  "period_group": "cross_period",
+  "theme": "reference",
+  "historical_status": "gazetteer_candidate",
+  "display_priority": 30,
+  "note_ar": "مرساة مكانية مرشحة؛ الدور التاريخي ينتظر Claim موثقًا."
+ },
+ {
+  "entity_id": "PLC-BADAJOZ",
+  "period_group": "cross_period",
+  "theme": "reference",
+  "historical_status": "gazetteer_candidate",
+  "display_priority": 30,
+  "note_ar": "مرساة مكانية مرشحة؛ الدور التاريخي ينتظر Claim موثقًا."
+ },
+ {
+  "entity_id": "PLC-RONDA",
+  "period_group": "cross_period",
+  "theme": "reference",
+  "historical_status": "gazetteer_candidate",
+  "display_priority": 30,
+  "note_ar": "مرساة مكانية مرشحة؛ الدور التاريخي ينتظر Claim موثقًا."
+ },
+ {
+  "entity_id": "PLC-JAEN",
+  "period_group": "cross_period",
+  "theme": "reference",
+  "historical_status": "gazetteer_candidate",
+  "display_priority": 30,
+  "note_ar": "مرساة مكانية مرشحة؛ الدور التاريخي ينتظر Claim موثقًا."
+ },
+ {
+  "entity_id": "PLC-HUELVA",
+  "period_group": "cross_period",
+  "theme": "reference",
+  "historical_status": "gazetteer_candidate",
+  "display_priority": 30,
+  "note_ar": "مرساة مكانية مرشحة؛ الدور التاريخي ينتظر Claim موثقًا."
+ },
+ {
+  "entity_id": "PLC-ECIJA",
+  "period_group": "cross_period",
+  "theme": "reference",
+  "historical_status": "gazetteer_candidate",
+  "display_priority": 30,
+  "note_ar": "مرساة مكانية مرشحة؛ الدور التاريخي ينتظر Claim موثقًا."
+ },
+ {
+  "entity_id": "PLC-MEDINA-SIDONIA",
+  "period_group": "cross_period",
+  "theme": "reference",
+  "historical_status": "gazetteer_candidate",
+  "display_priority": 30,
+  "note_ar": "مرساة مكانية مرشحة؛ الدور التاريخي ينتظر Claim موثقًا."
+ },
+ {
+  "entity_id": "PLC-TORTOSA",
+  "period_group": "cross_period",
+  "theme": "reference",
+  "historical_status": "gazetteer_candidate",
+  "display_priority": 30,
+  "note_ar": "مرساة مكانية مرشحة؛ الدور التاريخي ينتظر Claim موثقًا."
+ },
+ {
+  "entity_id": "PLC-ALGECIRAS",
+  "period_group": "cross_period",
+  "theme": "reference",
+  "historical_status": "gazetteer_candidate",
+  "display_priority": 30,
+  "note_ar": "مرساة مكانية مرشحة؛ الدور التاريخي ينتظر Claim موثقًا."
+ },
+ {
+  "entity_id": "PLC-MERIDA",
+  "period_group": "cross_period",
+  "theme": "reference",
+  "historical_status": "gazetteer_candidate",
+  "display_priority": 30,
+  "note_ar": "مرساة مكانية مرشحة؛ الدور التاريخي ينتظر Claim موثقًا."
+ },
+ {
+  "entity_id": "PLC-008",
+  "period_group": "cross_period",
+  "theme": "politics,urban",
+  "historical_status": "candidate_anchor",
+  "display_priority": 60,
+  "note_ar": "أضيف من فرع الأدلة v6.1"
+ },
+ {
+  "entity_id": "PLC-013",
+  "period_group": "cross_period",
+  "theme": "politics,urban",
+  "historical_status": "verified_site",
+  "display_priority": 90,
+  "note_ar": "أضيف من فرع الأدلة v6.1"
+ },
+ {
+  "entity_id": "PLC-014",
+  "period_group": "cross_period",
+  "theme": "politics,urban",
+  "historical_status": "candidate_anchor",
+  "display_priority": 60,
+  "note_ar": "أضيف من فرع الأدلة v6.1"
+ },
+ {
+  "entity_id": "PLC-015",
+  "period_group": "cross_period",
+  "theme": "politics,urban",
+  "historical_status": "candidate_anchor",
+  "display_priority": 60,
+  "note_ar": "أضيف من فرع الأدلة v6.1"
+ },
+ {
+  "entity_id": "PLC-016",
+  "period_group": "cross_period",
+  "theme": "politics,urban",
+  "historical_status": "candidate_anchor",
+  "display_priority": 60,
+  "note_ar": "أضيف من فرع الأدلة v6.1"
+ },
+ {
+  "entity_id": "PLC-017",
+  "period_group": "cross_period",
+  "theme": "politics,urban",
+  "historical_status": "candidate_anchor",
+  "display_priority": 60,
+  "note_ar": "أضيف من فرع الأدلة v6.1"
+ },
+ {
+  "entity_id": "PLC-019",
+  "period_group": "cross_period",
+  "theme": "politics,urban",
+  "historical_status": "candidate_anchor",
+  "display_priority": 60,
+  "note_ar": "أضيف من فرع الأدلة v6.1"
+ },
+ {
+  "entity_id": "PLC-C01",
+  "period_group": "nasrid",
+  "theme": "politics,urban",
+  "historical_status": "candidate_anchor",
+  "display_priority": 60,
+  "note_ar": "أضيف من فرع الأدلة v6.1"
+ },
+ {
+  "entity_id": "PLC-C06",
+  "period_group": "cross_period",
+  "theme": "politics,urban",
+  "historical_status": "candidate_anchor",
+  "display_priority": 60,
+  "note_ar": "أضيف من فرع الأدلة v6.1"
+ },
+ {
+  "entity_id": "PLC-G01",
+  "period_group": "nasrid",
+  "theme": "politics,urban",
+  "historical_status": "verified_site",
+  "display_priority": 90,
+  "note_ar": "أضيف من فرع الأدلة v6.1"
+ },
+ {
+  "entity_id": "PLC-G02",
+  "period_group": "nasrid",
+  "theme": "politics,urban",
+  "historical_status": "verified_site",
+  "display_priority": 90,
+  "note_ar": "أضيف من فرع الأدلة v6.1"
+ },
+ {
+  "entity_id": "PLC-G03",
+  "period_group": "nasrid",
+  "theme": "politics,urban",
+  "historical_status": "candidate_anchor",
+  "display_priority": 60,
+  "note_ar": "أضيف من فرع الأدلة v6.1"
+ },
+ {
+  "entity_id": "PLC-G04",
+  "period_group": "nasrid",
+  "theme": "politics,urban",
+  "historical_status": "candidate_anchor",
+  "display_priority": 60,
+  "note_ar": "أضيف من فرع الأدلة v6.1"
+ },
+ {
+  "entity_id": "PLC-G05",
+  "period_group": "nasrid",
+  "theme": "politics,urban",
+  "historical_status": "candidate_anchor",
+  "display_priority": 60,
+  "note_ar": "أضيف من فرع الأدلة v6.1"
+ }
+]

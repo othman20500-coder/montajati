@@ -1,0 +1,351 @@
+{
+ "type": "Authority",
+ "id": "andalus-periods-v2",
+ "source": {
+  "title": "Andalus Atlas — period definitions (draft)",
+  "note": "حدود مستقرة في المراجع العامة؛ لم يُفحص موضع الصفحة بعد"
+ },
+ "periods": {
+  "PRD-01": {
+   "id": "PRD-01",
+   "type": "Period",
+   "label": "الفتح وعصر الولاة",
+   "localizedLabels": {
+    "ar": [
+     "الفتح وعصر الولاة"
+    ],
+    "en": [
+     "Conquest and Governors"
+    ]
+   },
+   "start": {
+    "label": "711",
+    "in": {
+     "earliestYear": "711",
+     "latestYear": "711"
+    }
+   },
+   "stop": {
+    "label": "756",
+    "in": {
+     "earliestYear": "756",
+     "latestYear": "756"
+    }
+   },
+   "spatialCoverageDescription": "الأندلس",
+   "note": "البداية بعبور 711؛ النهاية بقيام الإمارة الأموية.",
+   "hijri": "92–138هـ",
+   "broader": null
+  },
+  "PRD-02": {
+   "id": "PRD-02",
+   "type": "Period",
+   "label": "الإمارة الأموية",
+   "localizedLabels": {
+    "ar": [
+     "الإمارة الأموية"
+    ],
+    "en": [
+     "Umayyad Emirate"
+    ]
+   },
+   "start": {
+    "label": "756",
+    "in": {
+     "earliestYear": "756",
+     "latestYear": "756"
+    }
+   },
+   "stop": {
+    "label": "929",
+    "in": {
+     "earliestYear": "929",
+     "latestYear": "929"
+    }
+   },
+   "spatialCoverageDescription": "الأندلس",
+   "note": "= POL-001.",
+   "hijri": "138–316هـ",
+   "broader": null
+  },
+  "PRD-03": {
+   "id": "PRD-03",
+   "type": "Period",
+   "label": "الخلافة الأموية",
+   "localizedLabels": {
+    "ar": [
+     "الخلافة الأموية"
+    ],
+    "en": [
+     "Umayyad Caliphate"
+    ]
+   },
+   "start": {
+    "label": "929",
+    "in": {
+     "earliestYear": "929",
+     "latestYear": "929"
+    }
+   },
+   "stop": {
+    "label": "1009–1031",
+    "in": {
+     "earliestYear": "1009",
+     "latestYear": "1031"
+    }
+   },
+   "spatialCoverageDescription": "الأندلس",
+   "note": "تعريفان للنهاية: 1009 (بداية الفتنة) أو 1031 (إلغاء الخلافة رسميًا). = POL-002 (929–1031).",
+   "hijri": "316–399/422هـ",
+   "broader": null
+  },
+  "PRD-03a": {
+   "id": "PRD-03a",
+   "type": "Period",
+   "label": "الفتنة",
+   "localizedLabels": {
+    "ar": [
+     "الفتنة"
+    ],
+    "en": [
+     "Fitna of al-Andalus"
+    ]
+   },
+   "start": {
+    "label": "1009",
+    "in": {
+     "earliestYear": "1009",
+     "latestYear": "1009"
+    }
+   },
+   "stop": {
+    "label": "1031",
+    "in": {
+     "earliestYear": "1031",
+     "latestYear": "1031"
+    }
+   },
+   "spatialCoverageDescription": "الأندلس",
+   "note": "مرحلة فرعية داخل PRD-03 أو انتقالية إلى الطوائف بحسب التعريف المختار.",
+   "hijri": "399–422هـ",
+   "broader": "PRD-03"
+  },
+  "PRD-04": {
+   "id": "PRD-04",
+   "type": "Period",
+   "label": "ملوك الطوائف الأولى",
+   "localizedLabels": {
+    "ar": [
+     "ملوك الطوائف الأولى"
+    ],
+    "en": [
+     "First Taifa Period"
+    ]
+   },
+   "start": {
+    "label": "1009–1031",
+    "in": {
+     "earliestYear": "1009",
+     "latestYear": "1031"
+    }
+   },
+   "stop": {
+    "label": "1086–1091",
+    "in": {
+     "earliestYear": "1086",
+     "latestYear": "1091"
+    }
+   },
+   "spatialCoverageDescription": "الأندلس",
+   "note": "البداية تتداخل مع الفتنة؛ النهاية بين الزلاقة 1086 وخلع ملوك الطوائف 1090–1091.",
+   "hijri": "5هـ",
+   "broader": null
+  },
+  "PRD-05": {
+   "id": "PRD-05",
+   "type": "Period",
+   "label": "المرابطون في الأندلس",
+   "localizedLabels": {
+    "ar": [
+     "المرابطون في الأندلس"
+    ],
+    "en": [
+     "Almoravid al-Andalus"
+    ]
+   },
+   "start": {
+    "label": "1086–1091",
+    "in": {
+     "earliestYear": "1086",
+     "latestYear": "1091"
+    }
+   },
+   "stop": {
+    "label": "1145–1147",
+    "in": {
+     "earliestYear": "1145",
+     "latestYear": "1147"
+    }
+   },
+   "spatialCoverageDescription": "الأندلس",
+   "note": "= POL-006. نهاية مرنة مع الطوائف الثانية.",
+   "hijri": "479/484–540/542هـ",
+   "broader": null
+  },
+  "PRD-05a": {
+   "id": "PRD-05a",
+   "type": "Period",
+   "label": "الطوائف الثانية",
+   "localizedLabels": {
+    "ar": [
+     "الطوائف الثانية"
+    ],
+    "en": [
+     "Second Taifa Period"
+    ]
+   },
+   "start": {
+    "label": "1144–1145",
+    "in": {
+     "earliestYear": "1144",
+     "latestYear": "1145"
+    }
+   },
+   "stop": {
+    "label": "1147–1172",
+    "in": {
+     "earliestYear": "1147",
+     "latestYear": "1172"
+    }
+   },
+   "spatialCoverageDescription": "الأندلس",
+   "note": "تتفاوت نهايتها بحسب الإقليم (مثل مرسية ابن مردنيش حتى 1172).",
+   "hijri": "539–568هـ تقريبًا",
+   "broader": null
+  },
+  "PRD-06": {
+   "id": "PRD-06",
+   "type": "Period",
+   "label": "الموحدون في الأندلس",
+   "localizedLabels": {
+    "ar": [
+     "الموحدون في الأندلس"
+    ],
+    "en": [
+     "Almohad al-Andalus"
+    ]
+   },
+   "start": {
+    "label": "1147",
+    "in": {
+     "earliestYear": "1147",
+     "latestYear": "1147"
+    }
+   },
+   "stop": {
+    "label": "1228–1232",
+    "in": {
+     "earliestYear": "1228",
+     "latestYear": "1232"
+    }
+   },
+   "spatialCoverageDescription": "الأندلس",
+   "note": "= POL-007. تعريف النهاية: الانسحاب من الأندلس أو قيام ابن هود.",
+   "hijri": "541–625/629هـ",
+   "broader": null
+  },
+  "PRD-06a": {
+   "id": "PRD-06a",
+   "type": "Period",
+   "label": "الطوائف الثالثة والانتقال",
+   "localizedLabels": {
+    "ar": [
+     "الطوائف الثالثة والانتقال"
+    ],
+    "en": [
+     "Third Taifas / transition"
+    ]
+   },
+   "start": {
+    "label": "1228",
+    "in": {
+     "earliestYear": "1228",
+     "latestYear": "1228"
+    }
+   },
+   "stop": {
+    "label": "1238–1248",
+    "in": {
+     "earliestYear": "1238",
+     "latestYear": "1248"
+    }
+   },
+   "spatialCoverageDescription": "الأندلس",
+   "note": "ابن هود وسقوط قرطبة 1236 وإشبيلية 1248.",
+   "hijri": "625–646هـ",
+   "broader": null
+  },
+  "PRD-07": {
+   "id": "PRD-07",
+   "type": "Period",
+   "label": "غرناطة النصرية",
+   "localizedLabels": {
+    "ar": [
+     "غرناطة النصرية"
+    ],
+    "en": [
+     "Nasrid Granada"
+    ]
+   },
+   "start": {
+    "label": "1232–1238",
+    "in": {
+     "earliestYear": "1232",
+     "latestYear": "1238"
+    }
+   },
+   "stop": {
+    "label": "1492",
+    "in": {
+     "earliestYear": "1492",
+     "latestYear": "1492"
+    }
+   },
+   "spatialCoverageDescription": "مملكة غرناطة",
+   "note": "= POL-008. البداية: إعلان ابن الأحمر 1232 أو دخول غرناطة 1238.",
+   "hijri": "629/635–897هـ",
+   "broader": null
+  },
+  "PRD-08": {
+   "id": "PRD-08",
+   "type": "Period",
+   "label": "المدجنون والموريسكيون",
+   "localizedLabels": {
+    "ar": [
+     "المدجنون والموريسكيون"
+    ],
+    "en": [
+     "Mudejars and Moriscos"
+    ]
+   },
+   "start": {
+    "label": "1492–1502",
+    "in": {
+     "earliestYear": "1492",
+     "latestYear": "1502"
+    }
+   },
+   "stop": {
+    "label": "1609–1614",
+    "in": {
+     "earliestYear": "1609",
+     "latestYear": "1614"
+    }
+   },
+   "spatialCoverageDescription": "إيبيريا المسيحية",
+   "note": "من سقوط غرناطة/التنصير القسري حتى الطرد.",
+   "hijri": "897–1023هـ",
+   "broader": null
+  }
+ }
+}

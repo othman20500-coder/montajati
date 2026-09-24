@@ -1,0 +1,462 @@
+[
+ {
+  "entity_id": "PLC-CORDOBA",
+  "lat": 37.8914,
+  "lon": -4.7725,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "https://www.geonames.org/search.html?country=ES&q=",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-GRANADA",
+  "lat": 37.18817,
+  "lon": -3.60667,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "https://www.geonames.org/2517117/granada.html",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-ALMARIYYA",
+  "lat": 36.83814,
+  "lon": -2.45974,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "https://www.geonames.org/search.html?country=ES&q=",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-PECHINA",
+  "lat": 36.9667,
+  "lon": -2.4,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal centroid",
+  "anchor_type": "modern municipality anchor",
+  "coordinate_source": "https://www.geonames.org/advanced-search.html?country=ES&q=Ba%C3%B1os",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-XERESA",
+  "lat": 39.01667,
+  "lon": -0.21667,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal centroid",
+  "anchor_type": "modern municipality anchor",
+  "coordinate_source": "https://www.geonames.org/advanced-search.html?country=ES&q=Valensija&startRow=200",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-TOLEDO",
+  "lat": 39.85806,
+  "lon": -4.0225,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "https://www.geonames.org/search.html?country=ES&q=",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-LEON",
+  "lat": 42.60003,
+  "lon": -5.57032,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "https://www.geonames.org/3118532/leon.html",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-MANISES",
+  "lat": 39.49139,
+  "lon": -0.46349,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal centroid",
+  "anchor_type": "modern municipality anchor",
+  "coordinate_source": "https://www.geonames.org/advanced-search.html?q=Valencia%2F&startRow=50",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-BAIREN",
+  "lat": 38.96667,
+  "lon": -0.18333,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal anchor, not exact fortress",
+  "anchor_type": "modern Gandia anchor",
+  "coordinate_source": "https://www.geonames.org/search.html?country=ES&q=Costa&startRow=0",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-EL-MOLON",
+  "lat": 39.65,
+  "lon": -1.4,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal anchor, not exact site",
+  "anchor_type": "Camporrobles anchor",
+  "coordinate_source": "https://www.geonames.org/search.html?country=ES&q=&startRow=950",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-TOSSAL-VILA",
+  "lat": 40.269,
+  "lon": -0.019,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal anchor, not exact site",
+  "anchor_type": "Sierra Engarcerán anchor",
+  "coordinate_source": "https://www.geonames.org/postal-codes/ES/VC/CS/castellon.html",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-DAMASCUS",
+  "lat": 33.51563,
+  "lon": 36.28032,
+  "geometry_type": "Point",
+  "spatial_quality": "administrative centroid",
+  "anchor_type": "modern city/admin anchor",
+  "coordinate_source": "https://www.geonames.org/advanced-search.html?country=SY&q=Damas",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-MADINAT-ZAHRA",
+  "lat": 37.8858889,
+  "lon": -4.8676944,
+  "geometry_type": "Point",
+  "spatial_quality": "UNESCO property representative coordinate",
+  "anchor_type": "UNESCO World Heritage property point",
+  "coordinate_source": "https://whc.unesco.org/en/list/1560/",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-CORDOBA-WH",
+  "lat": 37.8791944,
+  "lon": -4.7797222,
+  "geometry_type": "Point",
+  "spatial_quality": "UNESCO property representative coordinate",
+  "anchor_type": "UNESCO World Heritage property point",
+  "coordinate_source": "https://whc.unesco.org/en/list/313",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-ALHAMBRA-WH",
+  "lat": 37.1767778,
+  "lon": -3.5899167,
+  "geometry_type": "Point",
+  "spatial_quality": "UNESCO property representative coordinate",
+  "anchor_type": "UNESCO World Heritage property point",
+  "coordinate_source": "https://whc.unesco.org/en/list/314",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-SAQUNDA",
+  "lat": 37.8791944,
+  "lon": -4.7797222,
+  "geometry_type": "Point",
+  "spatial_quality": "city-level anchor, not exact excavation",
+  "anchor_type": "Cordoba UNESCO property point used as city anchor",
+  "coordinate_source": "https://whc.unesco.org/en/list/313",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-SEVILLE",
+  "lat": 37.382826,
+  "lon": -5.973167,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "https://www.geonames.org/advanced-search.html?country=ES&q=Spagna",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-ZARAGOZA",
+  "lat": 41.6560643302881,
+  "lon": -0.877339839935303,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "https://www.geonames.org/advanced-search.html?country=ES&q=Spagna",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-VALENCIA",
+  "lat": 39.47391,
+  "lon": -0.37966,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "https://www.geonames.org/advanced-search.html?country=ES&q=Spagna",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-MALAGA",
+  "lat": 36.7201559059499,
+  "lon": -4.42034482955933,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "https://www.geonames.org/advanced-search.html?country=ES&q=Spagna",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-MURCIA",
+  "lat": 37.987041,
+  "lon": -1.130042,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "https://www.geonames.org/advanced-search.html?country=ES&q=Spagna",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-PALMA",
+  "lat": 39.5693907933761,
+  "lon": 2.65023708343506,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "https://www.geonames.org/advanced-search.html?country=ES&q=Spagna",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-ALICANTE",
+  "lat": 38.3451735357475,
+  "lon": -0.481488704681396,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "https://www.geonames.org/advanced-search.html?country=ES&q=Spagna",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-BADAJOZ",
+  "lat": 38.877894,
+  "lon": -6.970613,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "https://www.geonames.org/advanced-search.html?country=ES&q=Spagna",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-RONDA",
+  "lat": 36.742305959004,
+  "lon": -5.16709327697754,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "https://www.geonames.org/advanced-search.html?continentCode=EU&featureClass=P&q=&startRow=4200",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-JAEN",
+  "lat": 37.76922210201122,
+  "lon": -3.790283203125,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "https://www.geonames.org/advanced-search.html?country=ES&q=Spagna",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-HUELVA",
+  "lat": 37.266385,
+  "lon": -6.940044,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "https://www.geonames.org/advanced-search.html?country=ES&q=Spagna",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-ECIJA",
+  "lat": 37.5422,
+  "lon": -5.0826,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "https://www.geonames.org/2518770",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-MEDINA-SIDONIA",
+  "lat": 36.39688,
+  "lon": -5.8675,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal area centroid, not exact historic core",
+  "anchor_type": "modern municipality anchor",
+  "coordinate_source": "https://www.geonames.org/6356938/medina-sidonia.html",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-TORTOSA",
+  "lat": 40.81,
+  "lon": 0.522,
+  "geometry_type": "Point",
+  "spatial_quality": "postal locality coordinate",
+  "anchor_type": "modern locality anchor",
+  "coordinate_source": "https://www.geonames.org/postal-codes/ES/CT/T/tarragona.html",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-ALGECIRAS",
+  "lat": 36.133257,
+  "lon": -5.450511,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "https://www.geonames.org/advanced-search.html?country=ES&q=Spagna",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-MERIDA",
+  "lat": 38.91778,
+  "lon": -6.34278,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "https://www.geonames.org/search.html?q=Espa%C3%B1a",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-008",
+  "lat": 38.8408,
+  "lon": 0.1057,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "andalus_knowledge_base v4.9 — المعجم الجغرافي",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-013",
+  "lat": 37.6382,
+  "lon": -7.6639,
+  "geometry_type": "Point",
+  "spatial_quality": "archaeological site point",
+  "anchor_type": "site point",
+  "coordinate_source": "andalus_knowledge_base v4.9 — المعجم الجغرافي",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-014",
+  "lat": 37.1892,
+  "lon": -8.4382,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "andalus_knowledge_base v4.9 — المعجم الجغرافي",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-015",
+  "lat": 38.7223,
+  "lon": -9.1393,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "andalus_knowledge_base v4.9 — المعجم الجغرافي",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-016",
+  "lat": 39.2369,
+  "lon": -8.685,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "andalus_knowledge_base v4.9 — المعجم الجغرافي",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-017",
+  "lat": 38.0151,
+  "lon": -7.8632,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "andalus_knowledge_base v4.9 — المعجم الجغرافي",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-019",
+  "lat": 42.1401,
+  "lon": -0.4089,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "andalus_knowledge_base v4.9 — المعجم الجغرافي",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-C01",
+  "lat": 37.1858,
+  "lon": -3.5925,
+  "geometry_type": "Point",
+  "spatial_quality": "district centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "GeoNames 2518754 El Albaicín (N 37°11′9″ W 3°35′33″)",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-C06",
+  "lat": 37.2992,
+  "lon": -3.1392,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "GeoNames 2516925 Guadix (N 37°17′57″ W 3°8′21″)",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-G01",
+  "lat": 37.1768,
+  "lon": -3.5899,
+  "geometry_type": "Point",
+  "spatial_quality": "archaeological site point",
+  "anchor_type": "site point",
+  "coordinate_source": "UNESCO 314 (property coordinates N37 10 36.4 W3 35 23.7); consistent with GeoNames 7302839 Alhambra (N 37°10′36″ W 3°35′23″)",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-G02",
+  "lat": 37.1778,
+  "lon": -3.5853,
+  "geometry_type": "Point",
+  "spatial_quality": "archaeological site point",
+  "anchor_type": "site point",
+  "coordinate_source": "GeoNames 8849185 Palacio de Generalife (N 37°10′40″ W 3°35′7″)",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-G03",
+  "lat": 37.4906,
+  "lon": -2.7725,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "GeoNames 2521215 Baza (N 37°29′26″ W 2°46′21″)",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-G04",
+  "lat": 37.1686,
+  "lon": -4.1511,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "GeoNames 2514946 Loja (N 37°10′7″ W 4°9′4″)",
+  "last_verified": "2026-09-23"
+ },
+ {
+  "entity_id": "PLC-G05",
+  "lat": 36.7322,
+  "lon": -3.6917,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal/city centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "GeoNames 2521847 Almuñécar (N 36°43′56″ W 3°41′30″)",
+  "last_verified": "2026-09-23"
+ }
+]

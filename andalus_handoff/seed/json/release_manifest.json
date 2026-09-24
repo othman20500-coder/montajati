@@ -1,0 +1,44 @@
+[
+ {
+  "version": "v1.0",
+  "release_date": "2026-09-23",
+  "knowledge_base_version": "v6.0",
+  "db_version": "v1.0",
+  "api_version": "v1.0",
+  "atlas_version": "v0.3",
+  "learning_version": "v0.1",
+  "gates_pass": 8,
+  "gates_total": 8,
+  "release_ready": 1,
+  "manifest_sha256": "2b367444923c8946c54a11d34faa9e23c268de03e131762b4f6fe480bf382ef1",
+  "note_ar": "نسخة الإطلاق الأولى: جميع بوابات Population/Verification/Database-API/Atlas/Interactive/Education/QA/Sustainability PASS. جميع Claims canonical مرتبطة الآن بسجل Evidence؛ ونطاق الحقوق مثبت."
+ },
+ {
+  "version": "v1.1",
+  "release_date": "2026-09-23",
+  "knowledge_base_version": "v6.1",
+  "db_version": "v1.1",
+  "api_version": "v1.1",
+  "atlas_version": "v1.1",
+  "learning_version": "v0.1",
+  "gates_pass": 8,
+  "gates_total": 8,
+  "release_ready": 1,
+  "manifest_sha256": null,
+  "note_ar": "دمج فرع الأدلة: عصور بحدود مرنة، ولايات، أجزاء أسماء، أحداث تاريخية، 59 ادعاءً حقليًا و122 شاهدًا بمواضعها، وجدول مطابقة المعرفات. لا تعديل على سجلات v1.0."
+ },
+ {
+  "version": "v1.2",
+  "release_date": "2026-09-23",
+  "knowledge_base_version": "v6.1",
+  "db_version": "v1.2",
+  "api_version": "v1.1",
+  "atlas_version": "v1.2",
+  "learning_version": "v0.1",
+  "gates_pass": 8,
+  "gates_total": 8,
+  "release_ready": 1,
+  "manifest_sha256": null,
+  "note_ar": "شواهد المصادر الأولية: 199 شاهدًا لـ60 إسنادًا، لـ50 منها شاهد من مصدر أولي (الشاملة، وأعمال الأعلام، وابن خلدون، والذخيرة). حسم 316/317هـ، وتصحيح مواليد محمد الخامس ويوسف الأول ومحمد الأول، وتحديد مقتل ابن الخطيب 776هـ ومرسوم 12 فبراير 1502، وتصحيح خراب الزهراء إلى مرحلتين (401هـ و414–416هـ)."
+ }
+]

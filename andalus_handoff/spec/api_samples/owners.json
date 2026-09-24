@@ -1,0 +1,53 @@
+[
+ 200,
+ [
+  {
+   "owner_role": "Data Maintainer",
+   "responsibility_ar": "سلامة SQLite، المخطط، الاستيراد، الروابط بين الكيانات، ونسخ البيانات.",
+   "scope": "Database/API",
+   "backup_role": "Release Owner",
+   "escalation_days": 3,
+   "status": "نشط"
+  },
+  {
+   "owner_role": "Education Reviewer",
+   "responsibility_ar": "تزامن الوحدات والأسئلة مع Claims ونسخ المحتوى.",
+   "scope": "Education",
+   "backup_role": "Research Steward",
+   "escalation_days": 7,
+   "status": "نشط"
+  },
+  {
+   "owner_role": "Release Owner",
+   "responsibility_ar": "تشغيل بوابات الإصدار واعتماد manifest ومنع الإصدار عند فشل بوابة.",
+   "scope": "Release/QA",
+   "backup_role": "Data Maintainer",
+   "escalation_days": 1,
+   "status": "نشط"
+  },
+  {
+   "owner_role": "Research Steward",
+   "responsibility_ar": "مراجعة Claims الحساسة، النزاعات المصدرية، وصياغة الادعاء النهائي.",
+   "scope": "Claims/Evidence",
+   "backup_role": "Release Owner",
+   "escalation_days": 7,
+   "status": "نشط"
+  },
+  {
+   "owner_role": "Rights Reviewer",
+   "responsibility_ar": "مراجعة تراخيص النصوص والصور والوسائط وإعادة الاستخدام.",
+   "scope": "Rights",
+   "backup_role": "Release Owner",
+   "escalation_days": 7,
+   "status": "نشط"
+  },
+  {
+   "owner_role": "Source Monitor",
+   "responsibility_ar": "صحة الروابط، البدائل الدائمة، تواريخ last_checked، ومراقبة تغيّر المصادر.",
+   "scope": "Sources",
+   "backup_role": "Research Steward",
+   "escalation_days": 5,
+   "status": "نشط"
+  }
+ ]
+]

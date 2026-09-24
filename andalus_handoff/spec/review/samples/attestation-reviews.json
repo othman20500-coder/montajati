@@ -1,0 +1,32 @@
+[
+ 200,
+ {
+  "attestation_id": "ATT-004",
+  "n_ok": 2,
+  "n_minor": 0,
+  "n_bad": 0,
+  "review_status": "معتمد بالعين",
+  "reviews": [
+   {
+    "verdict": "مطابق",
+    "note_ar": null,
+    "reviewed_at": "2026-09-24T12:00:00Z",
+    "source": "artifact",
+    "full_name": "مراجع تجريبي أ",
+    "degree": "دكتوراه",
+    "field": "تاريخ الأندلس",
+    "org": "جامعة تجريبية"
+   },
+   {
+    "verdict": "مطابق",
+    "note_ar": null,
+    "reviewed_at": "2026-09-24T12:10:00Z",
+    "source": "artifact",
+    "full_name": "مراجع تجريبي ب",
+    "degree": "دكتوراه",
+    "field": "تحقيق المخطوطات",
+    "org": null
+   }
+  ]
+ }
+]

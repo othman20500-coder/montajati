@@ -1,0 +1,47 @@
+[
+ {
+  "layer_id": "LYR-EARLY",
+  "label_ar": "البدايات 711–929",
+  "layer_type": "period",
+  "description_ar": "المواقع والشواهد الأثرية المرتبطة بالبدايات والإمارة الأولى.",
+  "min_year": 711,
+  "max_year": 929,
+  "cartographic_status": "thematic layer; not a political boundary"
+ },
+ {
+  "layer_id": "LYR-CALIPHATE",
+  "label_ar": "الخلافة 929–1031",
+  "layer_type": "period",
+  "description_ar": "قرطبة ومدينة الزهراء وشواهد السلطة والعمران.",
+  "min_year": 929,
+  "max_year": 1031,
+  "cartographic_status": "thematic layer; not a political boundary"
+ },
+ {
+  "layer_id": "LYR-URBAN",
+  "label_ar": "المدينة والحرفة",
+  "layer_type": "theme",
+  "description_ar": "المراكز الحضرية والحرف والاقتصاد المادي.",
+  "min_year": 750,
+  "max_year": 1492,
+  "cartographic_status": "evidence/theme layer"
+ },
+ {
+  "layer_id": "LYR-KNOWLEDGE",
+  "label_ar": "انتقال المعرفة",
+  "layer_type": "theme",
+  "description_ar": "الأشخاص والأعمال ومسارات الترجمة والهجرة العلمية.",
+  "min_year": 900,
+  "max_year": 1500,
+  "cartographic_status": "network layer"
+ },
+ {
+  "layer_id": "LYR-LEGACY",
+  "label_ar": "الامتداد والأثر",
+  "layer_type": "theme",
+  "description_ar": "مواقع ما بعد تغير السلطة التي تحفظ استمرار تقنيات أو رموز أندلسية.",
+  "min_year": 1200,
+  "max_year": 1600,
+  "cartographic_status": "legacy layer"
+ }
+]

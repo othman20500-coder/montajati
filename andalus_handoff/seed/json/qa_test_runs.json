@@ -1,0 +1,202 @@
+[
+ {
+  "qa_id": "QA-001",
+  "run_date": "2026-09-23",
+  "gate": "Database",
+  "test_name": "SQLite integrity",
+  "result": "PASS",
+  "observed_value": "ok",
+  "target_value": "ok",
+  "note_ar": "سلامة القاعدة"
+ },
+ {
+  "qa_id": "QA-002",
+  "run_date": "2026-09-23",
+  "gate": "Education",
+  "test_name": "كل سؤال مرتبط بـClaim موجود",
+  "result": "PASS",
+  "observed_value": "0",
+  "target_value": "0",
+  "note_ar": "لا أسئلة يتيمة"
+ },
+ {
+  "qa_id": "QA-003",
+  "run_date": "2026-09-23",
+  "gate": "Education",
+  "test_name": "كل خطوة تعليمية مرتبطة بـClaim عند وجود claim_id",
+  "result": "PASS",
+  "observed_value": "0",
+  "target_value": "0",
+  "note_ar": "لا روابط مكسورة"
+ },
+ {
+  "qa_id": "QA-004",
+  "run_date": "2026-09-23",
+  "gate": "Atlas",
+  "test_name": "المواقع verified_claim_linked لها Claim",
+  "result": "PASS",
+  "observed_value": "checked",
+  "target_value": "0 orphan verified place",
+  "note_ar": "فحص ترابط"
+ },
+ {
+  "qa_id": "QA-005",
+  "run_date": "2026-09-23",
+  "gate": "Sources",
+  "test_name": "Claims الجديدة لها source rights",
+  "result": "PASS",
+  "observed_value": "0",
+  "target_value": "0",
+  "note_ar": "حقوق مصدر إشبيلية مسجلة"
+ },
+ {
+  "qa_id": "QA-006",
+  "run_date": "2026-09-23",
+  "gate": "Education",
+  "test_name": "عدد الوحدات التعليمية",
+  "result": "PASS",
+  "observed_value": "6",
+  "target_value": ">=6",
+  "note_ar": "ست وحدات"
+ },
+ {
+  "qa_id": "QA-007",
+  "run_date": "2026-09-23",
+  "gate": "Education",
+  "test_name": "عدد أسئلة التقويم",
+  "result": "PASS",
+  "observed_value": "15",
+  "target_value": ">=15",
+  "note_ar": "بنك أسئلة أولي"
+ },
+ {
+  "qa_id": "QA-008",
+  "run_date": "2026-09-23",
+  "gate": "Sustainability",
+  "test_name": "قواعد الصيانة",
+  "result": "PASS",
+  "observed_value": "6",
+  "target_value": ">=6",
+  "note_ar": "بذرة استدامة تشغيلية"
+ },
+ {
+  "qa_id": "QA-009",
+  "run_date": "2026-09-23",
+  "gate": "Sustainability",
+  "test_name": "Operational owner roles defined",
+  "result": "PASS",
+  "observed_value": "6",
+  "target_value": ">=6",
+  "note_ar": "ملكية تشغيلية role-based موثقة مع backup/escalation."
+ },
+ {
+  "qa_id": "QA-010",
+  "run_date": "2026-09-23",
+  "gate": "Sustainability",
+  "test_name": "Active maintenance rules have owners",
+  "result": "PASS",
+  "observed_value": "0",
+  "target_value": "0",
+  "note_ar": "لا قواعد نشطة بلا مالك."
+ },
+ {
+  "qa_id": "QA-011",
+  "run_date": "2026-09-23",
+  "gate": "Sustainability",
+  "test_name": "Critical source watchlist",
+  "result": "PASS",
+  "observed_value": "8",
+  "target_value": ">=8",
+  "note_ar": "ثمانية مصادر حرجة بدورة فحص شهرية."
+ },
+ {
+  "qa_id": "QA-012",
+  "run_date": "2026-09-23",
+  "gate": "Sustainability",
+  "test_name": "Critical source health snapshot",
+  "result": "PASS",
+  "observed_value": "8",
+  "target_value": "8/8 have usable access/fallback",
+  "note_ar": "جميع المصادر الحرجة لها وصول مباشر أو fallback موثق."
+ },
+ {
+  "qa_id": "QA-013",
+  "run_date": "2026-09-23",
+  "gate": "Sustainability",
+  "test_name": "Release manifest policy",
+  "result": "PASS",
+  "observed_value": "MNT-007",
+  "target_value": "required",
+  "note_ar": "منع release_ready ما لم تمر كل البوابات."
+ },
+ {
+  "qa_id": "QA-014",
+  "run_date": "2026-09-23",
+  "gate": "QA",
+  "test_name": "Source genealogy maintenance",
+  "result": "PASS",
+  "observed_value": "MNT-008",
+  "target_value": "active",
+  "note_ar": "قاعدة مراجعة دورية للاعتماد المصدري."
+ },
+ {
+  "qa_id": "QA-015",
+  "run_date": "2026-09-23",
+  "gate": "QA",
+  "test_name": "Foreign key check",
+  "result": "PASS",
+  "observed_value": "0",
+  "target_value": "0",
+  "note_ar": "PRAGMA foreign_key_check بلا مخالفات."
+ },
+ {
+  "qa_id": "QA-016",
+  "run_date": "2026-09-23",
+  "gate": "Release",
+  "test_name": "All release gates",
+  "result": "PASS",
+  "observed_value": "8",
+  "target_value": "8",
+  "note_ar": "جميع بوابات المشروع PASS بعد إغلاق الاستدامة."
+ },
+ {
+  "qa_id": "QA-017",
+  "run_date": "2026-09-23",
+  "gate": "Evidence",
+  "test_name": "كل Claim canonical له Evidence record",
+  "result": "PASS",
+  "observed_value": "0",
+  "target_value": "0",
+  "note_ar": "تم تطبيع Evidence packet للادعاءات التي كان دليلها موجودًا في المصادر فقط."
+ },
+ {
+  "qa_id": "QA-018",
+  "run_date": "2026-09-23",
+  "gate": "Publishing",
+  "test_name": "كل Claim canonical له Source",
+  "result": "PASS",
+  "observed_value": "0",
+  "target_value": "0",
+  "note_ar": "لا Claims منشورة بلا مصدر."
+ },
+ {
+  "qa_id": "QA-019",
+  "run_date": "2026-09-23",
+  "gate": "Publishing",
+  "test_name": "كل مكان جغرافي له coordinate source",
+  "result": "PASS",
+  "observed_value": "0",
+  "target_value": "0",
+  "note_ar": "كل مرساة مكانية تحتفظ بالمصدر وجودة الإسناد."
+ },
+ {
+  "qa_id": "QA-020",
+  "run_date": "2026-09-23",
+  "gate": "Publishing",
+  "test_name": "حقوق الصور والنصوص خارج النطاق",
+  "result": "PASS",
+  "observed_value": "external media=0; full literary text=0",
+  "target_value": "0 unlicensed republished items",
+  "note_ar": "الإصدار ينشر بيانات/Claims فقط؛ الوسائط والنصوص الكاملة محجوبة حتى rights check."
+ }
+]

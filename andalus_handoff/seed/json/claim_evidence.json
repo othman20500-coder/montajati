@@ -1,0 +1,176 @@
+[
+ {
+  "claim_id": "CLM-011",
+  "evidence_id": "EVD-FELUS-711",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "SOC-CLM04",
+  "evidence_id": "EVD-JEWISH-MAT",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "ARC-CLM05",
+  "evidence_id": "EVD-PECHINA-URBAN",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "ARC-CLM07",
+  "evidence_id": "EVD-COOKBOOKS-13C",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "SOC-CLM07",
+  "evidence_id": "EVD-LEON-ARCH",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "SOC-CLM08",
+  "evidence_id": "EVD-TOLEDO-TRANS",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "ARC-CLM09",
+  "evidence_id": "EVD-AMOI-JILYANI",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-003",
+  "evidence_id": "EVD-KHARJAS-CS",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "SOC-CLM10",
+  "evidence_id": "EVD-MANISES",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "ATLAS-CLM01",
+  "evidence_id": "EVD-UNESCO-MADINAT",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "ATLAS-CLM02",
+  "evidence_id": "EVD-UNESCO-CORDOBA",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "ATLAS-CLM03",
+  "evidence_id": "EVD-UNESCO-GRANADA",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "ATLAS-CLM04",
+  "evidence_id": "EVD-UNESCO-SEVILLE",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "ARC-CLM01",
+  "evidence_id": "EVD-PKT-ARC-CLM01",
+  "relation": "verification packet",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "ARC-CLM03",
+  "evidence_id": "EVD-PKT-ARC-CLM03",
+  "relation": "verification packet",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "ARC-CLM04",
+  "evidence_id": "EVD-PKT-ARC-CLM04",
+  "relation": "verification packet",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-001",
+  "evidence_id": "EVD-PKT-CLM-001",
+  "relation": "verification packet",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-002",
+  "evidence_id": "EVD-PKT-CLM-002",
+  "relation": "verification packet",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-010",
+  "evidence_id": "EVD-PKT-CLM-010",
+  "relation": "verification packet",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-018",
+  "evidence_id": "EVD-PKT-CLM-018",
+  "relation": "verification packet",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-MS01",
+  "evidence_id": "EVD-PKT-CLM-MS01",
+  "relation": "verification packet",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-MS02",
+  "evidence_id": "EVD-PKT-CLM-MS02",
+  "relation": "verification packet",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "RUR-CLM02",
+  "evidence_id": "EVD-PKT-RUR-CLM02",
+  "relation": "verification packet",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "RUR-CLM03",
+  "evidence_id": "EVD-PKT-RUR-CLM03",
+  "relation": "verification packet",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "RUR-CLM04",
+  "evidence_id": "EVD-PKT-RUR-CLM04",
+  "relation": "verification packet",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "RUR-CLM06",
+  "evidence_id": "EVD-PKT-RUR-CLM06",
+  "relation": "verification packet",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "SOC-CLM01",
+  "evidence_id": "EVD-PKT-SOC-CLM01",
+  "relation": "verification packet",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "SOC-CLM06",
+  "evidence_id": "EVD-PKT-SOC-CLM06",
+  "relation": "verification packet",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "SOC-CLM09",
+  "evidence_id": "EVD-PKT-SOC-CLM09",
+  "relation": "verification packet",
+  "ordinal": 1
+ }
+]

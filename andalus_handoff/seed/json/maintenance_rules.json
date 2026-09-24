@@ -1,0 +1,90 @@
+[
+ {
+  "rule_id": "MNT-001",
+  "target_scope": "Claims مفتوحة/حساسة للتحديث",
+  "cadence_days": 30,
+  "trigger_condition": "status LIKE '%مراجعة%' OR status LIKE '%حساس%'",
+  "action_ar": "إعادة فحص أحدث الأدبيات والمصدر المؤسسي قبل إبقاء صياغة «الأقدم/الأول».",
+  "severity": "عالٍ",
+  "next_review": "2026-10-23",
+  "status": "نشط",
+  "owner_role": "Research Steward"
+ },
+ {
+  "rule_id": "MNT-002",
+  "target_scope": "روابط المصادر",
+  "cadence_days": 30,
+  "trigger_condition": "أي HTTP 4xx/5xx أو تغيير وجهة",
+  "action_ar": "تحديث الرابط مع الحفاظ على المصدر الأصلي وسجل التغيير.",
+  "severity": "متوسط",
+  "next_review": "2026-10-23",
+  "status": "نشط",
+  "owner_role": "Source Monitor"
+ },
+ {
+  "rule_id": "MNT-003",
+  "target_scope": "حقوق وإعادة الاستخدام",
+  "cadence_days": 180,
+  "trigger_condition": "مصدر جديد أو وسيط جديد",
+  "action_ar": "فحص ترخيص النص والصورة كلٌ على حدة قبل النشر.",
+  "severity": "عالٍ",
+  "next_review": "2027-03-22",
+  "status": "نشط",
+  "owner_role": "Rights Reviewer"
+ },
+ {
+  "rule_id": "MNT-004",
+  "target_scope": "Gazetteer candidates",
+  "cadence_days": 60,
+  "trigger_condition": "مرساة بلا Claim لمدة دورتين",
+  "action_ar": "إما ربطها بدليل موثوق أو إبقاؤها مرجعًا مكانيًا منخفض الأولوية.",
+  "severity": "متوسط",
+  "next_review": "2026-11-22",
+  "status": "نشط",
+  "owner_role": "Research Steward"
+ },
+ {
+  "rule_id": "MNT-005",
+  "target_scope": "API regression",
+  "cadence_days": 0,
+  "trigger_condition": "كل إصدار",
+  "action_ar": "تشغيل integrity + endpoints + orphan checks + quiz/claim linkage.",
+  "severity": "عالٍ",
+  "next_review": null,
+  "status": "نشط",
+  "owner_role": "Data Maintainer"
+ },
+ {
+  "rule_id": "MNT-006",
+  "target_scope": "مواد التعليم",
+  "cadence_days": 90,
+  "trigger_condition": "تغيير Claim canonical أو Evidence",
+  "action_ar": "إعادة توليد السؤال/الشرح المرتبطين بالـClaim المتغير.",
+  "severity": "عالٍ",
+  "next_review": "2026-12-22",
+  "status": "نشط",
+  "owner_role": "Education Reviewer"
+ },
+ {
+  "rule_id": "MNT-007",
+  "target_scope": "Release manifest",
+  "cadence_days": 0,
+  "trigger_condition": "كل إصدار مرشح",
+  "action_ar": "تشغيل QA الكامل، حفظ manifest/hash، وعدم تغيير release_ready إلى 1 إلا إذا مرت كل البوابات.",
+  "severity": "عالٍ",
+  "next_review": null,
+  "status": "نشط",
+  "owner_role": "Release Owner"
+ },
+ {
+  "rule_id": "MNT-008",
+  "target_scope": "Source genealogy/dependencies",
+  "cadence_days": 90,
+  "trigger_condition": "مصدر جديد أو تغيير Claim منقول",
+  "action_ar": "فحص الاعتماد النصي/المصدري وتسجيل upstream/downstream قبل النشر.",
+  "severity": "متوسط",
+  "next_review": "2026-12-22",
+  "status": "نشط",
+  "owner_role": "Research Steward"
+ }
+]

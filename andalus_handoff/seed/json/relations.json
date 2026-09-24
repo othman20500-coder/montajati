@@ -1,0 +1,178 @@
+[
+ {
+  "relation_id": "REL-001",
+  "subject_id": "OBJ-SUBH-PYXIS",
+  "predicate": "made_for",
+  "object_id": "PER-SUBH",
+  "confidence": "high",
+  "claim_id": "SOC-CLM06"
+ },
+ {
+  "relation_id": "REL-002",
+  "subject_id": "PER-ALHAKAM-II",
+  "predicate": "commissioned",
+  "object_id": "OBJ-SUBH-PYXIS",
+  "confidence": "high",
+  "claim_id": "SOC-CLM06"
+ },
+ {
+  "relation_id": "REL-003",
+  "subject_id": "PER-SUBH",
+  "predicate": "mother_of",
+  "object_id": "PER-HISHAM-II",
+  "confidence": "high",
+  "claim_id": "SOC-CLM06"
+ },
+ {
+  "relation_id": "REL-004",
+  "subject_id": "WRK-IBN-LUYUN-AGRI",
+  "predicate": "authored_by",
+  "object_id": "PER-IBN-LUYUN",
+  "confidence": "high",
+  "claim_id": "CLM-MS01"
+ },
+ {
+  "relation_id": "REL-005",
+  "subject_id": "MS-IBN-LUYUN-EEA",
+  "predicate": "copy_of",
+  "object_id": "WRK-IBN-LUYUN-AGRI",
+  "confidence": "high",
+  "claim_id": "CLM-MS01"
+ },
+ {
+  "relation_id": "REL-006",
+  "subject_id": "RES-AMOI",
+  "predicate": "built_on",
+  "object_id": "RES-HATA",
+  "confidence": "high",
+  "claim_id": "RUR-CLM06"
+ },
+ {
+  "relation_id": "REL-007",
+  "subject_id": "RES-AMOI",
+  "predicate": "planned_link_to",
+  "object_id": "RES-PUA",
+  "confidence": "high",
+  "claim_id": "RUR-CLM06"
+ },
+ {
+  "relation_id": "REL-008",
+  "subject_id": "PER-GERARD-CREMONA",
+  "predicate": "active_in",
+  "object_id": "PLC-TOLEDO",
+  "confidence": "عالٍ",
+  "claim_id": "SOC-CLM08"
+ },
+ {
+  "relation_id": "REL-009",
+  "subject_id": "PER-GUNDISSALINUS",
+  "predicate": "active_in",
+  "object_id": "PLC-TOLEDO",
+  "confidence": "عالٍ",
+  "claim_id": "SOC-CLM08"
+ },
+ {
+  "relation_id": "REL-010",
+  "subject_id": "PER-GUNDISSALINUS",
+  "predicate": "collaborated_with",
+  "object_id": "PER-ABRAHAM-IBN-DAUD",
+  "confidence": "متوسط-عالٍ",
+  "claim_id": "SOC-CLM08"
+ },
+ {
+  "relation_id": "REL-011",
+  "subject_id": "PER-GUNDISSALINUS",
+  "predicate": "translated",
+  "object_id": "WRK-AVICENNA-DE-ANIMA",
+  "confidence": "متوسط-عالٍ",
+  "claim_id": "SOC-CLM08"
+ },
+ {
+  "relation_id": "REL-012",
+  "subject_id": "PER-AL-JILYANI",
+  "predicate": "associated_with",
+  "object_id": "PLC-GRANADA",
+  "confidence": "عالٍ",
+  "claim_id": "ARC-CLM09"
+ },
+ {
+  "relation_id": "REL-013",
+  "subject_id": "PER-AL-JILYANI",
+  "predicate": "died_in",
+  "object_id": "PLC-DAMASCUS",
+  "confidence": "عالٍ",
+  "claim_id": "ARC-CLM09"
+ },
+ {
+  "relation_id": "REL-014",
+  "subject_id": "PER-AL-JILYANI",
+  "predicate": "authored",
+  "object_id": "WRK-MANADIH",
+  "confidence": "عالٍ",
+  "claim_id": "ARC-CLM09"
+ },
+ {
+  "relation_id": "REL-015",
+  "subject_id": "WRK-MANADIH",
+  "predicate": "addressed_to",
+  "object_id": "PER-SALADIN",
+  "confidence": "متوسط-عالٍ",
+  "claim_id": "ARC-CLM09"
+ },
+ {
+  "relation_id": "REL-016",
+  "subject_id": "PER-IBN-RAZIN",
+  "predicate": "authored",
+  "object_id": "WRK-FUDALAT",
+  "confidence": "عالٍ",
+  "claim_id": "ARC-CLM07"
+ },
+ {
+  "relation_id": "REL-017",
+  "subject_id": "OBJ-LEON-ARCH",
+  "predicate": "located_in",
+  "object_id": "PLC-LEON",
+  "confidence": "عالٍ",
+  "claim_id": "SOC-CLM07"
+ },
+ {
+  "relation_id": "REL-018",
+  "subject_id": "OBJ-MANISES-LUSTER",
+  "predicate": "produced_in",
+  "object_id": "PLC-MANISES",
+  "confidence": "عالٍ",
+  "claim_id": "SOC-CLM10"
+ },
+ {
+  "relation_id": "REL-ATLAS-001",
+  "subject_id": "PLC-MADINAT-ZAHRA",
+  "predicate": "near/within cultural landscape of",
+  "object_id": "PLC-CORDOBA",
+  "confidence": "عالٍ",
+  "claim_id": "ATLAS-CLM01"
+ },
+ {
+  "relation_id": "REL-ATLAS-002",
+  "subject_id": "PLC-CORDOBA-WH",
+  "predicate": "part_of",
+  "object_id": "PLC-CORDOBA",
+  "confidence": "عالٍ",
+  "claim_id": "ATLAS-CLM02"
+ },
+ {
+  "relation_id": "REL-ATLAS-003",
+  "subject_id": "PLC-ALHAMBRA-WH",
+  "predicate": "part_of",
+  "object_id": "PLC-GRANADA",
+  "confidence": "عالٍ",
+  "claim_id": "ATLAS-CLM03"
+ },
+ {
+  "relation_id": "REL-ATLAS-004",
+  "subject_id": "PLC-SAQUNDA",
+  "predicate": "part_of_historic_urban_context",
+  "object_id": "PLC-CORDOBA",
+  "confidence": "عالٍ",
+  "claim_id": "RUR-CLM04"
+ }
+]

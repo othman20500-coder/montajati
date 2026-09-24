@@ -1,0 +1,227 @@
+[
+ {
+  "change_id": "CHG-1001",
+  "changed_at": "2026-09-23",
+  "component": "Sustainability",
+  "change_type": "schema",
+  "summary_ar": "إضافة ownership/watchlist/source-health/maintenance-runs/change-log/release-manifest.",
+  "source_or_ticket": "GATE-SUS",
+  "version": "v1.0"
+ },
+ {
+  "change_id": "CHG-1002",
+  "changed_at": "2026-09-23",
+  "component": "Sources",
+  "change_type": "monitoring",
+  "summary_ar": "إنشاء snapshot صحة للمصادر الحرجة مع fallback لـMAN وAl-Qantara.",
+  "source_or_ticket": "source-health",
+  "version": "v1.0"
+ },
+ {
+  "change_id": "CHG-1003",
+  "changed_at": "2026-09-23",
+  "component": "QA",
+  "change_type": "automation",
+  "summary_ar": "إضافة اختبارات الاستدامة والإصدار وربطها ببوابات release.",
+  "source_or_ticket": "QA-009..016",
+  "version": "v1.0"
+ },
+ {
+  "change_id": "CHG-1004",
+  "changed_at": "2026-09-23",
+  "component": "Evidence",
+  "change_type": "normalization",
+  "summary_ar": "تطبيع 16 Claims إلى Evidence packets وربطها بالمصادر القائمة.",
+  "source_or_ticket": "QA-017",
+  "version": "v1.0"
+ },
+ {
+  "change_id": "CHG-1005",
+  "changed_at": "2026-09-23",
+  "component": "Publishing",
+  "change_type": "scope",
+  "summary_ar": "تثبيت نطاق v1.0: لا صور خارجية ولا نصوص أدبية كاملة ولا حدود سياسية تاريخية canonical.",
+  "source_or_ticket": "release_scope",
+  "version": "v1.0"
+ },
+ {
+  "change_id": "CHG-1101",
+  "changed_at": "2026-09-23",
+  "component": "Evidence",
+  "change_type": "merge",
+  "summary_ar": "إضافة جداول assertions (59) وattestations (122) وربط 9 إسنادات بادعاءات CLM-001 وATLAS-CLM01..03 (+8 ربط مصدر).",
+  "source_or_ticket": "EVB→v1.1",
+  "version": "v1.1"
+ },
+ {
+  "change_id": "CHG-1102",
+  "changed_at": "2026-09-23",
+  "component": "Gazetteer",
+  "change_type": "merge",
+  "summary_ar": "إضافة 21 مكانًا من الفرع مع أساس الإحداثيات؛ مطابقة 15 مكانًا مشتركًا في id_crosswalk.",
+  "source_or_ticket": "EVB→v1.1",
+  "version": "v1.1"
+ },
+ {
+  "change_id": "CHG-1103",
+  "changed_at": "2026-09-23",
+  "component": "Entities",
+  "change_type": "merge",
+  "summary_ar": "إضافة 38 شخصًا و8 كيانات سياسية وجداول periods/tenures/person_name_parts/historical_events.",
+  "source_or_ticket": "EVB→v1.1",
+  "version": "v1.1"
+ },
+ {
+  "change_id": "CHG-1104",
+  "changed_at": "2026-09-23",
+  "component": "Sources",
+  "change_type": "fix",
+  "summary_ar": "إزالة 96 رابطًا إلى نطاق ibntufayl.org المختطف من قاعدة المعرفة (v6.1).",
+  "source_or_ticket": "hijacked-domain",
+  "version": "v1.1"
+ },
+ {
+  "change_id": "CHG-1201",
+  "changed_at": "2026-09-23",
+  "component": "Evidence",
+  "change_type": "add",
+  "summary_ar": "إضافة 13 شاهدًا من المصادر الأولية (البيان المغرب، نفح الطيب، الإحاطة، جذوة المقتبس، الصلة) بقراءة مباشرة عبر وصلة الشاملة.",
+  "source_or_ticket": "shamela.link",
+  "version": "v1.2"
+ },
+ {
+  "change_id": "CHG-1202",
+  "changed_at": "2026-09-23",
+  "component": "Evidence",
+  "change_type": "resolve",
+  "summary_ar": "حسم خلاف 316/317هـ لإعلان الخلافة (AST-012/027) من البيان المغرب؛ توثيق الكنى (AST-017/019/021/023/G13) والميلادين (G16) وتصحيح ميلاد محمد الخامس إلى 1339 (G15).",
+  "source_or_ticket": "shamela.link",
+  "version": "v1.2"
+ },
+ {
+  "change_id": "CHG-1203",
+  "changed_at": "2026-09-23",
+  "component": "Evidence",
+  "change_type": "reframe",
+  "summary_ar": "وفاة ابن زمرك: المصدر الأولي يحدها ببعد 795هـ؛ 1393 حد أدنى لا تاريخ، و1395 تنتظر مصدرًا (AST-G17).",
+  "source_or_ticket": "shamela.link",
+  "version": "v1.2"
+ },
+ {
+  "change_id": "CHG-1204",
+  "changed_at": "2026-09-23",
+  "component": "Sources",
+  "change_type": "add",
+  "summary_ar": "إضافة المصادر الأولية LIB-PRI-036..039 وربط LIB-PRI-028 بنسخة الشاملة، مع حقوقها.",
+  "source_or_ticket": "library-gap",
+  "version": "v1.2"
+ },
+ {
+  "change_id": "CHG-1205",
+  "changed_at": "2026-09-23",
+  "component": "Evidence",
+  "change_type": "verify",
+  "summary_ar": "مطابقة 65 شاهدًا من دولة الإسلام في الأندلس (عنان) بأداة verify_quote: 58 حرفيًا، 5 بفروق إملائية أو تركيب أو ترقيم، 1 تصحيح موضع (ج1 ص482)، 1 نص مركّب مضلِّل (ATT-GB15) خُفّض إلى «يدعم جزئيًا».",
+  "source_or_ticket": "shamela.link",
+  "version": "v1.2"
+ },
+ {
+  "change_id": "CHG-1206",
+  "changed_at": "2026-09-23",
+  "component": "Evidence",
+  "change_type": "finding",
+  "summary_ar": "سنة 797هـ لوفاة ابن زمرك عند عنان تحيل إلى نفح الطيب، ونص النفح لا يذكرها.",
+  "source_or_ticket": "shamela.link",
+  "version": "v1.2"
+ },
+ {
+  "change_id": "CHG-1207",
+  "changed_at": "2026-09-23",
+  "component": "Evidence",
+  "change_type": "verify",
+  "summary_ar": "مطابقة 49 شاهدًا من المواقع (Met، UNESCO، MWNF، Britannica، الباترونato، مقال Shedet) بالصفحات الحية: 47 حرفيًا و2 بحذف مصرّح؛ وإضافة شاهد ATT-214 (الباترونato 1333–1394) يكشف تضارب المراجع الحديثة في وفاة ابن زمرك.",
+  "source_or_ticket": "webfetch",
+  "version": "v1.2"
+ },
+ {
+  "change_id": "CHG-1208",
+  "changed_at": "2026-09-23",
+  "component": "Evidence",
+  "change_type": "add",
+  "summary_ar": "إضافة 43 شاهدًا أوليًا (جذوة المقتبس، البيان المغرب، نفح الطيب، الإحاطة) لإسنادات كانت تعتمد على مراجع حديثة وحدها؛ كلها مطابقة حرفيًا بأداة verify_quote.",
+  "source_or_ticket": "shamela.link",
+  "version": "v1.2"
+ },
+ {
+  "change_id": "CHG-1209",
+  "changed_at": "2026-09-23",
+  "component": "Evidence",
+  "change_type": "resolve",
+  "summary_ar": "مولد يوسف الأول 1318 (AST-G14)؛ مولد محمد الأول 591هـ لا 595 (AST-G33 جديد)؛ وفاة المنصور 392هـ مع رواية 393 عند الحميدي ومولده 326–328هـ (AST-020)؛ وفاة محمد الأول يناير 1273 لا ديسمبر 1272.",
+  "source_or_ticket": "shamela.link",
+  "version": "v1.2"
+ },
+ {
+  "change_id": "CHG-1210",
+  "changed_at": "2026-09-23",
+  "component": "Evidence",
+  "change_type": "add",
+  "summary_ar": "شواهد أولية لمعركة طريف 741هـ (G21)، وسقوط جيان 643هـ (G20 جزئيًا)، وحدّي الإمارة/الخلافة 929 (AST-002/003).",
+  "source_or_ticket": "shamela.link",
+  "version": "v1.2"
+ },
+ {
+  "change_id": "CHG-1211",
+  "changed_at": "2026-09-24",
+  "component": "Evidence",
+  "change_type": "add",
+  "summary_ar": "أعمال الأعلام (ط2، دار المكشوف 1956) من صور أرشيف الإنترنت: نهاية الولاية الأولى لمحمد الخامس 28 رمضان 760هـ (AST-G06)، ومقدمة المحقق في مقتل ابن الخطيب بعد 776هـ (AST-G28 جزئيًا). إضافة المصدر LIB-PRI-040.",
+  "source_or_ticket": "archive.org",
+  "version": "v1.2"
+ },
+ {
+  "change_id": "CHG-1212",
+  "changed_at": "2026-09-24",
+  "component": "Evidence",
+  "change_type": "add",
+  "summary_ar": "شواهد أولية لمقتل ابن الخطيب من ابن خلدون («العبر» ج7 ص452–453، و«الرحلة» ص187) تحصر القتل بين مستهل 776هـ وشوالها (AST-G28)، ودخول البربر الزهراء أواخر ربيع الأول 401هـ من «أعمال الأعلام» ص117 (AST-015 جزئيًا). إضافة المصدرين LIB-PRI-041 وLIB-PRI-042.",
+  "source_or_ticket": "shamela.link; archive.org",
+  "version": "v1.2"
+ },
+ {
+  "change_id": "CHG-1213",
+  "changed_at": "2026-09-24",
+  "component": "Evidence",
+  "change_type": "add",
+  "summary_ar": "مرسوم 1502 (AST-G27): شاهدان من Ortego Rico 2011 (دراسة محكّمة) يحددان 12 فبراير 1502 ومضمون الأمر، فرُفعت الحالة إلى «موثّق». الشاهد الأولي ما زال مطلوبًا.",
+  "source_or_ticket": "revistas.uned.es",
+  "version": "v1.2"
+ },
+ {
+  "change_id": "CHG-1214",
+  "changed_at": "2026-09-24",
+  "component": "Evidence",
+  "change_type": "add",
+  "summary_ar": "مرسوم 1502 (AST-G27): شاهدان من Ladero Quesada، Andalucía a fines de la Edad Media (1999)، ص179 وص318–319 تقريبًا، يؤكدان 12 فبراير 1502. المصدر EXT-LADERO-1999 من نسخة PDF أرفقها المستخدم.",
+  "source_or_ticket": "user upload",
+  "version": "v1.2"
+ },
+ {
+  "change_id": "CHG-1215",
+  "changed_at": "2026-09-24",
+  "component": "Evidence",
+  "change_type": "update",
+  "summary_ar": "مواءمة: وفاة ابن الخطيب في AST-G16 وPER-018 وEVT-021 صارت 776هـ (1374/1375م) وفق AST-G28؛ وقيمة AST-G27 وEVT-020 صارت 12 فبراير 1502 بدقة اليوم.",
+  "source_or_ticket": "internal consistency",
+  "version": "v1.2"
+ },
+ {
+  "change_id": "CHG-1216",
+  "changed_at": "2026-09-24",
+  "component": "Evidence",
+  "change_type": "update",
+  "summary_ar": "خراب الزهراء (AST-015): صُحح من 1009–1010 إلى مرحلتين، 401هـ ثم الخراب التام في أيام المستكفي 414–416هـ، بشاهد «الذخيرة» ج1 ص436 و«الجذوة» ص26. الزهراوي (AST-022): لا نص أوليًا بسنة الوفاة، وأُضيفت شهادة ابن حزم وتقدير الزركلي 427هـ. ابن زمرك (G17): أُضيف تقدير الزركلي نحو 793هـ مخالفًا. المصادر: LIB-PRI-043 وLIB-PRI-044 وEXT-ZIRIKLI.",
+  "source_or_ticket": "shamela.link",
+  "version": "v1.2"
+ }
+]
