@@ -242,6 +242,27 @@
   footer{color:var(--muted);font-size:13px;padding-top:24px}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
   @media print{.top,.prov,.veil,.cmd{display:none!important}}
+  /* ===== فحص واجهة عربية (arabic-ui-audit) 2026-09-24: تحسينات فوق الموجود، كتلة واحدة قابلة للتراجع ===== */
+  @media screen{
+    .eyebrow{letter-spacing:0}
+    :root[data-theme="night"] h1,:root[data-theme="night"] h2{letter-spacing:0}
+    h3,.card h3,.prov h3,.rail h3{font-size:20px}
+    .rights .src h4,.ribbon b{font-family:var(--body);font-weight:600}
+    .quote{font-family:var(--body)}
+    :root[data-theme="manuscript"] .quote{font-family:var(--head)}
+    .hero p{font-weight:400}
+    p,.sub,.card p,.tl div,.note{text-wrap:pretty}
+    h1,h2,h3{text-wrap:balance}
+    .timebar .year,.eralegend,.ribbon,.names,.chip small,.card .d,.tl small,.cmd .res small{font-variant-numeric:tabular-nums}
+    .skip,.stepper .dot[aria-current="step"]{color:#14202E}
+    .map .stop.on text{fill:#14202E}
+    .btn,.chip,.seg button,.tabs button,.density button,.kbtn,.stepper .dot,.game .opts button{transition:transform .15s var(--ease),background .2s,color .2s,border-color .2s,filter .2s}
+    .btn:hover{filter:brightness(.96)}
+    .seg button:hover,.tabs button:hover{color:var(--brand)}
+    .tabs button:hover{background:var(--soft)}
+    .btn:active,.chip:active,.seg button:active,.tabs button:active,.density button:active,.kbtn:active,.stepper .dot:active,.game .opts button:active{transform:translateY(1px) scale(.985)}
+    .strip{align-items:flex-start}
+  }
 </style>
 </head>
 <body>
@@ -292,7 +313,7 @@ const TYPE={Person:["شخص","var(--era-khilafa)"],Place:["مكان","var(--era-
 /* ===== أدوات ===== */
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const hijri=g=>Math.round((g-622)*33/32); // تقريب للنموذج فقط؛ المنصة تخزّن التاريخين معًا
-const dual=(g,e,h)=>{if(g==null)return "؟";if(h)return `${g}م${e?`–${e}م`:""} / ${esc(h)}`;return `${g}م / ${hijri(g)}هـ${e?` – ${e}م / ${hijri(e)}هـ`:""} <small title="الهجري هنا بالحساب الجدولي التقريبي (سنة واحدة)">≈</small>`;};
+const dual=(g,e,h)=>{if(g==null)return "؟";if(h)return `${g}م${e?`–${e}م`:""} / ${esc(h)}`;return `${g}م / ${hijri(g)}هـ${e?` – ${e}م / ${hijri(e)}هـ`:""} <small title="الهجري هنا بالحساب الجدولي التقريبي (سنة واحدة)">(هجري تقريبي)</small>`;};
 const TOP=ERAS.filter(e=>!e.sub);
 const eraOf=y=>{let cur=TOP[0];for(const e of TOP){if((e.start_latest??e.from)<=y)cur=e;}return cur;};
 const eraSpan=e=>`${e.from}${e.start_latest&&e.start_latest!==e.from?"/"+e.start_latest:""}–${e.end_earliest&&e.end_earliest!==e.to?e.end_earliest+"/":""}${e.to}`;
@@ -508,7 +529,7 @@ V.entity=(id)=>{const o=E[id];if(!o)return `<section><h2>لم أجد هذا ال
       <h3 style="margin-top:18px">شريط زمن المكان</h3><div class="tl">${Object.values(E).filter(e=>e.type==="Event"&&e.place===id).sort((a,b)=>a.year-b.year).map(e=>`<div style="--era:${eraOf(e.year).c}"><b><a href="${href(e.id)}">${esc(e.name.ar)}</a></b> <small>${dual(e.year,e.end,e.hijri)}</small></div>`).join("")||"<div>لا أحداث مسندة لهذا المكان في القاعدة</div>"}</div></div>
       <div class="panel"><p class="eyebrow">الموقع سنة ${state.y}م</p>${mapSvg(state.y,{focus:id})}<p class="note">في المنصة: مخطط المدينة في السنة المختارة (المسجد، القصر، الأسوار) كطبقة فوق الخريطة الحالية، وصور IIIF مرخصة.</p></div></div>`;}
   else if(o.type==="Person"){head=(typeof o.born==="number")?ribbon(o.born,o.died):"";const parts=o.name.parts?Object.entries(o.name.parts).map(([k,v])=>`<span>${({ism:"الاسم",kunya:"الكنية",nasab:"النسب",nisba:"النسبة",laqab:"اللقب"})[k]||k}: <b>${esc(v)}</b></span>`).join(""):"";extra=`<div class="cols"><div><div class="names"><b>${esc(o.name.ar)}</b>${o.name.en?`<span>${esc(o.name.en)}</span>`:""}<span>${(o.roles||[]).join(" · ")}</span><span>${yr(o.born)}–${yr(o.died)}م${o.dates_note?` <small>(${esc(o.dates_note)})</small>`:""}</span></div>${parts?`<div class="names" style="margin-top:6px">${parts}</div>`:""}<p style="margin-top:10px">${summaryHtml(o)}</p>${audienceBox(o)}</div>
-      <div class="panel"><p class="eyebrow">مسار الحياة</p>${mapSvg((o.born||o.died||960)+20)}<p class="note">في المنصة: خط الرحلة بين أماكن الإقامة (born_in → lived_in → died_in) مع سنواتها، وشبكة الشيوخ والتلاميذ.</p></div></div>`;}
+      <div class="panel"><p class="eyebrow">مسار الحياة</p>${mapSvg((o.born||o.died||960)+20)}<p class="note">في المنصة الكاملة: خط الرحلة بين مكان الولادة وأماكن الإقامة ومكان الوفاة مع سنواتها، وشبكة الشيوخ والتلاميذ.</p></div></div>`;}
   else if(o.type==="Event"){head=ribbon(o.year,o.end,o.hijri);const parts=EDGES.filter(e=>e.to===id&&e.rel==="participated_in");extra=`<div class="cols"><div><p>${summaryHtml(o)}</p><h3 style="margin-top:14px">الأطراف</h3><div class="chips">${parts.map(p=>`<a class="chip" href="${href(p.from)}">${esc(E[p.from].name.ar)} <small>${esc(p.role||"")}</small></a>`).join("")||"<span class='chip'>لا أطراف مسجلة في القاعدة بعد</span>"}</div>
       ${(o.stories||[]).length?`<h3 style="margin-top:14px">على الخريطة مرحلةً مرحلة</h3><div class="chips">${o.stories.map(sid=>{const s2=STORIES.find(x=>x.id===sid);return s2?`<a class="chip" href="#/atlas?model=all&story=${sid}&step=1&tab=sto" style="border-color:var(--accent)">▶ ${esc(s2.title)} <small>${s2.steps.length} محطات</small></a>`:"";}).join("")}</div>`:""}
       ${(o.before||o.after)?`<h3 style="margin-top:14px">قبل ← بعد</h3><div class="chips">${(o.before||[]).map(chip).join("")}<span class="chip" style="border-color:var(--accent)">${esc(o.name.ar)}</span>${(o.after||[]).map(chip).join("")}</div>`:""}
@@ -516,7 +537,7 @@ V.entity=(id)=>{const o=E[id];if(!o)return `<section><h2>لم أجد هذا ال
   else {extra=`${o.author&&!E[o.author]?`<div class="names"><span>المؤلف: <b>${esc(o.author)}</b></span>${o.year?`<span>${o.year}م</span>`:""}</div>`:""}<p>${summaryHtml(o)}</p>${o.holding?`<div class="panel" style="margin-top:12px"><b>مكان الحفظ:</b> ${esc(o.holding.institution)}${o.holding.license?` · <b>الرخصة:</b> ${esc(o.holding.license)}`:""}${o.holding.iiif?` · IIIF`:` · <span class="scholar-only" style="display:inline">الرقم المكتبي ورابط IIIF يُضافان عند التوثيق</span>`}</div>`:""}${o.type==="Polity"?`<div class="chips" style="margin-top:12px"><span class="chip">${yr(o.from)}–${yr(o.to)}م</span></div>${(o.rulers||[]).length?`<h3 style="margin-top:14px">الولايات المسندة</h3><div class="tl">${o.rulers.map(r=>`<div><b><a href="${href(r.person)}">${esc((E[r.person]||{name:{ar:r.person}}).name.ar)}</a></b> <small>${esc(r.role||"")} · ${yr(r.from)}–${yr(r.to)}م · دقة: ${esc(r.precision||"")}</small></div>`).join("")}</div>`:""}`:""}${audienceBox(o)}`;}
   return `<section><p class="eyebrow" style="color:${tc}">${tn}</p><h2>${esc(o.name.ar)}</h2>${head}${extra}${rail(id)}
   <h3 style="margin-top:22px">المصادر المستخدمة في هذه الصفحة</h3><div class="chips">${[...new Set((o.summary||[]).flatMap(([,c])=>(CLAIMS[c]?.sources||[]).map(s=>s.src)))].filter(s=>SOURCES[s]).map(s=>`<span class="chip">${esc(SOURCES[s].title)} <small>${SOURCES[s].tier==="أولي"?"مصدر أولي":"مرتبة "+esc(SOURCES[s].tier)}</small></span>`).join("")}</div>
-  <p class="note">اقترح تصحيحًا · البيانات من قاعدة v1.2 (${esc(RELEASE.release_date||"")}) · أي إضافة تمر بمهارة andalus-evidence</p></section>`;};
+  <p class="note">اقترح تصحيحًا · البيانات من قاعدة v1.2 (${esc(RELEASE.release_date||"")}) · كل إضافة تمر بمنهج الإسناد والشاهد، انظر <a href="#/about">عن المنصة</a></p></section>`;};
 
 /* ===== لوحة المصدر ===== */
 const PLAIN={fact:"هذه المعلومة موثّقة: لها شاهد نصي واحد على الأقل قوبل مع مصدره حرفيًا، ولا يعارضه شاهد مرجّح.",partial:"موثّقة جزئيًا: الشواهد تدعم بعض ما ورد لا كله، أو استُنتج جزء منها من السياق؛ لذلك تُعرض بتنبيه.",disputed:"الشواهد متعارضة ولم يُرجَّح بينها بعد، فلا تُنشر معلومةً.",inference:"استنتاج من القرائن لا نص صريح به.",myth:"رواية شائعة لم يثبتها شاهد موثوق، وتُعرض للتنبيه لا للتصديق.",unverified:"لم يُتحقق منها بعد."};
