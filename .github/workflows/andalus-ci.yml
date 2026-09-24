@@ -12,6 +12,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
+      - name: اعتماديات الاختبارات (استمارة Excel)
+        run: pip install openpyxl
       - name: ترحيل v1.2 مرتين (يعمل أكثر من مرة دون تكرار)
         run: |
           python platform/tools/migrate_v1_2.py --db /tmp/ci.sqlite --quiet
@@ -19,11 +21,13 @@ jobs:
           python platform/tools/migrate_v1_2.py --db platform/db/andalus.sqlite --check-only --quiet
       - name: فحوص الجودة الـ26 (andalus_qa_v1_2.py)
         run: python andalus_handoff/tests/andalus_qa_v1_2.py --db platform/db/andalus.sqlite --json-out /tmp/qa.json
+      - name: فحوص خاصية المراجعة الـ9 (andalus_review_qa.py)
+        run: python andalus_handoff/tests/andalus_review_qa.py --db platform/db/andalus.sqlite
       - name: التصدير الثابت يطابق القاعدة
         run: |
           python platform/tools/export_static.py --db platform/db/andalus.sqlite --out /tmp/graph.js
           diff -q /tmp/graph.js andalus/data/graph.js || (echo "andalus/data/graph.js غير محدث؛ شغّل export_static.py" && exit 1)
-      - name: اختبارات الانحدار (22) وبوابة الأدلة والترحيل
+      - name: اختبارات الانحدار (22)، بوابة الأدلة، الترحيل، خاصية المراجعة (14 + اختبارات الخدمة)
         run: python -m unittest discover -s platform/tests -v
       - uses: actions/upload-artifact@v4
         if: always()

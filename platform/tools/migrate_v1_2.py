@@ -19,6 +19,7 @@ DEFAULT_SEED = os.path.join(ROOT, "andalus_handoff", "seed")
 DEFAULT_SCHEMA = os.path.join(ROOT, "platform", "db", "schema.sql")
 DEFAULT_XWALK = os.path.join(HERE, "crosswalk_prototype.json")
 DEFAULT_SCHEMA_EXT = os.path.join(ROOT, "platform", "db", "schema_platform.sql")
+DEFAULT_SCHEMA_REVIEW = os.path.join(ROOT, "platform", "db", "schema_review.sql")
 # لا يزيد أي جدول من جداول v1.2 عن table_counts.json إلا maintenance_runs عند طلب تسجيل التشغيل صراحة
 GROWING = {"maintenance_runs"}
 
@@ -112,7 +113,10 @@ def migrate(db_path, seed_dir, schema_path, xwalk_path, check_only=False, log_ru
         return report
     report["schema_created"] = ensure_schema(con, schema_path)
     if schema_ext and os.path.exists(schema_ext):
-        con.executescript(open(schema_ext, encoding="utf-8").read())
+        with open(schema_ext, encoding="utf-8") as f: con.executescript(f.read())
+    # جداول خاصية المراجعة بالعين (spec/review/schema_review.sql): IF NOT EXISTS + إعادة إنشاء العرضين؛ آمنة للتكرار
+    if os.path.exists(DEFAULT_SCHEMA_REVIEW):
+        with open(DEFAULT_SCHEMA_REVIEW, encoding="utf-8") as f: con.executescript(f.read())
     jdir = os.path.join(seed_dir, "json")
     order = [t for t in expected.keys() if os.path.exists(os.path.join(jdir, f"{t}.json"))]
     with con:

@@ -8,8 +8,22 @@
 | `python platform/tools/migrate_v1_2.py --db … --check-only` | يتحقق من الأعداد فقط |
 | `python andalus_handoff/tests/andalus_qa_v1_2.py --db platform/db/andalus.sqlite` | فحوص الجودة الـ26 (بوابة الدمج) |
 | `python platform/tools/export_static.py --db platform/db/andalus.sqlite --out andalus/data/graph.js` | يولّد طبقة بيانات النموذج الثابت من الحالات القابلة للنشر فقط |
-| `python -m unittest discover -s platform/tests -v` | الترحيل (تكرار وتطابق)، الانحدار (22)، بوابة الأدلة |
+| `python -m unittest discover -s platform/tests -v` | الترحيل (تكرار وتطابق)، الانحدار (22)، بوابة الأدلة، فحوص المراجعة (9) واختباراتها (14) واختبارات خدمة المراجعة |
+| `python andalus_handoff/tests/andalus_review_qa.py --db platform/db/andalus.sqlite` | فحوص خاصية المراجعة الـ9 |
 | `python andalus_handoff/spec/reference_api_v1_2.py --db platform/db/andalus.sqlite --port 8787` | الخدمة المرجعية محليًا |
+
+## خاصية المراجعة بالعين (`service/`)
+
+| الأمر | ما يفعله |
+|---|---|
+| `python platform/service/app.py create-user --db platform/db/andalus.sqlite --username othman --name "عثمان الشهري" --role owner --password …` | حساب صاحب المشروع (يعتمد المراجعين) |
+| `python platform/service/app.py create-user … --role reviewer` | حساب مراجع (يسجّل بياناته ثم ينتظر الاعتماد) |
+| `python platform/service/app.py serve --db platform/db/andalus.sqlite --port 8787` | الخدمة: مسارات القراءة v1.2 + مسارات المراجعة + شاشة المراجعة ولوحة الاعتماد على `/review` |
+| `python platform/tools/import_reviews.py --artifact-dir <تصدير صفحة المراجعة> --owner "…"` أو `--excel form.xlsx` | نقل الأحكام السابقة (يعمل أكثر من مرة دون تكرار)، ثم أعد التصدير الثابت |
+
+القواعد المنفذة (`andalus_handoff/spec/review/README.md`): صاحب المشروع وحده يعتمد أو يسحب (سجل لا يُحذف)؛ المراجع المعتمد وقت الحكم وحده يحكم (403 لغيره)؛ الحكم بفرق أو عدم مطابقة يلزمه ملاحظة (422)؛ حكم واحد لكل مراجع على كل شاهد يعدّله أو يسحبه؛ الحالة تُحسب من `v_attestation_review_status`؛ عند «معتمد بالعين» يُكتب في `attestations.verbatim_check` «مطابق بالعين: المراجعان وتخصصاهما، التاريخ» وتُحفظ القيمة السابقة في `attestation_verbatim_history` وتُستعاد إذا زالت الحالة. الشارة تظهر في طبقة الأدلة بالنموذج الثابت بعد إعادة التصدير.
+
+قائمة المراجعة (`/api/v1/reviews/queue`) = الشواهد التي فُحصت عبر WebFetch أو صور الصفحات أو OCR أو PDF: 57 شاهدًا، مطابقة لقائمة صفحة المراجعة على claude.ai.
 
 بوابة CI في `.github/workflows/andalus-ci.yml`: ترحيل مرتين، فحوص الجودة، تطابق التصدير، والاختبارات؛ أي فشل يمنع الدمج. **حماية الفرع** (اشتراط نجاح `andalus-ci` قبل الدمج) تُفعَّل من إعدادات GitHub ولا يمكن ضبطها من هنا.
 

@@ -74,11 +74,19 @@ def main():
                                    "rights_note": rt.get("reuse_note") or ""}
 
     # ---- الادعاءات من الإسنادات (القابلة للنشر فقط) مع شواهدها
+    has_review = bool(R("SELECT 1 FROM sqlite_master WHERE type='view' AND name='v_attestation_review_status'"))
+    rstatus = {r["attestation_id"]: r["review_status"] for r in R("SELECT attestation_id, review_status FROM v_attestation_review_status")} if has_review else {}
+    rnames = {}
+    if has_review:
+        for r in R("""SELECT r.attestation_id, c.full_name, c.field FROM attestation_reviews r JOIN v_reviewer_current c USING(reviewer_id)
+                      WHERE c.approved=1 AND r.verdict='مطابق' ORDER BY r.reviewed_at"""):
+            rnames.setdefault(r["attestation_id"], []).append(f'{r["full_name"]} ({r["field"]})')
     atts = {}
     for t in R("SELECT * FROM attestations ORDER BY attestation_id"):
         atts.setdefault(t["assertion_id"], []).append({"id": t["attestation_id"], "src": t["source_id"], "loc": t["locator"], "quote": t["quote"],
                                                        "stance": t["stance"], "source_kind": t["source_kind"], "verbatim": t["verbatim_check"],
-                                                       "note": t["note_ar"], "url": t["url"], "checked_on": t["checked_on"]})
+                                                       "note": t["note_ar"], "url": t["url"], "checked_on": t["checked_on"],
+                                                       "review_status": rstatus.get(t["attestation_id"], "لم يُراجع"), "eye_reviewers": rnames.get(t["attestation_id"], [])})
     claims = {}
     assertions_by_target = {}
     for A in R("SELECT * FROM assertions ORDER BY assertion_id"):
@@ -89,7 +97,8 @@ def main():
                                      "target": A["target_id"], "value_before": A["value_before"], "resolution": A["resolution_ar"], "todo": A["todo_ar"],
                                      "model": A["model"], "last_verified": A["last_verified"],
                                      "sources": [{"src": x["src"], "loc": x["loc"] or "", "quote": x["quote"], "stance": x["stance"], "source_kind": x["source_kind"],
-                                                  "verbatim": x["verbatim"], "note": x["note"], "url": x["url"], "checked_on": x["checked_on"], "att": x["id"]}
+                                                  "verbatim": x["verbatim"], "note": x["note"], "url": x["url"], "checked_on": x["checked_on"], "att": x["id"],
+                                                  "review_status": x["review_status"], "eye_reviewers": x["eye_reviewers"]}
                                                  for x in atts.get(A["assertion_id"], [])],
                                      "counter": [{"position": x["quote"], "sources": [{"src": x["src"], "loc": x["loc"] or ""}]}
                                                  for x in atts.get(A["assertion_id"], []) if (x["stance"] or "").startswith("يخالف")]}

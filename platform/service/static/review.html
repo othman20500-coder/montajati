@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مراجعة الشواهد بالعين</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap">
+<style>
+:root{--bg:#F7F5EF;--card:#fff;--ink:#14202E;--muted:#5B6673;--line:#DCD8CC;--brand:#173F7A;--brand-2:#1E9C8B;--accent:#E4B33B;--soft:#E6EEF7;--ok:#1F9D6A;--warn:#D08A1E;--bad:#B3362C;--head:"Reem Kufi","IBM Plex Sans Arabic",sans-serif;--body:"IBM Plex Sans Arabic",sans-serif;color-scheme:light}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.75;padding:0 16px 64px}
+.wrap{max-width:960px;margin-inline:auto}h1,h2,h3{font-family:var(--head);font-weight:500;margin:0;line-height:1.3}h1{font-size:28px;color:var(--brand);margin:18px 0 4px}h2{font-size:18px;color:var(--brand)}
+.lede{color:var(--muted);max-width:65ch;margin:0 0 14px}.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:14px}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.field{display:flex;flex-direction:column;gap:3px;font-size:13px;color:var(--muted)}
+input,select,textarea{font:inherit;font-size:14px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.btn{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer}.btn.primary{background:var(--brand);color:#fff;border-color:var(--brand)}.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn[data-k="مطابق"][aria-pressed="true"]{background:#E3F2E8;border-color:var(--ok);color:var(--ok);font-weight:600}.btn[data-k="مطابق بفرق يسير"][aria-pressed="true"]{background:#FBF0D6;border-color:var(--warn);color:var(--warn);font-weight:600}.btn[data-k="غير مطابق"][aria-pressed="true"]{background:#F9E4E1;border-color:var(--bad);color:var(--bad);font-weight:600}
+.pill{display:inline-block;border-radius:999px;padding:1px 10px;font-size:12px;font-weight:600}.pill.ok{background:#E3F2E8;color:var(--ok)}.pill.warn{background:#FBF0D6;color:var(--warn)}.pill.bad{background:#F9E4E1;color:var(--bad)}.pill.mute{background:var(--soft);color:var(--muted)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.bar{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.counts{font-size:13px;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap}.counts b{color:var(--ink)}.filters{display:flex;gap:6px;flex-wrap:wrap}.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 12px;font:inherit;font-size:13px;cursor:pointer}.chip[aria-pressed="true"]{background:var(--brand);color:#fff;border-color:var(--brand)}
+.list{display:flex;flex-direction:column;gap:12px;margin-top:14px}.card{background:var(--card);border:1px solid var(--line);border-inline-start:5px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.card[data-s="معتمد بالعين"]{border-inline-start-color:var(--ok)}.card[data-s="خلاف أو فرق"]{border-inline-start-color:var(--warn)}.card[data-s="غير مطابق"]{border-inline-start-color:var(--bad)}.card[data-s="يحتاج مراجعًا ثانيًا"]{border-inline-start-color:var(--brand-2)}
+.head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}.what{font-weight:600}.what small{display:block;font-weight:400;color:var(--muted);font-size:13px}.id{font-family:ui-monospace,monospace;font-size:12px;color:var(--muted);direction:ltr}
+blockquote{margin:0;background:#F7FAF8;border-radius:8px;padding:10px 12px;font-size:15px;overflow-wrap:anywhere}.meta{display:flex;gap:6px 14px;flex-wrap:wrap;font-size:13px;color:var(--muted)}.meta a{color:var(--brand-2);font-weight:500}
+.others{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:2px}.actions{display:flex;gap:6px;flex-wrap:wrap;align-items:center}.card textarea{min-height:54px;font-size:13px}
+.status{font-size:12px;color:var(--muted)}.status.warn{color:var(--warn)}.rev{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;border-top:1px solid var(--line);padding-top:8px;font-size:14px}.rev small{color:var(--muted);display:block}
+.eye{display:inline-flex;align-items:center;gap:6px;background:#E3F2E8;color:var(--ok);border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600}
+</style></head>
+<body><div class="wrap">
+<h1>مراجعة الشواهد بالعين</h1>
+<p class="lede">شواهد قُرئت بنموذج مساعد أو من صور الصفحات أو من نص OCR. لا يُقبل الحكم إلا من مراجع متخصص اعتمده صاحب المشروع، ويُعتمد الشاهد بحكم مراجعَين «مطابق» دون حكم مخالف، ويُسجَّل كل حكم باسم صاحبه وتخصصه وتاريخه.</p>
+<section class="panel" id="me"></section>
+<section class="panel" id="admin" hidden></section>
+<div class="bar"><div class="counts" id="counts"></div>
+<div class="filters" id="filters"><button class="chip" data-f="mine" aria-pressed="true">لم أراجعها</button><button class="chip" data-f="all" aria-pressed="false">الكل</button><button class="chip" data-f="معتمد بالعين" aria-pressed="false">معتمد</button><button class="chip" data-f="يحتاج مراجعًا ثانيًا" aria-pressed="false">يحتاج مراجعًا ثانيًا</button><button class="chip" data-f="خلاف أو فرق" aria-pressed="false">خلاف أو فرق</button><button class="chip" data-f="غير مطابق" aria-pressed="false">غير مطابق</button></div>
+<div class="status" id="status"></div></div>
+<div class="list" id="list"></div>
+</div>
+<script>
+const $=s=>document.querySelector(s);const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const METHOD={web:'صفحة حية عبر WebFetch',img:'صورة الصفحة',ocr:'نص OCR'};const DEGREES=['دكتوراه','ماجستير','بكالوريوس','غير ذلك'];
+let token=localStorage.getItem('andalus_token')||'',me=null,items=[],filter='mine';
+async function api(method,path,body){const r=await fetch(path,{method,headers:{'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{})},body:body?JSON.stringify(body):undefined});let d=null;try{d=await r.json();}catch(_){ }return {st:r.status,d};}
+function setStatus(t,w){$('#status').textContent=t;$('#status').classList.toggle('warn',!!w);}
+async function loadMe(){if(!token){me=null;return;}const {st,d}=await api('GET','/api/v1/auth/me');me=st===200?d:null;if(!me){token='';localStorage.removeItem('andalus_token');}}
+async function loadQueue(){const {d}=await api('GET','/api/v1/reviews/queue');items=d||[];}
+function renderMe(){const el=$('#me');
+ if(!me){el.innerHTML=`<h2>الدخول</h2><p class="lede">ادخل بحسابك في المنصة. الحسابات ينشئها صاحب المشروع.</p><form id="login" class="form"><label class="field">اسم المستخدم<input id="u" required autocomplete="username"></label><label class="field">كلمة المرور<input id="p" type="password" required autocomplete="current-password"></label><div class="row" style="align-self:end"><button class="btn primary">دخول</button></div></form>`;
+  $('#login').onsubmit=async e=>{e.preventDefault();const {st,d}=await api('POST','/api/v1/auth/login',{username:$('#u').value,password:$('#p').value});if(st!==200){setStatus('بيانات الدخول غير صحيحة.',true);return;}token=d.token;localStorage.setItem('andalus_token',token);await boot();};return;}
+ const p=me.profile;
+ if(!p||el.dataset.editing==='1'){el.innerHTML=`<div class="row" style="justify-content:space-between"><h2>بيانات المراجع · ${esc(me.user.display_name)}</h2><button class="btn" id="logout">خروج</button></div><p class="lede">الاسم والتخصص إلزاميان. لا تُفعَّل أزرار الحكم إلا بعد اعتماد صاحب المشروع.</p>
+  <form id="prof" class="form"><label class="field">الاسم الكامل<input id="fn" required value="${esc(p?.full_name||me.user.display_name)}"></label><label class="field">الدرجة العلمية<select id="dg">${DEGREES.map(d=>`<option ${p?.degree===d?'selected':''}>${d}</option>`).join('')}</select></label><label class="field">التخصص الدقيق<input id="fd" required value="${esc(p?.field||'')}" placeholder="تاريخ الأندلس، تحقيق المخطوطات…"></label><label class="field">الجهة<input id="og" value="${esc(p?.org||'')}"></label><label class="field">اللغات التي تقرأ بها المصادر<input id="lg" value="${esc(p?.langs||'')}"></label><div class="row" style="align-self:end"><button class="btn primary">حفظ</button></div></form>`;
+  $('#prof').onsubmit=async e=>{e.preventDefault();const {st,d}=await api('POST','/api/v1/reviewers/me',{full_name:$('#fn').value,degree:$('#dg').value,field:$('#fd').value,org:$('#og').value,langs:$('#lg').value});if(st!==200){setStatus(d?.message_ar||'تعذّر الحفظ',true);return;}el.dataset.editing='0';me=d;renderMe();};
+  $('#logout').onclick=logout;return;}
+ el.innerHTML=`<div class="row" style="justify-content:space-between"><div><b>${esc(p.full_name)}</b> ${me.approved?'<span class="pill ok">مراجع معتمد</span>':'<span class="pill warn">بانتظار اعتماد صاحب المشروع</span>'}${me.user.role==='owner'?' <span class="pill mute">صاحب المشروع</span>':''}<small class="status" style="display:block">${esc(p.degree||'')} · ${esc(p.field)}${p.org?' · '+esc(p.org):''}</small></div><div class="row"><button class="btn" id="edit">تعديل بياناتي</button><button class="btn" id="logout">خروج</button></div></div>`;
+ $('#edit').onclick=()=>{el.dataset.editing='1';renderMe();};$('#logout').onclick=logout;}
+async function logout(){await api('POST','/api/v1/auth/logout');token='';localStorage.removeItem('andalus_token');me=null;await boot();}
+async function renderAdmin(){const el=$('#admin');if(!me||me.user.role!=='owner'){el.hidden=true;return;}el.hidden=false;const {d}=await api('GET','/api/v1/reviewers/all');
+ el.innerHTML=`<h2>اعتماد المراجعين</h2><p class="lede">كل اعتماد أو سحب يُسجَّل صفًا جديدًا باسمك وتاريخه ولا يُحذف. سحب الاعتماد يُسقط أحكام المراجع من الحساب فورًا.</p>`+((d||[]).map(r=>`<div class="rev"><div><b>${esc(r.full_name)}</b>${r.reviewer_id===me.user.user_id?' <span class="pill mute">أنت</span>':''} <span class="pill mute">${esc(r.source)}</span><small>${esc(r.degree||'')} · ${esc(r.field)}${r.org?' · '+esc(r.org):''} · ${r.review_count} حكمًا${r.last_decision_at?' · آخر قرار '+esc(r.last_decision_at.slice(0,10)):''}</small></div><button class="btn ${r.approved?'':'primary'}" data-rid="${esc(r.reviewer_id)}" data-to="${r.approved?0:1}">${r.approved?'سحب الاعتماد':'اعتماد'}</button></div>`).join('')||'<p class="lede">لم يسجّل أحد بعد.</p>');
+ el.onclick=async e=>{const b=e.target.closest('[data-rid]');if(!b)return;b.disabled=true;const note=prompt('ملاحظة القرار (اختياري):')||null;await api('POST',`/api/v1/reviewers/${encodeURIComponent(b.dataset.rid)}/approval`,{approved:b.dataset.to==='1',note_ar:note});await boot();};}
+function visible(it){if(filter==='all')return true;if(filter==='mine')return !it.mine;return it.review_status===filter;}
+function renderList(){const c={};items.forEach(i=>c[i.review_status]=(c[i.review_status]||0)+1);
+ $('#counts').innerHTML=`<span>الشواهد <b>${items.length}</b></span><span>معتمد بالعين <b>${c['معتمد بالعين']||0}</b></span><span>يحتاج مراجعًا ثانيًا <b>${c['يحتاج مراجعًا ثانيًا']||0}</b></span><span>خلاف أو فرق <b>${c['خلاف أو فرق']||0}</b></span><span>غير مطابق <b>${c['غير مطابق']||0}</b></span>${me?`<span>راجعتَ <b>${items.filter(i=>i.mine).length}</b></span>`:''}`;
+ const can=me&&me.approved;
+ $('#list').innerHTML=items.filter(visible).map(it=>`<article class="card" data-id="${esc(it.attestation_id)}" data-s="${esc(it.review_status)}"><div class="head"><div class="what">${esc(it.kind)}: ${esc(it.value_ar)}<small>${esc(it.target_id)} · ${METHOD[it.method]||''} · <span class="pill mute">${esc(it.review_status)}</span>${it.review_status==='معتمد بالعين'?` <span class="eye">✓ مطابق بالعين</span>`:''}</small></div><span class="id">${esc(it.attestation_id)} · ${esc(it.assertion_id)}</span></div>
+ <blockquote dir="auto">${esc(it.quote)}</blockquote><div class="meta"><span>${esc(it.source_label)}</span><span>${esc(it.locator||'')}</span><span>${esc(it.stance||'')}</span>${it.source_kind?`<span>${esc(it.source_kind)}</span>`:''}${it.url?`<a href="${esc(it.url)}" target="_blank" rel="noopener">افتح المصدر</a>`:'<span>لا رابط مفتوح: قارن بصورة الصفحة</span>'}</div>
+ ${it.note_ar?`<div class="status">ملاحظة الفحص: ${esc(it.note_ar)}</div>`:''}<div class="status">طريقة المطابقة المسجلة: ${esc(it.verbatim_check)}</div>
+ ${it.reviews.length?`<div class="others">${it.reviews.map(r=>`<span>${esc(r.full_name)} (${esc(r.field)}): <b>${esc(r.verdict)}</b>${r.note_ar?' · '+esc(r.note_ar):''} · ${esc(r.reviewed_at.slice(0,10))}</span>`).join('')}</div>`:''}
+ <div class="actions">${['مطابق','مطابق بفرق يسير','غير مطابق'].map(k=>`<button class="btn" data-k="${k}" aria-pressed="${it.mine?.verdict===k}" ${can?'':'disabled'}>${k}</button>`).join('')}<span class="status">${can?'':'الحكم متاح للمراجع المعتمد'}</span></div>
+ ${can?`<textarea placeholder="ملاحظتك: ما الفرق؟ ما النص الصحيح وموضعه؟ (إلزامية لغير «مطابق»)">${esc(it.mine?.note_ar||'')}</textarea>`:''}</article>`).join('')||'<p class="lede">لا شواهد في هذا التصنيف.</p>';}
+$('#filters').onclick=e=>{const b=e.target.closest('.chip');if(!b)return;filter=b.dataset.f;document.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',x===b));renderList();};
+$('#list').onclick=async e=>{const b=e.target.closest('.btn');if(!b||b.disabled)return;const card=b.closest('.card'),id=card.dataset.id,k=b.dataset.k,note=card.querySelector('textarea')?.value||'';const it=items.find(i=>i.attestation_id===id);
+ let res;if(it.mine?.verdict===k){res=await api('DELETE',`/api/v1/attestations/${id}/reviews/me`);}else{res=await api('PUT',`/api/v1/attestations/${id}/reviews/me`,{verdict:k,note_ar:note});}
+ if(res.st>=400){setStatus(res.d?.message_ar||res.d?.error||'تعذّر الحفظ',true);return;}setStatus('حُفظ الحكم باسمك وتاريخه.');await loadQueue();renderList();};
+async function boot(){await loadMe();await loadQueue();renderMe();await renderAdmin();renderList();if(me)setStatus(me.approved?'يمكنك الحكم؛ كل حكم يُحفظ فورًا.':'سجّل بياناتك وانتظر اعتماد صاحب المشروع.');else setStatus('ادخل لتسجيل الأحكام. القائمة تُعرض للقراءة.');}
+boot();
+</script></body></html>
