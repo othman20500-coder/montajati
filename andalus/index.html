@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>الأندلس: نموذج تصوري</title>
+<title>الأندلس: أطلس ومرجع موثّق</title>
 <meta name="description" content="نموذج تفاعلي لتصور منصة الأندلس الرقمية: خريطة زمنية، خط زمني، صفحات كيانات مترابطة، ثلاثة اتجاهات بصرية، ونظام ادعاء ومصدر.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600&family=Tajawal:wght@300;400;500;700&display=swap">
 <style>
@@ -51,6 +51,16 @@
   body{margin:0;background:var(--bg) var(--pattern);background-size:var(--pattern-size);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.85;padding-inline:16px;padding-block:0 64px;transition:background .4s,color .4s}
   a{color:inherit;text-decoration:none} button{font:inherit;cursor:pointer;color:inherit}
   a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .skip{position:absolute;inset-inline-start:8px;top:-60px;background:var(--accent);color:#fff;padding:8px 14px;border-radius:8px;z-index:200}
+  .skip:focus{top:8px}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .rights{display:grid;gap:10px}
+  .rights .src{padding:12px 14px}
+  .rights .src h4{margin:0 0 4px;font-size:15px;font-family:var(--head)}
+  .rights .src p{margin:2px 0;font-size:13.5px;color:var(--muted)}
+  .legend-st{display:grid;gap:6px;margin:8px 0 0}
+  .legend-st span{display:flex;gap:8px;align-items:flex-start;font-size:14px}
+  .legend-st i.b{margin-top:8px;flex:none}
   [hidden]{display:none!important}
   .wrap{max-width:1140px;margin-inline:auto}
   h1,h2,h3,h4{font-family:var(--head);font-weight:500;line-height:1.3;margin:0}
@@ -237,9 +247,9 @@
 <body>
 <div class="wrap">
   <header class="top"><div class="in">
-    <a class="brand" href="#/"><i></i> الأندلس <small style="font-family:var(--body);font-weight:400;font-size:12px;color:var(--muted)">نموذج تصوري</small></a>
+    <a class="skip" href="#app">تخطَّ إلى المحتوى</a><a class="brand" href="#/"><i></i> الأندلس <small style="font-family:var(--body);font-weight:400;font-size:12px;color:var(--muted)">إصدار تجريبي</small></a>
     <nav class="nav" id="nav">
-      <a href="#/atlas">الأطلس</a><a href="#/map">الخريطة</a><a href="#/timeline">الزمن</a><a href="#/people">الأشخاص</a><a href="#/places">الأماكن</a><a href="#/museum">المتحف</a><a href="#/stories">القصص</a><a href="#/play">ألعاب</a><a href="#/design">نظام التصميم</a>
+      <a href="#/atlas">الأطلس</a><a href="#/map">الخريطة</a><a href="#/timeline">الزمن</a><a href="#/people">الأشخاص</a><a href="#/places">الأماكن</a><a href="#/museum">المتحف</a><a href="#/stories">القصص</a><a href="#/play">ألعاب</a><a href="#/sources">المصادر</a><a href="#/about">عن المنصة</a>
     </nav>
     <div class="tools">
       <div class="seg" id="theme" title="الاتجاه البصري">
@@ -255,7 +265,7 @@
   <main id="app"></main>
 
   <footer>
-    نموذج تصوري لمنصة الأندلس الرقمية · البيانات مولَّدة من قاعدة v1.2 (إسناد ← شاهد ← ادعاء)؛ لا يُعرض إلا القابل للنشر، وكل جملة تفتح شواهدها · جزء من مشروع «منتجاتي».
+    منصة الأندلس الرقمية · إصدار تجريبي · كل جملة تفتح شواهدها، ولا يُعرض إلا الموثّق والمصحح والمحسوم · <a href="#/sources">المصادر وحقوقها</a> · <a href="#/about">عن المنصة والتصحيحات</a> · <a href="#/design">نظام التصميم</a> · جزء من مشروع «منتجاتي».
   </footer>
 </div>
 
@@ -449,7 +459,7 @@ V.atlas=(q)=>{const st=atlasState;if(q.model&&MODEL_META[q.model])st.model=q.mod
     ${timeBar(y,"atlasY")}
     <div class="chips" style="margin:8px 0">${jumps.map(([yy,l])=>`<a class="chip" href="#/atlas?model=${st.model}&y=${yy}" ${yy===y?'style="border-color:var(--accent)"':""}>${esc(l)} <small>${yy}</small></a>`).join("")}</div>
     <div class="lyr">${ATLAS.layers.map(l=>`<label title="${esc(l.description_ar)} — ${esc(carto(l.cartographic_status))}"><input type="checkbox" data-lyr="${l.layer_id}" ${st.layers.has(l.layer_id)?"checked":""}> ${esc(l.label_ar)}</label>`).join("")}<label title="مظاريف تحليلية، ليست حدودًا تاريخية (SCOPE-004)"><input type="checkbox" data-lyr="zones" ${st.layers.has("zones")?"checked":""}> المظاريف التحليلية</label></div>
-    <div class="panel" id="atlasMap">${mapSvg(y,{bbox:meta.bbox,members:[...members],zones:st.layers.has("zones")?ATLAS.zones:[],focus:story?story.steps[st.step-1].place:st.place,route,path:story?story.steps.map(x=>x.place):null,pathActive:st.step})}</div>
+    <div class="panel" id="atlasMap">${mapSvg(y,{bbox:meta.bbox,members:[...members],zones:st.layers.has("zones")?ATLAS.zones:[],focus:story?story.steps[st.step-1].place:st.place,route,path:story?story.steps.map(x=>x.place):null,pathActive:st.step})}<ul class="sr-only" aria-label="الأماكن على الخريطة نصيًا">${listPlaces.map(o=>`<li><a href="${route(o.id)}">${esc(o.name.ar)}</a></li>`).join("")}</ul></div>
     <p class="note">الطبقات: ${ATLAS.layers.map(l=>carto(l.cartographic_status)).filter((v,i,a)=>a.indexOf(v)===i).map(esc).join(" · ")}. المظاريف: ${esc(carto(ATLAS.zones[0]?.status||""))} (سياسة الإصدار SCOPE-004).</p>
   </div><div>
     <div class="tabs" role="tablist">${tabs.map(([k,l])=>`<button role="tab" aria-selected="${st.tab===k}" data-tab="${k}">${l}</button>`).join("")}</div>
@@ -458,6 +468,26 @@ V.atlas=(q)=>{const st=atlasState;if(q.model&&MODEL_META[q.model])st.model=q.mod
     <div class="plist">${listPlaces.map(o=>`<button data-place="${esc(o.id)}" aria-pressed="${o.id===st.place}"><span>${esc(o.name.ar)}</span><small>${esc(o.kind||"")}${members.has(o.id)?" · في الطبقة":""}</small></button>`).join("")}</div>
   </div></div></section>`;};
 
+V.sources=()=>{const all=Object.entries(SOURCES).map(([id,S])=>({id,...S}));const prim=all.filter(x=>x.tier==="أولي"),rest=all.filter(x=>x.tier!=="أولي").sort((a,b)=>String(a.tier).localeCompare(String(b.tier)));
+  const card=x=>`<div class="src"><h4>${esc(x.title)}</h4>${x.author?`<p>${esc(x.author)}</p>`:""}<p>${x.tier==="أولي"?"مصدر أولي (نص تراثي أو وثيقة معاصرة للحدث)":"مرتبة "+esc(x.tier)+" (تقييم المصدر، وهو مستقل عن حالة التحقق)"}${x.pub?` · ${esc(x.pub)}`:""}${x.url_checked?` · فُحص الرابط ${esc(x.url_checked)}`:""}</p><p><b>الحقوق:</b> ${esc(x.rights||"غير معروف")}${x.rights_note?` — ${esc(x.rights_note)}`:""}</p>${x.url?`<p><a href="${esc(x.url)}" target="_blank" rel="noopener">الرابط إلى المصدر ↗</a></p>`:""}</div>`;
+  return `<section><p class="eyebrow">المصادر وحقوقها</p><h2>${all.length} مصدرًا يُستشهد به في هذه المنصة</h2><p class="sub">قيمة المصدر في الاستشهاد شيء، وحق إعادة نشره شيء آخر (القاعدة 6): لا تُعرض هنا صورة أو خريطة أو نص طويل إلا إذا كانت رخصته تسمح، وما عدا ذلك يُحال إليه برابط. الشاهد من المصدر الأولي مقدَّم على الدراسة الحديثة ومميز في كل لوحة «كيف نعرف هذا؟».</p>
+  <h3>المصادر الأولية (${prim.length})</h3><div class="rights">${prim.map(card).join("")}</div>
+  <h3 style="margin-top:18px">الدراسات والمراجع (${rest.length})</h3><div class="rights">${rest.map(card).join("")}</div>
+  <p class="note">بيانات الطبعات التي لم يُتحقق منها مكتوبة كذلك صراحة، وترقيم نسخ الشاملة يُقابل بالطبعات الورقية قبل الاعتماد النهائي.</p></section>`;};
+V.about=()=>`<section><p class="eyebrow">عن المنصة</p><h2>مرجع رقمي عن الأندلس لا يقول إلا ما يستطيع إثباته</h2>
+  <p class="sub">موسوعة وأطلس زمني ومتحف رقمي وتجربة تعليمية في مكان واحد. كل جملة تاريخية هنا تفتح شواهدها: النص الحرفي من المصدر وموضعه وموقفه مما نقول.</p>
+  <div class="cols"><div>
+    <h3>كيف نتحقق؟</h3><p>تمر كل معلومة بثلاث طبقات: <b>إسناد</b> يحدد ما الذي نُثبته بالضبط، ثم <b>شاهد</b> واحد أو أكثر بنص حرفي وموضعه (الجزء والصفحة) وموقفه: يدعم أو يدعم جزئيًا أو يعارض، ثم <b>ادعاء</b> يُعرض للقارئ. لا يُنشر إلا الموثّق والمصحح والمحسوم؛ والموثّق جزئيًا يُعرض بتنبيه؛ والمتعارض وما ينتظر شاهدًا لا يُعرضان.</p>
+    <div class="legend-st">${Object.entries(STATUS).filter(([k])=>["fact","partial","myth"].includes(k)).map(([k,[n,c]])=>`<span><i class="b ${k}" style="background:${c}"></i><span><b>${esc(n)}</b> — ${esc(PLAIN[k]||"")}</span></span>`).join("")}</div>
+    <h3 style="margin-top:16px">ما لا نفعله</h3><ul style="margin:0;padding-inline-start:18px"><li>لا نختلق عنوانًا ولا مؤلفًا ولا رقم صفحة ولا رابطًا؛ وما لم يُتحقق منه يُكتب «لم أتحقق».</li><li>لا نختار رقمًا بصمت عند اختلاف المصادر؛ يُذكر الخلاف بمصادره.</li><li>الإحداثيات مراسٍ حديثة تقريبية، ولا تُعرض حدود سياسية تاريخية؛ المظاريف على الخريطة تحليلية لا حدود.</li><li>التحويل بين الهجري والميلادي بالحساب الجدولي، والناتج تقريبي بيوم أو سنة.</li></ul>
+    <h3 style="margin-top:16px">المراجعة بالعين</h3><p>الشواهد التي قوبلت آليًا تُميَّز عن التي راجعها مراجعان متخصصان معتمدان؛ وتظهر شارة «مطابق بالعين» على الشاهد بعد اعتماده. هذا الإصدار تجريبي وتستمر المراجعة.</p>
+  </div><div class="panel">
+    <h3>الحقوق</h3><p><b>المصادر:</b> لكل مصدر سطر حقوق في <a href="#/sources">صفحة المصادر</a>؛ النصوص التراثية في الملك العام، وحقوق التحقيق والحواشي لأصحابها ولا تُعاد نشرها؛ الدراسات والمراجع يُحال إليها برابط.</p>
+    <p><b>محتوى المنصة</b> (الصياغات التحريرية والبيانات المهيكلة والتصميم): الحقوق محفوظة لصاحب المشروع حتى اعتماد رخصة النشر، والمقترح رخصة نسب المصنّف (CC BY 4.0) للنصوص والبيانات.</p>
+    <p><b>الخط:</b> Reem Kufi وIBM Plex Sans Arabic برخصة الخطوط المفتوحة.</p>
+    <h3 style="margin-top:14px">التصحيح والتواصل</h3><p>وجدت خطأً أو شاهدًا أقوى؟ كل تصحيح يمر بالمنهج نفسه: نص حرفي من مصدر يُذكر موضعه. أرسل ملاحظتك عبر <a href="https://github.com/othman20500-coder/montajati/issues" target="_blank" rel="noopener">صفحة الملاحظات في المستودع ↗</a> أو عبر <a href="../index.html#/about">صفحة التواصل في موقع «منتجاتي»</a>.</p>
+    <p class="note">الإصدار: بيانات v1.2 مع ملحق الزلاقة (${RELEASE?esc(RELEASE.version||""):""}، ${RELEASE?esc(RELEASE.release_date||""):""}).</p>
+  </div></div></section>`;
 V.design=()=>`<section><p class="eyebrow">نظام التصميم</p><h2>ثلاثة اتجاهات، رموز واحدة</h2><p class="sub">بدّل الاتجاه من الترويسة (الزليج / المخطوط / الليل) لترى الصفحة كلها تتغير. الألوان الوظيفية (حالات الادعاء والعصور) ثابتة عبر الاتجاهات كي لا يتغير معنى اللون.</p>
   <h3>ألوان الحالة</h3><div class="swatches"><div class="sw"><i style="background:var(--fact)"></i><span>حقيقة مستقرة</span></div><div class="sw"><i style="background:var(--disputed)"></i><span>مختلف عليها</span></div><div class="sw"><i style="background:var(--inference)"></i><span>استنتاج</span></div><div class="sw"><i style="background:var(--myth)"></i><span>شائعة غير مثبتة</span></div></div>
   <h3 style="margin-top:18px">ألوان العصور</h3><div class="swatches">${ERAS.map(e=>`<div class="sw"><i style="background:${e.c}"></i><span>${e.name}</span></div>`).join("")}</div>
@@ -479,7 +509,7 @@ V.entity=(id)=>{const o=E[id];if(!o)return `<section><h2>لم أجد هذا ال
       <div class="panel"><p class="eyebrow">الموقع سنة ${state.y}م</p>${mapSvg(state.y,{focus:id})}<p class="note">في المنصة: مخطط المدينة في السنة المختارة (المسجد، القصر، الأسوار) كطبقة فوق الخريطة الحالية، وصور IIIF مرخصة.</p></div></div>`;}
   else if(o.type==="Person"){head=(typeof o.born==="number")?ribbon(o.born,o.died):"";const parts=o.name.parts?Object.entries(o.name.parts).map(([k,v])=>`<span>${({ism:"الاسم",kunya:"الكنية",nasab:"النسب",nisba:"النسبة",laqab:"اللقب"})[k]||k}: <b>${esc(v)}</b></span>`).join(""):"";extra=`<div class="cols"><div><div class="names"><b>${esc(o.name.ar)}</b>${o.name.en?`<span>${esc(o.name.en)}</span>`:""}<span>${(o.roles||[]).join(" · ")}</span><span>${yr(o.born)}–${yr(o.died)}م${o.dates_note?` <small>(${esc(o.dates_note)})</small>`:""}</span></div>${parts?`<div class="names" style="margin-top:6px">${parts}</div>`:""}<p style="margin-top:10px">${summaryHtml(o)}</p>${audienceBox(o)}</div>
       <div class="panel"><p class="eyebrow">مسار الحياة</p>${mapSvg((o.born||o.died||960)+20)}<p class="note">في المنصة: خط الرحلة بين أماكن الإقامة (born_in → lived_in → died_in) مع سنواتها، وشبكة الشيوخ والتلاميذ.</p></div></div>`;}
-  else if(o.type==="Event"){head=ribbon(o.year,o.end,o.hijri);const parts=EDGES.filter(e=>e.to===id&&e.rel==="participated_in");extra=`<div class="cols"><div><p>${summaryHtml(o)}</p><h3 style="margin-top:14px">الأطراف</h3><div class="chips">${parts.map(p=>`<a class="chip" href="${href(p.from)}">${esc(E[p.from].name.ar)} <small>${esc(p.role||"")}</small></a>`).join("")||"<span class='chip'>تُستكمل</span>"}</div>
+  else if(o.type==="Event"){head=ribbon(o.year,o.end,o.hijri);const parts=EDGES.filter(e=>e.to===id&&e.rel==="participated_in");extra=`<div class="cols"><div><p>${summaryHtml(o)}</p><h3 style="margin-top:14px">الأطراف</h3><div class="chips">${parts.map(p=>`<a class="chip" href="${href(p.from)}">${esc(E[p.from].name.ar)} <small>${esc(p.role||"")}</small></a>`).join("")||"<span class='chip'>لا أطراف مسجلة في القاعدة بعد</span>"}</div>
       ${(o.stories||[]).length?`<h3 style="margin-top:14px">على الخريطة مرحلةً مرحلة</h3><div class="chips">${o.stories.map(sid=>{const s2=STORIES.find(x=>x.id===sid);return s2?`<a class="chip" href="#/atlas?model=all&story=${sid}&step=1&tab=sto" style="border-color:var(--accent)">▶ ${esc(s2.title)} <small>${s2.steps.length} محطات</small></a>`:"";}).join("")}</div>`:""}
       ${(o.before||o.after)?`<h3 style="margin-top:14px">قبل ← بعد</h3><div class="chips">${(o.before||[]).map(chip).join("")}<span class="chip" style="border-color:var(--accent)">${esc(o.name.ar)}</span>${(o.after||[]).map(chip).join("")}</div>`:""}
       ${audienceBox(o)}</div><div class="panel"><p class="eyebrow">المكان</p>${mapSvg(o.year,{focus:o.place})}${o.kind==="معركة"?`<p class="note">خريطة المعركة على مراحل ▶ تُضاف في المنصة، مع تنبيه ثابت: أعداد الجيوش تُعرض كمدى بمصادره.</p>`:""}</div></div>`;}
@@ -489,10 +519,11 @@ V.entity=(id)=>{const o=E[id];if(!o)return `<section><h2>لم أجد هذا ال
   <p class="note">اقترح تصحيحًا · البيانات من قاعدة v1.2 (${esc(RELEASE.release_date||"")}) · أي إضافة تمر بمهارة andalus-evidence</p></section>`;};
 
 /* ===== لوحة المصدر ===== */
+const PLAIN={fact:"هذه المعلومة موثّقة: لها شاهد نصي واحد على الأقل قوبل مع مصدره حرفيًا، ولا يعارضه شاهد مرجّح.",partial:"موثّقة جزئيًا: الشواهد تدعم بعض ما ورد لا كله، أو استُنتج جزء منها من السياق؛ لذلك تُعرض بتنبيه.",disputed:"الشواهد متعارضة ولم يُرجَّح بينها بعد، فلا تُنشر معلومةً.",inference:"استنتاج من القرائن لا نص صريح به.",myth:"رواية شائعة لم يثبتها شاهد موثوق، وتُعرض للتنبيه لا للتصديق.",unverified:"لم يُتحقق منها بعد."};
 const STATUS={fact:["موثّق","var(--fact)"],partial:["موثّق جزئيًا (يُعرض بتنبيه)","var(--disputed)"],disputed:["متعارض (لا يُنشر)","var(--disputed)"],inference:["استنتاج","var(--inference)"],myth:["غير مثبت / لا يُنشر كحقيقة","var(--myth)"],unverified:["ينتظر شاهدًا (لا يُنشر)","var(--muted)"]};
 function openProv(cid){const c=CLAIMS[cid];if(!c)return;const [sn,sc]=STATUS[c.status]||STATUS.unverified;
   const kindBadge=k=>k&&k.startsWith("مصدر أولي")?`<span class="tier" style="border-color:var(--fact);color:var(--fact)">مصدر أولي</span>`:k?`<span class="tier">${esc(k)}</span>`:"";
-  document.getElementById("prov").innerHTML=`<button class="x" id="provX" aria-label="إغلاق">✕</button><p class="eyebrow">كيف نعرف هذا؟ · ${esc(cid)}</p><h3>${esc(c.text)}</h3><span class="st" style="color:${sc}"><i class="b ${c.status}"></i>${sn}</span>${c.v12_status?` <small style="color:var(--muted)">الحالة في القاعدة: ${esc(c.v12_status)}</small>`:""}
+  document.getElementById("prov").innerHTML=`<button class="x" id="provX" aria-label="إغلاق">✕</button><p class="eyebrow">كيف نعرف هذا؟${document.documentElement.dataset.audience==="scholar"?` · <span dir="ltr">${esc(cid)}</span>`:""}</p><h3>${esc(c.text)}</h3><span class="st" style="color:${sc}"><i class="b ${c.status}"></i>${sn}</span><p class="note" style="margin-top:6px">${esc(PLAIN[c.status]||"")}</p>${c.v12_status?` <small style="color:var(--muted)">الحالة في القاعدة: ${esc(c.v12_status)}</small>`:""}
     ${c.value_before?`<p class="note">القيمة قبل التصحيح: ${esc(c.value_before)}</p>`:""}${c.resolution?`<div class="counter"><b>حجة الحسم</b><p style="margin:6px 0">${esc(c.resolution)}</p></div>`:""}
     <h3 style="margin-top:14px;font-size:15px">الشواهد (${c.sources.length})</h3>
     ${c.sources.map(s=>{const S=SOURCES[s.src]||{title:s.src};return `<div class="src"><b>${esc(S.title)}${S.tier?`<span class="tier">مرتبة ${esc(S.tier)}</span>`:""}${kindBadge(s.source_kind)}${s.stance?`<span class="tier">${esc(s.stance)}</span>`:""}</b>${S.author?esc(S.author)+" · ":""}${esc(S.pub||"")}${S.rights&&S.rights!=="غير معروف"?` · الحقوق: ${esc(S.rights)}`:""}${s.review_status==="معتمد بالعين"?`<div style="margin-top:6px"><span class="tier" style="border-color:var(--fact);color:var(--fact);background:color-mix(in srgb,var(--fact) 12%,transparent)">✓ مطابق بالعين</span> <small style="color:var(--muted)">${(s.eye_reviewers||[]).map(esc).join("، ")}</small></div>`:s.review_status&&s.review_status!=="لم يُراجع"?`<div style="margin-top:6px"><span class="tier">${esc(s.review_status)}</span></div>`:""}${s.quote?`<q>«${esc(s.quote)}»</q>`:""}<div style="margin-top:4px;color:var(--muted)">الموضع: ${esc(s.loc||"—")}${s.verbatim?` · المطابقة: ${esc(s.verbatim)}`:""}${s.checked_on?` · فُحص ${esc(s.checked_on)}`:""}${s.url?` · <a href="${esc(s.url)}" target="_blank" rel="noopener">الرابط</a>`:""}</div>${s.note?`<div style="margin-top:4px;color:var(--muted)">ملاحظة: ${esc(s.note)}</div>`:""}</div>`;}).join("")}

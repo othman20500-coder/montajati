@@ -21,7 +21,7 @@ TYPE_MAP = {"Person": "Person", "Place": "Place", "Polity": "Polity", "Work": "W
 
 def tier_of(source_class: str | None) -> str:
     s = (source_class or "").lower()
-    if "primary" in s: return "أولي"
+    if s == "primary_text" or s.startswith("primary"): return "أولي"   # «Curated primary-source guide» دليل حديث لا نص أولي
     if "peer" in s or "academic" in s or "monograph" in s or "scholarship" in s: return "A"
     if "institutional" in s or "museum" in s or "heritage" in s or "research" in s or "library" in s or "curated" in s: return "B"
     if "general" in s or "reference" in s or "geospatial" in s or s == "book": return "C"
