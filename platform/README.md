@@ -20,6 +20,7 @@
 | `python platform/service/app.py create-user --db platform/db/andalus.sqlite --username othman --name "عثمان الشهري" --role owner --password …` | حساب صاحب المشروع (يعتمد المراجعين) |
 | `python platform/service/app.py create-user … --role reviewer` | حساب مراجع (يسجّل بياناته ثم ينتظر الاعتماد) |
 | `python platform/service/app.py serve --db platform/db/andalus.sqlite --port 8787` | الخدمة: مسارات القراءة v1.2 + مسارات المراجعة + شاشة المراجعة ولوحة الاعتماد على `/review` |
+| `/review/guide` | دليل المراجع من صفحة واحدة: المطلوب، ومعنى الأحكام الثلاثة، ومتى تلزم الملاحظة، وما لا يفعله المراجع |
 | `python platform/tools/import_reviews.py --artifact-dir <تصدير صفحة المراجعة> --owner "…"` أو `--excel form.xlsx` | نقل الأحكام السابقة (يعمل أكثر من مرة دون تكرار)، ثم أعد التصدير الثابت |
 
 القواعد المنفذة (`andalus_handoff/spec/review/README.md`): صاحب المشروع وحده يعتمد أو يسحب (سجل لا يُحذف)؛ المراجع المعتمد وقت الحكم وحده يحكم (403 لغيره)؛ الحكم بفرق أو عدم مطابقة يلزمه ملاحظة (422)؛ حكم واحد لكل مراجع على كل شاهد يعدّله أو يسحبه؛ الحالة تُحسب من `v_attestation_review_status`؛ عند «معتمد بالعين» يُكتب في `attestations.verbatim_check` «مطابق بالعين: المراجعان وتخصصاهما، التاريخ» وتُحفظ القيمة السابقة في `attestation_verbatim_history` وتُستعاد إذا زالت الحالة. الشارة تظهر في طبقة الأدلة بالنموذج الثابت بعد إعادة التصدير.
