@@ -224,6 +224,28 @@ def main():
     modules = R("SELECT module_id,title_ar,summary_ar,level,estimated_minutes,period_label,status FROM v_learning_modules WHERE status='جاهز' ORDER BY module_id")
     release = R("SELECT version,release_date,gates_pass,gates_total FROM release_manifest ORDER BY release_date DESC, version DESC LIMIT 1")
 
+    # ---- الأطلس: طبقات موضوعية ومظاريف تحليلية (ليست حدودًا سياسية: القاعدة 7 وSCOPE-004)
+    layers = R("SELECT * FROM atlas_layers ORDER BY min_year")
+    members = {}
+    for m in R("SELECT * FROM atlas_layer_members"):
+        members.setdefault(m["layer_id"], []).append({"place": m["entity_id"], "role": m["role"]})
+    for l in layers: l["members"] = members.get(l["layer_id"], [])
+    zones = []
+    for z in R("SELECT * FROM atlas_zones ORDER BY min_year"):
+        try: g = json.loads(z["geometry_geojson"])
+        except Exception: g = None
+        zones.append({"id": z["zone_id"], "label": z["label_ar"], "from": z["min_year"], "to": z["max_year"], "theme": z["theme"],
+                      "status": z["cartographic_status"], "note": z["note_ar"], "geometry": g})
+    scope = R("SELECT scope_id, component, included, policy_ar FROM release_scope ORDER BY scope_id")
+    boundary_sources = R("SELECT boundary_source_id, label, url, coverage, rights_status, evidence_grade, intended_use, qa_rule FROM boundary_sources")
+    models = []
+    for mid in [r["model"] for r in R("SELECT DISTINCT model FROM assertions WHERE model IS NOT NULL ORDER BY model")]:
+        asts = [aid for aid, c in claims.items() if c.get("model") == mid]
+        ev_years = sorted({e["year"] for e in entities if e["type"] == "Event" and any(c in asts for _, c in e["summary"])})
+        models.append({"id": mid, "assertions": asts, "todos": [{"id": aid, "todo": claims[aid]["todo"], "text": claims[aid]["text"]} for aid in asts if claims[aid].get("todo")],
+                       "years": ev_years, "places": sorted({claims[a]["target"] for a in asts if claims[a]["target"] and claims[a]["target"].startswith("PLC")})})
+    atlas = {"layers": layers, "zones": zones, "scope": scope, "boundary_sources": boundary_sources, "models": models}
+
     ids = {o["id"] for o in entities}
     # تحقق اتساق قبل الكتابة
     problems = []
@@ -253,6 +275,7 @@ const ENTITIES = {J(entities)};
 const STORIES = {J(stories)};
 const MODULES = {J(modules)};
 const QUIZ = {J(quiz)};
+const ATLAS = {J(atlas)};
 const E = {{}}; for (const o of ENTITIES) E[o.id] = o;
 function add(o) {{ E[o.id] = o; return o; }}
 """
