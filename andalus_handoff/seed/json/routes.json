@@ -1,0 +1,11 @@
+[
+ {
+  "route_id": "ROUTE-001",
+  "label_ar": "الجِلياني: غرناطة → دمشق",
+  "route_type": "KnowledgeMigration",
+  "start_date": null,
+  "end_date": "1206",
+  "claim_id": "ARC-CLM09",
+  "notes": "Seed route from AMOI-II; to be enriched with intermediate stops if directly sourced."
+ }
+]

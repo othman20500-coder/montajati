@@ -1,0 +1,262 @@
+[
+ {
+  "claim_id": "CLM-001",
+  "source_id": "SRC-326B573BBA",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-001",
+  "source_id": "SRC-17A4D51B44",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "ARC-CLM01",
+  "source_id": "SRC-1990D2E895",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "ARC-CLM03",
+  "source_id": "SRC-3498AB3076",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "ARC-CLM03",
+  "source_id": "SRC-F67E8CE018",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "RUR-CLM02",
+  "source_id": "SRC-EF1A9587DD",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "RUR-CLM04",
+  "source_id": "SRC-22B631316C",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "SOC-CLM01",
+  "source_id": "SRC-CB6B8DB2B7",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "SOC-CLM01",
+  "source_id": "SRC-C3E09140AE",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-002",
+  "source_id": "SRC-FA9D2D9443",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-002",
+  "source_id": "SRC-2CCB987052",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-010",
+  "source_id": "SRC-1990D2E895",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-010",
+  "source_id": "SRC-FA9D2D9443",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "SOC-CLM06",
+  "source_id": "SRC-385ADC829F",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "SOC-CLM06",
+  "source_id": "SRC-1D5FE1782E",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "RUR-CLM03",
+  "source_id": "SRC-BDD32C0DDC",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "RUR-CLM03",
+  "source_id": "SRC-DC54B5ACF6",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "ARC-CLM04",
+  "source_id": "SRC-88C32727FD",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "SOC-CLM09",
+  "source_id": "SRC-0DBB04D925",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-MS01",
+  "source_id": "SRC-62278995F4",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-MS02",
+  "source_id": "SRC-3D20624E74",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "RUR-CLM06",
+  "source_id": "SRC-F86CF814B9",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "RUR-CLM06",
+  "source_id": "SRC-13F0EF4EDE",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-018",
+  "source_id": "SRC-C60B7F01E7",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-011",
+  "source_id": "SRC-8585EF64FC",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "SOC-CLM04",
+  "source_id": "SRC-08093EBC7F",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "SOC-CLM04",
+  "source_id": "SRC-6A3B9BE444",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "ARC-CLM05",
+  "source_id": "SRC-88C32727FD",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "ARC-CLM05",
+  "source_id": "SRC-82E0C1DE51",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "ARC-CLM07",
+  "source_id": "SRC-D8B41C5711",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "SOC-CLM07",
+  "source_id": "SRC-94CFFFD3D1",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "SOC-CLM07",
+  "source_id": "SRC-495A28E127",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "SOC-CLM08",
+  "source_id": "SRC-E29AF5E30C",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "SOC-CLM08",
+  "source_id": "SRC-4C230142FA",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "ARC-CLM09",
+  "source_id": "SRC-9264D9F9B0",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "ARC-CLM09",
+  "source_id": "SRC-0CD20155B6",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-003",
+  "source_id": "SRC-B1CF443098",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-003",
+  "source_id": "SRC-F0F86304B1",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "SOC-CLM10",
+  "source_id": "SRC-2D2113D7F8",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "SOC-CLM10",
+  "source_id": "SRC-D9F327E4FB",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "ATLAS-CLM01",
+  "source_id": "SRC-FF27E1A80B",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "ATLAS-CLM02",
+  "source_id": "SRC-B819B01BE2",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "ATLAS-CLM03",
+  "source_id": "SRC-F650A5BEAE",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "ATLAS-CLM04",
+  "source_id": "SRC-5CED25F7F5",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-001",
+  "source_id": "LIB-BK-005",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-001",
+  "source_id": "LIB-ART-029",
+  "ordinal": 4
+ },
+ {
+  "claim_id": "CLM-001",
+  "source_id": "EXT-MET-TOAH",
+  "ordinal": 5
+ },
+ {
+  "claim_id": "CLM-001",
+  "source_id": "SRC-B819B01BE2",
+  "ordinal": 6
+ },
+ {
+  "claim_id": "ATLAS-CLM01",
+  "source_id": "LIB-BK-005",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "ATLAS-CLM01",
+  "source_id": "EXT-MWNF",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "ATLAS-CLM02",
+  "source_id": "EXT-MET-TOAH",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "ATLAS-CLM03",
+  "source_id": "EXT-PATRONATO",
+  "ordinal": 2
+ }
+]

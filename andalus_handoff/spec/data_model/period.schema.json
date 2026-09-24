@@ -1,0 +1,50 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Period",
+ "type": "object",
+ "required": [
+  "id",
+  "label",
+  "start",
+  "stop"
+ ],
+ "properties": {
+  "id": {
+   "type": "string",
+   "pattern": "^PRD-[0-9]+[a-z]?$"
+  },
+  "label": {
+   "type": "string"
+  },
+  "start": {
+   "type": "object",
+   "required": [
+    "in"
+   ],
+   "properties": {
+    "in": {
+     "type": "object",
+     "required": [
+      "earliestYear",
+      "latestYear"
+     ]
+    }
+   }
+  },
+  "stop": {
+   "type": "object",
+   "required": [
+    "in"
+   ],
+   "properties": {
+    "in": {
+     "type": "object",
+     "required": [
+      "earliestYear",
+      "latestYear"
+     ]
+    }
+   }
+  }
+ }
+}

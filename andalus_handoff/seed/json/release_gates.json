@@ -1,0 +1,58 @@
+[
+ {
+  "gate_id": "GATE-POP",
+  "label_ar": "Population",
+  "status": "PASS",
+  "evidence_ar": "تم بناء طبقات أشخاص/أماكن/أدلة/Claims متعددة المحاور.",
+  "last_checked": "2026-09-23"
+ },
+ {
+  "gate_id": "GATE-VER",
+  "label_ar": "Verification",
+  "status": "PASS",
+  "evidence_ar": "قائمة الأولوية السابقة أغلقت مع بقاء Claims حساسة للتحديث كمراقبة لا كمانع.",
+  "last_checked": "2026-09-23"
+ },
+ {
+  "gate_id": "GATE-DB",
+  "label_ar": "Database/API",
+  "status": "PASS",
+  "evidence_ar": "SQLite + API read endpoints + OpenAPI + integrity checks.",
+  "last_checked": "2026-09-23"
+ },
+ {
+  "gate_id": "GATE-ATLAS",
+  "label_ar": "Atlas",
+  "status": "PASS",
+  "evidence_ar": "Gazetteer + GeoJSON + طبقات + قصص + جودة إسناد مكاني.",
+  "last_checked": "2026-09-23"
+ },
+ {
+  "gate_id": "GATE-IX",
+  "label_ar": "Interactive Experience",
+  "status": "PASS",
+  "evidence_ar": "Prototype v0.3: خريطة/زمن/مرشحات/قصص/تعلم/اختبار.",
+  "last_checked": "2026-09-23"
+ },
+ {
+  "gate_id": "GATE-EDU",
+  "label_ar": "Education",
+  "status": "PASS",
+  "evidence_ar": "6 وحدات و15 سؤالًا مرتبطة مباشرة بـClaims.",
+  "last_checked": "2026-09-23"
+ },
+ {
+  "gate_id": "GATE-QA",
+  "label_ar": "QA",
+  "status": "PASS",
+  "evidence_ar": "اختبارات قاعدة/روابط/تعليم/حقوق مع regression suite.",
+  "last_checked": "2026-09-23"
+ },
+ {
+  "gate_id": "GATE-SUS",
+  "label_ar": "Sustainability",
+  "status": "PASS",
+  "evidence_ar": "ملكية تشغيلية موثقة لـ6 أدوار + 8 قواعد صيانة مالكة + watchlist لـ8 مصادر حرجة + source-health snapshot + regression/CI scripts + release manifest policy.",
+  "last_checked": "2026-09-23"
+ }
+]

@@ -1,0 +1,1127 @@
+[
+ {
+  "id": "PER-001",
+  "shuhra": "عبد الرحمن الداخل",
+  "latin": "ʿAbd al-Raḥmān I",
+  "birth": 731,
+  "death": 788,
+  "date_note": "",
+  "roles": [
+   "أمير"
+  ],
+  "places": [
+   "PLC-001"
+  ],
+  "name": {
+   "ism": "عبد الرحمن",
+   "kunya": "أبو المطرف",
+   "nasab": "بن معاوية بن هشام بن عبد الملك",
+   "nisba": [
+    "الأموي"
+   ],
+   "laqab": "الداخل",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": [
+   {
+    "id": "TEN-001",
+    "polity": "POL-001",
+    "role": "أمير",
+    "start": 756,
+    "end": 788,
+    "precision": "سنة"
+   }
+  ]
+ },
+ {
+  "id": "PER-002",
+  "shuhra": "عبد الرحمن الثالث الناصر",
+  "latin": "ʿAbd al-Raḥmān III",
+  "birth": 891,
+  "death": 961,
+  "date_note": "ولد 22 رمضان 277هـ (= 7 يناير 891م بالتحويل الجدولي)؛ صُحح من 889 في v5.2",
+  "roles": [
+   "أمير",
+   "خليفة"
+  ],
+  "places": [
+   "PLC-001",
+   "PLC-002"
+  ],
+  "name": {
+   "ism": "عبد الرحمن",
+   "kunya": "أبو المطرف",
+   "nasab": "بن محمد بن عبد الله",
+   "nisba": [
+    "الأموي"
+   ],
+   "laqab": "الناصر لدين الله",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": [
+   {
+    "id": "TEN-002a",
+    "polity": "POL-001",
+    "role": "أمير",
+    "start": 912,
+    "end": 929,
+    "precision": "سنة"
+   },
+   {
+    "id": "TEN-002b",
+    "polity": "POL-002",
+    "role": "خليفة",
+    "start": 929,
+    "end": 961,
+    "precision": "سنة"
+   }
+  ]
+ },
+ {
+  "id": "PER-003",
+  "shuhra": "الحكم المستنصر بالله",
+  "latin": "al-Ḥakam II",
+  "birth": 915,
+  "death": 976,
+  "date_note": "",
+  "roles": [
+   "خليفة"
+  ],
+  "places": [
+   "PLC-001"
+  ],
+  "name": {
+   "ism": "الحكم",
+   "kunya": "أبو العاص",
+   "nasab": "بن عبد الرحمن الناصر",
+   "nisba": [
+    "الأموي"
+   ],
+   "laqab": "المستنصر بالله",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": [
+   {
+    "id": "TEN-003",
+    "polity": "POL-002",
+    "role": "خليفة",
+    "start": 961,
+    "end": 976,
+    "precision": "سنة"
+   }
+  ]
+ },
+ {
+  "id": "PER-004",
+  "shuhra": "المنصور ابن أبي عامر",
+  "latin": "al-Manṣūr Ibn Abī ʿĀmir",
+  "birth": 939,
+  "death": 1002,
+  "date_note": "توفي 27 رمضان 392هـ (أغسطس 1002م) بمدينة سالم (البيان المغرب)؛ 393هـ عند الحميدي؛ المولد نحو 326–328هـ (938–940م)",
+  "roles": [
+   "حاجب",
+   "قائد"
+  ],
+  "places": [
+   "PLC-001",
+   "PLC-D03"
+  ],
+  "name": {
+   "ism": "محمد",
+   "kunya": "أبو عامر",
+   "nasab": "بن عبد الله بن أبي عامر",
+   "nisba": [
+    "المعافري"
+   ],
+   "laqab": "المنصور",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-005",
+  "shuhra": "ابن حيان القرطبي",
+  "latin": "Ibn Ḥayyān",
+  "birth": 987,
+  "death": 1076,
+  "date_note": "",
+  "roles": [
+   "مؤرخ"
+  ],
+  "places": [
+   "PLC-001"
+  ],
+  "name": {
+   "ism": "حيان",
+   "kunya": "أبو مروان",
+   "nasab": "بن خلف بن حسين بن حيان",
+   "nisba": [
+    "القرطبي"
+   ],
+   "laqab": "",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-006",
+  "shuhra": "ابن حزم",
+  "latin": "Ibn Ḥazm",
+  "birth": 994,
+  "death": 1064,
+  "date_note": "",
+  "roles": [
+   "فقيه",
+   "أديب"
+  ],
+  "places": [
+   "PLC-001"
+  ],
+  "name": {
+   "ism": "علي",
+   "kunya": "أبو محمد",
+   "nasab": "بن أحمد بن سعيد بن حزم",
+   "nisba": [
+    "القرطبي",
+    "الظاهري"
+   ],
+   "laqab": "",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-007",
+  "shuhra": "ابن زيدون",
+  "latin": "Ibn Zaydūn",
+  "birth": 1003,
+  "death": 1071,
+  "date_note": "",
+  "roles": [
+   "شاعر",
+   "كاتب"
+  ],
+  "places": [
+   "PLC-001",
+   "PLC-004"
+  ],
+  "name": {
+   "ism": "أحمد",
+   "kunya": "أبو الوليد",
+   "nasab": "بن عبد الله بن زيدون",
+   "nisba": [
+    "المخزومي"
+   ],
+   "laqab": "",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-008",
+  "shuhra": "ولادة بنت المستكفي",
+  "latin": "Wallāda bint al-Mustakfī",
+  "birth": null,
+  "death": null,
+  "date_note": "نحو 994–1091م",
+  "roles": [
+   "شاعرة"
+  ],
+  "places": [
+   "PLC-001"
+  ],
+  "name": {
+   "ism": "ولادة",
+   "kunya": "",
+   "nasab": "بنت محمد المستكفي",
+   "nisba": [
+    "الأموية"
+   ],
+   "laqab": "",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-009",
+  "shuhra": "المعتمد بن عباد",
+  "latin": "al-Muʿtamid ibn ʿAbbād",
+  "birth": 1040,
+  "death": 1095,
+  "date_note": "",
+  "roles": [
+   "ملك طائفة",
+   "شاعر"
+  ],
+  "places": [
+   "PLC-004"
+  ],
+  "name": {
+   "ism": "محمد",
+   "kunya": "أبو القاسم",
+   "nasab": "بن عباد بن محمد",
+   "nisba": [],
+   "laqab": "المعتمد على الله",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": [
+   {
+    "id": "TEN-004",
+    "polity": "POL-003",
+    "role": "ملك طائفة",
+    "start": 1069,
+    "end": 1091,
+    "precision": "سنة"
+   }
+  ]
+ },
+ {
+  "id": "PER-010",
+  "shuhra": "ابن عمار",
+  "latin": "Ibn ʿAmmār",
+  "birth": 1031,
+  "death": 1086,
+  "date_note": "",
+  "roles": [
+   "شاعر",
+   "وزير"
+  ],
+  "places": [
+   "PLC-004",
+   "PLC-014"
+  ],
+  "name": {
+   "ism": "",
+   "kunya": "",
+   "nasab": "",
+   "nisba": [],
+   "laqab": "",
+   "origin": "فارغ عمدًا"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-011",
+  "shuhra": "صاعد الأندلسي",
+  "latin": "Ṣāʿid al-Andalusī",
+  "birth": 1029,
+  "death": 1070,
+  "date_note": "",
+  "roles": [
+   "قاضٍ",
+   "مؤرخ علوم"
+  ],
+  "places": [
+   "PLC-005"
+  ],
+  "name": {
+   "ism": "صاعد",
+   "kunya": "أبو القاسم",
+   "nasab": "بن أحمد",
+   "nisba": [
+    "الأندلسي",
+    "الطليطلي"
+   ],
+   "laqab": "",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-012",
+  "shuhra": "الزهراوي",
+  "latin": "al-Zahrāwī",
+  "birth": null,
+  "death": null,
+  "date_note": "توفي بعد 400هـ (الصلة ص162)، وعاصره ابن حزم (رسائله ج2 ص185)؛ نحو 936–1013م عند Britannica، والوفاة 427هـ/1036م عند الزركلي — لا نص أوليًا بسنة الوفاة",
+  "roles": [
+   "طبيب"
+  ],
+  "places": [
+   "PLC-001",
+   "PLC-002"
+  ],
+  "name": {
+   "ism": "خلف",
+   "kunya": "أبو القاسم",
+   "nasab": "بن عباس",
+   "nisba": [
+    "الزهراوي"
+   ],
+   "laqab": "",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-013",
+  "shuhra": "الزرقالي",
+  "latin": "al-Zarqālī",
+  "birth": null,
+  "death": null,
+  "date_note": "القرن 11م",
+  "roles": [
+   "فلكي"
+  ],
+  "places": [
+   "PLC-005"
+  ],
+  "name": {
+   "ism": "إبراهيم",
+   "kunya": "أبو إسحاق",
+   "nasab": "بن يحيى",
+   "nisba": [
+    "النقاش"
+   ],
+   "laqab": "الزرقالي",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-014",
+  "shuhra": "ابن باجة",
+  "latin": "Ibn Bājja",
+  "birth": null,
+  "death": 1139,
+  "date_note": "",
+  "roles": [
+   "فيلسوف",
+   "طبيب"
+  ],
+  "places": [
+   "PLC-006"
+  ],
+  "name": {
+   "ism": "",
+   "kunya": "",
+   "nasab": "",
+   "nisba": [],
+   "laqab": "",
+   "origin": "فارغ عمدًا"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-015",
+  "shuhra": "ابن طفيل",
+  "latin": "Ibn Ṭufayl",
+  "birth": null,
+  "death": 1185,
+  "date_note": "نحو 1105–1185م",
+  "roles": [
+   "فيلسوف",
+   "طبيب"
+  ],
+  "places": [
+   "PLC-003",
+   "PLC-C06"
+  ],
+  "name": {
+   "ism": "محمد",
+   "kunya": "أبو بكر",
+   "nasab": "بن عبد الملك بن طفيل",
+   "nisba": [
+    "القيسي"
+   ],
+   "laqab": "",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-016",
+  "shuhra": "ابن رشد",
+  "latin": "Ibn Rushd",
+  "birth": 1126,
+  "death": 1198,
+  "date_note": "",
+  "roles": [
+   "فيلسوف",
+   "فقيه",
+   "طبيب",
+   "قاضٍ"
+  ],
+  "places": [
+   "PLC-001",
+   "PLC-004"
+  ],
+  "name": {
+   "ism": "محمد",
+   "kunya": "أبو الوليد",
+   "nasab": "بن أحمد بن محمد بن رشد",
+   "nisba": [
+    "القرطبي"
+   ],
+   "laqab": "الحفيد",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-017",
+  "shuhra": "ابن عربي",
+  "latin": "Ibn ʿArabī",
+  "birth": 1165,
+  "death": 1240,
+  "date_note": "",
+  "roles": [
+   "متصوف"
+  ],
+  "places": [
+   "PLC-011",
+   "PLC-004"
+  ],
+  "name": {
+   "ism": "محمد",
+   "kunya": "أبو بكر",
+   "nasab": "بن علي بن محمد",
+   "nisba": [
+    "الحاتمي",
+    "الطائي"
+   ],
+   "laqab": "محيي الدين",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-018",
+  "shuhra": "لسان الدين ابن الخطيب",
+  "latin": "Ibn al-Khaṭīb",
+  "birth": 1313,
+  "death": 1374,
+  "date_note": "ولد 25 رجب 713هـ (نوفمبر 1313م) بنص الإحاطة ج4 ص548؛ قُتل خنقًا في سجنه بفاس سنة 776هـ، بين مستهلّها وشوالها (منتصف 1374م إلى أوائل 1375م) بحسب ابن خلدون: العبر ج7 ص452–453، والرحلة ص187",
+  "roles": [
+   "وزير",
+   "مؤرخ",
+   "أديب"
+  ],
+  "places": [
+   "PLC-003"
+  ],
+  "name": {
+   "ism": "محمد",
+   "kunya": "أبو عبد الله",
+   "nasab": "بن عبد الله",
+   "nisba": [
+    "السلماني"
+   ],
+   "laqab": "لسان الدين",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-019",
+  "shuhra": "ابن سعيد المغربي",
+  "latin": "Ibn Saʿīd al-Maghribī",
+  "birth": 1213,
+  "death": 1286,
+  "date_note": "",
+  "roles": [
+   "جغرافي",
+   "أديب"
+  ],
+  "places": [],
+  "name": {
+   "ism": "علي",
+   "kunya": "أبو الحسن",
+   "nasab": "بن موسى بن سعيد",
+   "nisba": [
+    "المغربي"
+   ],
+   "laqab": "",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-020",
+  "shuhra": "الإدريسي",
+  "latin": "al-Idrīsī",
+  "birth": null,
+  "death": null,
+  "date_note": "نحو 1100–1165/66م",
+  "roles": [
+   "جغرافي"
+  ],
+  "places": [],
+  "name": {
+   "ism": "محمد",
+   "kunya": "أبو عبد الله",
+   "nasab": "بن محمد",
+   "nisba": [
+    "الإدريسي"
+   ],
+   "laqab": "",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-021",
+  "shuhra": "ابن البيطار",
+  "latin": "Ibn al-Bayṭār",
+  "birth": null,
+  "death": 1248,
+  "date_note": "",
+  "roles": [
+   "عالم نبات"
+  ],
+  "places": [
+   "PLC-010"
+  ],
+  "name": {
+   "ism": "عبد الله",
+   "kunya": "أبو محمد",
+   "nasab": "بن أحمد",
+   "nisba": [
+    "المالقي"
+   ],
+   "laqab": "ضياء الدين",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-022",
+  "shuhra": "ابن قزمان",
+  "latin": "Ibn Quzmān",
+  "birth": null,
+  "death": 1160,
+  "date_note": "نحو 1087–1160م",
+  "roles": [
+   "شاعر زجل"
+  ],
+  "places": [
+   "PLC-001"
+  ],
+  "name": {
+   "ism": "محمد",
+   "kunya": "أبو بكر",
+   "nasab": "بن عيسى بن عبد الملك بن قزمان",
+   "nisba": [
+    "القرطبي"
+   ],
+   "laqab": "",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-023",
+  "shuhra": "حفصة الركونية",
+  "latin": "Ḥafṣa al-Rakūniyya",
+  "birth": null,
+  "death": null,
+  "date_note": "القرن 12م",
+  "roles": [
+   "شاعرة"
+  ],
+  "places": [
+   "PLC-003"
+  ],
+  "name": {
+   "ism": "حفصة",
+   "kunya": "",
+   "nasab": "بنت الحاج",
+   "nisba": [
+    "الركونية"
+   ],
+   "laqab": "",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-024",
+  "shuhra": "صموئيل بن نغريلة",
+  "latin": "Samuel ibn Naghrīla",
+  "birth": 993,
+  "death": null,
+  "date_note": "ت 1055/56م",
+  "roles": [
+   "وزير",
+   "قائد",
+   "شاعر"
+  ],
+  "places": [
+   "PLC-001",
+   "PLC-003"
+  ],
+  "name": {
+   "ism": "إسماعيل",
+   "kunya": "أبو إبراهيم",
+   "nasab": "بن يوسف بن نغريلة",
+   "nisba": [],
+   "laqab": "الناغيد (بالعبرية)",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-025",
+  "shuhra": "يهوذا اللاوي",
+  "latin": "Judah Halevi",
+  "birth": null,
+  "death": 1141,
+  "date_note": "نحو 1075–1141م",
+  "roles": [
+   "شاعر",
+   "مفكر"
+  ],
+  "places": [],
+  "name": {
+   "ism": "",
+   "kunya": "",
+   "nasab": "",
+   "nisba": [],
+   "laqab": "",
+   "origin": "فارغ عمدًا"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-026",
+  "shuhra": "موسى بن عزرا",
+  "latin": "Moses ibn Ezra",
+  "birth": null,
+  "death": null,
+  "date_note": "نحو 1055–بعد 1135م",
+  "roles": [
+   "شاعر",
+   "ناقد"
+  ],
+  "places": [
+   "PLC-003"
+  ],
+  "name": {
+   "ism": "",
+   "kunya": "",
+   "nasab": "",
+   "nisba": [],
+   "laqab": "",
+   "origin": "فارغ عمدًا"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-027",
+  "shuhra": "عباس بن ناصح",
+  "latin": "ʿAbbās b. Nāṣiḥ",
+  "birth": null,
+  "death": null,
+  "date_note": "ت نحو 852م",
+  "roles": [
+   "قاضٍ",
+   "شاعر"
+  ],
+  "places": [
+   "PLC-C05",
+   "PLC-001"
+  ],
+  "name": {
+   "ism": "",
+   "kunya": "",
+   "nasab": "",
+   "nisba": [],
+   "laqab": "",
+   "origin": "فارغ عمدًا"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-W01",
+  "shuhra": "عائشة بنت أحمد القرطبية",
+  "latin": "ʿĀʾisha bint Aḥmad al-Qurṭubiyya",
+  "birth": null,
+  "death": 1010,
+  "date_note": "ت 1009–1010م",
+  "roles": [
+   "شاعرة",
+   "ناسخة"
+  ],
+  "places": [
+   "PLC-001"
+  ],
+  "name": {
+   "ism": "",
+   "kunya": "",
+   "nasab": "",
+   "nisba": [],
+   "laqab": "",
+   "origin": "فارغ عمدًا"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-W02",
+  "shuhra": "أم الحسن الطنجالية",
+  "latin": "Umm al-Ḥasan al-Tanyāliyya",
+  "birth": null,
+  "death": null,
+  "date_note": "منتصف 14م",
+  "roles": [
+   "شاعرة",
+   "طبيبة"
+  ],
+  "places": [
+   "PLC-003"
+  ],
+  "name": {
+   "ism": "",
+   "kunya": "",
+   "nasab": "",
+   "nisba": [],
+   "laqab": "",
+   "origin": "فارغ عمدًا"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-028",
+  "shuhra": "المقتدر بن هود",
+  "latin": "al-Muqtadir ibn Hūd",
+  "birth": null,
+  "death": 1081,
+  "date_note": "حكم 1046–1081م (v4.9)",
+  "roles": [
+   "ملك طائفة"
+  ],
+  "places": [
+   "PLC-006",
+   "PLC-C03"
+  ],
+  "name": {
+   "ism": "",
+   "kunya": "",
+   "nasab": "",
+   "nisba": [],
+   "laqab": "",
+   "origin": "فارغ عمدًا"
+  },
+  "tenures": [
+   {
+    "id": "TEN-005",
+    "polity": "POL-004",
+    "role": "ملك طائفة",
+    "start": 1046,
+    "end": 1081,
+    "precision": "سنة"
+   }
+  ]
+ },
+ {
+  "id": "PER-029",
+  "shuhra": "مجاهد العامري",
+  "latin": "Mujāhid al-ʿĀmirī",
+  "birth": null,
+  "death": null,
+  "date_note": "القرن 11م — يحتاج ضبط السنوات",
+  "roles": [
+   "ملك طائفة"
+  ],
+  "places": [
+   "PLC-008"
+  ],
+  "name": {
+   "ism": "",
+   "kunya": "",
+   "nasab": "",
+   "nisba": [],
+   "laqab": "",
+   "origin": "فارغ عمدًا"
+  },
+  "tenures": [
+   {
+    "id": "TEN-006",
+    "polity": "POL-005",
+    "role": "ملك طائفة",
+    "start": null,
+    "end": null,
+    "precision": "قرن"
+   }
+  ]
+ },
+ {
+  "id": "PER-030",
+  "shuhra": "محمد الأول ابن الأحمر",
+  "latin": "Muḥammad I ibn al-Aḥmar",
+  "birth": 1194,
+  "death": 1273,
+  "date_note": "ولد 591هـ (عام الأرك) بأرجونة؛ بويع بغرناطة 26 رمضان 635هـ؛ توفي 29 جمادى الآخرة 671هـ (الإحاطة ج2 ص55–56)",
+  "roles": [
+   "سلطان"
+  ],
+  "places": [
+   "PLC-003"
+  ],
+  "name": {
+   "ism": "محمد",
+   "kunya": "أبو عبد الله",
+   "nasab": "بن يوسف بن نصر",
+   "nisba": [
+    "الأنصاري الخزرجي"
+   ],
+   "laqab": "الغالب بالله",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": [
+   {
+    "id": "TEN-007",
+    "polity": "POL-008",
+    "role": "سلطان",
+    "start": 1232,
+    "end": 1273,
+    "precision": "نطاق سنوات"
+   }
+  ]
+ },
+ {
+  "id": "PER-031",
+  "shuhra": "محمد الثاني عشر أبو عبد الله",
+  "latin": "Muḥammad XII (Boabdil)",
+  "birth": null,
+  "death": null,
+  "date_note": "حكم 1482–1483 و1487–1492م",
+  "roles": [
+   "سلطان"
+  ],
+  "places": [
+   "PLC-003"
+  ],
+  "name": {
+   "ism": "محمد",
+   "kunya": "أبو عبد الله",
+   "nasab": "بن علي بن سعد",
+   "nisba": [
+    "النصري"
+   ],
+   "laqab": "",
+   "origin": "ref — معرفة مرجعية عامة تُطابق قبل النشر"
+  },
+  "tenures": [
+   {
+    "id": "TEN-008a",
+    "polity": "POL-008",
+    "role": "سلطان",
+    "start": 1482,
+    "end": 1483,
+    "precision": "سنة"
+   },
+   {
+    "id": "TEN-008b",
+    "polity": "POL-008",
+    "role": "سلطان",
+    "start": 1487,
+    "end": 1492,
+    "precision": "سنة"
+   }
+  ]
+ },
+ {
+  "id": "PER-032",
+  "shuhra": "محمد الثاني الفقيه",
+  "latin": "Muḥammad II al-Faqīh",
+  "birth": null,
+  "death": 1302,
+  "date_note": "توفي شعبان 701هـ (أبريل–مايو 1302م)",
+  "roles": [
+   "سلطان"
+  ],
+  "places": [
+   "PLC-003"
+  ],
+  "name": {
+   "ism": "",
+   "kunya": "",
+   "nasab": "",
+   "nisba": [],
+   "laqab": "",
+   "origin": "فارغ عمدًا"
+  },
+  "tenures": [
+   {
+    "id": "TEN-009",
+    "polity": "POL-008",
+    "role": "سلطان",
+    "start": 1273,
+    "end": 1302,
+    "precision": "سنة"
+   }
+  ]
+ },
+ {
+  "id": "PER-033",
+  "shuhra": "يوسف الأول",
+  "latin": "Yūsuf I",
+  "birth": 1318,
+  "death": 1354,
+  "date_note": "ولد 28 ربيع الآخر 718هـ (يونيو 1318م)؛ ولي 14 ذي الحجة 733هـ؛ قُتل 1 شوال 755هـ (الإحاطة ج4 ص292)",
+  "roles": [
+   "سلطان"
+  ],
+  "places": [
+   "PLC-003",
+   "PLC-G01"
+  ],
+  "name": {
+   "ism": "",
+   "kunya": "",
+   "nasab": "",
+   "nisba": [],
+   "laqab": "",
+   "origin": "فارغ عمدًا"
+  },
+  "tenures": [
+   {
+    "id": "TEN-010",
+    "polity": "POL-008",
+    "role": "سلطان",
+    "start": 1333,
+    "end": 1354,
+    "precision": "سنة"
+   }
+  ]
+ },
+ {
+  "id": "PER-034",
+  "shuhra": "محمد الخامس الغني بالله",
+  "latin": "Muḥammad V",
+  "birth": 1339,
+  "death": 1391,
+  "date_note": "ولد 22 جمادى الآخرة 739هـ (4/5 يناير 1339م) بنص الإحاطة ج2 ص50؛ توفي 793هـ (1390/1391م)",
+  "roles": [
+   "سلطان"
+  ],
+  "places": [
+   "PLC-003",
+   "PLC-G01"
+  ],
+  "name": {
+   "ism": "",
+   "kunya": "",
+   "nasab": "",
+   "nisba": [],
+   "laqab": "",
+   "origin": "فارغ عمدًا"
+  },
+  "tenures": [
+   {
+    "id": "TEN-011a",
+    "polity": "POL-008",
+    "role": "سلطان",
+    "start": 1354,
+    "end": 1359,
+    "precision": "سنة"
+   },
+   {
+    "id": "TEN-011b",
+    "polity": "POL-008",
+    "role": "سلطان",
+    "start": 1362,
+    "end": 1391,
+    "precision": "سنة"
+   }
+  ]
+ },
+ {
+  "id": "PER-035",
+  "shuhra": "ابن زمرك",
+  "latin": "Ibn Zamrak",
+  "birth": 1333,
+  "death": null,
+  "date_note": "ولد 14 شوال 733هـ (يونيو 1333م)؛ قُتل بعد 795هـ بحسب المقري (نفح الطيب ج7 ص170)؛ 797هـ/1395م عند عنان بلا مصدر مفحوص",
+  "roles": [
+   "شاعر",
+   "وزير"
+  ],
+  "places": [
+   "PLC-003",
+   "PLC-G01"
+  ],
+  "name": {
+   "ism": "",
+   "kunya": "",
+   "nasab": "",
+   "nisba": [],
+   "laqab": "",
+   "origin": "فارغ عمدًا"
+  },
+  "tenures": []
+ },
+ {
+  "id": "PER-036",
+  "shuhra": "أبو الحسن علي",
+  "latin": "Abū l-Ḥasan ʿAlī (Muley Hacén)",
+  "birth": null,
+  "death": 1485,
+  "date_note": "توفي بالمنكب 890هـ (1485م)",
+  "roles": [
+   "سلطان"
+  ],
+  "places": [
+   "PLC-003"
+  ],
+  "name": {
+   "ism": "",
+   "kunya": "",
+   "nasab": "",
+   "nisba": [],
+   "laqab": "",
+   "origin": "فارغ عمدًا"
+  },
+  "tenures": [
+   {
+    "id": "TEN-012a",
+    "polity": "POL-008",
+    "role": "سلطان",
+    "start": 1464,
+    "end": 1482,
+    "precision": "نطاق سنوات"
+   },
+   {
+    "id": "TEN-012b",
+    "polity": "POL-008",
+    "role": "سلطان",
+    "start": 1483,
+    "end": 1485,
+    "precision": "سنة"
+   }
+  ]
+ },
+ {
+  "id": "PER-037",
+  "shuhra": "محمد الزغل",
+  "latin": "Muḥammad al-Zaghal",
+  "birth": null,
+  "death": null,
+  "date_note": "حاكم مالقة ثم سلطان 1485–1487م",
+  "roles": [
+   "سلطان"
+  ],
+  "places": [
+   "PLC-003",
+   "PLC-G03"
+  ],
+  "name": {
+   "ism": "",
+   "kunya": "",
+   "nasab": "",
+   "nisba": [],
+   "laqab": "",
+   "origin": "فارغ عمدًا"
+  },
+  "tenures": [
+   {
+    "id": "TEN-013",
+    "polity": "POL-008",
+    "role": "سلطان",
+    "start": 1485,
+    "end": 1487,
+    "precision": "سنة"
+   }
+  ]
+ }
+]

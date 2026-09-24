@@ -1,0 +1,30 @@
+[
+ {
+  "scope_id": "SCOPE-001",
+  "component": "Canonical claims and source metadata",
+  "included": 1,
+  "policy_ar": "ينشر النص المعرفي المختصر والمراجع وروابط المصادر مع provenance.",
+  "gate_effect": "يسمح باجتياز Gate المصدر/الادعاء."
+ },
+ {
+  "scope_id": "SCOPE-002",
+  "component": "Third-party images/media",
+  "included": 0,
+  "policy_ar": "لا تتضمن v1.0 صورًا خارجية معاد نشرها؛ أي صورة مستقبلية تتطلب rights على مستوى العنصر.",
+  "gate_effect": "يجعل Gate الصور PASS ضمن نطاق v1.0 دون تعميم ترخيص الصفحة."
+ },
+ {
+  "scope_id": "SCOPE-003",
+  "component": "Full literary texts/editions",
+  "included": 0,
+  "policy_ar": "لا تعيد v1.0 نشر نصوص أدبية/تحقيقات كاملة؛ تعرض metadata وClaims فقط حتى تثبت النسبة والطبعة والحقوق.",
+  "gate_effect": "يجعل Gate النص الأدبي PASS ضمن نطاق v1.0."
+ },
+ {
+  "scope_id": "SCOPE-004",
+  "component": "Historical political boundary polygons",
+  "included": 0,
+  "policy_ar": "لا تنشر v1.0 حدودًا سياسية تاريخية canonical؛ المضلعات الحالية تحليلية وموسومة بذلك.",
+  "gate_effect": "يمنع تحويل مظروف تحليلي إلى ادعاء تاريخي."
+ }
+]

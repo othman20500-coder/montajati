@@ -1,0 +1,57 @@
+[
+ {
+  "claim_id": "CLM-ZLQ-02",
+  "entity_id": "PLC-BADAJOZ",
+  "role": "site anchor"
+ },
+ {
+  "claim_id": "CLM-ZLQ-03",
+  "entity_id": "PLC-TOLEDO",
+  "role": "origin"
+ },
+ {
+  "claim_id": "CLM-ZLQ-03",
+  "entity_id": "PLC-CORDOBA",
+  "role": "context"
+ },
+ {
+  "claim_id": "CLM-ZLQ-03",
+  "entity_id": "PLC-CEUTA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-ZLQ-03",
+  "entity_id": "PLC-ALGECIRAS",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-ZLQ-03",
+  "entity_id": "PLC-SEVILLE",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-ZLQ-03",
+  "entity_id": "PLC-BADAJOZ",
+  "role": "destination"
+ },
+ {
+  "claim_id": "CLM-ZLQ-03",
+  "entity_id": "PER-YUSUF-IBN-TASHFIN",
+  "role": "traveller"
+ },
+ {
+  "claim_id": "CLM-ZLQ-03",
+  "entity_id": "PER-009",
+  "role": "traveller"
+ },
+ {
+  "claim_id": "CLM-ZLQ-03",
+  "entity_id": "PER-ALFONSO-VI",
+  "role": "political context"
+ },
+ {
+  "claim_id": "CLM-ZLQ-04",
+  "entity_id": "PER-ALFONSO-VI",
+  "role": "political context"
+ }
+]

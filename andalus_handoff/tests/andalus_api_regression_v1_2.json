@@ -1,0 +1,184 @@
+{
+  "status": "PASS",
+  "passed": 22,
+  "total": 22,
+  "method": "direct dispatch against SQLite v1.2",
+  "tests": [
+    {
+      "name": "release",
+      "path": "/api/v1/release/status",
+      "status": 200,
+      "pass_": true,
+      "items": null,
+      "note": "version=v1.2"
+    },
+    {
+      "name": "owners",
+      "path": "/api/v1/maintenance/owners",
+      "status": 200,
+      "pass_": true,
+      "items": 6,
+      "note": ""
+    },
+    {
+      "name": "source-health",
+      "path": "/api/v1/sources/health",
+      "status": 200,
+      "pass_": true,
+      "items": 8,
+      "note": ""
+    },
+    {
+      "name": "maintenance-runs",
+      "path": "/api/v1/maintenance/runs",
+      "status": 200,
+      "pass_": true,
+      "items": 1,
+      "note": ""
+    },
+    {
+      "name": "modules",
+      "path": "/api/v1/learning/modules",
+      "status": 200,
+      "pass_": true,
+      "items": 6,
+      "note": ""
+    },
+    {
+      "name": "quiz",
+      "path": "/api/v1/quiz",
+      "status": 200,
+      "pass_": true,
+      "items": 15,
+      "note": ""
+    },
+    {
+      "name": "places",
+      "path": "/api/v1/places",
+      "status": 200,
+      "pass_": true,
+      "items": 46,
+      "note": ""
+    },
+    {
+      "name": "map",
+      "path": "/api/v1/map.geojson",
+      "status": 200,
+      "pass_": true,
+      "items": null,
+      "note": ""
+    },
+    {
+      "name": "stories",
+      "path": "/api/v1/stories",
+      "status": 200,
+      "pass_": true,
+      "items": 4,
+      "note": ""
+    },
+    {
+      "name": "claims",
+      "path": "/api/v1/claims",
+      "status": 200,
+      "pass_": true,
+      "items": 29,
+      "note": ""
+    },
+    {
+      "name": "claim-detail",
+      "path": "/api/v1/claims/ATLAS-CLM01",
+      "status": 200,
+      "pass_": true,
+      "items": null,
+      "note": ""
+    },
+    {
+      "name": "periods",
+      "path": "/api/v1/periods",
+      "status": 200,
+      "pass_": true,
+      "items": 11,
+      "note": ""
+    },
+    {
+      "name": "tenures",
+      "path": "/api/v1/tenures",
+      "status": 200,
+      "pass_": true,
+      "items": 17,
+      "note": ""
+    },
+    {
+      "name": "events",
+      "path": "/api/v1/events",
+      "status": 200,
+      "pass_": true,
+      "items": 21,
+      "note": ""
+    },
+    {
+      "name": "person",
+      "path": "/api/v1/persons/PER-034",
+      "status": 200,
+      "pass_": true,
+      "items": null,
+      "note": ""
+    },
+    {
+      "name": "assertions-granada",
+      "path": "/api/v1/assertions",
+      "status": 200,
+      "pass_": true,
+      "items": 60,
+      "note": ""
+    },
+    {
+      "name": "assertion-detail",
+      "path": "/api/v1/assertions/AST-G07",
+      "status": 200,
+      "pass_": true,
+      "items": null,
+      "note": ""
+    },
+    {
+      "name": "crosswalk",
+      "path": "/api/v1/crosswalk",
+      "status": 200,
+      "pass_": true,
+      "items": 19,
+      "note": ""
+    },
+    {
+      "name": "claim-with-attestations",
+      "path": "/api/v1/claims/CLM-001",
+      "status": 200,
+      "pass_": true,
+      "items": null,
+      "note": "attestations=12"
+    },
+    {
+      "name": "search",
+      "path": "/api/v1/search?q=قرطبة",
+      "status": 200,
+      "pass_": true,
+      "items": 4,
+      "note": "المسار المسجّل سابقًا أسقط معامل q؛ صار صريحًا"
+    },
+    {
+      "name": "zamrak-v12",
+      "path": "/api/v1/assertions/AST-G17",
+      "status": 200,
+      "pass_": true,
+      "items": null,
+      "note": "attestations=4"
+    },
+    {
+      "name": "nasrid-g33",
+      "path": "/api/v1/assertions/AST-G33",
+      "status": 200,
+      "pass_": true,
+      "items": null,
+      "note": "attestations=3 status=حُسم الخلاف"
+    }
+  ]
+}

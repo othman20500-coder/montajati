@@ -1,0 +1,106 @@
+[
+ {
+  "story_id": "STORY-CORDOBA",
+  "ordinal": 1,
+  "place_entity_id": "PLC-SAQUNDA",
+  "claim_id": "RUR-CLM04",
+  "title_ar": "شقندة قبل 818م",
+  "narrative_ar": "الحفر الواسع يقدم سجلًا مباشرًا للحياة اليومية والتخطيط الحضري في قرطبة الأموية المبكرة."
+ },
+ {
+  "story_id": "STORY-CORDOBA",
+  "ordinal": 2,
+  "place_entity_id": "PLC-CORDOBA-WH",
+  "claim_id": "ATLAS-CLM02",
+  "title_ar": "قرطبة: المدينة والجامع",
+  "narrative_ar": "العقار التاريخي يربط النسيج الحضري بالجامع الكبير وتراكمات المدينة الإسلامية."
+ },
+ {
+  "story_id": "STORY-CORDOBA",
+  "ordinal": 3,
+  "place_entity_id": "PLC-MADINAT-ZAHRA",
+  "claim_id": "ATLAS-CLM01",
+  "title_ar": "مدينة الزهراء",
+  "narrative_ar": "مدينة جديدة للخلافة في القرن العاشر، مع بنية حضرية ومادية واسعة."
+ },
+ {
+  "story_id": "STORY-EAST",
+  "ordinal": 1,
+  "place_entity_id": "PLC-TOSSAL-VILA",
+  "claim_id": "ARC-CLM01",
+  "title_ar": "توسال دي لا فيلا",
+  "narrative_ar": "من أقدم الشواهد الأثرية للعمارة الدينية الإسلامية في شبه الجزيرة."
+ },
+ {
+  "story_id": "STORY-EAST",
+  "ordinal": 2,
+  "place_entity_id": "PLC-EL-MOLON",
+  "claim_id": "ARC-CLM01",
+  "title_ar": "المولون",
+  "narrative_ar": "موقع ثانٍ يتيح مقارنة التكوين المبكر للفضاءات الدينية."
+ },
+ {
+  "story_id": "STORY-EAST",
+  "ordinal": 3,
+  "place_entity_id": "PLC-BAIREN",
+  "claim_id": "ARC-CLM03",
+  "title_ar": "بايرين",
+  "narrative_ar": "حصن ودليل نباتي مؤرخ؛ أولوية الدخن ما تزال حساسة للتحديث."
+ },
+ {
+  "story_id": "STORY-EAST",
+  "ordinal": 4,
+  "place_entity_id": "PLC-XERESA",
+  "claim_id": "RUR-CLM02",
+  "title_ar": "خيريسة/شيريسا",
+  "narrative_ar": "التحليل العظمي يفتح نافذة على العمل والرعاية في مجتمع فلاحي."
+ },
+ {
+  "story_id": "STORY-SE-CITIES",
+  "ordinal": 1,
+  "place_entity_id": "PLC-PECHINA",
+  "claim_id": "ARC-CLM04",
+  "title_ar": "بَجّانة",
+  "narrative_ar": "فرن خزف مزجج ثم حي بمساكن وشوارع ومحلات وورش."
+ },
+ {
+  "story_id": "STORY-SE-CITIES",
+  "ordinal": 2,
+  "place_entity_id": "PLC-ALMARIYYA",
+  "claim_id": "RUR-CLM03",
+  "title_ar": "ألمرية",
+  "narrative_ar": "مرفأ ونسيج وحركة سلع ضمن اقتصاد متصل."
+ },
+ {
+  "story_id": "STORY-SE-CITIES",
+  "ordinal": 3,
+  "place_entity_id": "PLC-ALHAMBRA-WH",
+  "claim_id": "ATLAS-CLM03",
+  "title_ar": "غرناطة النصرية",
+  "narrative_ar": "الحمراء والبيازين وجنة العريف كوحدة تراثية مركبة مع وظائف مختلفة."
+ },
+ {
+  "story_id": "STORY-KNOWLEDGE",
+  "ordinal": 1,
+  "place_entity_id": "PLC-GRANADA",
+  "claim_id": "ARC-CLM09",
+  "title_ar": "غرناطة",
+  "narrative_ar": "عقدة أندلسية في مسار انتقال أفراد وأعمال إلى المشرق."
+ },
+ {
+  "story_id": "STORY-KNOWLEDGE",
+  "ordinal": 2,
+  "place_entity_id": "PLC-TOLEDO",
+  "claim_id": "SOC-CLM08",
+  "title_ar": "طليطلة",
+  "narrative_ar": "بيئة ترجمة عبر خلفيات دينية ولغوية متعددة."
+ },
+ {
+  "story_id": "STORY-KNOWLEDGE",
+  "ordinal": 3,
+  "place_entity_id": "PLC-DAMASCUS",
+  "claim_id": "ARC-CLM09",
+  "title_ar": "دمشق",
+  "narrative_ar": "محطة شرقية في شبكة انتقال المعرفة؛ لا تُستكمل المحطات الوسيطة دون مصدر مباشر."
+ }
+]

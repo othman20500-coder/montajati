@@ -1,0 +1,14 @@
+[
+ 200,
+ [
+  {
+   "attestation_id": "ATT-004",
+   "n_ok": 2,
+   "n_minor": 0,
+   "n_bad": 0,
+   "review_status": "معتمد بالعين",
+   "assertion_id": "AST-002",
+   "source_id": "EXT-MET-TOAH"
+  }
+ ]
+]

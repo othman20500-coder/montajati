@@ -1,0 +1,12 @@
+[
+ {
+  "entity_id": "PLC-CEUTA",
+  "lat": 35.889,
+  "lon": -5.32,
+  "geometry_type": "Point",
+  "spatial_quality": "municipal centroid",
+  "anchor_type": "modern city anchor",
+  "coordinate_source": "نتائج بحث ويب 2026-09-24 (نحو 35.889، −5.320؛ لم تُفتح صفحة المصدر بسبب حجب الشبكة، تُراجع عند توفرها)",
+  "last_verified": "2026-09-24"
+ }
+]

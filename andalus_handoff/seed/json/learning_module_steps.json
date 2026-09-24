@@ -1,0 +1,252 @@
+[
+ {
+  "module_id": "EDU-01",
+  "ordinal": 1,
+  "step_type": "concept",
+  "title_ar": "قاعدة البداية",
+  "body_ar": "مصادر الفتح المكتوبة كثيرة الأهمية، لكن جزءًا مهمًا منها متأخر؛ لذلك نبدأ بالموازنة بين النص والمادة.",
+  "claim_id": "CLM-010",
+  "place_entity_id": null,
+  "interaction_hint": "افتح بطاقة Claim ثم اعرض أنواع الدليل."
+ },
+ {
+  "module_id": "EDU-01",
+  "ordinal": 2,
+  "step_type": "evidence",
+  "title_ar": "الفلوس والأختام",
+  "body_ar": "النقد والأختام لا تحكي القصة كاملة، لكنها تقدم قرائن معاصرة نسبيًا على الضم والجباية والتبادل.",
+  "claim_id": "CLM-011",
+  "place_entity_id": null,
+  "interaction_hint": "قارن بين Evidence مادي ورواية نصية."
+ },
+ {
+  "module_id": "EDU-01",
+  "ordinal": 3,
+  "step_type": "genealogy",
+  "title_ar": "من أين جاءت الرواية؟",
+  "body_ar": "Source Genealogy يمنعنا من معاملة كتاب متأخر كشاهد عيان، ويعيد كل خبر قدر الإمكان إلى طبقته المصدرية.",
+  "claim_id": "CLM-018",
+  "place_entity_id": null,
+  "interaction_hint": "أظهر سلسلة المصدر."
+ },
+ {
+  "module_id": "EDU-01",
+  "ordinal": 4,
+  "step_type": "myth",
+  "title_ar": "حرق السفن",
+  "body_ar": "الرواية مشهورة، لكن الشهرة ليست دليلًا. تُعرض هنا كقصة موضع شك لا كحقيقة ثابتة.",
+  "claim_id": "CLM-002",
+  "place_entity_id": null,
+  "interaction_hint": "زر: ما الذي يجعل الرواية Myth؟"
+ },
+ {
+  "module_id": "EDU-02",
+  "ordinal": 1,
+  "step_type": "place",
+  "title_ar": "شقندة قبل 818م",
+  "body_ar": "الحفر الواسع يفتح نافذة على الشوارع والمباني والحياة اليومية في قرطبة الأموية المبكرة.",
+  "claim_id": "RUR-CLM04",
+  "place_entity_id": "PLC-SAQUNDA",
+  "interaction_hint": "حدد الموقع على الخريطة."
+ },
+ {
+  "module_id": "EDU-02",
+  "ordinal": 2,
+  "step_type": "politics",
+  "title_ar": "929م: إعلان الخلافة",
+  "body_ar": "يتحول الادعاء السياسي إلى Claim قوي عندما يلتقي النص المؤرخ مع النقود المعاصرة.",
+  "claim_id": "CLM-001",
+  "place_entity_id": "PLC-CORDOBA",
+  "interaction_hint": "شغّل خط الزمن إلى 929."
+ },
+ {
+  "module_id": "EDU-02",
+  "ordinal": 3,
+  "step_type": "place",
+  "title_ar": "مدينة الزهراء",
+  "body_ar": "مدينة جديدة للخلافة في القرن العاشر، لا مجرد «قصر» منفرد؛ التخطيط والمياه والطرق جزء من الدليل.",
+  "claim_id": "ATLAS-CLM01",
+  "place_entity_id": "PLC-MADINAT-ZAHRA",
+  "interaction_hint": "انتقل إلى نقطة UNESCO."
+ },
+ {
+  "module_id": "EDU-02",
+  "ordinal": 4,
+  "step_type": "architecture",
+  "title_ar": "الجامع والمدينة",
+  "body_ar": "وسط قرطبة التاريخي يسمح بقراءة تراكمات المدينة والجامع الكبير عبر قرون.",
+  "claim_id": "ATLAS-CLM02",
+  "place_entity_id": "PLC-CORDOBA-WH",
+  "interaction_hint": "قارن المدينة بالمركز الخلافي الجديد."
+ },
+ {
+  "module_id": "EDU-03",
+  "ordinal": 1,
+  "step_type": "craft",
+  "title_ar": "بَجّانة: من الفرن إلى الحي",
+  "body_ar": "فرن خزف مزجج من القرن التاسع يعقبه حي بمساكن وشوارع ومحلات وورش.",
+  "claim_id": "ARC-CLM04",
+  "place_entity_id": "PLC-PECHINA",
+  "interaction_hint": "فعّل طبقة الحرفة."
+ },
+ {
+  "module_id": "EDU-03",
+  "ordinal": 2,
+  "step_type": "urban",
+  "title_ar": "ألمرية: الميناء والنسيج",
+  "body_ar": "الموقع والمواد ومشروع GLOBALM يقدمون مدينة مرتبطة بالإنتاج والميناء وشبكات واسعة.",
+  "claim_id": "RUR-CLM03",
+  "place_entity_id": "PLC-ALMARIYYA",
+  "interaction_hint": "اعرض محور الاقتصاد."
+ },
+ {
+  "module_id": "EDU-03",
+  "ordinal": 3,
+  "step_type": "rural",
+  "title_ar": "شيريسا: العمل والرعاية",
+  "body_ar": "التحليل العظمي يتيح سؤالًا مختلفًا: كيف عاش الناس وعملوا ورعوا بعضهم؟",
+  "claim_id": "RUR-CLM02",
+  "place_entity_id": "PLC-XERESA",
+  "interaction_hint": "افتح Evidence الصحي/العظمي."
+ },
+ {
+  "module_id": "EDU-03",
+  "ordinal": 4,
+  "step_type": "text",
+  "title_ar": "كتب الطبخ",
+  "body_ar": "الوصفات مصدر ثمين، لكنها لا تمثل كل المجتمع أو كل الطبقات تلقائيًا.",
+  "claim_id": "ARC-CLM07",
+  "place_entity_id": null,
+  "interaction_hint": "قارن النص بالأثر."
+ },
+ {
+  "module_id": "EDU-03",
+  "ordinal": 5,
+  "step_type": "economy",
+  "title_ar": "النقد في الحياة اليومية",
+  "body_ar": "العملات ترتبط بالضرائب والجيش والتجارة والمعاملات، مع اختلاف كثافة الاستخدام عبر الزمن والمكان.",
+  "claim_id": "SOC-CLM09",
+  "place_entity_id": null,
+  "interaction_hint": "اربط النقد بمحاور الاقتصاد."
+ },
+ {
+  "module_id": "EDU-04",
+  "ordinal": 1,
+  "step_type": "concept",
+  "title_ar": "لا «جنة» ولا «صراع دائم»",
+  "body_ar": "العلاقات بين الجماعات تتغير حسب الزمن والمكان والسلطة والقانون؛ لا Narrative واحد يصلح لثمانية قرون.",
+  "claim_id": "SOC-CLM01",
+  "place_entity_id": null,
+  "interaction_hint": "اعرض حالات مختلفة بدل شعار واحد."
+ },
+ {
+  "module_id": "EDU-04",
+  "ordinal": 2,
+  "step_type": "method",
+  "title_ar": "هل للقطعة هوية دينية؟",
+  "body_ar": "الأسلوب وحده لا يكفي لنسبة قطعة إلى جماعة دينية؛ النقش والسياق أهم.",
+  "claim_id": "SOC-CLM04",
+  "place_entity_id": null,
+  "interaction_hint": "اختبار إسناد الهوية."
+ },
+ {
+  "module_id": "EDU-04",
+  "ordinal": 3,
+  "step_type": "person",
+  "title_ar": "صبح: استثناء موثق",
+  "body_ar": "وصول صبح إلى نفوذ سياسي كبير حالة موثقة مهمة، لكنها لا تتحول إلى وصف إحصائي لوضع النساء عامة.",
+  "claim_id": "SOC-CLM06",
+  "place_entity_id": "PLC-CORDOBA",
+  "interaction_hint": "بطاقة شخص/Claim."
+ },
+ {
+  "module_id": "EDU-04",
+  "ordinal": 4,
+  "step_type": "language",
+  "title_ar": "المشهد اللغوي",
+  "body_ar": "العربية والرومانسية الأندلسية والعبرية تؤدي أدوارًا مختلفة عبر الفترات والسياقات.",
+  "claim_id": "CLM-003",
+  "place_entity_id": null,
+  "interaction_hint": "اعرض طبقات اللغة بدل خريطة لغة واحدة."
+ },
+ {
+  "module_id": "EDU-05",
+  "ordinal": 1,
+  "step_type": "translation",
+  "title_ar": "طليطلة والترجمة",
+  "body_ar": "التعاون بين مترجمين من خلفيات متعددة لا يلغي الخلافات حول المؤسسات والأسماء؛ لذلك نوثق عملًا بعمل.",
+  "claim_id": "SOC-CLM08",
+  "place_entity_id": "PLC-TOLEDO",
+  "interaction_hint": "اعرض عقدة ترجمة."
+ },
+ {
+  "module_id": "EDU-05",
+  "ordinal": 2,
+  "step_type": "network",
+  "title_ar": "الأندلس إلى المشرق",
+  "body_ar": "انتقال أشخاص ونصوص وأفكار يُبنى كمسارات موثقة، لا كخطوط سفر تخمينية.",
+  "claim_id": "ARC-CLM09",
+  "place_entity_id": "PLC-DAMASCUS",
+  "interaction_hint": "اعرض route مع تحذير التمثيل."
+ },
+ {
+  "module_id": "EDU-05",
+  "ordinal": 3,
+  "step_type": "legacy",
+  "title_ar": "ثقافة البلاط",
+  "body_ar": "بعض العناصر الأندلسية أصبحت جزءًا من ثقافات بلاط قشتالية، لا مجرد «نسخ» لحظي.",
+  "claim_id": "SOC-CLM07",
+  "place_entity_id": "PLC-LEON",
+  "interaction_hint": "فعّل Legacy."
+ },
+ {
+  "module_id": "EDU-05",
+  "ordinal": 4,
+  "step_type": "craft",
+  "title_ar": "مانيسس بعد تغير السلطة",
+  "body_ar": "استمرار تقنيات البريق المعدني يقدم مثالًا على بقاء الحرفة بعد تغير الإطار السياسي.",
+  "claim_id": "SOC-CLM10",
+  "place_entity_id": "PLC-MANISES",
+  "interaction_hint": "قارن الزمن السياسي بزمن التقنية."
+ },
+ {
+  "module_id": "EDU-06",
+  "ordinal": 1,
+  "step_type": "place",
+  "title_ar": "نواة القصر",
+  "body_ar": "تذكر UNESCO أن النواة الأصلية للقصر في إشبيلية شُيدت في القرن العاشر مقرًا للحاكم المسلم.",
+  "claim_id": "ATLAS-CLM04",
+  "place_entity_id": "PLC-SEVILLE",
+  "interaction_hint": "اذهب إلى إشبيلية."
+ },
+ {
+  "module_id": "EDU-06",
+  "ordinal": 2,
+  "step_type": "architecture",
+  "title_ar": "القصر الموحدي",
+  "body_ar": "بعض غرف وباحات وحدائق القصر الموحدي بقيت داخل مجمع أعيد بناؤه مرارًا.",
+  "claim_id": "ATLAS-CLM04",
+  "place_entity_id": "PLC-SEVILLE",
+  "interaction_hint": "فعّل طبقة heritage."
+ },
+ {
+  "module_id": "EDU-06",
+  "ordinal": 3,
+  "step_type": "architecture",
+  "title_ar": "الجيرالدا",
+  "body_ar": "كانت الجيرالدا مئذنة للمسجد، وتصفها UNESCO بأنها تحفة من العمارة الموحدية.",
+  "claim_id": "ATLAS-CLM04",
+  "place_entity_id": "PLC-SEVILLE",
+  "interaction_hint": "أظهر مفهوم reuse."
+ },
+ {
+  "module_id": "EDU-06",
+  "ordinal": 4,
+  "step_type": "concept",
+  "title_ar": "الاستمرار لا يعني الثبات",
+  "body_ar": "بقاء عنصر معماري لا يعني بقاء وظيفته أو سياقه السياسي؛ القراءة الصحيحة تتتبع التحول أيضًا.",
+  "claim_id": "ATLAS-CLM04",
+  "place_entity_id": "PLC-SEVILLE",
+  "interaction_hint": "سؤال انعكاسي."
+ }
+]

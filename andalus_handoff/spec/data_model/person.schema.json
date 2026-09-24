@@ -1,0 +1,78 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Person",
+ "type": "object",
+ "required": [
+  "id",
+  "shuhra"
+ ],
+ "properties": {
+  "id": {
+   "type": "string",
+   "pattern": "^PER-[A-Z0-9]+$"
+  },
+  "shuhra": {
+   "type": "string"
+  },
+  "latin": {
+   "type": "string"
+  },
+  "birth": {
+   "type": [
+    "integer",
+    "null"
+   ]
+  },
+  "death": {
+   "type": [
+    "integer",
+    "null"
+   ]
+  },
+  "date_note": {
+   "type": "string"
+  },
+  "roles": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "places": {
+   "type": "array",
+   "items": {
+    "type": "string",
+    "pattern": "^PLC-[A-Z0-9]+$"
+   }
+  },
+  "name": {
+   "type": [
+    "object",
+    "null"
+   ],
+   "properties": {
+    "ism": {
+     "type": "string"
+    },
+    "kunya": {
+     "type": "string"
+    },
+    "nasab": {
+     "type": "string"
+    },
+    "nisba": {
+     "type": "array"
+    },
+    "laqab": {
+     "type": "string"
+    },
+    "origin": {
+     "type": "string"
+    }
+   }
+  },
+  "tenures": {
+   "type": "array"
+  }
+ }
+}

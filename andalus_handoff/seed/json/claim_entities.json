@@ -1,0 +1,172 @@
+[
+ {
+  "claim_id": "CLM-011",
+  "entity_id": "PLC-CORDOBA",
+  "role": "context"
+ },
+ {
+  "claim_id": "SOC-CLM04",
+  "entity_id": "LANG-HEB",
+  "role": "identity/language context"
+ },
+ {
+  "claim_id": "ARC-CLM05",
+  "entity_id": "PLC-PECHINA",
+  "role": "site"
+ },
+ {
+  "claim_id": "ARC-CLM07",
+  "entity_id": "WRK-FUDALAT",
+  "role": "primary source"
+ },
+ {
+  "claim_id": "ARC-CLM07",
+  "entity_id": "WRK-ANON-COOKBOOK",
+  "role": "primary source"
+ },
+ {
+  "claim_id": "ARC-CLM07",
+  "entity_id": "PER-IBN-RAZIN",
+  "role": "author"
+ },
+ {
+  "claim_id": "SOC-CLM07",
+  "entity_id": "PLC-LEON",
+  "role": "place"
+ },
+ {
+  "claim_id": "SOC-CLM07",
+  "entity_id": "OBJ-LEON-ARCH",
+  "role": "evidence object"
+ },
+ {
+  "claim_id": "SOC-CLM08",
+  "entity_id": "PLC-TOLEDO",
+  "role": "place"
+ },
+ {
+  "claim_id": "SOC-CLM08",
+  "entity_id": "PER-GERARD-CREMONA",
+  "role": "translator"
+ },
+ {
+  "claim_id": "SOC-CLM08",
+  "entity_id": "PER-GUNDISSALINUS",
+  "role": "translator"
+ },
+ {
+  "claim_id": "SOC-CLM08",
+  "entity_id": "PER-ABRAHAM-IBN-DAUD",
+  "role": "collaborator"
+ },
+ {
+  "claim_id": "SOC-CLM08",
+  "entity_id": "WRK-AVICENNA-DE-ANIMA",
+  "role": "translated work"
+ },
+ {
+  "claim_id": "ARC-CLM09",
+  "entity_id": "PER-AL-JILYANI",
+  "role": "traveller"
+ },
+ {
+  "claim_id": "ARC-CLM09",
+  "entity_id": "PLC-GRANADA",
+  "role": "origin"
+ },
+ {
+  "claim_id": "ARC-CLM09",
+  "entity_id": "PLC-DAMASCUS",
+  "role": "destination"
+ },
+ {
+  "claim_id": "ARC-CLM09",
+  "entity_id": "WRK-MANADIH",
+  "role": "work"
+ },
+ {
+  "claim_id": "ARC-CLM09",
+  "entity_id": "PER-SALADIN",
+  "role": "patron/addressee"
+ },
+ {
+  "claim_id": "CLM-003",
+  "entity_id": "LANG-AR-AND",
+  "role": "language"
+ },
+ {
+  "claim_id": "CLM-003",
+  "entity_id": "LANG-ROM-AND",
+  "role": "language"
+ },
+ {
+  "claim_id": "CLM-003",
+  "entity_id": "LANG-HEB",
+  "role": "language"
+ },
+ {
+  "claim_id": "SOC-CLM10",
+  "entity_id": "PLC-MANISES",
+  "role": "place"
+ },
+ {
+  "claim_id": "SOC-CLM10",
+  "entity_id": "OBJ-MANISES-LUSTER",
+  "role": "material legacy"
+ },
+ {
+  "claim_id": "RUR-CLM03",
+  "entity_id": "PLC-ALMARIYYA",
+  "role": "place"
+ },
+ {
+  "claim_id": "RUR-CLM04",
+  "entity_id": "PLC-SAQUNDA",
+  "role": "place"
+ },
+ {
+  "claim_id": "ARC-CLM04",
+  "entity_id": "PLC-PECHINA",
+  "role": "place"
+ },
+ {
+  "claim_id": "ARC-CLM05",
+  "entity_id": "PLC-PECHINA",
+  "role": "place"
+ },
+ {
+  "claim_id": "ATLAS-CLM01",
+  "entity_id": "PLC-MADINAT-ZAHRA",
+  "role": "site"
+ },
+ {
+  "claim_id": "ATLAS-CLM01",
+  "entity_id": "PLC-CORDOBA",
+  "role": "political context"
+ },
+ {
+  "claim_id": "ATLAS-CLM02",
+  "entity_id": "PLC-CORDOBA-WH",
+  "role": "site"
+ },
+ {
+  "claim_id": "ATLAS-CLM02",
+  "entity_id": "PLC-CORDOBA",
+  "role": "city"
+ },
+ {
+  "claim_id": "ATLAS-CLM03",
+  "entity_id": "PLC-ALHAMBRA-WH",
+  "role": "site"
+ },
+ {
+  "claim_id": "ATLAS-CLM03",
+  "entity_id": "PLC-GRANADA",
+  "role": "city"
+ },
+ {
+  "claim_id": "ATLAS-CLM04",
+  "entity_id": "PLC-SEVILLE",
+  "role": "city/site context"
+ }
+]

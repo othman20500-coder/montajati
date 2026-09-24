@@ -1,0 +1,77 @@
+[
+ {
+  "layer_id": "LYR-EARLY",
+  "entity_id": "PLC-SAQUNDA",
+  "role": "urban archaeology"
+ },
+ {
+  "layer_id": "LYR-EARLY",
+  "entity_id": "PLC-PECHINA",
+  "role": "craft/urban"
+ },
+ {
+  "layer_id": "LYR-EARLY",
+  "entity_id": "PLC-EL-MOLON",
+  "role": "early mosque"
+ },
+ {
+  "layer_id": "LYR-EARLY",
+  "entity_id": "PLC-TOSSAL-VILA",
+  "role": "early mosque"
+ },
+ {
+  "layer_id": "LYR-CALIPHATE",
+  "entity_id": "PLC-CORDOBA",
+  "role": "capital"
+ },
+ {
+  "layer_id": "LYR-CALIPHATE",
+  "entity_id": "PLC-CORDOBA-WH",
+  "role": "urban heritage"
+ },
+ {
+  "layer_id": "LYR-CALIPHATE",
+  "entity_id": "PLC-MADINAT-ZAHRA",
+  "role": "caliphal city"
+ },
+ {
+  "layer_id": "LYR-URBAN",
+  "entity_id": "PLC-ALMARIYYA",
+  "role": "port/economy"
+ },
+ {
+  "layer_id": "LYR-URBAN",
+  "entity_id": "PLC-PECHINA",
+  "role": "craft/urban"
+ },
+ {
+  "layer_id": "LYR-URBAN",
+  "entity_id": "PLC-GRANADA",
+  "role": "urban centre"
+ },
+ {
+  "layer_id": "LYR-KNOWLEDGE",
+  "entity_id": "PLC-GRANADA",
+  "role": "origin"
+ },
+ {
+  "layer_id": "LYR-KNOWLEDGE",
+  "entity_id": "PLC-TOLEDO",
+  "role": "translation"
+ },
+ {
+  "layer_id": "LYR-KNOWLEDGE",
+  "entity_id": "PLC-DAMASCUS",
+  "role": "destination"
+ },
+ {
+  "layer_id": "LYR-LEGACY",
+  "entity_id": "PLC-LEON",
+  "role": "court culture"
+ },
+ {
+  "layer_id": "LYR-LEGACY",
+  "entity_id": "PLC-MANISES",
+  "role": "craft continuity"
+ }
+]

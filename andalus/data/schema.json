@@ -1,0 +1,497 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://andalus.example/schema/v0.1",
+  "title": "Andalus Knowledge Graph — مخطط البيانات (MVP)",
+  "description": "كل كيان يحمل معرّفًا مسبوقًا بنوعه (p: pl: e: era: s: d: a: w: t: src: c: st: m:). كل حقيقة تاريخية تُمثَّل كادعاء (Claim) له حالة ومصادر.",
+  "$defs": {
+    "Date": {
+      "type": "object",
+      "required": [
+        "greg",
+        "precision"
+      ],
+      "properties": {
+        "greg": {
+          "type": "string",
+          "description": "ISO 8601 أو EDTF، مثل 1086-10-23 أو 0929"
+        },
+        "hijri": {
+          "type": "string",
+          "description": "YYYY-MM-DD هجري إن عُرف"
+        },
+        "precision": {
+          "enum": [
+            "exact",
+            "circa",
+            "range",
+            "terminus_post",
+            "terminus_ante",
+            "disputed"
+          ]
+        },
+        "end": {
+          "type": "string",
+          "description": "نهاية المدى عند precision=range"
+        },
+        "claim": {
+          "type": "string",
+          "pattern": "^c:"
+        }
+      }
+    },
+    "Name": {
+      "type": "object",
+      "required": [
+        "ar"
+      ],
+      "properties": {
+        "ar": {
+          "type": "string"
+        },
+        "en": {
+          "type": "string"
+        },
+        "es": {
+          "type": "string"
+        },
+        "lat": {
+          "type": "string",
+          "description": "الاسم اللاتيني/التاريخي"
+        },
+        "variants": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Edge": {
+      "type": "object",
+      "required": [
+        "rel",
+        "to"
+      ],
+      "properties": {
+        "rel": {
+          "enum": [
+            "ruled",
+            "born_in",
+            "died_in",
+            "lived_in",
+            "participated_in",
+            "authored",
+            "teacher_of",
+            "student_of",
+            "patron_of",
+            "attested_in",
+            "held_at",
+            "made_in",
+            "commissioned_by",
+            "took_place_at",
+            "part_of",
+            "caused",
+            "followed",
+            "controlled_by",
+            "succeeded_by",
+            "mentioned_in",
+            "same_as",
+            "depicts",
+            "about"
+          ]
+        },
+        "to": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "from": {
+          "$ref": "#/$defs/Date"
+        },
+        "to_date": {
+          "$ref": "#/$defs/Date"
+        },
+        "claim": {
+          "type": "string",
+          "pattern": "^c:"
+        }
+      }
+    },
+    "Citation": {
+      "type": "object",
+      "required": [
+        "src"
+      ],
+      "properties": {
+        "src": {
+          "type": "string",
+          "pattern": "^src:"
+        },
+        "locator": {
+          "type": "string",
+          "description": "صفحة / فصل / مدخل / رقم اللوحة"
+        },
+        "quote": {
+          "type": "string",
+          "description": "مقتطف قصير يدعم الادعاء بقيوده"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "url_checked": {
+          "enum": [
+            "fetched",
+            "search",
+            "none"
+          ],
+          "description": "fetched فُتح الرابط مباشرة · search ظهر في نتائج البحث فقط · none لم يُتحقق"
+        }
+      }
+    },
+    "Claim": {
+      "type": "object",
+      "required": [
+        "id",
+        "text",
+        "status",
+        "sources"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^c:"
+        },
+        "text": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "fact",
+            "disputed",
+            "inference",
+            "myth",
+            "unverified"
+          ],
+          "description": "fact 🟢 حقيقة مستقرة · disputed 🟠 رواية مختلف عليها · inference 🔵 استنتاج · myth ⚪ رواية شائعة غير مثبتة · unverified ⬜ لم يُفتح له مرجع مؤسسي بعد (لا يُنشر في المخرجات التنفيذية)"
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/Citation"
+          }
+        },
+        "counter": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "position",
+              "sources"
+            ],
+            "properties": {
+              "position": {
+                "type": "string"
+              },
+              "sources": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/Citation"
+                }
+              }
+            }
+          }
+        },
+        "review": {
+          "type": "object",
+          "properties": {
+            "by": {
+              "type": "string"
+            },
+            "on": {
+              "type": "string"
+            },
+            "tier": {
+              "enum": [
+                "A",
+                "B",
+                "C"
+              ]
+            }
+          }
+        },
+        "history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "on": {
+                "type": "string"
+              },
+              "change": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "disputed"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "counter"
+            ]
+          }
+        }
+      ]
+    },
+    "Entity": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "name",
+        "summary",
+        "edges",
+        "claims"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "Person",
+            "Place",
+            "Event",
+            "Era",
+            "Polity",
+            "Document",
+            "Artifact",
+            "Work",
+            "Theme",
+            "Story",
+            "Media"
+          ]
+        },
+        "name": {
+          "$ref": "#/$defs/Name"
+        },
+        "summary": {
+          "type": "string",
+          "description": "سطران، كل جملة فيهما مرتبطة بادعاء"
+        },
+        "era": {
+          "type": "string",
+          "pattern": "^era:"
+        },
+        "dates": {
+          "type": "object",
+          "properties": {
+            "start": {
+              "$ref": "#/$defs/Date"
+            },
+            "end": {
+              "$ref": "#/$defs/Date"
+            }
+          }
+        },
+        "geo": {
+          "type": "object",
+          "properties": {
+            "lat": {
+              "type": "number"
+            },
+            "lon": {
+              "type": "number"
+            },
+            "gazetteer": {
+              "type": "object",
+              "properties": {
+                "pleiades": {
+                  "type": "string"
+                },
+                "tgn": {
+                  "type": "string"
+                },
+                "wikidata": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "holding": {
+          "type": "object",
+          "description": "للوثائق والآثار",
+          "properties": {
+            "institution": {
+              "type": "string"
+            },
+            "shelfmark": {
+              "type": "string"
+            },
+            "iiif": {
+              "type": "string",
+              "format": "uri"
+            },
+            "license": {
+              "type": "string"
+            }
+          }
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Edge"
+          }
+        },
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^c:"
+          }
+        },
+        "media": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^m:"
+          }
+        },
+        "audience": {
+          "type": "object",
+          "properties": {
+            "kids": {
+              "type": "string",
+              "description": "صياغة مبسطة للأطفال"
+            },
+            "scholar": {
+              "type": "string",
+              "description": "ملاحظات نقدية للباحث"
+            }
+          }
+        },
+        "same_as": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "Source": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "kind",
+        "tier",
+        "lang"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^src:"
+        },
+        "title": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "year": {
+          "type": "string"
+        },
+        "publisher": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "primary",
+            "manuscript",
+            "edition",
+            "academic_book",
+            "journal_article",
+            "reference_work",
+            "database",
+            "museum_record",
+            "map",
+            "audio",
+            "documentary",
+            "image_collection"
+          ]
+        },
+        "tier": {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "description": "A تحقيق/تحكيم أكاديمي · B مؤسسة وطنية/متحف · C مرجع عام · D مرفوض"
+        },
+        "lang": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "url_checked": {
+          "type": "string",
+          "description": "تاريخ آخر تحقق من الرابط، أو fetched/search/none"
+        },
+        "rights": {
+          "type": "string",
+          "description": "Public domain / CC0 / CC BY / rights reserved / غير معروف"
+        },
+        "notes": {
+          "type": "string",
+          "description": "تحذيرات الموثوقية: تجميع متأخر، متحيز، ناقص"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "entities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Entity"
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Claim"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Source"
+      }
+    }
+  }
+}

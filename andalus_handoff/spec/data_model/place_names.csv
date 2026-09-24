@@ -1,0 +1,107 @@
+﻿name_id,place_id,الاسم,اللغة (BCP-47),نوع الاسم,الفترة (period_id),الأصل
+PLN-001,PLC-001,Qurṭuba,ar-Latn,نقحرة علمية,,v4.9
+PLN-002,PLC-001,Córdoba,es,حديث رسمي,,v4.9
+PLN-003,PLC-002,Madīnat al-Zahrāʾ,ar-Latn,نقحرة علمية,,v4.9
+PLN-004,PLC-002,Medina Azahara,es,حديث رسمي,,v4.9
+PLN-005,PLC-003,Gharnāṭa,ar-Latn,نقحرة علمية,,v4.9
+PLN-006,PLC-003,Granada,es,حديث رسمي,,v4.9
+PLN-007,PLC-004,Ishbīliya,ar-Latn,نقحرة علمية,,v4.9
+PLN-008,PLC-004,Sevilla,es,حديث رسمي,,v4.9
+PLN-009,PLC-005,Ṭulayṭula,ar-Latn,نقحرة علمية,,v4.9
+PLN-010,PLC-005,Toledo,es,حديث رسمي,,v4.9
+PLN-011,PLC-006,Saraqusṭa,ar-Latn,نقحرة علمية,,v4.9
+PLN-012,PLC-006,Zaragoza,es,حديث رسمي,,v4.9
+PLN-013,PLC-007,al-Mariyya,ar-Latn,نقحرة علمية,,v4.9
+PLN-014,PLC-007,Almería,es,حديث رسمي,,v4.9
+PLN-015,PLC-008,Dāniya,ar-Latn,نقحرة علمية,,v4.9
+PLN-016,PLC-008,Dénia,es,حديث رسمي,,v4.9
+PLN-017,PLC-009,Balansiya,ar-Latn,نقحرة علمية,,v4.9
+PLN-018,PLC-009,Valencia,es,حديث رسمي,,v4.9
+PLN-019,PLC-010,Mālaqa,ar-Latn,نقحرة علمية,,v4.9
+PLN-020,PLC-010,Málaga,es,حديث رسمي,,v4.9
+PLN-021,PLC-011,Mursiya,ar-Latn,نقحرة علمية,,v4.9
+PLN-022,PLC-011,Murcia,es,حديث رسمي,,v4.9
+PLN-023,PLC-012,Baṭalyaws,ar-Latn,نقحرة علمية,,v4.9
+PLN-024,PLC-012,Badajoz,es,حديث رسمي,,v4.9
+PLN-025,PLC-013,Mārtula,ar-Latn,نقحرة علمية,,v4.9
+PLN-026,PLC-013,Mértola,pt,حديث رسمي,,v4.9
+PLN-027,PLC-014,Shilb,ar-Latn,نقحرة علمية,,v4.9
+PLN-028,PLC-014,Silves,pt,حديث رسمي,,v4.9
+PLN-029,PLC-015,al-Ushbūna,ar-Latn,نقحرة علمية,,v4.9
+PLN-030,PLC-015,Lisboa,pt,حديث رسمي,,v4.9
+PLN-031,PLC-016,Shantarīn,ar-Latn,نقحرة علمية,,v4.9
+PLN-032,PLC-016,Santarém,pt,حديث رسمي,,v4.9
+PLN-033,PLC-017,Bāja,ar-Latn,نقحرة علمية,,v4.9
+PLN-034,PLC-017,Beja,pt,حديث رسمي,,v4.9
+PLN-035,PLC-018,Mārida,ar-Latn,نقحرة علمية,,v4.9
+PLN-036,PLC-018,Mérida,es,حديث رسمي,,v4.9
+PLN-037,PLC-019,Washqa,ar-Latn,نقحرة علمية,,v4.9
+PLN-038,PLC-019,Huesca,es,حديث رسمي,,v4.9
+PLN-039,PLC-020,Ṭurṭūsha,ar-Latn,نقحرة علمية,,v4.9
+PLN-040,PLC-020,Tortosa,es,حديث رسمي,,v4.9
+PLN-041,PLC-C01,al-Bayyāzīn,ar-Latn,نقحرة علمية,,v4.9
+PLN-042,PLC-C01,Albaicín,es,حديث رسمي,,v4.9
+PLN-043,PLC-C02,Wādī Dāru,ar-Latn,نقحرة علمية,,v4.9
+PLN-044,PLC-C02,Darro,es,حديث رسمي,,v4.9
+PLN-045,PLC-C03,al-Jaʿfariyya,ar-Latn,نقحرة علمية,,v4.9
+PLN-046,PLC-C03,Aljafería,es,حديث رسمي,,v4.9
+PLN-047,PLC-C04,Runda,ar-Latn,نقحرة علمية,,v4.9
+PLN-048,PLC-C04,Ronda,es,حديث رسمي,,v4.9
+PLN-049,PLC-C05,al-Jazīra al-Khaḍrāʾ,ar-Latn,نقحرة علمية,,v4.9
+PLN-050,PLC-C05,Algeciras,es,حديث رسمي,,v4.9
+PLN-051,PLC-C06,Wādī Āsh,ar-Latn,نقحرة علمية,,v4.9
+PLN-052,PLC-C06,Guadix,es,حديث رسمي,,v4.9
+PLN-053,PLC-D01,Wādī al-Ḥijāra,ar-Latn,نقحرة علمية,,v4.9
+PLN-054,PLC-D01,Guadalajara,es,حديث رسمي,,v4.9
+PLN-055,PLC-D02,Priego de Córdoba,es,حديث رسمي,,v4.9
+PLN-056,PLC-D03,al-Zāhira,ar-Latn,نقحرة علمية,,v4.9
+PLN-057,PLC-D04,Munyat al-Surūr,ar-Latn,نقحرة علمية,,v4.9
+PLN-058,PLC-D04,Almunia de la Alegría,es,بديل,,v4.9
+PLN-059,PLC-G01,al-Ḥamrāʾ,ar-Latn,نقحرة علمية,,v4.9
+PLN-060,PLC-G01,Alhambra,es,حديث رسمي,,v4.9
+PLN-061,PLC-G02,Jannat al-ʿArīf,ar-Latn,نقحرة علمية,,v4.9
+PLN-062,PLC-G02,Generalife,es,حديث رسمي,,v4.9
+PLN-063,PLC-G03,Basṭa,ar-Latn,نقحرة علمية,,v4.9
+PLN-064,PLC-G03,Baza,es,حديث رسمي,,v4.9
+PLN-065,PLC-G04,Lawsha,ar-Latn,نقحرة علمية,,v4.9
+PLN-066,PLC-G04,Loja,es,حديث رسمي,,v4.9
+PLN-067,PLC-G05,al-Munakkab,ar-Latn,نقحرة علمية,,v4.9
+PLN-068,PLC-G05,Almuñécar,es,حديث رسمي,,v4.9
+PLN-069,PLC-G06,al-Bushārāt,ar-Latn,نقحرة علمية,,v4.9
+PLN-070,PLC-G06,Alpujarras,es,حديث رسمي,,v4.9
+PLN-071,PLC-001,قرطبة,ar,عربي تاريخي,,v4.9
+PLN-072,PLC-002,مدينة الزهراء,ar,عربي تاريخي,,v4.9
+PLN-073,PLC-003,غرناطة,ar,عربي تاريخي,,v4.9
+PLN-074,PLC-004,إشبيلية,ar,عربي تاريخي,,v4.9
+PLN-075,PLC-005,طليطلة,ar,عربي تاريخي,,v4.9
+PLN-076,PLC-006,سرقسطة,ar,عربي تاريخي,,v4.9
+PLN-077,PLC-007,ألمرية,ar,عربي تاريخي,,v4.9
+PLN-078,PLC-008,دانية,ar,عربي تاريخي,,v4.9
+PLN-079,PLC-009,بلنسية,ar,عربي تاريخي,,v4.9
+PLN-080,PLC-010,مالقة,ar,عربي تاريخي,,v4.9
+PLN-081,PLC-011,مرسية,ar,عربي تاريخي,,v4.9
+PLN-082,PLC-012,بطليوس,ar,عربي تاريخي,,v4.9
+PLN-083,PLC-013,مرتلة,ar,عربي تاريخي,,v4.9
+PLN-084,PLC-014,شلب,ar,عربي تاريخي,,v4.9
+PLN-085,PLC-015,لشبونة,ar,عربي تاريخي,,v4.9
+PLN-086,PLC-016,شنترين,ar,عربي تاريخي,,v4.9
+PLN-087,PLC-017,باجة,ar,عربي تاريخي,,v4.9
+PLN-088,PLC-018,ماردة,ar,عربي تاريخي,,v4.9
+PLN-089,PLC-019,وشقة,ar,عربي تاريخي,,v4.9
+PLN-090,PLC-020,طرطوشة,ar,عربي تاريخي,,v4.9
+PLN-091,PLC-C01,البيازين,ar,عربي تاريخي,,v4.9
+PLN-092,PLC-C02,حدرّه,ar,عربي تاريخي,,v4.9
+PLN-093,PLC-C03,قصر الجعفرية,ar,عربي تاريخي,,v4.9
+PLN-094,PLC-C04,رندة,ar,عربي تاريخي,,v4.9
+PLN-095,PLC-C05,الجزيرة الخضراء,ar,عربي تاريخي,,v4.9
+PLN-096,PLC-C06,وادي آش,ar,عربي تاريخي,,v4.9
+PLN-097,PLC-D01,وادي الحجارة,ar,عربي تاريخي,,v4.9
+PLN-098,PLC-D02,Priego de Córdoba,ar,عربي تاريخي,,v4.9
+PLN-099,PLC-D03,الزاهرة,ar,عربي تاريخي,,v4.9
+PLN-100,PLC-D04,مُنية السرور,ar,عربي تاريخي,,v4.9
+PLN-101,PLC-G01,الحمراء,ar,عربي تاريخي,,v4.9
+PLN-102,PLC-G02,جنة العريف,ar,عربي تاريخي,,v4.9
+PLN-103,PLC-G03,بسطة,ar,عربي تاريخي,,v4.9
+PLN-104,PLC-G04,لوشة,ar,عربي تاريخي,,v4.9
+PLN-105,PLC-G05,المنكب,ar,عربي تاريخي,,v4.9
+PLN-106,PLC-G06,البشرات,ar,عربي تاريخي,,v4.9

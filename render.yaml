@@ -1,0 +1,21 @@
+# نشر خدمة منصة الأندلس (platform/service) على Render — قرار صاحب المشروع (تقرير الترحيل، الخطوة 4)
+# موقع «منتجاتي» نفسه لا يُنشر هنا (Netlify)؛ هذا الملف يخص الخدمة فقط.
+services:
+  - type: web
+    name: andalus-review
+    runtime: python
+    plan: starter
+    region: frankfurt
+    buildCommand: pip install openpyxl
+    # الترحيل يعمل أكثر من مرة دون تكرار، فيُشغَّل قبل كل إقلاع على القرص الدائم ثم تُشغَّل الخدمة
+    startCommand: >-
+      python platform/tools/migrate_v1_2.py --db /var/data/andalus.sqlite --quiet
+      && python platform/service/app.py serve --db /var/data/andalus.sqlite --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/v1/release/status
+    disk:
+      name: andalus-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12"

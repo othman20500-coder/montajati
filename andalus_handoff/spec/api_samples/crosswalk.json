@@ -1,0 +1,138 @@
+[
+ 200,
+ [
+  {
+   "branch_id": "PER-003",
+   "release_id": "PER-ALHAKAM-II",
+   "entity_kind": "Person",
+   "match_basis": "تطابق الشخص (الحكم المستنصر)",
+   "distance_km": null
+  },
+  {
+   "branch_id": "PLC-001",
+   "release_id": "PLC-CORDOBA",
+   "entity_kind": "Place",
+   "match_basis": "تطابق الاسم العربي",
+   "distance_km": 1.48
+  },
+  {
+   "branch_id": "PLC-002",
+   "release_id": "PLC-MADINAT-ZAHRA",
+   "entity_kind": "Place",
+   "match_basis": "تطابق الاسم العربي",
+   "distance_km": 0.0
+  },
+  {
+   "branch_id": "PLC-003",
+   "release_id": "PLC-GRANADA",
+   "entity_kind": "Place",
+   "match_basis": "تطابق الاسم العربي",
+   "distance_km": 1.4
+  },
+  {
+   "branch_id": "PLC-004",
+   "release_id": "PLC-SEVILLE",
+   "entity_kind": "Place",
+   "match_basis": "تطابق الاسم العربي",
+   "distance_km": 1.22
+  },
+  {
+   "branch_id": "PLC-005",
+   "release_id": "PLC-TOLEDO",
+   "entity_kind": "Place",
+   "match_basis": "تطابق الاسم العربي",
+   "distance_km": 0.67
+  },
+  {
+   "branch_id": "PLC-006",
+   "release_id": "PLC-ZARAGOZA",
+   "entity_kind": "Place",
+   "match_basis": "تطابق الاسم العربي",
+   "distance_km": 1.27
+  },
+  {
+   "branch_id": "PLC-007",
+   "release_id": "PLC-ALMARIYYA",
+   "entity_kind": "Place",
+   "match_basis": "تطابق الاسم العربي",
+   "distance_km": 0.58
+  },
+  {
+   "branch_id": "PLC-009",
+   "release_id": "PLC-VALENCIA",
+   "entity_kind": "Place",
+   "match_basis": "تطابق الاسم العربي",
+   "distance_km": 0.53
+  },
+  {
+   "branch_id": "PLC-010",
+   "release_id": "PLC-MALAGA",
+   "entity_kind": "Place",
+   "match_basis": "تطابق الاسم العربي",
+   "distance_km": 0.16
+  },
+  {
+   "branch_id": "PLC-011",
+   "release_id": "PLC-MURCIA",
+   "entity_kind": "Place",
+   "match_basis": "تطابق الاسم العربي",
+   "distance_km": 0.58
+  },
+  {
+   "branch_id": "PLC-012",
+   "release_id": "PLC-BADAJOZ",
+   "entity_kind": "Place",
+   "match_basis": "تطابق الاسم العربي",
+   "distance_km": 0.17
+  },
+  {
+   "branch_id": "PLC-018",
+   "release_id": "PLC-MERIDA",
+   "entity_kind": "Place",
+   "match_basis": "تطابق الاسم العربي",
+   "distance_km": 0.2
+  },
+  {
+   "branch_id": "PLC-020",
+   "release_id": "PLC-TORTOSA",
+   "entity_kind": "Place",
+   "match_basis": "تطابق الاسم العربي",
+   "distance_km": 0.28
+  },
+  {
+   "branch_id": "PLC-C01",
+   "release_id": "PLC-ALHAMBRA-WH",
+   "entity_kind": "Place",
+   "match_basis": "جزء من عقار UNESCO 314 (ليس تطابقًا)",
+   "distance_km": null
+  },
+  {
+   "branch_id": "PLC-C04",
+   "release_id": "PLC-RONDA",
+   "entity_kind": "Place",
+   "match_basis": "تطابق الاسم العربي",
+   "distance_km": 0.02
+  },
+  {
+   "branch_id": "PLC-C05",
+   "release_id": "PLC-ALGECIRAS",
+   "entity_kind": "Place",
+   "match_basis": "تطابق الاسم العربي",
+   "distance_km": 0.03
+  },
+  {
+   "branch_id": "PLC-G01",
+   "release_id": "PLC-ALHAMBRA-WH",
+   "entity_kind": "Place",
+   "match_basis": "جزء من عقار UNESCO 314 (ليس تطابقًا)",
+   "distance_km": null
+  },
+  {
+   "branch_id": "PLC-G02",
+   "release_id": "PLC-ALHAMBRA-WH",
+   "entity_kind": "Place",
+   "match_basis": "جزء من عقار UNESCO 314 (ليس تطابقًا)",
+   "distance_km": null
+  }
+ ]
+]

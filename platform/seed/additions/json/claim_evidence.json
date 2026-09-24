@@ -1,0 +1,92 @@
+[
+ {
+  "claim_id": "CLM-ZLQ-01",
+  "evidence_id": "EVD-ZLQ-MUTRIB",
+  "relation": "supports (date, with disagreement)",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-ZLQ-01",
+  "evidence_id": "EVD-ZLQ-DHAHABI",
+  "relation": "supports (date, with disagreement)",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-ZLQ-01",
+  "evidence_id": "EVD-ZLQ-IBN-KHALLIKAN",
+  "relation": "supports (date, with disagreement)",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-ZLQ-01",
+  "evidence_id": "EVD-ZLQ-IBN-ATHIR",
+  "relation": "supports (date, with disagreement)",
+  "ordinal": 4
+ },
+ {
+  "claim_id": "CLM-ZLQ-01",
+  "evidence_id": "EVD-ZLQ-MUJIB",
+  "relation": "supports (date, with disagreement)",
+  "ordinal": 5
+ },
+ {
+  "claim_id": "CLM-ZLQ-02",
+  "evidence_id": "EVD-ZLQ-IBN-ATHIR",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-ZLQ-02",
+  "evidence_id": "EVD-ZLQ-IBN-KHALLIKAN",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-ZLQ-02",
+  "evidence_id": "EVD-ZLQ-MUTRIB",
+  "relation": "supports",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-ZLQ-03",
+  "evidence_id": "EVD-ZLQ-IBN-ATHIR",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-ZLQ-03",
+  "evidence_id": "EVD-ZLQ-IBN-KHALLIKAN",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-ZLQ-03",
+  "evidence_id": "EVD-ZLQ-DHAHABI",
+  "relation": "supports",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-ZLQ-03",
+  "evidence_id": "EVD-ZLQ-MUTRIB",
+  "relation": "supports",
+  "ordinal": 4
+ },
+ {
+  "claim_id": "CLM-ZLQ-04",
+  "evidence_id": "EVD-ZLQ-IBN-ATHIR",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-ZLQ-04",
+  "evidence_id": "EVD-ZLQ-IBN-KHALLIKAN",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-ZLQ-04",
+  "evidence_id": "EVD-ZLQ-MUJIB",
+  "relation": "supports",
+  "ordinal": 3
+ }
+]

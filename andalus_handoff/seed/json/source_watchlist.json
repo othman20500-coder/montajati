@@ -1,0 +1,74 @@
+[
+ {
+  "source_id": "SRC-B819B01BE2",
+  "priority": "P1",
+  "owner_role": "Source Monitor",
+  "check_cadence_days": 30,
+  "expected_access": "public web",
+  "fallback_strategy_ar": "UNESCO stable record / archived citation",
+  "active": 1
+ },
+ {
+  "source_id": "SRC-FF27E1A80B",
+  "priority": "P1",
+  "owner_role": "Source Monitor",
+  "check_cadence_days": 30,
+  "expected_access": "public web",
+  "fallback_strategy_ar": "UNESCO stable record / archived citation",
+  "active": 1
+ },
+ {
+  "source_id": "SRC-F650A5BEAE",
+  "priority": "P1",
+  "owner_role": "Source Monitor",
+  "check_cadence_days": 30,
+  "expected_access": "public web",
+  "fallback_strategy_ar": "UNESCO stable record / archived citation",
+  "active": 1
+ },
+ {
+  "source_id": "SRC-5CED25F7F5",
+  "priority": "P1",
+  "owner_role": "Source Monitor",
+  "check_cadence_days": 30,
+  "expected_access": "public web",
+  "fallback_strategy_ar": "UNESCO stable record / archived citation",
+  "active": 1
+ },
+ {
+  "source_id": "SRC-3D20624E74",
+  "priority": "P1",
+  "owner_role": "Source Monitor",
+  "check_cadence_days": 30,
+  "expected_access": "public web",
+  "fallback_strategy_ar": "CSIC catalogue / institutional search",
+  "active": 1
+ },
+ {
+  "source_id": "SRC-F86CF814B9",
+  "priority": "P1",
+  "owner_role": "Source Monitor",
+  "check_cadence_days": 30,
+  "expected_access": "public web",
+  "fallback_strategy_ar": "CSIC exea discovery / catalogue export",
+  "active": 1
+ },
+ {
+  "source_id": "SRC-0DBB04D925",
+  "priority": "P1",
+  "owner_role": "Source Monitor",
+  "check_cadence_days": 30,
+  "expected_access": "public web",
+  "fallback_strategy_ar": "MAN multilingual equivalent or thematic index",
+  "active": 1
+ },
+ {
+  "source_id": "SRC-C60B7F01E7",
+  "priority": "P1",
+  "owner_role": "Source Monitor",
+  "check_cadence_days": 30,
+  "expected_access": "public web",
+  "fallback_strategy_ar": "DOI 10.3989/alqantara.1998.v19.i1.485 / search index",
+  "active": 1
+ }
+]

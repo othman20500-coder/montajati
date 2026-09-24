@@ -1,0 +1,1118 @@
+[
+ {
+  "entity_id": "PER-SUBH",
+  "entity_type": "Person",
+  "preferred_name_ar": "صبح",
+  "preferred_name_latn": "Subh",
+  "start_date": "0940",
+  "end_date": "0999",
+  "notes": "أم هشام الثاني؛ حالة موثقة من نساء البلاط الأموي."
+ },
+ {
+  "entity_id": "PER-ALHAKAM-II",
+  "entity_type": "Person",
+  "preferred_name_ar": "الحكم المستنصر بالله",
+  "preferred_name_latn": "al-Hakam II",
+  "start_date": "0915",
+  "end_date": "0976",
+  "notes": "خليفة أموي بقرطبة؛ أمر بصنع بُرطمان صبح."
+ },
+ {
+  "entity_id": "PER-HISHAM-II",
+  "entity_type": "Person",
+  "preferred_name_ar": "هشام المؤيد بالله",
+  "preferred_name_latn": "Hisham II",
+  "start_date": null,
+  "end_date": null,
+  "notes": "ابن صبح والحكم الثاني."
+ },
+ {
+  "entity_id": "PER-IBN-LUYUN",
+  "entity_type": "Person",
+  "preferred_name_ar": "ابن ليون",
+  "preferred_name_latn": "Ibn Luyun",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مؤلف رسالة الزراعة المؤلفة سنة 1348م."
+ },
+ {
+  "entity_id": "PLC-CORDOBA",
+  "entity_type": "Place",
+  "preferred_name_ar": "قرطبة",
+  "preferred_name_latn": "Córdoba",
+  "start_date": null,
+  "end_date": null,
+  "notes": "عاصمة أموية وموقع سياقات عدة في القاعدة."
+ },
+ {
+  "entity_id": "PLC-ALMARIYYA",
+  "entity_type": "Place",
+  "preferred_name_ar": "ألمرية",
+  "preferred_name_latn": "Almería / al-Mariyya",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مدينة مينائية وصناعية؛ GLOBALM."
+ },
+ {
+  "entity_id": "PLC-PECHINA",
+  "entity_type": "Place",
+  "preferred_name_ar": "بَجّانة",
+  "preferred_name_latn": "Pechina / Baŷŷāna",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مركز خزف مزجج وحي حضري مبكر."
+ },
+ {
+  "entity_id": "PLC-XERESA",
+  "entity_type": "Place",
+  "preferred_name_ar": "خيريسة/شيريسا",
+  "preferred_name_latn": "Xeresa / Xaresa",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مقبرة/مجتمع فلاحي موضوع دراسة osteoarchaeology."
+ },
+ {
+  "entity_id": "PLC-SAQUNDA",
+  "entity_type": "Place",
+  "preferred_name_ar": "شقندة/الربض",
+  "preferred_name_latn": "Šaqunda, Córdoba",
+  "start_date": "0750",
+  "end_date": "0818",
+  "notes": "ربض قرطبي مؤرخ أثريًا حتى تدميره سنة 818م."
+ },
+ {
+  "entity_id": "WRK-IBN-LUYUN-AGRI",
+  "entity_type": "Work",
+  "preferred_name_ar": "كتاب إبداء الملاحة وإنهاء الرجاحة في أصول صناعة الفلاحة",
+  "preferred_name_latn": "Kitab ibda' al-malaha...",
+  "start_date": "1348",
+  "end_date": null,
+  "notes": "عمل زراعي أندلسي متأخر."
+ },
+ {
+  "entity_id": "MS-IBN-LUYUN-EEA",
+  "entity_type": "Manuscript",
+  "preferred_name_ar": "مخطوط ابن ليون الزراعي في EEA",
+  "preferred_name_latn": "Ibn Luyun agricultural manuscript (EEA)",
+  "start_date": null,
+  "end_date": null,
+  "notes": "النسخة الكاملة الوحيدة بحسب EEA؛ تحتوي حواشي هامشية."
+ },
+ {
+  "entity_id": "OBJ-SUBH-PYXIS",
+  "entity_type": "Object",
+  "preferred_name_ar": "بُرطمان/علبة صبح العاجية",
+  "preferred_name_latn": "Subh pyxis",
+  "start_date": "0964",
+  "end_date": null,
+  "notes": "قطعة عاجية من ورش مدينة الزهراء، تحمل نقشًا مؤرخًا."
+ },
+ {
+  "entity_id": "RES-PUA",
+  "entity_type": "DigitalResource",
+  "preferred_name_ar": "بروسوبوغرافيا علماء الأندلس",
+  "preferred_name_latn": "PUA",
+  "start_date": null,
+  "end_date": null,
+  "notes": "أكثر من 11,600 شخصية وفق CSIC."
+ },
+ {
+  "entity_id": "RES-HATA",
+  "entity_type": "DigitalResource",
+  "preferred_name_ar": "تاريخ مؤلفي وناقلي الأندلس",
+  "preferred_name_latn": "HATA",
+  "start_date": null,
+  "end_date": null,
+  "notes": "أعمال مؤلفة ومنقولة في الأندلس من القرن 8 إلى 15."
+ },
+ {
+  "entity_id": "RES-AMOI",
+  "entity_type": "DigitalResource",
+  "preferred_name_ar": "الأندلس والمغرب في المشرق الإسلامي",
+  "preferred_name_latn": "AMOI",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مشروع انتقال المعرفة المبني على HATA والربط مع PUA."
+ },
+ {
+  "entity_id": "PLC-TOLEDO",
+  "entity_type": "Place",
+  "preferred_name_ar": "طليطلة",
+  "preferred_name_latn": "Toledo",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مركز رئيسي للترجمة العربية-اللاتينية في القرن 12."
+ },
+ {
+  "entity_id": "PER-GERARD-CREMONA",
+  "entity_type": "Person",
+  "preferred_name_ar": "جيرارد الكريموني",
+  "preferred_name_latn": "Gerard of Cremona",
+  "start_date": "1114",
+  "end_date": "1187",
+  "notes": "مترجم بارز من العربية إلى اللاتينية، نشط في طليطلة."
+ },
+ {
+  "entity_id": "PER-GUNDISSALINUS",
+  "entity_type": "Person",
+  "preferred_name_ar": "دومينيكوس غونديسالينوس",
+  "preferred_name_latn": "Dominicus Gundissalinus",
+  "start_date": "1115",
+  "end_date": "1190?",
+  "notes": "فيلسوف ومترجم نشط في طليطلة؛ التواريخ تقريبية."
+ },
+ {
+  "entity_id": "PER-ABRAHAM-IBN-DAUD",
+  "entity_type": "Person",
+  "preferred_name_ar": "إبراهيم بن داود",
+  "preferred_name_latn": "Abraham ibn Daud",
+  "start_date": "1110?",
+  "end_date": "1180?",
+  "notes": "فيلسوف يهودي أندلسي؛ ترجح دراسات هويته مع Avendauth مع بقاء نقاش."
+ },
+ {
+  "entity_id": "WRK-AVICENNA-DE-ANIMA",
+  "entity_type": "Work",
+  "preferred_name_ar": "كتاب النفس لابن سينا / الترجمة اللاتينية",
+  "preferred_name_latn": "Avicenna De anima / Latin translation",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مثال على سلسلة نقل عربية→لاتينية في طليطلة."
+ },
+ {
+  "entity_id": "PER-AL-JILYANI",
+  "entity_type": "Person",
+  "preferred_name_ar": "الجِلياني",
+  "preferred_name_latn": "al-Jilyani",
+  "start_date": null,
+  "end_date": "1206",
+  "notes": "شاعر غرناطي؛ توفي في دمشق بحسب AMOI-II case study."
+ },
+ {
+  "entity_id": "PLC-GRANADA",
+  "entity_type": "Place",
+  "preferred_name_ar": "غرناطة",
+  "preferred_name_latn": "Granada",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مدينة أندلسية؛ نقطة منشأ لمسار الجِلياني."
+ },
+ {
+  "entity_id": "PLC-DAMASCUS",
+  "entity_type": "Place",
+  "preferred_name_ar": "دمشق",
+  "preferred_name_latn": "Damascus",
+  "start_date": null,
+  "end_date": null,
+  "notes": "محطة شرقية في شبكات انتقال الأندلسيين."
+ },
+ {
+  "entity_id": "WRK-MANADIH",
+  "entity_type": "Work",
+  "preferred_name_ar": "مناديح المماديح",
+  "preferred_name_latn": "Manadih al-mamadih",
+  "start_date": null,
+  "end_date": null,
+  "notes": "عمل للجِلياني مرتبط بمدائح صلاح الدين."
+ },
+ {
+  "entity_id": "PER-SALADIN",
+  "entity_type": "Person",
+  "preferred_name_ar": "صلاح الدين الأيوبي",
+  "preferred_name_latn": "Saladin",
+  "start_date": "1137?",
+  "end_date": "1193",
+  "notes": "سلطان أيوبي؛ متلقٍ/موضوع عمل الجِلياني في الحالة المعروضة."
+ },
+ {
+  "entity_id": "PER-IBN-RAZIN",
+  "entity_type": "Person",
+  "preferred_name_ar": "ابن رزين التجيبي",
+  "preferred_name_latn": "Ibn Razin al-Tujibi",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مؤلف Fuḍālat al-jiwān؛ من مرسية."
+ },
+ {
+  "entity_id": "WRK-FUDALAT",
+  "entity_type": "Work",
+  "preferred_name_ar": "فضالة الخوان في طيبات الطعام والألوان",
+  "preferred_name_latn": "Fudalat al-jiwan",
+  "start_date": "13c",
+  "end_date": null,
+  "notes": "كتاب طبخ أندلسي من القرن 13."
+ },
+ {
+  "entity_id": "WRK-ANON-COOKBOOK",
+  "entity_type": "Work",
+  "preferred_name_ar": "كتاب الطبخ الأندلسي-المغاربي المجهول",
+  "preferred_name_latn": "Anonymous Hispano-Maghribi cookbook",
+  "start_date": "13c",
+  "end_date": null,
+  "notes": "مصدر أولي للطبخ في العصر الموحدي/الغرب الإسلامي."
+ },
+ {
+  "entity_id": "PLC-LEON",
+  "entity_type": "Place",
+  "preferred_name_ar": "ليون",
+  "preferred_name_latn": "León",
+  "start_date": null,
+  "end_date": null,
+  "notes": "موقع قصر ملوك ليون ذي القوس المزخرف بتقاليد أندلسية."
+ },
+ {
+  "entity_id": "OBJ-LEON-ARCH",
+  "entity_type": "Object",
+  "preferred_name_ar": "قوس قصر ملوك ليون",
+  "preferred_name_latn": "Arch from Palace of the Kings of León",
+  "start_date": "1370s",
+  "end_date": null,
+  "notes": "مثال على ثقافة بلاطية مشتركة في أواخر القرن 14."
+ },
+ {
+  "entity_id": "PLC-MANISES",
+  "entity_type": "Place",
+  "preferred_name_ar": "مانيسس",
+  "preferred_name_latn": "Manises",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مركز خزف بريق معدني في بلنسية بعد انتقال السلطة."
+ },
+ {
+  "entity_id": "OBJ-MANISES-LUSTER",
+  "entity_type": "Object",
+  "preferred_name_ar": "خزف البريق المعدني في مانيسس",
+  "preferred_name_latn": "Manises lustreware",
+  "start_date": "14c",
+  "end_date": "15c",
+  "notes": "امتداد تقني وفني لتقاليد نصرية/أندلسية في بيئة مسيحية."
+ },
+ {
+  "entity_id": "LANG-AR-AND",
+  "entity_type": "Language",
+  "preferred_name_ar": "العربية الأندلسية",
+  "preferred_name_latn": "Andalusi Arabic",
+  "start_date": null,
+  "end_date": null,
+  "notes": "سجل لغوي تاريخي في الأندلس."
+ },
+ {
+  "entity_id": "LANG-ROM-AND",
+  "entity_type": "Language",
+  "preferred_name_ar": "الرومانسية الأندلسية",
+  "preferred_name_latn": "Andalusi Romance",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مجموعة تنوعات رومانسية في الأندلس."
+ },
+ {
+  "entity_id": "LANG-HEB",
+  "entity_type": "Language",
+  "preferred_name_ar": "العبرية",
+  "preferred_name_latn": "Hebrew",
+  "start_date": null,
+  "end_date": null,
+  "notes": "لغة دينية/أدبية وثقافية مهمة في المجتمع اليهودي الأندلسي."
+ },
+ {
+  "entity_id": "PLC-BAIREN",
+  "entity_type": "Place",
+  "preferred_name_ar": "بايرين",
+  "preferred_name_latn": "Bairén / Gandia",
+  "start_date": null,
+  "end_date": null,
+  "notes": "حصن أندلسي قرب Gandia؛ الإحداثية الحالية مرساة بلدية وليست موضع الحصن الدقيق."
+ },
+ {
+  "entity_id": "PLC-EL-MOLON",
+  "entity_type": "Place",
+  "preferred_name_ar": "المولون",
+  "preferred_name_latn": "El Molón / Camporrobles",
+  "start_date": null,
+  "end_date": null,
+  "notes": "موقع أثري مبكر؛ الإحداثية الحالية مرساة Camporrobles وليست نقطة الحفر."
+ },
+ {
+  "entity_id": "PLC-TOSSAL-VILA",
+  "entity_type": "Place",
+  "preferred_name_ar": "توسال دي لا فيلا",
+  "preferred_name_latn": "El Tossal de la Vila",
+  "start_date": null,
+  "end_date": null,
+  "notes": "موقع أثري مبكر؛ الإحداثية الحالية مرساة Sierra Engarcerán وليست نقطة الحفر."
+ },
+ {
+  "entity_id": "PLC-MADINAT-ZAHRA",
+  "entity_type": "Place",
+  "preferred_name_ar": "مدينة الزهراء",
+  "preferred_name_latn": "Medina Azahara",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مدينة خلافية أموية؛ إحداثية UNESCO مرجع للعقار لا مضلعًا للحدود."
+ },
+ {
+  "entity_id": "PLC-CORDOBA-WH",
+  "entity_type": "Place",
+  "preferred_name_ar": "وسط قرطبة التاريخي",
+  "preferred_name_latn": "Historic Centre of Cordoba",
+  "start_date": null,
+  "end_date": null,
+  "notes": "عقار تراث عالمي؛ نقطة UNESCO مرجع تمثيلي."
+ },
+ {
+  "entity_id": "PLC-ALHAMBRA-WH",
+  "entity_type": "Place",
+  "preferred_name_ar": "الحمراء وجنة العريف والبيازين",
+  "preferred_name_latn": "Alhambra, Generalife and Albayzín",
+  "start_date": null,
+  "end_date": null,
+  "notes": "عقار مركب في غرناطة؛ نقطة UNESCO مرجع للعقار ككل."
+ },
+ {
+  "entity_id": "PLC-SEVILLE",
+  "entity_type": "Place",
+  "preferred_name_ar": "إشبيلية",
+  "preferred_name_latn": "Seville",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مرساة جغرافية لتوسيع Gazetteer؛ لا يثبت هذا السجل وحده الدور التاريخي للمدينة."
+ },
+ {
+  "entity_id": "PLC-ZARAGOZA",
+  "entity_type": "Place",
+  "preferred_name_ar": "سرقسطة",
+  "preferred_name_latn": "Zaragoza",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مرساة جغرافية لتوسيع Gazetteer؛ لا يثبت هذا السجل وحده الدور التاريخي للمدينة."
+ },
+ {
+  "entity_id": "PLC-VALENCIA",
+  "entity_type": "Place",
+  "preferred_name_ar": "بلنسية",
+  "preferred_name_latn": "Valencia",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مرساة جغرافية لتوسيع Gazetteer؛ لا يثبت هذا السجل وحده الدور التاريخي للمدينة."
+ },
+ {
+  "entity_id": "PLC-MALAGA",
+  "entity_type": "Place",
+  "preferred_name_ar": "مالقة",
+  "preferred_name_latn": "Málaga",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مرساة جغرافية لتوسيع Gazetteer؛ لا يثبت هذا السجل وحده الدور التاريخي للمدينة."
+ },
+ {
+  "entity_id": "PLC-MURCIA",
+  "entity_type": "Place",
+  "preferred_name_ar": "مرسية",
+  "preferred_name_latn": "Murcia",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مرساة جغرافية لتوسيع Gazetteer؛ لا يثبت هذا السجل وحده الدور التاريخي للمدينة."
+ },
+ {
+  "entity_id": "PLC-PALMA",
+  "entity_type": "Place",
+  "preferred_name_ar": "مدينة ميورقة/بالما",
+  "preferred_name_latn": "Palma / Madina Mayurqa",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مرساة جغرافية لتوسيع Gazetteer؛ لا يثبت هذا السجل وحده الدور التاريخي للمدينة."
+ },
+ {
+  "entity_id": "PLC-ALICANTE",
+  "entity_type": "Place",
+  "preferred_name_ar": "لقنت/أليكانتي",
+  "preferred_name_latn": "Alicante",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مرساة جغرافية لتوسيع Gazetteer؛ لا يثبت هذا السجل وحده الدور التاريخي للمدينة."
+ },
+ {
+  "entity_id": "PLC-BADAJOZ",
+  "entity_type": "Place",
+  "preferred_name_ar": "بطليوس",
+  "preferred_name_latn": "Badajoz",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مرساة جغرافية لتوسيع Gazetteer؛ لا يثبت هذا السجل وحده الدور التاريخي للمدينة."
+ },
+ {
+  "entity_id": "PLC-RONDA",
+  "entity_type": "Place",
+  "preferred_name_ar": "رندة",
+  "preferred_name_latn": "Ronda",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مرساة جغرافية لتوسيع Gazetteer؛ لا يثبت هذا السجل وحده الدور التاريخي للمدينة."
+ },
+ {
+  "entity_id": "PLC-JAEN",
+  "entity_type": "Place",
+  "preferred_name_ar": "جيّان",
+  "preferred_name_latn": "Jaén",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مرساة جغرافية لتوسيع Gazetteer؛ لا يثبت هذا السجل وحده الدور التاريخي للمدينة."
+ },
+ {
+  "entity_id": "PLC-HUELVA",
+  "entity_type": "Place",
+  "preferred_name_ar": "ولبة/هويلفا",
+  "preferred_name_latn": "Huelva",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مرساة جغرافية لتوسيع Gazetteer؛ لا يثبت هذا السجل وحده الدور التاريخي للمدينة."
+ },
+ {
+  "entity_id": "PLC-ECIJA",
+  "entity_type": "Place",
+  "preferred_name_ar": "إستجة/إيثيخا",
+  "preferred_name_latn": "Écija",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مرساة جغرافية لتوسيع Gazetteer؛ لا يثبت هذا السجل وحده الدور التاريخي للمدينة."
+ },
+ {
+  "entity_id": "PLC-MEDINA-SIDONIA",
+  "entity_type": "Place",
+  "preferred_name_ar": "شذونة/مدينة سيدونيا",
+  "preferred_name_latn": "Medina-Sidonia",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مرساة جغرافية لتوسيع Gazetteer؛ لا يثبت هذا السجل وحده الدور التاريخي للمدينة."
+ },
+ {
+  "entity_id": "PLC-TORTOSA",
+  "entity_type": "Place",
+  "preferred_name_ar": "طرطوشة",
+  "preferred_name_latn": "Tortosa",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مرساة جغرافية لتوسيع Gazetteer؛ لا يثبت هذا السجل وحده الدور التاريخي للمدينة."
+ },
+ {
+  "entity_id": "PLC-ALGECIRAS",
+  "entity_type": "Place",
+  "preferred_name_ar": "الجزيرة الخضراء",
+  "preferred_name_latn": "Algeciras",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مرساة جغرافية لتوسيع Gazetteer؛ لا يثبت هذا السجل وحده الدور التاريخي للمدينة."
+ },
+ {
+  "entity_id": "PLC-MERIDA",
+  "entity_type": "Place",
+  "preferred_name_ar": "ماردة",
+  "preferred_name_latn": "Mérida",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مرساة جغرافية لتوسيع Gazetteer؛ لا يثبت هذا السجل وحده الدور التاريخي للمدينة."
+ },
+ {
+  "entity_id": "PLC-008",
+  "entity_type": "Place",
+  "preferred_name_ar": "دانية",
+  "preferred_name_latn": "Dāniya",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: —؛ يحتاج توثيق تفصيلي"
+ },
+ {
+  "entity_id": "PLC-013",
+  "entity_type": "Place",
+  "preferred_name_ar": "مرتلة",
+  "preferred_name_latn": "Mārtula",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: —؛ متحقق من المركز الأثري"
+ },
+ {
+  "entity_id": "PLC-014",
+  "entity_type": "Place",
+  "preferred_name_ar": "شلب",
+  "preferred_name_latn": "Shilb",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: —؛ يحتاج توثيق تفصيلي"
+ },
+ {
+  "entity_id": "PLC-015",
+  "entity_type": "Place",
+  "preferred_name_ar": "لشبونة",
+  "preferred_name_latn": "al-Ushbūna",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: —؛ يحتاج توثيق تفصيلي"
+ },
+ {
+  "entity_id": "PLC-016",
+  "entity_type": "Place",
+  "preferred_name_ar": "شنترين",
+  "preferred_name_latn": "Shantarīn",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: —؛ يحتاج توثيق تفصيلي"
+ },
+ {
+  "entity_id": "PLC-017",
+  "entity_type": "Place",
+  "preferred_name_ar": "باجة",
+  "preferred_name_latn": "Bāja",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: —؛ يحتاج توثيق تفصيلي"
+ },
+ {
+  "entity_id": "PLC-019",
+  "entity_type": "Place",
+  "preferred_name_ar": "وشقة",
+  "preferred_name_latn": "Washqa",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: —؛ يحتاج توثيق تفصيلي"
+ },
+ {
+  "entity_id": "PLC-C01",
+  "entity_type": "Place",
+  "preferred_name_ar": "البيازين",
+  "preferred_name_latn": "al-Bayyāzīn",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: PLC-003؛ متحقق كبوابة؛ التفاصيل لاحقًا"
+ },
+ {
+  "entity_id": "PLC-C02",
+  "entity_type": "Place",
+  "preferred_name_ar": "حدرّه",
+  "preferred_name_latn": "Wādī Dāru",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: PLC-003؛ مرشح ربط"
+ },
+ {
+  "entity_id": "PLC-C03",
+  "entity_type": "Place",
+  "preferred_name_ar": "قصر الجعفرية",
+  "preferred_name_latn": "al-Jaʿfariyya",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: PLC-006؛ متحقق سابقًا"
+ },
+ {
+  "entity_id": "PLC-C06",
+  "entity_type": "Place",
+  "preferred_name_ar": "وادي آش",
+  "preferred_name_latn": "Wādī Āsh",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: —؛ يحتاج مصدر مكاني مباشر"
+ },
+ {
+  "entity_id": "PLC-D01",
+  "entity_type": "Place",
+  "preferred_name_ar": "وادي الحجارة",
+  "preferred_name_latn": "Wādī al-Ḥijāra",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: —؛ مرشح"
+ },
+ {
+  "entity_id": "PLC-D02",
+  "entity_type": "Place",
+  "preferred_name_ar": "Priego de Córdoba",
+  "preferred_name_latn": "Priego de Córdoba",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: —؛ متحقق كسياق الكنز"
+ },
+ {
+  "entity_id": "PLC-D03",
+  "entity_type": "Place",
+  "preferred_name_ar": "الزاهرة",
+  "preferred_name_latn": "al-Zāhira",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: PLC-001؛ مرشح مهم"
+ },
+ {
+  "entity_id": "PLC-D04",
+  "entity_type": "Place",
+  "preferred_name_ar": "مُنية السرور",
+  "preferred_name_latn": "Munyat al-Surūr",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: PLC-D03؛ موثق نصيًا"
+ },
+ {
+  "entity_id": "PLC-G01",
+  "entity_type": "Place",
+  "preferred_name_ar": "الحمراء",
+  "preferred_name_latn": "al-Ḥamrāʾ",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: PLC-003؛ جديد v5.3"
+ },
+ {
+  "entity_id": "PLC-G02",
+  "entity_type": "Place",
+  "preferred_name_ar": "جنة العريف",
+  "preferred_name_latn": "Jannat al-ʿArīf",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: PLC-003؛ جديد v5.3"
+ },
+ {
+  "entity_id": "PLC-G03",
+  "entity_type": "Place",
+  "preferred_name_ar": "بسطة",
+  "preferred_name_latn": "Basṭa",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: —؛ جديد v5.3"
+ },
+ {
+  "entity_id": "PLC-G04",
+  "entity_type": "Place",
+  "preferred_name_ar": "لوشة",
+  "preferred_name_latn": "Lawsha",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: —؛ جديد v5.3"
+ },
+ {
+  "entity_id": "PLC-G05",
+  "entity_type": "Place",
+  "preferred_name_ar": "المنكب",
+  "preferred_name_latn": "al-Munakkab",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: —؛ جديد v5.3"
+ },
+ {
+  "entity_id": "PLC-G06",
+  "entity_type": "Place",
+  "preferred_name_ar": "البشرات",
+  "preferred_name_latn": "al-Bushārāt",
+  "start_date": null,
+  "end_date": null,
+  "notes": "فرع الأدلة؛ الأب: —؛ جديد v5.3"
+ },
+ {
+  "entity_id": "POL-001",
+  "entity_type": "Polity",
+  "preferred_name_ar": "إمارة قرطبة الأموية",
+  "preferred_name_latn": "Umayyad Emirate of Córdoba",
+  "start_date": "0756",
+  "end_date": "0929",
+  "notes": "إمارة؛ العاصمة PLC-CORDOBA"
+ },
+ {
+  "entity_id": "POL-002",
+  "entity_type": "Polity",
+  "preferred_name_ar": "خلافة قرطبة",
+  "preferred_name_latn": "Caliphate of Córdoba",
+  "start_date": "0929",
+  "end_date": "1031",
+  "notes": "خلافة؛ العاصمة PLC-CORDOBA"
+ },
+ {
+  "entity_id": "POL-003",
+  "entity_type": "Polity",
+  "preferred_name_ar": "طائفة إشبيلية",
+  "preferred_name_latn": "Taifa of Seville",
+  "start_date": null,
+  "end_date": null,
+  "notes": "طائفة؛ العاصمة PLC-SEVILLE"
+ },
+ {
+  "entity_id": "POL-004",
+  "entity_type": "Polity",
+  "preferred_name_ar": "طائفة سرقسطة",
+  "preferred_name_latn": "Taifa of Zaragoza",
+  "start_date": null,
+  "end_date": null,
+  "notes": "طائفة؛ العاصمة PLC-ZARAGOZA"
+ },
+ {
+  "entity_id": "POL-005",
+  "entity_type": "Polity",
+  "preferred_name_ar": "طائفة دانية",
+  "preferred_name_latn": "Taifa of Dénia",
+  "start_date": null,
+  "end_date": null,
+  "notes": "طائفة؛ العاصمة PLC-008"
+ },
+ {
+  "entity_id": "POL-006",
+  "entity_type": "Polity",
+  "preferred_name_ar": "الدولة المرابطية في الأندلس",
+  "preferred_name_latn": "Almoravid rule in al-Andalus",
+  "start_date": null,
+  "end_date": null,
+  "notes": "دولة؛ العاصمة —"
+ },
+ {
+  "entity_id": "POL-007",
+  "entity_type": "Polity",
+  "preferred_name_ar": "الدولة الموحدية في الأندلس",
+  "preferred_name_latn": "Almohad rule in al-Andalus",
+  "start_date": null,
+  "end_date": null,
+  "notes": "دولة؛ العاصمة —"
+ },
+ {
+  "entity_id": "POL-008",
+  "entity_type": "Polity",
+  "preferred_name_ar": "مملكة غرناطة النصرية",
+  "preferred_name_latn": "Nasrid Kingdom of Granada",
+  "start_date": null,
+  "end_date": "1492",
+  "notes": "مملكة؛ العاصمة PLC-GRANADA"
+ },
+ {
+  "entity_id": "PER-001",
+  "entity_type": "Person",
+  "preferred_name_ar": "عبد الرحمن الداخل",
+  "preferred_name_latn": "ʿAbd al-Raḥmān I",
+  "start_date": "0731",
+  "end_date": "0788",
+  "notes": null
+ },
+ {
+  "entity_id": "PER-002",
+  "entity_type": "Person",
+  "preferred_name_ar": "عبد الرحمن الثالث الناصر",
+  "preferred_name_latn": "ʿAbd al-Raḥmān III",
+  "start_date": "0891",
+  "end_date": "0961",
+  "notes": "ولد 22 رمضان 277هـ (= 7 يناير 891م بالتحويل الجدولي)؛ صُحح من 889 في v5.2"
+ },
+ {
+  "entity_id": "PER-004",
+  "entity_type": "Person",
+  "preferred_name_ar": "المنصور ابن أبي عامر",
+  "preferred_name_latn": "al-Manṣūr Ibn Abī ʿĀmir",
+  "start_date": "0939",
+  "end_date": "1002",
+  "notes": "توفي 27 رمضان 392هـ (أغسطس 1002م) بمدينة سالم (البيان المغرب)؛ 393هـ عند الحميدي؛ المولد نحو 326–328هـ (938–940م)"
+ },
+ {
+  "entity_id": "PER-005",
+  "entity_type": "Person",
+  "preferred_name_ar": "ابن حيان القرطبي",
+  "preferred_name_latn": "Ibn Ḥayyān",
+  "start_date": "0987",
+  "end_date": "1076",
+  "notes": null
+ },
+ {
+  "entity_id": "PER-006",
+  "entity_type": "Person",
+  "preferred_name_ar": "ابن حزم",
+  "preferred_name_latn": "Ibn Ḥazm",
+  "start_date": "0994",
+  "end_date": "1064",
+  "notes": null
+ },
+ {
+  "entity_id": "PER-007",
+  "entity_type": "Person",
+  "preferred_name_ar": "ابن زيدون",
+  "preferred_name_latn": "Ibn Zaydūn",
+  "start_date": "1003",
+  "end_date": "1071",
+  "notes": null
+ },
+ {
+  "entity_id": "PER-008",
+  "entity_type": "Person",
+  "preferred_name_ar": "ولادة بنت المستكفي",
+  "preferred_name_latn": "Wallāda bint al-Mustakfī",
+  "start_date": null,
+  "end_date": null,
+  "notes": "نحو 994–1091م"
+ },
+ {
+  "entity_id": "PER-009",
+  "entity_type": "Person",
+  "preferred_name_ar": "المعتمد بن عباد",
+  "preferred_name_latn": "al-Muʿtamid ibn ʿAbbād",
+  "start_date": "1040",
+  "end_date": "1095",
+  "notes": null
+ },
+ {
+  "entity_id": "PER-010",
+  "entity_type": "Person",
+  "preferred_name_ar": "ابن عمار",
+  "preferred_name_latn": "Ibn ʿAmmār",
+  "start_date": "1031",
+  "end_date": "1086",
+  "notes": null
+ },
+ {
+  "entity_id": "PER-011",
+  "entity_type": "Person",
+  "preferred_name_ar": "صاعد الأندلسي",
+  "preferred_name_latn": "Ṣāʿid al-Andalusī",
+  "start_date": "1029",
+  "end_date": "1070",
+  "notes": null
+ },
+ {
+  "entity_id": "PER-012",
+  "entity_type": "Person",
+  "preferred_name_ar": "الزهراوي",
+  "preferred_name_latn": "al-Zahrāwī",
+  "start_date": null,
+  "end_date": null,
+  "notes": "توفي بعد 400هـ (الصلة ص162)، وعاصره ابن حزم (رسائله ج2 ص185)؛ نحو 936–1013م عند Britannica، والوفاة 427هـ/1036م عند الزركلي — لا نص أوليًا بسنة الوفاة"
+ },
+ {
+  "entity_id": "PER-013",
+  "entity_type": "Person",
+  "preferred_name_ar": "الزرقالي",
+  "preferred_name_latn": "al-Zarqālī",
+  "start_date": null,
+  "end_date": null,
+  "notes": "القرن 11م"
+ },
+ {
+  "entity_id": "PER-014",
+  "entity_type": "Person",
+  "preferred_name_ar": "ابن باجة",
+  "preferred_name_latn": "Ibn Bājja",
+  "start_date": null,
+  "end_date": "1139",
+  "notes": null
+ },
+ {
+  "entity_id": "PER-015",
+  "entity_type": "Person",
+  "preferred_name_ar": "ابن طفيل",
+  "preferred_name_latn": "Ibn Ṭufayl",
+  "start_date": null,
+  "end_date": "1185",
+  "notes": "نحو 1105–1185م"
+ },
+ {
+  "entity_id": "PER-016",
+  "entity_type": "Person",
+  "preferred_name_ar": "ابن رشد",
+  "preferred_name_latn": "Ibn Rushd",
+  "start_date": "1126",
+  "end_date": "1198",
+  "notes": null
+ },
+ {
+  "entity_id": "PER-017",
+  "entity_type": "Person",
+  "preferred_name_ar": "ابن عربي",
+  "preferred_name_latn": "Ibn ʿArabī",
+  "start_date": "1165",
+  "end_date": "1240",
+  "notes": null
+ },
+ {
+  "entity_id": "PER-018",
+  "entity_type": "Person",
+  "preferred_name_ar": "لسان الدين ابن الخطيب",
+  "preferred_name_latn": "Ibn al-Khaṭīb",
+  "start_date": "1313",
+  "end_date": "1374",
+  "notes": "ولد 25 رجب 713هـ (نوفمبر 1313م) بنص الإحاطة ج4 ص548؛ قُتل خنقًا في سجنه بفاس سنة 776هـ، بين مستهلّها وشوالها (منتصف 1374م إلى أوائل 1375م) بحسب ابن خلدون: العبر ج7 ص452–453، والرحلة ص187"
+ },
+ {
+  "entity_id": "PER-019",
+  "entity_type": "Person",
+  "preferred_name_ar": "ابن سعيد المغربي",
+  "preferred_name_latn": "Ibn Saʿīd al-Maghribī",
+  "start_date": "1213",
+  "end_date": "1286",
+  "notes": null
+ },
+ {
+  "entity_id": "PER-020",
+  "entity_type": "Person",
+  "preferred_name_ar": "الإدريسي",
+  "preferred_name_latn": "al-Idrīsī",
+  "start_date": null,
+  "end_date": null,
+  "notes": "نحو 1100–1165/66م"
+ },
+ {
+  "entity_id": "PER-021",
+  "entity_type": "Person",
+  "preferred_name_ar": "ابن البيطار",
+  "preferred_name_latn": "Ibn al-Bayṭār",
+  "start_date": null,
+  "end_date": "1248",
+  "notes": null
+ },
+ {
+  "entity_id": "PER-022",
+  "entity_type": "Person",
+  "preferred_name_ar": "ابن قزمان",
+  "preferred_name_latn": "Ibn Quzmān",
+  "start_date": null,
+  "end_date": "1160",
+  "notes": "نحو 1087–1160م"
+ },
+ {
+  "entity_id": "PER-023",
+  "entity_type": "Person",
+  "preferred_name_ar": "حفصة الركونية",
+  "preferred_name_latn": "Ḥafṣa al-Rakūniyya",
+  "start_date": null,
+  "end_date": null,
+  "notes": "القرن 12م"
+ },
+ {
+  "entity_id": "PER-024",
+  "entity_type": "Person",
+  "preferred_name_ar": "صموئيل بن نغريلة",
+  "preferred_name_latn": "Samuel ibn Naghrīla",
+  "start_date": "0993",
+  "end_date": null,
+  "notes": "ت 1055/56م"
+ },
+ {
+  "entity_id": "PER-025",
+  "entity_type": "Person",
+  "preferred_name_ar": "يهوذا اللاوي",
+  "preferred_name_latn": "Judah Halevi",
+  "start_date": null,
+  "end_date": "1141",
+  "notes": "نحو 1075–1141م"
+ },
+ {
+  "entity_id": "PER-026",
+  "entity_type": "Person",
+  "preferred_name_ar": "موسى بن عزرا",
+  "preferred_name_latn": "Moses ibn Ezra",
+  "start_date": null,
+  "end_date": null,
+  "notes": "نحو 1055–بعد 1135م"
+ },
+ {
+  "entity_id": "PER-027",
+  "entity_type": "Person",
+  "preferred_name_ar": "عباس بن ناصح",
+  "preferred_name_latn": "ʿAbbās b. Nāṣiḥ",
+  "start_date": null,
+  "end_date": null,
+  "notes": "ت نحو 852م"
+ },
+ {
+  "entity_id": "PER-W01",
+  "entity_type": "Person",
+  "preferred_name_ar": "عائشة بنت أحمد القرطبية",
+  "preferred_name_latn": "ʿĀʾisha bint Aḥmad al-Qurṭubiyya",
+  "start_date": null,
+  "end_date": "1010",
+  "notes": "ت 1009–1010م"
+ },
+ {
+  "entity_id": "PER-W02",
+  "entity_type": "Person",
+  "preferred_name_ar": "أم الحسن الطنجالية",
+  "preferred_name_latn": "Umm al-Ḥasan al-Tanyāliyya",
+  "start_date": null,
+  "end_date": null,
+  "notes": "منتصف 14م"
+ },
+ {
+  "entity_id": "PER-028",
+  "entity_type": "Person",
+  "preferred_name_ar": "المقتدر بن هود",
+  "preferred_name_latn": "al-Muqtadir ibn Hūd",
+  "start_date": null,
+  "end_date": "1081",
+  "notes": "حكم 1046–1081م (v4.9)"
+ },
+ {
+  "entity_id": "PER-029",
+  "entity_type": "Person",
+  "preferred_name_ar": "مجاهد العامري",
+  "preferred_name_latn": "Mujāhid al-ʿĀmirī",
+  "start_date": null,
+  "end_date": null,
+  "notes": "القرن 11م — يحتاج ضبط السنوات"
+ },
+ {
+  "entity_id": "PER-030",
+  "entity_type": "Person",
+  "preferred_name_ar": "محمد الأول ابن الأحمر",
+  "preferred_name_latn": "Muḥammad I ibn al-Aḥmar",
+  "start_date": "1194",
+  "end_date": "1273",
+  "notes": "ولد 591هـ (عام الأرك) بأرجونة؛ بويع بغرناطة 26 رمضان 635هـ؛ توفي 29 جمادى الآخرة 671هـ (الإحاطة ج2 ص55–56)"
+ },
+ {
+  "entity_id": "PER-031",
+  "entity_type": "Person",
+  "preferred_name_ar": "محمد الثاني عشر أبو عبد الله",
+  "preferred_name_latn": "Muḥammad XII (Boabdil)",
+  "start_date": null,
+  "end_date": null,
+  "notes": "حكم 1482–1483 و1487–1492م"
+ },
+ {
+  "entity_id": "PER-032",
+  "entity_type": "Person",
+  "preferred_name_ar": "محمد الثاني الفقيه",
+  "preferred_name_latn": "Muḥammad II al-Faqīh",
+  "start_date": null,
+  "end_date": "1302",
+  "notes": "توفي شعبان 701هـ (أبريل–مايو 1302م)"
+ },
+ {
+  "entity_id": "PER-033",
+  "entity_type": "Person",
+  "preferred_name_ar": "يوسف الأول",
+  "preferred_name_latn": "Yūsuf I",
+  "start_date": "1318",
+  "end_date": "1354",
+  "notes": "ولد 28 ربيع الآخر 718هـ (يونيو 1318م)؛ ولي 14 ذي الحجة 733هـ؛ قُتل 1 شوال 755هـ (الإحاطة ج4 ص292)"
+ },
+ {
+  "entity_id": "PER-034",
+  "entity_type": "Person",
+  "preferred_name_ar": "محمد الخامس الغني بالله",
+  "preferred_name_latn": "Muḥammad V",
+  "start_date": "1339",
+  "end_date": "1391",
+  "notes": "ولد 22 جمادى الآخرة 739هـ (4/5 يناير 1339م) بنص الإحاطة ج2 ص50؛ توفي 793هـ (1390/1391م)"
+ },
+ {
+  "entity_id": "PER-035",
+  "entity_type": "Person",
+  "preferred_name_ar": "ابن زمرك",
+  "preferred_name_latn": "Ibn Zamrak",
+  "start_date": "1333",
+  "end_date": null,
+  "notes": "ولد 14 شوال 733هـ (يونيو 1333م)؛ قُتل بعد 795هـ بحسب المقري (نفح الطيب ج7 ص170)؛ 797هـ/1395م عند عنان بلا مصدر مفحوص"
+ },
+ {
+  "entity_id": "PER-036",
+  "entity_type": "Person",
+  "preferred_name_ar": "أبو الحسن علي",
+  "preferred_name_latn": "Abū l-Ḥasan ʿAlī (Muley Hacén)",
+  "start_date": null,
+  "end_date": "1485",
+  "notes": "توفي بالمنكب 890هـ (1485م)"
+ },
+ {
+  "entity_id": "PER-037",
+  "entity_type": "Person",
+  "preferred_name_ar": "محمد الزغل",
+  "preferred_name_latn": "Muḥammad al-Zaghal",
+  "start_date": null,
+  "end_date": null,
+  "notes": "حاكم مالقة ثم سلطان 1485–1487م"
+ }
+]

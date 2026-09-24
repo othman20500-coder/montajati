@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="zellij" data-audience="general">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>الأندلس: أطلس ومرجع موثّق</title>
+<meta name="description" content="نموذج تفاعلي لتصور منصة الأندلس الرقمية: خريطة زمنية، خط زمني، صفحات كيانات مترابطة، ثلاثة اتجاهات بصرية، ونظام ادعاء ومصدر.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600&family=Tajawal:wght@300;400;500;700&display=swap">
+<style>
+  /* ===== الرموز الوظيفية الثابتة عبر السمات ===== */
+  :root{
+    --fact:#1F9D6A; --disputed:#D08A1E; --inference:#3F6FB5; --myth:#8A8F98;
+    --era-wulat:#8C6D3F; --era-imara:#2E7D5B; --era-khilafa:#1F5FA8; --era-tawaif:#B2632B;
+    --era-murabit:#5B3F8C; --era-muwahhid:#8C2F39; --era-nasrid:#B8912E; --era-morisco:#5C6B73;
+    --christian:#C9C2B3;
+    --r-s:8px; --r-m:14px; --r-l:24px; --ease:cubic-bezier(.2,.7,.2,1);
+  }
+  /* ===== الاتجاه ب: الزليج (الأساس) ===== */
+  :root, :root[data-theme="zellij"]{
+    --bg:#F7F5EF; --card:#FFFFFF; --ink:#14202E; --muted:#5B6673; --line:#DCD8CC;
+    --brand:#173F7A; --brand-2:#1E9C8B; --accent:#E4B33B; --soft:#E6EEF7;
+    --head:"Reem Kufi","IBM Plex Sans Arabic",sans-serif; --body:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
+    --pattern:radial-gradient(circle at 1px 1px, rgba(23,63,122,.08) 1px, transparent 0); --pattern-size:22px 22px;
+    --hero-bg:linear-gradient(135deg,#173F7A 0%,#1E9C8B 100%); --hero-ink:#fff;
+    --shadow:0 18px 36px -22px rgba(23,63,122,.45); color-scheme:light;
+  }
+  /* ===== الاتجاه أ: المخطوط ===== */
+  :root[data-theme="manuscript"]{
+    --bg:#F4ECDC; --card:#FBF6EA; --ink:#2B1D12; --muted:#6E5A46; --line:#D9CBB2;
+    --brand:#1F4E79; --brand-2:#9B2D20; --accent:#B5893A; --soft:#EFE3CB;
+    --head:"Amiri","Noto Naskh Arabic",serif; --body:"Noto Naskh Arabic","Amiri",serif;
+    --pattern:linear-gradient(transparent 31px, rgba(43,29,18,.06) 32px); --pattern-size:100% 32px;
+    --hero-bg:linear-gradient(135deg,#EADBBE 0%,#F4ECDC 100%); --hero-ink:#2B1D12;
+    --shadow:0 18px 36px -22px rgba(43,29,18,.4); color-scheme:light;
+  }
+  :root[data-theme="manuscript"] body{font-size:17.5px}
+  :root[data-theme="manuscript"] .card,:root[data-theme="manuscript"] .panel{border:1px solid var(--accent);outline:3px double var(--line);outline-offset:-6px}
+  /* ===== الاتجاه ج: الليل الأندلسي ===== */
+  :root[data-theme="night"]{
+    --bg:#0E1420; --card:#151D2B; --ink:#DCE3EA; --muted:#94A0AE; --line:#26303F;
+    --brand:#C77D3A; --brand-2:#4E6B4A; --accent:#E3A65A; --soft:#1B2536;
+    --head:"Tajawal","IBM Plex Sans Arabic",sans-serif; --body:"Tajawal","IBM Plex Sans Arabic",sans-serif;
+    --pattern:radial-gradient(ellipse at 50% 0%, rgba(199,125,58,.14), transparent 60%); --pattern-size:100% 100%;
+    --hero-bg:radial-gradient(ellipse at 30% 20%, #2B2418 0%, #0E1420 60%); --hero-ink:#F1E9DC;
+    --shadow:0 30px 50px -30px rgba(0,0,0,.8); color-scheme:dark;
+  }
+  :root[data-theme="night"] body{font-size:17px}
+  :root[data-theme="night"] h1,:root[data-theme="night"] h2{font-weight:700;letter-spacing:.01em}
+
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg) var(--pattern);background-size:var(--pattern-size);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.85;padding-inline:16px;padding-block:0 64px;transition:background .4s,color .4s}
+  a{color:inherit;text-decoration:none} button{font:inherit;cursor:pointer;color:inherit}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .skip{position:absolute;inset-inline-start:8px;top:-60px;background:var(--accent);color:#fff;padding:8px 14px;border-radius:8px;z-index:200}
+  .skip:focus{top:8px}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .rights{display:grid;gap:10px}
+  .rights .src{padding:12px 14px}
+  .rights .src h4{margin:0 0 4px;font-size:15px;font-family:var(--head)}
+  .rights .src p{margin:2px 0;font-size:13.5px;color:var(--muted)}
+  .legend-st{display:grid;gap:6px;margin:8px 0 0}
+  .legend-st span{display:flex;gap:8px;align-items:flex-start;font-size:14px}
+  .legend-st i.b{margin-top:8px;flex:none}
+  [hidden]{display:none!important}
+  .wrap{max-width:1140px;margin-inline:auto}
+  h1,h2,h3,h4{font-family:var(--head);font-weight:500;line-height:1.3;margin:0}
+  h2{font-size:26px;color:var(--brand)} h3{font-size:19px}
+  .eyebrow{font-size:12.5px;letter-spacing:.04em;color:var(--brand-2);font-weight:600;margin:0 0 6px}
+  .sub{color:var(--muted);margin:6px 0 20px;max-width:64ch}
+  section{padding-block:40px;border-bottom:1px solid var(--line)} section:last-of-type{border-bottom:0}
+
+  /* ===== الترويسة ===== */
+  .top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-inline:-16px;padding-inline:16px}
+  .top .in{max-width:1140px;margin-inline:auto;display:flex;align-items:center;gap:12px;min-height:58px;flex-wrap:wrap}
+  .brand{font-family:var(--head);font-weight:700;font-size:21px;color:var(--brand);display:inline-flex;align-items:center;gap:8px}
+  .brand i{width:12px;height:12px;background:var(--accent);display:inline-block;transform:rotate(45deg)}
+  .nav{display:flex;gap:2px;flex-wrap:wrap}
+  .nav a{padding:6px 11px;border-radius:var(--r-s);font-size:14px;color:var(--muted)}
+  .nav a.on,.nav a:hover{background:var(--soft);color:var(--brand)}
+  .tools{margin-inline-start:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--r-s);overflow:hidden;background:var(--card)}
+  .seg button{border:0;background:transparent;padding:6px 10px;font-size:12.5px;color:var(--muted)}
+  .seg button[aria-pressed="true"]{background:var(--brand);color:#fff}
+  .kbtn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--card);border-radius:var(--r-s);padding:6px 10px;font-size:13px;color:var(--muted)}
+  .kbtn kbd{font:inherit;font-size:11px;border:1px solid var(--line);border-radius:4px;padding:0 5px}
+
+  /* ===== البطل ===== */
+  .hero{position:relative;overflow:hidden;margin-inline:-16px;padding:56px 16px 40px;background:var(--hero-bg);color:var(--hero-ink);border-radius:0 0 var(--r-l) var(--r-l)}
+  .hero .in{max-width:1140px;margin-inline:auto;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+  @media (max-width:860px){.hero .in{grid-template-columns:1fr}}
+  .hero h1{font-size:clamp(32px,5.5vw,56px);font-weight:700;line-height:1.2}
+  .hero h1 b{color:var(--accent);font-weight:700}
+  .hero p{font-weight:300;font-size:17px;opacity:.85;max-width:56ch;margin:12px 0 0}
+  .hero .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+  .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid transparent;border-radius:999px;padding:10px 20px;font-weight:600;font-size:14.5px;background:var(--accent);color:#14202E}
+  .btn.ghost{background:transparent;color:inherit;border-color:currentColor;opacity:.9}
+  .hero .mapbox{background:rgba(0,0,0,.12);border:1px solid rgba(255,255,255,.18);border-radius:var(--r-m);padding:10px}
+  :root[data-theme="manuscript"] .hero .mapbox{background:rgba(43,29,18,.05);border-color:var(--accent)}
+
+  /* ===== شريط الزمن ===== */
+  .timebar{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;margin-top:12px}
+  .timebar input[type=range]{width:100%;accent-color:var(--accent)}
+  .timebar .year{font-family:var(--head);font-size:22px;min-width:150px;text-align:center}
+  .timebar .year small{display:block;font-family:var(--body);font-size:12px;opacity:.75}
+  .eras{display:flex;height:10px;border-radius:999px;overflow:hidden;margin-top:6px}
+  .eras span{display:block;height:100%}
+  .eralegend{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:8px;font-size:12px;opacity:.9}
+  .eralegend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-inline-end:5px;vertical-align:middle}
+
+  /* ===== الخريطة ===== */
+  .map{width:100%;height:auto;display:block}
+  .map .land{fill:color-mix(in srgb,var(--card) 70%,var(--soft));stroke:var(--line);stroke-width:1.2}
+  :root[data-theme="night"] .map .land{fill:#1B2536;stroke:#34405A}
+  .map .sea{fill:transparent}
+  .map .city{cursor:pointer}
+  .map .route{stroke:var(--muted);stroke-dasharray:6 5;opacity:.3;fill:none}
+  .map .route.on{stroke:var(--accent);opacity:.95}
+  .map .stop circle{fill:var(--card);stroke:var(--muted);stroke-width:1.5;opacity:.55}
+  .map .stop.on circle{fill:var(--accent);stroke:#fff;opacity:1}
+  .map .stop text{font-family:var(--body);font-weight:700;fill:var(--muted);pointer-events:none}
+  .map .stop.on text{fill:#fff}
+  .stepper{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0}
+  .stepper .dot{width:26px;height:26px;border-radius:50%;border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center;font-size:12px;text-decoration:none;color:var(--ink);background:var(--card)}
+  .stepper .dot[aria-current="step"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .stepper .dot.done{border-color:var(--accent)}
+  .quote{display:block;font-family:var(--head);font-size:14.5px;line-height:1.9;margin:4px 0 8px;padding-inline-start:10px;border-inline-start:3px solid var(--line)}
+  .map .city circle{stroke:#fff;stroke-width:1.5;transition:r .3s var(--ease),fill .4s}
+  .map .city text{font-family:var(--body);font-size:11px;fill:var(--ink);pointer-events:none;paint-order:stroke;stroke:var(--bg);stroke-width:3px;stroke-linejoin:round}
+  .map .city.dim{opacity:.18}
+  .map .battle{cursor:pointer}
+  .map .battle path{fill:var(--disputed);stroke:#fff;stroke-width:1}
+  .map .note{font-size:10.5px;fill:var(--muted);font-family:var(--body)}
+  .hero .map text{fill:var(--hero-ink);stroke:none}
+
+  /* ===== البطاقات ===== */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:14px 16px;transition:transform .3s var(--ease),box-shadow .3s;position:relative}
+  a.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+  .card .type{font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px}
+  .card .type i{width:8px;height:8px;border-radius:2px;background:var(--c,var(--brand));display:inline-block}
+  .card h3{margin-top:4px;color:var(--brand)}
+  .card .d{font-size:13px;color:var(--muted)}
+  .card p{margin:6px 0 0;font-size:14px;color:var(--ink);opacity:.9}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:18px}
+  .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:start}
+  @media (max-width:860px){.cols{grid-template-columns:1fr}}
+
+  /* ===== شارة الادعاء ولوحة المصدر ===== */
+  .claim{position:relative}
+  .claim .b{display:inline-block;width:10px;height:10px;border-radius:50%;margin-inline-start:4px;vertical-align:middle;cursor:pointer;border:2px solid var(--card);box-shadow:0 0 0 1px var(--line)}
+  .b.fact{background:var(--fact)} .b.partial{background:linear-gradient(90deg,var(--fact) 50%,var(--card) 50%);box-shadow:0 0 0 1px var(--disputed)} .b.disputed{background:var(--disputed)} .b.inference{background:var(--inference)} .b.myth{background:var(--myth)} .b.unverified{background:transparent;border-color:var(--muted);box-shadow:0 0 0 1px var(--muted)}
+  .prov{position:fixed;inset-inline-start:0;inset-block:0;width:min(420px,100%);background:var(--card);border-inline-end:1px solid var(--line);box-shadow:var(--shadow);z-index:80;padding:22px;overflow:auto;transform:translateX(100%);transition:transform .35s var(--ease)}
+  html[dir=ltr] .prov{transform:translateX(-100%)}
+  .prov.open{transform:none!important}
+  .prov h3{color:var(--brand);margin-bottom:6px}
+  .prov .st{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;padding:3px 10px;border-radius:999px;border:1px solid currentColor;margin-bottom:12px}
+  .prov .x{position:absolute;top:14px;inset-inline-end:14px;border:1px solid var(--line);background:transparent;border-radius:999px;width:32px;height:32px}
+  .src{border:1px solid var(--line);border-radius:var(--r-s);padding:10px 12px;margin-top:10px;font-size:13.5px;background:var(--soft)}
+  .src b{display:block;color:var(--brand)}
+  .src q{display:block;color:var(--muted);font-style:italic;margin-top:4px}
+  .tier{display:inline-block;font-size:11px;border-radius:4px;padding:0 6px;border:1px solid var(--line);margin-inline-start:6px}
+  .counter{border-inline-start:3px solid var(--disputed);padding-inline-start:10px;margin-top:12px;font-size:13.5px}
+  .veil{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:70;opacity:0;pointer-events:none;transition:opacity .3s}
+  .veil.on{opacity:1;pointer-events:auto}
+
+  /* ===== شريط العصر ===== */
+  .ribbon{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;background:var(--card);border:1px solid var(--line);border-inline-start:6px solid var(--era,var(--brand));border-radius:var(--r-m);padding:10px 14px;font-size:13.5px;margin-bottom:18px}
+  .ribbon b{font-family:var(--head);font-size:16px;color:var(--brand)}
+  .ribbon .dual{color:var(--muted)}
+  .rail h3{display:flex;align-items:center;gap:8px;margin:22px 0 10px;font-size:17px}
+  .rail h3 i{width:10px;height:10px;border-radius:2px;background:var(--c);display:inline-block}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:5px 10px;font-size:13.5px;background:var(--card);transition:border-color .2s,transform .2s}
+  .chip:hover{border-color:var(--brand);transform:translateY(-2px)}
+  .chip small{color:var(--muted)}
+  .names{display:flex;flex-wrap:wrap;gap:6px 14px;color:var(--muted);font-size:13.5px}
+  .names b{color:var(--ink);font-weight:500}
+  .tl{position:relative;padding-inline-start:18px;border-inline-start:2px solid var(--line);display:grid;gap:12px;margin-top:10px}
+  .tl div{position:relative;font-size:14px}
+  .tl div::before{content:"";position:absolute;inset-inline-start:-24px;top:9px;width:10px;height:10px;border-radius:50%;background:var(--era,var(--brand));border:2px solid var(--card)}
+  .tl b{color:var(--brand);font-weight:600}
+  .tl small{color:var(--muted)}
+
+  /* ===== الخط الزمني السينمائي ===== */
+  .strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px 4px 18px}
+  .strip .card{min-width:260px;scroll-snap-align:start;border-top:6px solid var(--era)}
+  .density{display:inline-flex;gap:4px}
+  .density button{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--muted)}
+  .density button[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+
+  /* ===== الجمهور ===== */
+  .kids-only,.scholar-only{display:none}
+  :root[data-audience="kids"] .kids-only{display:block}
+  :root[data-audience="kids"] .general-only,:root[data-audience="kids"] .scholar-only{display:none}
+  :root[data-audience="scholar"] .scholar-only{display:block}
+  :root[data-audience="kids"] body{font-size:18px}
+  :root[data-audience="kids"] .card h3{font-size:22px}
+  .scholar-box{border:1px dashed var(--line);border-radius:var(--r-s);padding:10px 12px;font-size:13.5px;color:var(--muted);margin-top:12px}
+
+  /* ===== البحث ===== */
+  .cmd{position:fixed;inset:0;z-index:90;display:none;place-items:start center;padding-top:12vh;background:rgba(0,0,0,.45)}
+  .cmd.on{display:grid}
+  .cmd .box{width:min(640px,94vw);background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;box-shadow:var(--shadow)}
+  .cmd input{width:100%;border:0;border-bottom:1px solid var(--line);padding:14px 16px;font:inherit;font-size:17px;background:transparent;color:inherit;outline:0}
+  .cmd .res{max-height:50vh;overflow:auto}
+  .cmd .res a{display:flex;gap:10px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);font-size:14.5px}
+  .cmd .res a:hover{background:var(--soft)}
+  .cmd .res a i{width:8px;height:8px;border-radius:2px;background:var(--c);display:inline-block}
+  .cmd .res small{color:var(--muted);margin-inline-start:auto}
+
+  /* ===== نظام التصميم ===== */
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+  .sw{border:1px solid var(--line);border-radius:var(--r-s);overflow:hidden;font-size:12px;background:var(--card)}
+  .sw i{display:block;height:44px}
+  .sw span{display:block;padding:6px 8px;color:var(--muted)}
+  .spec{display:grid;grid-template-columns:150px 1fr;gap:6px 12px;font-size:14px}
+  .spec b{color:var(--brand);font-weight:600}
+  .wire{border:2px dashed var(--line);border-radius:var(--r-m);padding:12px;background:var(--card);font-size:12.5px;color:var(--muted);display:grid;gap:8px}
+  .wire div{border:1px solid var(--line);border-radius:6px;padding:8px;background:var(--soft)}
+  .wire .row{display:grid;grid-template-columns:1fr 1fr;gap:8px;border:0;padding:0;background:transparent}
+  .note{font-size:12.5px;color:var(--muted);border-inline-start:3px solid var(--accent);padding-inline-start:10px;margin-top:12px}
+  .game{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:16px}
+  .game .opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .game .opts button{border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:7px 14px}
+  .game .opts button.ok{background:var(--fact);color:#fff;border-color:var(--fact)}
+  .game .opts button.no{background:var(--disputed);color:#fff;border-color:var(--disputed)}
+  /* ===== الأطلس ===== */
+  .atlas{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;align-items:start}
+  @media (max-width:900px){.atlas{grid-template-columns:1fr}}
+  .tabs{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin-bottom:10px}
+  .tabs button{border:0;background:transparent;padding:8px 12px;font-size:14px;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px}
+  .tabs button[aria-selected="true"]{color:var(--brand);border-bottom-color:var(--accent);font-weight:600}
+  .map .zone{fill:var(--accent);fill-opacity:.08;stroke:var(--accent);stroke-dasharray:4 4;stroke-width:1.2}
+  .map .zone-label{font-family:var(--body);fill:var(--muted)}
+  .map .member circle{stroke:var(--brand-2);stroke-width:2.5}
+  .plist{display:grid;gap:6px;max-height:520px;overflow:auto}
+  .plist button{text-align:start;border:1px solid var(--line);background:var(--card);border-radius:10px;padding:8px 10px;font:inherit;font-size:13.5px;display:flex;justify-content:space-between;gap:8px}
+  .plist button[aria-pressed="true"]{border-color:var(--brand);background:var(--soft)}
+  .plist small{color:var(--muted)}
+  .lyr{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+  .lyr label{display:inline-flex;gap:6px;align-items:center;border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:12.5px;background:var(--card)}
+  footer{color:var(--muted);font-size:13px;padding-top:24px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+  @media print{.top,.prov,.veil,.cmd{display:none!important}}
+  /* ===== فحص واجهة عربية (arabic-ui-audit) 2026-09-24: تحسينات فوق الموجود، كتلة واحدة قابلة للتراجع ===== */
+  @media screen{
+    .eyebrow{letter-spacing:0}
+    :root[data-theme="night"] h1,:root[data-theme="night"] h2{letter-spacing:0}
+    h3,.card h3,.prov h3,.rail h3{font-size:20px}
+    .rights .src h4,.ribbon b{font-family:var(--body);font-weight:600}
+    .quote{font-family:var(--body)}
+    :root[data-theme="manuscript"] .quote{font-family:var(--head)}
+    .hero p{font-weight:400}
+    p,.sub,.card p,.tl div,.note{text-wrap:pretty}
+    h1,h2,h3{text-wrap:balance}
+    .timebar .year,.eralegend,.ribbon,.names,.chip small,.card .d,.tl small,.cmd .res small{font-variant-numeric:tabular-nums}
+    .skip,.stepper .dot[aria-current="step"]{color:#14202E}
+    .map .stop.on text{fill:#14202E}
+    .btn,.chip,.seg button,.tabs button,.density button,.kbtn,.stepper .dot,.game .opts button{transition:transform .15s var(--ease),background .2s,color .2s,border-color .2s,filter .2s}
+    .btn:hover{filter:brightness(.96)}
+    .seg button:hover,.tabs button:hover{color:var(--brand)}
+    .tabs button:hover{background:var(--soft)}
+    .btn:active,.chip:active,.seg button:active,.tabs button:active,.density button:active,.kbtn:active,.stepper .dot:active,.game .opts button:active{transform:translateY(1px) scale(.985)}
+    .strip{align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><div class="in">
+    <a class="skip" href="#app">تخطَّ إلى المحتوى</a><a class="brand" href="#/"><i></i> الأندلس <small style="font-family:var(--body);font-weight:400;font-size:12px;color:var(--muted)">إصدار تجريبي</small></a>
+    <nav class="nav" id="nav">
+      <a href="#/atlas">الأطلس</a><a href="#/map">الخريطة</a><a href="#/timeline">الزمن</a><a href="#/people">الأشخاص</a><a href="#/places">الأماكن</a><a href="#/museum">المتحف</a><a href="#/stories">القصص</a><a href="#/play">ألعاب</a><a href="#/sources">المصادر</a><a href="#/about">عن المنصة</a>
+    </nav>
+    <div class="tools">
+      <div class="seg" id="theme" title="الاتجاه البصري">
+        <button data-t="zellij" aria-pressed="true">الزليج</button><button data-t="manuscript" aria-pressed="false">المخطوط</button><button data-t="night" aria-pressed="false">الليل</button>
+      </div>
+      <div class="seg" id="aud" title="الجمهور">
+        <button data-a="kids" aria-pressed="false">استكشاف</button><button data-a="general" aria-pressed="true">عام</button><button data-a="scholar" aria-pressed="false">باحث</button>
+      </div>
+      <button class="kbtn" id="kbtn">ابحث <kbd>⌘K</kbd></button>
+    </div>
+  </div></header>
+
+  <main id="app"></main>
+
+  <footer>
+    منصة الأندلس الرقمية · إصدار تجريبي · كل جملة تفتح شواهدها، ولا يُعرض إلا الموثّق والمصحح والمحسوم · <a href="#/sources">المصادر وحقوقها</a> · <a href="#/about">عن المنصة والتصحيحات</a> · <a href="#/design">نظام التصميم</a> · جزء من مشروع «منتجاتي».
+  </footer>
+</div>
+
+<div class="veil" id="veil"></div>
+<aside class="prov" id="prov" aria-label="كيف نعرف هذا؟"></aside>
+<div class="cmd" id="cmd"><div class="box"><input id="q" placeholder="ابحث في الأشخاص والأماكن والأحداث والوثائق… أو اكتب سنة مثل 1085"><div class="res" id="res"></div></div></div>
+
+<script src="data/graph.js"></script>
+<script>
+/* =========================================================
+   منطق النموذج. البيانات في data/graph.js. البنية تطابق data/schema.json.
+   ملاحظة منهجية: التواريخ هنا من مراجع قياسية (EI2، Kennedy 1996، Harvey 1990/2005)
+   وتُعامل في المنصة الفعلية كادعاءات تمر بسجل الادعاءات والمراجعة قبل النشر.
+   ========================================================= */
+/* البيانات في data/graph.js (تُحمَّل قبل هذا السكربت) */
+// روابط عكسية
+const EDGES=[]; const _seen=new Set(); const pushEdge=e=>{const k=e.from+"|"+e.rel+"|"+e.to; if(_seen.has(k)) return; _seen.add(k); EDGES.push(e);};
+Object.values(E).forEach(o=>(o.edges||[]).forEach(([rel,to,role])=>pushEdge({from:o.id,rel,to,role})));
+Object.values(E).filter(o=>o.type==="Event").forEach(ev=>pushEdge({from:ev.id,rel:"took_place_at",to:ev.place}));
+Object.values(E).filter(o=>o.type==="Work"&&E[o.author]).forEach(w=>pushEdge({from:w.author,rel:"authored",to:w.id}));
+const REL={ruled:"حكم",born_in:"وُلد في",died_in:"توفي في",lived_in:"عاش في",participated_in:"شارك في",authored:"ألّف",authored_by:"ألّفه",patron_of:"رعى",took_place_at:"وقع في",part_of:"جزء من",located_in:"يقع في",active_in:"نشط في",commissioned:"أمر بصنع",translated:"ترجم",copy_of:"نسخة من",made_for:"صُنع لـ",produced_in:"أُنتج في",mother_of:"أم",collaborated_with:"تعاون مع",associated_with:"مرتبط بـ",built_on:"بُني على",addressed_to:"موجّه إلى",planned_link_to:"صلة مخططة بـ",part_of_historic_urban_context:"ضمن النسيج التاريخي لـ","near/within cultural landscape of":"ضمن المشهد الثقافي لـ"};
+const TYPE={Person:["شخص","var(--era-khilafa)"],Place:["مكان","var(--era-imara)"],Event:["حدث","var(--era-muwahhid)"],Polity:["دولة","var(--era-murabit)"],Document:["مخطوط","var(--era-wulat)"],Work:["مصنَّف","var(--era-tawaif)"],Artifact:["أثر","var(--era-nasrid)"],Language:["لغة","var(--muted)"],Resource:["مورد رقمي","var(--muted)"]};
+
+/* ===== أدوات ===== */
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const hijri=g=>Math.round((g-622)*33/32); // تقريب للنموذج فقط؛ المنصة تخزّن التاريخين معًا
+const dual=(g,e,h)=>{if(g==null)return "؟";if(h)return `${g}م${e?`–${e}م`:""} / ${esc(h)}`;return `${g}م / ${hijri(g)}هـ${e?` – ${e}م / ${hijri(e)}هـ`:""} <small title="الهجري هنا بالحساب الجدولي التقريبي (سنة واحدة)">(هجري تقريبي)</small>`;};
+const TOP=ERAS.filter(e=>!e.sub);
+const eraOf=y=>{let cur=TOP[0];for(const e of TOP){if((e.start_latest??e.from)<=y)cur=e;}return cur;};
+const eraSpan=e=>`${e.from}${e.start_latest&&e.start_latest!==e.from?"/"+e.start_latest:""}–${e.end_earliest&&e.end_earliest!==e.to?e.end_earliest+"/":""}${e.to}`;
+const href=id=>`#/x/${encodeURIComponent(id)}`;
+const claimSpan=(text,cid)=>{const c=CLAIMS[cid];return `<span class="claim">${esc(text)}<i class="b ${c?c.status:"myth"}" data-c="${cid}" title="كيف نعرف هذا؟" role="button" tabindex="0"></i></span>`;};
+const summaryHtml=o=>(o.summary||[]).map(([t,c])=>claimSpan(t,c)).join(" ");
+const yr=v=>v==null?"؟":v;
+const card=o=>{const [tn,tc]=TYPE[o.type]||["",""];const d=o.type==="Person"?`${yr(o.born)}–${yr(o.died)}م`:o.type==="Event"?dual(o.year,o.end,o.hijri):o.type==="Polity"?`${yr(o.from)}–${yr(o.to)}م`:o.year?`${o.year}م`:o.kind||"";
+  return `<a class="card" href="${href(o.id)}" style="--c:${tc}"><div class="type"><i></i>${tn}</div><h3>${esc(o.name.ar)}</h3><div class="d">${d}</div><p>${(o.summary||[]).slice(0,1).map(([t])=>esc(t)).join("")}</p></a>`;};
+const chip=id=>{const o=E[id];if(!o)return `<span class="chip">${esc(id)}</span>`;return `<a class="chip" href="${href(id)}">${esc(o.name.ar)} <small>${TYPE[o.type][0]}</small></a>`;};
+const related=id=>{const out={};EDGES.forEach(e=>{if(e.from===id){(out[E[e.to]?.type]??=[]).push({id:e.to,rel:REL[e.rel]||e.rel,role:e.role});}if(e.to===id){(out[E[e.from]?.type]??=[]).push({id:e.from,rel:REL[e.rel]||e.rel,role:e.role,rev:true});}});return out;};
+const rail=id=>{const r=related(id);const order=["Person","Place","Event","Polity","Work","Document","Artifact"];return `<div class="rail">${order.filter(t=>r[t]?.length).map(t=>`<h3 style="--c:${TYPE[t][1]}"><i></i>${TYPE[t][0]}</h3><div class="chips">${r[t].map(x=>`<a class="chip" href="${href(x.id)}">${esc(E[x.id].name.ar)} <small>${x.rev?"":x.rel} ${x.role?"· "+esc(x.role):""}</small></a>`).join("")}</div>`).join("")}</div>`;};
+const ribbon=(y,e,h)=>{const er=eraOf(y);return `<div class="ribbon" style="--era:${er.c}"><b>${er.name}</b><span class="dual">${dual(y,e,h)}</span><a href="#/timeline?y=${y}" class="chip">افتح على خط الزمن</a><a href="#/map?y=${y}" class="chip">افتح على الخريطة</a></div>`;};
+const audienceBox=o=>`${o.kids?`<div class="kids-only panel" style="margin-top:14px;font-size:18px">🧭 ${esc(o.kids)}</div>`:""}${o.scholar?`<div class="scholar-only scholar-box">ملاحظة للباحث: ${esc(o.scholar)}</div>`:""}<div class="scholar-only scholar-box">أدوات الباحث: <a href="#" onclick="return false">تصدير JSON</a> · <a href="#" onclick="return false">BibTeX</a> · <a href="#" onclick="return false">تاريخ التعديلات</a> · <a href="#" onclick="return false">الإبلاغ عن خطأ</a> · المعرّفات: Wikidata، VIAF، PUA (تُضاف عند المواءمة)</div>`;
+
+/* ===== الخريطة ===== */
+const X=lon=>(lon+10)*60, Y=lat=>(44-lat)*65;
+const IBERIA=[[-1.8,43.4],[-3.8,43.5],[-5.7,43.6],[-7.7,43.8],[-9.3,43.0],[-8.9,42.0],[-8.7,41.2],[-9.4,39.4],[-9.5,38.7],[-8.8,37.9],[-9.0,37.0],[-7.4,37.2],[-6.9,37.2],[-6.3,36.6],[-5.6,36.0],[-5.3,36.1],[-4.4,36.7],[-2.5,36.8],[-1.9,37.2],[-0.7,37.6],[-0.5,38.4],[0.2,38.8],[-0.3,39.5],[0.9,41.0],[2.2,41.4],[3.2,42.3],[3.0,42.7],[0.5,42.8]];
+const MAGHREB=[[-10,33.2],[-9.8,33.6],[-8.5,33.3],[-7.6,33.6],[-6.8,34.0],[-6.3,35.2],[-5.9,35.8],[-5.3,35.9],[-4.4,35.2],[-2.9,35.3],[-1.9,35.1],[-0.6,35.7],[0.3,36.1],[1.5,36.5],[3.0,36.8],[4,36.9],[4,33.2]];
+// مناطق السيطرة: تقريب آلي من بيانات control لكل مدينة (أقرب مدينة موثقة في السنة المختارة)، لا حدود تاريخية مرسومة يدويًا
+function inPoly(x,y,pts){let c=false;for(let i=0,j=pts.length-1;i<pts.length;j=i++){const xi=X(pts[i][0]),yi=Y(pts[i][1]),xj=X(pts[j][0]),yj=Y(pts[j][1]);if(((yi>y)!==(yj>y))&&(x<(xj-xi)*(y-yi)/(yj-yi)+xi))c=!c;}return c;}
+const CELL=14, GRID=[];
+for(let gx=CELL/2;gx<840;gx+=CELL)for(let gy=CELL/2;gy<700;gy+=CELL){if(inPoly(gx,gy,IBERIA)||inPoly(gx,gy,MAGHREB))GRID.push([gx,gy]);}
+function zones(y){const cities=Object.values(E).filter(o=>o.type==="Place"&&!o.battle&&typeof o.lat==="number"&&(o.founded==null||y>=o.founded)).map(o=>({x:X(o.lon),y:Y(o.lat),c:ctrl(o,y)})).filter(o=>o.c);
+  if(!cities.length)return "";const col={muslim:eraOf(y).c,christian:"var(--christian)"};
+  return GRID.map(([gx,gy])=>{let best=null,bd=1e12;for(const c of cities){const d=(c.x-gx)**2+(c.y-gy)**2;if(d<bd){bd=d;best=c;}}if(bd>140*140)return "";return `<rect x="${gx-CELL/2}" y="${gy-CELL/2}" width="${CELL}" height="${CELL}" fill="${col[best.c]}" opacity=".22"/>`;}).join("");}
+function ctrl(o,y){for(const [a,b,w] of (o.control||[])){if(y>=a&&y<b)return w;}return null;}
+mapSvg.n=0;
+const MAJOR=new Set(["PLC-CORDOBA","PLC-SEVILLE","PLC-GRANADA","PLC-TOLEDO","PLC-ZARAGOZA","PLC-VALENCIA","PLC-MALAGA","PLC-ALMARIYYA","PLC-015","PLC-BADAJOZ","PLC-MURCIA","PLC-MADINAT-ZAHRA","PLC-DAMASCUS"]);
+function mapSvg(y,opts={}){
+  const path=pts=>pts.map((p,i)=>`${i?"L":"M"}${X(p[0]).toFixed(1)},${Y(p[1]).toFixed(1)}`).join("")+"Z";
+  const bb=opts.bbox;const vb=bb?[X(bb[0]),Y(bb[3]),X(bb[2])-X(bb[0]),Y(bb[1])-Y(bb[3])]:[0,0,840,700];const k=bb?Math.max(vb[2]/840,vb[3]/700):1;
+  const members=new Set(opts.members||[]);
+  const zonesSvg=(opts.zones||[]).filter(z=>z.geometry&&z.geometry.type==="Polygon"&&y>=z.from&&y<=z.to).map(z=>{const ring=z.geometry.coordinates[0];const d=ring.map((p,i)=>`${i?"L":"M"}${X(p[0]).toFixed(1)},${Y(p[1]).toFixed(1)}`).join("")+"Z";const cx=X((ring[0][0]+ring[2][0])/2),cy=Y(ring[0][1]);return `<path class="zone" d="${d}"><title>${esc(z.label)} — ${esc(CARTO_AR[z.status]||z.status)}</title></path><text class="zone-label" x="${cx}" y="${cy-4*k}" text-anchor="middle" font-size="${10*k}">${esc(z.label)} (مظروف تحليلي)</text>`;}).join("");
+  const cities=Object.values(E).filter(o=>o.type==="Place"&&!o.battle&&typeof o.lat==="number"&&typeof o.lon==="number");
+  const battles=Object.values(E).filter(o=>o.type==="Place"&&o.battle);
+  const cid="land"+(++mapSvg.n);
+  // مسار على مراحل: خط منقّط بين المحطات (تنظيم سردي لا مسار سير مقيس) وأرقام المحطات؛ المفعّل منها حتى المرحلة الحالية
+  const pathSvg=(()=>{const ids=opts.path||[];if(!ids.length)return "";const act=opts.pathActive||ids.length;const pts=ids.map(id=>E[id]).map(o=>o&&typeof o.lat==="number"?o:null);
+    const seen={};let out="";for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i];if(!a||!b)continue;out+=`<line class="route${i<act?" on":""}" x1="${X(a.lon)}" y1="${Y(a.lat)}" x2="${X(b.lon)}" y2="${Y(b.lat)}" stroke-width="${2*k}"/>`;}
+    out+=pts.map((o,i)=>{if(!o)return "";const rep=seen[o.id]=(seen[o.id]||0)+1;const dx=(rep-1)*16*k;return `<g class="stop${i<act?" on":""}"><title>المحطة ${i+1}: ${esc(o.name.ar)}</title><circle cx="${X(o.lon)+dx}" cy="${Y(o.lat)-14*k}" r="${9*k}"/><text x="${X(o.lon)+dx}" y="${Y(o.lat)-10.5*k}" text-anchor="middle" font-size="${10*k}">${i+1}</text></g>`;}).join("");return out;})();
+  return `<svg class="map" viewBox="${vb.map(v=>v.toFixed(1)).join(" ")}" role="img" aria-label="خريطة الأندلس سنة ${y}">
+    <defs><clipPath id="${cid}"><path d="${path(IBERIA)}"/><path d="${path(MAGHREB)}"/></clipPath></defs>
+    <path class="land" d="${path(IBERIA)}"/><path class="land" d="${path(MAGHREB)}"/>
+    <g class="zones" clip-path="url(#${cid})">${zones(y)}</g>${zonesSvg}
+    ${cities.map(o=>{const c=ctrl(o,y);const exists=o.founded==null||y>=o.founded;const fill=c==="muslim"?eraOf(y).c:c==="christian"?"var(--christian)":"var(--brand)";
+      const label=opts.labels==="all"||MAJOR.has(o.id)||o.id===opts.focus||members.has(o.id);if(opts.only&&!opts.only.has(o.id))return "";return `<a class="city ${exists?"":"dim"}${members.has(o.id)?" member":""}" href="${opts.route?opts.route(o.id):href(o.id)}"><title>${esc(o.name.ar)}</title><circle cx="${X(o.lon)}" cy="${Y(o.lat)}" r="${(o.id===opts.focus?9:MAJOR.has(o.id)?7:4.5)*k}" fill="${fill}"${o.id===opts.focus?" stroke=\"var(--accent)\" stroke-width=\""+(3*k)+"\"":""}/>${label?`<text x="${X(o.lon)+9*k}" y="${Y(o.lat)+4*k}" font-size="${11*k}">${esc(o.name.ar)}</text>`:""}</a>`;}).join("")}
+    ${battles.filter(b=>typeof b.lat==="number"&&Math.abs((b.founded||b.year||0)-y)<=40).map(b=>`<a class="battle" href="${href(b.id)}"><path d="M${X(b.lon)},${Y(b.lat)-8} l7,12 h-14z"/><text x="${X(b.lon)+9}" y="${Y(b.lat)+4}" class="note">⚔ ${esc(b.name.ar)} ${b.founded}</text></a>`).join("")}
+    ${pathSvg}
+    <text x="${vb[0]+12*k}" y="${vb[1]+vb[3]-12*k}" class="note" font-size="${10.5*k}">الإحداثيات مراسٍ حديثة تقريبية (مركز المدينة الحالية غالبًا)؛ لا تُعرض حدود سياسية تاريخية (القاعدة 7).</text>
+  </svg>`;
+}
+const erasBar=()=>`<div class="eras">${TOP.map((e,i)=>{const a=e.from,b=TOP[i+1]?TOP[i+1].from:1614;return `<span style="width:${(b-a)/(1614-711)*100}%;background:${e.c}" title="${e.name} ${eraSpan(e)}"></span>`;}).join("")}</div><div class="eralegend">${TOP.map(e=>`<span><i style="background:${e.c}"></i>${e.name} ${eraSpan(e)}</span>`).join("")}</div>`;
+const timeBar=(y,id)=>`<div class="timebar"><span>711</span><input type="range" min="711" max="1614" value="${y}" id="${id}" aria-label="السنة"><span>1614</span></div><div class="year" id="${id}-y" style="text-align:center;font-family:var(--head);font-size:22px;margin-top:6px">${y}م <small style="font-family:var(--body);font-size:12px;opacity:.75">${hijri(y)}هـ تقريبًا · ${eraOf(y).name}</small></div>${erasBar()}`;
+function yearSnapshot(y){const evs=Object.values(E).filter(o=>o.type==="Event").sort((a,b)=>Math.abs(a.year-y)-Math.abs(b.year-y)).slice(0,3);const rulers=Object.values(E).filter(o=>o.type==="Polity"&&typeof o.from==="number"&&typeof o.to==="number"&&y>=o.from&&y<o.to);const people=Object.values(E).filter(o=>o.type==="Person"&&typeof o.born==="number"&&typeof o.died==="number"&&y>=o.born&&y<=o.died);
+  return `<div class="panel"><p class="eyebrow">ماذا كان يحدث سنة ${y}م؟</p><div class="chips">${rulers.map(r=>chip(r.id)).join("")||"<span class='chip'>لا دولة إسلامية مسجلة في النموذج لهذه السنة</span>"}</div><h3 style="margin-top:12px">أقرب الأحداث</h3><div class="chips">${evs.map(e=>`<a class="chip" href="${href(e.id)}">${esc(e.name.ar)} <small>${e.year}م</small></a>`).join("")}</div><h3 style="margin-top:12px">أحياء في هذه السنة</h3><div class="chips">${people.map(p=>chip(p.id)).join("")||"<span class='chip'>لا أشخاص في النموذج لهذه السنة</span>"}</div></div>`;}
+
+/* ===== الصفحات ===== */
+const V={};
+V.home=()=>`
+<section class="hero"><div class="in">
+  <div>
+    <p class="eyebrow" style="color:var(--accent)">موسوعة · أطلس زمني · متحف رقمي · تجربة تعليمية</p>
+    <h1>قِف في الأندلس، <b>في أي سنة تختار</b></h1>
+    <p>حرّك الزمن فتتغير الخريطة والحكام والمدن والوثائق. كل جملة هنا إسناد له شاهد حرفي بموضعه؛ ولا يُنشر إلا الموثّق والمصحح والمحسوم.</p>
+    <div class="cta"><a class="btn" href="#/stories">ابدأ برحلة سردية</a><a class="btn ghost" href="#/map">استكشف الخريطة</a><a class="btn ghost" href="#/people">ابحث في الأشخاص</a></div>
+    <div style="margin-top:22px">${timeBar(960,"heroY")}</div>
+  </div>
+  <div class="mapbox" id="heroMap">${mapSvg(960)}</div>
+</div></section>
+<section><div id="heroSnap">${yearSnapshot(960)}</div></section>
+<section><p class="eyebrow">ثلاثة مداخل</p><h2>كل كيان بوابة إلى غيره</h2><p class="sub">الشخص يقودك إلى المكان، والمكان إلى الحدث، والحدث إلى الوثيقة، والوثيقة إلى الأثر. لا صفحة مسدودة.</p>
+  <div class="grid">${["PER-006","PLC-CORDOBA","EVT-003","PER-034","PLC-G01","POL-008"].filter(id=>E[id]).map(id=>card(E[id])).join("")}</div></section>
+<section><p class="eyebrow">كيف نتحقق؟</p><h2>إسناد ← شاهد حرفي ← ادعاء</h2><p class="sub">كل جملة تاريخية هنا إسناد له شاهد واحد أو أكثر بنص حرفي وموضعه وموقفه وطريقة مطابقته (قواعد v1.2). لا يُنشر إلا الموثّق والمصحح والمحسوم، ويُعرض الموثّق جزئيًا بتنبيه.</p>
+  <div class="grid">
+    <div class="card"><h3><i class="b fact"></i> موثّق / صُحح وموثّق / حُسم الخلاف</h3><p>مثال: ${CLAIMS["AST-012"]?claimSpan("إعلان الخلافة 316هـ (حُسم خلاف 316/317)","AST-012"):""}</p></div>
+    <div class="card"><h3><i class="b partial"></i> موثّق جزئيًا</h3><p>يُعرض بتنبيه. مثال: ${CLAIMS["AST-004"]?claimSpan("نهاية الخلافة 1009–1031 بتعريفين","AST-004"):""}</p></div>
+    <div class="card"><h3><i class="b myth"></i> غير مثبت / لا يُنشر كحقيقة</h3><p>يُذكر لتُبيَّن حاله. مثال: ${CLAIMS["CLM-002"]?claimSpan("حرق طارق للسفن","CLM-002"):""}</p></div>
+    <div class="card"><h3><i class="b unverified"></i> متعارض أو ينتظر شاهدًا</h3><p>لا يُصدَّر إلى هذه الواجهة أصلًا؛ يبقى في القاعدة حتى يُحسم أو يُشهد له.</p></div>
+  </div><p class="note">انقر على أي نقطة ملونة في الموقع لفتح لوحة «كيف نعرف هذا؟».</p></section>`;
+
+V.map=(q)=>{const y=+(q.y||960);return `<section><p class="eyebrow">الخريطة الزمنية</p><h2>الأندلس سنة <span id="mapYear">${y}</span>م</h2><p class="sub">الأماكن من جدول place_geometry في v1.2 بمراسٍ حديثة تقريبية؛ لا تُعرض حدود سياسية تاريخية (القاعدة 7). حرّك الزمن لترى العصر والأحداث والأحياء في تلك السنة.</p>
+  ${timeBar(y,"mapY")}<div class="panel" id="mapBox" style="margin-top:14px">${mapSvg(y,{labels:"all"})}</div><div id="mapSnap" style="margin-top:14px">${yearSnapshot(y)}</div>
+  <div class="scholar-only scholar-box">للباحث: البديل النصي للخريطة هو قائمة الأماكن بحالتها في السنة المختارة (تُولَّد تلقائيًا)، وتصدير GeoJSON للقطة الزمنية.</div></section>`;};
+
+V.timeline=(q)=>{const y=+(q.y||0);const d=q.d||"read";const evs=Object.values(E).filter(o=>o.type==="Event").filter(e=>d==="glance"?e.weight===3:true).sort((a,b)=>a.year-b.year);
+  return `<section><p class="eyebrow">الخط الزمني السينمائي</p><h2>ثمانية عصور، فصول فيلم واحد</h2><p class="sub">ثلاث كثافات: نظرة (الأحداث المفصلية)، قراءة (كل أحداث النموذج)، بحث (مع الفلاتر في المنصة الكاملة).</p>
+  <div class="density"><button aria-pressed="${d==="glance"}" onclick="location.hash='#/timeline?d=glance'">نظرة</button><button aria-pressed="${d==="read"}" onclick="location.hash='#/timeline?d=read'">قراءة</button><button aria-pressed="false" disabled title="في المنصة الكاملة">بحث</button></div>
+  ${erasBar()}
+  <div class="strip">${evs.map(e=>`<a class="card" href="${href(e.id)}" style="--era:${eraOf(e.year).c};${y===e.year?"outline:2px solid var(--accent)":""}"><div class="type">${esc(e.kind)} · ${eraOf(e.year).name}</div><h3>${esc(e.name.ar)}</h3><div class="d">${dual(e.year,e.end,e.hijri)}</div><p>${(e.summary||[]).map(([t,c])=>claimSpan(t,c)).join(" ")}</p></a>`).join("")}</div>
+  <p class="note">الأحداث ذات المدى (مثل الفتنة أو الطرد) تُعرض في المنصة كشريط لا كنقطة، والمختلف على تاريخها بحافة ضبابية.</p></section>`;};
+
+V.people=()=>`<section><p class="eyebrow">الأشخاص</p><h2>حكام وعلماء وأدباء</h2><div class="grid">${Object.values(E).filter(o=>o.type==="Person").sort((a,b)=>(a.born??a.died??9999)-(b.born??b.died??9999)).map(card).join("")}</div></section>`;
+V.places=()=>`<section><p class="eyebrow">الأماكن</p><h2>مدن ومعالم وميادين</h2><div class="grid">${Object.values(E).filter(o=>o.type==="Place").map(card).join("")}</div></section>`;
+V.museum=()=>`<section><p class="eyebrow">المتحف الرقمي</p><h2>الآثار والمخطوطات والمصنفات والموارد</h2><p class="sub">لا تُعرض صورة أو نص طويل إلا برخصة تسمح (القاعدة 6)؛ وما عداه يُحال إليه برابط من لوحة الشواهد.</p><div class="grid">${Object.values(E).filter(o=>["Artifact","Document","Work","Resource","Language"].includes(o.type)).map(card).join("")}</div></section>`;
+
+V.stories=()=>`<section><p class="eyebrow">قصص الأطلس</p><h2>${STORIES.length} قصص من قاعدة v1.2</h2><p class="sub">كل محطة تشير إلى مكان وادعاء في القاعدة؛ وكل قصة تحمل تنبيهها.</p>
+  ${STORIES.map(st=>`<div class="panel" style="margin-bottom:14px"><p class="eyebrow">${esc(st.period||"")}</p><h3>${esc(st.title)}</h3><p style="color:var(--muted)">${esc(st.summary||"")}</p><p><a class="chip" href="#/atlas?model=all&story=${st.id}&step=1&tab=sto" style="border-color:var(--accent)">▶ على الخريطة مرحلةً مرحلة</a></p>${st.warning?`<p class="note">${esc(st.warning)}</p>`:""}
+    <div class="strip">${st.steps.map((x,i)=>`<div class="card" style="--era:var(--brand);min-width:280px"><div class="type">محطة ${i+1}</div><h3>${esc(x.title)}</h3><p>${x.claim&&CLAIMS[x.claim]?claimSpan(x.text||"",x.claim):esc(x.text||"")}</p>${x.place&&E[x.place]?`<div class="chips" style="margin-top:8px">${chip(x.place)}</div>`:""}</div>`).join("")}</div></div>`).join("")}</section>`;
+
+V.play=()=>{const y=[800,960,1100,1300][Math.floor(Math.random()*4)];const ans=eraOf(y).name;const opts=[...new Set([ans,...TOP.map(e=>e.name).sort(()=>Math.random()-.5).slice(0,3)])].sort(()=>Math.random()-.5);
+  return `<section><p class="eyebrow">تقويم وألعاب</p><h2>${QUIZ.length} سؤالًا مربوطة بادعاءات القاعدة</h2><p class="sub">كل سؤال يعرض بعد الإجابة شرحه وادعاءه بشواهده. الأسئلة من الوحدات التعليمية الجاهزة في v1.2.</p>
+  <div class="grid">
+    <div class="game"><div class="type">أين أنت؟</div><h3>سنة ${y}م، أنت في قرطبة. ما العصر؟</h3><div class="opts" id="g1">${opts.map(o=>`<button data-ok="${o===ans}">${o}</button>`).join("")}</div><p class="note" id="g1n">المصدر: حدود العصور في جدول periods (v1.2).</p></div>
+    ${QUIZ.filter(q=>q.type!=="open"&&q.choices.length).slice(0,9).map(q=>`<div class="game quiz" data-correct="${q.correct}"><div class="type">${esc(q.module)} · ${esc(q.difficulty||"")}</div><h3>${esc(q.prompt)}</h3><div class="opts">${q.choices.map((c,i)=>`<button data-i="${i}">${esc(typeof c==="string"?c:(c.text||JSON.stringify(c)))}</button>`).join("")}</div><p class="note" hidden>${esc(q.explanation||"")} ${q.claim&&CLAIMS[q.claim]?claimSpan("الادعاء المرتبط",q.claim):""}</p></div>`).join("")}
+  </div></section>`;};
+
+const MODEL_META={cordoba:{name:"قرطبة الأموية",bbox:[-7.2,36.3,-2.4,40.4]},granada:{name:"غرناطة النصرية",bbox:[-6.2,35.6,-1.2,38.6]},all:{name:"الأطلس العام",bbox:null}};
+const CARTO_AR={"thematic layer; not a political boundary":"طبقة موضوعية، ليست حدًا سياسيًا","evidence/theme layer":"طبقة أدلة موضوعية","network layer":"طبقة شبكة (أشخاص وأعمال ومسارات)","legacy layer":"طبقة إرث وامتداد","analytical envelope — NOT a historical boundary":"مظروف تحليلي، ليس حدًا تاريخيًا"};const carto=s=>CARTO_AR[s]||s;
+const GEO_AR={
+  quality:{"UNESCO property representative coordinate":"إحداثية تمثيلية لموقع تراث عالمي (يونسكو)","administrative centroid":"مركز وحدة إدارية","archaeological site point":"نقطة موقع أثري","city-level anchor, not exact excavation":"مرساة على مستوى المدينة، لا موضع التنقيب بعينه","district centroid":"مركز منطقة","municipal anchor, not exact fortress":"مرساة بلدية، لا موضع الحصن بعينه","municipal anchor, not exact site":"مرساة بلدية، لا الموضع بعينه","municipal area centroid, not exact historic core":"مركز النطاق البلدي، لا النواة التاريخية بعينها","municipal centroid":"مركز البلدية","municipal/city centroid":"مركز المدينة أو البلدية","postal locality coordinate":"إحداثية محلة بريدية"},
+  anchor:{"Camporrobles anchor":"مرساة بلدة كامبوروبلس الحديثة","Cordoba UNESCO property point used as city anchor":"نقطة موقع اليونسكو في قرطبة مستعملة مرساةً للمدينة","Sierra Engarcerán anchor":"مرساة بلدة سييرا إنغارثيران الحديثة","UNESCO World Heritage property point":"نقطة موقع تراث عالمي (يونسكو)","modern Gandia anchor":"مرساة مدينة غانديا الحديثة","modern city anchor":"مرساة المدينة الحديثة","modern city/admin anchor":"مرساة المدينة أو المركز الإداري الحديث","modern locality anchor":"مرساة المحلة الحديثة","modern municipality anchor":"مرساة البلدية الحديثة","site point":"نقطة الموقع نفسه"},
+  status:{candidate_anchor:"مرساة مرشحة، لم تُربط بادعاء موثّق بعد",gazetteer_candidate:"مرشح من المعجم الجغرافي، ينتظر ربطًا بالأدلة",verified_claim_linked:"مرتبط بادعاء موثّق",verified_site:"موقع موثّق"},
+  period:{caliphate:"عصر الخلافة",caliphate_to_empires:"من الخلافة إلى المرابطين والموحدين",caliphate_to_taifa:"من الخلافة إلى الطوائف",cross_period:"عابر للعصور",early:"العصر المبكر (الفتح والإمارة)",early_caliphate:"من العصر المبكر إلى الخلافة",legacy_transfer:"الإرث والانتقال بعد الأندلس",nasrid:"العصر النصري",nasrid_late:"أواخر العصر النصري",taifa_empires:"الطوائف والمرابطون والموحدون"},
+  theme:{archaeology:"آثار",economy:"اقتصاد",religion:"دين",court:"بلاط",art:"فن",craft:"حِرف",legacy:"إرث",knowledge:"معرفة",migration:"هجرة",translation:"ترجمة",palace:"قصور",urban:"عمران",heritage:"تراث",politics:"سياسة",society:"مجتمع",reference:"مرجعي"}
+};
+// القاعدة: لا تظهر للمستخدم رموز داخلية بالإنجليزية. ما لم يُعرَّب يُعرض وصفًا عامًا لا الرمز.
+const geoQ=s=>s?(GEO_AR.quality[s]||"نقطة تقريبية"):"—";
+const geoA=s=>s?(GEO_AR.anchor[s]||"مرساة حديثة"):"—";
+const geoS=s=>s?(GEO_AR.status[s]||"حالة غير مصنّفة"):"";
+const geoP=s=>s?(GEO_AR.period[s]||"عصر غير محدد"):"";
+const geoT=s=>s?s.split(",").map(t=>GEO_AR.theme[t.trim()]).filter(Boolean):[];
+const atlasState={model:"cordoba",y:null,place:null,tab:"year",layers:new Set(),story:null,step:1};
+const stripDia=s=>String(s||"").replace(/[\u064B-\u0652\u0670\u0640]/g,"");
+function modelOf(id){return ATLAS.models.find(m=>m.id===id);}
+V.atlas=(q)=>{const st=atlasState;if(q.model&&MODEL_META[q.model])st.model=q.model;const m=st.model==="all"?null:modelOf(st.model);
+  const years=m?m.years:[711,1614];const range=[Math.min(...years),Math.max(...years)];
+  const story=q.story?STORIES.find(s2=>s2.id===q.story)||null:null;st.story=story?story.id:null;st.step=story?Math.max(1,Math.min(+q.step||1,story.steps.length)):1;if(story)st.tab="sto";
+  const storyEv=story?Object.values(E).find(o=>o.type==="Event"&&(o.stories||[]).includes(story.id)):null;if(story&&!q.y&&storyEv)st.y=storyEv.year;
+  if(q.y)st.y=+q.y;if(st.y==null||st.y<711||st.y>1614)st.y=range[0];const y=st.y;const meta=MODEL_META[st.model];
+  const activeLayers=ATLAS.layers.filter(l=>st.layers.has(l.layer_id)&&y>=l.min_year&&y<=l.max_year);const members=new Set(activeLayers.flatMap(l=>l.members.map(x=>x.place)));
+  const modelPlaces=m?new Set([...m.places,...ATLAS.layers.flatMap(l=>l.members.map(x=>x.place))]):null;
+  const inModel=o=>modelPlaces?modelPlaces.has(o.id)?1:0:0;
+  const listPlaces=Object.values(E).filter(o=>o.type==="Place"&&typeof o.lat==="number"&&(!meta.bbox||(o.lon>=meta.bbox[0]&&o.lon<=meta.bbox[2]&&o.lat>=meta.bbox[1]&&o.lat<=meta.bbox[3]))).sort((a,b)=>inModel(b)-inModel(a)||(b.display_priority||0)-(a.display_priority||0)||a.name.ar.localeCompare(b.name.ar,"ar"));
+  if(!st.place||!E[st.place])st.place=listPlaces[0]?.id;
+  const jumps=(m?m.years:Object.values(E).filter(o=>o.type==="Event"&&o.weight===3).map(o=>o.year)).map(yy=>{const ev=Object.values(E).find(o=>o.type==="Event"&&o.year===yy);return [yy,ev?ev.name.ar:""+yy];});
+  const route=id=>`#/atlas?model=${st.model}&y=${y}&place=${encodeURIComponent(id)}`;if(q.place&&E[q.place])st.place=q.place;
+  const tabs=[["year","السنة"],["place","المكان"],["evd","الأدلة"],["src","المصادر"],["sto","القصص"],["lim","حدود المعرفة"]];if(q.tab)st.tab=q.tab;
+  const asts=(m?m.assertions:Object.keys(CLAIMS).filter(c=>CLAIMS[c].field!=="claim"));
+  const panel={
+    year:()=>yearSnapshot(y),
+    place:()=>{const o=E[st.place];if(!o)return "";return `<div class="panel"><p class="eyebrow">${esc(o.kind||"مكان")}</p><h3><a href="${href(o.id)}">${esc(o.name.ar)}</a> <small style="color:var(--muted)">${esc(o.name.en||"")}</small></h3><p>${summaryHtml(o)||"<span style='color:var(--muted)'>لا إسناد منشور لهذا المكان بعد.</span>"}</p><p class="note">حالة الموضع: ${esc(geoS(o.historical_status)||"—")}${o.period_group?` · ${esc(geoP(o.period_group))}`:""}</p><p class="note">الإحداثية: ${esc(geoQ(o.spatial_quality))} · ${esc(geoA(o.anchor_type))} · المصدر: ${esc(o.coordinate_source||"—")} (تقريبية بحسب القاعدة 7)${o.place_note?` · ${esc(o.place_note)}`:""}</p><div class="chips">${ATLAS.layers.filter(l=>l.members.some(x=>x.place===o.id)).map(l=>`<span class="chip">${esc(l.label_ar)}</span>`).join("")}</div></div>`;},
+    evd:()=>`<div class="panel"><p class="eyebrow">الأدلة — ${esc(meta.name)}</p><p class="sub" style="margin-bottom:10px">كل إسناد بحالته وعدد شواهده؛ الشاهد من المصدر الأولي مميز ومقدَّم (القاعدة 9).</p><div class="tl">${asts.map(a=>{const c=CLAIMS[a];if(!c)return "";const prim=c.sources.filter(s=>(s.source_kind||"").startsWith("مصدر أولي")).length;const eye=c.sources.filter(s=>s.review_status==="معتمد بالعين").length;return `<div style="--era:${(STATUS[c.status]||[])[1]}"><b>${claimSpan(c.text,a)}</b> <small>${esc(c.v12_status||"")} · ${c.sources.length} شاهد${prim?` · <span style="color:var(--fact)">${prim} أولي</span>`:""}${eye?` · <span style="color:var(--fact)">✓ ${eye} مطابق بالعين</span>`:""}</small></div>`;}).join("")}</div></div>`,
+    src:()=>{const used=[...new Set(asts.flatMap(a=>(CLAIMS[a]?.sources||[]).map(s=>s.src)))].filter(x=>SOURCES[x]);return `<div class="panel"><p class="eyebrow">مصادر ${esc(meta.name)} (${used.length})</p><div class="chips">${used.map(x=>`<span class="chip">${esc(SOURCES[x].title)} <small>${SOURCES[x].tier==="أولي"?"مصدر أولي":"مرتبة "+esc(SOURCES[x].tier)}${SOURCES[x].rights&&SOURCES[x].rights!=="غير معروف"?" · "+esc(SOURCES[x].rights):""}</small></span>`).join("")}</div><p class="note">تقييم المصدر مستقل عن حق إعادة النشر (القاعدتان 5 و6)؛ لا تُعرض صور أو نصوص طويلة إلا برخصة تسمح.</p></div>`;},
+    sto:()=>{const slink=(sid,n)=>`#/atlas?model=${st.model}&y=${y}&story=${sid}&step=${n}&tab=sto`;
+      if(!story)return `<div class="panel"><p class="eyebrow">قصص الأطلس</p><p class="sub" style="margin-bottom:8px">اختر قصة لعرضها على الخريطة مرحلةً مرحلة، وكل مرحلة بشواهدها.</p>${STORIES.map(s2=>`<h3 style="margin-top:8px">${esc(s2.title)} <small style="color:var(--muted)">${esc(s2.period||"")}</small></h3><p style="color:var(--muted);margin:0">${esc(s2.summary||"")}</p><div class="chips" style="margin:6px 0 10px"><a class="chip" href="${slink(s2.id,1)}" style="border-color:var(--accent)">▶ على مراحل (${s2.steps.length})</a>${s2.steps.map(x=>x.place&&E[x.place]?`<a class="chip" href="${route(x.place)}">${esc(x.title)}</a>`:`<span class="chip">${esc(x.title)}</span>`).join("")}</div>`).join("")}<a class="chip" href="#/stories">كل القصص بمحطاتها</a></div>`;
+      const i=st.step,N=story.steps.length,step=story.steps[i-1],c=step.claim?CLAIMS[step.claim]:null,pl=step.place?E[step.place]:null;
+      const names=pl?[pl.name.ar,...(pl.name.variants||[])].filter(Boolean).map(stripDia):[];
+      let ev=(c?c.sources:[]).filter(x=>x.quote);const named=ev.filter(x=>names.some(n=>stripDia(x.quote).includes(n)));const filtered=named.length>0&&named.length<ev.length;if(named.length)ev=named;
+      const prim=x=>(x.source_kind||"").startsWith("مصدر أولي");ev=[...ev].sort((a,b)=>(prim(b)?1:0)-(prim(a)?1:0));
+      return `<div class="panel"><p class="eyebrow">${esc(story.title)} · المرحلة ${i} من ${N}</p>
+        <div class="stepper">${story.steps.map((x,j)=>`<a class="dot${j+1<i?" done":""}" href="${slink(story.id,j+1)}" ${j+1===i?'aria-current="step"':""} title="${esc(x.title)}">${j+1}</a>`).join("")}</div>
+        <h3>${i}. ${esc(step.title)}</h3>${pl?`<p class="note">المحطة: <a href="${href(pl.id)}">${esc(pl.name.ar)}</a> — مرساة حديثة تقريبية (القاعدة 7)</p>`:""}<p>${esc(step.text||"")}</p>
+        ${c?`<p style="margin:8px 0 4px"><b>الادعاء:</b> ${claimSpan(c.text,step.claim)} <small style="color:var(--muted)">${esc(c.v12_status||"")}</small></p>
+        <p class="eyebrow" style="margin-top:8px">${filtered?"الشواهد التي تسمي هذه المحطة":"شواهد المرحلة"} (${ev.length}) — المصدر الأولي مقدَّم</p>
+        <div class="tl">${ev.map(x=>`<div style="--era:${prim(x)?"var(--fact)":"var(--muted)"}"><b>${esc(SOURCES[x.src]?.title||x.src)}</b> <small>${esc(x.loc||"")} · ${esc(x.stance||"")}${prim(x)?' · <span style="color:var(--fact)">مصدر أولي</span>':""}${x.review_status==="معتمد بالعين"?' · <span style="color:var(--fact)">✓ مطابق بالعين</span>':""}</small><span class="quote">«${esc(x.quote)}»</span>${x.note?`<small style="color:var(--muted)">${esc(x.note)}</small>`:""}</div>`).join("")}</div>`:""}
+        <div class="chips" style="margin-top:10px">${i>1?`<a class="chip" href="${slink(story.id,i-1)}">→ المرحلة السابقة</a>`:""}${i<N?`<a class="chip" href="${slink(story.id,i+1)}" style="border-color:var(--accent)">المرحلة التالية ←</a>`:""}<a class="chip" href="#/atlas?model=${st.model}&y=${y}&tab=sto">إغلاق القصة</a></div>
+        ${story.warning?`<p class="note">${esc(story.warning)}</p>`:""}</div>`;},
+    lim:()=>`<div class="panel"><p class="eyebrow">ما لا نعرفه بعد — ${esc(meta.name)}</p><ul style="margin:0;padding-inline-start:18px">${(m?m.todos:ATLAS.models.flatMap(x=>x.todos)).map(t=>`<li><b>${esc(t.id)}</b>: ${esc(t.todo)}</li>`).join("")}${asts.filter(a=>CLAIMS[a]&&CLAIMS[a].status==="partial").map(a=>`<li>${claimSpan(CLAIMS[a].text,a)} <small style="color:var(--muted)">موثّق جزئيًا: يُعرض بتنبيه</small></li>`).join("")}</ul><h3 style="margin-top:12px;font-size:15px">سياسة الإصدار</h3><ul style="margin:0;padding-inline-start:18px;color:var(--muted);font-size:13.5px">${ATLAS.scope.map(sc=>`<li>${sc.included?"✓":"✗"} ${esc(sc.component)}: ${esc(sc.policy_ar)}</li>`).join("")}</ul><p class="note">قائمة المراجعة اليدوية الكاملة في andalus_handoff/HANDOFF.md.</p></div>`
+  };
+  return `<section><p class="eyebrow">الأطلس الموحّد</p><h2>${esc(meta.name)} · سنة ${y}م</h2>
+  <div class="seg" style="margin-bottom:10px">${Object.entries(MODEL_META).map(([k,v])=>`<button aria-pressed="${k===st.model}" onclick="location.hash='#/atlas?model=${k}'">${v.name}</button>`).join("")}</div>
+  <div class="atlas"><div>
+    ${timeBar(y,"atlasY")}
+    <div class="chips" style="margin:8px 0">${jumps.map(([yy,l])=>`<a class="chip" href="#/atlas?model=${st.model}&y=${yy}" ${yy===y?'style="border-color:var(--accent)"':""}>${esc(l)} <small>${yy}</small></a>`).join("")}</div>
+    <div class="lyr">${ATLAS.layers.map(l=>`<label title="${esc(l.description_ar)} — ${esc(carto(l.cartographic_status))}"><input type="checkbox" data-lyr="${l.layer_id}" ${st.layers.has(l.layer_id)?"checked":""}> ${esc(l.label_ar)}</label>`).join("")}<label title="مظاريف تحليلية، ليست حدودًا تاريخية (SCOPE-004)"><input type="checkbox" data-lyr="zones" ${st.layers.has("zones")?"checked":""}> المظاريف التحليلية</label></div>
+    <div class="panel" id="atlasMap">${mapSvg(y,{bbox:meta.bbox,members:[...members],zones:st.layers.has("zones")?ATLAS.zones:[],focus:story?story.steps[st.step-1].place:st.place,route,path:story?story.steps.map(x=>x.place):null,pathActive:st.step})}<ul class="sr-only" aria-label="الأماكن على الخريطة نصيًا">${listPlaces.map(o=>`<li><a href="${route(o.id)}">${esc(o.name.ar)}</a></li>`).join("")}</ul></div>
+    <p class="note">الطبقات: ${ATLAS.layers.map(l=>carto(l.cartographic_status)).filter((v,i,a)=>a.indexOf(v)===i).map(esc).join(" · ")}. المظاريف: ${esc(carto(ATLAS.zones[0]?.status||""))} (سياسة الإصدار SCOPE-004).</p>
+  </div><div>
+    <div class="tabs" role="tablist">${tabs.map(([k,l])=>`<button role="tab" aria-selected="${st.tab===k}" data-tab="${k}">${l}</button>`).join("")}</div>
+    <div id="atlasPanel">${panel[st.tab]()}</div>
+    <h3 style="margin:14px 0 8px;font-size:15px">الأماكن (${listPlaces.length})</h3>
+    <div class="plist">${listPlaces.map(o=>`<button data-place="${esc(o.id)}" aria-pressed="${o.id===st.place}"><span>${esc(o.name.ar)}</span><small>${esc(o.kind||"")}${members.has(o.id)?" · في الطبقة":""}</small></button>`).join("")}</div>
+  </div></div></section>`;};
+
+V.sources=()=>{const all=Object.entries(SOURCES).map(([id,S])=>({id,...S}));const prim=all.filter(x=>x.tier==="أولي"),rest=all.filter(x=>x.tier!=="أولي").sort((a,b)=>String(a.tier).localeCompare(String(b.tier)));
+  const card=x=>`<div class="src"><h4>${esc(x.title)}</h4>${x.author?`<p>${esc(x.author)}</p>`:""}<p>${x.tier==="أولي"?"مصدر أولي (نص تراثي أو وثيقة معاصرة للحدث)":"مرتبة "+esc(x.tier)+" (تقييم المصدر، وهو مستقل عن حالة التحقق)"}${x.pub?` · ${esc(x.pub)}`:""}${x.url_checked?` · فُحص الرابط ${esc(x.url_checked)}`:""}</p><p><b>الحقوق:</b> ${esc(x.rights||"غير معروف")}${x.rights_note?` — ${esc(x.rights_note)}`:""}</p>${x.url?`<p><a href="${esc(x.url)}" target="_blank" rel="noopener">الرابط إلى المصدر ↗</a></p>`:""}</div>`;
+  return `<section><p class="eyebrow">المصادر وحقوقها</p><h2>${all.length} مصدرًا يُستشهد به في هذه المنصة</h2><p class="sub">قيمة المصدر في الاستشهاد شيء، وحق إعادة نشره شيء آخر (القاعدة 6): لا تُعرض هنا صورة أو خريطة أو نص طويل إلا إذا كانت رخصته تسمح، وما عدا ذلك يُحال إليه برابط. الشاهد من المصدر الأولي مقدَّم على الدراسة الحديثة ومميز في كل لوحة «كيف نعرف هذا؟».</p>
+  <h3>المصادر الأولية (${prim.length})</h3><div class="rights">${prim.map(card).join("")}</div>
+  <h3 style="margin-top:18px">الدراسات والمراجع (${rest.length})</h3><div class="rights">${rest.map(card).join("")}</div>
+  <p class="note">بيانات الطبعات التي لم يُتحقق منها مكتوبة كذلك صراحة، وترقيم نسخ الشاملة يُقابل بالطبعات الورقية قبل الاعتماد النهائي.</p></section>`;};
+V.about=()=>`<section><p class="eyebrow">عن المنصة</p><h2>مرجع رقمي عن الأندلس لا يقول إلا ما يستطيع إثباته</h2>
+  <p class="sub">موسوعة وأطلس زمني ومتحف رقمي وتجربة تعليمية في مكان واحد. كل جملة تاريخية هنا تفتح شواهدها: النص الحرفي من المصدر وموضعه وموقفه مما نقول.</p>
+  <div class="cols"><div>
+    <h3>كيف نتحقق؟</h3><p>تمر كل معلومة بثلاث طبقات: <b>إسناد</b> يحدد ما الذي نُثبته بالضبط، ثم <b>شاهد</b> واحد أو أكثر بنص حرفي وموضعه (الجزء والصفحة) وموقفه: يدعم أو يدعم جزئيًا أو يعارض، ثم <b>ادعاء</b> يُعرض للقارئ. لا يُنشر إلا الموثّق والمصحح والمحسوم؛ والموثّق جزئيًا يُعرض بتنبيه؛ والمتعارض وما ينتظر شاهدًا لا يُعرضان.</p>
+    <div class="legend-st">${Object.entries(STATUS).filter(([k])=>["fact","partial","myth"].includes(k)).map(([k,[n,c]])=>`<span><i class="b ${k}" style="background:${c}"></i><span><b>${esc(n)}</b> — ${esc(PLAIN[k]||"")}</span></span>`).join("")}</div>
+    <h3 style="margin-top:16px">ما لا نفعله</h3><ul style="margin:0;padding-inline-start:18px"><li>لا نختلق عنوانًا ولا مؤلفًا ولا رقم صفحة ولا رابطًا؛ وما لم يُتحقق منه يُكتب «لم أتحقق».</li><li>لا نختار رقمًا بصمت عند اختلاف المصادر؛ يُذكر الخلاف بمصادره.</li><li>الإحداثيات مراسٍ حديثة تقريبية، ولا تُعرض حدود سياسية تاريخية؛ المظاريف على الخريطة تحليلية لا حدود.</li><li>التحويل بين الهجري والميلادي بالحساب الجدولي، والناتج تقريبي بيوم أو سنة.</li></ul>
+    <h3 style="margin-top:16px">المراجعة بالعين</h3><p>الشواهد التي قوبلت آليًا تُميَّز عن التي راجعها مراجعان متخصصان معتمدان؛ وتظهر شارة «مطابق بالعين» على الشاهد بعد اعتماده. هذا الإصدار تجريبي وتستمر المراجعة.</p>
+  </div><div class="panel">
+    <h3>الحقوق</h3><p><b>المصادر:</b> لكل مصدر سطر حقوق في <a href="#/sources">صفحة المصادر</a>؛ النصوص التراثية في الملك العام، وحقوق التحقيق والحواشي لأصحابها ولا تُعاد نشرها؛ الدراسات والمراجع يُحال إليها برابط.</p>
+    <p><b>محتوى المنصة</b> (الصياغات التحريرية والبيانات المهيكلة والتصميم): الحقوق محفوظة لصاحب المشروع حتى اعتماد رخصة النشر، والمقترح رخصة نسب المصنّف (CC BY 4.0) للنصوص والبيانات.</p>
+    <p><b>الخط:</b> Reem Kufi وIBM Plex Sans Arabic برخصة الخطوط المفتوحة.</p>
+    <h3 style="margin-top:14px">التصحيح والتواصل</h3><p>وجدت خطأً أو شاهدًا أقوى؟ كل تصحيح يمر بالمنهج نفسه: نص حرفي من مصدر يُذكر موضعه. أرسل ملاحظتك عبر <a href="https://github.com/othman20500-coder/montajati/issues" target="_blank" rel="noopener">صفحة الملاحظات في المستودع ↗</a> أو عبر <a href="../index.html#/about">صفحة التواصل في موقع «منتجاتي»</a>.</p>
+    <p class="note">الإصدار: بيانات v1.2 مع ملحق الزلاقة (${RELEASE?esc(RELEASE.version||""):""}، ${RELEASE?esc(RELEASE.release_date||""):""}).</p>
+  </div></div></section>`;
+V.design=()=>`<section><p class="eyebrow">نظام التصميم</p><h2>ثلاثة اتجاهات، رموز واحدة</h2><p class="sub">بدّل الاتجاه من الترويسة (الزليج / المخطوط / الليل) لترى الصفحة كلها تتغير. الألوان الوظيفية (حالات الادعاء والعصور) ثابتة عبر الاتجاهات كي لا يتغير معنى اللون.</p>
+  <h3>ألوان الحالة</h3><div class="swatches"><div class="sw"><i style="background:var(--fact)"></i><span>حقيقة مستقرة</span></div><div class="sw"><i style="background:var(--disputed)"></i><span>مختلف عليها</span></div><div class="sw"><i style="background:var(--inference)"></i><span>استنتاج</span></div><div class="sw"><i style="background:var(--myth)"></i><span>شائعة غير مثبتة</span></div></div>
+  <h3 style="margin-top:18px">ألوان العصور</h3><div class="swatches">${ERAS.map(e=>`<div class="sw"><i style="background:${e.c}"></i><span>${e.name}</span></div>`).join("")}</div>
+  <h3 style="margin-top:18px">ألوان الاتجاه الحالي</h3><div class="swatches">${["--bg","--card","--ink","--muted","--brand","--brand-2","--accent","--soft"].map(v=>`<div class="sw"><i style="background:var(${v})"></i><span>${v}</span></div>`).join("")}</div>
+  <h3 style="margin-top:18px">الخطوط</h3><div class="panel"><div style="font-family:var(--head);font-size:34px">عنوان: الأندلس بين التاريخ والرواية</div><div style="font-family:var(--body);font-size:16px">متن: في سنة 316هـ/929م أعلن عبد الرحمن الثالث الخلافة في قرطبة، وهو ما تتفق عليه المصادر الأساسية والدراسات الحديثة.</div></div>
+  <h3 style="margin-top:18px">المكوّنات</h3><div class="spec"><b>EntityCard</b><span>بطاقة كيان: نوع، اسم، تاريخان، سطر</span><b>ClaimBadge</b><span>نقطة ملونة بعد الجملة تفتح لوحة المصدر</span><b>ProvenancePanel</b><span>«كيف نعرف هذا؟»: المصدر، الموضع، المرتبة، الأقوال المخالفة</span><b>EraRibbon</b><span>شريط العصر والسنة في أعلى كل صفحة كيان</span><b>TimeSlider</b><span>شريط الزمن 711–1614 يزامن الخريطة والقوائم</span><b>DualDate</b><span>التاريخ بالتقويمين مع درجة اليقين</span><b>RelationRail</b><span>قضبان الروابط المولَّدة من الحواف</span><b>AudienceSwitch</b><span>استكشاف / عام / باحث</span></div>
+  <h3 style="margin-top:18px">Wireframes</h3>
+  <div class="grid">
+    <div class="wire"><b>الصفحة الرئيسية</b><div>ترويسة + مفاتيح الاتجاه والجمهور + ⌘K</div><div class="row"><div>H1 + شريط الزمن + مداخل</div><div>خريطة حية</div></div><div>«ماذا كان يحدث سنة …؟»</div><div>بطاقات المداخل الستة</div><div>كيف نتحقق؟</div></div>
+    <div class="wire"><b>صفحة مدينة</b><div>EraRibbon</div><div class="row"><div>NameStack + ملخص بشارات + الحالة اليوم</div><div>خريطة مصغرة + صور مرخصة</div></div><div>شريط زمن المدينة</div><div>RelationRail: أشخاص · أحداث · وثائق · آثار</div><div>الخلافات والأساطير</div><div>المصادر · صدّر</div></div>
+    <div class="wire"><b>صفحة شخصية</b><div>EraRibbon</div><div class="row"><div>الاسم والأدوار + ملخص</div><div>خريطة مسار الحياة</div></div><div>خط الحياة فوق الأحداث السياسية</div><div>الشيوخ والتلاميذ · المصنفات · المخطوطات · الأماكن</div><div>المصادر · المعرّفات</div></div>
+    <div class="wire"><b>صفحة حدث</b><div>EraRibbon + التاريخ بشارة</div><div class="row"><div>ملخص + الأطراف</div><div>خريطة المعركة ▶ + تنبيه الأعداد</div></div><div>قبل ← بعد</div><div>الروايات: مصادر أولية وقراءات حديثة</div><div>RelationRail</div></div>
+  </div></section>`;
+
+V.entity=(id)=>{const o=E[id];if(!o)return `<section><h2>لم أجد هذا الكيان</h2><p class="sub"><a href="#/">العودة</a></p></section>`;const [tn,tc]=TYPE[o.type];
+  let head="",extra="";
+  if(o.type==="Place"){head=ribbon(state.y);extra=`<div class="cols"><div><div class="names"><b>${esc(o.name.ar)}</b>${o.name.en?`<span>${esc(o.name.en)}</span>`:""}${(o.name.variants||[]).map(v=>`<span>${esc(v)}</span>`).join("")}<span>${esc(o.kind||"")}</span>${typeof o.lat==="number"?`<span>${o.lat.toFixed(3)}°, ${o.lon.toFixed(3)}° · ${esc(geoQ(o.spatial_quality))} · ${esc(geoA(o.anchor_type))} <small>(تقريبية)</small></span>`:"<span>لا إحداثية معروفة</span>"}${o.historical_status?`<span>${esc(geoS(o.historical_status))}</span>`:""}${o.period_group?`<span>${esc(geoP(o.period_group))}</span>`:""}</div>${geoT(o.theme).length?`<div class="chips">${geoT(o.theme).map(t=>`<span class="chip">${esc(t)}</span>`).join("")}</div>`:""}${o.place_note?`<p class="note">${esc(o.place_note)}</p>`:""}<p style="margin-top:10px">${summaryHtml(o)}</p>${audienceBox(o)}
+      <h3 style="margin-top:18px">شريط زمن المكان</h3><div class="tl">${Object.values(E).filter(e=>e.type==="Event"&&e.place===id).sort((a,b)=>a.year-b.year).map(e=>`<div style="--era:${eraOf(e.year).c}"><b><a href="${href(e.id)}">${esc(e.name.ar)}</a></b> <small>${dual(e.year,e.end,e.hijri)}</small></div>`).join("")||"<div>لا أحداث مسندة لهذا المكان في القاعدة</div>"}</div></div>
+      <div class="panel"><p class="eyebrow">الموقع سنة ${state.y}م</p>${mapSvg(state.y,{focus:id})}<p class="note">في المنصة: مخطط المدينة في السنة المختارة (المسجد، القصر، الأسوار) كطبقة فوق الخريطة الحالية، وصور IIIF مرخصة.</p></div></div>`;}
+  else if(o.type==="Person"){head=(typeof o.born==="number")?ribbon(o.born,o.died):"";const parts=o.name.parts?Object.entries(o.name.parts).map(([k,v])=>`<span>${({ism:"الاسم",kunya:"الكنية",nasab:"النسب",nisba:"النسبة",laqab:"اللقب"})[k]||k}: <b>${esc(v)}</b></span>`).join(""):"";extra=`<div class="cols"><div><div class="names"><b>${esc(o.name.ar)}</b>${o.name.en?`<span>${esc(o.name.en)}</span>`:""}<span>${(o.roles||[]).join(" · ")}</span><span>${yr(o.born)}–${yr(o.died)}م${o.dates_note?` <small>(${esc(o.dates_note)})</small>`:""}</span></div>${parts?`<div class="names" style="margin-top:6px">${parts}</div>`:""}<p style="margin-top:10px">${summaryHtml(o)}</p>${audienceBox(o)}</div>
+      <div class="panel"><p class="eyebrow">مسار الحياة</p>${mapSvg((o.born||o.died||960)+20)}<p class="note">في المنصة الكاملة: خط الرحلة بين مكان الولادة وأماكن الإقامة ومكان الوفاة مع سنواتها، وشبكة الشيوخ والتلاميذ.</p></div></div>`;}
+  else if(o.type==="Event"){head=ribbon(o.year,o.end,o.hijri);const parts=EDGES.filter(e=>e.to===id&&e.rel==="participated_in");extra=`<div class="cols"><div><p>${summaryHtml(o)}</p><h3 style="margin-top:14px">الأطراف</h3><div class="chips">${parts.map(p=>`<a class="chip" href="${href(p.from)}">${esc(E[p.from].name.ar)} <small>${esc(p.role||"")}</small></a>`).join("")||"<span class='chip'>لا أطراف مسجلة في القاعدة بعد</span>"}</div>
+      ${(o.stories||[]).length?`<h3 style="margin-top:14px">على الخريطة مرحلةً مرحلة</h3><div class="chips">${o.stories.map(sid=>{const s2=STORIES.find(x=>x.id===sid);return s2?`<a class="chip" href="#/atlas?model=all&story=${sid}&step=1&tab=sto" style="border-color:var(--accent)">▶ ${esc(s2.title)} <small>${s2.steps.length} محطات</small></a>`:"";}).join("")}</div>`:""}
+      ${(o.before||o.after)?`<h3 style="margin-top:14px">قبل ← بعد</h3><div class="chips">${(o.before||[]).map(chip).join("")}<span class="chip" style="border-color:var(--accent)">${esc(o.name.ar)}</span>${(o.after||[]).map(chip).join("")}</div>`:""}
+      ${audienceBox(o)}</div><div class="panel"><p class="eyebrow">المكان</p>${mapSvg(o.year,{focus:o.place})}${o.kind==="معركة"?`<p class="note">خريطة المعركة على مراحل ▶ تُضاف في المنصة، مع تنبيه ثابت: أعداد الجيوش تُعرض كمدى بمصادره.</p>`:""}</div></div>`;}
+  else {extra=`${o.author&&!E[o.author]?`<div class="names"><span>المؤلف: <b>${esc(o.author)}</b></span>${o.year?`<span>${o.year}م</span>`:""}</div>`:""}<p>${summaryHtml(o)}</p>${o.holding?`<div class="panel" style="margin-top:12px"><b>مكان الحفظ:</b> ${esc(o.holding.institution)}${o.holding.license?` · <b>الرخصة:</b> ${esc(o.holding.license)}`:""}${o.holding.iiif?` · IIIF`:` · <span class="scholar-only" style="display:inline">الرقم المكتبي ورابط IIIF يُضافان عند التوثيق</span>`}</div>`:""}${o.type==="Polity"?`<div class="chips" style="margin-top:12px"><span class="chip">${yr(o.from)}–${yr(o.to)}م</span></div>${(o.rulers||[]).length?`<h3 style="margin-top:14px">الولايات المسندة</h3><div class="tl">${o.rulers.map(r=>`<div><b><a href="${href(r.person)}">${esc((E[r.person]||{name:{ar:r.person}}).name.ar)}</a></b> <small>${esc(r.role||"")} · ${yr(r.from)}–${yr(r.to)}م · دقة: ${esc(r.precision||"")}</small></div>`).join("")}</div>`:""}`:""}${audienceBox(o)}`;}
+  return `<section><p class="eyebrow" style="color:${tc}">${tn}</p><h2>${esc(o.name.ar)}</h2>${head}${extra}${rail(id)}
+  <h3 style="margin-top:22px">المصادر المستخدمة في هذه الصفحة</h3><div class="chips">${[...new Set((o.summary||[]).flatMap(([,c])=>(CLAIMS[c]?.sources||[]).map(s=>s.src)))].filter(s=>SOURCES[s]).map(s=>`<span class="chip">${esc(SOURCES[s].title)} <small>${SOURCES[s].tier==="أولي"?"مصدر أولي":"مرتبة "+esc(SOURCES[s].tier)}</small></span>`).join("")}</div>
+  <p class="note">اقترح تصحيحًا · البيانات من قاعدة v1.2 (${esc(RELEASE.release_date||"")}) · كل إضافة تمر بمنهج الإسناد والشاهد، انظر <a href="#/about">عن المنصة</a></p></section>`;};
+
+/* ===== لوحة المصدر ===== */
+const PLAIN={fact:"هذه المعلومة موثّقة: لها شاهد نصي واحد على الأقل قوبل مع مصدره حرفيًا، ولا يعارضه شاهد مرجّح.",partial:"موثّقة جزئيًا: الشواهد تدعم بعض ما ورد لا كله، أو استُنتج جزء منها من السياق؛ لذلك تُعرض بتنبيه.",disputed:"الشواهد متعارضة ولم يُرجَّح بينها بعد، فلا تُنشر معلومةً.",inference:"استنتاج من القرائن لا نص صريح به.",myth:"رواية شائعة لم يثبتها شاهد موثوق، وتُعرض للتنبيه لا للتصديق.",unverified:"لم يُتحقق منها بعد."};
+const STATUS={fact:["موثّق","var(--fact)"],partial:["موثّق جزئيًا (يُعرض بتنبيه)","var(--disputed)"],disputed:["متعارض (لا يُنشر)","var(--disputed)"],inference:["استنتاج","var(--inference)"],myth:["غير مثبت / لا يُنشر كحقيقة","var(--myth)"],unverified:["ينتظر شاهدًا (لا يُنشر)","var(--muted)"]};
+function openProv(cid){const c=CLAIMS[cid];if(!c)return;const [sn,sc]=STATUS[c.status]||STATUS.unverified;
+  const kindBadge=k=>k&&k.startsWith("مصدر أولي")?`<span class="tier" style="border-color:var(--fact);color:var(--fact)">مصدر أولي</span>`:k?`<span class="tier">${esc(k)}</span>`:"";
+  document.getElementById("prov").innerHTML=`<button class="x" id="provX" aria-label="إغلاق">✕</button><p class="eyebrow">كيف نعرف هذا؟${document.documentElement.dataset.audience==="scholar"?` · <span dir="ltr">${esc(cid)}</span>`:""}</p><h3>${esc(c.text)}</h3><span class="st" style="color:${sc}"><i class="b ${c.status}"></i>${sn}</span><p class="note" style="margin-top:6px">${esc(PLAIN[c.status]||"")}</p>${c.v12_status?` <small style="color:var(--muted)">الحالة في القاعدة: ${esc(c.v12_status)}</small>`:""}
+    ${c.value_before?`<p class="note">القيمة قبل التصحيح: ${esc(c.value_before)}</p>`:""}${c.resolution?`<div class="counter"><b>حجة الحسم</b><p style="margin:6px 0">${esc(c.resolution)}</p></div>`:""}
+    <h3 style="margin-top:14px;font-size:15px">الشواهد (${c.sources.length})</h3>
+    ${c.sources.map(s=>{const S=SOURCES[s.src]||{title:s.src};return `<div class="src"><b>${esc(S.title)}${S.tier?`<span class="tier">مرتبة ${esc(S.tier)}</span>`:""}${kindBadge(s.source_kind)}${s.stance?`<span class="tier">${esc(s.stance)}</span>`:""}</b>${S.author?esc(S.author)+" · ":""}${esc(S.pub||"")}${S.rights&&S.rights!=="غير معروف"?` · الحقوق: ${esc(S.rights)}`:""}${s.review_status==="معتمد بالعين"?`<div style="margin-top:6px"><span class="tier" style="border-color:var(--fact);color:var(--fact);background:color-mix(in srgb,var(--fact) 12%,transparent)">✓ مطابق بالعين</span> <small style="color:var(--muted)">${(s.eye_reviewers||[]).map(esc).join("، ")}</small></div>`:s.review_status&&s.review_status!=="لم يُراجع"?`<div style="margin-top:6px"><span class="tier">${esc(s.review_status)}</span></div>`:""}${s.quote?`<q>«${esc(s.quote)}»</q>`:""}<div style="margin-top:4px;color:var(--muted)">الموضع: ${esc(s.loc||"—")}${s.verbatim?` · المطابقة: ${esc(s.verbatim)}`:""}${s.checked_on?` · فُحص ${esc(s.checked_on)}`:""}${s.url?` · <a href="${esc(s.url)}" target="_blank" rel="noopener">الرابط</a>`:""}</div>${s.note?`<div style="margin-top:4px;color:var(--muted)">ملاحظة: ${esc(s.note)}</div>`:""}</div>`;}).join("")}
+    ${c.counter&&c.counter.length?`<div class="counter"><b>شواهد مخالفة</b>${c.counter.map(k=>`<p style="margin:6px 0">«${esc(k.position)}»<br><small style="color:var(--muted)">${k.sources.map(s=>esc((SOURCES[s.src]||{}).title||s.src)+" · "+esc(s.loc)).join(" ؛ ")}</small></p>`).join("")}</div>`:""}
+    ${c.todo?`<p class="note">ما يلزم بعد: ${esc(c.todo)}</p>`:""}
+    <p class="note">آخر تحقق: ${esc(c.last_verified||"—")} · المصدر: قاعدة v1.2 عبر مهارة andalus-evidence · <a href="#" onclick="return false">الإبلاغ عن خطأ</a></p>
+    <div class="scholar-only scholar-box">معرّف الإسناد/الادعاء: <code>${esc(cid)}</code> · الهدف: <code>${esc(c.target||"—")}</code> · الحقل: ${esc(c.field||"—")}</div>`;
+  document.getElementById("prov").classList.add("open");document.getElementById("veil").classList.add("on");document.getElementById("provX").onclick=closeProv;}
+function closeProv(){document.getElementById("prov").classList.remove("open");document.getElementById("veil").classList.remove("on");}
+document.getElementById("veil").onclick=closeProv;
+document.addEventListener("click",e=>{const b=e.target.closest(".b[data-c]");if(b){e.preventDefault();openProv(b.dataset.c);}});
+document.addEventListener("keydown",e=>{const b=e.target.closest?.(".b[data-c]");if(b&&(e.key==="Enter"||e.key===" ")){e.preventDefault();openProv(b.dataset.c);}if(e.key==="Escape"){closeProv();document.getElementById("cmd").classList.remove("on");}if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){e.preventDefault();openCmd();}});
+
+/* ===== البحث ===== */
+function openCmd(){const c=document.getElementById("cmd");c.classList.add("on");const q=document.getElementById("q");q.value="";q.focus();search("");}
+document.getElementById("kbtn").onclick=openCmd;document.getElementById("cmd").onclick=e=>{if(e.target.id==="cmd")e.currentTarget.classList.remove("on");};
+document.getElementById("q").oninput=e=>search(e.target.value);
+function search(s){s=s.trim();const res=document.getElementById("res");if(/^\d{3,4}$/.test(s)){const y=+s;res.innerHTML=`<a href="#/map?y=${y}"><i style="--c:var(--accent)"></i>ماذا كان يحدث سنة ${y}م؟<small>الخريطة</small></a><a href="#/timeline?y=${y}"><i style="--c:var(--accent)"></i>سنة ${y}م على خط الزمن<small>الزمن</small></a>`;return;}
+  const hits=Object.values(E).filter(o=>!s||o.name.ar.includes(s)||(o.name.en||"").toLowerCase().includes(s.toLowerCase())||(o.name.es||"").toLowerCase().includes(s.toLowerCase())).slice(0,12);
+  res.innerHTML=hits.map(o=>`<a href="${href(o.id)}" style="--c:${TYPE[o.type][1]}"><i></i>${esc(o.name.ar)}<small>${TYPE[o.type][0]}</small></a>`).join("")||`<a href="#/"><i></i>لا نتائج<small></small></a>`;}
+document.getElementById("res").onclick=()=>document.getElementById("cmd").classList.remove("on");
+
+/* ===== السمات والجمهور ===== */
+const state={y:960};
+function seg(id,attr,key){const el=document.getElementById(id);el.onclick=e=>{const b=e.target.closest("button");if(!b)return;el.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));document.documentElement.setAttribute(attr,b.dataset[key]);try{localStorage.setItem(attr,b.dataset[key]);}catch(_){}};
+  let saved=null;try{saved=localStorage.getItem(attr);}catch(_){}if(saved){document.documentElement.setAttribute(attr,saved);el.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x.dataset[key]===saved));}}
+seg("theme","data-theme","t");seg("aud","data-audience","a");
+
+/* ===== التوجيه ===== */
+function route(){const h=location.hash||"#/";const [path,qs]=h.slice(1).split("?");const q=Object.fromEntries(new URLSearchParams(qs||""));const seg=path.split("/").filter(Boolean);const app=document.getElementById("app");
+  document.querySelectorAll("#nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#/"+(seg[0]||"")));
+  let html="";
+  if(!seg.length)html=V.home();
+  else if(V[seg[0]]&&seg.length===1)html=V[seg[0]](q);
+  else if(seg[0]==="x"&&seg.length===2)html=V.entity(decodeURIComponent(seg[1]));
+  else html=V.home();
+  app.innerHTML=html;window.scrollTo({top:0});
+  const bind=(id,onY)=>{const r=document.getElementById(id);if(!r)return;r.oninput=()=>{const y=+r.value;state.y=y;document.getElementById(id+"-y").innerHTML=`${y}م <small style="font-family:var(--body);font-size:12px;opacity:.75">${hijri(y)}هـ تقريبًا · ${eraOf(y).name}</small>`;onY(y);};};
+  bind("heroY",y=>{document.getElementById("heroMap").innerHTML=mapSvg(y);document.getElementById("heroSnap").innerHTML=yearSnapshot(y);});
+  bind("atlasY",y=>{atlasState.y=y;location.hash=`#/atlas?model=${atlasState.model}&y=${y}`;});
+  const ap=document.getElementById("atlasPanel");if(ap){document.querySelectorAll(".tabs [data-tab]").forEach(b=>b.onclick=()=>{atlasState.tab=b.dataset.tab;route();});
+    document.querySelectorAll(".plist [data-place]").forEach(b=>b.onclick=()=>{atlasState.place=b.dataset.place;atlasState.tab="place";route();});
+    document.querySelectorAll(".lyr input").forEach(c=>c.onchange=()=>{c.checked?atlasState.layers.add(c.dataset.lyr):atlasState.layers.delete(c.dataset.lyr);route();});}
+  bind("mapY",y=>{document.getElementById("mapBox").innerHTML=mapSvg(y,{labels:"all"});document.getElementById("mapSnap").innerHTML=yearSnapshot(y);document.getElementById("mapYear").textContent=y;});
+  if(q.y)state.y=+q.y;
+  document.querySelectorAll(".quiz").forEach(qz=>{qz.querySelector(".opts").onclick=e=>{const b=e.target.closest("button");if(!b)return;qz.querySelectorAll("button").forEach(x=>x.disabled=true);b.classList.add(+b.dataset.i===+qz.dataset.correct?"ok":"no");qz.querySelectorAll("button")[+qz.dataset.correct].classList.add("ok");qz.querySelector(".note").hidden=false;};});
+  const g=document.getElementById("g1");if(g)g.onclick=e=>{const b=e.target.closest("button");if(!b)return;g.querySelectorAll("button").forEach(x=>x.disabled=true);b.classList.add(b.dataset.ok==="true"?"ok":"no");document.getElementById("g1n").innerHTML=(b.dataset.ok==="true"?"صحيح. ":"ليس كذلك. ")+"المصدر: حدود العصور في الرسم المعرفي (Kennedy 1996، EI2). في المنصة تُعرض شارة الادعاء هنا.";};
+}
+window.addEventListener("hashchange",route);route();
+</script>
+</body>
+</html>

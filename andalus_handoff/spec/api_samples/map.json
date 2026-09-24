@@ -1,0 +1,1066 @@
+[
+ 200,
+ {
+  "type": "FeatureCollection",
+  "features": [
+   {
+    "type": "Feature",
+    "id": "PLC-CORDOBA",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -4.7725,
+      37.8914
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-CORDOBA",
+     "preferred_name_ar": "قرطبة",
+     "preferred_name_latn": "Córdoba",
+     "spatial_quality": "municipal centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 3,
+     "period_group": "cross_period",
+     "theme": "politics,urban,knowledge",
+     "historical_status": "verified_claim_linked",
+     "display_priority": 100
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-GRANADA",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -3.60667,
+      37.18817
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-GRANADA",
+     "preferred_name_ar": "غرناطة",
+     "preferred_name_latn": "Granada",
+     "spatial_quality": "municipal centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 2,
+     "period_group": "cross_period",
+     "theme": "politics,knowledge",
+     "historical_status": "verified_claim_linked",
+     "display_priority": 100
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-MADINAT-ZAHRA",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -4.8676944,
+      37.8858889
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-MADINAT-ZAHRA",
+     "preferred_name_ar": "مدينة الزهراء",
+     "preferred_name_latn": "Medina Azahara",
+     "spatial_quality": "UNESCO property representative coordinate",
+     "anchor_type": "UNESCO World Heritage property point",
+     "claim_count": 1,
+     "period_group": "caliphate",
+     "theme": "politics,urban,heritage",
+     "historical_status": "verified_site",
+     "display_priority": 100
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-CORDOBA-WH",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -4.7797222,
+      37.8791944
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-CORDOBA-WH",
+     "preferred_name_ar": "وسط قرطبة التاريخي",
+     "preferred_name_latn": "Historic Centre of Cordoba",
+     "spatial_quality": "UNESCO property representative coordinate",
+     "anchor_type": "UNESCO World Heritage property point",
+     "claim_count": 1,
+     "period_group": "early_caliphate",
+     "theme": "urban,heritage",
+     "historical_status": "verified_site",
+     "display_priority": 100
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-ALHAMBRA-WH",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -3.5899167,
+      37.1767778
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-ALHAMBRA-WH",
+     "preferred_name_ar": "الحمراء وجنة العريف والبيازين",
+     "preferred_name_latn": "Alhambra, Generalife and Albayzín",
+     "spatial_quality": "UNESCO property representative coordinate",
+     "anchor_type": "UNESCO World Heritage property point",
+     "claim_count": 1,
+     "period_group": "nasrid_late",
+     "theme": "urban,heritage",
+     "historical_status": "verified_site",
+     "display_priority": 100
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-ALMARIYYA",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -2.45974,
+      36.83814
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-ALMARIYYA",
+     "preferred_name_ar": "ألمرية",
+     "preferred_name_latn": "Almería / al-Mariyya",
+     "spatial_quality": "municipal centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 1,
+     "period_group": "taifa_empires",
+     "theme": "urban,economy,archaeology",
+     "historical_status": "verified_claim_linked",
+     "display_priority": 95
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-PECHINA",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -2.4,
+      36.9667
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-PECHINA",
+     "preferred_name_ar": "بَجّانة",
+     "preferred_name_latn": "Pechina / Baŷŷāna",
+     "spatial_quality": "municipal centroid",
+     "anchor_type": "modern municipality anchor",
+     "claim_count": 3,
+     "period_group": "early",
+     "theme": "urban,economy,archaeology",
+     "historical_status": "verified_claim_linked",
+     "display_priority": 95
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-SAQUNDA",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -4.7797222,
+      37.8791944
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-SAQUNDA",
+     "preferred_name_ar": "شقندة/الربض",
+     "preferred_name_latn": "Šaqunda, Córdoba",
+     "spatial_quality": "city-level anchor, not exact excavation",
+     "anchor_type": "Cordoba UNESCO property point used as city anchor",
+     "claim_count": 1,
+     "period_group": "early",
+     "theme": "urban,archaeology",
+     "historical_status": "verified_claim_linked",
+     "display_priority": 95
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-SEVILLE",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -5.973167,
+      37.382826
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-SEVILLE",
+     "preferred_name_ar": "إشبيلية",
+     "preferred_name_latn": "Seville",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 1,
+     "period_group": "taifa_empires",
+     "theme": "politics,urban,heritage,legacy",
+     "historical_status": "verified_claim_linked",
+     "display_priority": 95
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-XERESA",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -0.21667,
+      39.01667
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-XERESA",
+     "preferred_name_ar": "خيريسة/شيريسا",
+     "preferred_name_latn": "Xeresa / Xaresa",
+     "spatial_quality": "municipal centroid",
+     "anchor_type": "modern municipality anchor",
+     "claim_count": 0,
+     "period_group": "caliphate_to_empires",
+     "theme": "society,archaeology",
+     "historical_status": "verified_claim_linked",
+     "display_priority": 90
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-TOLEDO",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -4.0225,
+      39.85806
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-TOLEDO",
+     "preferred_name_ar": "طليطلة",
+     "preferred_name_latn": "Toledo",
+     "spatial_quality": "municipal centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 1,
+     "period_group": "legacy_transfer",
+     "theme": "knowledge,translation",
+     "historical_status": "verified_claim_linked",
+     "display_priority": 90
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-013",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -7.6639,
+      37.6382
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-013",
+     "preferred_name_ar": "مرتلة",
+     "preferred_name_latn": "Mārtula",
+     "spatial_quality": "archaeological site point",
+     "anchor_type": "site point",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "politics,urban",
+     "historical_status": "verified_site",
+     "display_priority": 90
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-G01",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -3.5899,
+      37.1768
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-G01",
+     "preferred_name_ar": "الحمراء",
+     "preferred_name_latn": "al-Ḥamrāʾ",
+     "spatial_quality": "archaeological site point",
+     "anchor_type": "site point",
+     "claim_count": 0,
+     "period_group": "nasrid",
+     "theme": "politics,urban",
+     "historical_status": "verified_site",
+     "display_priority": 90
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-G02",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -3.5853,
+      37.1778
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-G02",
+     "preferred_name_ar": "جنة العريف",
+     "preferred_name_latn": "Jannat al-ʿArīf",
+     "spatial_quality": "archaeological site point",
+     "anchor_type": "site point",
+     "claim_count": 0,
+     "period_group": "nasrid",
+     "theme": "politics,urban",
+     "historical_status": "verified_site",
+     "display_priority": 90
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-BAIREN",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -0.18333,
+      38.96667
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-BAIREN",
+     "preferred_name_ar": "بايرين",
+     "preferred_name_latn": "Bairén / Gandia",
+     "spatial_quality": "municipal anchor, not exact fortress",
+     "anchor_type": "modern Gandia anchor",
+     "claim_count": 0,
+     "period_group": "caliphate_to_taifa",
+     "theme": "archaeology,economy",
+     "historical_status": "verified_claim_linked",
+     "display_priority": 85
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-EL-MOLON",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -1.4,
+      39.65
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-EL-MOLON",
+     "preferred_name_ar": "المولون",
+     "preferred_name_latn": "El Molón / Camporrobles",
+     "spatial_quality": "municipal anchor, not exact site",
+     "anchor_type": "Camporrobles anchor",
+     "claim_count": 0,
+     "period_group": "early",
+     "theme": "religion,archaeology",
+     "historical_status": "verified_claim_linked",
+     "display_priority": 85
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-TOSSAL-VILA",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -0.019,
+      40.269
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-TOSSAL-VILA",
+     "preferred_name_ar": "توسال دي لا فيلا",
+     "preferred_name_latn": "El Tossal de la Vila",
+     "spatial_quality": "municipal anchor, not exact site",
+     "anchor_type": "Sierra Engarcerán anchor",
+     "claim_count": 0,
+     "period_group": "early",
+     "theme": "religion,archaeology",
+     "historical_status": "verified_claim_linked",
+     "display_priority": 85
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-DAMASCUS",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      36.28032,
+      33.51563
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-DAMASCUS",
+     "preferred_name_ar": "دمشق",
+     "preferred_name_latn": "Damascus",
+     "spatial_quality": "administrative centroid",
+     "anchor_type": "modern city/admin anchor",
+     "claim_count": 1,
+     "period_group": "legacy_transfer",
+     "theme": "knowledge,migration",
+     "historical_status": "verified_claim_linked",
+     "display_priority": 80
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-LEON",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -5.57032,
+      42.60003
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-LEON",
+     "preferred_name_ar": "ليون",
+     "preferred_name_latn": "León",
+     "spatial_quality": "municipal centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 1,
+     "period_group": "legacy_transfer",
+     "theme": "court,art",
+     "historical_status": "verified_claim_linked",
+     "display_priority": 70
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-MANISES",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -0.46349,
+      39.49139
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-MANISES",
+     "preferred_name_ar": "مانيسس",
+     "preferred_name_latn": "Manises",
+     "spatial_quality": "municipal centroid",
+     "anchor_type": "modern municipality anchor",
+     "claim_count": 1,
+     "period_group": "legacy_transfer",
+     "theme": "craft,legacy",
+     "historical_status": "verified_claim_linked",
+     "display_priority": 70
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-008",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      0.1057,
+      38.8408
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-008",
+     "preferred_name_ar": "دانية",
+     "preferred_name_latn": "Dāniya",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "politics,urban",
+     "historical_status": "candidate_anchor",
+     "display_priority": 60
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-014",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -8.4382,
+      37.1892
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-014",
+     "preferred_name_ar": "شلب",
+     "preferred_name_latn": "Shilb",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "politics,urban",
+     "historical_status": "candidate_anchor",
+     "display_priority": 60
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-015",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -9.1393,
+      38.7223
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-015",
+     "preferred_name_ar": "لشبونة",
+     "preferred_name_latn": "al-Ushbūna",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "politics,urban",
+     "historical_status": "candidate_anchor",
+     "display_priority": 60
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-016",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -8.685,
+      39.2369
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-016",
+     "preferred_name_ar": "شنترين",
+     "preferred_name_latn": "Shantarīn",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "politics,urban",
+     "historical_status": "candidate_anchor",
+     "display_priority": 60
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-017",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -7.8632,
+      38.0151
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-017",
+     "preferred_name_ar": "باجة",
+     "preferred_name_latn": "Bāja",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "politics,urban",
+     "historical_status": "candidate_anchor",
+     "display_priority": 60
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-019",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -0.4089,
+      42.1401
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-019",
+     "preferred_name_ar": "وشقة",
+     "preferred_name_latn": "Washqa",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "politics,urban",
+     "historical_status": "candidate_anchor",
+     "display_priority": 60
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-C01",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -3.5925,
+      37.1858
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-C01",
+     "preferred_name_ar": "البيازين",
+     "preferred_name_latn": "al-Bayyāzīn",
+     "spatial_quality": "district centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "nasrid",
+     "theme": "politics,urban",
+     "historical_status": "candidate_anchor",
+     "display_priority": 60
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-C06",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -3.1392,
+      37.2992
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-C06",
+     "preferred_name_ar": "وادي آش",
+     "preferred_name_latn": "Wādī Āsh",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "politics,urban",
+     "historical_status": "candidate_anchor",
+     "display_priority": 60
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-G03",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -2.7725,
+      37.4906
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-G03",
+     "preferred_name_ar": "بسطة",
+     "preferred_name_latn": "Basṭa",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "nasrid",
+     "theme": "politics,urban",
+     "historical_status": "candidate_anchor",
+     "display_priority": 60
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-G04",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -4.1511,
+      37.1686
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-G04",
+     "preferred_name_ar": "لوشة",
+     "preferred_name_latn": "Lawsha",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "nasrid",
+     "theme": "politics,urban",
+     "historical_status": "candidate_anchor",
+     "display_priority": 60
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-G05",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -3.6917,
+      36.7322
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-G05",
+     "preferred_name_ar": "المنكب",
+     "preferred_name_latn": "al-Munakkab",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "nasrid",
+     "theme": "politics,urban",
+     "historical_status": "candidate_anchor",
+     "display_priority": 60
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-ZARAGOZA",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -0.877339839935303,
+      41.6560643302881
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-ZARAGOZA",
+     "preferred_name_ar": "سرقسطة",
+     "preferred_name_latn": "Zaragoza",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "reference",
+     "historical_status": "gazetteer_candidate",
+     "display_priority": 30
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-VALENCIA",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -0.37966,
+      39.47391
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-VALENCIA",
+     "preferred_name_ar": "بلنسية",
+     "preferred_name_latn": "Valencia",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "reference",
+     "historical_status": "gazetteer_candidate",
+     "display_priority": 30
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-MALAGA",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -4.42034482955933,
+      36.7201559059499
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-MALAGA",
+     "preferred_name_ar": "مالقة",
+     "preferred_name_latn": "Málaga",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "reference",
+     "historical_status": "gazetteer_candidate",
+     "display_priority": 30
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-MURCIA",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -1.130042,
+      37.987041
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-MURCIA",
+     "preferred_name_ar": "مرسية",
+     "preferred_name_latn": "Murcia",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "reference",
+     "historical_status": "gazetteer_candidate",
+     "display_priority": 30
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-PALMA",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      2.65023708343506,
+      39.5693907933761
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-PALMA",
+     "preferred_name_ar": "مدينة ميورقة/بالما",
+     "preferred_name_latn": "Palma / Madina Mayurqa",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "reference",
+     "historical_status": "gazetteer_candidate",
+     "display_priority": 30
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-ALICANTE",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -0.481488704681396,
+      38.3451735357475
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-ALICANTE",
+     "preferred_name_ar": "لقنت/أليكانتي",
+     "preferred_name_latn": "Alicante",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "reference",
+     "historical_status": "gazetteer_candidate",
+     "display_priority": 30
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-BADAJOZ",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -6.970613,
+      38.877894
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-BADAJOZ",
+     "preferred_name_ar": "بطليوس",
+     "preferred_name_latn": "Badajoz",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "reference",
+     "historical_status": "gazetteer_candidate",
+     "display_priority": 30
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-RONDA",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -5.16709327697754,
+      36.742305959004
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-RONDA",
+     "preferred_name_ar": "رندة",
+     "preferred_name_latn": "Ronda",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "reference",
+     "historical_status": "gazetteer_candidate",
+     "display_priority": 30
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-JAEN",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -3.790283203125,
+      37.76922210201122
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-JAEN",
+     "preferred_name_ar": "جيّان",
+     "preferred_name_latn": "Jaén",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "reference",
+     "historical_status": "gazetteer_candidate",
+     "display_priority": 30
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-HUELVA",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -6.940044,
+      37.266385
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-HUELVA",
+     "preferred_name_ar": "ولبة/هويلفا",
+     "preferred_name_latn": "Huelva",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "reference",
+     "historical_status": "gazetteer_candidate",
+     "display_priority": 30
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-ECIJA",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -5.0826,
+      37.5422
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-ECIJA",
+     "preferred_name_ar": "إستجة/إيثيخا",
+     "preferred_name_latn": "Écija",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "reference",
+     "historical_status": "gazetteer_candidate",
+     "display_priority": 30
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-MEDINA-SIDONIA",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -5.8675,
+      36.39688
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-MEDINA-SIDONIA",
+     "preferred_name_ar": "شذونة/مدينة سيدونيا",
+     "preferred_name_latn": "Medina-Sidonia",
+     "spatial_quality": "municipal area centroid, not exact historic core",
+     "anchor_type": "modern municipality anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "reference",
+     "historical_status": "gazetteer_candidate",
+     "display_priority": 30
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-TORTOSA",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      0.522,
+      40.81
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-TORTOSA",
+     "preferred_name_ar": "طرطوشة",
+     "preferred_name_latn": "Tortosa",
+     "spatial_quality": "postal locality coordinate",
+     "anchor_type": "modern locality anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "reference",
+     "historical_status": "gazetteer_candidate",
+     "display_priority": 30
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-ALGECIRAS",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -5.450511,
+      36.133257
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-ALGECIRAS",
+     "preferred_name_ar": "الجزيرة الخضراء",
+     "preferred_name_latn": "Algeciras",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "reference",
+     "historical_status": "gazetteer_candidate",
+     "display_priority": 30
+    }
+   },
+   {
+    "type": "Feature",
+    "id": "PLC-MERIDA",
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      -6.34278,
+      38.91778
+     ]
+    },
+    "properties": {
+     "entity_id": "PLC-MERIDA",
+     "preferred_name_ar": "ماردة",
+     "preferred_name_latn": "Mérida",
+     "spatial_quality": "municipal/city centroid",
+     "anchor_type": "modern city anchor",
+     "claim_count": 0,
+     "period_group": "cross_period",
+     "theme": "reference",
+     "historical_status": "gazetteer_candidate",
+     "display_priority": 30
+    }
+   }
+  ]
+ }
+]

@@ -13,4 +13,7 @@
 - كل منتج له رابط مستقل بصيغة `#/p/<slug>`، وزر «حفظ PDF» يطبع صفحته فقط.
 
 ## النشر
-النسخة التسويقية منشورة على https://montajati.netlify.app من `index.html` و`assets/` فقط. ملف `office.html` لا يُنشر لأنه يحوي مسارات محلية.
+النسخة التسويقية منشورة على https://montajati.netlify.app من `index.html` و`assets/`، ومعها منصة الأندلس من `andalus/` (الصفحة `andalus/index.html` وبياناتها المولَّدة `andalus/data/graph.js`). ملف `_redirects` يمنع نشر ما عداها: `office.html` (مسارات محلية)، والنموذج البحثي `andalus/data/graph.prototype.js`، وحزمة `andalus_handoff/`، وطبقة `platform/`.
+
+## تصور منصة الأندلس
+مجلد `andalus/` يحوي تصورًا تأسيسيًا لمنصة رقمية مرجعية عن الأندلس (وثيقة من ثمانية فصول + نموذج تفاعلي `andalus/index.html` بلا بناء ولا خادم). ابدأ من `andalus/00-README.md`. حزمة التسليم البحثية v1.2 في `andalus_handoff/`، وقاعدة المنصة وسكربتات الترحيل والاختبارات وبوابة CI في `platform/` (مستثنى من قاعدة «بلا خادم»؛ انظر `CLAUDE.md`).

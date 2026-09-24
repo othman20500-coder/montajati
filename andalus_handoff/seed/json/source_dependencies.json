@@ -1,0 +1,101 @@
+[
+ {
+  "dependency_id": "DEP-001",
+  "upstream": "Ahmad al-Razi",
+  "downstream": "Ajbar Majmu'a",
+  "relation_type": "نقل/اعتماد في رواية من روايات الفتح",
+  "period": "10م → تدوين لاحق",
+  "claim_or_use": "CLM-018",
+  "reference": "Al-Qantara 1998",
+  "confidence": "عالٍ",
+  "url": "https://al-qantara.revistas.csic.es/index.php/al-qantara/article/view/485"
+ },
+ {
+  "dependency_id": "DEP-002",
+  "upstream": "Ibn Hayyan, al-Muqtabis",
+  "downstream": "al-Umari, Masalik al-Absar",
+  "relation_type": "اعتماد شبه كلي في ملخص تاريخ الأمويين بالأندلس",
+  "period": "11م → 14م",
+  "claim_or_use": "Source genealogy",
+  "reference": "Al-Qantara 2005",
+  "confidence": "عالٍ",
+  "url": "https://al-qantara.revistas.csic.es/index.php/al-qantara/article/view/119"
+ },
+ {
+  "dependency_id": "DEP-003",
+  "upstream": "HATA",
+  "downstream": "AMOI",
+  "relation_type": "قاعدة انطلاق/مصدر بنيوي للمشروع",
+  "period": "قاعدة رقمية → مشروع رقمي",
+  "claim_or_use": "RUR-CLM06",
+  "reference": "CSIC exea",
+  "confidence": "عالٍ",
+  "url": "https://exea.csic.es/es/AMOI"
+ },
+ {
+  "dependency_id": "DEP-004",
+  "upstream": "PUA",
+  "downstream": "AMOI",
+  "relation_type": "ربط مخطط بين قاعدة الأشخاص وشبكات النقل",
+  "period": "قاعدة رقمية → مشروع رقمي",
+  "claim_or_use": "RUR-CLM06",
+  "reference": "CSIC exea",
+  "confidence": "عالٍ",
+  "url": "https://exea.csic.es/es/AMOI"
+ },
+ {
+  "dependency_id": "DEP-005",
+  "upstream": "EEA manuscript catalogue",
+  "downstream": "Atlas Manuscript Registry",
+  "relation_type": "استيراد metadata مع الحفاظ على shelfmark والمستودع",
+  "period": "2026 → Atlas",
+  "claim_or_use": "CLM-MS02",
+  "reference": "EEA-CSIC",
+  "confidence": "عالٍ",
+  "url": "https://www.eea.csic.es/biblioteca/catalogos-y-colecciones/coleccion-bibliografica/"
+ },
+ {
+  "dependency_id": "DEP-006",
+  "upstream": "Avicenna, De anima (Arabic)",
+  "downstream": "Latin De anima by Gundissalinus + Avendauth",
+  "relation_type": "translation",
+  "period": "mid-12c",
+  "claim_or_use": "SOC-CLM08",
+  "reference": "UAB Gundissalinus Working Group",
+  "confidence": "متوسط-عالٍ",
+  "url": "https://ddd.uab.cat/pub/pagweb/gundisalvi/index.html.2"
+ },
+ {
+  "dependency_id": "DEP-007",
+  "upstream": "Arabic scientific/philosophical corpus in Toledo",
+  "downstream": "Gerard of Cremona Latin translations",
+  "relation_type": "translation program",
+  "period": "late-12c",
+  "claim_or_use": "SOC-CLM08",
+  "reference": "Burnett 2001",
+  "confidence": "عالٍ",
+  "url": "https://www.cambridge.org/core/journals/science-in-context/article/abs/coherence-of-the-arabiclatin-translation-program-in-toledo-in-the-twelfth-century/E898FAE696E4D7EA152616BEB6D92345"
+ },
+ {
+  "dependency_id": "DEP-008",
+  "upstream": "Andalusi Arabic/Romance kharjas",
+  "downstream": "Modern code-switching analysis",
+  "relation_type": "scholarly analysis",
+  "period": "11-14c -> 2012",
+  "claim_or_use": "CLM-003",
+  "reference": "Sayahi & Thomas 2012",
+  "confidence": "عالٍ",
+  "url": "https://scholarsarchive.library.albany.edu/cas_llc_scholar/41/"
+ },
+ {
+  "dependency_id": "DEP-009",
+  "upstream": "Manadih al-mamadih",
+  "downstream": "AMOI-II case study",
+  "relation_type": "reception/research mapping",
+  "period": "12c -> 2026",
+  "claim_or_use": "ARC-CLM09",
+  "reference": "EEA-CSIC AMOI-II",
+  "confidence": "عالٍ",
+  "url": "https://www.eea.csic.es/exposicion-al-andalus-en-el-mashriq/"
+ }
+]

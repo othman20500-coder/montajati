@@ -1,0 +1,18 @@
+[
+ {
+  "route_id": "ROUTE-001",
+  "ordinal": 1,
+  "place_entity_id": "PLC-GRANADA",
+  "person_entity_id": "PER-AL-JILYANI",
+  "work_entity_id": "WRK-MANADIH",
+  "note": "منشأ أندلسي"
+ },
+ {
+  "route_id": "ROUTE-001",
+  "ordinal": 2,
+  "place_entity_id": "PLC-DAMASCUS",
+  "person_entity_id": "PER-AL-JILYANI",
+  "work_entity_id": "WRK-MANADIH",
+  "note": "الوفاة بدمشق 1206؛ سياق عرض AMOI-II"
+ }
+]

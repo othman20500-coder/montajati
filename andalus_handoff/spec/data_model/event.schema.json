@@ -1,0 +1,44 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Event",
+ "type": "object",
+ "required": [
+  "id",
+  "title",
+  "precision"
+ ],
+ "properties": {
+  "id": {
+   "type": "string",
+   "pattern": "^EVT-[0-9]+$"
+  },
+  "start": {
+   "type": [
+    "integer",
+    "null"
+   ]
+  },
+  "end": {
+   "type": [
+    "integer",
+    "null"
+   ]
+  },
+  "precision": {
+   "enum": [
+    "يوم",
+    "سنة",
+    "عقد",
+    "نطاق سنوات",
+    "قرن",
+    "غير محدد"
+   ]
+  },
+  "place": {
+   "type": "string"
+  },
+  "period": {
+   "type": "string"
+  }
+ }
+}

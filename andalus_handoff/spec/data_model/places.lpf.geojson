@@ -1,0 +1,2397 @@
+{
+ "type": "FeatureCollection",
+ "@context": "https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v1.1.jsonld",
+ "features": [
+  {
+   "@id": "https://andalus.example/place/PLC-001",
+   "type": "Feature",
+   "properties": {
+    "title": "قرطبة",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "متحقق رسميًا"
+   },
+   "names": [
+    {
+     "toponym": "Qurṭuba",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Córdoba",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "قرطبة",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "عاصمة"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -4.7794,
+       37.8792
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "الإمارة؛ الخلافة؛ ما بعدها",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-002",
+   "type": "Feature",
+   "properties": {
+    "title": "مدينة الزهراء",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "متحقق رسميًا"
+   },
+   "names": [
+    {
+     "toponym": "Madīnat al-Zahrāʾ",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Medina Azahara",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "مدينة الزهراء",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "موقع أثري"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -4.8677,
+       37.8859
+      ],
+      "certainty": "certain",
+      "certainty_ar": "مؤكد — موقع أثري محدد"
+     }
+    ]
+   },
+   "relations": [
+    {
+     "relationType": "gvp:broaderPartitive",
+     "relationTo": "https://andalus.example/place/PLC-001"
+    }
+   ],
+   "descriptions": [
+    {
+     "value": "القرن 10–11م",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-003",
+   "type": "Feature",
+   "properties": {
+    "title": "غرناطة",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "متحقق رسميًا"
+   },
+   "names": [
+    {
+     "toponym": "Gharnāṭa",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Granada",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "غرناطة",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "عاصمة"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -3.5986,
+       37.1773
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "الزيريون؛ النصريون؛ ما بعد 1492",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-004",
+   "type": "Feature",
+   "properties": {
+    "title": "إشبيلية",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "يحتاج توثيق تفصيلي"
+   },
+   "names": [
+    {
+     "toponym": "Ishbīliya",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Sevilla",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "إشبيلية",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "عاصمة"
+    },
+    {
+     "label": "ميناء نهري"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -5.9845,
+       37.3891
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "أموي؛ طوائف؛ مرابطون؛ موحدون",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-005",
+   "type": "Feature",
+   "properties": {
+    "title": "طليطلة",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "يحتاج توثيق تفصيلي"
+   },
+   "names": [
+    {
+     "toponym": "Ṭulayṭula",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Toledo",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "طليطلة",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "عاصمة"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -4.0273,
+       39.8628
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "أموي؛ طوائف؛ بعد 1085",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-006",
+   "type": "Feature",
+   "properties": {
+    "title": "سرقسطة",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "متحقق جزئيًا"
+   },
+   "names": [
+    {
+     "toponym": "Saraqusṭa",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Zaragoza",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "سرقسطة",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "عاصمة"
+    },
+    {
+     "label": "ثغر"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -0.8891,
+       41.6488
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "الثغر الأعلى؛ الطوائف",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-007",
+   "type": "Feature",
+   "properties": {
+    "title": "ألمرية",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "قوي بحثيًا؛ يحتاج سجل مصادر مباشر"
+   },
+   "names": [
+    {
+     "toponym": "al-Mariyya",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Almería",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "ألمرية",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "ميناء"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -2.4637,
+       36.834
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "أموي متأخر؛ طوائف؛ مرابطون؛ موحدون",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-008",
+   "type": "Feature",
+   "properties": {
+    "title": "دانية",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "يحتاج توثيق تفصيلي"
+   },
+   "names": [
+    {
+     "toponym": "Dāniya",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Dénia",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "دانية",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "ميناء"
+    },
+    {
+     "label": "عاصمة"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       0.1057,
+       38.8408
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "الطوائف وما حولها",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-009",
+   "type": "Feature",
+   "properties": {
+    "title": "بلنسية",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "يحتاج توثيق تفصيلي"
+   },
+   "names": [
+    {
+     "toponym": "Balansiya",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Valencia",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "بلنسية",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "عاصمة"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -0.3763,
+       39.4699
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "أموي؛ طوائف؛ مرابطون",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-010",
+   "type": "Feature",
+   "properties": {
+    "title": "مالقة",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "يحتاج توثيق تفصيلي"
+   },
+   "names": [
+    {
+     "toponym": "Mālaqa",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Málaga",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "مالقة",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "ميناء"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -4.4214,
+       36.7213
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "متعدد",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-011",
+   "type": "Feature",
+   "properties": {
+    "title": "مرسية",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "يحتاج توثيق تفصيلي"
+   },
+   "names": [
+    {
+     "toponym": "Mursiya",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Murcia",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "مرسية",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "إقليم"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -1.1307,
+       37.9922
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "أموي متأخر؛ طوائف؛ مرابطون؛ موحدون",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-012",
+   "type": "Feature",
+   "properties": {
+    "title": "بطليوس",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "يحتاج توثيق تفصيلي"
+   },
+   "names": [
+    {
+     "toponym": "Baṭalyaws",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Badajoz",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "بطليوس",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "عاصمة"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -6.9707,
+       38.8794
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "طوائف؛ غرب الأندلس",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-013",
+   "type": "Feature",
+   "properties": {
+    "title": "مرتلة",
+    "ccodes": [
+     "PT"
+    ],
+    "status_v49": "متحقق من المركز الأثري"
+   },
+   "names": [
+    {
+     "toponym": "Mārtula",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Mértola",
+     "lang": "pt",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "مرتلة",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "موقع أثري"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -7.6639,
+       37.6382
+      ],
+      "certainty": "certain",
+      "certainty_ar": "مؤكد — موقع أثري محدد"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "غرب الأندلس؛ مرابطون؛ موحدون",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-014",
+   "type": "Feature",
+   "properties": {
+    "title": "شلب",
+    "ccodes": [
+     "PT"
+    ],
+    "status_v49": "يحتاج توثيق تفصيلي"
+   },
+   "names": [
+    {
+     "toponym": "Shilb",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Silves",
+     "lang": "pt",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "شلب",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -8.4382,
+       37.1892
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "غرب الأندلس؛ طوائف وما بعدها",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-015",
+   "type": "Feature",
+   "properties": {
+    "title": "لشبونة",
+    "ccodes": [
+     "PT"
+    ],
+    "status_v49": "يحتاج توثيق تفصيلي"
+   },
+   "names": [
+    {
+     "toponym": "al-Ushbūna",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Lisboa",
+     "lang": "pt",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "لشبونة",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "ميناء"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -9.1393,
+       38.7223
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "غرب الأندلس حتى القرن 12م",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-016",
+   "type": "Feature",
+   "properties": {
+    "title": "شنترين",
+    "ccodes": [
+     "PT"
+    ],
+    "status_v49": "يحتاج توثيق تفصيلي"
+   },
+   "names": [
+    {
+     "toponym": "Shantarīn",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Santarém",
+     "lang": "pt",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "شنترين",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "حصن"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -8.685,
+       39.2369
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "غرب الأندلس",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-017",
+   "type": "Feature",
+   "properties": {
+    "title": "باجة",
+    "ccodes": [
+     "PT"
+    ],
+    "status_v49": "يحتاج توثيق تفصيلي"
+   },
+   "names": [
+    {
+     "toponym": "Bāja",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Beja",
+     "lang": "pt",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "باجة",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "إقليم"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -7.8632,
+       38.0151
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "غرب الأندلس",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-018",
+   "type": "Feature",
+   "properties": {
+    "title": "ماردة",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "يحتاج توثيق تفصيلي"
+   },
+   "names": [
+    {
+     "toponym": "Mārida",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Mérida",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "ماردة",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -6.3437,
+       38.9161
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "الأندلس المبكرة",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-019",
+   "type": "Feature",
+   "properties": {
+    "title": "وشقة",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "يحتاج توثيق تفصيلي"
+   },
+   "names": [
+    {
+     "toponym": "Washqa",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Huesca",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "وشقة",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "ثغر"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -0.4089,
+       42.1401
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "الثغر الأعلى",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-020",
+   "type": "Feature",
+   "properties": {
+    "title": "طرطوشة",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "يحتاج توثيق تفصيلي"
+   },
+   "names": [
+    {
+     "toponym": "Ṭurṭūsha",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Tortosa",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "طرطوشة",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "ثغر"
+    },
+    {
+     "label": "ميناء نهري"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       0.5216,
+       40.8125
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "الثغر الأعلى/الشرقي",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-C01",
+   "type": "Feature",
+   "properties": {
+    "title": "البيازين",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "متحقق كبوابة؛ التفاصيل لاحقًا"
+   },
+   "names": [
+    {
+     "toponym": "al-Bayyāzīn",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Albaicín",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "البيازين",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "حي حضري"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -3.5925,
+       37.1858
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — منطقة"
+     }
+    ]
+   },
+   "relations": [
+    {
+     "relationType": "gvp:broaderPartitive",
+     "relationTo": "https://andalus.example/place/PLC-003"
+    }
+   ],
+   "descriptions": [
+    {
+     "value": "النصريون وما بعدهم",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-C02",
+   "type": "Feature",
+   "properties": {
+    "title": "حدرّه (دارّو)",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "مرشح ربط"
+   },
+   "names": [
+    {
+     "toponym": "Wādī Dāru",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Darro",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "حدرّه",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "نهر"
+    }
+   ],
+   "geometry": null,
+   "relations": [
+    {
+     "relationType": "gvp:broaderPartitive",
+     "relationTo": "https://andalus.example/place/PLC-003"
+    }
+   ],
+   "descriptions": [
+    {
+     "value": "متعدد",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-C03",
+   "type": "Feature",
+   "properties": {
+    "title": "قصر الجعفرية",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "متحقق سابقًا"
+   },
+   "names": [
+    {
+     "toponym": "al-Jaʿfariyya",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Aljafería",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "قصر الجعفرية",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "قصر"
+    }
+   ],
+   "geometry": null,
+   "relations": [
+    {
+     "relationType": "gvp:broaderPartitive",
+     "relationTo": "https://andalus.example/place/PLC-006"
+    }
+   ],
+   "descriptions": [
+    {
+     "value": "الطوائف",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-C04",
+   "type": "Feature",
+   "properties": {
+    "title": "رندة",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "مرشح Gazetteer"
+   },
+   "names": [
+    {
+     "toponym": "Runda",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Ronda",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "رندة",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -5.1669,
+       36.7422
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "متعدد",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-C05",
+   "type": "Feature",
+   "properties": {
+    "title": "الجزيرة الخضراء",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "يحتاج مصدر مكاني مباشر"
+   },
+   "names": [
+    {
+     "toponym": "al-Jazīra al-Khaḍrāʾ",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Algeciras",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "الجزيرة الخضراء",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "ميناء"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -5.4503,
+       36.1331
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "متعدد",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-C06",
+   "type": "Feature",
+   "properties": {
+    "title": "وادي آش",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "يحتاج مصدر مكاني مباشر"
+   },
+   "names": [
+    {
+     "toponym": "Wādī Āsh",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Guadix",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "وادي آش",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -3.1392,
+       37.2992
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "متعدد",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-D01",
+   "type": "Feature",
+   "properties": {
+    "title": "وادي الحجارة",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "مرشح"
+   },
+   "names": [
+    {
+     "toponym": "Wādī al-Ḥijāra",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Guadalajara",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "وادي الحجارة",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "إقليم"
+    }
+   ],
+   "geometry": null,
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "الثغر الأوسط تاريخيًا",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-D02",
+   "type": "Feature",
+   "properties": {
+    "title": "Priego de Córdoba (موقع كنز)",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "متحقق كسياق الكنز"
+   },
+   "names": [
+    {
+     "toponym": "Priego de Córdoba",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Priego de Córdoba",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "موقع أثري"
+    }
+   ],
+   "geometry": null,
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "موحدي (كنز نقدي)",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-D03",
+   "type": "Feature",
+   "properties": {
+    "title": "الزاهرة",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "مرشح مهم"
+   },
+   "names": [
+    {
+     "toponym": "al-Zāhira",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "الزاهرة",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مجمع سلطوي"
+    },
+    {
+     "label": "مدينة"
+    }
+   ],
+   "geometry": null,
+   "relations": [
+    {
+     "relationType": "gvp:broaderPartitive",
+     "relationTo": "https://andalus.example/place/PLC-001"
+    }
+   ],
+   "descriptions": [
+    {
+     "value": "العامريون",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-D04",
+   "type": "Feature",
+   "properties": {
+    "title": "مُنية السرور",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "موثق نصيًا"
+   },
+   "names": [
+    {
+     "toponym": "Munyat al-Surūr",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Almunia de la Alegría",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "مُنية السرور",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مُنية"
+    }
+   ],
+   "geometry": null,
+   "relations": [
+    {
+     "relationType": "gvp:broaderPartitive",
+     "relationTo": "https://andalus.example/place/PLC-D03"
+    }
+   ],
+   "descriptions": [
+    {
+     "value": "سياق الزاهرة والمنصور",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-G01",
+   "type": "Feature",
+   "properties": {
+    "title": "الحمراء",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "جديد v5.3"
+   },
+   "names": [
+    {
+     "toponym": "al-Ḥamrāʾ",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Alhambra",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "الحمراء",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "قصر"
+    },
+    {
+     "label": "مدينة"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -3.5899,
+       37.1768
+      ],
+      "certainty": "certain",
+      "certainty_ar": "مؤكد — موقع أثري محدد"
+     }
+    ]
+   },
+   "relations": [
+    {
+     "relationType": "gvp:broaderPartitive",
+     "relationTo": "https://andalus.example/place/PLC-003"
+    }
+   ],
+   "descriptions": [
+    {
+     "value": "غرناطة النصرية وما بعدها",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-G02",
+   "type": "Feature",
+   "properties": {
+    "title": "جنة العريف",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "جديد v5.3"
+   },
+   "names": [
+    {
+     "toponym": "Jannat al-ʿArīf",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Generalife",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "جنة العريف",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "قصر"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -3.5853,
+       37.1778
+      ],
+      "certainty": "certain",
+      "certainty_ar": "مؤكد — موقع أثري محدد"
+     }
+    ]
+   },
+   "relations": [
+    {
+     "relationType": "gvp:broaderPartitive",
+     "relationTo": "https://andalus.example/place/PLC-003"
+    }
+   ],
+   "descriptions": [
+    {
+     "value": "غرناطة النصرية",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-G03",
+   "type": "Feature",
+   "properties": {
+    "title": "بسطة",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "جديد v5.3"
+   },
+   "names": [
+    {
+     "toponym": "Basṭa",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Baza",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "بسطة",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -2.7725,
+       37.4906
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "غرناطة النصرية",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-G04",
+   "type": "Feature",
+   "properties": {
+    "title": "لوشة",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "جديد v5.3"
+   },
+   "names": [
+    {
+     "toponym": "Lawsha",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Loja",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "لوشة",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "حصن"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -4.1511,
+       37.1686
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "غرناطة النصرية",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-G05",
+   "type": "Feature",
+   "properties": {
+    "title": "المنكب",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "جديد v5.3"
+   },
+   "names": [
+    {
+     "toponym": "al-Munakkab",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Almuñécar",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "المنكب",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "مدينة"
+    },
+    {
+     "label": "ميناء"
+    }
+   ],
+   "geometry": {
+    "type": "GeometryCollection",
+    "geometries": [
+     {
+      "type": "Point",
+      "coordinates": [
+       -3.6917,
+       36.7322
+      ],
+      "certainty": "less-certain",
+      "certainty_ar": "تقريبي — مركز المدينة الحديثة"
+     }
+    ]
+   },
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "غرناطة النصرية",
+     "lang": "ar"
+    }
+   ]
+  },
+  {
+   "@id": "https://andalus.example/place/PLC-G06",
+   "type": "Feature",
+   "properties": {
+    "title": "البشرات",
+    "ccodes": [
+     "ES"
+    ],
+    "status_v49": "جديد v5.3"
+   },
+   "names": [
+    {
+     "toponym": "al-Bushārāt",
+     "lang": "ar-Latn",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "Alpujarras",
+     "lang": "es",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    },
+    {
+     "toponym": "البشرات",
+     "lang": "ar",
+     "citations": [
+      {
+       "label": "andalus_knowledge_base v4.9 — المعجم الجغرافي"
+      }
+     ]
+    }
+   ],
+   "types": [
+    {
+     "label": "إقليم"
+    }
+   ],
+   "geometry": null,
+   "relations": [],
+   "descriptions": [
+    {
+     "value": "غرناطة النصرية؛ الموريسكيون",
+     "lang": "ar"
+    }
+   ]
+  }
+ ]
+}

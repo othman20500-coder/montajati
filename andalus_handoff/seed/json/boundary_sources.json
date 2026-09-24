@@ -1,0 +1,57 @@
+[
+ {
+  "boundary_source_id": "BND-SRC-OHM",
+  "label": "OpenHistoricalMap",
+  "url": "https://api.openhistoricalmap.org/",
+  "coverage": "حدود وأماكن تاريخية عبر الزمن",
+  "rights_status": "public-domain project statement; verify current terms",
+  "evidence_grade": "A-",
+  "intended_use": "مرشح أول للحدود التاريخية المتجهة",
+  "qa_rule": "لا تستورد Polygon قبل فحص start/end dates وWikidata/OSM tags والمصدر على مستوى relation.",
+  "last_checked": "2026-09-23"
+ },
+ {
+  "boundary_source_id": "BND-SRC-PLEIADES",
+  "label": "Pleiades GIS",
+  "url": "https://atlantides.org/downloads/pleiades/gis/",
+  "coverage": "أماكن قديمة وGIS مع precision metadata",
+  "rights_status": "open scholarly gazetteer; capture exact dataset license at ingest",
+  "evidence_grade": "A",
+  "intended_use": "مرجع استمرارية المواقع القديمة وجودة الإحداثية",
+  "qa_rule": "احترم location_precision؛ rough لا يصبح exact.",
+  "last_checked": "2026-09-23"
+ },
+ {
+  "boundary_source_id": "BND-SRC-ATLASPI",
+  "label": "AtlasPI",
+  "url": "https://github.com/Soil911/AtlasPI",
+  "coverage": "حدود تاريخية + confidence + مصادر",
+  "rights_status": "Apache 2.0 project; verify data-source licenses",
+  "evidence_grade": "B+",
+  "intended_use": "Cross-check وتوليد قائمة مرشحين",
+  "qa_rule": "لا يصبح مصدرًا canonical قبل تتبع مصدر كل boundary.",
+  "last_checked": "2026-09-23"
+ },
+ {
+  "boundary_source_id": "BND-SRC-BACKTHEN",
+  "label": "World Back Then",
+  "url": "https://backthen.world/",
+  "coverage": "حدود في سنوات ثابتة من ThinkQuest + سياق Wikipedia",
+  "rights_status": "license not sufficiently established for ingest",
+  "evidence_grade": "C",
+  "intended_use": "مرجع بصري ومقارنة فقط",
+  "qa_rule": "لا استيراد إلى قاعدة الإطلاق قبل حسم الحقوق والمنهجية.",
+  "last_checked": "2026-09-23"
+ },
+ {
+  "boundary_source_id": "BND-SRC-UCL",
+  "label": "Carvajal López — map of northern border of al-Andalus",
+  "url": "https://discovery.ucl.ac.uk/10102808/1/Carvajal%2520L%25C3%25B3pez_Al-Andalus.pdf",
+  "coverage": "حد شمالي تقريبي c.720/1000/1150/1250",
+  "rights_status": "scholarly publication; map reuse rights to verify",
+  "evidence_grade": "A-",
+  "intended_use": "مرجع أكاديمي لمعايرة التحولات الزمنية",
+  "qa_rule": "يستخدم للتحقق البصري والمنهجي؛ لا digitization قبل مراجعة الترخيص ودقة الرسم.",
+  "last_checked": "2026-09-23"
+ }
+]
