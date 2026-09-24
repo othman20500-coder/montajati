@@ -2,35 +2,26 @@
 
 كل بند مستقل ويمكن تنفيذه بأي ترتيب، والترتيب أدناه هو الأنفع. الأزمنة تقديرية.
 
-## 1. ربط مشروع Netlify الجديد بالمستودع (دقيقتان، مرة واحدة)
-المشروع `andalus-atlas` أُنشئ في حسابك على Netlify (2026-09-24) وهو فارغ حتى يُربط بالمستودع. موقع «منتجاتي» يبقى كما هو ولا يُمس.
+## 1. ربط مشروع Netlify الجديد بالمستودع — أُنجز (2026-09-24)
+المشروع `andalus-atlas` مربوط بالمستودع `othman20500-coder/montajati` عبر `netlify init` من جهاز صاحب المشروع: الفرع `main`، أمر البناء فارغ، مجلد النشر `andalus`. أول نشرة تلقائية بُنيت من الالتزام 7680912 (دمج #2) وعالجت 11 قاعدة إعادة توجيه بلا أخطاء. موقع «منتجاتي» لم يُمس.
 
-1. افتح https://app.netlify.com/projects/andalus-atlas وسجّل الدخول بحساب Google نفسه.
-2. من القائمة الجانبية: **Project configuration** ← **Build & deploy** ← قسم **Continuous deployment** ← زر **Link repository**.
-3. اختر **GitHub**، ثم اسمح لتطبيق Netlify بالوصول إلى المستودع `othman20500-coder/montajati` إن طُلب.
-4. الإعدادات: الفرع **main**، **Base directory** = `andalus`، أمر البناء **فارغ**، **Publish directory** = `andalus`. احفظ.
-5. سيبدأ نشر تلقائي فورًا. بعد اكتماله افتح:
-   - https://andalus-atlas.netlify.app/ يجب أن تفتح منصة الأندلس.
-   - https://andalus-atlas.netlify.app/#/atlas?story=STORY-ZALLAQA&step=1&tab=sto الزلاقة على مراحل.
-   - https://andalus-atlas.netlify.app/data/graph.prototype.js يجب أن تعطي 404 (القاعدة في `andalus/_redirects` بعلامة `!` لأن Netlify لا يحجب ملفًا موجودًا بدونها).
-   - https://andalus-atlas.netlify.app/01-benchmark.md يجب أن تعطي 404 (الوثائق البحثية لا تُنشر على الموقع).
-6. أخبرني «Netlify مربوط» لأفحص الصفحات كلها وأرسل لك ما أجده.
+ما يُفحص بعد كل دمج في `main` (يمكن من PowerShell أو المتصفح):
+- https://andalus-atlas.netlify.app/ تفتح منصة الأندلس.
+- https://andalus-atlas.netlify.app/#/atlas?story=STORY-ZALLAQA&step=1&tab=sto الزلاقة على مراحل.
+- https://andalus-atlas.netlify.app/data/graph.prototype.js تعطي 404 (القاعدة في `andalus/_redirects` بعلامة `!` لأن Netlify لا يحجب ملفًا موجودًا بدونها).
+- https://andalus-atlas.netlify.app/01-benchmark.md تعطي 404 (الوثائق البحثية لا تُنشر على الموقع).
 
-بديل مؤقت دون ربط (من جهازك، داخل مجلد المستودع بعد `git pull`):
-```
-npm i -g netlify-cli
-netlify login
-netlify link --id 524f9b42-94e6-4c35-9612-aea577addcb8
-netlify deploy --prod --dir andalus
-```
+نشر يدوي عند الحاجة (من مجلد المستودع، بعد `git pull`): `netlify deploy --prod --dir andalus`. ولفك الربط: `netlify unlink` ثم `netlify init`.
 
-## 2. حماية الفرع الرئيسي (دقيقتان)
-1. افتح https://github.com/othman20500-coder/montajati/settings/branches
-2. **Add branch ruleset** (أو **Add rule** في الواجهة القديمة). الاسم: `main-protection`، الحالة **Active**، الهدف: **Include default branch**.
-3. فعّل:
-   - **Require a pull request before merging** (عدد الموافقات 0 يكفي ما دمت وحدك).
-   - **Require status checks to pass**، ثم **Add checks** وابحث عن: `بوابة الأدلة والجودة (لا دمج قبل نجاحها كلها)` (هذا اسم الوظيفة في `andalus-ci`) واختره، وفعّل **Require branches to be up to date**.
-4. احفظ. من الآن لا يُدمج شيء في `main` قبل نجاح بوابة الأدلة.
+## 2. حماية الفرع الرئيسي — القاعدة أُنشئت (2026-09-24) لكنها لا تُطبَّق بعد
+القاعدة `main-protection` موجودة (طلب دمج إلزامي، نجاح `بوابة الأدلة والجودة`، منع الدفع القسري). لكن GitHub لا يطبّق القواعد على مستودع **خاص** في حساب شخصي مجاني، وهذا المستودع خاص. وله أثر ثانٍ: رابط التصحيحات في صفحة «عن المنصة» يشير إلى Issues في هذا المستودع، ولا يفتحه أحد سوى صاحبه ما دام خاصًا.
+
+القرار (2026-09-24): جعل المستودع عامًا، مع عدم الإعلان عنه حتى اكتمال المراجعة والتدقيق (وسم noindex في `andalus/index.html` حتى الإطلاق). `office.html` حُذف من المستودع وأُدرج في `.gitignore`.
+
+الخيارات التي عُرضت:
+1. **جعل المستودع عامًا** (مجاني، ويُفعّل القاعدة فورًا ويفتح رابط التصحيحات للجميع). قبل ذلك يُحذف `office.html` من المستودع لأنه يحوي مسارات مجلدات على جهازك (يبقى نسخة محلية عندك). الخطوة: Settings ← General ← Danger Zone ← **Change visibility** ← Public.
+2. **الاشتراك في GitHub Pro** (مدفوع شهريًا) فتُطبَّق القاعدة على المستودع الخاص، مع تغيير قناة التصحيحات إلى بريد أو نموذج لأن Issues تبقى مغلقة.
+3. **الإبقاء على الحال**: البوابة تعمل وتظهر حمراء عند الفشل لكنها لا تمنع الدمج، ويُغيَّر رابط التصحيحات إلى بريد أو نموذج.
 
 ## 3. نشر خدمة المراجعة على Render (10 دقائق)
 ملاحظة التكلفة: `render.yaml` يطلب خطة **starter** وقرصًا دائمًا 1 غيغابايت، وكلاهما مدفوع (القرص لا يتوفر في الخطة المجانية). القرص ضروري حتى لا تضيع أحكام المراجعين عند كل إعادة تشغيل.
@@ -61,5 +52,5 @@ python platform/service/app.py create-user --db /var/data/andalus.sqlite --usern
 2. **CLM-002 (حرق السفن)**: حكم قاعدة v1.2 «غير مثبت، لا يُنشر كحقيقة» بمصدرين، وهكذا يُعرض الآن. الاقتراح: اعتماده. إن كان في ورقة Excel v6.0 حكم آخر فأرسل نصه وأسجل القرار في سجل التغيير.
 
 ## بعد ذلك
-- دمج طلب الدمج #2 (دليل المراجع وجولة الشواهد الثالثة) من https://github.com/othman20500-coder/montajati/pull/2
+- طلب الدمج #2 دُمج (2026-09-24)؛ التعديلات اللاحقة تُرفع بطلبات دمج صغيرة من فرع العمل.
 - أي خطأ تراه على الجوال أو الحاسوب أرسله لي كما هو وأعالجه في طلب دمج صغير.
