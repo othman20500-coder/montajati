@@ -1,0 +1,66 @@
+[
+ {
+  "route_id": "ROUTE-ZALLAQA",
+  "ordinal": 1,
+  "place_entity_id": "PLC-TOLEDO",
+  "person_entity_id": "PER-ALFONSO-VI",
+  "work_entity_id": null,
+  "note": "سقوط طليطلة 478هـ"
+ },
+ {
+  "route_id": "ROUTE-ZALLAQA",
+  "ordinal": 2,
+  "place_entity_id": "PLC-CORDOBA",
+  "person_entity_id": null,
+  "work_entity_id": null,
+  "note": "مشايخ قرطبة يجتمعون على الاستنجاد"
+ },
+ {
+  "route_id": "ROUTE-ZALLAQA",
+  "ordinal": 3,
+  "place_entity_id": "PLC-CEUTA",
+  "person_entity_id": "PER-YUSUF-IBN-TASHFIN",
+  "work_entity_id": null,
+  "note": "الاستنجاد يبلغ أمير المسلمين بسبتة"
+ },
+ {
+  "route_id": "ROUTE-ZALLAQA",
+  "ordinal": 4,
+  "place_entity_id": "PLC-ALGECIRAS",
+  "person_entity_id": "PER-YUSUF-IBN-TASHFIN",
+  "work_entity_id": null,
+  "note": "العبور إلى الجزيرة الخضراء"
+ },
+ {
+  "route_id": "ROUTE-ZALLAQA",
+  "ordinal": 5,
+  "place_entity_id": "PLC-SEVILLE",
+  "person_entity_id": "PER-009",
+  "work_entity_id": null,
+  "note": "الاجتماع بالمعتمد بإشبيلية"
+ },
+ {
+  "route_id": "ROUTE-ZALLAQA",
+  "ordinal": 6,
+  "place_entity_id": "PLC-TOLEDO",
+  "person_entity_id": "PER-ALFONSO-VI",
+  "work_entity_id": null,
+  "note": "الأذفونش يخرج من طليطلة"
+ },
+ {
+  "route_id": "ROUTE-ZALLAQA",
+  "ordinal": 7,
+  "place_entity_id": "PLC-BADAJOZ",
+  "person_entity_id": null,
+  "work_entity_id": null,
+  "note": "الزلاقة: المعسكران ثم يوم الجمعة"
+ },
+ {
+  "route_id": "ROUTE-ZALLAQA",
+  "ordinal": 8,
+  "place_entity_id": "PLC-ALGECIRAS",
+  "person_entity_id": "PER-YUSUF-IBN-TASHFIN",
+  "work_entity_id": null,
+  "note": "العودة"
+ }
+]

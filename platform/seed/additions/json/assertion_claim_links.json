@@ -1,0 +1,62 @@
+[
+ {
+  "assertion_id": "AST-ZLQ-01",
+  "claim_id": "CLM-ZLQ-01",
+  "relation": "يدعم التاريخ"
+ },
+ {
+  "assertion_id": "AST-ZLQ-02",
+  "claim_id": "CLM-ZLQ-02",
+  "relation": "يدعم الموضع"
+ },
+ {
+  "assertion_id": "AST-ZLQ-03",
+  "claim_id": "CLM-ZLQ-03",
+  "relation": "يدعم المرحلة"
+ },
+ {
+  "assertion_id": "AST-ZLQ-04",
+  "claim_id": "CLM-ZLQ-03",
+  "relation": "يدعم المرحلة"
+ },
+ {
+  "assertion_id": "AST-ZLQ-05",
+  "claim_id": "CLM-ZLQ-03",
+  "relation": "يدعم المرحلة"
+ },
+ {
+  "assertion_id": "AST-ZLQ-06",
+  "claim_id": "CLM-ZLQ-03",
+  "relation": "يدعم المرحلة"
+ },
+ {
+  "assertion_id": "AST-ZLQ-07",
+  "claim_id": "CLM-ZLQ-03",
+  "relation": "يدعم المرحلة"
+ },
+ {
+  "assertion_id": "AST-ZLQ-08",
+  "claim_id": "CLM-ZLQ-03",
+  "relation": "يدعم المرحلة"
+ },
+ {
+  "assertion_id": "AST-ZLQ-09",
+  "claim_id": "CLM-ZLQ-03",
+  "relation": "يدعم المرحلة"
+ },
+ {
+  "assertion_id": "AST-ZLQ-12",
+  "claim_id": "CLM-ZLQ-03",
+  "relation": "يدعم المرحلة"
+ },
+ {
+  "assertion_id": "AST-ZLQ-10",
+  "claim_id": "CLM-ZLQ-04",
+  "relation": "يدعم النتيجة"
+ },
+ {
+  "assertion_id": "AST-ZLQ-11",
+  "claim_id": "CLM-ZLQ-04",
+  "relation": "يدعم النتيجة"
+ }
+]

@@ -103,6 +103,17 @@
   :root[data-theme="night"] .map .land{fill:#1B2536;stroke:#34405A}
   .map .sea{fill:transparent}
   .map .city{cursor:pointer}
+  .map .route{stroke:var(--muted);stroke-dasharray:6 5;opacity:.3;fill:none}
+  .map .route.on{stroke:var(--accent);opacity:.95}
+  .map .stop circle{fill:var(--card);stroke:var(--muted);stroke-width:1.5;opacity:.55}
+  .map .stop.on circle{fill:var(--accent);stroke:#fff;opacity:1}
+  .map .stop text{font-family:var(--body);font-weight:700;fill:var(--muted);pointer-events:none}
+  .map .stop.on text{fill:#fff}
+  .stepper{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0}
+  .stepper .dot{width:26px;height:26px;border-radius:50%;border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center;font-size:12px;text-decoration:none;color:var(--ink);background:var(--card)}
+  .stepper .dot[aria-current="step"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .stepper .dot.done{border-color:var(--accent)}
+  .quote{display:block;font-family:var(--head);font-size:14.5px;line-height:1.9;margin:4px 0 8px;padding-inline-start:10px;border-inline-start:3px solid var(--line)}
   .map .city circle{stroke:#fff;stroke-width:1.5;transition:r .3s var(--ease),fill .4s}
   .map .city text{font-family:var(--body);font-size:11px;fill:var(--ink);pointer-events:none;paint-order:stroke;stroke:var(--bg);stroke-width:3px;stroke-linejoin:round}
   .map .city.dim{opacity:.18}
@@ -309,6 +320,10 @@ function mapSvg(y,opts={}){
   const cities=Object.values(E).filter(o=>o.type==="Place"&&!o.battle&&typeof o.lat==="number"&&typeof o.lon==="number");
   const battles=Object.values(E).filter(o=>o.type==="Place"&&o.battle);
   const cid="land"+(++mapSvg.n);
+  // مسار على مراحل: خط منقّط بين المحطات (تنظيم سردي لا مسار سير مقيس) وأرقام المحطات؛ المفعّل منها حتى المرحلة الحالية
+  const pathSvg=(()=>{const ids=opts.path||[];if(!ids.length)return "";const act=opts.pathActive||ids.length;const pts=ids.map(id=>E[id]).map(o=>o&&typeof o.lat==="number"?o:null);
+    const seen={};let out="";for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i];if(!a||!b)continue;out+=`<line class="route${i<act?" on":""}" x1="${X(a.lon)}" y1="${Y(a.lat)}" x2="${X(b.lon)}" y2="${Y(b.lat)}" stroke-width="${2*k}"/>`;}
+    out+=pts.map((o,i)=>{if(!o)return "";const rep=seen[o.id]=(seen[o.id]||0)+1;const dx=(rep-1)*16*k;return `<g class="stop${i<act?" on":""}"><title>المحطة ${i+1}: ${esc(o.name.ar)}</title><circle cx="${X(o.lon)+dx}" cy="${Y(o.lat)-14*k}" r="${9*k}"/><text x="${X(o.lon)+dx}" y="${Y(o.lat)-10.5*k}" text-anchor="middle" font-size="${10*k}">${i+1}</text></g>`;}).join("");return out;})();
   return `<svg class="map" viewBox="${vb.map(v=>v.toFixed(1)).join(" ")}" role="img" aria-label="خريطة الأندلس سنة ${y}">
     <defs><clipPath id="${cid}"><path d="${path(IBERIA)}"/><path d="${path(MAGHREB)}"/></clipPath></defs>
     <path class="land" d="${path(IBERIA)}"/><path class="land" d="${path(MAGHREB)}"/>
@@ -316,6 +331,7 @@ function mapSvg(y,opts={}){
     ${cities.map(o=>{const c=ctrl(o,y);const exists=o.founded==null||y>=o.founded;const fill=c==="muslim"?eraOf(y).c:c==="christian"?"var(--christian)":"var(--brand)";
       const label=opts.labels==="all"||MAJOR.has(o.id)||o.id===opts.focus||members.has(o.id);if(opts.only&&!opts.only.has(o.id))return "";return `<a class="city ${exists?"":"dim"}${members.has(o.id)?" member":""}" href="${opts.route?opts.route(o.id):href(o.id)}"><title>${esc(o.name.ar)}</title><circle cx="${X(o.lon)}" cy="${Y(o.lat)}" r="${(o.id===opts.focus?9:MAJOR.has(o.id)?7:4.5)*k}" fill="${fill}"${o.id===opts.focus?" stroke=\"var(--accent)\" stroke-width=\""+(3*k)+"\"":""}/>${label?`<text x="${X(o.lon)+9*k}" y="${Y(o.lat)+4*k}" font-size="${11*k}">${esc(o.name.ar)}</text>`:""}</a>`;}).join("")}
     ${battles.filter(b=>typeof b.lat==="number"&&Math.abs((b.founded||b.year||0)-y)<=40).map(b=>`<a class="battle" href="${href(b.id)}"><path d="M${X(b.lon)},${Y(b.lat)-8} l7,12 h-14z"/><text x="${X(b.lon)+9}" y="${Y(b.lat)+4}" class="note">⚔ ${esc(b.name.ar)} ${b.founded}</text></a>`).join("")}
+    ${pathSvg}
     <text x="${vb[0]+12*k}" y="${vb[1]+vb[3]-12*k}" class="note" font-size="${10.5*k}">الإحداثيات مراسٍ حديثة تقريبية (مركز المدينة الحالية غالبًا)؛ لا تُعرض حدود سياسية تاريخية (القاعدة 7).</text>
   </svg>`;
 }
@@ -364,7 +380,7 @@ V.places=()=>`<section><p class="eyebrow">الأماكن</p><h2>مدن ومعا�
 V.museum=()=>`<section><p class="eyebrow">المتحف الرقمي</p><h2>الآثار والمخطوطات والمصنفات والموارد</h2><p class="sub">لا تُعرض صورة أو نص طويل إلا برخصة تسمح (القاعدة 6)؛ وما عداه يُحال إليه برابط من لوحة الشواهد.</p><div class="grid">${Object.values(E).filter(o=>["Artifact","Document","Work","Resource","Language"].includes(o.type)).map(card).join("")}</div></section>`;
 
 V.stories=()=>`<section><p class="eyebrow">قصص الأطلس</p><h2>${STORIES.length} قصص من قاعدة v1.2</h2><p class="sub">كل محطة تشير إلى مكان وادعاء في القاعدة؛ وكل قصة تحمل تنبيهها.</p>
-  ${STORIES.map(st=>`<div class="panel" style="margin-bottom:14px"><p class="eyebrow">${esc(st.period||"")}</p><h3>${esc(st.title)}</h3><p style="color:var(--muted)">${esc(st.summary||"")}</p>${st.warning?`<p class="note">${esc(st.warning)}</p>`:""}
+  ${STORIES.map(st=>`<div class="panel" style="margin-bottom:14px"><p class="eyebrow">${esc(st.period||"")}</p><h3>${esc(st.title)}</h3><p style="color:var(--muted)">${esc(st.summary||"")}</p><p><a class="chip" href="#/atlas?model=all&story=${st.id}&step=1&tab=sto" style="border-color:var(--accent)">▶ على الخريطة مرحلةً مرحلة</a></p>${st.warning?`<p class="note">${esc(st.warning)}</p>`:""}
     <div class="strip">${st.steps.map((x,i)=>`<div class="card" style="--era:var(--brand);min-width:280px"><div class="type">محطة ${i+1}</div><h3>${esc(x.title)}</h3><p>${x.claim&&CLAIMS[x.claim]?claimSpan(x.text||"",x.claim):esc(x.text||"")}</p>${x.place&&E[x.place]?`<div class="chips" style="margin-top:8px">${chip(x.place)}</div>`:""}</div>`).join("")}</div></div>`).join("")}</section>`;
 
 V.play=()=>{const y=[800,960,1100,1300][Math.floor(Math.random()*4)];const ans=eraOf(y).name;const opts=[...new Set([ans,...TOP.map(e=>e.name).sort(()=>Math.random()-.5).slice(0,3)])].sort(()=>Math.random()-.5);
@@ -389,10 +405,13 @@ const geoA=s=>s?(GEO_AR.anchor[s]||"مرساة حديثة"):"—";
 const geoS=s=>s?(GEO_AR.status[s]||"حالة غير مصنّفة"):"";
 const geoP=s=>s?(GEO_AR.period[s]||"عصر غير محدد"):"";
 const geoT=s=>s?s.split(",").map(t=>GEO_AR.theme[t.trim()]).filter(Boolean):[];
-const atlasState={model:"cordoba",y:null,place:null,tab:"year",layers:new Set()};
+const atlasState={model:"cordoba",y:null,place:null,tab:"year",layers:new Set(),story:null,step:1};
+const stripDia=s=>String(s||"").replace(/[\u064B-\u0652\u0670\u0640]/g,"");
 function modelOf(id){return ATLAS.models.find(m=>m.id===id);}
 V.atlas=(q)=>{const st=atlasState;if(q.model&&MODEL_META[q.model])st.model=q.model;const m=st.model==="all"?null:modelOf(st.model);
   const years=m?m.years:[711,1614];const range=[Math.min(...years),Math.max(...years)];
+  const story=q.story?STORIES.find(s2=>s2.id===q.story)||null:null;st.story=story?story.id:null;st.step=story?Math.max(1,Math.min(+q.step||1,story.steps.length)):1;if(story)st.tab="sto";
+  const storyEv=story?Object.values(E).find(o=>o.type==="Event"&&(o.stories||[]).includes(story.id)):null;if(story&&!q.y&&storyEv)st.y=storyEv.year;
   if(q.y)st.y=+q.y;if(st.y==null||st.y<711||st.y>1614)st.y=range[0];const y=st.y;const meta=MODEL_META[st.model];
   const activeLayers=ATLAS.layers.filter(l=>st.layers.has(l.layer_id)&&y>=l.min_year&&y<=l.max_year);const members=new Set(activeLayers.flatMap(l=>l.members.map(x=>x.place)));
   const modelPlaces=m?new Set([...m.places,...ATLAS.layers.flatMap(l=>l.members.map(x=>x.place))]):null;
@@ -408,7 +427,20 @@ V.atlas=(q)=>{const st=atlasState;if(q.model&&MODEL_META[q.model])st.model=q.mod
     place:()=>{const o=E[st.place];if(!o)return "";return `<div class="panel"><p class="eyebrow">${esc(o.kind||"مكان")}</p><h3><a href="${href(o.id)}">${esc(o.name.ar)}</a> <small style="color:var(--muted)">${esc(o.name.en||"")}</small></h3><p>${summaryHtml(o)||"<span style='color:var(--muted)'>لا إسناد منشور لهذا المكان بعد.</span>"}</p><p class="note">حالة الموضع: ${esc(geoS(o.historical_status)||"—")}${o.period_group?` · ${esc(geoP(o.period_group))}`:""}</p><p class="note">الإحداثية: ${esc(geoQ(o.spatial_quality))} · ${esc(geoA(o.anchor_type))} · المصدر: ${esc(o.coordinate_source||"—")} (تقريبية بحسب القاعدة 7)${o.place_note?` · ${esc(o.place_note)}`:""}</p><div class="chips">${ATLAS.layers.filter(l=>l.members.some(x=>x.place===o.id)).map(l=>`<span class="chip">${esc(l.label_ar)}</span>`).join("")}</div></div>`;},
     evd:()=>`<div class="panel"><p class="eyebrow">الأدلة — ${esc(meta.name)}</p><p class="sub" style="margin-bottom:10px">كل إسناد بحالته وعدد شواهده؛ الشاهد من المصدر الأولي مميز ومقدَّم (القاعدة 9).</p><div class="tl">${asts.map(a=>{const c=CLAIMS[a];if(!c)return "";const prim=c.sources.filter(s=>(s.source_kind||"").startsWith("مصدر أولي")).length;const eye=c.sources.filter(s=>s.review_status==="معتمد بالعين").length;return `<div style="--era:${(STATUS[c.status]||[])[1]}"><b>${claimSpan(c.text,a)}</b> <small>${esc(c.v12_status||"")} · ${c.sources.length} شاهد${prim?` · <span style="color:var(--fact)">${prim} أولي</span>`:""}${eye?` · <span style="color:var(--fact)">✓ ${eye} مطابق بالعين</span>`:""}</small></div>`;}).join("")}</div></div>`,
     src:()=>{const used=[...new Set(asts.flatMap(a=>(CLAIMS[a]?.sources||[]).map(s=>s.src)))].filter(x=>SOURCES[x]);return `<div class="panel"><p class="eyebrow">مصادر ${esc(meta.name)} (${used.length})</p><div class="chips">${used.map(x=>`<span class="chip">${esc(SOURCES[x].title)} <small>${SOURCES[x].tier==="أولي"?"مصدر أولي":"مرتبة "+esc(SOURCES[x].tier)}${SOURCES[x].rights&&SOURCES[x].rights!=="غير معروف"?" · "+esc(SOURCES[x].rights):""}</small></span>`).join("")}</div><p class="note">تقييم المصدر مستقل عن حق إعادة النشر (القاعدتان 5 و6)؛ لا تُعرض صور أو نصوص طويلة إلا برخصة تسمح.</p></div>`;},
-    sto:()=>`<div class="panel"><p class="eyebrow">قصص الأطلس</p>${STORIES.map(s2=>`<h3 style="margin-top:8px">${esc(s2.title)}</h3><p style="color:var(--muted);margin:0">${esc(s2.summary||"")}</p><div class="chips" style="margin:6px 0 10px">${s2.steps.map(x=>x.place&&E[x.place]?`<a class="chip" href="${route(x.place)}">${esc(x.title)}</a>`:`<span class="chip">${esc(x.title)}</span>`).join("")}</div>`).join("")}<a class="chip" href="#/stories">كل القصص بمحطاتها</a></div>`,
+    sto:()=>{const slink=(sid,n)=>`#/atlas?model=${st.model}&y=${y}&story=${sid}&step=${n}&tab=sto`;
+      if(!story)return `<div class="panel"><p class="eyebrow">قصص الأطلس</p><p class="sub" style="margin-bottom:8px">اختر قصة لعرضها على الخريطة مرحلةً مرحلة، وكل مرحلة بشواهدها.</p>${STORIES.map(s2=>`<h3 style="margin-top:8px">${esc(s2.title)} <small style="color:var(--muted)">${esc(s2.period||"")}</small></h3><p style="color:var(--muted);margin:0">${esc(s2.summary||"")}</p><div class="chips" style="margin:6px 0 10px"><a class="chip" href="${slink(s2.id,1)}" style="border-color:var(--accent)">▶ على مراحل (${s2.steps.length})</a>${s2.steps.map(x=>x.place&&E[x.place]?`<a class="chip" href="${route(x.place)}">${esc(x.title)}</a>`:`<span class="chip">${esc(x.title)}</span>`).join("")}</div>`).join("")}<a class="chip" href="#/stories">كل القصص بمحطاتها</a></div>`;
+      const i=st.step,N=story.steps.length,step=story.steps[i-1],c=step.claim?CLAIMS[step.claim]:null,pl=step.place?E[step.place]:null;
+      const names=pl?[pl.name.ar,...(pl.name.variants||[])].filter(Boolean).map(stripDia):[];
+      let ev=(c?c.sources:[]).filter(x=>x.quote);const named=ev.filter(x=>names.some(n=>stripDia(x.quote).includes(n)));const filtered=named.length>0&&named.length<ev.length;if(named.length)ev=named;
+      const prim=x=>(x.source_kind||"").startsWith("مصدر أولي");ev=[...ev].sort((a,b)=>(prim(b)?1:0)-(prim(a)?1:0));
+      return `<div class="panel"><p class="eyebrow">${esc(story.title)} · المرحلة ${i} من ${N}</p>
+        <div class="stepper">${story.steps.map((x,j)=>`<a class="dot${j+1<i?" done":""}" href="${slink(story.id,j+1)}" ${j+1===i?'aria-current="step"':""} title="${esc(x.title)}">${j+1}</a>`).join("")}</div>
+        <h3>${i}. ${esc(step.title)}</h3>${pl?`<p class="note">المحطة: <a href="${href(pl.id)}">${esc(pl.name.ar)}</a> — مرساة حديثة تقريبية (القاعدة 7)</p>`:""}<p>${esc(step.text||"")}</p>
+        ${c?`<p style="margin:8px 0 4px"><b>الادعاء:</b> ${claimSpan(c.text,step.claim)} <small style="color:var(--muted)">${esc(c.v12_status||"")}</small></p>
+        <p class="eyebrow" style="margin-top:8px">${filtered?"الشواهد التي تسمي هذه المحطة":"شواهد المرحلة"} (${ev.length}) — المصدر الأولي مقدَّم</p>
+        <div class="tl">${ev.map(x=>`<div style="--era:${prim(x)?"var(--fact)":"var(--muted)"}"><b>${esc(SOURCES[x.src]?.title||x.src)}</b> <small>${esc(x.loc||"")} · ${esc(x.stance||"")}${prim(x)?' · <span style="color:var(--fact)">مصدر أولي</span>':""}${x.review_status==="معتمد بالعين"?' · <span style="color:var(--fact)">✓ مطابق بالعين</span>':""}</small><span class="quote">«${esc(x.quote)}»</span>${x.note?`<small style="color:var(--muted)">${esc(x.note)}</small>`:""}</div>`).join("")}</div>`:""}
+        <div class="chips" style="margin-top:10px">${i>1?`<a class="chip" href="${slink(story.id,i-1)}">→ المرحلة السابقة</a>`:""}${i<N?`<a class="chip" href="${slink(story.id,i+1)}" style="border-color:var(--accent)">المرحلة التالية ←</a>`:""}<a class="chip" href="#/atlas?model=${st.model}&y=${y}&tab=sto">إغلاق القصة</a></div>
+        ${story.warning?`<p class="note">${esc(story.warning)}</p>`:""}</div>`;},
     lim:()=>`<div class="panel"><p class="eyebrow">ما لا نعرفه بعد — ${esc(meta.name)}</p><ul style="margin:0;padding-inline-start:18px">${(m?m.todos:ATLAS.models.flatMap(x=>x.todos)).map(t=>`<li><b>${esc(t.id)}</b>: ${esc(t.todo)}</li>`).join("")}${asts.filter(a=>CLAIMS[a]&&CLAIMS[a].status==="partial").map(a=>`<li>${claimSpan(CLAIMS[a].text,a)} <small style="color:var(--muted)">موثّق جزئيًا: يُعرض بتنبيه</small></li>`).join("")}</ul><h3 style="margin-top:12px;font-size:15px">سياسة الإصدار</h3><ul style="margin:0;padding-inline-start:18px;color:var(--muted);font-size:13.5px">${ATLAS.scope.map(sc=>`<li>${sc.included?"✓":"✗"} ${esc(sc.component)}: ${esc(sc.policy_ar)}</li>`).join("")}</ul><p class="note">قائمة المراجعة اليدوية الكاملة في andalus_handoff/HANDOFF.md.</p></div>`
   };
   return `<section><p class="eyebrow">الأطلس الموحّد</p><h2>${esc(meta.name)} · سنة ${y}م</h2>
@@ -417,7 +449,7 @@ V.atlas=(q)=>{const st=atlasState;if(q.model&&MODEL_META[q.model])st.model=q.mod
     ${timeBar(y,"atlasY")}
     <div class="chips" style="margin:8px 0">${jumps.map(([yy,l])=>`<a class="chip" href="#/atlas?model=${st.model}&y=${yy}" ${yy===y?'style="border-color:var(--accent)"':""}>${esc(l)} <small>${yy}</small></a>`).join("")}</div>
     <div class="lyr">${ATLAS.layers.map(l=>`<label title="${esc(l.description_ar)} — ${esc(carto(l.cartographic_status))}"><input type="checkbox" data-lyr="${l.layer_id}" ${st.layers.has(l.layer_id)?"checked":""}> ${esc(l.label_ar)}</label>`).join("")}<label title="مظاريف تحليلية، ليست حدودًا تاريخية (SCOPE-004)"><input type="checkbox" data-lyr="zones" ${st.layers.has("zones")?"checked":""}> المظاريف التحليلية</label></div>
-    <div class="panel" id="atlasMap">${mapSvg(y,{bbox:meta.bbox,members:[...members],zones:st.layers.has("zones")?ATLAS.zones:[],focus:st.place,route})}</div>
+    <div class="panel" id="atlasMap">${mapSvg(y,{bbox:meta.bbox,members:[...members],zones:st.layers.has("zones")?ATLAS.zones:[],focus:story?story.steps[st.step-1].place:st.place,route,path:story?story.steps.map(x=>x.place):null,pathActive:st.step})}</div>
     <p class="note">الطبقات: ${ATLAS.layers.map(l=>carto(l.cartographic_status)).filter((v,i,a)=>a.indexOf(v)===i).map(esc).join(" · ")}. المظاريف: ${esc(carto(ATLAS.zones[0]?.status||""))} (سياسة الإصدار SCOPE-004).</p>
   </div><div>
     <div class="tabs" role="tablist">${tabs.map(([k,l])=>`<button role="tab" aria-selected="${st.tab===k}" data-tab="${k}">${l}</button>`).join("")}</div>
@@ -448,6 +480,7 @@ V.entity=(id)=>{const o=E[id];if(!o)return `<section><h2>لم أجد هذا ال
   else if(o.type==="Person"){head=(typeof o.born==="number")?ribbon(o.born,o.died):"";const parts=o.name.parts?Object.entries(o.name.parts).map(([k,v])=>`<span>${({ism:"الاسم",kunya:"الكنية",nasab:"النسب",nisba:"النسبة",laqab:"اللقب"})[k]||k}: <b>${esc(v)}</b></span>`).join(""):"";extra=`<div class="cols"><div><div class="names"><b>${esc(o.name.ar)}</b>${o.name.en?`<span>${esc(o.name.en)}</span>`:""}<span>${(o.roles||[]).join(" · ")}</span><span>${yr(o.born)}–${yr(o.died)}م${o.dates_note?` <small>(${esc(o.dates_note)})</small>`:""}</span></div>${parts?`<div class="names" style="margin-top:6px">${parts}</div>`:""}<p style="margin-top:10px">${summaryHtml(o)}</p>${audienceBox(o)}</div>
       <div class="panel"><p class="eyebrow">مسار الحياة</p>${mapSvg((o.born||o.died||960)+20)}<p class="note">في المنصة: خط الرحلة بين أماكن الإقامة (born_in → lived_in → died_in) مع سنواتها، وشبكة الشيوخ والتلاميذ.</p></div></div>`;}
   else if(o.type==="Event"){head=ribbon(o.year,o.end,o.hijri);const parts=EDGES.filter(e=>e.to===id&&e.rel==="participated_in");extra=`<div class="cols"><div><p>${summaryHtml(o)}</p><h3 style="margin-top:14px">الأطراف</h3><div class="chips">${parts.map(p=>`<a class="chip" href="${href(p.from)}">${esc(E[p.from].name.ar)} <small>${esc(p.role||"")}</small></a>`).join("")||"<span class='chip'>تُستكمل</span>"}</div>
+      ${(o.stories||[]).length?`<h3 style="margin-top:14px">على الخريطة مرحلةً مرحلة</h3><div class="chips">${o.stories.map(sid=>{const s2=STORIES.find(x=>x.id===sid);return s2?`<a class="chip" href="#/atlas?model=all&story=${sid}&step=1&tab=sto" style="border-color:var(--accent)">▶ ${esc(s2.title)} <small>${s2.steps.length} محطات</small></a>`:"";}).join("")}</div>`:""}
       ${(o.before||o.after)?`<h3 style="margin-top:14px">قبل ← بعد</h3><div class="chips">${(o.before||[]).map(chip).join("")}<span class="chip" style="border-color:var(--accent)">${esc(o.name.ar)}</span>${(o.after||[]).map(chip).join("")}</div>`:""}
       ${audienceBox(o)}</div><div class="panel"><p class="eyebrow">المكان</p>${mapSvg(o.year,{focus:o.place})}${o.kind==="معركة"?`<p class="note">خريطة المعركة على مراحل ▶ تُضاف في المنصة، مع تنبيه ثابت: أعداد الجيوش تُعرض كمدى بمصادره.</p>`:""}</div></div>`;}
   else {extra=`${o.author&&!E[o.author]?`<div class="names"><span>المؤلف: <b>${esc(o.author)}</b></span>${o.year?`<span>${o.year}م</span>`:""}</div>`:""}<p>${summaryHtml(o)}</p>${o.holding?`<div class="panel" style="margin-top:12px"><b>مكان الحفظ:</b> ${esc(o.holding.institution)}${o.holding.license?` · <b>الرخصة:</b> ${esc(o.holding.license)}`:""}${o.holding.iiif?` · IIIF`:` · <span class="scholar-only" style="display:inline">الرقم المكتبي ورابط IIIF يُضافان عند التوثيق</span>`}</div>`:""}${o.type==="Polity"?`<div class="chips" style="margin-top:12px"><span class="chip">${yr(o.from)}–${yr(o.to)}م</span></div>${(o.rulers||[]).length?`<h3 style="margin-top:14px">الولايات المسندة</h3><div class="tl">${o.rulers.map(r=>`<div><b><a href="${href(r.person)}">${esc((E[r.person]||{name:{ar:r.person}}).name.ar)}</a></b> <small>${esc(r.role||"")} · ${yr(r.from)}–${yr(r.to)}م · دقة: ${esc(r.precision||"")}</small></div>`).join("")}</div>`:""}`:""}${audienceBox(o)}`;}

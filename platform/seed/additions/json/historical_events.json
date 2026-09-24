@@ -1,0 +1,15 @@
+[
+ {
+  "event_id": "EVT-022",
+  "title_ar": "وقعة الزلاقة",
+  "start_year": 1086,
+  "end_year": 1086,
+  "precision": "يوم (الشهر مختلف فيه)",
+  "hijri": "479هـ (12 رجب على الراجح)",
+  "place_id": "PLC-BADAJOZ",
+  "period_id": "PRD-05",
+  "polity_id": "POL-006",
+  "confidence": "عالٍ (الحدث)؛ اليوم والشهر مختلف فيهما",
+  "legacy_refs": "EVT-007"
+ }
+]

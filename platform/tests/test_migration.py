@@ -21,8 +21,9 @@ class MigrationIsIdempotent(unittest.TestCase):
             self.assertEqual(code2, 0, r2.get("problems"))
             self.assertFalse(r2["fresh"])
             self.assertEqual(sum(v["inserted"] for v in r2["tables"].values()), 0, "التشغيل الثاني يجب ألا يُدخل صفًا جديدًا")
-            with open(os.path.join(SEED, "table_counts.json"), encoding="utf-8") as f:
-                expected = json.load(f)
+            sys.path.insert(0, os.path.dirname(MIGRATE))
+            from migrate_v1_2 import expected_counts, DEFAULT_ADDITIONS
+            expected = expected_counts(SEED, DEFAULT_ADDITIONS)
             con = sqlite3.connect(db)
             for table, n in expected.items():
                 got = con.execute(f'SELECT COUNT(*) FROM "{table}"').fetchone()[0]

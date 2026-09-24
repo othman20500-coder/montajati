@@ -1,0 +1,29 @@
+[
+ {
+  "entity_id": "PLC-CEUTA",
+  "entity_type": "Place",
+  "preferred_name_ar": "سبتة",
+  "preferred_name_latn": "Ceuta",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مرساة حديثة لمدينة سبتة؛ منها أمر يوسف بن تاشفين بعبور العساكر سنة 479هـ بحسب ابن الأثير وابن خلكان."
+ },
+ {
+  "entity_id": "PER-YUSUF-IBN-TASHFIN",
+  "entity_type": "Person",
+  "preferred_name_ar": "يوسف بن تاشفين",
+  "preferred_name_latn": "Yūsuf ibn Tāshfīn",
+  "start_date": null,
+  "end_date": null,
+  "notes": "أمير المسلمين المرابطي؛ تاريخا الميلاد والوفاة لم يُتحقق منهما ضمن هذه الإضافة."
+ },
+ {
+  "entity_id": "PER-ALFONSO-VI",
+  "entity_type": "Person",
+  "preferred_name_ar": "الأذفونش",
+  "preferred_name_latn": "al-Adhfūnsh (Alfonso VI)",
+  "start_date": null,
+  "end_date": null,
+  "notes": "ملك الفرنج صاحب طليطلة في المصادر العربية؛ مطابقته بألفونسو السادس ملك قشتالة وليون تعريف الدراسات الحديثة، ولم أتحقق منه من مصدر أولي ضمن هذه الإضافة."
+ }
+]

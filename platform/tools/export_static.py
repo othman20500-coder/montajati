@@ -239,12 +239,28 @@ def main():
     scope = R("SELECT scope_id, component, included, policy_ar FROM release_scope ORDER BY scope_id")
     boundary_sources = R("SELECT boundary_source_id, label, url, coverage, rights_status, evidence_grade, intended_use, qa_rule FROM boundary_sources")
     models = []
-    for mid in [r["model"] for r in R("SELECT DISTINCT model FROM assertions WHERE model IS NOT NULL ORDER BY model")]:
+    for mid in [r["model"] for r in R("SELECT DISTINCT model FROM assertions WHERE model IS NOT NULL AND model<>'all' ORDER BY model")]:
         asts = [aid for aid, c in claims.items() if c.get("model") == mid]
         ev_years = sorted({e["year"] for e in entities if e["type"] == "Event" and any(c in asts for _, c in e["summary"])})
         models.append({"id": mid, "assertions": asts, "todos": [{"id": aid, "todo": claims[aid]["todo"], "text": claims[aid]["text"]} for aid in asts if claims[aid].get("todo")],
                        "years": ev_years, "places": sorted({claims[a]["target"] for a in asts if claims[a]["target"] and claims[a]["target"].startswith("PLC")})})
-    atlas = {"layers": layers, "zones": zones, "scope": scope, "boundary_sources": boundary_sources, "models": models}
+    # ---- المسارات (routes/route_stops) وربط القصص والمسارات بالأحداث عبر الادعاء ← الإسناد ← الهدف
+    routes = []
+    for r in R("SELECT * FROM routes ORDER BY route_id"):
+        stops = R("SELECT * FROM route_stops WHERE route_id=? ORDER BY ordinal", (r["route_id"],))
+        routes.append({"id": r["route_id"], "label": r["label_ar"], "type": r["route_type"], "from": r["start_date"], "to": r["end_date"], "claim": r["claim_id"],
+                       "note": r["notes"], "stops": [{"n": x["ordinal"], "place": x["place_entity_id"], "person": x["person_entity_id"], "work": x["work_entity_id"], "note": x["note"]} for x in stops]})
+    claim_targets = {}
+    for cid, aids in clinks.items():
+        for aid in aids:
+            t = claims.get(aid, {}).get("target")
+            if t: claim_targets.setdefault(cid, set()).add(t)
+    event_ids = {o["id"] for o in entities if o["type"] == "Event"}
+    for o in entities:
+        if o["type"] != "Event": continue
+        o["stories"] = sorted({st["id"] for st in stories if any(o["id"] in claim_targets.get(x["claim"], ()) for x in st["steps"])})
+        o["routes"] = sorted({r["id"] for r in routes if o["id"] in claim_targets.get(r["claim"], ())})
+    atlas = {"layers": layers, "zones": zones, "scope": scope, "boundary_sources": boundary_sources, "models": models, "routes": routes}
 
     ids = {o["id"] for o in entities}
     # تحقق اتساق قبل الكتابة

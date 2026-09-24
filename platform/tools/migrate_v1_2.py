@@ -20,6 +20,9 @@ DEFAULT_SCHEMA = os.path.join(ROOT, "platform", "db", "schema.sql")
 DEFAULT_XWALK = os.path.join(HERE, "crosswalk_prototype.json")
 DEFAULT_SCHEMA_EXT = os.path.join(ROOT, "platform", "db", "schema_platform.sql")
 DEFAULT_SCHEMA_REVIEW = os.path.join(ROOT, "platform", "db", "schema_review.sql")
+# ملحقات البذور المحلية (بعد v1.2): كل ملف json فيها يُطبَّق بعد بذور الحزمة بالمفاتيح نفسها،
+# ولا يجوز أن يكرر مفتاحًا موجودًا في بذور الحزمة (يُرفض الترحيل). أعدادها تُضاف إلى table_counts.json.
+DEFAULT_ADDITIONS = os.path.join(ROOT, "platform", "seed", "additions")
 # لا يزيد أي جدول من جداول v1.2 عن table_counts.json إلا maintenance_runs عند طلب تسجيل التشغيل صراحة
 GROWING = {"maintenance_runs"}
 
@@ -88,6 +91,26 @@ def load_crosswalk(path):
     return [r for r in data.get("entities", []) if r.get("release_id") and r.get("branch_id")]
 
 
+def load_additions(additions_dir):
+    """يقرأ ملحقات البذور المحلية: {table: records}"""
+    out = {}
+    jdir = os.path.join(additions_dir or "", "json")
+    if not additions_dir or not os.path.isdir(jdir):
+        return out
+    for fn in sorted(os.listdir(jdir)):
+        if fn.endswith(".json"):
+            out[fn[:-5]] = json.load(open(os.path.join(jdir, fn), encoding="utf-8"))
+    return out
+
+
+def expected_counts(seed_dir, additions_dir):
+    """الأعداد المتوقعة = table_counts.json للحزمة + عدد سجلات كل ملحق"""
+    expected = json.load(open(os.path.join(seed_dir, "table_counts.json"), encoding="utf-8"))
+    for table, recs in load_additions(additions_dir).items():
+        expected[table] = expected.get(table, 0) + len(recs)
+    return expected
+
+
 def verify_counts(con, expected, tolerant=GROWING):
     """الأعداد تطابق table_counts.json تمامًا، عدا maintenance_runs الذي قد يزيد عند --log-run"""
     problems = []
@@ -101,12 +124,12 @@ def verify_counts(con, expected, tolerant=GROWING):
     return problems
 
 
-def migrate(db_path, seed_dir, schema_path, xwalk_path, check_only=False, log_run=False, schema_ext=DEFAULT_SCHEMA_EXT):
+def migrate(db_path, seed_dir, schema_path, xwalk_path, check_only=False, log_run=False, schema_ext=DEFAULT_SCHEMA_EXT, additions_dir=DEFAULT_ADDITIONS):
     fresh = not os.path.exists(db_path)
     con = sqlite3.connect(db_path)
     con.execute("PRAGMA foreign_keys=OFF")
     report = {"db": db_path, "fresh": fresh, "tables": {}, "schema_created": [], "crosswalk": 0, "problems": []}
-    expected = json.load(open(os.path.join(seed_dir, "table_counts.json"), encoding="utf-8"))
+    expected = expected_counts(seed_dir, additions_dir)
     if check_only:
         report["problems"] = verify_counts(con, expected)
         report["status"] = "PASS" if not report["problems"] else "FAIL"
@@ -124,6 +147,26 @@ def migrate(db_path, seed_dir, schema_path, xwalk_path, check_only=False, log_ru
             records = json.load(open(os.path.join(jdir, f"{table}.json"), encoding="utf-8"))
             ins, upd = upsert_table(con, table, records)
             report["tables"][table] = {"inserted": ins, "updated": upd, "seed": len(records)}
+        # ملحقات البذور المحلية: بعد بذور الحزمة، بلا تكرار لمفتاح موجود فيها
+        additions = load_additions(additions_dir)
+        for table, records in additions.items():
+            if not records:
+                continue
+            if table not in expected:
+                report["problems"].append(f"additions: الجدول {table} ليس من جداول الحزمة")
+                continue
+            pk = table_pk(con, table)
+            seed_path = os.path.join(jdir, f"{table}.json")
+            seed_keys = set()
+            if os.path.exists(seed_path):
+                seed_keys = {tuple(r[k] for k in pk) for r in json.load(open(seed_path, encoding="utf-8"))}
+            dup = [tuple(r[k] for k in pk) for r in records if tuple(r[k] for k in pk) in seed_keys]
+            if dup:
+                report["problems"].append(f"additions: {table} يكرر مفاتيح من بذور الحزمة: {dup[:3]}")
+                continue
+            ins, upd = upsert_table(con, table, records)
+            t = report["tables"].setdefault(table, {"inserted": 0, "updated": 0, "seed": 0})
+            t["inserted"] += ins; t["updated"] += upd; t["additions"] = len(records)
         # مطابقة معرّفات النموذج الأولي بمعرّفات الإصدار في جدول منفصل (prototype_crosswalk) حتى يبقى عقد /api/v1/crosswalk كما هو
         xw = load_crosswalk(xwalk_path)
         valid = {r[0] for r in con.execute("SELECT entity_id FROM entities")}
@@ -158,12 +201,13 @@ def main():
     ap.add_argument("--seed", default=DEFAULT_SEED)
     ap.add_argument("--schema", default=DEFAULT_SCHEMA)
     ap.add_argument("--crosswalk", default=DEFAULT_XWALK)
+    ap.add_argument("--additions", default=DEFAULT_ADDITIONS, help="مجلد ملحقات البذور المحلية (json/*.json)؛ مجلد غير موجود = بلا ملحقات")
     ap.add_argument("--check-only", action="store_true")
     ap.add_argument("--log-run", action="store_true", help="يسجل صف تشغيل في maintenance_runs (يغيّر عدد عناصر /maintenance/runs)")
     ap.add_argument("--quiet", action="store_true")
     a = ap.parse_args()
     os.makedirs(os.path.dirname(os.path.abspath(a.db)), exist_ok=True)
-    rep = migrate(a.db, a.seed, a.schema, a.crosswalk, a.check_only, a.log_run)
+    rep = migrate(a.db, a.seed, a.schema, a.crosswalk, a.check_only, a.log_run, additions_dir=a.additions)
     if not a.quiet:
         print(json.dumps(rep, ensure_ascii=False, indent=2))
     sys.exit(0 if rep["status"] == "PASS" else 1)

@@ -1,0 +1,52 @@
+[
+ {
+  "evidence_id": "EVD-ZLQ-IBN-ATHIR",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "خبر وقعة الزلاقة عند ابن الأثير (الكامل ج8 ص307–309)",
+  "date_text": "حوادث 479هـ؛ تأليف قبل 630هـ",
+  "place_entity_id": "PLC-BADAJOZ",
+  "description_ar": "رواية متصلة للحملة من اجتماع مشايخ قرطبة إلى عودة أمير المسلمين إلى مراكش؛ يؤرخ الوقعة بالجمعة في العشر الأول من رمضان.",
+  "confidence": "عالٍ (نص تراثي محقق)",
+  "source_id": "LIB-PRI-046"
+ },
+ {
+  "evidence_id": "EVD-ZLQ-IBN-KHALLIKAN",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "الزلاقة في ترجمتي المعتمد ويوسف بن تاشفين عند ابن خلكان (وفيات الأعيان ج5 ص28–29، ج7 ص116)",
+  "date_text": "تأليف قبل 681هـ",
+  "place_entity_id": "PLC-BADAJOZ",
+  "description_ar": "يذكر الكتاب إلى يوسف وعبور العساكر إلى الجزيرة الخضراء وخروج الأذفونش من طليطلة، ويصحح تاريخ الوقعة إلى منتصف رجب 479هـ، وينقل عن البياسي مسافة المعسكرين.",
+  "confidence": "عالٍ (نص تراثي محقق)",
+  "source_id": "LIB-PRI-047"
+ },
+ {
+  "evidence_id": "EVD-ZLQ-MUTRIB",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "تأريخ الزلاقة عند ابن دحية (المطرب ص119)",
+  "date_text": "تأليف قبل 633هـ",
+  "place_entity_id": "PLC-BADAJOZ",
+  "description_ar": "أقدم نص مستعمل هنا يعيّن اليوم: الجمعة لاثنتي عشرة ليلة خلت من رجب 479هـ، ويسمي الموضع الزلاقة من عمل بطليوس.",
+  "confidence": "عالٍ (نص تراثي محقق)",
+  "source_id": "LIB-PRI-048"
+ },
+ {
+  "evidence_id": "EVD-ZLQ-MUJIB",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "وقعة الزلاقة عند عبد الواحد المراكشي (المعجب ص99–100)",
+  "date_text": "تأليف 621هـ تقريبًا (لم أتحقق)",
+  "place_entity_id": "PLC-BADAJOZ",
+  "description_ar": "رواية الهجوم أثناء صلاة الجمعة ونجاة الأذفونش في تسعة، ويؤرخها بالجمعة 13 رمضان 480هـ خلافًا لغيره.",
+  "confidence": "عالٍ (نص تراثي محقق)",
+  "source_id": "LIB-PRI-045"
+ },
+ {
+  "evidence_id": "EVD-ZLQ-DHAHABI",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "خبر الزلاقة عند الذهبي (تاريخ الإسلام ج32 ص29–30 و260)",
+  "date_text": "تأليف قبل 748هـ",
+  "place_entity_id": "PLC-BADAJOZ",
+  "description_ar": "يلخص رواية ابن الأثير في الحوادث، ويؤرخها في ترجمة ابن رميلة بالجمعة ثاني عشر رجب على مقربة من بطليوس.",
+  "confidence": "عالٍ (نص تراثي محقق)",
+  "source_id": "LIB-PRI-049"
+ }
+]

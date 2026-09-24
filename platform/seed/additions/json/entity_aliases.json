@@ -1,0 +1,50 @@
+[
+ {
+  "alias_id": "ALIAS-ZLQ-01",
+  "entity_id": "PER-ALFONSO-VI",
+  "alias": "الأذفونش",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "الأذفونش"
+ },
+ {
+  "alias_id": "ALIAS-ZLQ-02",
+  "entity_id": "PER-ALFONSO-VI",
+  "alias": "الأدفونش",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "الأدفونش"
+ },
+ {
+  "alias_id": "ALIAS-ZLQ-03",
+  "entity_id": "PER-ALFONSO-VI",
+  "alias": "الأدفنش",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "الأدفنش"
+ },
+ {
+  "alias_id": "ALIAS-ZLQ-04",
+  "entity_id": "PER-YUSUF-IBN-TASHFIN",
+  "alias": "أمير المسلمين",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "أمير المسلمين"
+ },
+ {
+  "alias_id": "ALIAS-ZLQ-05",
+  "entity_id": "PER-YUSUF-IBN-TASHFIN",
+  "alias": "أبو يعقوب يوسف بن تاشفين",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "أبو يعقوب يوسف بن تاشفين"
+ },
+ {
+  "alias_id": "ALIAS-ZLQ-06",
+  "entity_id": "PLC-CEUTA",
+  "alias": "Ceuta",
+  "script": "Latin",
+  "language": "es",
+  "normalized": "Ceuta"
+ }
+]
