@@ -1,0 +1,30 @@
+name: andalus-ci
+on:
+  push:
+    paths: ["platform/**", "andalus/**", "andalus_handoff/**", ".github/workflows/andalus-ci.yml"]
+  pull_request:
+    paths: ["platform/**", "andalus/**", "andalus_handoff/**", ".github/workflows/andalus-ci.yml"]
+jobs:
+  gate:
+    name: بوابة الأدلة والجودة (لا دمج قبل نجاحها كلها)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: ترحيل v1.2 مرتين (يعمل أكثر من مرة دون تكرار)
+        run: |
+          python platform/tools/migrate_v1_2.py --db /tmp/ci.sqlite --quiet
+          python platform/tools/migrate_v1_2.py --db /tmp/ci.sqlite --quiet
+          python platform/tools/migrate_v1_2.py --db platform/db/andalus.sqlite --check-only --quiet
+      - name: فحوص الجودة الـ26 (andalus_qa_v1_2.py)
+        run: python andalus_handoff/tests/andalus_qa_v1_2.py --db platform/db/andalus.sqlite --json-out /tmp/qa.json
+      - name: التصدير الثابت يطابق القاعدة
+        run: |
+          python platform/tools/export_static.py --db platform/db/andalus.sqlite --out /tmp/graph.js
+          diff -q /tmp/graph.js andalus/data/graph.js || (echo "andalus/data/graph.js غير محدث؛ شغّل export_static.py" && exit 1)
+      - name: اختبارات الانحدار (22) وبوابة الأدلة والترحيل
+        run: python -m unittest discover -s platform/tests -v
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: qa-report, path: /tmp/qa.json }
