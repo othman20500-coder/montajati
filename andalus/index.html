@@ -230,7 +230,7 @@
   <main id="app"></main>
 
   <footer>
-    نموذج تصوري لمنصة الأندلس الرقمية · البيانات هنا توضيحية لعرض النموذج، وكل ادعاء فيها يمر بسجل الادعاءات قبل أي نشر فعلي · جزء من مشروع «منتجاتي».
+    نموذج تصوري لمنصة الأندلس الرقمية · البيانات نواة MVP مستخرجة من خريطة المحتوى الموثقة (الفصل 2)، وكل ادعاء فيها يحمل حالته ومصادره، وروابط المصادر بمستوى «ظهر في نتائج البحث» حتى تُفتح مباشرة · جزء من مشروع «منتجاتي».
   </footer>
 </div>
 
@@ -247,9 +247,10 @@
    ========================================================= */
 /* البيانات في data/graph.js (تُحمَّل قبل هذا السكربت) */
 // روابط عكسية
-const EDGES=[]; Object.values(E).forEach(o=>(o.edges||[]).forEach(([rel,to,role])=>EDGES.push({from:o.id,rel,to,role})));
-Object.values(E).filter(o=>o.type==="Event").forEach(ev=>EDGES.push({from:ev.id,rel:"took_place_at",to:ev.place}));
-Object.values(E).filter(o=>o.type==="Work").forEach(w=>EDGES.push({from:w.author,rel:"authored",to:w.id}));
+const EDGES=[]; const _seen=new Set(); const pushEdge=e=>{const k=e.from+"|"+e.rel+"|"+e.to; if(_seen.has(k)) return; _seen.add(k); EDGES.push(e);};
+Object.values(E).forEach(o=>(o.edges||[]).forEach(([rel,to,role])=>pushEdge({from:o.id,rel,to,role})));
+Object.values(E).filter(o=>o.type==="Event").forEach(ev=>pushEdge({from:ev.id,rel:"took_place_at",to:ev.place}));
+Object.values(E).filter(o=>o.type==="Work"&&E[o.author]).forEach(w=>pushEdge({from:w.author,rel:"authored",to:w.id}));
 const REL={ruled:"حكم",born_in:"وُلد في",died_in:"توفي في",lived_in:"عاش في",participated_in:"شارك في",authored:"ألّف",patron_of:"رعى",took_place_at:"وقع في"};
 const TYPE={Person:["شخص","var(--era-khilafa)"],Place:["مكان","var(--era-imara)"],Event:["حدث","var(--era-muwahhid)"],Polity:["دولة","var(--era-murabit)"],Document:["وثيقة","var(--era-wulat)"],Work:["مصنَّف","var(--era-tawaif)"],Artifact:["أثر","var(--era-nasrid)"]};
 
@@ -376,10 +377,10 @@ V.entity=(id)=>{const o=E[id];if(!o)return `<section><h2>لم أجد هذا ال
   else if(o.type==="Event"){head=ribbon(o.year,o.end);const parts=EDGES.filter(e=>e.to===id&&e.rel==="participated_in");extra=`<div class="cols"><div><p>${summaryHtml(o)}</p><h3 style="margin-top:14px">الأطراف</h3><div class="chips">${parts.map(p=>`<a class="chip" href="${href(p.from)}">${esc(E[p.from].name.ar)} <small>${esc(p.role||"")}</small></a>`).join("")||"<span class='chip'>تُستكمل</span>"}</div>
       ${(o.before||o.after)?`<h3 style="margin-top:14px">قبل ← بعد</h3><div class="chips">${(o.before||[]).map(chip).join("")}<span class="chip" style="border-color:var(--accent)">${esc(o.name.ar)}</span>${(o.after||[]).map(chip).join("")}</div>`:""}
       ${audienceBox(o)}</div><div class="panel"><p class="eyebrow">المكان</p>${mapSvg(o.year,{focus:o.place})}${o.kind==="معركة"?`<p class="note">خريطة المعركة على مراحل ▶ تُضاف في المنصة، مع تنبيه ثابت: أعداد الجيوش تُعرض كمدى بمصادره.</p>`:""}</div></div>`;}
-  else {extra=`<p>${summaryHtml(o)}</p>${o.holding?`<div class="panel" style="margin-top:12px"><b>مكان الحفظ:</b> ${esc(o.holding.institution)}${o.holding.license?` · <b>الرخصة:</b> ${esc(o.holding.license)}`:""}${o.holding.iiif?` · IIIF`:` · <span class="scholar-only" style="display:inline">الرقم المكتبي ورابط IIIF يُضافان عند التوثيق</span>`}</div>`:""}${o.capital?`<div class="chips" style="margin-top:12px"><span class="chip">العاصمة: ${esc(E[o.capital].name.ar)}</span><span class="chip">${o.from}–${o.to}م</span></div>`:""}${audienceBox(o)}`;}
+  else {extra=`${o.author&&!E[o.author]?`<div class="names"><span>المؤلف: <b>${esc(o.author)}</b></span>${o.year?`<span>${o.year}م</span>`:""}</div>`:""}<p>${summaryHtml(o)}</p>${o.holding?`<div class="panel" style="margin-top:12px"><b>مكان الحفظ:</b> ${esc(o.holding.institution)}${o.holding.license?` · <b>الرخصة:</b> ${esc(o.holding.license)}`:""}${o.holding.iiif?` · IIIF`:` · <span class="scholar-only" style="display:inline">الرقم المكتبي ورابط IIIF يُضافان عند التوثيق</span>`}</div>`:""}${o.capital?`<div class="chips" style="margin-top:12px"><span class="chip">العاصمة: ${esc(E[o.capital].name.ar)}</span><span class="chip">${o.from}–${o.to}م</span></div>`:""}${audienceBox(o)}`;}
   return `<section><p class="eyebrow" style="color:${tc}">${tn}</p><h2>${esc(o.name.ar)}</h2>${head}${extra}${rail(id)}
   <h3 style="margin-top:22px">المصادر المستخدمة في هذه الصفحة</h3><div class="chips">${[...new Set((o.summary||[]).flatMap(([,c])=>(CLAIMS[c]?.sources||[]).map(s=>s.src)))].map(s=>`<span class="chip">${esc(SOURCES[s].author)}، ${esc(SOURCES[s].year)} <small>مرتبة ${SOURCES[s].tier}</small></span>`).join("")}</div>
-  <p class="note">اقترح تصحيحًا · آخر مراجعة: 2026-09-21 (نموذج)</p></section>`;};
+  <p class="note">اقترح تصحيحًا · آخر مراجعة: 2026-09-24 (نواة MVP؛ الروابط بمستوى «ظهر في نتائج البحث»)</p></section>`;};
 
 /* ===== لوحة المصدر ===== */
 const STATUS={fact:["حقيقة مستقرة","var(--fact)"],disputed:["رواية مختلف عليها","var(--disputed)"],inference:["استنتاج","var(--inference)"],myth:["رواية شائعة غير مثبتة","var(--myth)"],unverified:["لم يُفتح له مرجع مؤسسي بعد","var(--muted)"]};
