@@ -1,9 +1,10 @@
 name: andalus-ci
+# تعمل البوابة على كل طلب دمج وكل دفع إلى main بلا تصفية مسارات: الفحص مطلوب في قاعدة
+# حماية main، وطلبٌ لا يشغّله (كتعديل .gitignore وحده) يبقى محجوبًا إلى الأبد.
 on:
   push:
-    paths: ["platform/**", "andalus/**", "andalus_handoff/**", ".github/workflows/andalus-ci.yml"]
+    branches: [main]
   pull_request:
-    paths: ["platform/**", "andalus/**", "andalus_handoff/**", ".github/workflows/andalus-ci.yml"]
 jobs:
   gate:
     name: بوابة الأدلة والجودة (لا دمج قبل نجاحها كلها)
