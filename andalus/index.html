@@ -102,7 +102,6 @@
   .map .land{fill:color-mix(in srgb,var(--card) 70%,var(--soft));stroke:var(--line);stroke-width:1.2}
   :root[data-theme="night"] .map .land{fill:#1B2536;stroke:#34405A}
   .map .sea{fill:transparent}
-  .map .frontier{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:6 5;opacity:.85}
   .map .city{cursor:pointer}
   .map .city circle{stroke:#fff;stroke-width:1.5;transition:r .3s var(--ease),fill .4s}
   .map .city text{font-family:var(--body);font-size:11px;fill:var(--ink);pointer-events:none;paint-order:stroke;stroke:var(--bg);stroke-width:3px;stroke-linejoin:round}
@@ -274,23 +273,29 @@ const audienceBox=o=>`${o.kids?`<div class="kids-only panel" style="margin-top:1
 const X=lon=>(lon+10)*60, Y=lat=>(44-lat)*65;
 const IBERIA=[[-1.8,43.4],[-3.8,43.5],[-5.7,43.6],[-7.7,43.8],[-9.3,43.0],[-8.9,42.0],[-8.7,41.2],[-9.4,39.4],[-9.5,38.7],[-8.8,37.9],[-9.0,37.0],[-7.4,37.2],[-6.9,37.2],[-6.3,36.6],[-5.6,36.0],[-5.3,36.1],[-4.4,36.7],[-2.5,36.8],[-1.9,37.2],[-0.7,37.6],[-0.5,38.4],[0.2,38.8],[-0.3,39.5],[0.9,41.0],[2.2,41.4],[3.2,42.3],[3.0,42.7],[0.5,42.8]];
 const MAGHREB=[[-10,33.2],[-9.8,33.6],[-8.5,33.3],[-7.6,33.6],[-6.8,34.0],[-6.3,35.2],[-5.9,35.8],[-5.3,35.9],[-4.4,35.2],[-2.9,35.3],[-1.9,35.1],[-0.6,35.7],[0.3,36.1],[1.5,36.5],[3.0,36.8],[4,36.9],[4,33.2]];
-// خطوط حدود تقريبية توضيحية للنموذج فقط (ليست بيانات موثقة): [سنة، نقاط]
-const FRONTIERS=[[750,[[-9.0,43.2],[-6,43.0],[-3,42.9],[0,42.6],[3,42.4]]],[900,[[-9.2,41.4],[-6,41.3],[-3,41.6],[-1.5,42.4],[0.5,41.8],[3.1,42.2]]],[1000,[[-9.2,41.2],[-6,41.2],[-3,41.4],[-1.5,42.2],[0.5,41.6],[3.1,42.0]]],[1090,[[-9.3,39.6],[-6.5,39.8],[-4.5,40.1],[-2.8,40.6],[-1,41.5],[0.4,41.3],[3.1,42.0]]],[1150,[[-9.3,39.2],[-7,39.4],[-4.5,39.6],[-2.5,39.8],[-0.4,40.0],[0.9,40.6]]],[1230,[[-9.0,37.2],[-7,37.9],[-5,38.2],[-3.5,38.4],[-1.5,38.6],[-0.3,39.4]]],[1260,[[-6.2,36.6],[-5.2,36.9],[-4.4,37.4],[-3.0,37.6],[-2.0,37.4],[-1.7,36.9]]],[1492,null]];
-function frontierFor(y){let f=null;for(const [yr,pts] of FRONTIERS){if(y>=yr)f=pts;}return f;}
+// مناطق السيطرة: تقريب آلي من بيانات control لكل مدينة (أقرب مدينة موثقة في السنة المختارة)، لا حدود تاريخية مرسومة يدويًا
+function inPoly(x,y,pts){let c=false;for(let i=0,j=pts.length-1;i<pts.length;j=i++){const xi=X(pts[i][0]),yi=Y(pts[i][1]),xj=X(pts[j][0]),yj=Y(pts[j][1]);if(((yi>y)!==(yj>y))&&(x<(xj-xi)*(y-yi)/(yj-yi)+xi))c=!c;}return c;}
+const CELL=14, GRID=[];
+for(let gx=CELL/2;gx<840;gx+=CELL)for(let gy=CELL/2;gy<700;gy+=CELL){if(inPoly(gx,gy,IBERIA)||inPoly(gx,gy,MAGHREB))GRID.push([gx,gy]);}
+function zones(y){const cities=Object.values(E).filter(o=>o.type==="Place"&&!o.battle&&y>=o.founded).map(o=>({x:X(o.lon),y:Y(o.lat),c:ctrl(o,y)})).filter(o=>o.c);
+  if(!cities.length)return "";const col={muslim:eraOf(y).c,christian:"var(--christian)"};
+  return GRID.map(([gx,gy])=>{let best=null,bd=1e12;for(const c of cities){const d=(c.x-gx)**2+(c.y-gy)**2;if(d<bd){bd=d;best=c;}}if(bd>140*140)return "";return `<rect x="${gx-CELL/2}" y="${gy-CELL/2}" width="${CELL}" height="${CELL}" fill="${col[best.c]}" opacity=".22"/>`;}).join("");}
 function ctrl(o,y){for(const [a,b,w] of (o.control||[])){if(y>=a&&y<b)return w;}return null;}
+mapSvg.n=0;
 const MAJOR=new Set(["pl:cordoba","pl:seville","pl:granada","pl:toledo","pl:zaragoza","pl:valencia","pl:malaga","pl:almeria","pl:lisbon","pl:fes","pl:marrakesh","pl:badajoz","pl:murcia"]);
 function mapSvg(y,opts={}){
   const path=pts=>pts.map((p,i)=>`${i?"L":"M"}${X(p[0]).toFixed(1)},${Y(p[1]).toFixed(1)}`).join("")+"Z";
-  const fr=frontierFor(y);
   const cities=Object.values(E).filter(o=>o.type==="Place"&&!o.battle);
   const battles=Object.values(E).filter(o=>o.type==="Place"&&o.battle);
+  const cid="land"+(++mapSvg.n);
   return `<svg class="map" viewBox="0 0 840 700" role="img" aria-label="خريطة الأندلس سنة ${y}">
+    <defs><clipPath id="${cid}"><path d="${path(IBERIA)}"/><path d="${path(MAGHREB)}"/></clipPath></defs>
     <path class="land" d="${path(IBERIA)}"/><path class="land" d="${path(MAGHREB)}"/>
-    ${fr?`<path class="frontier" d="${fr.map((p,i)=>`${i?"L":"M"}${X(p[0]).toFixed(1)},${Y(p[1]).toFixed(1)}`).join("")}"/>`:""}
+    <g class="zones" clip-path="url(#${cid})">${zones(y)}</g>
     ${cities.map(o=>{const c=ctrl(o,y);const exists=y>=o.founded;const fill=c==="muslim"?eraOf(y).c:c==="christian"?"var(--christian)":"var(--muted)";
       const label=opts.labels==="all"||MAJOR.has(o.id)||o.id===opts.focus;return `<a class="city ${exists?"":"dim"}" href="${href(o.id)}"><title>${esc(o.name.ar)}</title><circle cx="${X(o.lon)}" cy="${Y(o.lat)}" r="${o.id===opts.focus?9:MAJOR.has(o.id)?7:4.5}" fill="${fill}"${o.id===opts.focus?" stroke=\"var(--accent)\" stroke-width=\"3\"":""}/>${label?`<text x="${X(o.lon)+9}" y="${Y(o.lat)+4}">${esc(o.name.ar)}</text>`:""}</a>`;}).join("")}
     ${battles.filter(b=>Math.abs(b.founded-y)<=40).map(b=>`<a class="battle" href="${href(b.id)}"><path d="M${X(b.lon)},${Y(b.lat)-8} l7,12 h-14z"/><text x="${X(b.lon)+9}" y="${Y(b.lat)+4}" class="note">⚔ ${esc(b.name.ar)} ${b.founded}</text></a>`).join("")}
-    <text x="12" y="688" class="note">الحدود خط تقريبي توضيحي في النموذج؛ في المنصة تُبنى من علاقات controlled_by الموثقة وتُوسم بدرجة اليقين.</text>
+    <text x="12" y="688" class="note">مناطق السيطرة تقريب آلي: كل خلية تأخذ حالة أقرب مدينة موثقة في السنة المختارة (بيانات control)؛ ليست حدودًا تاريخية.</text>
   </svg>`;
 }
 const erasBar=()=>`<div class="eras">${ERAS.map(e=>`<span style="width:${(e.to-e.from)/(1614-711)*100}%;background:${e.c}" title="${e.name}"></span>`).join("")}</div><div class="eralegend">${ERAS.map(e=>`<span><i style="background:${e.c}"></i>${e.name} ${e.from}–${e.to}</span>`).join("")}</div>`;
