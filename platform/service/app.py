@@ -265,6 +265,8 @@ class Handler(BaseHTTPRequestHandler):
         u = urlparse(self.path)
         if u.path in ("/", "/review", "/review/"):
             with open(os.path.join(STATIC, "review.html"), "rb") as f: return self._send(200, f.read(), "text/html; charset=utf-8")
+        if u.path in ("/review/guide", "/review/guide/"):
+            with open(os.path.join(STATIC, "guide.html"), "rb") as f: return self._send(200, f.read(), "text/html; charset=utf-8")
         body = {}
         n = int(self.headers.get("Content-Length") or 0)
         if n:

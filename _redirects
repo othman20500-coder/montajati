@@ -1,9 +1,20 @@
 # ما لا يُنشر على Netlify: النسخة الشخصية والمواد البحثية وطبقة الخدمة (README: تُنشر index.html وassets/ وandalus/ فقط)
-/office.html                        /index.html  404
-/andalus/data/graph.prototype.js    /index.html  404
-/andalus_handoff/*                  /index.html  404
-/platform/*                         /index.html  404
-/render.yaml                        /index.html  404
-/CLAUDE.md                          /index.html  404
-/.claude/*                          /index.html  404
-/.github/*                          /index.html  404
+# العلامة ! بعد الحالة لازمة: بدونها لا يطبّق Netlify القاعدة على ملف موجود في النشرة.
+/office.html                        /index.html  404!
+/andalus/data/graph.prototype.js    /index.html  404!
+/andalus/00-README.md               /index.html  404!
+/andalus/01-benchmark.md            /index.html  404!
+/andalus/02-content-map.md          /index.html  404!
+/andalus/03-sources.md              /index.html  404!
+/andalus/04-architecture.md         /index.html  404!
+/andalus/05-experience.md           /index.html  404!
+/andalus/06-design.md               /index.html  404!
+/andalus/07-roadmap.md              /index.html  404!
+/andalus/08-migration-report.md     /index.html  404!
+/andalus/data/README.md             /index.html  404!
+/andalus_handoff/*                  /index.html  404!
+/platform/*                         /index.html  404!
+/render.yaml                        /index.html  404!
+/CLAUDE.md                          /index.html  404!
+/.claude/*                          /index.html  404!
+/.github/*                          /index.html  404!
