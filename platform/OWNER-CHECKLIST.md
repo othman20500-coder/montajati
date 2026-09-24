@@ -2,27 +2,16 @@
 
 كل بند مستقل ويمكن تنفيذه بأي ترتيب، والترتيب أدناه هو الأنفع. الأزمنة تقديرية.
 
-## 1. ربط مشروع Netlify الجديد بالمستودع (دقيقتان، مرة واحدة)
-المشروع `andalus-atlas` أُنشئ في حسابك على Netlify (2026-09-24) وهو فارغ حتى يُربط بالمستودع. موقع «منتجاتي» يبقى كما هو ولا يُمس.
+## 1. ربط مشروع Netlify الجديد بالمستودع — أُنجز (2026-09-24)
+المشروع `andalus-atlas` مربوط بالمستودع `othman20500-coder/montajati` عبر `netlify init` من جهاز صاحب المشروع: الفرع `main`، أمر البناء فارغ، مجلد النشر `andalus`. أول نشرة تلقائية بُنيت من الالتزام 7680912 (دمج #2) وعالجت 11 قاعدة إعادة توجيه بلا أخطاء. موقع «منتجاتي» لم يُمس.
 
-1. افتح https://app.netlify.com/projects/andalus-atlas وسجّل الدخول بحساب Google نفسه.
-2. من القائمة الجانبية: **Project configuration** ← **Build & deploy** ← قسم **Continuous deployment** ← زر **Link repository**.
-3. اختر **GitHub**، ثم اسمح لتطبيق Netlify بالوصول إلى المستودع `othman20500-coder/montajati` إن طُلب.
-4. الإعدادات: الفرع **main**، **Base directory** = `andalus`، أمر البناء **فارغ**، **Publish directory** = `andalus`. احفظ.
-5. سيبدأ نشر تلقائي فورًا. بعد اكتماله افتح:
-   - https://andalus-atlas.netlify.app/ يجب أن تفتح منصة الأندلس.
-   - https://andalus-atlas.netlify.app/#/atlas?story=STORY-ZALLAQA&step=1&tab=sto الزلاقة على مراحل.
-   - https://andalus-atlas.netlify.app/data/graph.prototype.js يجب أن تعطي 404 (القاعدة في `andalus/_redirects` بعلامة `!` لأن Netlify لا يحجب ملفًا موجودًا بدونها).
-   - https://andalus-atlas.netlify.app/01-benchmark.md يجب أن تعطي 404 (الوثائق البحثية لا تُنشر على الموقع).
-6. أخبرني «Netlify مربوط» لأفحص الصفحات كلها وأرسل لك ما أجده.
+ما يُفحص بعد كل دمج في `main` (يمكن من PowerShell أو المتصفح):
+- https://andalus-atlas.netlify.app/ تفتح منصة الأندلس.
+- https://andalus-atlas.netlify.app/#/atlas?story=STORY-ZALLAQA&step=1&tab=sto الزلاقة على مراحل.
+- https://andalus-atlas.netlify.app/data/graph.prototype.js تعطي 404 (القاعدة في `andalus/_redirects` بعلامة `!` لأن Netlify لا يحجب ملفًا موجودًا بدونها).
+- https://andalus-atlas.netlify.app/01-benchmark.md تعطي 404 (الوثائق البحثية لا تُنشر على الموقع).
 
-بديل مؤقت دون ربط (من جهازك، داخل مجلد المستودع بعد `git pull`):
-```
-npm i -g netlify-cli
-netlify login
-netlify link --id 524f9b42-94e6-4c35-9612-aea577addcb8
-netlify deploy --prod --dir andalus
-```
+نشر يدوي عند الحاجة (من مجلد المستودع، بعد `git pull`): `netlify deploy --prod --dir andalus`. ولفك الربط: `netlify unlink` ثم `netlify init`.
 
 ## 2. حماية الفرع الرئيسي (دقيقتان)
 1. افتح https://github.com/othman20500-coder/montajati/settings/branches
