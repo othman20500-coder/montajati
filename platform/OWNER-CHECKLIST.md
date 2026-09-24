@@ -12,7 +12,8 @@
 5. سيبدأ نشر تلقائي فورًا. بعد اكتماله افتح:
    - https://andalus-atlas.netlify.app/ يجب أن تفتح منصة الأندلس.
    - https://andalus-atlas.netlify.app/#/atlas?story=STORY-ZALLAQA&step=1&tab=sto الزلاقة على مراحل.
-   - https://andalus-atlas.netlify.app/data/graph.prototype.js يجب أن تعطي 404.
+   - https://andalus-atlas.netlify.app/data/graph.prototype.js يجب أن تعطي 404 (القاعدة في `andalus/_redirects` بعلامة `!` لأن Netlify لا يحجب ملفًا موجودًا بدونها).
+   - https://andalus-atlas.netlify.app/01-benchmark.md يجب أن تعطي 404 (الوثائق البحثية لا تُنشر على الموقع).
 6. أخبرني «Netlify مربوط» لأفحص الصفحات كلها وأرسل لك ما أجده.
 
 بديل مؤقت دون ربط (من جهازك، داخل مجلد المستودع بعد `git pull`):

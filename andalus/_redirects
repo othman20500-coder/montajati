@@ -1,3 +1,15 @@
 # موقع منصة الأندلس المستقل (andalus-atlas.netlify.app): جذر النشر هو مجلد andalus/
+# العلامة ! بعد الحالة لازمة: بدونها لا يطبّق Netlify القاعدة على ملف موجود في النشرة.
 # لا يُنشر النموذج البحثي القديم (مستوى بحث، بلا شواهد حرفية)
-/data/graph.prototype.js   /index.html  404
+/data/graph.prototype.js   /index.html  404!
+# ولا الوثائق البحثية والتخطيطية (فيها بنود لم تُتحقق بعد؛ مكانها المستودع لا الموقع)
+/00-README.md              /index.html  404!
+/01-benchmark.md           /index.html  404!
+/02-content-map.md         /index.html  404!
+/03-sources.md             /index.html  404!
+/04-architecture.md        /index.html  404!
+/05-experience.md          /index.html  404!
+/06-design.md              /index.html  404!
+/07-roadmap.md             /index.html  404!
+/08-migration-report.md    /index.html  404!
+/data/README.md            /index.html  404!
