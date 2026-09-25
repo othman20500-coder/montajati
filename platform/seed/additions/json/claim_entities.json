@@ -128,5 +128,35 @@
   "claim_id": "CLM-CAL-02",
   "entity_id": "PLC-CORDOBA",
   "role": "place"
+ },
+ {
+  "claim_id": "CLM-WUL-01",
+  "entity_id": "PLC-CORDOBA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-WUL-01",
+  "entity_id": "PLC-SEVILLE",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-WUL-02",
+  "entity_id": "PLC-CORDOBA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-WUL-03",
+  "entity_id": "PLC-SEVILLE",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-WUL-03",
+  "entity_id": "PLC-CORDOBA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-WUL-03",
+  "entity_id": "PER-001",
+  "role": "political context"
  }
 ]

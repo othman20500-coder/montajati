@@ -404,6 +404,9 @@ V.timeline=(q)=>{const y=+(q.y||0);const d=q.d||"read";const evs=Object.values(E
   return `<section><p class="eyebrow">الخط الزمني السينمائي</p><h2>ثمانية عصور، فصول فيلم واحد</h2><p class="sub">ثلاث كثافات: نظرة (الأحداث المفصلية)، قراءة (كل أحداث النموذج)، بحث (مع الفلاتر في المنصة الكاملة).</p>
   <div class="density"><button aria-pressed="${d==="glance"}" onclick="location.hash='#/timeline?d=glance'">نظرة</button><button aria-pressed="${d==="read"}" onclick="location.hash='#/timeline?d=read'">قراءة</button><button aria-pressed="false" disabled title="في المنصة الكاملة">بحث</button></div>
   ${erasBar()}
+  ${TOP.some(e=>(e.summary||[]).length)?`<h3 style="margin-top:14px">العصور بملخصاتها الموثقة</h3><p class="sub">كل جملة إسناد له شواهده؛ والعصر الذي لا ملخص له بعد يظهر بحدوده وملاحظته فقط.</p>
+  <div class="strip">${TOP.map(e=>`<div class="card" style="--era:${e.c};min-width:300px"><div class="type">عصر · ${eraSpan(e)}م${e.hijri?` · ${esc(e.hijri)}`:""}</div><h3>${esc(e.name)}</h3>${(e.summary||[]).length?`<p>${e.summary.map(([t,c])=>claimSpan(t,c)).join(" ")}</p>`:`<p style="color:var(--muted)">${esc(e.note||"")}</p>`}</div>`).join("")}</div>`:""}
+  <h3 style="margin-top:18px">الأحداث</h3>
   <div class="strip">${evs.map(e=>`<a class="card" href="${href(e.id)}" style="--era:${eraOf(e.year).c};${y===e.year?"outline:2px solid var(--accent)":""}"><div class="type">${esc(e.kind)} · ${eraOf(e.year).name}</div><h3>${esc(e.name.ar)}</h3><div class="d">${dual(e.year,e.end,e.hijri)}</div><p>${(e.summary||[]).map(([t,c])=>claimSpan(t,c)).join(" ")}</p></a>`).join("")}</div>
   <p class="note">الأحداث ذات المدى (مثل الفتنة أو الطرد) تُعرض في المنصة كشريط لا كنقطة، والمختلف على تاريخها بحافة ضبابية.</p></section>`;};
 
