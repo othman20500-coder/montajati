@@ -223,5 +223,80 @@
   "claim_id": "CLM-WUL-03",
   "source_id": "LIB-PRI-058",
   "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-FTH-01",
+  "source_id": "LIB-PRI-059",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-FTH-01",
+  "source_id": "LIB-PRI-036",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-FTH-01",
+  "source_id": "LIB-PRI-060",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-FTH-01",
+  "source_id": "LIB-PRI-062",
+  "ordinal": 4
+ },
+ {
+  "claim_id": "CLM-FTH-01",
+  "source_id": "LIB-PRI-058",
+  "ordinal": 5
+ },
+ {
+  "claim_id": "CLM-FTH-01",
+  "source_id": "LIB-PRI-061",
+  "ordinal": 6
+ },
+ {
+  "claim_id": "CLM-FTH-01",
+  "source_id": "LIB-PRI-063",
+  "ordinal": 7
+ },
+ {
+  "claim_id": "CLM-FTH-02",
+  "source_id": "LIB-PRI-059",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-FTH-02",
+  "source_id": "LIB-PRI-060",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-FTH-02",
+  "source_id": "LIB-PRI-062",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-FTH-02",
+  "source_id": "LIB-PRI-058",
+  "ordinal": 4
+ },
+ {
+  "claim_id": "CLM-FTH-02",
+  "source_id": "LIB-PRI-036",
+  "ordinal": 5
+ },
+ {
+  "claim_id": "CLM-FTH-03",
+  "source_id": "LIB-PRI-059",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-FTH-03",
+  "source_id": "LIB-PRI-036",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-FTH-03",
+  "source_id": "LIB-PRI-058",
+  "ordinal": 3
  }
 ]

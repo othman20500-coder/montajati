@@ -46,5 +46,37 @@
   "script": "Latin",
   "language": "es",
   "normalized": "Ceuta"
+ },
+ {
+  "alias_id": "ALIAS-FTH-01",
+  "entity_id": "PER-TARIQ-IBN-ZIYAD",
+  "alias": "طارق بن عمرو",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "طارق بن عمرو"
+ },
+ {
+  "alias_id": "ALIAS-FTH-02",
+  "entity_id": "PER-LUDHRIQ",
+  "alias": "رذريق",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "رذريق"
+ },
+ {
+  "alias_id": "ALIAS-FTH-03",
+  "entity_id": "PER-LUDHRIQ",
+  "alias": "الأدرينوق",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "الادرينوق"
+ },
+ {
+  "alias_id": "ALIAS-FTH-04",
+  "entity_id": "PER-MUSA-IBN-NUSAYR",
+  "alias": "موسى بن نصير اللخمي",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "موسى بن نصير اللخمي"
  }
 ]

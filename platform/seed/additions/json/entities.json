@@ -25,5 +25,32 @@
   "start_date": null,
   "end_date": null,
   "notes": "ملك الفرنج صاحب طليطلة في المصادر العربية؛ مطابقته بألفونسو السادس ملك قشتالة وليون تعريف الدراسات الحديثة، ولم أتحقق منه من مصدر أولي ضمن هذه الإضافة."
+ },
+ {
+  "entity_id": "PER-TARIQ-IBN-ZIYAD",
+  "entity_type": "Person",
+  "preferred_name_ar": "طارق بن زياد",
+  "preferred_name_latn": "Ṭāriq ibn Ziyād",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مولى موسى بن نصير وفاتح الأندلس سنة 92هـ في المصادر؛ سمّاه ابن عبد الحكم في موضعين «طارق بن عمرو» وفي موضع «طارق بن زياد». سنتا مولده ووفاته: لم أعثر عليهما ضمن البحث المنفذ."
+ },
+ {
+  "entity_id": "PER-MUSA-IBN-NUSAYR",
+  "entity_type": "Person",
+  "preferred_name_ar": "موسى بن نصير",
+  "preferred_name_latn": "Mūsā ibn Nuṣayr",
+  "start_date": null,
+  "end_date": "0716",
+  "notes": "والي إفريقية للوليد بن عبد الملك، دخل الأندلس سنة 93هـ بعد مولاه طارق. سنة الوفاة 97هـ عند ابن الأبار (نحو 715/716م بالحساب الجدولي)؛ سنة المولد: لم أعثر عليها ضمن البحث المنفذ."
+ },
+ {
+  "entity_id": "PER-LUDHRIQ",
+  "entity_type": "Person",
+  "preferred_name_ar": "لذريق",
+  "preferred_name_latn": "Ludhrīq (Roderic)",
+  "start_date": null,
+  "end_date": "0711",
+  "notes": "آخر ملوك القوط بالأندلس في المصادر العربية، هُزم سنة 92هـ؛ يكتبه ابن عذاري «رذريق» ويسميه الواقدي عند الطبري «الأدرينوق». مطابقته بـRoderic تعريف الدراسات الحديثة، ولم أتحقق منه من مصدر أولي."
  }
 ]
