@@ -46,8 +46,10 @@ class ReviewService(unittest.TestCase):
         A = "ATT-004"
         st, d = self.call("POST", "/api/v1/auth/login", {"username": "r1", "password": "wrong"}); self.assertEqual(st, 401)
         owner, r1, r2, r3 = self.login("owner", "pw-owner"), self.login("r1", "pw1"), self.login("r2", "pw2"), self.login("r3", "pw3")
-        # القائمة تُقرأ بلا دخول وتحوي 57 شاهدًا يحتاج مطابقة بالعين
-        st, q = self.call("GET", "/api/v1/reviews/queue"); self.assertEqual(st, 200); self.assertEqual(len(q), 57)
+        # القائمة تُقرأ بلا دخول وتحوي كل شاهد يحتاج مطابقة بالعين (57 في v1.2 + ما أُضيف بقراءة بصرية أو OCR في الملحقات)
+        con = sqlite3.connect(self.db); expected = con.execute(f"SELECT COUNT(*) FROM attestations WHERE {self.app.NEEDS_EYE_SQL}").fetchone()[0]; con.close()
+        self.assertGreaterEqual(expected, 57)
+        st, q = self.call("GET", "/api/v1/reviews/queue"); self.assertEqual(st, 200); self.assertEqual(len(q), expected)
         # لا حكم قبل التسجيل ثم لا حكم قبل الاعتماد (403)
         st, _ = self.call("PUT", f"/api/v1/attestations/{A}/reviews/me", {"verdict": "مطابق"}, r1); self.assertEqual(st, 403)
         for tok, field in [(r1, "تاريخ الأندلس"), (r2, "تحقيق المخطوطات"), (r3, "تاريخ")]:

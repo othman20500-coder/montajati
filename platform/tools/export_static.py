@@ -146,6 +146,10 @@ def main():
             out.append([claims[aid]["text"], aid])
         return out
 
+    # ملخصات العصور: إسنادات هدفها PRD-* (تُعرض في الخط الزمني بشواهدها)
+    for e in eras:
+        e["summary"] = summary_for(e["id"])
+
     claim_entity_summary = {}
     for cid, lst in cents.items():
         if cid not in claims: continue

@@ -143,5 +143,45 @@
   "assertion_id": "AST-CAL-07",
   "claim_id": "CLM-CAL-02",
   "relation": "تسلسل الخلفاء"
+ },
+ {
+  "assertion_id": "AST-WUL-01",
+  "claim_id": "CLM-WUL-01",
+  "relation": "تاريخ الفتح"
+ },
+ {
+  "assertion_id": "AST-WUL-02",
+  "claim_id": "CLM-WUL-01",
+  "relation": "نظام الحكم"
+ },
+ {
+  "assertion_id": "AST-WUL-03",
+  "claim_id": "CLM-WUL-01",
+  "relation": "أول الولاة"
+ },
+ {
+  "assertion_id": "AST-WUL-04",
+  "claim_id": "CLM-WUL-01",
+  "relation": "العاصمة"
+ },
+ {
+  "assertion_id": "AST-WUL-05",
+  "claim_id": "CLM-WUL-02",
+  "relation": "تسلسل الولاة"
+ },
+ {
+  "assertion_id": "AST-WUL-06",
+  "claim_id": "CLM-WUL-03",
+  "relation": "إنزال الشاميين"
+ },
+ {
+  "assertion_id": "AST-WUL-07",
+  "claim_id": "CLM-WUL-03",
+  "relation": "نهاية العصر"
+ },
+ {
+  "assertion_id": "AST-WUL-07",
+  "claim_id": "CLM-EMR-01",
+  "relation": "تمهيد التأسيس"
  }
 ]
