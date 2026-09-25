@@ -10,5 +10,17 @@
  {
   "event_id": "EVT-022",
   "person_id": "PER-ALFONSO-VI"
+ },
+ {
+  "event_id": "EVT-001",
+  "person_id": "PER-TARIQ-IBN-ZIYAD"
+ },
+ {
+  "event_id": "EVT-001",
+  "person_id": "PER-MUSA-IBN-NUSAYR"
+ },
+ {
+  "event_id": "EVT-001",
+  "person_id": "PER-LUDHRIQ"
  }
 ]

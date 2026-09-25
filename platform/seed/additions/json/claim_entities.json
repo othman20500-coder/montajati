@@ -158,5 +158,55 @@
   "claim_id": "CLM-WUL-03",
   "entity_id": "PER-001",
   "role": "political context"
+ },
+ {
+  "claim_id": "CLM-FTH-01",
+  "entity_id": "PER-TARIQ-IBN-ZIYAD",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-FTH-01",
+  "entity_id": "PER-LUDHRIQ",
+  "role": "opponent"
+ },
+ {
+  "claim_id": "CLM-FTH-01",
+  "entity_id": "PLC-MEDINA-SIDONIA",
+  "role": "battle site (kūra)"
+ },
+ {
+  "claim_id": "CLM-FTH-01",
+  "entity_id": "PLC-CEUTA",
+  "role": "crossing point"
+ },
+ {
+  "claim_id": "CLM-FTH-02",
+  "entity_id": "PER-MUSA-IBN-NUSAYR",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-FTH-02",
+  "entity_id": "PER-TARIQ-IBN-ZIYAD",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-FTH-02",
+  "entity_id": "PLC-CORDOBA",
+  "role": "meeting place"
+ },
+ {
+  "claim_id": "CLM-FTH-02",
+  "entity_id": "PLC-TOLEDO",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-FTH-03",
+  "entity_id": "PLC-CEUTA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-FTH-03",
+  "entity_id": "PER-LUDHRIQ",
+  "role": "subject"
  }
 ]

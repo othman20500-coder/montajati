@@ -183,5 +183,55 @@
   "assertion_id": "AST-WUL-07",
   "claim_id": "CLM-EMR-01",
   "relation": "تمهيد التأسيس"
+ },
+ {
+  "assertion_id": "AST-FTH-01",
+  "claim_id": "CLM-FTH-01",
+  "relation": "الفاتح وولاؤه"
+ },
+ {
+  "assertion_id": "AST-WUL-01",
+  "claim_id": "CLM-FTH-01",
+  "relation": "سنة الدخول"
+ },
+ {
+  "assertion_id": "AST-FTH-03",
+  "claim_id": "CLM-FTH-01",
+  "relation": "الجواز"
+ },
+ {
+  "assertion_id": "AST-FTH-04",
+  "claim_id": "CLM-FTH-01",
+  "relation": "المعركة"
+ },
+ {
+  "assertion_id": "AST-FTH-06",
+  "claim_id": "CLM-FTH-02",
+  "relation": "مسير طارق"
+ },
+ {
+  "assertion_id": "AST-FTH-07",
+  "claim_id": "CLM-FTH-02",
+  "relation": "موسى وولايته"
+ },
+ {
+  "assertion_id": "AST-FTH-08",
+  "claim_id": "CLM-FTH-02",
+  "relation": "دخول موسى"
+ },
+ {
+  "assertion_id": "AST-FTH-09",
+  "claim_id": "CLM-FTH-02",
+  "relation": "القفول والنكبة"
+ },
+ {
+  "assertion_id": "AST-FTH-10",
+  "claim_id": "CLM-FTH-03",
+  "relation": "رواية يليان"
+ },
+ {
+  "assertion_id": "AST-FTH-03",
+  "claim_id": "CLM-FTH-03",
+  "relation": "مراكب يليان"
  }
 ]

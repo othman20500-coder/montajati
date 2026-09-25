@@ -208,5 +208,65 @@
   "evidence_id": "EVD-WUL-QUTIYYA",
   "relation": "supports",
   "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-FTH-01",
+  "evidence_id": "EVD-FTH-IBNABDALHAKAM",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-FTH-01",
+  "evidence_id": "EVD-FTH-BAYAN",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-FTH-01",
+  "evidence_id": "EVD-FTH-TABARI",
+  "relation": "supports",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-FTH-01",
+  "evidence_id": "EVD-FTH-QUTIYYA",
+  "relation": "supports",
+  "ordinal": 4
+ },
+ {
+  "claim_id": "CLM-FTH-02",
+  "evidence_id": "EVD-FTH-IBNABDALHAKAM",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-FTH-02",
+  "evidence_id": "EVD-FTH-TABARI",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-FTH-02",
+  "evidence_id": "EVD-FTH-QUTIYYA",
+  "relation": "supports",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-FTH-03",
+  "evidence_id": "EVD-FTH-IBNABDALHAKAM",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-FTH-03",
+  "evidence_id": "EVD-FTH-BAYAN",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-FTH-03",
+  "evidence_id": "EVD-FTH-QUTIYYA",
+  "relation": "supports",
+  "ordinal": 3
  }
 ]
