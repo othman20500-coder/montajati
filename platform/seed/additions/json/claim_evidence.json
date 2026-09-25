@@ -268,5 +268,83 @@
   "evidence_id": "EVD-FTH-QUTIYYA",
   "relation": "supports",
   "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-GOV-01",
+  "evidence_id": "EVD-GOV-BAYAN",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-GOV-01",
+  "evidence_id": "EVD-GOV-KAMIL",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-GOV-01",
+  "evidence_id": "EVD-GOV-QUTIYYA",
+  "relation": "supports",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-GOV-02",
+  "evidence_id": "EVD-GOV-BAYAN",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-GOV-02",
+  "evidence_id": "EVD-GOV-KAMIL",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-GOV-03",
+  "evidence_id": "EVD-GOV-BAYAN",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-GOV-03",
+  "evidence_id": "EVD-GOV-HULLA",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-GOV-03",
+  "evidence_id": "EVD-GOV-KAMIL",
+  "relation": "supports",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-GOV-03",
+  "evidence_id": "EVD-GOV-QUTIYYA",
+  "relation": "supports",
+  "ordinal": 4
+ },
+ {
+  "claim_id": "CLM-GOV-04",
+  "evidence_id": "EVD-GOV-BAYAN",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-GOV-04",
+  "evidence_id": "EVD-GOV-KAMIL",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-GOV-04",
+  "evidence_id": "EVD-GOV-HULLA",
+  "relation": "supports",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-GOV-04",
+  "evidence_id": "EVD-GOV-QUTIYYA",
+  "relation": "supports",
+  "ordinal": 4
  }
 ]

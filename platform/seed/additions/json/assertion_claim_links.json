@@ -233,5 +233,85 @@
   "assertion_id": "AST-FTH-03",
   "claim_id": "CLM-FTH-03",
   "relation": "مراكب يليان"
+ },
+ {
+  "assertion_id": "AST-GOV-01",
+  "claim_id": "CLM-GOV-01",
+  "relation": "التعيين"
+ },
+ {
+  "assertion_id": "AST-GOV-02",
+  "claim_id": "CLM-GOV-01",
+  "relation": "الأعمال"
+ },
+ {
+  "assertion_id": "AST-GOV-03",
+  "claim_id": "CLM-GOV-01",
+  "relation": "النهاية"
+ },
+ {
+  "assertion_id": "AST-GOV-04",
+  "claim_id": "CLM-GOV-02",
+  "relation": "التعيين"
+ },
+ {
+  "assertion_id": "AST-GOV-05",
+  "claim_id": "CLM-GOV-02",
+  "relation": "الأعمال والنهاية"
+ },
+ {
+  "assertion_id": "AST-GOV-06",
+  "claim_id": "CLM-GOV-03",
+  "relation": "التعيين"
+ },
+ {
+  "assertion_id": "AST-GOV-07",
+  "claim_id": "CLM-GOV-03",
+  "relation": "إنزال الأجناد"
+ },
+ {
+  "assertion_id": "AST-GOV-08",
+  "claim_id": "CLM-GOV-03",
+  "relation": "الخلع والمقتل"
+ },
+ {
+  "assertion_id": "AST-GOV-09",
+  "claim_id": "CLM-GOV-04",
+  "relation": "التعيين"
+ },
+ {
+  "assertion_id": "AST-GOV-10",
+  "claim_id": "CLM-GOV-04",
+  "relation": "الولاية والنهاية"
+ },
+ {
+  "assertion_id": "AST-GOV-11",
+  "claim_id": "CLM-GOV-04",
+  "relation": "الصميل"
+ },
+ {
+  "assertion_id": "AST-GOV-07",
+  "claim_id": "CLM-WUL-03",
+  "relation": "إنزال الأجناد"
+ },
+ {
+  "assertion_id": "AST-GOV-01",
+  "claim_id": "CLM-WUL-02",
+  "relation": "والٍ مسمّى"
+ },
+ {
+  "assertion_id": "AST-GOV-04",
+  "claim_id": "CLM-WUL-02",
+  "relation": "والٍ مسمّى"
+ },
+ {
+  "assertion_id": "AST-GOV-06",
+  "claim_id": "CLM-WUL-02",
+  "relation": "والٍ مسمّى"
+ },
+ {
+  "assertion_id": "AST-GOV-09",
+  "claim_id": "CLM-WUL-02",
+  "relation": "والٍ مسمّى"
  }
 ]
