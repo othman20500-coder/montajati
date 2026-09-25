@@ -221,7 +221,16 @@ def main():
         except Exception: choices = []
         quiz.append({"id": q["quiz_id"], "module": q["module_id"], "type": q["question_type"], "prompt": q["prompt_ar"], "choices": choices,
                      "correct": q["correct_index"], "explanation": q["explanation_ar"], "claim": q["claim_id"], "difficulty": q["difficulty"]})
-    modules = R("SELECT module_id,title_ar,summary_ar,level,estimated_minutes,period_label,status FROM v_learning_modules WHERE status='جاهز' ORDER BY module_id")
+    # ---- المسار التعليمي: الوحدات الجاهزة بأهدافها وخطواتها (كل خطوة تشير إلى ادعاء ومكان في القاعدة)
+    modules = []
+    for m in R("SELECT * FROM v_learning_modules WHERE status='جاهز' ORDER BY module_id"):
+        try: objectives = json.loads(m["learning_objectives_json"] or "[]")
+        except Exception: objectives = []
+        steps = R("SELECT * FROM learning_module_steps WHERE module_id=? ORDER BY ordinal", (m["module_id"],))
+        modules.append({"id": m["module_id"], "title": m["title_ar"], "summary": m["summary_ar"], "level": m["level"],
+                        "minutes": m["estimated_minutes"], "period": m["period_label"], "objectives": objectives,
+                        "steps": [{"n": x["ordinal"], "kind": x["step_type"], "title": x["title_ar"], "text": x["body_ar"],
+                                   "claim": x["claim_id"], "place": x["place_entity_id"], "hint": x["interaction_hint"]} for x in steps]})
     release = R("SELECT version,release_date,gates_pass,gates_total FROM release_manifest ORDER BY release_date DESC, version DESC LIMIT 1")
 
     # ---- الأطلس: طبقات موضوعية ومظاريف تحليلية (ليست حدودًا سياسية: القاعدة 7 وSCOPE-004)
@@ -297,7 +306,7 @@ function add(o) {{ E[o.id] = o; return o; }}
 """
     os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
     open(a.out, "w", encoding="utf-8").write(out)
-    print(json.dumps({"eras": len(eras), "sources": len(sources), "claims": len(claims), "entities": len(entities), "stories": len(stories), "quiz": len(quiz),
+    print(json.dumps({"eras": len(eras), "sources": len(sources), "claims": len(claims), "entities": len(entities), "stories": len(stories), "modules": len(modules), "quiz": len(quiz),
                       "by_type": {t: sum(1 for o in entities if o["type"] == t) for t in sorted({o["type"] for o in entities})},
                       "by_status": {s: sum(1 for c in claims.values() if c["status"] == s) for s in sorted({c["status"] for c in claims.values()})}}, ensure_ascii=False))
 
