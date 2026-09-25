@@ -58,5 +58,90 @@
   "assertion_id": "AST-ZLQ-11",
   "claim_id": "CLM-ZLQ-04",
   "relation": "يدعم النتيجة"
+ },
+ {
+  "assertion_id": "AST-EMR-01",
+  "claim_id": "CLM-EMR-01",
+  "relation": "تاريخ التأسيس"
+ },
+ {
+  "assertion_id": "AST-EMR-02",
+  "claim_id": "CLM-EMR-01",
+  "relation": "المؤسس"
+ },
+ {
+  "assertion_id": "AST-EMR-05",
+  "claim_id": "CLM-EMR-01",
+  "relation": "العاصمة"
+ },
+ {
+  "assertion_id": "AST-EMR-03",
+  "claim_id": "CLM-EMR-02",
+  "relation": "اللقب"
+ },
+ {
+  "assertion_id": "AST-EMR-06",
+  "claim_id": "CLM-EMR-02",
+  "relation": "قطع الدعاء"
+ },
+ {
+  "assertion_id": "AST-EMR-08",
+  "claim_id": "CLM-EMR-02",
+  "relation": "النهاية"
+ },
+ {
+  "assertion_id": "AST-EMR-04",
+  "claim_id": "CLM-EMR-03",
+  "relation": "تسلسل الأمراء"
+ },
+ {
+  "assertion_id": "AST-EMR-07",
+  "claim_id": "CLM-EMR-03",
+  "relation": "البنية الإدارية"
+ },
+ {
+  "assertion_id": "AST-CAL-01",
+  "claim_id": "CLM-CAL-01",
+  "relation": "الإعلان"
+ },
+ {
+  "assertion_id": "AST-CAL-02",
+  "claim_id": "CLM-CAL-01",
+  "relation": "الألقاب"
+ },
+ {
+  "assertion_id": "AST-CAL-03",
+  "claim_id": "CLM-CAL-01",
+  "relation": "الزهراء"
+ },
+ {
+  "assertion_id": "AST-CAL-01",
+  "claim_id": "CLM-001",
+  "relation": "يدعم التاريخ"
+ },
+ {
+  "assertion_id": "AST-CAL-03",
+  "claim_id": "ATLAS-CLM01",
+  "relation": "تاريخ البناء"
+ },
+ {
+  "assertion_id": "AST-CAL-04",
+  "claim_id": "CLM-CAL-02",
+  "relation": "الحجابة العامرية"
+ },
+ {
+  "assertion_id": "AST-CAL-05",
+  "claim_id": "CLM-CAL-02",
+  "relation": "بداية الفتنة"
+ },
+ {
+  "assertion_id": "AST-CAL-06",
+  "claim_id": "CLM-CAL-02",
+  "relation": "النهاية"
+ },
+ {
+  "assertion_id": "AST-CAL-07",
+  "claim_id": "CLM-CAL-02",
+  "relation": "تسلسل الخلفاء"
  }
 ]

@@ -78,5 +78,110 @@
   "claim_id": "CLM-ZLQ-04",
   "source_id": "LIB-PRI-045",
   "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-EMR-01",
+  "source_id": "LIB-PRI-036",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-EMR-01",
+  "source_id": "LIB-PRI-054",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-EMR-01",
+  "source_id": "LIB-PRI-038",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-EMR-01",
+  "source_id": "LIB-PRI-044",
+  "ordinal": 4
+ },
+ {
+  "claim_id": "CLM-EMR-01",
+  "source_id": "LIB-PRI-053",
+  "ordinal": 5
+ },
+ {
+  "claim_id": "CLM-EMR-02",
+  "source_id": "LIB-PRI-044",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-EMR-02",
+  "source_id": "LIB-PRI-053",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-EMR-02",
+  "source_id": "LIB-PRI-036",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-EMR-03",
+  "source_id": "LIB-PRI-044",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-EMR-03",
+  "source_id": "LIB-PRI-036",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-EMR-03",
+  "source_id": "LIB-PRI-057",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-CAL-01",
+  "source_id": "LIB-PRI-036",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-CAL-01",
+  "source_id": "LIB-PRI-044",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-CAL-01",
+  "source_id": "LIB-PRI-053",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-CAL-01",
+  "source_id": "LIB-PRI-049",
+  "ordinal": 4
+ },
+ {
+  "claim_id": "CLM-CAL-02",
+  "source_id": "LIB-PRI-053",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-CAL-02",
+  "source_id": "LIB-PRI-055",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-CAL-02",
+  "source_id": "LIB-PRI-056",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-CAL-02",
+  "source_id": "LIB-PRI-043",
+  "ordinal": 4
+ },
+ {
+  "claim_id": "CLM-CAL-02",
+  "source_id": "LIB-PRI-039",
+  "ordinal": 5
+ },
+ {
+  "claim_id": "CLM-CAL-02",
+  "source_id": "LIB-PRI-044",
+  "ordinal": 6
  }
 ]

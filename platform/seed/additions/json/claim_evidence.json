@@ -88,5 +88,83 @@
   "evidence_id": "EVD-ZLQ-MUJIB",
   "relation": "supports",
   "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-EMR-01",
+  "evidence_id": "EVD-EMR-BAYAN",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-EMR-01",
+  "evidence_id": "EVD-EMR-SIYAR",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-EMR-02",
+  "evidence_id": "EVD-EMR-HAZM",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-EMR-02",
+  "evidence_id": "EVD-EMR-SIYAR",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-EMR-02",
+  "evidence_id": "EVD-EMR-BAYAN",
+  "relation": "supports",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-EMR-03",
+  "evidence_id": "EVD-EMR-HAZM",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-EMR-03",
+  "evidence_id": "EVD-EMR-BAYAN",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-CAL-01",
+  "evidence_id": "EVD-CAL-BAYAN",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-CAL-01",
+  "evidence_id": "EVD-EMR-HAZM",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-CAL-01",
+  "evidence_id": "EVD-EMR-SIYAR",
+  "relation": "supports",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-CAL-02",
+  "evidence_id": "EVD-EMR-SIYAR",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-CAL-02",
+  "evidence_id": "EVD-CAL-DHAKHIRA",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-CAL-02",
+  "evidence_id": "EVD-EMR-HAZM",
+  "relation": "supports",
+  "ordinal": 3
  }
 ]
