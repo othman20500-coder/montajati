@@ -271,7 +271,7 @@
   <header class="top"><div class="in">
     <a class="skip" href="#app">تخطَّ إلى المحتوى</a><a class="brand" href="#/"><i></i> الأندلس <small style="font-family:var(--body);font-weight:400;font-size:12px;color:var(--muted)">إصدار تجريبي</small></a>
     <nav class="nav" id="nav">
-      <a href="#/atlas">الأطلس</a><a href="#/map">الخريطة</a><a href="#/timeline">الزمن</a><a href="#/people">الأشخاص</a><a href="#/places">الأماكن</a><a href="#/museum">المتحف</a><a href="#/stories">القصص</a><a href="#/play">ألعاب</a><a href="#/sources">المصادر</a><a href="#/about">عن المنصة</a>
+      <a href="#/atlas">الأطلس</a><a href="#/map">الخريطة</a><a href="#/timeline">الزمن</a><a href="#/people">الأشخاص</a><a href="#/places">الأماكن</a><a href="#/museum">المتحف</a><a href="#/stories">القصص</a><a href="#/learn">تعلّم</a><a href="#/play">ألعاب</a><a href="#/sources">المصادر</a><a href="#/about">عن المنصة</a>
     </nav>
     <div class="tools">
       <div class="seg" id="theme" title="الاتجاه البصري">
@@ -380,7 +380,7 @@ V.home=()=>`
     <p class="eyebrow" style="color:var(--accent)">موسوعة · أطلس زمني · متحف رقمي · تجربة تعليمية</p>
     <h1>قِف في الأندلس، <b>في أي سنة تختار</b></h1>
     <p>حرّك الزمن فتتغير الخريطة والحكام والمدن والوثائق. كل جملة هنا إسناد له شاهد حرفي بموضعه؛ ولا يُنشر إلا الموثّق والمصحح والمحسوم.</p>
-    <div class="cta"><a class="btn" href="#/stories">ابدأ برحلة سردية</a><a class="btn ghost" href="#/map">استكشف الخريطة</a><a class="btn ghost" href="#/people">ابحث في الأشخاص</a></div>
+    <div class="cta"><a class="btn" href="#/stories">ابدأ برحلة سردية</a><a class="btn ghost" href="#/map">استكشف الخريطة</a><a class="btn ghost" href="#/learn">ابدأ وحدة تعليمية</a></div>
     <div style="margin-top:22px">${timeBar(960,"heroY")}</div>
   </div>
   <div class="mapbox" id="heroMap">${mapSvg(960)}</div>
@@ -415,11 +415,32 @@ V.stories=()=>`<section><p class="eyebrow">قصص الأطلس</p><h2>${STORIES.
   ${STORIES.map(st=>`<div class="panel" style="margin-bottom:14px"><p class="eyebrow">${esc(st.period||"")}</p><h3>${esc(st.title)}</h3><p style="color:var(--muted)">${esc(st.summary||"")}</p><p><a class="chip" href="#/atlas?model=all&story=${st.id}&step=1&tab=sto" style="border-color:var(--accent)">▶ على الخريطة مرحلةً مرحلة</a></p>${st.warning?`<p class="note">${esc(st.warning)}</p>`:""}
     <div class="strip">${st.steps.map((x,i)=>`<div class="card" style="--era:var(--brand);min-width:280px"><div class="type">محطة ${i+1}</div><h3>${esc(x.title)}</h3><p>${x.claim&&CLAIMS[x.claim]?claimSpan(x.text||"",x.claim):esc(x.text||"")}</p>${x.place&&E[x.place]?`<div class="chips" style="margin-top:8px">${chip(x.place)}</div>`:""}</div>`).join("")}</div></div>`).join("")}</section>`;
 
+// نصوص الوحدات في حزمة v1.2 فيها رموز داخلية بالإنجليزية؛ تُعرَّب عند العرض فقط (القاعدة: لا رموز داخلية للمستخدم)
+const PLAIN_AR=[[/Claim canonical/g,"الادعاء المعتمد"],[/\bClaim\b/g,"الادعاء"],[/Source Genealogy/g,"سلسلة المصدر"],[/\bEvidence\b/g,"الدليل"],[/\bMyth\b/g,"أسطورة"],[/\bNarrative\b/g,"سردية"],[/\broute\b/g,"المسار"],[/\bLegacy\b/g,"طبقة الإرث"],[/\bheritage\b/g,"التراث"],[/\breuse\b/g,"إعادة الاستخدام"],[/UNESCO/g,"اليونسكو"],[/\bconvivencia\b/g,"«التعايش» (convivencia)"]];
+const plainAr=t=>PLAIN_AR.reduce((a,[re,ar])=>a.replace(re,ar),String(t??""));
+const STEP_AR={concept:"مفهوم",evidence:"دليل",genealogy:"سلسلة المصدر",method:"منهج",myth:"أسطورة تُفحص",place:"مكان",person:"شخص",text:"نص",politics:"سياسة",economy:"اقتصاد",architecture:"عمارة",urban:"عمران",rural:"ريف",craft:"حِرفة",language:"لغة",translation:"ترجمة",network:"شبكة",legacy:"إرث"};
+const stepKind=k=>STEP_AR[k]||"خطوة";
+const quizCard=q=>`<div class="game quiz" data-correct="${q.correct}"><div class="type">سؤال · ${esc(q.difficulty||"")}</div><h3>${esc(plainAr(q.prompt))}</h3><div class="opts">${q.choices.map((c,i)=>`<button data-i="${i}">${esc(plainAr(typeof c==="string"?c:(c.text||JSON.stringify(c))))}</button>`).join("")}</div><p class="note" hidden>${esc(plainAr(q.explanation||""))}${q.claim&&CLAIMS[q.claim]?` ${claimSpan("الادعاء المرتبط",q.claim)}`:""}</p></div>`;
+V.learn=(q)=>{const mod=q.m?MODULES.find(m=>m.id===q.m):null;
+  if(!mod)return `<section><p class="eyebrow">المسار التعليمي</p><h2>${MODULES.length} وحدات تعليمية جاهزة</h2><p class="sub">كل وحدة سلسلة خطوات قصيرة، وكل خطوة تشير إلى ادعاء في القاعدة بشواهده ومكانه على الخريطة، وتُختم بأسئلة. الوحدات من حزمة v1.2 بالحالة «جاهز».</p>
+    <div class="grid">${MODULES.map(m=>`<a class="card" href="#/learn?m=${m.id}" style="--era:var(--brand)"><div class="type">${esc(m.level)} · ${m.minutes} دقيقة · ${esc(m.period||"")}</div><h3>${esc(m.title)}</h3><p>${esc(plainAr(m.summary))}</p><div class="d">${m.steps.length} خطوات · ${QUIZ.filter(x=>x.module===m.id).length} أسئلة</div></a>`).join("")}</div>
+    <p class="note">ما تعرضه الوحدات جمل موثقة أو موثقة جزئيًا (بتنبيه)؛ والمتعارض وما ينتظر شاهدًا لا يصل إلى هنا.</p></section>`;
+  const step=Math.max(1,Math.min(+q.step||1,mod.steps.length));const x=mod.steps[step-1];const mq=QUIZ.filter(z=>z.module===mod.id);const link=n=>`#/learn?m=${mod.id}&step=${n}`;
+  return `<section><p class="eyebrow"><a href="#/learn">المسار التعليمي</a> · ${esc(mod.level)} · ${mod.minutes} دقيقة · ${esc(mod.period||"")}</p><h2>${esc(mod.title)}</h2><p class="sub">${esc(plainAr(mod.summary))}</p>
+    ${mod.objectives.length?`<div class="panel" style="margin-bottom:14px"><p class="eyebrow">ماذا ستتعلم؟</p><ul style="margin:6px 0 0;padding-inline-start:20px">${mod.objectives.map(o=>`<li>${esc(o)}</li>`).join("")}</ul></div>`:""}
+    <div class="stepper" role="tablist" aria-label="خطوات الوحدة">${mod.steps.map((s2,i)=>`<a class="dot" href="${link(i+1)}" role="tab" aria-selected="${i+1===step}"${i+1===step?' aria-current="step"':""} title="${esc(s2.title)}">${i+1}</a>`).join("")}</div>
+    <div class="panel" style="margin-top:14px"><p class="eyebrow">الخطوة ${step} من ${mod.steps.length} · ${stepKind(x.kind)}</p><h3>${esc(plainAr(x.title))}</h3><p>${x.claim&&CLAIMS[x.claim]?claimSpan(plainAr(x.text||""),x.claim):esc(plainAr(x.text||""))}</p>
+      ${x.place&&E[x.place]?`<div class="chips" style="margin-top:8px">${chip(x.place)}<a class="chip" href="#/atlas?model=all&place=${encodeURIComponent(x.place)}&tab=place">على الأطلس</a></div>`:""}
+      ${x.hint?`<p class="note">جرّب: ${esc(plainAr(x.hint))}</p>`:""}
+      <div class="cta" style="margin-top:12px">${step>1?`<a class="btn ghost" href="${link(step-1)}">السابق</a>`:""}${step<mod.steps.length?`<a class="btn" href="${link(step+1)}">التالي</a>`:`<a class="btn ghost" href="${link(1)}">أعد من البداية</a>`}</div></div>
+    ${mq.length?`<h3 id="learn-quiz" style="margin-top:22px">أسئلة الوحدة (${mq.length})</h3><div class="grid">${mq.map(quizCard).join("")}</div>`:""}
+    <p class="note" style="margin-top:14px">النقطة الملونة بجانب كل جملة تفتح لوحة «كيف نعرف هذا؟» بشواهدها.</p></section>`;};
+
 V.play=()=>{const y=[800,960,1100,1300][Math.floor(Math.random()*4)];const ans=eraOf(y).name;const opts=[...new Set([ans,...TOP.map(e=>e.name).sort(()=>Math.random()-.5).slice(0,3)])].sort(()=>Math.random()-.5);
   return `<section><p class="eyebrow">تقويم وألعاب</p><h2>${QUIZ.length} سؤالًا مربوطة بادعاءات القاعدة</h2><p class="sub">كل سؤال يعرض بعد الإجابة شرحه وادعاءه بشواهده. الأسئلة من الوحدات التعليمية الجاهزة في v1.2.</p>
   <div class="grid">
     <div class="game"><div class="type">أين أنت؟</div><h3>سنة ${y}م، أنت في قرطبة. ما العصر؟</h3><div class="opts" id="g1">${opts.map(o=>`<button data-ok="${o===ans}">${o}</button>`).join("")}</div><p class="note" id="g1n">المصدر: حدود العصور في جدول periods (v1.2).</p></div>
-    ${QUIZ.filter(q=>q.type!=="open"&&q.choices.length).slice(0,9).map(q=>`<div class="game quiz" data-correct="${q.correct}"><div class="type">${esc(q.module)} · ${esc(q.difficulty||"")}</div><h3>${esc(q.prompt)}</h3><div class="opts">${q.choices.map((c,i)=>`<button data-i="${i}">${esc(typeof c==="string"?c:(c.text||JSON.stringify(c)))}</button>`).join("")}</div><p class="note" hidden>${esc(q.explanation||"")} ${q.claim&&CLAIMS[q.claim]?claimSpan("الادعاء المرتبط",q.claim):""}</p></div>`).join("")}
+    ${QUIZ.filter(q=>q.type!=="open"&&q.choices.length).slice(0,9).map(q=>`<div class="game quiz" data-correct="${q.correct}"><div class="type">${esc(q.module)} · ${esc(q.difficulty||"")}</div><h3>${esc(plainAr(q.prompt))}</h3><div class="opts">${q.choices.map((c,i)=>`<button data-i="${i}">${esc(plainAr(typeof c==="string"?c:(c.text||JSON.stringify(c))))}</button>`).join("")}</div><p class="note" hidden>${esc(q.explanation||"")} ${q.claim&&CLAIMS[q.claim]?claimSpan("الادعاء المرتبط",q.claim):""}</p></div>`).join("")}
   </div></section>`;};
 
 const MODEL_META={cordoba:{name:"قرطبة الأموية",bbox:[-7.2,36.3,-2.4,40.4]},granada:{name:"غرناطة النصرية",bbox:[-6.2,35.6,-1.2,38.6]},all:{name:"الأطلس العام",bbox:null}};
