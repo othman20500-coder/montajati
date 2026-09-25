@@ -1,0 +1,42 @@
+[
+ {
+  "tenure_id": "TEN-GOV-01",
+  "person_id": "PER-AL-SAMH",
+  "polity_id": "POL-009",
+  "role": "والٍ",
+  "start_year": 719,
+  "end_year": 721,
+  "precision": "سنة (100–102هـ، تحويل جدولي تقريبي)",
+  "note_ar": "من رمضان 100هـ إلى استشهاده سنة 102هـ (وقيل 103هـ)؛ الإسناد AST-GOV-01 وAST-GOV-03"
+ },
+ {
+  "tenure_id": "TEN-GOV-02",
+  "person_id": "PER-UQBA-IBN-AL-HAJJAJ",
+  "polity_id": "POL-009",
+  "role": "والٍ",
+  "start_year": 734,
+  "end_year": 739,
+  "precision": "سنة (شوال 116هـ–121هـ، تحويل جدولي تقريبي؛ النهاية مختلف فيها حتى 123هـ)",
+  "note_ar": "الإسناد AST-GOV-04 وAST-GOV-05"
+ },
+ {
+  "tenure_id": "TEN-GOV-03",
+  "person_id": "PER-ABU-AL-KHATTAR",
+  "polity_id": "POL-009",
+  "role": "والٍ",
+  "start_year": 743,
+  "end_year": 745,
+  "precision": "سنة (125هـ–127/128هـ، تحويل جدولي تقريبي)",
+  "note_ar": "الإسناد AST-GOV-06 وAST-GOV-08"
+ },
+ {
+  "tenure_id": "TEN-GOV-04",
+  "person_id": "PER-YUSUF-AL-FIHRI",
+  "polity_id": "POL-009",
+  "role": "والٍ",
+  "start_year": 747,
+  "end_year": 756,
+  "precision": "سنة (129هـ–138هـ، تحويل جدولي تقريبي)",
+  "note_ar": "الإسناد AST-GOV-09 وAST-GOV-10"
+ }
+]

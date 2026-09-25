@@ -208,5 +208,80 @@
   "claim_id": "CLM-FTH-03",
   "entity_id": "PER-LUDHRIQ",
   "role": "subject"
+ },
+ {
+  "claim_id": "CLM-GOV-01",
+  "entity_id": "PER-AL-SAMH",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-GOV-01",
+  "entity_id": "PLC-CORDOBA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-GOV-02",
+  "entity_id": "PER-UQBA-IBN-AL-HAJJAJ",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-GOV-03",
+  "entity_id": "PER-ABU-AL-KHATTAR",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-GOV-03",
+  "entity_id": "PER-AL-SUMAYL",
+  "role": "opponent"
+ },
+ {
+  "claim_id": "CLM-GOV-03",
+  "entity_id": "PLC-CORDOBA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-GOV-04",
+  "entity_id": "PER-YUSUF-AL-FIHRI",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-GOV-04",
+  "entity_id": "PER-AL-SUMAYL",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-GOV-04",
+  "entity_id": "PER-001",
+  "role": "opponent"
+ },
+ {
+  "claim_id": "CLM-GOV-04",
+  "entity_id": "PLC-CORDOBA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-WUL-01",
+  "entity_id": "POL-009",
+  "role": "polity"
+ },
+ {
+  "claim_id": "CLM-WUL-02",
+  "entity_id": "POL-009",
+  "role": "polity"
+ },
+ {
+  "claim_id": "CLM-GOV-03",
+  "entity_id": "PLC-SAQUNDA",
+  "role": "battle site"
+ },
+ {
+  "claim_id": "CLM-GOV-04",
+  "entity_id": "PLC-SAQUNDA",
+  "role": "battle site"
+ },
+ {
+  "claim_id": "CLM-GOV-04",
+  "entity_id": "PLC-ZARAGOZA",
+  "role": "place"
  }
 ]
