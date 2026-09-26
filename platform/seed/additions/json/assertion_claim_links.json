@@ -313,5 +313,95 @@
   "assertion_id": "AST-GOV-09",
   "claim_id": "CLM-WUL-02",
   "relation": "والٍ مسمّى"
+ },
+ {
+  "assertion_id": "AST-AMR-01",
+  "claim_id": "CLM-AMR-01",
+  "relation": "وفاة الداخل"
+ },
+ {
+  "assertion_id": "AST-AMR-02",
+  "claim_id": "CLM-AMR-01",
+  "relation": "بيعة هشام"
+ },
+ {
+  "assertion_id": "AST-AMR-03",
+  "claim_id": "CLM-AMR-01",
+  "relation": "وفاة هشام"
+ },
+ {
+  "assertion_id": "AST-AMR-04",
+  "claim_id": "CLM-AMR-01",
+  "relation": "أعمال هشام"
+ },
+ {
+  "assertion_id": "AST-AMR-05",
+  "claim_id": "CLM-AMR-01",
+  "relation": "بيعة الحكم"
+ },
+ {
+  "assertion_id": "AST-AMR-06",
+  "claim_id": "CLM-AMR-01",
+  "relation": "وفاة الحكم"
+ },
+ {
+  "assertion_id": "AST-AMR-07",
+  "claim_id": "CLM-AMR-01",
+  "relation": "سيرة الحكم"
+ },
+ {
+  "assertion_id": "AST-AMR-08",
+  "claim_id": "CLM-AMR-02",
+  "relation": "الأوسط"
+ },
+ {
+  "assertion_id": "AST-AMR-09",
+  "claim_id": "CLM-AMR-02",
+  "relation": "محمد"
+ },
+ {
+  "assertion_id": "AST-AMR-10",
+  "claim_id": "CLM-AMR-02",
+  "relation": "المنذر"
+ },
+ {
+  "assertion_id": "AST-AMR-11",
+  "claim_id": "CLM-AMR-02",
+  "relation": "عبد الله"
+ },
+ {
+  "assertion_id": "AST-AMR-02",
+  "claim_id": "CLM-EMR-03",
+  "relation": "تسلسل الأمراء"
+ },
+ {
+  "assertion_id": "AST-AMR-05",
+  "claim_id": "CLM-EMR-03",
+  "relation": "تسلسل الأمراء"
+ },
+ {
+  "assertion_id": "AST-AMR-08",
+  "claim_id": "CLM-EMR-03",
+  "relation": "تسلسل الأمراء"
+ },
+ {
+  "assertion_id": "AST-AMR-09",
+  "claim_id": "CLM-EMR-03",
+  "relation": "تسلسل الأمراء"
+ },
+ {
+  "assertion_id": "AST-AMR-10",
+  "claim_id": "CLM-EMR-03",
+  "relation": "تسلسل الأمراء"
+ },
+ {
+  "assertion_id": "AST-AMR-11",
+  "claim_id": "CLM-EMR-03",
+  "relation": "تسلسل الأمراء"
+ },
+ {
+  "assertion_id": "AST-AMR-01",
+  "claim_id": "CLM-EMR-01",
+  "relation": "وفاة المؤسس"
  }
 ]

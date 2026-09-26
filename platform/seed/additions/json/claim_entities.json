@@ -283,5 +283,65 @@
   "claim_id": "CLM-GOV-04",
   "entity_id": "PLC-ZARAGOZA",
   "role": "place"
+ },
+ {
+  "claim_id": "CLM-AMR-01",
+  "entity_id": "PER-001",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-AMR-01",
+  "entity_id": "PER-HISHAM-I",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-AMR-01",
+  "entity_id": "PER-ALHAKAM-I",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-AMR-01",
+  "entity_id": "POL-001",
+  "role": "polity"
+ },
+ {
+  "claim_id": "CLM-AMR-01",
+  "entity_id": "PLC-CORDOBA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-AMR-02",
+  "entity_id": "PER-ABDALRAHMAN-II",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-AMR-02",
+  "entity_id": "PER-MUHAMMAD-I",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-AMR-02",
+  "entity_id": "PER-ALMUNDHIR",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-AMR-02",
+  "entity_id": "PER-ABDALLAH-I",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-AMR-02",
+  "entity_id": "PER-002",
+  "role": "successor"
+ },
+ {
+  "claim_id": "CLM-AMR-02",
+  "entity_id": "POL-001",
+  "role": "polity"
+ },
+ {
+  "claim_id": "CLM-AMR-02",
+  "entity_id": "PLC-CORDOBA",
+  "role": "place"
  }
 ]

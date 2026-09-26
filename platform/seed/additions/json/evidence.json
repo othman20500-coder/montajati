@@ -208,5 +208,35 @@
   "description_ar": "بعث عمر السمحَ، رأي الإجلاء وتخميس جابر، القنطرة؛ إنزال الشاميين، مقتل أبي الخطار بمنية نصر، ولاية يوسف والصميل وزيره.",
   "confidence": "عالٍ (نص تراثي محقق)؛ الشواهد تنتظر المراجعة بالعين",
   "source_id": "LIB-PRI-058"
+ },
+ {
+  "evidence_id": "EVD-AMR-BAYAN",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "تراجم أمراء الإمارة عند ابن عذاري (البيان المغرب ج2 ص47–48، 61، 68، 81، 94، 113–114، 121)",
+  "date_text": "تأليف نحو 712هـ",
+  "place_entity_id": "PLC-CORDOBA",
+  "description_ar": "لكل أمير: الكنية والمولد ويوم البيعة ويوم الوفاة والعمر والمدة، مع الأعمال (جامع قرطبة وجسرها).",
+  "confidence": "عالٍ (نص تراثي محقق)",
+  "source_id": "LIB-PRI-036"
+ },
+ {
+  "evidence_id": "EVD-AMR-KAMIL",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "وفيات الأمراء عند ابن الأثير (الكامل ج5 ص311 و527، ج6 ص143 و441 و451 و621)",
+  "date_text": "تأليف قبل 630هـ",
+  "place_entity_id": "PLC-CORDOBA",
+  "description_ar": "روايات حولية موازية للوفيات والمدد والأعمار، مع خلافات يسيرة في الأشهر وخلاف في عمر عبد الله.",
+  "confidence": "عالٍ (نص تراثي محقق)",
+  "source_id": "LIB-PRI-046"
+ },
+ {
+  "evidence_id": "EVD-AMR-HAZM",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "ألقاب أمراء بني أمية بالأندلس عند ابن حزم (نقط العروس، رسائل ابن حزم ج2 ص48–49)",
+  "date_text": "تأليف قبل 456هـ (شاهد معاصر للخلافة)",
+  "place_entity_id": "PLC-CORDOBA",
+  "description_ar": "لم يتلقبوا إلا هشام الرضا، والحكم الربضي لقتله أهل الربض، ولم يتسموا بإمرة المؤمنين حتى الناصر.",
+  "confidence": "عالٍ (نص تراثي محقق)",
+  "source_id": "LIB-PRI-044"
  }
 ]

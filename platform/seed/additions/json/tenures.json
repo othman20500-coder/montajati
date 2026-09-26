@@ -38,5 +38,65 @@
   "end_year": 756,
   "precision": "سنة (129هـ–138هـ، تحويل جدولي تقريبي)",
   "note_ar": "الإسناد AST-GOV-09 وAST-GOV-10"
+ },
+ {
+  "tenure_id": "TEN-EMR-02",
+  "person_id": "PER-HISHAM-I",
+  "polity_id": "POL-001",
+  "role": "أمير",
+  "start_year": 788,
+  "end_year": 796,
+  "precision": "سنة (جمادى الأولى 172هـ – صفر 180هـ، تحويل جدولي تقريبي)",
+  "note_ar": "الإسناد AST-AMR-02 وAST-AMR-03"
+ },
+ {
+  "tenure_id": "TEN-EMR-03",
+  "person_id": "PER-ALHAKAM-I",
+  "polity_id": "POL-001",
+  "role": "أمير",
+  "start_year": 796,
+  "end_year": 822,
+  "precision": "سنة (صفر 180هـ – ذو الحجة 206هـ، تحويل جدولي تقريبي)",
+  "note_ar": "الإسناد AST-AMR-05 وAST-AMR-06"
+ },
+ {
+  "tenure_id": "TEN-EMR-04",
+  "person_id": "PER-ABDALRAHMAN-II",
+  "polity_id": "POL-001",
+  "role": "أمير",
+  "start_year": 822,
+  "end_year": 852,
+  "precision": "سنة (ذو الحجة 206هـ – ربيع الآخر 238هـ، تحويل جدولي تقريبي)",
+  "note_ar": "الإسناد AST-AMR-08"
+ },
+ {
+  "tenure_id": "TEN-EMR-05",
+  "person_id": "PER-MUHAMMAD-I",
+  "polity_id": "POL-001",
+  "role": "أمير",
+  "start_year": 852,
+  "end_year": 886,
+  "precision": "سنة (ربيع الآخر 238هـ – صفر 273هـ، تحويل جدولي تقريبي)",
+  "note_ar": "الإسناد AST-AMR-09"
+ },
+ {
+  "tenure_id": "TEN-EMR-06",
+  "person_id": "PER-ALMUNDHIR",
+  "polity_id": "POL-001",
+  "role": "أمير",
+  "start_year": 886,
+  "end_year": 888,
+  "precision": "سنة (ربيع الأول 273هـ – صفر 275هـ، تحويل جدولي تقريبي)",
+  "note_ar": "الإسناد AST-AMR-10"
+ },
+ {
+  "tenure_id": "TEN-EMR-07",
+  "person_id": "PER-ABDALLAH-I",
+  "polity_id": "POL-001",
+  "role": "أمير",
+  "start_year": 888,
+  "end_year": 912,
+  "precision": "سنة (صفر 275هـ – ربيع الأول 300هـ، تحويل جدولي تقريبي)",
+  "note_ar": "الإسناد AST-AMR-11"
  }
 ]
