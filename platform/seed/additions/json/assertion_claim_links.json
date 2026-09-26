@@ -493,5 +493,75 @@
   "assertion_id": "AST-CAL-24",
   "claim_id": "CLM-CAL-04",
   "relation": "الدولة الحمودية"
+ },
+ {
+  "assertion_id": "AST-TAI-01",
+  "claim_id": "CLM-TAI-01",
+  "relation": "تفرق الممالك"
+ },
+ {
+  "assertion_id": "AST-TAI-02",
+  "claim_id": "CLM-TAI-01",
+  "relation": "بنو جهور"
+ },
+ {
+  "assertion_id": "AST-TAI-03",
+  "claim_id": "CLM-TAI-01",
+  "relation": "وفاة ابن جهور"
+ },
+ {
+  "assertion_id": "AST-TAI-04",
+  "claim_id": "CLM-TAI-01",
+  "relation": "نهاية بني جهور"
+ },
+ {
+  "assertion_id": "AST-TAI-05",
+  "claim_id": "CLM-TAI-01",
+  "relation": "القاضي ابن عباد"
+ },
+ {
+  "assertion_id": "AST-TAI-06",
+  "claim_id": "CLM-TAI-01",
+  "relation": "المعتضد"
+ },
+ {
+  "assertion_id": "AST-TAI-07",
+  "claim_id": "CLM-TAI-02",
+  "relation": "المعتمد"
+ },
+ {
+  "assertion_id": "AST-TAI-08",
+  "claim_id": "CLM-TAI-01",
+  "relation": "بنو الأفطس"
+ },
+ {
+  "assertion_id": "AST-TAI-09",
+  "claim_id": "CLM-TAI-01",
+  "relation": "بنو ذي النون"
+ },
+ {
+  "assertion_id": "AST-TAI-10",
+  "claim_id": "CLM-TAI-02",
+  "relation": "سقوط طليطلة"
+ },
+ {
+  "assertion_id": "AST-TAI-11",
+  "claim_id": "CLM-TAI-01",
+  "relation": "بنو هود"
+ },
+ {
+  "assertion_id": "AST-TAI-12",
+  "claim_id": "CLM-TAI-01",
+  "relation": "دانية"
+ },
+ {
+  "assertion_id": "AST-TAI-13",
+  "claim_id": "CLM-TAI-01",
+  "relation": "المرية"
+ },
+ {
+  "assertion_id": "AST-TAI-14",
+  "claim_id": "CLM-TAI-02",
+  "relation": "نهاية الطوائف"
  }
 ]

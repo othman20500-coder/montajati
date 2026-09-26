@@ -278,5 +278,55 @@
   "description_ar": "يوم بيعة هشام وعمره ويوم خلعه ومدة خلافتيه.",
   "confidence": "عالٍ (نص تراثي محقق)",
   "source_id": "LIB-PRI-036"
+ },
+ {
+  "evidence_id": "EVD-TAI-KAMIL",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "ذكر تفرق ممالك الأندلس عند ابن الأثير (الكامل ج7 ص628–638)",
+  "date_text": "تأليف قبل 630هـ",
+  "place_entity_id": "PLC-CORDOBA",
+  "description_ar": "مسح مدينة مدينة لمن تغلب عليها بعد الفتنة: قرطبة وإشبيلية وبطليوس وطليطلة وسرقسطة وبلنسية ودانية ومرسية والمرية ومالقة وغرناطة، بسنوات الوفيات والانتقال.",
+  "confidence": "عالٍ (نص تراثي محقق؛ متأخر عن الأحداث)",
+  "source_id": "LIB-PRI-046"
+ },
+ {
+  "evidence_id": "EVD-TAI-HULLA",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "تراجم أمراء الفتنة وملوك الطوائف عند ابن الأبار (الحلة السيراء ج2 ص30–52، 96–97، 129، 247)",
+  "date_text": "تأليف قبل 658هـ؛ ينقل عن ابن حيان",
+  "place_entity_id": "PLC-CORDOBA",
+  "description_ar": "تراجم ابن جهور والقاضي ابن عباد والمعتمد والمتوكل بن الأفطس وبني هود بنقول عن ابن حيان.",
+  "confidence": "عالٍ (ينقل عن معاصر)",
+  "source_id": "LIB-PRI-062"
+ },
+ {
+  "evidence_id": "EVD-TAI-DHAKHIRA",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "وفاة ابن جهور وسقوط طليطلة عند ابن بسام (الذخيرة ج2 ص604، ج3 ص249)",
+  "date_text": "تأليف نحو 503هـ (معاصر)",
+  "place_entity_id": "PLC-TOLEDO",
+  "description_ar": "يوم وفاة أبي الحزم بن جهور، وسنة حصول طليطلة في أيدي النصارى 478هـ.",
+  "confidence": "عالٍ (معاصر)",
+  "source_id": "LIB-PRI-043"
+ },
+ {
+  "evidence_id": "EVD-TAI-DHAHABI",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "تراجم المعتضد وسقوط طليطلة عند الذهبي (تاريخ الإسلام ج31 ص148–149، ج33 ص266)",
+  "date_text": "تأليف قبل 748هـ",
+  "place_entity_id": "PLC-SEVILLE",
+  "description_ar": "وفاة القاضي 433هـ والمعتضد (رجب 464هـ عنده) وسقوط طليطلة 478هـ.",
+  "confidence": "متوسط–عالٍ",
+  "source_id": "LIB-PRI-049"
+ },
+ {
+  "evidence_id": "EVD-TAI-JADHWA",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "ترجمة مجاهد العامري عند الحميدي (جذوة المقتبس ص352–353)",
+  "date_text": "تأليف قبل 488هـ",
+  "place_entity_id": "PLC-008",
+  "description_ar": "غزوة سردانية سنة 406 أو 407هـ بخبر شاهد عيان عن ابن حزم.",
+  "confidence": "عالٍ (معاصر)",
+  "source_id": "LIB-PRI-039"
  }
 ]

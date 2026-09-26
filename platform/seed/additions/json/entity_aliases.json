@@ -214,5 +214,117 @@
   "script": "Arabic",
   "language": "ar",
   "normalized": "شنشول"
+ },
+ {
+  "alias_id": "ALIAS-TAI-01",
+  "entity_id": "PER-JAHWAR-IBN-MUHAMMAD",
+  "alias": "أبو الحزم بن جهور",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "أبو الحزم بن جهور"
+ },
+ {
+  "alias_id": "ALIAS-TAI-02",
+  "entity_id": "PER-QADI-IBN-ABBAD",
+  "alias": "القاضي ابن عباد",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "القاضي ابن عباد"
+ },
+ {
+  "alias_id": "ALIAS-TAI-03",
+  "entity_id": "PER-ABBAD-AL-MUTADID",
+  "alias": "المعتضد بن عباد",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "المعتضد بن عباد"
+ },
+ {
+  "alias_id": "ALIAS-TAI-04",
+  "entity_id": "PER-ISMAIL-DHUNNUN",
+  "alias": "الظافر بحول الله",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "الظافر بحول الله"
+ },
+ {
+  "alias_id": "ALIAS-TAI-05",
+  "entity_id": "PER-YAHYA-AL-MAMUN-DHUNNUN",
+  "alias": "المأمون بن ذي النون",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "المأمون بن ذي النون"
+ },
+ {
+  "alias_id": "ALIAS-TAI-06",
+  "entity_id": "PER-YAHYA-AL-QADIR",
+  "alias": "القادر بالله",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "القادر بالله"
+ },
+ {
+  "alias_id": "ALIAS-TAI-07",
+  "entity_id": "PER-MUHAMMAD-AL-MUZAFFAR-AFTAS",
+  "alias": "المظفر بن الأفطس",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "المظفر بن الأفطس"
+ },
+ {
+  "alias_id": "ALIAS-TAI-08",
+  "entity_id": "PER-UMAR-AL-MUTAWAKKIL",
+  "alias": "المتوكل بن الأفطس",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "المتوكل بن الأفطس"
+ },
+ {
+  "alias_id": "ALIAS-TAI-09",
+  "entity_id": "PER-SULAYMAN-IBN-HUD",
+  "alias": "سليمان بن هود",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "سليمان بن هود"
+ },
+ {
+  "alias_id": "ALIAS-TAI-10",
+  "entity_id": "PER-MUHAMMAD-AL-MUTASIM-SUMADIH",
+  "alias": "المعتصم بن صمادح",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "المعتصم بن صمادح"
+ },
+ {
+  "alias_id": "ALIAS-TAI-11",
+  "entity_id": "POL-TAI-CORDOBA",
+  "alias": "بنو جهور",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "بنو جهور"
+ },
+ {
+  "alias_id": "ALIAS-TAI-12",
+  "entity_id": "POL-TAI-BADAJOZ",
+  "alias": "بنو الأفطس",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "بنو الأفطس"
+ },
+ {
+  "alias_id": "ALIAS-TAI-13",
+  "entity_id": "POL-TAI-TOLEDO",
+  "alias": "بنو ذي النون",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "بنو ذي النون"
+ },
+ {
+  "alias_id": "ALIAS-TAI-14",
+  "entity_id": "POL-TAI-ALMERIA",
+  "alias": "بنو صمادح",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "بنو صمادح"
  }
 ]
