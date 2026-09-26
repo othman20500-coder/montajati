@@ -568,5 +568,17 @@
   "evidence_id": "EVD-VIZ-NAFH",
   "relation": "supports",
   "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-ULM-01",
+  "evidence_id": "EVD-ULM-ZUBAYR",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-ULM-02",
+  "evidence_id": "EVD-ULM-BALAFIQI",
+  "relation": "supports",
+  "ordinal": 1
  }
 ]
