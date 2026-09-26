@@ -713,5 +713,15 @@
   "assertion_id": "AST-HMK-01",
   "claim_id": "CLM-TAI-03",
   "relation": "ابن همشك وغرناطة"
+ },
+ {
+  "assertion_id": "AST-JHW-01",
+  "claim_id": "CLM-TAI-01",
+  "relation": "وفاة محمد بن جهور"
+ },
+ {
+  "assertion_id": "AST-QSI-01",
+  "claim_id": "CLM-MRB-01",
+  "relation": "مقتل ابن قسي"
  }
 ]

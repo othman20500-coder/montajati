@@ -275,9 +275,9 @@
   "polity_id": "POL-TAI-CORDOBA",
   "role": "رئيس (مدبر قرطبة)",
   "start_year": 1043,
-  "end_year": null,
-  "precision": "سنة البداية 435هـ؛ النهاية لم أتحقق منها",
-  "note_ar": "AST-TAI-03 وAST-TAI-04"
+  "end_year": 1070,
+  "precision": "سنة (435هـ – سُجن ثم توفي في سجن المعتمد نصف شوال 462هـ)",
+  "note_ar": "AST-TAI-03 وAST-TAI-04 وAST-JHW-01"
  },
  {
   "tenure_id": "TEN-TAI-03",
