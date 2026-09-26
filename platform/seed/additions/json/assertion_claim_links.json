@@ -813,5 +813,25 @@
   "assertion_id": "AST-GRN-16",
   "claim_id": "CLM-NSR-01",
   "relation": "ولاية أبي الحسن علي بخلع أبيه (دراسة حديثة)"
+ },
+ {
+  "assertion_id": "AST-VIZ-01",
+  "claim_id": "CLM-VIZ-01",
+  "relation": "خطة ابن الجيّاب ومشيخته لابن الخطيب ومدة كتابته (شاهد أولي)"
+ },
+ {
+  "assertion_id": "AST-VIZ-02",
+  "claim_id": "CLM-VIZ-01",
+  "relation": "وفاة ابن الجيّاب 749هـ وخلافة ابن الخطيب (دراسة حديثة، بتنبيه)"
+ },
+ {
+  "assertion_id": "AST-VIZ-03",
+  "claim_id": "CLM-VIZ-02",
+  "relation": "خلافة ابن الخطيب لابن الجيّاب في الكتابة ثم الوزارة"
+ },
+ {
+  "assertion_id": "AST-VIZ-04",
+  "claim_id": "CLM-VIZ-03",
+  "relation": "كتابة ابن زمرك ووزارته بعد ابن الخطيب وتلمذته له"
  }
 ]

@@ -903,5 +903,20 @@
   "claim_id": "CLM-NSR-01",
   "entity_id": "PER-036",
   "role": "person"
+ },
+ {
+  "claim_id": "CLM-VIZ-01",
+  "entity_id": "PER-JAYYAB",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-VIZ-02",
+  "entity_id": "PER-018",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-VIZ-03",
+  "entity_id": "PER-035",
+  "role": "person"
  }
 ]

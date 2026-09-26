@@ -542,5 +542,21 @@
   "script": "Arabic",
   "language": "ar",
   "normalized": "وقعة العقاب"
+ },
+ {
+  "alias_id": "ALIAS-JAYYAB-01",
+  "entity_id": "PER-JAYYAB",
+  "alias": "ابن الجيّاب",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "ابن الجياب"
+ },
+ {
+  "alias_id": "ALIAS-JAYYAB-02",
+  "entity_id": "PER-JAYYAB",
+  "alias": "أبو الحسن علي بن الجياب",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "ابو الحسن علي بن الجياب"
  }
 ]
