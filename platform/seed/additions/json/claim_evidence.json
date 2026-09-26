@@ -550,5 +550,23 @@
   "evidence_id": "EVD-SHQ-DHAHABI",
   "relation": "supports",
   "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-VIZ-01",
+  "evidence_id": "EVD-VIZ-IHATA",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-VIZ-02",
+  "evidence_id": "EVD-VIZ-IHATA",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-VIZ-03",
+  "evidence_id": "EVD-VIZ-NAFH",
+  "relation": "supports",
+  "ordinal": 1
  }
 ]
