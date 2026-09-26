@@ -488,5 +488,25 @@
   "claim_id": "CLM-TAI-02",
   "source_id": "LIB-PRI-049",
   "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-GEO-01",
+  "source_id": "LIB-PRI-050",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-GEO-02",
+  "source_id": "LIB-PRI-050",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-GEO-02",
+  "source_id": "LIB-PRI-044",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-GEO-03",
+  "source_id": "LIB-PRI-050",
+  "ordinal": 1
  }
 ]

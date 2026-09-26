@@ -454,5 +454,23 @@
   "evidence_id": "EVD-TAI-DHAHABI",
   "relation": "supports",
   "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-GEO-01",
+  "evidence_id": "EVD-GEO-RAWD",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-GEO-02",
+  "evidence_id": "EVD-GEO-RAWD",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-GEO-03",
+  "evidence_id": "EVD-GEO-RAWD",
+  "relation": "supports",
+  "ordinal": 1
  }
 ]
