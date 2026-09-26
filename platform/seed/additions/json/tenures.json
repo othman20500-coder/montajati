@@ -548,5 +548,35 @@
   "end_year": 1333,
   "precision": "سنة (27 رجب 725هـ – قُتل 13 ذي الحجة 733هـ)",
   "note_ar": "AST-GRN-05؛ خلفه أخوه يوسف الأول (TEN-010 في البذور، 1333)"
+ },
+ {
+  "tenure_id": "TEN-NAS-Y2",
+  "person_id": "PER-YUSUF-II",
+  "polity_id": "POL-008",
+  "role": "سلطان",
+  "start_year": 1391,
+  "end_year": 1394,
+  "precision": "سنة (793هـ/1391م – أوائل 797هـ/1394م، عن عنان؛ دراسة حديثة)",
+  "note_ar": "AST-GRN-06؛ السنون كما أوردها عنان مقترنةً هجريًّا وميلاديًّا"
+ },
+ {
+  "tenure_id": "TEN-NAS-M7",
+  "person_id": "PER-MUHAMMAD-VII",
+  "polity_id": "POL-008",
+  "role": "سلطان",
+  "start_year": 1394,
+  "end_year": 1408,
+  "precision": "سنة (797هـ/1394م – 811هـ/1408م عند عنان، و810هـ عند الزركلي؛ دراسة حديثة)",
+  "note_ar": "AST-GRN-07؛ خلاف سنة الوفاة مثبت (811/810هـ)"
+ },
+ {
+  "tenure_id": "TEN-NAS-Y3",
+  "person_id": "PER-YUSUF-III",
+  "polity_id": "POL-008",
+  "role": "سلطان",
+  "start_year": 1408,
+  "end_year": 1417,
+  "precision": "سنة (811هـ/1408م – 820هـ/1417م، عن عنان؛ دراسة حديثة)",
+  "note_ar": "AST-GRN-08؛ خلفه ابنه محمد الأيسر (خارج هذه الدفعة)"
  }
 ]
