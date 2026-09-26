@@ -883,5 +883,15 @@
   "claim_id": "CLM-NSR-01",
   "entity_id": "PER-YUSUF-IV-IBN-MAWL",
   "role": "person"
+ },
+ {
+  "claim_id": "CLM-NSR-01",
+  "entity_id": "PER-MUHAMMAD-AL-AHNAF",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-NSR-01",
+  "entity_id": "PER-YUSUF-V-IBN-ISMAIL",
+  "role": "person"
  }
 ]
