@@ -8,5 +8,25 @@
   "anchor_type": "modern city anchor",
   "coordinate_source": "نتائج بحث ويب 2026-09-24 (نحو 35.889، −5.320؛ لم تُفتح صفحة المصدر بسبب حجب الشبكة، تُراجع عند توفرها)",
   "last_verified": "2026-09-24"
+ },
+ {
+  "entity_id": "PLC-ALARCOS",
+  "lat": 38.87,
+  "lon": -3.98,
+  "geometry_type": "Point",
+  "spatial_quality": "approximate battlefield locality, not exact",
+  "anchor_type": "modern site anchor (approximate)",
+  "coordinate_source": "إحداثية تقريبية من معرفة جغرافية عامة (الأرك يُطابَق بموقع Alarcos الأثري قرب ثيوداد ريال)؛ لم تُفتح صفحة مصدر بسبب حجب الشبكة، تُراجع عند توفره",
+  "last_verified": "2026-09-26"
+ },
+ {
+  "entity_id": "PLC-LAS-NAVAS",
+  "lat": 38.28,
+  "lon": -3.58,
+  "geometry_type": "Point",
+  "spatial_quality": "approximate battlefield locality, not exact",
+  "anchor_type": "modern site anchor (approximate)",
+  "coordinate_source": "إحداثية تقريبية من معرفة جغرافية عامة (العقاب يُطابَق بموضع Las Navas de Tolosa قرب سانتا إيلينا/خيان)؛ لم تُفتح صفحة مصدر بسبب حجب الشبكة، تُراجع عند توفره",
+  "last_verified": "2026-09-26"
  }
 ]

@@ -6,5 +6,21 @@
   "historical_status": "verified_claim_linked",
   "display_priority": 55,
   "note_ar": "أضيف مع خريطة الزلاقة على مراحل (CHG-1217)"
+ },
+ {
+  "entity_id": "PLC-ALARCOS",
+  "period_group": "taifa_empires",
+  "theme": "politics",
+  "historical_status": "verified_claim_linked",
+  "display_priority": 50,
+  "note_ar": "موضع وقعة الأرك 591هـ (EVT-023)؛ مرساة تقريبية تُراجع"
+ },
+ {
+  "entity_id": "PLC-LAS-NAVAS",
+  "period_group": "taifa_empires",
+  "theme": "politics",
+  "historical_status": "verified_claim_linked",
+  "display_priority": 50,
+  "note_ar": "موضع وقعة العقاب 609هـ (EVT-024)؛ مرساة تقريبية تُراجع"
  }
 ]
