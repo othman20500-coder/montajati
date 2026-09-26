@@ -6680,5 +6680,57 @@
   "note_ar": "سقوط جبل طارق في عهد ابن إسماعيل",
   "url": "https://shamela.ws/book/1009/2639",
   "checked_on": "2026-09-26"
+ },
+ {
+  "attestation_id": "ATT-GRN-46",
+  "assertion_id": "AST-GRN-15",
+  "source_id": "LIB-BK-005",
+  "source_kind": "دراسة حديثة",
+  "locator": "ج5 ص167",
+  "quote": "أن الأمير سعداً عاد فهاجم الحمراء مع أنصاره وانتزع العرش لنفسه (١٤٦٣ م)",
+  "stance": "يدعم",
+  "verbatim_check": "مطابق حرفيًا بأداة verify_quote في وصلة الشاملة (2026-09-26) — من دراسة حديثة",
+  "note_ar": "استعادة سعد للعرش 1463م",
+  "url": "https://shamela.ws/book/1009/2641",
+  "checked_on": "2026-09-26"
+ },
+ {
+  "attestation_id": "ATT-GRN-47",
+  "assertion_id": "AST-GRN-15",
+  "source_id": "LIB-BK-005",
+  "source_kind": "دراسة حديثة",
+  "locator": "ج5 ص167، نقلًا عن عبد الباسط بن خليل",
+  "quote": "كان سعد بن محمد بن يوسف المستعين بالله المعروف بابن الأحمر",
+  "stance": "يدعم",
+  "verbatim_check": "مطابق حرفيًا بأداة verify_quote في وصلة الشاملة (2026-09-26) — من دراسة حديثة",
+  "note_ar": "نسب سعد ولقبه",
+  "url": "https://shamela.ws/book/1009/2641",
+  "checked_on": "2026-09-26"
+ },
+ {
+  "attestation_id": "ATT-GRN-48",
+  "assertion_id": "AST-GRN-15",
+  "source_id": "LIB-BK-005",
+  "source_kind": "دراسة حديثة",
+  "locator": "ج5 ص167",
+  "quote": "واختار سعد الإقامة فى ألمرية فلم يعترض ولده، ولم يلبث أن توفى فى أواخر هذا العام، وعندئذ خلص العرش لأبى الحسن",
+  "stance": "يدعم",
+  "verbatim_check": "مطابق حرفيًا بأداة verify_quote في وصلة الشاملة (2026-09-26) — من دراسة حديثة",
+  "note_ar": "وفاة سعد بألمرية أواخر 868هـ",
+  "url": "https://shamela.ws/book/1009/2641",
+  "checked_on": "2026-09-26"
+ },
+ {
+  "attestation_id": "ATT-GRN-49",
+  "assertion_id": "AST-GRN-16",
+  "source_id": "LIB-BK-005",
+  "source_kind": "دراسة حديثة",
+  "locator": "ج5 ص167، نقلًا عن عبد الباسط بن خليل",
+  "quote": "ما كاد يجلس على العرش حتى ثار عليه ولده أبو الحسن بتحريض بنى سراج وأخرجه عن غرناطة وامتلكها",
+  "stance": "يدعم",
+  "verbatim_check": "مطابق حرفيًا بأداة verify_quote في وصلة الشاملة (2026-09-26) — من دراسة حديثة",
+  "note_ar": "أبو الحسن علي (PER-036 في البذور) خلع أباه سعدًا 1464",
+  "url": "https://shamela.ws/book/1009/2641",
+  "checked_on": "2026-09-26"
  }
 ]

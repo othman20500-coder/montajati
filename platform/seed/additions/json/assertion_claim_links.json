@@ -803,5 +803,15 @@
   "assertion_id": "AST-GRN-14",
   "claim_id": "CLM-NSR-01",
   "relation": "ولاية يوسف الخامس ابن إسماعيل (دراسة حديثة)"
+ },
+ {
+  "assertion_id": "AST-GRN-15",
+  "claim_id": "CLM-NSR-01",
+  "relation": "ولاية سعد المستعين (دراسة حديثة)"
+ },
+ {
+  "assertion_id": "AST-GRN-16",
+  "claim_id": "CLM-NSR-01",
+  "relation": "ولاية أبي الحسن علي بخلع أبيه (دراسة حديثة)"
  }
 ]
