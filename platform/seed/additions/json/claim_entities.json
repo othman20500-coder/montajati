@@ -343,5 +343,105 @@
   "claim_id": "CLM-AMR-02",
   "entity_id": "PLC-CORDOBA",
   "role": "place"
+ },
+ {
+  "claim_id": "CLM-CAL-03",
+  "entity_id": "PER-ALHAKAM-II",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-CAL-03",
+  "entity_id": "PER-HISHAM-II",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-CAL-03",
+  "entity_id": "PER-004",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-CAL-03",
+  "entity_id": "PER-ABDALMALIK-AL-MUZAFFAR",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-CAL-03",
+  "entity_id": "PER-ABDALRAHMAN-SANCHUELO",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-CAL-03",
+  "entity_id": "PER-MUHAMMAD-AL-MAHDI",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-CAL-03",
+  "entity_id": "POL-002",
+  "role": "polity"
+ },
+ {
+  "claim_id": "CLM-CAL-03",
+  "entity_id": "PLC-CORDOBA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-CAL-04",
+  "entity_id": "PER-MUHAMMAD-AL-MAHDI",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-CAL-04",
+  "entity_id": "PER-SULAYMAN-AL-MUSTAIN",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-CAL-04",
+  "entity_id": "PER-HISHAM-II",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-CAL-04",
+  "entity_id": "PER-ALI-IBN-HAMMUD",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-CAL-04",
+  "entity_id": "PER-AL-QASIM-IBN-HAMMUD",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-CAL-04",
+  "entity_id": "PER-YAHYA-AL-MUTALI",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-CAL-04",
+  "entity_id": "PER-ABDALRAHMAN-AL-MUSTAZHIR",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-CAL-04",
+  "entity_id": "PER-MUHAMMAD-AL-MUSTAKFI",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-CAL-04",
+  "entity_id": "PER-HISHAM-AL-MUTADD",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-CAL-04",
+  "entity_id": "PER-ABDALRAHMAN-AL-MURTADA",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-CAL-04",
+  "entity_id": "POL-002",
+  "role": "polity"
+ },
+ {
+  "claim_id": "CLM-CAL-04",
+  "entity_id": "PLC-CORDOBA",
+  "role": "place"
  }
 ]

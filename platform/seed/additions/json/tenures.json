@@ -98,5 +98,165 @@
   "end_year": 912,
   "precision": "سنة (صفر 275هـ – ربيع الأول 300هـ، تحويل جدولي تقريبي)",
   "note_ar": "الإسناد AST-AMR-11"
+ },
+ {
+  "tenure_id": "TEN-CAL-04",
+  "person_id": "PER-HISHAM-II",
+  "polity_id": "POL-002",
+  "role": "خليفة",
+  "start_year": 976,
+  "end_year": 1009,
+  "precision": "سنة (4 صفر 366هـ – 18 جمادى الآخرة 399هـ، تحويل جدولي تقريبي)",
+  "note_ar": "الخلافة الأولى؛ AST-CAL-09 وAST-CAL-10"
+ },
+ {
+  "tenure_id": "TEN-HJB-01",
+  "person_id": "PER-004",
+  "polity_id": "POL-002",
+  "role": "حاجب",
+  "start_year": 976,
+  "end_year": 1002,
+  "precision": "سنة (من أوائل خلافة هشام المؤيد إلى وفاته 27 رمضان 392هـ؛ بداية الاستبداد بالأمر غير مؤرخة بيوم)",
+  "note_ar": "AST-CAL-04 وAST-020"
+ },
+ {
+  "tenure_id": "TEN-HJB-02",
+  "person_id": "PER-ABDALMALIK-AL-MUZAFFAR",
+  "polity_id": "POL-002",
+  "role": "حاجب",
+  "start_year": 1002,
+  "end_year": 1008,
+  "precision": "سنة (392هـ – 17 صفر 399هـ، وقيل 398هـ)",
+  "note_ar": "AST-CAL-22"
+ },
+ {
+  "tenure_id": "TEN-HJB-03",
+  "person_id": "PER-ABDALRAHMAN-SANCHUELO",
+  "polity_id": "POL-002",
+  "role": "حاجب",
+  "start_year": 1008,
+  "end_year": 1009,
+  "precision": "سنة (صفر – جمادى الآخرة 399هـ؛ نحو أربعة أشهر)",
+  "note_ar": "AST-CAL-23"
+ },
+ {
+  "tenure_id": "TEN-CAL-05",
+  "person_id": "PER-MUHAMMAD-AL-MAHDI",
+  "polity_id": "POL-002",
+  "role": "خليفة",
+  "start_year": 1009,
+  "end_year": 1010,
+  "precision": "سنة (18 جمادى الآخرة 399هـ – ذو الحجة 400هـ، مع فترة تغلب سليمان على قرطبة ربيع الآخر–شوال 400هـ)",
+  "note_ar": "AST-CAL-12"
+ },
+ {
+  "tenure_id": "TEN-CAL-06",
+  "person_id": "PER-SULAYMAN-AL-MUSTAIN",
+  "polity_id": "POL-002",
+  "role": "خليفة",
+  "start_year": 1009,
+  "end_year": 1010,
+  "precision": "سنة (بيعته 6 شوال 399هـ؛ بقرطبة ربيع الآخر – شوال 400هـ)",
+  "note_ar": "الولاية الأولى؛ AST-CAL-13"
+ },
+ {
+  "tenure_id": "TEN-CAL-07",
+  "person_id": "PER-HISHAM-II",
+  "polity_id": "POL-002",
+  "role": "خليفة",
+  "start_year": 1010,
+  "end_year": 1013,
+  "precision": "سنة (7 ذو الحجة 400هـ – 5 شوال 403هـ)",
+  "note_ar": "الخلافة الثانية؛ AST-CAL-10 وAST-CAL-11"
+ },
+ {
+  "tenure_id": "TEN-CAL-08",
+  "person_id": "PER-SULAYMAN-AL-MUSTAIN",
+  "polity_id": "POL-002",
+  "role": "خليفة",
+  "start_year": 1013,
+  "end_year": 1016,
+  "precision": "سنة (شوال 403هـ – المحرم 407هـ)",
+  "note_ar": "الولاية الثانية؛ AST-CAL-13 وAST-CAL-14"
+ },
+ {
+  "tenure_id": "TEN-CAL-09",
+  "person_id": "PER-ALI-IBN-HAMMUD",
+  "polity_id": "POL-002",
+  "role": "خليفة",
+  "start_year": 1016,
+  "end_year": 1018,
+  "precision": "سنة (المحرم 407هـ – ذو القعدة 408هـ)",
+  "note_ar": "AST-CAL-15"
+ },
+ {
+  "tenure_id": "TEN-CAL-10",
+  "person_id": "PER-AL-QASIM-IBN-HAMMUD",
+  "polity_id": "POL-002",
+  "role": "خليفة",
+  "start_year": 1018,
+  "end_year": 1021,
+  "precision": "سنة (ذو القعدة 408هـ – ربيع الأول 412هـ)",
+  "note_ar": "الولاية الأولى؛ AST-CAL-16"
+ },
+ {
+  "tenure_id": "TEN-CAL-11",
+  "person_id": "PER-YAHYA-AL-MUTALI",
+  "polity_id": "POL-002",
+  "role": "خليفة",
+  "start_year": 1021,
+  "end_year": 1023,
+  "precision": "سنة (مستهل جمادى الأولى 412هـ – ذو القعدة 413هـ)",
+  "note_ar": "الولاية الأولى بقرطبة؛ AST-CAL-17"
+ },
+ {
+  "tenure_id": "TEN-CAL-12",
+  "person_id": "PER-AL-QASIM-IBN-HAMMUD",
+  "polity_id": "POL-002",
+  "role": "خليفة",
+  "start_year": 1023,
+  "end_year": 1023,
+  "precision": "سنة (18 ذو القعدة 413هـ – شعبان 414هـ)",
+  "note_ar": "الولاية الثانية؛ AST-CAL-16"
+ },
+ {
+  "tenure_id": "TEN-CAL-13",
+  "person_id": "PER-ABDALRAHMAN-AL-MUSTAZHIR",
+  "polity_id": "POL-002",
+  "role": "خليفة",
+  "start_year": 1023,
+  "end_year": 1024,
+  "precision": "يوم (13 رمضان – 27 ذو القعدة 414هـ؛ 47 يومًا)",
+  "note_ar": "AST-CAL-18"
+ },
+ {
+  "tenure_id": "TEN-CAL-14",
+  "person_id": "PER-MUHAMMAD-AL-MUSTAKFI",
+  "polity_id": "POL-002",
+  "role": "خليفة",
+  "start_year": 1024,
+  "end_year": 1025,
+  "precision": "سنة (ذو القعدة 414هـ – ربيع الأول 416هـ)",
+  "note_ar": "AST-CAL-19"
+ },
+ {
+  "tenure_id": "TEN-CAL-15",
+  "person_id": "PER-YAHYA-AL-MUTALI",
+  "polity_id": "POL-002",
+  "role": "خليفة",
+  "start_year": 1025,
+  "end_year": 1026,
+  "precision": "سنة (رمضان 416هـ – ربيع الأول 417هـ؛ دعوة بقرطبة عبر واليه ابن عطاف دون حضوره)",
+  "note_ar": "الولاية الثانية؛ AST-CAL-17"
+ },
+ {
+  "tenure_id": "TEN-CAL-16",
+  "person_id": "PER-HISHAM-AL-MUTADD",
+  "polity_id": "POL-002",
+  "role": "خليفة",
+  "start_year": 1027,
+  "end_year": 1031,
+  "precision": "سنة (ربيع الأول 418هـ بالثغور – خلعه سنة 422هـ؛ دخل قرطبة 8 ذو الحجة 420هـ)",
+  "note_ar": "AST-CAL-20 وAST-CAL-06"
  }
 ]

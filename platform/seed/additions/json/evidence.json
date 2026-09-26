@@ -238,5 +238,45 @@
   "description_ar": "لم يتلقبوا إلا هشام الرضا، والحكم الربضي لقتله أهل الربض، ولم يتسموا بإمرة المؤمنين حتى الناصر.",
   "confidence": "عالٍ (نص تراثي محقق)",
   "source_id": "LIB-PRI-044"
+ },
+ {
+  "evidence_id": "EVD-KHL-HAZM",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "ذكر أوقات الأمراء وأيامهم بالأندلس (رسائل ابن حزم ج2 ص194–204، ونقط العروس ص97)",
+  "date_text": "تأليف قبل 456هـ؛ ناقله الحميدي (ت 488هـ)",
+  "place_entity_id": "PLC-CORDOBA",
+  "description_ar": "شاهد عيان على الفتنة: مواليد الخلفاء وأيام بيعتهم وخلعهم ومقاتلهم بالأيام والشهور، من الناصر إلى هشام المعتد والحموديين.",
+  "confidence": "عالٍ (معاصر للأحداث؛ منقول بواسطة الحميدي)",
+  "source_id": "LIB-PRI-044"
+ },
+ {
+  "evidence_id": "EVD-KHL-KAMIL",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "أخبار الفتنة والدولة العلوية بالأندلس عند ابن الأثير (الكامل ج7 ص615–630)",
+  "date_text": "تأليف قبل 630هـ",
+  "place_entity_id": "PLC-CORDOBA",
+  "description_ar": "سرد متصل للحموديين وعود بني أمية بالأيام، مع نقل الخلاف في مصير هشام المؤيد.",
+  "confidence": "عالٍ (نص تراثي محقق؛ متأخر عن الأحداث)",
+  "source_id": "LIB-PRI-046"
+ },
+ {
+  "evidence_id": "EVD-KHL-DHAHABI",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "تراجم المظفر وشنجول والمستعين عند الذهبي (تاريخ الإسلام ج27 ص374–375، ج28 ص158–159)",
+  "date_text": "تأليف قبل 748هـ",
+  "place_entity_id": "PLC-CORDOBA",
+  "description_ar": "ترجيح الذهبي لتاريخ وفاة المظفر، وتسلسل الخلع والبيعة سنة 399هـ، وترجمة المستعين بنقل عن الحميدي.",
+  "confidence": "متوسط–عالٍ (متأخر؛ ينقل عن مصادر أقدم)",
+  "source_id": "LIB-PRI-049"
+ },
+ {
+  "evidence_id": "EVD-KHL-BAYAN",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "وفاة المستنصر وبيعة هشام المؤيد وخلعه عند ابن عذاري (البيان المغرب ج2 ص253)",
+  "date_text": "تأليف نحو 712هـ",
+  "place_entity_id": "PLC-CORDOBA",
+  "description_ar": "يوم بيعة هشام وعمره ويوم خلعه ومدة خلافتيه.",
+  "confidence": "عالٍ (نص تراثي محقق)",
+  "source_id": "LIB-PRI-036"
  }
 ]

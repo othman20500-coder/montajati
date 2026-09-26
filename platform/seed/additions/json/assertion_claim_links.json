@@ -403,5 +403,95 @@
   "assertion_id": "AST-AMR-01",
   "claim_id": "CLM-EMR-01",
   "relation": "وفاة المؤسس"
+ },
+ {
+  "assertion_id": "AST-CAL-08",
+  "claim_id": "CLM-CAL-03",
+  "relation": "وفاة المستنصر"
+ },
+ {
+  "assertion_id": "AST-CAL-09",
+  "claim_id": "CLM-CAL-03",
+  "relation": "بيعة هشام"
+ },
+ {
+  "assertion_id": "AST-CAL-22",
+  "claim_id": "CLM-CAL-03",
+  "relation": "حجابة المظفر"
+ },
+ {
+  "assertion_id": "AST-CAL-23",
+  "claim_id": "CLM-CAL-03",
+  "relation": "حجابة شنجول ومقتله"
+ },
+ {
+  "assertion_id": "AST-CAL-10",
+  "claim_id": "CLM-CAL-03",
+  "relation": "خلع هشام"
+ },
+ {
+  "assertion_id": "AST-CAL-10",
+  "claim_id": "CLM-CAL-04",
+  "relation": "رد هشام"
+ },
+ {
+  "assertion_id": "AST-CAL-11",
+  "claim_id": "CLM-CAL-04",
+  "relation": "نهاية هشام"
+ },
+ {
+  "assertion_id": "AST-CAL-12",
+  "claim_id": "CLM-CAL-04",
+  "relation": "المهدي"
+ },
+ {
+  "assertion_id": "AST-CAL-13",
+  "claim_id": "CLM-CAL-04",
+  "relation": "المستعين"
+ },
+ {
+  "assertion_id": "AST-CAL-14",
+  "claim_id": "CLM-CAL-04",
+  "relation": "مقتل المستعين"
+ },
+ {
+  "assertion_id": "AST-CAL-15",
+  "claim_id": "CLM-CAL-04",
+  "relation": "علي بن حمود"
+ },
+ {
+  "assertion_id": "AST-CAL-16",
+  "claim_id": "CLM-CAL-04",
+  "relation": "القاسم"
+ },
+ {
+  "assertion_id": "AST-CAL-17",
+  "claim_id": "CLM-CAL-04",
+  "relation": "يحيى"
+ },
+ {
+  "assertion_id": "AST-CAL-18",
+  "claim_id": "CLM-CAL-04",
+  "relation": "المستظهر"
+ },
+ {
+  "assertion_id": "AST-CAL-19",
+  "claim_id": "CLM-CAL-04",
+  "relation": "المستكفي"
+ },
+ {
+  "assertion_id": "AST-CAL-20",
+  "claim_id": "CLM-CAL-04",
+  "relation": "المعتد"
+ },
+ {
+  "assertion_id": "AST-CAL-21",
+  "claim_id": "CLM-CAL-04",
+  "relation": "المرتضى"
+ },
+ {
+  "assertion_id": "AST-CAL-24",
+  "claim_id": "CLM-CAL-04",
+  "relation": "الدولة الحمودية"
  }
 ]
