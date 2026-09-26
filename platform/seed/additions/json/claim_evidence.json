@@ -472,5 +472,71 @@
   "evidence_id": "EVD-GEO-RAWD",
   "relation": "supports",
   "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-MRB-01",
+  "evidence_id": "EVD-MWH-MUJIB",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-MRB-01",
+  "evidence_id": "EVD-MWH-KAMIL",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-MRB-01",
+  "evidence_id": "EVD-MWH-DHAHABI",
+  "relation": "supports",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-MWH-01",
+  "evidence_id": "EVD-MWH-MUJIB",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-MWH-01",
+  "evidence_id": "EVD-MWH-KAMIL",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-MWH-01",
+  "evidence_id": "EVD-MWH-DHAHABI",
+  "relation": "supports",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-MWH-02",
+  "evidence_id": "EVD-MWH-MUJIB",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-MWH-02",
+  "evidence_id": "EVD-ARK-TAKMILA",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-MWH-02",
+  "evidence_id": "EVD-MWH-DHAHABI",
+  "relation": "supports",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-NSR-01",
+  "evidence_id": "EVD-NSR-IHATA",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-NSR-01",
+  "evidence_id": "EVD-MWH-DHAHABI",
+  "relation": "supports",
+  "ordinal": 2
  }
 ]

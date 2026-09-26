@@ -350,5 +350,77 @@
   "script": "Latin",
   "language": "la",
   "normalized": "hispania"
+ },
+ {
+  "alias_id": "ALIAS-MWH-01",
+  "entity_id": "PER-ALI-IBN-YUSUF",
+  "alias": "علي بن يوسف",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "علي بن يوسف"
+ },
+ {
+  "alias_id": "ALIAS-MWH-02",
+  "entity_id": "PER-TASHFIN-IBN-ALI",
+  "alias": "تاشفين بن علي",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "تاشفين بن علي"
+ },
+ {
+  "alias_id": "ALIAS-MWH-03",
+  "entity_id": "PER-IBN-QASI",
+  "alias": "ابن قسي",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "ابن قسي"
+ },
+ {
+  "alias_id": "ALIAS-MWH-04",
+  "entity_id": "PER-ABDALMUMIN",
+  "alias": "عبد المؤمن",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "عبد المؤمن"
+ },
+ {
+  "alias_id": "ALIAS-MWH-05",
+  "entity_id": "PER-ABU-YAQUB-YUSUF",
+  "alias": "أبو يعقوب يوسف",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "أبو يعقوب يوسف"
+ },
+ {
+  "alias_id": "ALIAS-MWH-06",
+  "entity_id": "PER-YAQUB-AL-MANSUR",
+  "alias": "يعقوب المنصور",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "يعقوب المنصور"
+ },
+ {
+  "alias_id": "ALIAS-MWH-07",
+  "entity_id": "PER-YAQUB-AL-MANSUR",
+  "alias": "المنصور الموحدي",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "المنصور الموحدي"
+ },
+ {
+  "alias_id": "ALIAS-MWH-08",
+  "entity_id": "PER-AL-NASIR-MUHAMMAD",
+  "alias": "الناصر الموحدي",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "الناصر الموحدي"
+ },
+ {
+  "alias_id": "ALIAS-MWH-09",
+  "entity_id": "PER-AL-MUSTANSIR-YUSUF",
+  "alias": "المستنصر الموحدي",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "المستنصر الموحدي"
  }
 ]

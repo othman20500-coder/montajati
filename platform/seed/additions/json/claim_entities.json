@@ -628,5 +628,165 @@
   "claim_id": "CLM-GEO-03",
   "entity_id": "PLC-TOLEDO",
   "role": "place"
+ },
+ {
+  "claim_id": "CLM-MRB-01",
+  "entity_id": "POL-006",
+  "role": "polity"
+ },
+ {
+  "claim_id": "CLM-MRB-01",
+  "entity_id": "PER-YUSUF-IBN-TASHFIN",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-MRB-01",
+  "entity_id": "PER-ALI-IBN-YUSUF",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-MRB-01",
+  "entity_id": "PER-TASHFIN-IBN-ALI",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-MRB-01",
+  "entity_id": "PER-IBN-QASI",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-MRB-01",
+  "entity_id": "PER-ABDALMUMIN",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-MRB-01",
+  "entity_id": "PLC-013",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-MRB-01",
+  "entity_id": "PLC-GRANADA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-MRB-01",
+  "entity_id": "PLC-SEVILLE",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-MWH-01",
+  "entity_id": "POL-007",
+  "role": "polity"
+ },
+ {
+  "claim_id": "CLM-MWH-01",
+  "entity_id": "PER-ABDALMUMIN",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-MWH-01",
+  "entity_id": "PER-ABU-YAQUB-YUSUF",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-MWH-01",
+  "entity_id": "PER-YAQUB-AL-MANSUR",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-MWH-01",
+  "entity_id": "PER-AL-NASIR-MUHAMMAD",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-MWH-01",
+  "entity_id": "PER-AL-MUSTANSIR-YUSUF",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-MWH-01",
+  "entity_id": "PLC-CEUTA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-MWH-01",
+  "entity_id": "PLC-ALGECIRAS",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-MWH-01",
+  "entity_id": "PLC-RONDA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-MWH-01",
+  "entity_id": "PLC-SEVILLE",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-MWH-01",
+  "entity_id": "PLC-CORDOBA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-MWH-01",
+  "entity_id": "PLC-GRANADA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-MWH-02",
+  "entity_id": "POL-007",
+  "role": "polity"
+ },
+ {
+  "claim_id": "CLM-MWH-02",
+  "entity_id": "PER-YAQUB-AL-MANSUR",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-MWH-02",
+  "entity_id": "PER-AL-NASIR-MUHAMMAD",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-MWH-02",
+  "entity_id": "PLC-SEVILLE",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-MWH-02",
+  "entity_id": "PLC-JAEN",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-NSR-01",
+  "entity_id": "POL-008",
+  "role": "polity"
+ },
+ {
+  "claim_id": "CLM-NSR-01",
+  "entity_id": "PER-030",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-NSR-01",
+  "entity_id": "PLC-JAEN",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-NSR-01",
+  "entity_id": "PLC-SEVILLE",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-NSR-01",
+  "entity_id": "PLC-CORDOBA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-NSR-01",
+  "entity_id": "PLC-GRANADA",
+  "role": "place"
  }
 ]

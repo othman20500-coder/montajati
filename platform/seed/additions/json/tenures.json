@@ -398,5 +398,85 @@
   "end_year": 1091,
   "precision": "سنة (443هـ – 22 ربيع الأول 484هـ)",
   "note_ar": "AST-TAI-13"
+ },
+ {
+  "tenure_id": "TEN-MRB-01",
+  "person_id": "PER-YUSUF-IBN-TASHFIN",
+  "polity_id": "POL-006",
+  "role": "أمير المسلمين",
+  "start_year": 1091,
+  "end_year": 1107,
+  "precision": "سنة (484هـ ضم الطوائف – 500هـ الوفاة)",
+  "note_ar": "AST-TAI-14 وAST-MRB-01"
+ },
+ {
+  "tenure_id": "TEN-MRB-02",
+  "person_id": "PER-ALI-IBN-YUSUF",
+  "polity_id": "POL-006",
+  "role": "أمير المسلمين",
+  "start_year": 1107,
+  "end_year": 1143,
+  "precision": "سنة (500هـ – 7 رجب 537هـ)",
+  "note_ar": "AST-MRB-02"
+ },
+ {
+  "tenure_id": "TEN-MRB-03",
+  "person_id": "PER-TASHFIN-IBN-ALI",
+  "polity_id": "POL-006",
+  "role": "أمير المسلمين",
+  "start_year": 1143,
+  "end_year": 1144,
+  "precision": "سنة (537هـ – 539هـ عند ابن الأثير / 540هـ عند الذهبي)",
+  "note_ar": "AST-MRB-04"
+ },
+ {
+  "tenure_id": "TEN-MWH-01",
+  "person_id": "PER-ABDALMUMIN",
+  "polity_id": "POL-007",
+  "role": "أمير المؤمنين (خليفة الموحدين)",
+  "start_year": null,
+  "end_year": 1163,
+  "precision": "النهاية 558هـ؛ سنة دخول الأندلس في طاعته لم أتحقق منها من نص صريح",
+  "note_ar": "AST-MWH-01 وAST-MWH-02"
+ },
+ {
+  "tenure_id": "TEN-MWH-02",
+  "person_id": "PER-ABU-YAQUB-YUSUF",
+  "polity_id": "POL-007",
+  "role": "أمير المؤمنين (خليفة الموحدين)",
+  "start_year": 1163,
+  "end_year": 1184,
+  "precision": "سنة (شعبان 558هـ – 7 رجب 580هـ)",
+  "note_ar": "AST-MWH-03 وAST-MWH-04"
+ },
+ {
+  "tenure_id": "TEN-MWH-03",
+  "person_id": "PER-YAQUB-AL-MANSUR",
+  "polity_id": "POL-007",
+  "role": "أمير المؤمنين (خليفة الموحدين)",
+  "start_year": 1184,
+  "end_year": 1198,
+  "precision": "سنة (580هـ – 595هـ؛ شهر الوفاة مختلف فيه)",
+  "note_ar": "AST-MWH-05 وAST-MWH-06"
+ },
+ {
+  "tenure_id": "TEN-MWH-04",
+  "person_id": "PER-AL-NASIR-MUHAMMAD",
+  "polity_id": "POL-007",
+  "role": "أمير المؤمنين (خليفة الموحدين)",
+  "start_year": 1198,
+  "end_year": 1214,
+  "precision": "سنة (595هـ – 10 شعبان 610هـ)",
+  "note_ar": "AST-MWH-07 وAST-MWH-08"
+ },
+ {
+  "tenure_id": "TEN-MWH-05",
+  "person_id": "PER-AL-MUSTANSIR-YUSUF",
+  "polity_id": "POL-007",
+  "role": "أمير المؤمنين (خليفة الموحدين)",
+  "start_year": 1214,
+  "end_year": 1223,
+  "precision": "سنة (11 شعبان 610هـ – شوال/ذو القعدة 620هـ)",
+  "note_ar": "AST-MWH-09"
  }
 ]
