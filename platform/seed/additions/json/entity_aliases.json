@@ -526,5 +526,21 @@
   "script": "Arabic",
   "language": "ar",
   "normalized": "يوسف بن يوسف النصري"
+ },
+ {
+  "alias_id": "ALIAS-ALARCOS-01",
+  "entity_id": "PLC-ALARCOS",
+  "alias": "وقعة الأرك",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "وقعة الارك"
+ },
+ {
+  "alias_id": "ALIAS-NAVAS-01",
+  "entity_id": "PLC-LAS-NAVAS",
+  "alias": "وقعة العقاب",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "وقعة العقاب"
  }
 ]
