@@ -578,5 +578,55 @@
   "claim_id": "CLM-TAI-02",
   "entity_id": "POL-006",
   "role": "polity"
+ },
+ {
+  "claim_id": "CLM-GEO-01",
+  "entity_id": "PLC-AL-ANDALUS",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-GEO-01",
+  "entity_id": "PLC-SEVILLE",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-GEO-02",
+  "entity_id": "PLC-AL-ANDALUS",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-GEO-02",
+  "entity_id": "PLC-ALGECIRAS",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-GEO-02",
+  "entity_id": "PLC-CEUTA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-GEO-02",
+  "entity_id": "PLC-PALMA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-GEO-03",
+  "entity_id": "PLC-CORDOBA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-GEO-03",
+  "entity_id": "PLC-SEVILLE",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-GEO-03",
+  "entity_id": "PLC-MERIDA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-GEO-03",
+  "entity_id": "PLC-TOLEDO",
+  "role": "place"
  }
 ]

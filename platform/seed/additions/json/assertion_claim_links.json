@@ -563,5 +563,40 @@
   "assertion_id": "AST-TAI-14",
   "claim_id": "CLM-TAI-02",
   "relation": "نهاية الطوائف"
+ },
+ {
+  "assertion_id": "AST-GEO-01",
+  "claim_id": "CLM-GEO-01",
+  "relation": "الاسم"
+ },
+ {
+  "assertion_id": "AST-GEO-02",
+  "claim_id": "CLM-GEO-01",
+  "relation": "الموقع"
+ },
+ {
+  "assertion_id": "AST-GEO-03",
+  "claim_id": "CLM-GEO-02",
+  "relation": "الشكل"
+ },
+ {
+  "assertion_id": "AST-GEO-04",
+  "claim_id": "CLM-GEO-02",
+  "relation": "الأركان"
+ },
+ {
+  "assertion_id": "AST-GEO-05",
+  "claim_id": "CLM-GEO-02",
+  "relation": "الزقاق"
+ },
+ {
+  "assertion_id": "AST-GEO-06",
+  "claim_id": "CLM-GEO-03",
+  "relation": "القواعد"
+ },
+ {
+  "assertion_id": "AST-GEO-07",
+  "claim_id": "CLM-GEO-03",
+  "relation": "الثغور"
  }
 ]

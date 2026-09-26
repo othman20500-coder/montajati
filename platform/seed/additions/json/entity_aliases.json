@@ -326,5 +326,29 @@
   "script": "Arabic",
   "language": "ar",
   "normalized": "بنو صمادح"
+ },
+ {
+  "alias_id": "ALIAS-GEO-01",
+  "entity_id": "PLC-AL-ANDALUS",
+  "alias": "جزيرة الأندلس",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "جزيرة الأندلس"
+ },
+ {
+  "alias_id": "ALIAS-GEO-02",
+  "entity_id": "PLC-AL-ANDALUS",
+  "alias": "اشبانية",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "اشبانية"
+ },
+ {
+  "alias_id": "ALIAS-GEO-03",
+  "entity_id": "PLC-AL-ANDALUS",
+  "alias": "Hispania",
+  "script": "Latin",
+  "language": "la",
+  "normalized": "hispania"
  }
 ]
