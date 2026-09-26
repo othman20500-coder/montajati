@@ -443,5 +443,140 @@
   "claim_id": "CLM-CAL-04",
   "entity_id": "PLC-CORDOBA",
   "role": "place"
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "entity_id": "PER-JAHWAR-IBN-MUHAMMAD",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "entity_id": "PER-QADI-IBN-ABBAD",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "entity_id": "PER-ABBAD-AL-MUTADID",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "entity_id": "PER-ISMAIL-DHUNNUN",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "entity_id": "PER-YAHYA-AL-MAMUN-DHUNNUN",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "entity_id": "PER-SULAYMAN-IBN-HUD",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "entity_id": "PER-028",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "entity_id": "PER-029",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "entity_id": "PER-KHAYRAN-AL-AMIRI",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "entity_id": "PER-ZUHAYR-AL-AMIRI",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "entity_id": "PER-MAN-IBN-SUMADIH",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "entity_id": "PER-MUHAMMAD-AL-MUZAFFAR-AFTAS",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "entity_id": "POL-TAI-CORDOBA",
+  "role": "polity"
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "entity_id": "POL-003",
+  "role": "polity"
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "entity_id": "POL-TAI-BADAJOZ",
+  "role": "polity"
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "entity_id": "POL-TAI-TOLEDO",
+  "role": "polity"
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "entity_id": "POL-004",
+  "role": "polity"
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "entity_id": "POL-005",
+  "role": "polity"
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "entity_id": "POL-TAI-ALMERIA",
+  "role": "polity"
+ },
+ {
+  "claim_id": "CLM-TAI-02",
+  "entity_id": "PER-YAHYA-AL-QADIR",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-TAI-02",
+  "entity_id": "PER-009",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-TAI-02",
+  "entity_id": "PER-MUHAMMAD-AL-MUTASIM-SUMADIH",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-TAI-02",
+  "entity_id": "PER-YUSUF-IBN-TASHFIN",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-TAI-02",
+  "entity_id": "PER-ALFONSO-VI",
+  "role": "subject"
+ },
+ {
+  "claim_id": "CLM-TAI-02",
+  "entity_id": "PLC-TOLEDO",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-TAI-02",
+  "entity_id": "PLC-SEVILLE",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-TAI-02",
+  "entity_id": "POL-006",
+  "role": "polity"
  }
 ]

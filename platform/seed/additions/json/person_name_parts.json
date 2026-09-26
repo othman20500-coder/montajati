@@ -232,5 +232,140 @@
   "nisba": "المعافري",
   "laqab": "الناصر (شنجول)",
   "origin": "رسائل ابن حزم ج2 ص196؛ تاريخ الإسلام ج27 ص375"
+ },
+ {
+  "entity_id": "PER-JAHWAR-IBN-MUHAMMAD",
+  "ism": "جهور",
+  "kunya": "أبو الحزم",
+  "nasab": "بن محمد بن جهور بن عبيد الله",
+  "nisba": "الكلبي (من آل أبي عبدة)",
+  "laqab": null,
+  "origin": "الكامل ج7 ص628–638؛ الحلة السيراء ج2؛ الذخيرة ج2 ص604"
+ },
+ {
+  "entity_id": "PER-MUHAMMAD-IBN-JAHWAR",
+  "ism": "محمد",
+  "kunya": "أبو الوليد",
+  "nasab": "بن جهور بن محمد بن جهور",
+  "nisba": null,
+  "laqab": null,
+  "origin": "الكامل ج7 ص628–638؛ الحلة السيراء ج2؛ الذخيرة ج2 ص604"
+ },
+ {
+  "entity_id": "PER-QADI-IBN-ABBAD",
+  "ism": "محمد",
+  "kunya": "أبو القاسم",
+  "nasab": "بن إسماعيل بن عباد",
+  "nisba": "اللخمي",
+  "laqab": "القاضي",
+  "origin": "الكامل ج7 ص628–638؛ الحلة السيراء ج2؛ الذخيرة ج2 ص604"
+ },
+ {
+  "entity_id": "PER-ABBAD-AL-MUTADID",
+  "ism": "عباد",
+  "kunya": "أبو عمرو",
+  "nasab": "بن محمد بن إسماعيل بن عباد",
+  "nisba": "اللخمي",
+  "laqab": "المعتضد بالله",
+  "origin": "الكامل ج7 ص628–638؛ الحلة السيراء ج2؛ الذخيرة ج2 ص604"
+ },
+ {
+  "entity_id": "PER-ISMAIL-DHUNNUN",
+  "ism": "إسماعيل",
+  "kunya": null,
+  "nasab": "بن عبد الرحمن بن عامر بن مطرف بن ذي النون",
+  "nisba": "الهواري",
+  "laqab": "الظافر بحول الله",
+  "origin": "الكامل ج7 ص628–638؛ الحلة السيراء ج2؛ الذخيرة ج2 ص604"
+ },
+ {
+  "entity_id": "PER-YAHYA-AL-MAMUN-DHUNNUN",
+  "ism": "يحيى",
+  "kunya": "أبو زكريا",
+  "nasab": "بن إسماعيل بن ذي النون",
+  "nisba": "الهواري",
+  "laqab": "المأمون",
+  "origin": "الكامل ج7 ص628–638؛ الحلة السيراء ج2؛ الذخيرة ج2 ص604؛ تاريخ الإسلام ج30 ص494"
+ },
+ {
+  "entity_id": "PER-YAHYA-AL-QADIR",
+  "ism": "يحيى",
+  "kunya": null,
+  "nasab": "بن ذي النون",
+  "nisba": "الهواري",
+  "laqab": "القادر بالله",
+  "origin": "تاريخ الإسلام ج33 ص266"
+ },
+ {
+  "entity_id": "PER-ABDALLAH-IBN-AL-AFTAS",
+  "ism": "عبد الله",
+  "kunya": null,
+  "nasab": "بن محمد بن مسلمة",
+  "nisba": "التجيبي (والأصل من مكناسة)",
+  "laqab": "المنصور (ابن الأفطس)",
+  "origin": "الحلة السيراء ج2 ص96–97"
+ },
+ {
+  "entity_id": "PER-MUHAMMAD-AL-MUZAFFAR-AFTAS",
+  "ism": "محمد",
+  "kunya": null,
+  "nasab": "بن عبد الله بن محمد بن مسلمة",
+  "nisba": "التجيبي",
+  "laqab": "المظفر",
+  "origin": "الحلة السيراء ج2 ص96–97"
+ },
+ {
+  "entity_id": "PER-UMAR-AL-MUTAWAKKIL",
+  "ism": "عمر",
+  "kunya": "أبو محمد",
+  "nasab": "بن محمد بن عبد الله بن محمد بن مسلمة",
+  "nisba": "التجيبي",
+  "laqab": "المتوكل على الله",
+  "origin": "الحلة السيراء ج2 ص96؛ الكامل ج7 ص632"
+ },
+ {
+  "entity_id": "PER-SULAYMAN-IBN-HUD",
+  "ism": "سليمان",
+  "kunya": null,
+  "nasab": "بن أحمد بن محمد بن هود",
+  "nisba": "الجذامي",
+  "laqab": "المستعين بالله",
+  "origin": "الكامل ج7 ص633؛ الحلة ج2 ص247"
+ },
+ {
+  "entity_id": "PER-KHAYRAN-AL-AMIRI",
+  "ism": "خيران",
+  "kunya": null,
+  "nasab": null,
+  "nisba": "العامري",
+  "laqab": "الفتى",
+  "origin": "الكامل ج7 ص623، 636"
+ },
+ {
+  "entity_id": "PER-ZUHAYR-AL-AMIRI",
+  "ism": "زهير",
+  "kunya": null,
+  "nasab": null,
+  "nisba": "العامري",
+  "laqab": "الفتى",
+  "origin": "الكامل ج7 ص630، 636"
+ },
+ {
+  "entity_id": "PER-MAN-IBN-SUMADIH",
+  "ism": "معن",
+  "kunya": "أبو الأحوص",
+  "nasab": "بن محمد بن صمادح",
+  "nisba": "التجيبي",
+  "laqab": "المعتصم، ذو الوزارتين",
+  "origin": "الكامل ج7 ص636"
+ },
+ {
+  "entity_id": "PER-MUHAMMAD-AL-MUTASIM-SUMADIH",
+  "ism": "محمد",
+  "kunya": "أبو يحيى",
+  "nasab": "بن معن بن صمادح",
+  "nisba": "التجيبي",
+  "laqab": "المعتصم بالله",
+  "origin": "الكامل ج7 ص636–637"
  }
 ]

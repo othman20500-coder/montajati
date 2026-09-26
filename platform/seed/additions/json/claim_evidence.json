@@ -412,5 +412,47 @@
   "evidence_id": "EVD-KHL-DHAHABI",
   "relation": "supports",
   "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "evidence_id": "EVD-TAI-KAMIL",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "evidence_id": "EVD-TAI-HULLA",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "evidence_id": "EVD-TAI-DHAKHIRA",
+  "relation": "supports",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-TAI-01",
+  "evidence_id": "EVD-TAI-JADHWA",
+  "relation": "supports",
+  "ordinal": 4
+ },
+ {
+  "claim_id": "CLM-TAI-02",
+  "evidence_id": "EVD-TAI-DHAKHIRA",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-TAI-02",
+  "evidence_id": "EVD-TAI-KAMIL",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-TAI-02",
+  "evidence_id": "EVD-TAI-DHAHABI",
+  "relation": "supports",
+  "ordinal": 3
  }
 ]

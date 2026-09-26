@@ -258,5 +258,145 @@
   "end_year": 1031,
   "precision": "سنة (ربيع الأول 418هـ بالثغور – خلعه سنة 422هـ؛ دخل قرطبة 8 ذو الحجة 420هـ)",
   "note_ar": "AST-CAL-20 وAST-CAL-06"
+ },
+ {
+  "tenure_id": "TEN-TAI-01",
+  "person_id": "PER-JAHWAR-IBN-MUHAMMAD",
+  "polity_id": "POL-TAI-CORDOBA",
+  "role": "رئيس (مدبر قرطبة)",
+  "start_year": 1031,
+  "end_year": 1043,
+  "precision": "سنة (422هـ – 435هـ؛ الشهر مختلف فيه)",
+  "note_ar": "AST-TAI-02 وAST-TAI-03"
+ },
+ {
+  "tenure_id": "TEN-TAI-02",
+  "person_id": "PER-MUHAMMAD-IBN-JAHWAR",
+  "polity_id": "POL-TAI-CORDOBA",
+  "role": "رئيس (مدبر قرطبة)",
+  "start_year": 1043,
+  "end_year": null,
+  "precision": "سنة البداية 435هـ؛ النهاية لم أتحقق منها",
+  "note_ar": "AST-TAI-03 وAST-TAI-04"
+ },
+ {
+  "tenure_id": "TEN-TAI-03",
+  "person_id": "PER-QADI-IBN-ABBAD",
+  "polity_id": "POL-003",
+  "role": "حاكم",
+  "start_year": 1023,
+  "end_year": 1042,
+  "precision": "سنة (بعد شعبان 414هـ – جمادى الأولى 433هـ)",
+  "note_ar": "AST-TAI-05"
+ },
+ {
+  "tenure_id": "TEN-TAI-04",
+  "person_id": "PER-ABBAD-AL-MUTADID",
+  "polity_id": "POL-003",
+  "role": "أمير",
+  "start_year": 1042,
+  "end_year": 1069,
+  "precision": "سنة (433هـ – جمادى الآخرة 461هـ؛ والذهبي: رجب 464هـ)",
+  "note_ar": "AST-TAI-06"
+ },
+ {
+  "tenure_id": "TEN-TAI-05",
+  "person_id": "PER-ISMAIL-DHUNNUN",
+  "polity_id": "POL-TAI-TOLEDO",
+  "role": "ملك",
+  "start_year": null,
+  "end_year": 1044,
+  "precision": "سنة النهاية 435هـ؛ البداية لم أتحقق منها",
+  "note_ar": "AST-TAI-09"
+ },
+ {
+  "tenure_id": "TEN-TAI-06",
+  "person_id": "PER-YAHYA-AL-MAMUN-DHUNNUN",
+  "polity_id": "POL-TAI-TOLEDO",
+  "role": "ملك",
+  "start_year": 1044,
+  "end_year": null,
+  "precision": "سنة البداية 435هـ؛ النهاية لم أتحقق منها",
+  "note_ar": "AST-TAI-09"
+ },
+ {
+  "tenure_id": "TEN-TAI-07",
+  "person_id": "PER-YAHYA-AL-QADIR",
+  "polity_id": "POL-TAI-TOLEDO",
+  "role": "ملك",
+  "start_year": null,
+  "end_year": 1085,
+  "precision": "سنة النهاية 478هـ (سقوط طليطلة)؛ البداية لم أتحقق منها",
+  "note_ar": "AST-TAI-10"
+ },
+ {
+  "tenure_id": "TEN-TAI-08",
+  "person_id": "PER-SULAYMAN-IBN-HUD",
+  "polity_id": "POL-004",
+  "role": "ملك",
+  "start_year": 1039,
+  "end_year": 1046,
+  "precision": "سنة (المحرم 431هـ – 438هـ)",
+  "note_ar": "AST-TAI-11"
+ },
+ {
+  "tenure_id": "TEN-TAI-09",
+  "person_id": "PER-MUHAMMAD-AL-MUZAFFAR-AFTAS",
+  "polity_id": "POL-TAI-BADAJOZ",
+  "role": "ملك",
+  "start_year": null,
+  "end_year": 1068,
+  "precision": "سنة النهاية 460هـ؛ البداية لم أتحقق منها",
+  "note_ar": "AST-TAI-08"
+ },
+ {
+  "tenure_id": "TEN-TAI-10",
+  "person_id": "PER-UMAR-AL-MUTAWAKKIL",
+  "polity_id": "POL-TAI-BADAJOZ",
+  "role": "ملك",
+  "start_year": null,
+  "end_year": null,
+  "precision": "البداية والنهاية لم أتحقق منهما (قُتل عند تغلب المرابطين)",
+  "note_ar": "AST-TAI-08"
+ },
+ {
+  "tenure_id": "TEN-TAI-11",
+  "person_id": "PER-KHAYRAN-AL-AMIRI",
+  "polity_id": "POL-TAI-ALMERIA",
+  "role": "حاكم",
+  "start_year": null,
+  "end_year": 1027,
+  "precision": "سنة النهاية 418هـ وقيل 419هـ",
+  "note_ar": "AST-TAI-13"
+ },
+ {
+  "tenure_id": "TEN-TAI-12",
+  "person_id": "PER-ZUHAYR-AL-AMIRI",
+  "polity_id": "POL-TAI-ALMERIA",
+  "role": "حاكم",
+  "start_year": 1027,
+  "end_year": 1038,
+  "precision": "سنة (418/419هـ – أواخر 429هـ)",
+  "note_ar": "AST-TAI-13"
+ },
+ {
+  "tenure_id": "TEN-TAI-13",
+  "person_id": "PER-MAN-IBN-SUMADIH",
+  "polity_id": "POL-TAI-ALMERIA",
+  "role": "حاكم",
+  "start_year": null,
+  "end_year": 1051,
+  "precision": "سنة النهاية 443هـ؛ البداية لم أتحقق منها",
+  "note_ar": "AST-TAI-13"
+ },
+ {
+  "tenure_id": "TEN-TAI-14",
+  "person_id": "PER-MUHAMMAD-AL-MUTASIM-SUMADIH",
+  "polity_id": "POL-TAI-ALMERIA",
+  "role": "ملك",
+  "start_year": 1051,
+  "end_year": 1091,
+  "precision": "سنة (443هـ – 22 ربيع الأول 484هـ)",
+  "note_ar": "AST-TAI-13"
  }
 ]

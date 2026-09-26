@@ -259,5 +259,176 @@
   "start_date": null,
   "end_date": "1009",
   "notes": "قام بالحجابة بعد أخيه المظفر سنة 399هـ وتسمى ولي العهد، فقام عليه المهدي وقُتل وصُلب في جمادى الآخرة 399هـ (نحو 1009م). سنة مولده لم أتحقق منها."
+ },
+ {
+  "entity_id": "POL-TAI-CORDOBA",
+  "entity_type": "Polity",
+  "preferred_name_ar": "طائفة قرطبة (بنو جهور)",
+  "preferred_name_latn": "Taifa of Córdoba (Jahwarids)",
+  "start_date": "1031",
+  "end_date": null,
+  "notes": "طائفة؛ العاصمة PLC-CORDOBA. قامت بعد خلع هشام المعتد سنة 422هـ على يد الوزير أبي الحزم بن جهور، ثم ابنه أبي الوليد محمد، ثم غلب عليها المأمون بن ذي النون (سنة الغلبة لم أتحقق منها من نص صريح)."
+ },
+ {
+  "entity_id": "POL-TAI-BADAJOZ",
+  "entity_type": "Polity",
+  "preferred_name_ar": "طائفة بطليوس (بنو الأفطس)",
+  "preferred_name_latn": "Taifa of Badajoz (Aftasids)",
+  "start_date": null,
+  "end_date": null,
+  "notes": "طائفة؛ العاصمة PLC-BADAJOZ. بدأت بسابور العامري ثم بني الأفطس (المنصور، المظفر ت 460هـ، المنصور يحيى، المتوكل عمر). نهايتها بمقتل المتوكل صبرًا عند تغلب المرابطين؛ سنتا البداية والنهاية لم أتحقق منهما من نص صريح."
+ },
+ {
+  "entity_id": "POL-TAI-TOLEDO",
+  "entity_type": "Polity",
+  "preferred_name_ar": "طائفة طليطلة (بنو ذي النون)",
+  "preferred_name_latn": "Taifa of Toledo (Dhunnunids)",
+  "start_date": null,
+  "end_date": "1085",
+  "notes": "طائفة؛ العاصمة PLC-TOLEDO. إسماعيل الظافر (ت 435هـ) ثم يحيى المأمون ثم يحيى القادر؛ انتهت بسقوط طليطلة في يد الأذفونش سنة 478هـ (نحو 1085م)، وعند ابن الأثير في موضع 477هـ."
+ },
+ {
+  "entity_id": "POL-TAI-ALMERIA",
+  "entity_type": "Polity",
+  "preferred_name_ar": "طائفة المرية (الفتيان العامريون ثم بنو صمادح)",
+  "preferred_name_latn": "Taifa of Almería",
+  "start_date": null,
+  "end_date": "1091",
+  "notes": "طائفة؛ العاصمة المرية (لا سجل مكان لها بعد). خيران العامري (ت 418/419هـ) ثم زهير (قُتل 429هـ) ثم المنصور عبد العزيز العامري ثم معن بن صمادح (ت 443هـ) ثم ابنه المعتصم (ت 22 ربيع الأول 484هـ)، وملكها المرابطون."
+ },
+ {
+  "entity_id": "PER-JAHWAR-IBN-MUHAMMAD",
+  "entity_type": "Person",
+  "preferred_name_ar": "جهور بن محمد بن جهور (أبو الحزم)",
+  "preferred_name_latn": "Jahwar ibn Muḥammad",
+  "start_date": null,
+  "end_date": "1043",
+  "notes": "رئيس قرطبة بعد انقطاع الخلافة 422هـ؛ من وزراء الدولة العامرية؛ دبّر قرطبة دون أن يتسمى بالإمارة؛ توفي سنة 435هـ (نحو 1043م): في صفر عند ابن حزم وابن الأثير، وليلة الجمعة 6 المحرم عند ابن بسام. سنة مولده لم أتحقق منها."
+ },
+ {
+  "entity_id": "PER-MUHAMMAD-IBN-JAHWAR",
+  "entity_type": "Person",
+  "preferred_name_ar": "محمد بن جهور (أبو الوليد)",
+  "preferred_name_latn": "Muḥammad ibn Jahwar",
+  "start_date": null,
+  "end_date": null,
+  "notes": "ولي قرطبة بعد أبيه سنة 435هـ على تدبيره؛ سنة وفاته وغلبة المأمون بن ذي النون على قرطبة لم أتحقق منهما."
+ },
+ {
+  "entity_id": "PER-QADI-IBN-ABBAD",
+  "entity_type": "Person",
+  "preferred_name_ar": "محمد بن إسماعيل بن عباد (القاضي أبو القاسم)",
+  "preferred_name_latn": "Abū l-Qāsim Muḥammad ibn ʿAbbād",
+  "start_date": null,
+  "end_date": "1042",
+  "notes": "قاضي إشبيلية الذي استقل بها بعد خروج البربر من قرطبة سنة 414هـ؛ توفي لليلة بقيت من جمادى الأولى 433هـ (نحو 1042م) عند ابن الأبار، وسنة 433هـ عند ابن الأثير والذهبي."
+ },
+ {
+  "entity_id": "PER-ABBAD-AL-MUTADID",
+  "entity_type": "Person",
+  "preferred_name_ar": "عباد بن محمد بن عباد (المعتضد بالله)",
+  "preferred_name_latn": "ʿAbbād al-Muʿtaḍid",
+  "start_date": null,
+  "end_date": "1069",
+  "notes": "أمير إشبيلية بعد أبيه القاضي سنة 433هـ؛ تلقب بالمعتضد بالله؛ توفي في 2 جمادى الآخرة 461هـ (نحو 1069م) عند ابن الأثير وابن الأبار، وفي رجب 464هـ عند الذهبي."
+ },
+ {
+  "entity_id": "PER-ISMAIL-DHUNNUN",
+  "entity_type": "Person",
+  "preferred_name_ar": "إسماعيل بن عبد الرحمن بن ذي النون (الظافر)",
+  "preferred_name_latn": "Ismāʿīl al-Ẓāfir ibn Dhī l-Nūn",
+  "start_date": "1000",
+  "end_date": "1044",
+  "notes": "أول ملوك بني ذي النون بطليطلة؛ مولده 390هـ ووفاته 435هـ (نحو 1000–1044م) عند ابن الأثير؛ من البربر وُلد بالأندلس."
+ },
+ {
+  "entity_id": "PER-YAHYA-AL-MAMUN-DHUNNUN",
+  "entity_type": "Person",
+  "preferred_name_ar": "يحيى بن إسماعيل بن ذي النون (المأمون)",
+  "preferred_name_latn": "Yaḥyā al-Maʾmūn ibn Dhī l-Nūn",
+  "start_date": null,
+  "end_date": null,
+  "notes": "صاحب طليطلة بعد أبيه سنة 435هـ؛ ملك بلنسية ليلة عرفة 457هـ (نحو نوفمبر 1065م) وغلب على قرطبة بعد بني جهور؛ سنة وفاته لم أتحقق منها."
+ },
+ {
+  "entity_id": "PER-YAHYA-AL-QADIR",
+  "entity_type": "Person",
+  "preferred_name_ar": "يحيى القادر بالله بن ذي النون",
+  "preferred_name_latn": "Yaḥyā al-Qādir ibn Dhī l-Nūn",
+  "start_date": null,
+  "end_date": null,
+  "notes": "آخر ملوك طليطلة؛ سقطت في أيامه سنة 478هـ عند الذهبي، ثم صار ببلنسية وقتله القاضي ابن جحاف؛ ابن الأثير يذكره باسم «ابنه يحيى» دون تمييزه من المأمون. سنتا مولده ومقتله لم أتحقق منهما."
+ },
+ {
+  "entity_id": "PER-ABDALLAH-IBN-AL-AFTAS",
+  "entity_type": "Person",
+  "preferred_name_ar": "عبد الله بن محمد بن مسلمة (ابن الأفطس، المنصور)",
+  "preferred_name_latn": "ʿAbd Allāh ibn al-Afṭas al-Manṣūr",
+  "start_date": null,
+  "end_date": null,
+  "notes": "مؤسس دولة بني الأفطس ببطليوس بعد سابور العامري، عند ابن حيان (نقله ابن الأبار)؛ ابن الأثير يسمي أول بني الأفطس «أبا بكر محمد بن عبد الله بن مسلمة». سنتا مولده ووفاته لم أتحقق منهما."
+ },
+ {
+  "entity_id": "PER-MUHAMMAD-AL-MUZAFFAR-AFTAS",
+  "entity_type": "Person",
+  "preferred_name_ar": "محمد بن عبد الله بن الأفطس (المظفر)",
+  "preferred_name_latn": "Muḥammad al-Muẓaffar ibn al-Afṭas",
+  "start_date": null,
+  "end_date": "1068",
+  "notes": "صاحب بطليوس بعد أبيه؛ توفي سنة 460هـ (نحو 1068م) عند ابن الأبار."
+ },
+ {
+  "entity_id": "PER-UMAR-AL-MUTAWAKKIL",
+  "entity_type": "Person",
+  "preferred_name_ar": "عمر بن محمد بن الأفطس (المتوكل على الله)",
+  "preferred_name_latn": "ʿUmar al-Mutawakkil ibn al-Afṭas",
+  "start_date": null,
+  "end_date": null,
+  "notes": "آخر ملوك بني الأفطس؛ قُتل صبرًا مع ولدين له عند تغلب أمير المسلمين يوسف بن تاشفين على الأندلس؛ سنة مقتله لم أتحقق منها من نص صريح."
+ },
+ {
+  "entity_id": "PER-SULAYMAN-IBN-HUD",
+  "entity_type": "Person",
+  "preferred_name_ar": "سليمان بن محمد بن هود الجذامي (المستعين بالله)",
+  "preferred_name_latn": "Sulaymān ibn Hūd al-Mustaʿīn",
+  "start_date": null,
+  "end_date": "1046",
+  "notes": "مؤسس دولة بني هود؛ كان من قواد منذر التجيبي على لاردة؛ ملك سرقسطة في المحرم 431هـ وتوفي سنة 438هـ (نحو 1046م) عند ابن الأبار."
+ },
+ {
+  "entity_id": "PER-KHAYRAN-AL-AMIRI",
+  "entity_type": "Person",
+  "preferred_name_ar": "خيران العامري (الفتى)",
+  "preferred_name_latn": "Khayrān al-ʿĀmirī",
+  "start_date": null,
+  "end_date": "1027",
+  "notes": "من فتيان العامريين؛ ملك المرية في الفتنة وتوفي بها سنة 418هـ وقيل 419هـ (نحو 1027/1028م) عند ابن الأثير."
+ },
+ {
+  "entity_id": "PER-ZUHAYR-AL-AMIRI",
+  "entity_type": "Person",
+  "preferred_name_ar": "زهير العامري (الفتى)",
+  "preferred_name_latn": "Zuhayr al-ʿĀmirī",
+  "start_date": null,
+  "end_date": "1038",
+  "notes": "ولي المرية بعد خيران واتسع ملكه إلى شاطبة؛ قُتل في قتال باديس بن حبوس أواخر سنة 429هـ (نحو 1038م)."
+ },
+ {
+  "entity_id": "PER-MAN-IBN-SUMADIH",
+  "entity_type": "Person",
+  "preferred_name_ar": "معن بن محمد بن صمادح التجيبي (المعتصم، أبو الأحوص)",
+  "preferred_name_latn": "Maʿn ibn Ṣumādiḥ",
+  "start_date": null,
+  "end_date": "1051",
+  "notes": "أخذ المرية من صهره محمد بن عبد العزيز العامري ودانت له لورقة وبياسة وجيان؛ توفي سنة 443هـ (نحو 1051م)."
+ },
+ {
+  "entity_id": "PER-MUHAMMAD-AL-MUTASIM-SUMADIH",
+  "entity_type": "Person",
+  "preferred_name_ar": "محمد بن معن بن صمادح (المعتصم بالله، أبو يحيى)",
+  "preferred_name_latn": "Muḥammad al-Muʿtaṣim ibn Ṣumādiḥ",
+  "start_date": null,
+  "end_date": "1091",
+  "notes": "ولي المرية صبيًا سنة 443هـ؛ توفي لثمان بقين من ربيع الأول 484هـ (نحو مايو 1091م) وجيش المرابطين ينازله، وملكوا المرية بعده."
  }
 ]
