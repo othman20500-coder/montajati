@@ -918,5 +918,15 @@
   "claim_id": "CLM-VIZ-03",
   "entity_id": "PER-035",
   "role": "person"
+ },
+ {
+  "claim_id": "CLM-ULM-01",
+  "entity_id": "PER-IBN-ZUBAYR",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-ULM-02",
+  "entity_id": "PER-BALAFIQI",
+  "role": "person"
  }
 ]

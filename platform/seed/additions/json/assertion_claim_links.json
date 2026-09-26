@@ -833,5 +833,20 @@
   "assertion_id": "AST-VIZ-04",
   "claim_id": "CLM-VIZ-03",
   "relation": "كتابة ابن زمرك ووزارته بعد ابن الخطيب وتلمذته له"
+ },
+ {
+  "assertion_id": "AST-ULM-01",
+  "claim_id": "CLM-ULM-01",
+  "relation": "مكانة ابن الزبير العلمية ومشيخته لأعلام غرناطة"
+ },
+ {
+  "assertion_id": "AST-ULM-02",
+  "claim_id": "CLM-ULM-01",
+  "relation": "مولد ابن الزبير 630هـ ووفاته بألمرية 702هـ"
+ },
+ {
+  "assertion_id": "AST-ULM-03",
+  "claim_id": "CLM-ULM-02",
+  "relation": "منصب أبي البركات وتنقّله قاضيًا ومقرئًا وخطيبًا"
  }
 ]

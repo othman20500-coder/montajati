@@ -558,5 +558,37 @@
   "script": "Arabic",
   "language": "ar",
   "normalized": "ابو الحسن علي بن الجياب"
+ },
+ {
+  "alias_id": "ALIAS-ZUBAYR-01",
+  "entity_id": "PER-IBN-ZUBAYR",
+  "alias": "ابن الزبير",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "ابن الزبير"
+ },
+ {
+  "alias_id": "ALIAS-ZUBAYR-02",
+  "entity_id": "PER-IBN-ZUBAYR",
+  "alias": "أبو جعفر أحمد بن إبراهيم بن الزبير",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "ابو جعفر احمد بن ابراهيم بن الزبير"
+ },
+ {
+  "alias_id": "ALIAS-BALAFIQI-01",
+  "entity_id": "PER-BALAFIQI",
+  "alias": "ابن الحاج البلفيقي",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "ابن الحاج البلفيقي"
+ },
+ {
+  "alias_id": "ALIAS-BALAFIQI-02",
+  "entity_id": "PER-BALAFIQI",
+  "alias": "أبو البركات ابن الحاج",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "ابو البركات ابن الحاج"
  }
 ]
