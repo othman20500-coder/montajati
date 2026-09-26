@@ -422,5 +422,45 @@
   "script": "Arabic",
   "language": "ar",
   "normalized": "المستنصر الموحدي"
+ },
+ {
+  "alias_id": "ALIAS-SHQ-01",
+  "entity_id": "PER-IBN-MARDANISH",
+  "alias": "ابن مردنيش",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "ابن مردنيش"
+ },
+ {
+  "alias_id": "ALIAS-SHQ-02",
+  "entity_id": "PER-IBN-MARDANISH",
+  "alias": "محمد بن سعد",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "محمد بن سعد"
+ },
+ {
+  "alias_id": "ALIAS-SHQ-03",
+  "entity_id": "PER-IBN-HAMSHK",
+  "alias": "ابن همشك",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "ابن همشك"
+ },
+ {
+  "alias_id": "ALIAS-SHQ-04",
+  "entity_id": "PER-IBN-AYYAD",
+  "alias": "ابن عياض",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "ابن عياض"
+ },
+ {
+  "alias_id": "ALIAS-SHQ-05",
+  "entity_id": "POL-TAI-SHARQ",
+  "alias": "بنو مردنيش",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "بنو مردنيش"
  }
 ]

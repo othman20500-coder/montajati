@@ -388,5 +388,25 @@
   "description_ar": "أوفى ترجمة نصرية لمؤسس الدولة، بأخبار ظهوره بأرجونة وتملكه جيان وإشبيلية وقرطبة سنة 629هـ.",
   "confidence": "عالٍ",
   "source_id": "LIB-PRI-038"
+ },
+ {
+  "evidence_id": "EVD-SHQ-KAMIL",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "الكامل في التاريخ: أخذ غرناطة والحرب بين الموحدين وابن مردنيش ووفاته (ج9 ص182، 292–293، 355، 369)",
+  "date_text": "تأليف قبل 630هـ",
+  "place_entity_id": "PLC-MURCIA",
+  "description_ar": "حوليات معاصرة لأواخر الطوائف الثانية تؤرخ أخذ غرناطة 557هـ ووفاة ابن مردنيش 567هـ.",
+  "confidence": "عالٍ",
+  "source_id": "LIB-PRI-046"
+ },
+ {
+  "evidence_id": "EVD-SHQ-DHAHABI",
+  "evidence_type": "TextualTransmission",
+  "label_ar": "تاريخ الإسلام للذهبي: ترجمة ابن مردنيش وأحوال شرق الأندلس (ج38 ص261؛ ج39 ص294–295)",
+  "date_text": "تأليف في القرن الثامن الهجري",
+  "place_entity_id": "PLC-MURCIA",
+  "description_ar": "ترجمة ابن مردنيش بمولده 518هـ ووفاته 29 رجب، ووصف قيام ابن عياض ثم ابن مردنيش بشرق الأندلس.",
+  "confidence": "متوسط إلى عالٍ",
+  "source_id": "LIB-PRI-049"
  }
 ]

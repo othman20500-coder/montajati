@@ -315,9 +315,9 @@
   "polity_id": "POL-TAI-TOLEDO",
   "role": "ملك",
   "start_year": 1044,
-  "end_year": null,
-  "precision": "سنة البداية 435هـ؛ النهاية لم أتحقق منها",
-  "note_ar": "AST-TAI-09"
+  "end_year": 1075,
+  "precision": "سنة (435هـ – ذو القعدة 467هـ)",
+  "note_ar": "AST-TAI-09 وAST-DHN-01"
  },
  {
   "tenure_id": "TEN-TAI-07",
@@ -355,9 +355,9 @@
   "polity_id": "POL-TAI-BADAJOZ",
   "role": "ملك",
   "start_year": null,
-  "end_year": null,
-  "precision": "البداية والنهاية لم أتحقق منهما (قُتل عند تغلب المرابطين)",
-  "note_ar": "AST-TAI-08"
+  "end_year": 1094,
+  "precision": "النهاية 487هـ (مقتله عند سقوط بطليوس)؛ البداية لم أتحقق منها",
+  "note_ar": "AST-TAI-08 وAST-AFT-01"
  },
  {
   "tenure_id": "TEN-TAI-11",
@@ -478,5 +478,35 @@
   "end_year": 1223,
   "precision": "سنة (11 شعبان 610هـ – شوال/ذو القعدة 620هـ)",
   "note_ar": "AST-MWH-09"
+ },
+ {
+  "tenure_id": "TEN-SHQ-01",
+  "person_id": "PER-IBN-AYYAD",
+  "polity_id": "POL-TAI-SHARQ",
+  "role": "مقدَّم (أمير شرق الأندلس)",
+  "start_year": null,
+  "end_year": null,
+  "precision": "في آخر دعوة المرابطين؛ لا يتحقق تاريخ وفاته",
+  "note_ar": "AST-MRD-01"
+ },
+ {
+  "tenure_id": "TEN-SHQ-02",
+  "person_id": "PER-IBN-MARDANISH",
+  "polity_id": "POL-TAI-SHARQ",
+  "role": "ملك شرق الأندلس",
+  "start_year": null,
+  "end_year": 1172,
+  "precision": "النهاية 29 رجب 567هـ؛ سنة البداية (بعد وفاة ابن عياض) لم أتحقق منها",
+  "note_ar": "AST-MRD-01 وAST-MRD-02"
+ },
+ {
+  "tenure_id": "TEN-SHQ-03",
+  "person_id": "PER-IBN-HAMSHK",
+  "polity_id": "POL-TAI-SHARQ",
+  "role": "صاحب جيان (صهر ابن مردنيش)",
+  "start_year": null,
+  "end_year": null,
+  "precision": "صاحب جيان وحصن شقورة؛ أخذ غرناطة 557هـ؛ السنوات غير مضبوطة",
+  "note_ar": "AST-HMK-01"
  }
 ]
