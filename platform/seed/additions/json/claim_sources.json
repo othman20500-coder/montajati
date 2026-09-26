@@ -508,5 +508,60 @@
   "claim_id": "CLM-GEO-03",
   "source_id": "LIB-PRI-050",
   "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-MRB-01",
+  "source_id": "LIB-PRI-045",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-MRB-01",
+  "source_id": "LIB-PRI-046",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-MRB-01",
+  "source_id": "LIB-PRI-049",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-MWH-01",
+  "source_id": "LIB-PRI-045",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-MWH-01",
+  "source_id": "LIB-PRI-046",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-MWH-01",
+  "source_id": "LIB-PRI-049",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-MWH-02",
+  "source_id": "LIB-PRI-045",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-MWH-02",
+  "source_id": "LIB-PRI-055",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-MWH-02",
+  "source_id": "LIB-PRI-049",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-NSR-01",
+  "source_id": "LIB-PRI-038",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-NSR-01",
+  "source_id": "LIB-PRI-049",
+  "ordinal": 2
  }
 ]

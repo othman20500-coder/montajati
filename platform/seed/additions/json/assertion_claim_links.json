@@ -598,5 +598,105 @@
   "assertion_id": "AST-GEO-07",
   "claim_id": "CLM-GEO-03",
   "relation": "الثغور"
+ },
+ {
+  "assertion_id": "AST-MRB-01",
+  "claim_id": "CLM-MRB-01",
+  "relation": "وفاة يوسف"
+ },
+ {
+  "assertion_id": "AST-MRB-02",
+  "claim_id": "CLM-MRB-01",
+  "relation": "ولاية علي"
+ },
+ {
+  "assertion_id": "AST-MRB-03",
+  "claim_id": "CLM-MRB-01",
+  "relation": "الاختلال"
+ },
+ {
+  "assertion_id": "AST-MRB-04",
+  "claim_id": "CLM-MRB-01",
+  "relation": "تاشفين"
+ },
+ {
+  "assertion_id": "AST-MRB-05",
+  "claim_id": "CLM-MRB-01",
+  "relation": "ابن قسي"
+ },
+ {
+  "assertion_id": "AST-MRB-06",
+  "claim_id": "CLM-MRB-01",
+  "relation": "آخر الدعوة"
+ },
+ {
+  "assertion_id": "AST-MWH-01",
+  "claim_id": "CLM-MWH-01",
+  "relation": "العبور"
+ },
+ {
+  "assertion_id": "AST-MWH-02",
+  "claim_id": "CLM-MWH-01",
+  "relation": "وفاة عبد المؤمن"
+ },
+ {
+  "assertion_id": "AST-MWH-03",
+  "claim_id": "CLM-MWH-01",
+  "relation": "بيعة يوسف"
+ },
+ {
+  "assertion_id": "AST-MWH-04",
+  "claim_id": "CLM-MWH-01",
+  "relation": "وفاة يوسف"
+ },
+ {
+  "assertion_id": "AST-MWH-05",
+  "claim_id": "CLM-MWH-01",
+  "relation": "بيعة يعقوب"
+ },
+ {
+  "assertion_id": "AST-MWH-06",
+  "claim_id": "CLM-MWH-01",
+  "relation": "وفاة يعقوب"
+ },
+ {
+  "assertion_id": "AST-MWH-07",
+  "claim_id": "CLM-MWH-01",
+  "relation": "ولاية الناصر"
+ },
+ {
+  "assertion_id": "AST-MWH-08",
+  "claim_id": "CLM-MWH-01",
+  "relation": "وفاة الناصر"
+ },
+ {
+  "assertion_id": "AST-MWH-09",
+  "claim_id": "CLM-MWH-01",
+  "relation": "المستنصر"
+ },
+ {
+  "assertion_id": "AST-ARK-01",
+  "claim_id": "CLM-MWH-02",
+  "relation": "تاريخ الأرك"
+ },
+ {
+  "assertion_id": "AST-ARK-02",
+  "claim_id": "CLM-MWH-02",
+  "relation": "نتيجة الأرك"
+ },
+ {
+  "assertion_id": "AST-UQB-01",
+  "claim_id": "CLM-MWH-02",
+  "relation": "العقاب"
+ },
+ {
+  "assertion_id": "AST-NSR-01",
+  "claim_id": "CLM-NSR-01",
+  "relation": "بيعة أرجونة"
+ },
+ {
+  "assertion_id": "AST-NSR-02",
+  "claim_id": "CLM-NSR-01",
+  "relation": "الهدنة"
  }
 ]

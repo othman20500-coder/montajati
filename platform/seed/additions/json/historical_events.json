@@ -11,5 +11,31 @@
   "polity_id": "POL-006",
   "confidence": "عالٍ (الحدث)؛ اليوم والشهر مختلف فيهما",
   "legacy_refs": "EVT-007"
+ },
+ {
+  "event_id": "EVT-023",
+  "title_ar": "وقعة الأرك",
+  "start_year": 1195,
+  "end_year": 1195,
+  "precision": "يوم (اليوم مختلف فيه: 3 أو 9 شعبان)",
+  "hijri": "الأربعاء 3 شعبان 591هـ عند المراكشي؛ الأربعاء 9 شعبان عند ابن الأبار",
+  "place_id": null,
+  "period_id": "PRD-06",
+  "polity_id": "POL-007",
+  "confidence": "عالٍ (الحدث والشهر)؛ اليوم مختلف فيه",
+  "legacy_refs": "AST-ARK-01; AST-ARK-02"
+ },
+ {
+  "event_id": "EVT-024",
+  "title_ar": "وقعة العقاب",
+  "start_year": 1212,
+  "end_year": 1212,
+  "precision": "يوم",
+  "hijri": "الاثنين منتصف صفر 609هـ",
+  "place_id": null,
+  "period_id": "PRD-06",
+  "polity_id": "POL-007",
+  "confidence": "عالٍ",
+  "legacy_refs": "AST-UQB-01"
  }
 ]

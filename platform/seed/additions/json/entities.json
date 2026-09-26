@@ -439,5 +439,77 @@
   "start_date": null,
   "end_date": null,
   "notes": "الاسم الذي أطلقه الجغرافيون والمؤرخون العرب على شبه الجزيرة الإيبيرية كلها؛ لا تُعرض له حدود سياسية تاريخية ولا مضلع، ويُشار إليه في الأطلس بمدنه المسجلة (القاعدة 7)."
+ },
+ {
+  "entity_id": "PER-ALI-IBN-YUSUF",
+  "entity_type": "Person",
+  "preferred_name_ar": "علي بن يوسف بن تاشفين (أمير المسلمين)",
+  "preferred_name_latn": "ʿAlī ibn Yūsuf ibn Tāshfīn",
+  "start_date": null,
+  "end_date": "1143",
+  "notes": "ولي بعد أبيه سنة 500هـ وتلقب أمير المسلمين (وعند الذهبي في موضع: «بلقب أبيه أمير المؤمنين»)؛ توفي في 7 رجب 537هـ (نحو يناير 1143م) وله 61 سنة عند الذهبي؛ سنة مولده لم أتحقق منها من نص صريح."
+ },
+ {
+  "entity_id": "PER-TASHFIN-IBN-ALI",
+  "entity_type": "Person",
+  "preferred_name_ar": "تاشفين بن علي بن يوسف",
+  "preferred_name_latn": "Tāshfīn ibn ʿAlī",
+  "start_date": null,
+  "end_date": "1144",
+  "notes": "آخر أمراء المرابطين الأقوياء؛ عُهد إليه سنة 537هـ؛ توفي سنة 539هـ عند ابن الأثير (ولايته تزيد على أربع سنين)، وغرق بالبحر عند وهران محاصرًا من الموحدين سنة 540هـ عند الذهبي."
+ },
+ {
+  "entity_id": "PER-IBN-QASI",
+  "entity_type": "Person",
+  "preferred_name_ar": "أحمد بن قسي",
+  "preferred_name_latn": "Aḥmad ibn Qasī",
+  "start_date": null,
+  "end_date": null,
+  "notes": "من دعاة الفتن بمغرب الأندلس في آخر دعوة المرابطين؛ ادعى الولاية ثم الهداية وقام بحصن مرتلة، فأسلمه أصحابه إلى الموحدين فعفا عنه عبد المؤمن، ثم قتله بعض أصحابه بالأندلس. سنة قيامه وسنة مقتله لم أتحقق منهما."
+ },
+ {
+  "entity_id": "PER-ABDALMUMIN",
+  "entity_type": "Person",
+  "preferred_name_ar": "عبد المؤمن بن علي الكومي",
+  "preferred_name_latn": "ʿAbd al-Muʾmin ibn ʿAlī",
+  "start_date": null,
+  "end_date": "1163",
+  "notes": "أول خلفاء الموحدين؛ عبر إلى الأندلس ونزل جبل طارق وسماه جبل الفتح؛ توفي بسلا سنة 558هـ (نحو 1163م): في 27 جمادى الآخرة عند المراكشي وفي 20 منه عند ابن الأثير؛ سنة مولده لم أتحقق منها."
+ },
+ {
+  "entity_id": "PER-ABU-YAQUB-YUSUF",
+  "entity_type": "Person",
+  "preferred_name_ar": "يوسف بن عبد المؤمن (أبو يعقوب)",
+  "preferred_name_latn": "Abū Yaʿqūb Yūsuf ibn ʿAbd al-Muʾmin",
+  "start_date": null,
+  "end_date": "1184",
+  "notes": "ثاني خلفاء الموحدين؛ بويع بعد خلع أخيه محمد سنة 558هـ؛ طُعن على شنترين ومات يوم السبت 7 رجب 580هـ (نحو أكتوبر 1184م)؛ سنة مولده لم أتحقق منها."
+ },
+ {
+  "entity_id": "PER-YAQUB-AL-MANSUR",
+  "entity_type": "Person",
+  "preferred_name_ar": "يعقوب بن يوسف بن عبد المؤمن (المنصور، أبو يوسف)",
+  "preferred_name_latn": "Abū Yūsuf Yaʿqūb al-Manṣūr",
+  "start_date": null,
+  "end_date": "1198",
+  "notes": "ثالث خلفاء الموحدين وصاحب نصر الأرك 591هـ؛ توفي سنة 595هـ (نحو 1199م) وله 48 سنة: في صفر عند المراكشي، وفي 18 ربيع الآخر وقيل جمادى الأولى عند ابن الأثير."
+ },
+ {
+  "entity_id": "PER-AL-NASIR-MUHAMMAD",
+  "entity_type": "Person",
+  "preferred_name_ar": "محمد بن يعقوب بن يوسف (الناصر لدين الله، أبو عبد الله)",
+  "preferred_name_latn": "Muḥammad al-Nāṣir ibn Yaʿqūb",
+  "start_date": null,
+  "end_date": "1214",
+  "notes": "رابع خلفاء الموحدين وصاحب هزيمة العقاب 609هـ؛ توفي بمراكش يوم الأربعاء 10 شعبان 610هـ (نحو ديسمبر 1213م) في نص المعجب، وفي خامسه فيما نقله الذهبي عن المعجب؛ سنة مولده لم أتحقق منها."
+ },
+ {
+  "entity_id": "PER-AL-MUSTANSIR-YUSUF",
+  "entity_type": "Person",
+  "preferred_name_ar": "يوسف بن محمد بن يعقوب (المستنصر بالله، أبو يعقوب)",
+  "preferred_name_latn": "Abū Yaʿqūb Yūsuf al-Mustanṣir",
+  "start_date": "1198",
+  "end_date": "1223",
+  "notes": "خامس خلفاء الموحدين؛ ولد في صدر شوال 594هـ وبويع لإحدى عشرة خلت من شعبان 610هـ وسنه 16 سنة؛ توفي في شوال أو ذي القعدة 620هـ (نحو أواخر 1223م) بحسب ما بلغ المراكشي."
  }
 ]
