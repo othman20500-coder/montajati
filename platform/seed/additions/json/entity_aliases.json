@@ -510,5 +510,21 @@
   "script": "Arabic",
   "language": "ar",
   "normalized": "ابو عبد الله محمد بن اسماعيل"
+ },
+ {
+  "alias_id": "ALIAS-Y2-01",
+  "entity_id": "PER-YUSUF-II",
+  "alias": "أبو الحجاج يوسف بن الغني بالله",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "ابو الحجاج يوسف بن الغني بالله"
+ },
+ {
+  "alias_id": "ALIAS-Y3-01",
+  "entity_id": "PER-YUSUF-III",
+  "alias": "يوسف بن يوسف النصري",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "يوسف بن يوسف النصري"
  }
 ]

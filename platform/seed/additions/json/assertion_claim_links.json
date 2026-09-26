@@ -758,5 +758,20 @@
   "assertion_id": "AST-GRN-05",
   "claim_id": "CLM-NSR-01",
   "relation": "ولاية محمد الرابع ومقتله"
+ },
+ {
+  "assertion_id": "AST-GRN-06",
+  "claim_id": "CLM-NSR-01",
+  "relation": "ولاية يوسف الثاني (دراسة حديثة)"
+ },
+ {
+  "assertion_id": "AST-GRN-07",
+  "claim_id": "CLM-NSR-01",
+  "relation": "ولاية محمد السابع (دراسة حديثة)"
+ },
+ {
+  "assertion_id": "AST-GRN-08",
+  "claim_id": "CLM-NSR-01",
+  "relation": "ولاية يوسف الثالث (دراسة حديثة)"
  }
 ]
