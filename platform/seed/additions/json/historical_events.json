@@ -37,5 +37,18 @@
   "polity_id": "POL-007",
   "confidence": "عالٍ",
   "legacy_refs": "AST-UQB-01"
+ },
+ {
+  "event_id": "EVT-025",
+  "title_ar": "ثورة ابن هود ودعوته للعباسيين واستيلاؤه على الأندلس",
+  "start_year": 1230,
+  "end_year": 1238,
+  "precision": "سنة (بلغت الخطبة للمستنصر بغداد 627هـ – هلاكه 635هـ)",
+  "hijri": "627–635هـ",
+  "place_id": "PLC-ALMARIYYA",
+  "period_id": "PRD-06a",
+  "polity_id": null,
+  "confidence": "عالٍ",
+  "legacy_refs": "AST-HUD-01; AST-HUD-02"
  }
 ]

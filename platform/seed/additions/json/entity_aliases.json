@@ -462,5 +462,21 @@
   "script": "Arabic",
   "language": "ar",
   "normalized": "بنو مردنيش"
+ },
+ {
+  "alias_id": "ALIAS-HUD-01",
+  "entity_id": "PER-IBN-HUD",
+  "alias": "ابن هود",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "ابن هود"
+ },
+ {
+  "alias_id": "ALIAS-HUD-02",
+  "entity_id": "PER-IBN-HUD",
+  "alias": "المتوكل على الله ابن هود",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "المتوكل على الله ابن هود"
  }
 ]

@@ -1740,5 +1740,31 @@
   "todo_ar": null,
   "model": "almoravid_almohad",
   "last_verified": "2026-09-26"
+ },
+ {
+  "assertion_id": "AST-HUD-01",
+  "target_id": "EVT-025",
+  "field": "revolt",
+  "kind": "الثورة والدعوة والاستيلاء",
+  "value_ar": "توثّب محمد بن يوسف بن هود الجذامي على الموحدين (على إدريس المأمون) بالأندلس ودعا لبني العباس فمال إليه الناس، فاستولى على أكثر بلاد الأندلس التي بيد بني عبد المؤمن وخطب بها للمستنصر بالله؛ وبلغ خبر ذلك بغداد سنة 627هـ (نحو 1230م) فكُتب له منشور بشكر همّته",
+  "value_before": null,
+  "status": "موثّق",
+  "resolution_ar": null,
+  "todo_ar": null,
+  "model": "nasrid",
+  "last_verified": "2026-09-26"
+ },
+ {
+  "assertion_id": "AST-HUD-02",
+  "target_id": "PER-IBN-HUD",
+  "field": "death",
+  "kind": "الهلاك",
+  "value_ar": "هلك محمد بن يوسف بن هود بالمرية سنة 635هـ (نحو 1238م) عند الذهبي، فخلا الجوّ لابن الأحمر بغرناطة (وهي سنة دخوله غرناطة EVT-013)",
+  "value_before": null,
+  "status": "موثّق",
+  "resolution_ar": null,
+  "todo_ar": null,
+  "model": "nasrid",
+  "last_verified": "2026-09-26"
  }
 ]
