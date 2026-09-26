@@ -733,5 +733,30 @@
   "assertion_id": "AST-HUD-02",
   "claim_id": "CLM-NSR-01",
   "relation": "هلاك ابن هود 635هـ"
+ },
+ {
+  "assertion_id": "AST-GRN-01",
+  "claim_id": "CLM-NSR-01",
+  "relation": "محمد الثالث ثالث ملوك بني نصر"
+ },
+ {
+  "assertion_id": "AST-GRN-02",
+  "claim_id": "CLM-NSR-01",
+  "relation": "وفاة محمد الثالث (متعارضة)"
+ },
+ {
+  "assertion_id": "AST-GRN-03",
+  "claim_id": "CLM-NSR-01",
+  "relation": "ولاية نصر أبي الجيوش وخلعه"
+ },
+ {
+  "assertion_id": "AST-GRN-04",
+  "claim_id": "CLM-NSR-01",
+  "relation": "ولاية إسماعيل الأول واستشهاده"
+ },
+ {
+  "assertion_id": "AST-GRN-05",
+  "claim_id": "CLM-NSR-01",
+  "relation": "ولاية محمد الرابع ومقتله"
  }
 ]
