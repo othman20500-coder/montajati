@@ -1,0 +1,10 @@
+# رؤوس أمان لموقع منصة الأندلس المستقل (andalus-atlas.netlify.app)
+# يُقرأ من جذر النشر (مجلد andalus/) بالآلية نفسها التي يُقرأ بها _redirects.
+# رؤوس آمنة لا تعطّل عرض الموقع؛ لم يُضَف Content-Security-Policy صارم لأن الصفحة
+# ذاتية الاحتواء بسكربت وأنماط داخلية، وضبط CSP يحتاج تدقيقًا مستقلًا (يُنظر لاحقًا).
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
