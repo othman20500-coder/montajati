@@ -376,5 +376,41 @@
   "evidence_id": "EVD-AMR-KAMIL",
   "relation": "supports",
   "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-CAL-03",
+  "evidence_id": "EVD-KHL-HAZM",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-CAL-03",
+  "evidence_id": "EVD-KHL-BAYAN",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-CAL-03",
+  "evidence_id": "EVD-KHL-DHAHABI",
+  "relation": "supports",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-CAL-04",
+  "evidence_id": "EVD-KHL-HAZM",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-CAL-04",
+  "evidence_id": "EVD-KHL-KAMIL",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-CAL-04",
+  "evidence_id": "EVD-KHL-DHAHABI",
+  "relation": "supports",
+  "ordinal": 3
  }
 ]

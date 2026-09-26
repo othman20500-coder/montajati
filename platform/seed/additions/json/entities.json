@@ -160,5 +160,104 @@
   "start_date": null,
   "end_date": "0912",
   "notes": "سابع الأمراء وجد الناصر؛ بويع النصف من صفر 275هـ يوم موت أخيه، وتوفي سنة 300هـ (ربيع الأول عند ابن الأثير؛ نحو أكتوبر 912م). عمره عند وفاته 72 عند ابن عذاري و42 عند ابن الأثير، فلم تُثبت سنة مولده."
+ },
+ {
+  "entity_id": "PER-MUHAMMAD-AL-MAHDI",
+  "entity_type": "Person",
+  "preferred_name_ar": "محمد بن هشام بن عبد الجبار (المهدي)",
+  "preferred_name_latn": "Muḥammad II al-Mahdī",
+  "start_date": "0977",
+  "end_date": "1010",
+  "notes": "أول خلفاء الفتنة؛ مولده 366هـ، قام على هشام المؤيد في 18 جمادى الآخرة 399هـ وتلقب بالمهدي، وقُتل في ذي الحجة 400هـ (نحو 1010م)."
+ },
+ {
+  "entity_id": "PER-SULAYMAN-AL-MUSTAIN",
+  "entity_type": "Person",
+  "preferred_name_ar": "سليمان بن الحكم (المستعين بالله)",
+  "preferred_name_latn": "Sulaymān al-Mustaʿīn",
+  "start_date": "0965",
+  "end_date": "1016",
+  "notes": "مولده 354هـ؛ قام في شوال 399هـ مع البربر، ودخل قرطبة مرتين (ربيع الآخر 400هـ وشوال 403هـ)، وقتله علي بن حمود في المحرم 407هـ (نحو 1016م)."
+ },
+ {
+  "entity_id": "PER-ALI-IBN-HAMMUD",
+  "entity_type": "Person",
+  "preferred_name_ar": "علي بن حمود (الناصر لدين الله)",
+  "preferred_name_latn": "ʿAlī ibn Ḥammūd al-Nāṣir",
+  "start_date": null,
+  "end_date": "1018",
+  "notes": "أول الخلفاء الحموديين بقرطبة؛ دخلها في المحرم 407هـ وقُتل في الحمام في ذي القعدة 408هـ (نحو 1018م). سنة مولده لم أتحقق منها (عمره 48 عند ابن الأثير)."
+ },
+ {
+  "entity_id": "PER-AL-QASIM-IBN-HAMMUD",
+  "entity_type": "Person",
+  "preferred_name_ar": "القاسم بن حمود (المأمون)",
+  "preferred_name_latn": "al-Qāsim ibn Ḥammūd al-Maʾmūn",
+  "start_date": null,
+  "end_date": "1039",
+  "notes": "ولي بعد أخيه علي سنة 408هـ وتلقب بالمأمون، وخُلع مرتين، وقُتل خنقًا في أسر ابن أخيه سنة 431هـ وله ثمانون سنة (نحو 1039م). سنة مولده لم أتحقق منها."
+ },
+ {
+  "entity_id": "PER-YAHYA-AL-MUTALI",
+  "entity_type": "Person",
+  "preferred_name_ar": "يحيى بن علي بن حمود (المعتلي بالله)",
+  "preferred_name_latn": "Yaḥyā al-Muʿtalī",
+  "start_date": null,
+  "end_date": "1035",
+  "notes": "بويع بقرطبة مستهل جمادى الأولى 412هـ، وأعيدت دعوته فيها 416–417هـ، وقُتل قرب قرمونة في المحرم 427هـ (نحو 1035م). سنة مولده لم أتحقق منها."
+ },
+ {
+  "entity_id": "PER-ABDALRAHMAN-AL-MUSTAZHIR",
+  "entity_type": "Person",
+  "preferred_name_ar": "عبد الرحمن بن هشام (المستظهر بالله)",
+  "preferred_name_latn": "ʿAbd al-Raḥmān V al-Mustaẓhir",
+  "start_date": "1002",
+  "end_date": "1024",
+  "notes": "مولده في ذي القعدة 392هـ؛ بويع 13 رمضان 414هـ وقُتل بعد سبعة وأربعين يومًا في ذي القعدة 414هـ (نحو 1024م). كان ابن حزم وزيره."
+ },
+ {
+  "entity_id": "PER-MUHAMMAD-AL-MUSTAKFI",
+  "entity_type": "Person",
+  "preferred_name_ar": "محمد بن عبد الرحمن (المستكفي بالله)",
+  "preferred_name_latn": "Muḥammad III al-Mustakfī",
+  "start_date": "0977",
+  "end_date": "1025",
+  "notes": "مولده 366هـ؛ بويع في ذي القعدة 414هـ، وخُلع في ربيع الأول 416هـ ومات مسمومًا في ربيع الآخر 416هـ (نحو 1025م). والد ولّادة بنت المستكفي."
+ },
+ {
+  "entity_id": "PER-HISHAM-AL-MUTADD",
+  "entity_type": "Person",
+  "preferred_name_ar": "هشام بن محمد (المعتد بالله)",
+  "preferred_name_latn": "Hishām III al-Muʿtadd",
+  "start_date": "0975",
+  "end_date": "1036",
+  "notes": "آخر خلفاء بني أمية بقرطبة؛ مولده 364هـ، بويع في ربيع الأول 418هـ بالثغور ودخل قرطبة 8 ذي الحجة 420هـ، وخُلع سنة 422هـ، ومات عند ابن هود سنة 427هـ (نحو 1036م)."
+ },
+ {
+  "entity_id": "PER-ABDALRAHMAN-AL-MURTADA",
+  "entity_type": "Person",
+  "preferred_name_ar": "عبد الرحمن بن محمد (المرتضى)",
+  "preferred_name_latn": "ʿAbd al-Raḥmān IV al-Murtaḍā",
+  "start_date": null,
+  "end_date": null,
+  "notes": "بويع بالخلافة خارج قرطبة في الأضحى 408هـ عند ابن الأثير، وانهزم عند غرناطة وقُتل وعمره أربعون سنة؛ لم يلِ قرطبة. سنتا مولده ومقتله لم أتحقق منهما بنص صريح."
+ },
+ {
+  "entity_id": "PER-ABDALMALIK-AL-MUZAFFAR",
+  "entity_type": "Person",
+  "preferred_name_ar": "عبد الملك بن المنصور (المظفر)",
+  "preferred_name_latn": "ʿAbd al-Malik al-Muẓaffar",
+  "start_date": null,
+  "end_date": "1008",
+  "notes": "الحاجب بعد أبيه المنصور من 392هـ إلى وفاته في 17 صفر 399هـ عند الذهبي (وقيل 398هـ)، نحو 1008م؛ عاش ستًا وثلاثين سنة. سنة مولده لم أتحقق منها."
+ },
+ {
+  "entity_id": "PER-ABDALRAHMAN-SANCHUELO",
+  "entity_type": "Person",
+  "preferred_name_ar": "عبد الرحمن بن المنصور (الناصر، شنجول)",
+  "preferred_name_latn": "ʿAbd al-Raḥmān Sanchuelo",
+  "start_date": null,
+  "end_date": "1009",
+  "notes": "قام بالحجابة بعد أخيه المظفر سنة 399هـ وتسمى ولي العهد، فقام عليه المهدي وقُتل وصُلب في جمادى الآخرة 399هـ (نحو 1009م). سنة مولده لم أتحقق منها."
  }
 ]

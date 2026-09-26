@@ -102,5 +102,117 @@
   "script": "Arabic",
   "language": "ar",
   "normalized": "عبد الرحمن الاوسط"
+ },
+ {
+  "alias_id": "ALIAS-CAL-01",
+  "entity_id": "PER-MUHAMMAD-AL-MAHDI",
+  "alias": "المهدي بالله",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "المهدي بالله"
+ },
+ {
+  "alias_id": "ALIAS-CAL-02",
+  "entity_id": "PER-MUHAMMAD-AL-MAHDI",
+  "alias": "محمد المهدي الأموي",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "محمد المهدي الأموي"
+ },
+ {
+  "alias_id": "ALIAS-CAL-03",
+  "entity_id": "PER-SULAYMAN-AL-MUSTAIN",
+  "alias": "سليمان المستعين",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "سليمان المستعين"
+ },
+ {
+  "alias_id": "ALIAS-CAL-04",
+  "entity_id": "PER-SULAYMAN-AL-MUSTAIN",
+  "alias": "الظافر بحول الله",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "الظافر بحول الله"
+ },
+ {
+  "alias_id": "ALIAS-CAL-05",
+  "entity_id": "PER-ALI-IBN-HAMMUD",
+  "alias": "المتوكل على الله علي بن حمود",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "المتوكل على الله علي بن حمود"
+ },
+ {
+  "alias_id": "ALIAS-CAL-06",
+  "entity_id": "PER-AL-QASIM-IBN-HAMMUD",
+  "alias": "المأمون بن حمود",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "المأمون بن حمود"
+ },
+ {
+  "alias_id": "ALIAS-CAL-07",
+  "entity_id": "PER-YAHYA-AL-MUTALI",
+  "alias": "يحيى المعتلي",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "يحيى المعتلي"
+ },
+ {
+  "alias_id": "ALIAS-CAL-08",
+  "entity_id": "PER-ABDALRAHMAN-AL-MUSTAZHIR",
+  "alias": "المستظهر بالله",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "المستظهر بالله"
+ },
+ {
+  "alias_id": "ALIAS-CAL-09",
+  "entity_id": "PER-MUHAMMAD-AL-MUSTAKFI",
+  "alias": "المستكفي بالله",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "المستكفي بالله"
+ },
+ {
+  "alias_id": "ALIAS-CAL-10",
+  "entity_id": "PER-HISHAM-AL-MUTADD",
+  "alias": "هشام المعتد",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "هشام المعتد"
+ },
+ {
+  "alias_id": "ALIAS-CAL-11",
+  "entity_id": "PER-ABDALRAHMAN-AL-MURTADA",
+  "alias": "المرتضى",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "المرتضى"
+ },
+ {
+  "alias_id": "ALIAS-CAL-12",
+  "entity_id": "PER-ABDALMALIK-AL-MUZAFFAR",
+  "alias": "المظفر بن أبي عامر",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "المظفر بن أبي عامر"
+ },
+ {
+  "alias_id": "ALIAS-CAL-13",
+  "entity_id": "PER-ABDALRAHMAN-SANCHUELO",
+  "alias": "شنجول",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "شنجول"
+ },
+ {
+  "alias_id": "ALIAS-CAL-14",
+  "entity_id": "PER-ABDALRAHMAN-SANCHUELO",
+  "alias": "شنشول",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "شنشول"
  }
 ]
