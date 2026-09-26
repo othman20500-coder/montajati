@@ -828,5 +828,10 @@
   "claim_id": "CLM-TAI-03",
   "entity_id": "PLC-GRANADA",
   "role": "place"
+ },
+ {
+  "claim_id": "CLM-NSR-01",
+  "entity_id": "PER-IBN-HUD",
+  "role": "person"
  }
 ]

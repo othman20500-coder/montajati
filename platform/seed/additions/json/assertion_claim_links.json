@@ -723,5 +723,15 @@
   "assertion_id": "AST-QSI-01",
   "claim_id": "CLM-MRB-01",
   "relation": "مقتل ابن قسي"
+ },
+ {
+  "assertion_id": "AST-HUD-01",
+  "claim_id": "CLM-NSR-01",
+  "relation": "منافس ابن الأحمر"
+ },
+ {
+  "assertion_id": "AST-HUD-02",
+  "claim_id": "CLM-NSR-01",
+  "relation": "هلاك ابن هود 635هـ"
  }
 ]
