@@ -893,5 +893,15 @@
   "claim_id": "CLM-NSR-01",
   "entity_id": "PER-YUSUF-V-IBN-ISMAIL",
   "role": "person"
+ },
+ {
+  "claim_id": "CLM-NSR-01",
+  "entity_id": "PER-SAAD-MUSTAIN",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-NSR-01",
+  "entity_id": "PER-036",
+  "role": "person"
  }
 ]
