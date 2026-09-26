@@ -773,5 +773,20 @@
   "assertion_id": "AST-GRN-08",
   "claim_id": "CLM-NSR-01",
   "relation": "ولاية يوسف الثالث (دراسة حديثة)"
+ },
+ {
+  "assertion_id": "AST-GRN-09",
+  "claim_id": "CLM-NSR-01",
+  "relation": "ولاية محمد الأيسر (دراسة حديثة)"
+ },
+ {
+  "assertion_id": "AST-GRN-10",
+  "claim_id": "CLM-NSR-01",
+  "relation": "ولاية محمد الزغير (دراسة حديثة)"
+ },
+ {
+  "assertion_id": "AST-GRN-11",
+  "claim_id": "CLM-NSR-01",
+  "relation": "ولاية يوسف الرابع ابن المول (دراسة حديثة)"
  }
 ]

@@ -578,5 +578,45 @@
   "end_year": 1417,
   "precision": "سنة (811هـ/1408م – 820هـ/1417م، عن عنان؛ دراسة حديثة)",
   "note_ar": "AST-GRN-08؛ خلفه ابنه محمد الأيسر (خارج هذه الدفعة)"
+ },
+ {
+  "tenure_id": "TEN-NAS-AY1",
+  "person_id": "PER-MUHAMMAD-AL-AYSAR",
+  "polity_id": "POL-008",
+  "role": "سلطان",
+  "start_year": 1417,
+  "end_year": 1428,
+  "precision": "سنة (ولايته الأولى: 820هـ/1417م بعد أبيه – خُلع 831هـ/1428م، عن عنان؛ دراسة حديثة)",
+  "note_ar": "AST-GRN-09؛ الولاية الأولى"
+ },
+ {
+  "tenure_id": "TEN-NAS-ZG",
+  "person_id": "PER-MUHAMMAD-AL-ZAGHIR",
+  "polity_id": "POL-008",
+  "role": "سلطان",
+  "start_year": 1428,
+  "end_year": 1430,
+  "precision": "سنة (831هـ/1428م – 1430م، حكم عامين وبضعة أشهر، عن عنان؛ دراسة حديثة)",
+  "note_ar": "AST-GRN-10"
+ },
+ {
+  "tenure_id": "TEN-NAS-AY2",
+  "person_id": "PER-MUHAMMAD-AL-AYSAR",
+  "polity_id": "POL-008",
+  "role": "سلطان",
+  "start_year": 1430,
+  "end_year": 1432,
+  "precision": "سنة (ولايته الثانية: 1430م – خُلع بيوسف بن المول أول يناير 1432م، عن عنان؛ دراسة حديثة)",
+  "note_ar": "AST-GRN-09؛ الولاية الثانية؛ له عودات لاحقة تُؤجَّل"
+ },
+ {
+  "tenure_id": "TEN-NAS-Y4",
+  "person_id": "PER-YUSUF-IV-IBN-MAWL",
+  "polity_id": "POL-008",
+  "role": "سلطان",
+  "start_year": 1432,
+  "end_year": 1432,
+  "precision": "سنة (أول يناير 835هـ/1432م – توفي بعد ستة أشهر، عن عنان؛ دراسة حديثة)",
+  "note_ar": "AST-GRN-11؛ ثم عاد الأيسر (خارج هذه الدفعة)"
  }
 ]

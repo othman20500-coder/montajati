@@ -868,5 +868,20 @@
   "claim_id": "CLM-NSR-01",
   "entity_id": "PER-YUSUF-III",
   "role": "person"
+ },
+ {
+  "claim_id": "CLM-NSR-01",
+  "entity_id": "PER-MUHAMMAD-AL-AYSAR",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-NSR-01",
+  "entity_id": "PER-MUHAMMAD-AL-ZAGHIR",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-NSR-01",
+  "entity_id": "PER-YUSUF-IV-IBN-MAWL",
+  "role": "person"
  }
 ]
