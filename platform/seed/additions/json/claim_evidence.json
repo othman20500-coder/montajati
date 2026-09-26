@@ -346,5 +346,35 @@
   "evidence_id": "EVD-GOV-QUTIYYA",
   "relation": "supports",
   "ordinal": 4
+ },
+ {
+  "claim_id": "CLM-AMR-01",
+  "evidence_id": "EVD-AMR-BAYAN",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-AMR-01",
+  "evidence_id": "EVD-AMR-KAMIL",
+  "relation": "supports",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-AMR-01",
+  "evidence_id": "EVD-AMR-HAZM",
+  "relation": "supports",
+  "ordinal": 3
+ },
+ {
+  "claim_id": "CLM-AMR-02",
+  "evidence_id": "EVD-AMR-BAYAN",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-AMR-02",
+  "evidence_id": "EVD-AMR-KAMIL",
+  "relation": "supports",
+  "ordinal": 2
  }
 ]

@@ -78,5 +78,29 @@
   "script": "Arabic",
   "language": "ar",
   "normalized": "موسى بن نصير اللخمي"
+ },
+ {
+  "alias_id": "ALIAS-AMR-01",
+  "entity_id": "PER-HISHAM-I",
+  "alias": "هشام الرضا",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "هشام الرضا"
+ },
+ {
+  "alias_id": "ALIAS-AMR-02",
+  "entity_id": "PER-ALHAKAM-I",
+  "alias": "الحكم الربضي",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "الحكم الربضي"
+ },
+ {
+  "alias_id": "ALIAS-AMR-03",
+  "entity_id": "PER-ABDALRAHMAN-II",
+  "alias": "عبد الرحمن الأوسط",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "عبد الرحمن الاوسط"
  }
 ]
