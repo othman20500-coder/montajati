@@ -508,5 +508,45 @@
   "end_year": null,
   "precision": "صاحب جيان وحصن شقورة؛ أخذ غرناطة 557هـ؛ السنوات غير مضبوطة",
   "note_ar": "AST-HMK-01"
+ },
+ {
+  "tenure_id": "TEN-NAS-M3",
+  "person_id": "PER-MUHAMMAD-III",
+  "polity_id": "POL-008",
+  "role": "سلطان",
+  "start_year": 1302,
+  "end_year": 1309,
+  "precision": "سنة (تولّى بعد أبيه نحو 701هـ/1302م – خُلع عيد الفطر 708هـ)",
+  "note_ar": "AST-GRN-01؛ سنة البيعة تتبع وفاة أبيه محمد الثاني (نهاية TEN-009 في البذور)؛ لم أعثر على تاريخ بيعته الصريح ضمن المقروء من الإحاطة"
+ },
+ {
+  "tenure_id": "TEN-NAS-NSR",
+  "person_id": "PER-NASR-ABU-JUYUSH",
+  "polity_id": "POL-008",
+  "role": "سلطان",
+  "start_year": 1309,
+  "end_year": 1314,
+  "precision": "سنة (عيد الفطر 708هـ – خُلع إلى وادي آش ليلة 28 شوال 713هـ)",
+  "note_ar": "AST-GRN-03"
+ },
+ {
+  "tenure_id": "TEN-NAS-ISM",
+  "person_id": "PER-ISMAIL-I",
+  "polity_id": "POL-008",
+  "role": "سلطان",
+  "start_year": 1314,
+  "end_year": 1325,
+  "precision": "سنة (بويع 27 شوال 713هـ – استُشهد 26 رجب 725هـ)",
+  "note_ar": "AST-GRN-04"
+ },
+ {
+  "tenure_id": "TEN-NAS-M4",
+  "person_id": "PER-MUHAMMAD-IV",
+  "polity_id": "POL-008",
+  "role": "سلطان",
+  "start_year": 1325,
+  "end_year": 1333,
+  "precision": "سنة (27 رجب 725هـ – قُتل 13 ذي الحجة 733هـ)",
+  "note_ar": "AST-GRN-05؛ خلفه أخوه يوسف الأول (TEN-010 في البذور، 1333)"
  }
 ]
