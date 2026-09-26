@@ -563,5 +563,20 @@
   "claim_id": "CLM-NSR-01",
   "source_id": "LIB-PRI-049",
   "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-TAI-03",
+  "source_id": "LIB-PRI-045",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-TAI-03",
+  "source_id": "LIB-PRI-046",
+  "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-TAI-03",
+  "source_id": "LIB-PRI-049",
+  "ordinal": 3
  }
 ]

@@ -538,5 +538,17 @@
   "evidence_id": "EVD-MWH-DHAHABI",
   "relation": "supports",
   "ordinal": 2
+ },
+ {
+  "claim_id": "CLM-TAI-03",
+  "evidence_id": "EVD-SHQ-KAMIL",
+  "relation": "supports",
+  "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-TAI-03",
+  "evidence_id": "EVD-SHQ-DHAHABI",
+  "relation": "supports",
+  "ordinal": 2
  }
 ]

@@ -788,5 +788,45 @@
   "claim_id": "CLM-NSR-01",
   "entity_id": "PLC-GRANADA",
   "role": "place"
+ },
+ {
+  "claim_id": "CLM-TAI-03",
+  "entity_id": "POL-TAI-SHARQ",
+  "role": "polity"
+ },
+ {
+  "claim_id": "CLM-TAI-03",
+  "entity_id": "PER-IBN-MARDANISH",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-TAI-03",
+  "entity_id": "PER-IBN-HAMSHK",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-TAI-03",
+  "entity_id": "PER-IBN-AYYAD",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-TAI-03",
+  "entity_id": "PLC-MURCIA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-TAI-03",
+  "entity_id": "PLC-VALENCIA",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-TAI-03",
+  "entity_id": "PLC-JAEN",
+  "role": "place"
+ },
+ {
+  "claim_id": "CLM-TAI-03",
+  "entity_id": "PLC-GRANADA",
+  "role": "place"
  }
 ]

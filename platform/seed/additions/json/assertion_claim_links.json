@@ -698,5 +698,20 @@
   "assertion_id": "AST-NSR-02",
   "claim_id": "CLM-NSR-01",
   "relation": "الهدنة"
+ },
+ {
+  "assertion_id": "AST-MRD-01",
+  "claim_id": "CLM-TAI-03",
+  "relation": "الحكام"
+ },
+ {
+  "assertion_id": "AST-MRD-02",
+  "claim_id": "CLM-TAI-03",
+  "relation": "وفاة ابن مردنيش"
+ },
+ {
+  "assertion_id": "AST-HMK-01",
+  "claim_id": "CLM-TAI-03",
+  "relation": "ابن همشك وغرناطة"
  }
 ]
