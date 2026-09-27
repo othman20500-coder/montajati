@@ -592,5 +592,11 @@
   "evidence_id": "EVD-TIB-ZUHR",
   "relation": "supports",
   "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-TIB-03",
+  "evidence_id": "EVD-TIB-HAFID",
+  "relation": "supports",
+  "ordinal": 1
  }
 ]
