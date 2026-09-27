@@ -618,5 +618,10 @@
   "claim_id": "CLM-TIB-03",
   "source_id": "LIB-PRI-051",
   "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-RSHD-01",
+  "source_id": "LIB-PRI-051",
+  "ordinal": 1
  }
 ]

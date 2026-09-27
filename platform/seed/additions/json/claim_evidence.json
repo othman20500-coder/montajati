@@ -598,5 +598,11 @@
   "evidence_id": "EVD-TIB-HAFID",
   "relation": "supports",
   "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-RSHD-01",
+  "evidence_id": "EVD-RSHD-AYN",
+  "relation": "supports",
+  "ordinal": 1
  }
 ]

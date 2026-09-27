@@ -878,5 +878,15 @@
   "assertion_id": "AST-TIB-06",
   "claim_id": "CLM-TIB-03",
   "relation": "وفاة الحفيد 596هـ بمراكش مسمومًا ودفنه بمقابر الشيوخ"
+ },
+ {
+  "assertion_id": "AST-RSHD-01",
+  "claim_id": "CLM-RSHD-01",
+  "relation": "مكانة ابن رشد في القضاء والفقه والطب والفلسفة وكتاب الكليات"
+ },
+ {
+  "assertion_id": "AST-RSHD-02",
+  "claim_id": "CLM-RSHD-01",
+  "relation": "محنة ابن رشد باليسانة ووفاته بمراكش 595هـ"
  }
 ]
