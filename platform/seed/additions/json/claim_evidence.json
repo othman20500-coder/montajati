@@ -586,5 +586,11 @@
   "evidence_id": "EVD-TIB-IHATA",
   "relation": "supports",
   "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-TIB-02",
+  "evidence_id": "EVD-TIB-ZUHR",
+  "relation": "supports",
+  "ordinal": 1
  }
 ]
