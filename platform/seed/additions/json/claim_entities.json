@@ -928,5 +928,10 @@
   "claim_id": "CLM-ULM-02",
   "entity_id": "PER-BALAFIQI",
   "role": "person"
+ },
+ {
+  "claim_id": "CLM-TIB-01",
+  "entity_id": "PER-IBN-HUDHAYL",
+  "role": "person"
  }
 ]

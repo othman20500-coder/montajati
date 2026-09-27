@@ -580,5 +580,11 @@
   "evidence_id": "EVD-ULM-BALAFIQI",
   "relation": "supports",
   "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-TIB-01",
+  "evidence_id": "EVD-TIB-IHATA",
+  "relation": "supports",
+  "ordinal": 1
  }
 ]

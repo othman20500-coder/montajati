@@ -848,5 +848,10 @@
   "assertion_id": "AST-ULM-03",
   "claim_id": "CLM-ULM-02",
   "relation": "منصب أبي البركات وتنقّله قاضيًا ومقرئًا وخطيبًا"
+ },
+ {
+  "assertion_id": "AST-TIB-01",
+  "claim_id": "CLM-TIB-01",
+  "relation": "مشيخة يحيى بن هذيل لابن الخطيب وتخصصه في الحكمة والطب"
  }
 ]
