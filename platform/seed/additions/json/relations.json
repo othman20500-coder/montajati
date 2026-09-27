@@ -1,0 +1,74 @@
+[
+ {
+  "relation_id": "REL-MAP-01",
+  "subject_id": "PER-JAYYAB",
+  "predicate": "active_in",
+  "object_id": "PLC-GRANADA",
+  "confidence": "high",
+  "claim_id": "CLM-VIZ-01"
+ },
+ {
+  "relation_id": "REL-MAP-02",
+  "subject_id": "PER-018",
+  "predicate": "active_in",
+  "object_id": "PLC-GRANADA",
+  "confidence": "high",
+  "claim_id": "CLM-VIZ-02"
+ },
+ {
+  "relation_id": "REL-MAP-03",
+  "subject_id": "PER-035",
+  "predicate": "active_in",
+  "object_id": "PLC-GRANADA",
+  "confidence": "high",
+  "claim_id": "CLM-VIZ-03"
+ },
+ {
+  "relation_id": "REL-MAP-04",
+  "subject_id": "PER-IBN-ZUBAYR",
+  "predicate": "located_in",
+  "object_id": "PLC-JAEN",
+  "confidence": "high",
+  "claim_id": "CLM-ULM-01"
+ },
+ {
+  "relation_id": "REL-MAP-05",
+  "subject_id": "PER-IBN-ZUBAYR",
+  "predicate": "died_in",
+  "object_id": "PLC-ALMARIYYA",
+  "confidence": "high",
+  "claim_id": "CLM-ULM-01"
+ },
+ {
+  "relation_id": "REL-MAP-06",
+  "subject_id": "PER-BALAFIQI",
+  "predicate": "active_in",
+  "object_id": "PLC-ALMARIYYA",
+  "confidence": "high",
+  "claim_id": "CLM-ULM-02"
+ },
+ {
+  "relation_id": "REL-MAP-07",
+  "subject_id": "PER-IBN-ZUHR",
+  "predicate": "died_in",
+  "object_id": "PLC-SEVILLE",
+  "confidence": "high",
+  "claim_id": "CLM-TIB-02"
+ },
+ {
+  "relation_id": "REL-MAP-08",
+  "subject_id": "PER-IBN-ZUHR-HAFID",
+  "predicate": "active_in",
+  "object_id": "PLC-SEVILLE",
+  "confidence": "high",
+  "claim_id": "CLM-TIB-03"
+ },
+ {
+  "relation_id": "REL-MAP-09",
+  "subject_id": "PER-016",
+  "predicate": "active_in",
+  "object_id": "PLC-CORDOBA",
+  "confidence": "high",
+  "claim_id": "CLM-RSHD-01"
+ }
+]
