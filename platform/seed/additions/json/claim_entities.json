@@ -963,5 +963,15 @@
   "claim_id": "CLM-RSHD-01",
   "entity_id": "PER-IBN-ZUHR",
   "role": "person"
+ },
+ {
+  "claim_id": "CLM-BAJJA-01",
+  "entity_id": "PER-014",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-BAJJA-01",
+  "entity_id": "PER-016",
+  "role": "person"
  }
 ]

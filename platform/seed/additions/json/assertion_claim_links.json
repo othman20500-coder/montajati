@@ -888,5 +888,15 @@
   "assertion_id": "AST-RSHD-02",
   "claim_id": "CLM-RSHD-01",
   "relation": "محنة ابن رشد باليسانة ووفاته بمراكش 595هـ"
+ },
+ {
+  "assertion_id": "AST-BAJJA-01",
+  "claim_id": "CLM-BAJJA-01",
+  "relation": "مكانة ابن باجة في الحكمة والطب والموسيقى وتلمذة ابن رشد له"
+ },
+ {
+  "assertion_id": "AST-BAJJA-02",
+  "claim_id": "CLM-BAJJA-01",
+  "relation": "وفاة ابن باجة شابًّا بفاس"
  }
 ]

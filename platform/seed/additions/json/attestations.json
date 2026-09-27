@@ -7148,5 +7148,83 @@
   "note_ar": "وفاة ابن رشد بمراكش أول سنة 595هـ في أول دولة الناصر",
   "url": "https://shamela.ws/book/6687/518",
   "checked_on": "2026-09-26"
+ },
+ {
+  "attestation_id": "ATT-BAJJA-01",
+  "assertion_id": "AST-BAJJA-01",
+  "source_id": "LIB-PRI-051",
+  "source_kind": "مصدر أولي",
+  "locator": "ص515 (عيون الأنباء، ط. الشاملة 6687)",
+  "quote": "هُوَ أَبُو بكر مُحَمَّد بن يحيى بن الصَّائِغ وَيعرف بِابْن باجة من الأندلس",
+  "stance": "يدعم",
+  "verbatim_check": "مطابق حرفيًا (فحص آلي بأداة verify_quote في وصلة الشاملة، 2026-09-26)",
+  "note_ar": "اسم ابن باجة ونسبته (ابن الصائغ) من الأندلس",
+  "url": "https://shamela.ws/book/6687/501",
+  "checked_on": "2026-09-26"
+ },
+ {
+  "attestation_id": "ATT-BAJJA-02",
+  "assertion_id": "AST-BAJJA-01",
+  "source_id": "LIB-PRI-051",
+  "source_kind": "مصدر أولي",
+  "locator": "ص515 (عيون الأنباء، ط. الشاملة 6687)",
+  "quote": "وَكَانَ فِي الْعُلُوم الْحكمِيَّة عَلامَة وقته وأوحد زَمَانه",
+  "stance": "يدعم",
+  "verbatim_check": "مطابق حرفيًا (فحص آلي بأداة verify_quote في وصلة الشاملة، 2026-09-26)",
+  "note_ar": "مكانة ابن باجة في العلوم الحكمية",
+  "url": "https://shamela.ws/book/6687/501",
+  "checked_on": "2026-09-26"
+ },
+ {
+  "attestation_id": "ATT-BAJJA-03",
+  "assertion_id": "AST-BAJJA-01",
+  "source_id": "LIB-PRI-051",
+  "source_kind": "مصدر أولي",
+  "locator": "ص515 (عيون الأنباء، ط. الشاملة 6687)",
+  "quote": "وَكَانَ متقنا لصناعة الموسيقى جيد اللّعب بِالْعودِ",
+  "stance": "يدعم",
+  "verbatim_check": "مطابق حرفيًا (فحص آلي بأداة verify_quote في وصلة الشاملة، 2026-09-26)",
+  "note_ar": "إتقان ابن باجة للموسيقى والعود (وقبله: من الأفاضل في صناعة الطب)",
+  "url": "https://shamela.ws/book/6687/501",
+  "checked_on": "2026-09-26"
+ },
+ {
+  "attestation_id": "ATT-BAJJA-04",
+  "assertion_id": "AST-BAJJA-01",
+  "source_id": "LIB-PRI-051",
+  "source_kind": "مصدر أولي",
+  "locator": "ص516 (عيون الأنباء، ط. الشاملة 6687)",
+  "quote": "وَيُشبه أَنه لم يكن بعد أبي نصر الفارابي مثله فِي الْفُنُون الَّتِي تكلم عَلَيْهَا",
+  "stance": "يدعم",
+  "verbatim_check": "مطابق حرفيًا (فحص آلي بأداة verify_quote في وصلة الشاملة، 2026-09-26)",
+  "note_ar": "تقويم ابن الإمام لابن باجة: لم يكن بعد الفارابي مثله (ورُجّح على ابن سينا والغزالي في فهم أرسطو)",
+  "url": "https://shamela.ws/book/6687/502",
+  "checked_on": "2026-09-26"
+ },
+ {
+  "attestation_id": "ATT-BAJJA-05",
+  "assertion_id": "AST-BAJJA-01",
+  "source_id": "LIB-PRI-051",
+  "source_kind": "مصدر أولي",
+  "locator": "ص516 (عيون الأنباء، ط. الشاملة 6687)",
+  "quote": "وَكَانَ من جملَة تلاميذ ابْن باجة أَيْضا القَاضِي أَبُو الْوَلِيد مُحَمَّد بن رشد",
+  "stance": "يدعم",
+  "verbatim_check": "مطابق حرفيًا (فحص آلي بأداة verify_quote في وصلة الشاملة، 2026-09-26)",
+  "note_ar": "ابن رشد (PER-016) من تلاميذ ابن باجة",
+  "url": "https://shamela.ws/book/6687/502",
+  "checked_on": "2026-09-26"
+ },
+ {
+  "attestation_id": "ATT-BAJJA-06",
+  "assertion_id": "AST-BAJJA-02",
+  "source_id": "LIB-PRI-051",
+  "source_kind": "مصدر أولي",
+  "locator": "ص516 (عيون الأنباء، ط. الشاملة 6687)",
+  "quote": "وَتُوفِّي ابْن باجه شَابًّا بِمَدِينَة فاس وَدفن بهَا",
+  "stance": "يدعم",
+  "verbatim_check": "مطابق حرفيًا (فحص آلي بأداة verify_quote في وصلة الشاملة، 2026-09-26)",
+  "note_ar": "وفاة ابن باجة شابًّا بفاس ودفنه بها",
+  "url": "https://shamela.ws/book/6687/502",
+  "checked_on": "2026-09-26"
  }
 ]

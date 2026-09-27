@@ -604,5 +604,11 @@
   "evidence_id": "EVD-RSHD-AYN",
   "relation": "supports",
   "ordinal": 1
+ },
+ {
+  "claim_id": "CLM-BAJJA-01",
+  "evidence_id": "EVD-BAJJA-AYN",
+  "relation": "supports",
+  "ordinal": 1
  }
 ]
