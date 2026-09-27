@@ -590,5 +590,21 @@
   "script": "Arabic",
   "language": "ar",
   "normalized": "ابو البركات ابن الحاج"
+ },
+ {
+  "alias_id": "ALIAS-HUDHAYL-01",
+  "entity_id": "PER-IBN-HUDHAYL",
+  "alias": "يحيى بن هذيل",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "يحيى بن هذيل"
+ },
+ {
+  "alias_id": "ALIAS-HUDHAYL-02",
+  "entity_id": "PER-IBN-HUDHAYL",
+  "alias": "الحكيم يحيى بن هذيل",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "الحكيم يحيى بن هذيل"
  }
 ]
