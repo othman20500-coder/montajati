@@ -606,5 +606,21 @@
   "script": "Arabic",
   "language": "ar",
   "normalized": "الحكيم يحيى بن هذيل"
+ },
+ {
+  "alias_id": "ALIAS-ZUHR-01",
+  "entity_id": "PER-IBN-ZUHR",
+  "alias": "ابن زهر",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "ابن زهر"
+ },
+ {
+  "alias_id": "ALIAS-ZUHR-02",
+  "entity_id": "PER-IBN-ZUHR",
+  "alias": "أبو مروان عبد الملك بن زهر",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "ابو مروان عبد الملك بن زهر"
  }
 ]

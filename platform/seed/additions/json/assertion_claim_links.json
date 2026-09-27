@@ -853,5 +853,20 @@
   "assertion_id": "AST-TIB-01",
   "claim_id": "CLM-TIB-01",
   "relation": "مشيخة يحيى بن هذيل لابن الخطيب وتخصصه في الحكمة والطب"
+ },
+ {
+  "assertion_id": "AST-TIB-02",
+  "claim_id": "CLM-TIB-02",
+  "relation": "مكانة ابن زهر الطبية وخدمته للموحدين"
+ },
+ {
+  "assertion_id": "AST-TIB-03",
+  "claim_id": "CLM-TIB-02",
+  "relation": "مصنفات ابن زهر (التيسير لابن رشد، والأغذية لعبد المؤمن)"
+ },
+ {
+  "assertion_id": "AST-TIB-04",
+  "claim_id": "CLM-TIB-02",
+  "relation": "وفاة ابن زهر ودفنه بإشبيلية (السنة ناقصة الرقم)"
  }
 ]
