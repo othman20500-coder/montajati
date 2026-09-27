@@ -622,5 +622,21 @@
   "script": "Arabic",
   "language": "ar",
   "normalized": "ابو مروان عبد الملك بن زهر"
+ },
+ {
+  "alias_id": "ALIAS-HAFID-01",
+  "entity_id": "PER-IBN-ZUHR-HAFID",
+  "alias": "الحفيد أبو بكر بن زهر",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "الحفيد ابو بكر بن زهر"
+ },
+ {
+  "alias_id": "ALIAS-HAFID-02",
+  "entity_id": "PER-IBN-ZUHR-HAFID",
+  "alias": "أبو بكر محمد بن زهر",
+  "script": "Arabic",
+  "language": "ar",
+  "normalized": "ابو بكر محمد بن زهر"
  }
 ]
