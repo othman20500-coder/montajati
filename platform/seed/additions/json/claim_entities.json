@@ -953,5 +953,15 @@
   "claim_id": "CLM-TIB-03",
   "entity_id": "PER-IBN-ZUHR",
   "role": "person"
+ },
+ {
+  "claim_id": "CLM-RSHD-01",
+  "entity_id": "PER-016",
+  "role": "person"
+ },
+ {
+  "claim_id": "CLM-RSHD-01",
+  "entity_id": "PER-IBN-ZUHR",
+  "role": "person"
  }
 ]
