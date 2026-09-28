@@ -70,5 +70,29 @@
   "object_id": "PLC-CORDOBA",
   "confidence": "high",
   "claim_id": "CLM-RSHD-01"
+ },
+ {
+  "relation_id": "REL-MAP-10",
+  "subject_id": "PER-014",
+  "predicate": "died_in",
+  "object_id": "PLC-FEZ",
+  "confidence": "high",
+  "claim_id": "CLM-BAJJA-01"
+ },
+ {
+  "relation_id": "REL-MAP-11",
+  "subject_id": "PER-016",
+  "predicate": "died_in",
+  "object_id": "PLC-MARRAKESH",
+  "confidence": "high",
+  "claim_id": "CLM-RSHD-01"
+ },
+ {
+  "relation_id": "REL-MAP-12",
+  "subject_id": "PER-IBN-ZUHR-HAFID",
+  "predicate": "died_in",
+  "object_id": "PLC-MARRAKESH",
+  "confidence": "high",
+  "claim_id": "CLM-TIB-03"
  }
 ]

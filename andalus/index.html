@@ -425,8 +425,8 @@ V.figures=(q)=>{
   return `<section><p class="eyebrow">الأعلام على الخريطة</p><h2>مَن نبغ في كل مدينة؟</h2>
   <p class="sub">وحدة تفاعلية تجمع أعلام الأندلس على مواضعهم: اختر مدينةً من الخريطة أو القائمة فتظهر أعلامها (وزراء وعلماء وأطباء وفلاسفة)، وكل رابط عَلَم↔موضع مسنَد إلى ادعاء موثّق وفِقرة موضعية مقابَلة حرفيًا في القاعدة. المراسي حديثة تقريبية (القاعدة 7)، والعرض موضوعي لا مقيَّد بسنة.</p>
   <div class="atlas"><div>
-    <div class="panel">${mapSvg(1100,{only:onlySet,focus:sel,route,labels:"all"})}<ul class="sr-only" aria-label="المدن التي عليها أعلام">${figPlaces.map(p=>`<li><a href="${route(p.id)}">${esc(p.name.ar)} (${figPeopleOf(p.id).length})</a></li>`).join("")}</ul></div>
-    <p class="note">${figPlaces.length} مدينة عليها أعلام مربوطون، و${total} عَلَمًا مرتبطًا. انقر أي مدينة لعرض أعلامها.</p>
+    <div class="panel">${mapSvg(1100,{only:onlySet,focus:sel,route,labels:"all",bbox:[-10,30.5,4,44]})}<ul class="sr-only" aria-label="المدن التي عليها أعلام">${figPlaces.map(p=>`<li><a href="${route(p.id)}">${esc(p.name.ar)} (${figPeopleOf(p.id).length})</a></li>`).join("")}</ul></div>
+    <p class="note">${figPlaces.length} مدينة عليها أعلام مربوطون، و${total} عَلَمًا مرتبطًا. انقر أي مدينة لعرض أعلامها. الإطار يشمل محطات مغربية (فاس، مراكش) توفي بها أعلام أندلسيون؛ المراسي تقريبية (القاعدة 7).</p>
   </div><div>
     <div class="panel"><p class="eyebrow">${esc(o.kind||"مكان")}</p><h3><a href="${href(o.id)}">${esc(o.name.ar)}</a> <small style="color:var(--muted)">${esc(o.name.en||"")}</small></h3>
     <p class="note">أعلامها المربوطون (${ppl.length}):</p><div class="chips">${ppl.map(pchip).join("")}</div>
