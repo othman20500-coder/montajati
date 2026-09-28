@@ -196,6 +196,10 @@
   .keypanel .keras .ke{display:inline-flex;align-items:center;gap:6px}
   .keypanel .keras .ke i{width:11px;height:11px;border-radius:2px;display:inline-block;flex:none}
   @media print{.keydock{display:none!important}}
+  /* تحسين لوحة البحث: إبراز العنصر النشط بلوحة المفاتيح، وترويسات المقترحات */
+  .cmd .res a.sel{background:var(--soft)}
+  .cmd .reshdr{padding:9px 16px 4px;font-size:11.5px;color:var(--brand-2);font-weight:600}
+  .cmd .reshdr:first-child{padding-top:12px}
   .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:18px}
   .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:start}
   @media (max-width:860px){.cols{grid-template-columns:1fr}}
@@ -756,10 +760,20 @@ document.addEventListener("keydown",e=>{const b=e.target.closest?.(".b[data-c]")
 function openCmd(){const c=document.getElementById("cmd");c.classList.add("on");const q=document.getElementById("q");q.value="";q.focus();search("");}
 document.getElementById("kbtn").onclick=openCmd;document.getElementById("cmd").onclick=e=>{if(e.target.id==="cmd")e.currentTarget.classList.remove("on");};
 document.getElementById("q").oninput=e=>search(e.target.value);
-function search(s){s=s.trim();const res=document.getElementById("res");if(/^\d{3,4}$/.test(s)){const y=+s;res.innerHTML=`<a href="#/map?y=${y}"><i style="--c:var(--accent)"></i>ماذا كان يحدث سنة ${y}م؟<small>الخريطة</small></a><a href="#/timeline?y=${y}"><i style="--c:var(--accent)"></i>سنة ${y}م على خط الزمن<small>الزمن</small></a>`;return;}
-  const hits=Object.values(E).filter(o=>!s||o.name.ar.includes(s)||(o.name.en||"").toLowerCase().includes(s.toLowerCase())||(o.name.es||"").toLowerCase().includes(s.toLowerCase())).slice(0,12);
-  res.innerHTML=hits.map(o=>`<a href="${href(o.id)}" style="--c:${TYPE[o.type][1]}">${typeIcon(o.type)}${esc(o.name.ar)}<small>${TYPE[o.type][0]}</small></a>`).join("")||`<a href="#/"><i></i>لا نتائج<small></small></a>`;}
+// آخر ما زُرت (محليًا فقط، تسهيلٌ للفرد لا حالةٌ مشتركة)
+function recents(){try{return JSON.parse(localStorage.getItem("and_recent")||"[]").filter(id=>E[id]);}catch(_){return [];}}
+function pushRecent(id){try{if(!E[id])return;let r=recents().filter(x=>x!==id);r.unshift(id);localStorage.setItem("and_recent",JSON.stringify(r.slice(0,6)));}catch(_){}}
+const resRow=(o,label)=>`<a href="${href(o.id)}" style="--c:${TYPE[o.type][1]}">${typeIcon(o.type)}${esc(o.name.ar)}<small>${label||TYPE[o.type][0]}</small></a>`;
+function selReset(){const l=[...document.querySelectorAll("#res a")];l.forEach(a=>a.classList.remove("sel"));if(l[0])l[0].classList.add("sel");}
+function selMove(d){const l=[...document.querySelectorAll("#res a")];if(!l.length)return;let i=l.findIndex(a=>a.classList.contains("sel"));i=((i<0?0:i+d)+l.length)%l.length;l.forEach(a=>a.classList.remove("sel"));l[i].classList.add("sel");l[i].scrollIntoView({block:"nearest"});}
+function search(s){s=s.trim();const res=document.getElementById("res");
+  if(/^\d{3,4}$/.test(s)){const y=+s;res.innerHTML=`<a href="#/map?y=${y}"><i style="--c:var(--accent)"></i>ماذا كان يحدث سنة ${y}م؟<small>الخريطة</small></a><a href="#/timeline?y=${y}"><i style="--c:var(--accent)"></i>سنة ${y}م على خط الزمن<small>الزمن</small></a>`;selReset();return;}
+  if(!s){const rec=recents();const sugg=["PLC-CORDOBA","PLC-GRANADA","PER-016","EVT-003","PLC-SEVILLE","PER-006"].filter(id=>E[id]&&!rec.includes(id)).slice(0,6);
+    res.innerHTML=(rec.length?`<div class="reshdr">آخر ما زُرت</div>`+rec.map(id=>resRow(E[id])).join(""):"")+`<div class="reshdr">مقترحات</div>`+sugg.map(id=>resRow(E[id])).join("");selReset();return;}
+  const hits=Object.values(E).filter(o=>o.name.ar.includes(s)||(o.name.en||"").toLowerCase().includes(s.toLowerCase())||(o.name.es||"").toLowerCase().includes(s.toLowerCase())).slice(0,12);
+  res.innerHTML=hits.map(o=>resRow(o)).join("")||`<a href="#/"><i></i>لا نتائج<small></small></a>`;selReset();}
 document.getElementById("res").onclick=()=>document.getElementById("cmd").classList.remove("on");
+document.getElementById("q").addEventListener("keydown",e=>{if(e.key==="ArrowDown"){e.preventDefault();selMove(1);}else if(e.key==="ArrowUp"){e.preventDefault();selMove(-1);}else if(e.key==="Enter"){const a=document.querySelector("#res a.sel");if(a){e.preventDefault();location.hash=a.getAttribute("href");document.getElementById("cmd").classList.remove("on");}}});
 
 /* ===== السمات والجمهور ===== */
 const state={y:960};
@@ -787,7 +801,7 @@ function route(){const h=location.hash||"#/";const [path,qs]=h.slice(1).split("?
   let html="";
   if(!seg.length)html=V.home();
   else if(V[seg[0]]&&seg.length===1)html=V[seg[0]](q);
-  else if(seg[0]==="x"&&seg.length===2)html=V.entity(decodeURIComponent(seg[1]));
+  else if(seg[0]==="x"&&seg.length===2){const eid=decodeURIComponent(seg[1]);html=V.entity(eid);pushRecent(eid);}
   else html=V.home();
   app.innerHTML=html;window.scrollTo({top:0});
   const bind=(id,onY)=>{const r=document.getElementById(id);if(!r)return;r.oninput=()=>{const y=+r.value;state.y=y;document.getElementById(id+"-y").innerHTML=`${y}م <small style="font-family:var(--body);font-size:12px;opacity:.75">${hijri(y)}هـ تقريبًا · ${eraOf(y).name}</small>`;onY(y);};};
