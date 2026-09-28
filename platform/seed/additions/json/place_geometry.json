@@ -28,5 +28,25 @@
   "anchor_type": "modern site anchor (approximate)",
   "coordinate_source": "إحداثية تقريبية من معرفة جغرافية عامة (العقاب يُطابَق بموضع Las Navas de Tolosa قرب سانتا إيلينا/خيان)؛ لم تُفتح صفحة مصدر بسبب حجب الشبكة، تُراجع عند توفره",
   "last_verified": "2026-09-26"
+ },
+ {
+  "entity_id": "PLC-FEZ",
+  "lat": 34.03,
+  "lon": -5.0,
+  "geometry_type": "Point",
+  "spatial_quality": "approximate city anchor, not exact",
+  "anchor_type": "modern city anchor (approximate)",
+  "coordinate_source": "إحداثية تقريبية من معرفة جغرافية عامة (مركز المدينة الحديثة)؛ لم تُفتح صفحة مصدر بسبب حجب الشبكة، تُراجع عند توفره (فاس نحو 34.03، −5.00)",
+  "last_verified": "2026-09-28"
+ },
+ {
+  "entity_id": "PLC-MARRAKESH",
+  "lat": 31.63,
+  "lon": -8.0,
+  "geometry_type": "Point",
+  "spatial_quality": "approximate city anchor, not exact",
+  "anchor_type": "modern city anchor (approximate)",
+  "coordinate_source": "إحداثية تقريبية من معرفة جغرافية عامة (مركز المدينة الحديثة)؛ لم تُفتح صفحة مصدر بسبب حجب الشبكة، تُراجع عند توفره (مراكش نحو 31.63، −8.00)",
+  "last_verified": "2026-09-28"
  }
 ]

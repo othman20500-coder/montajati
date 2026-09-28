@@ -22,5 +22,21 @@
   "historical_status": "verified_claim_linked",
   "display_priority": 50,
   "note_ar": "موضع وقعة العقاب 609هـ (EVT-024)؛ مرساة تقريبية تُراجع"
+ },
+ {
+  "entity_id": "PLC-FEZ",
+  "period_group": "taifa_empires",
+  "theme": "knowledge,migration",
+  "historical_status": "verified_claim_linked",
+  "display_priority": 30,
+  "note_ar": "مدينة مغربية خارج الأندلس؛ وفاة ابن باجة بها (ومقتل ابن الخطيب لاحقًا). مرساة تقريبية تُراجع (القاعدة 7)"
+ },
+ {
+  "entity_id": "PLC-MARRAKESH",
+  "period_group": "taifa_empires",
+  "theme": "knowledge,politics",
+  "historical_status": "verified_claim_linked",
+  "display_priority": 30,
+  "note_ar": "حاضرة المرابطين والموحدين خارج الأندلس؛ وفاة ابن رشد والحفيد بن زهر بها. مرساة تقريبية تُراجع (القاعدة 7)"
  }
 ]
