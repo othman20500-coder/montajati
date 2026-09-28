@@ -10,7 +10,7 @@
 <style>
   /* ===== الرموز الوظيفية الثابتة عبر السمات ===== */
   :root{
-    --fact:#1F9D6A; --disputed:#D08A1E; --inference:#3F6FB5; --myth:#8A8F98;
+    --fact:#1F9D6A; --disputed:#D08A1E; --inference:#3F6FB5; --myth:#8A8F98; --death:#B02A37;
     --era-wulat:#8C6D3F; --era-imara:#2E7D5B; --era-khilafa:#1F5FA8; --era-tawaif:#B2632B;
     --era-murabit:#5B3F8C; --era-muwahhid:#8C2F39; --era-nasrid:#B8912E; --era-morisco:#5C6B73;
     --christian:#C9C2B3;
@@ -114,6 +114,9 @@
   :root[data-theme="night"] .map .land{fill:#1B2536;stroke:#34405A}
   .map .sea{fill:transparent}
   .map .city{cursor:pointer}
+  .map .death-edge{stroke:var(--death);stroke-width:2;stroke-dasharray:5 4;opacity:.9;fill:none}
+  .map .city.death-node circle{stroke:var(--death);stroke-width:2.5}
+  .chip.death{border-color:var(--death);color:var(--death)}
   .map .route{stroke:var(--muted);stroke-dasharray:6 5;opacity:.3;fill:none}
   .map .route.on{stroke:var(--accent);opacity:.95}
   .map .stop circle{fill:var(--card);stroke:var(--muted);stroke-width:1.5;opacity:.55}
@@ -360,8 +363,9 @@ function mapSvg(y,opts={}){
     <defs><clipPath id="${cid}"><path d="${path(IBERIA)}"/><path d="${path(MAGHREB)}"/></clipPath></defs>
     <path class="land" d="${path(IBERIA)}"/><path class="land" d="${path(MAGHREB)}"/>
     <g class="zones" clip-path="url(#${cid})">${zones(y)}</g>${zonesSvg}
+    ${(opts.edges||[]).map(e=>{const a=E[e.from],b=E[e.to];if(!a||!b||typeof a.lat!=="number"||typeof b.lat!=="number")return "";return `<line class="death-edge" x1="${X(a.lon)}" y1="${Y(a.lat)}" x2="${X(b.lon)}" y2="${Y(b.lat)}" stroke-width="${2*k}"><title>رحلة إلى الوفاة: ${esc(a.name.ar)} ← ${esc(b.name.ar)}</title></line>`;}).join("")}
     ${cities.map(o=>{const c=ctrl(o,y);const exists=o.founded==null||y>=o.founded;const fill=c==="muslim"?eraOf(y).c:c==="christian"?"var(--christian)":"var(--brand)";
-      const label=opts.labels==="all"||MAJOR.has(o.id)||o.id===opts.focus||members.has(o.id);if(opts.only&&!opts.only.has(o.id))return "";return `<a class="city ${exists?"":"dim"}${members.has(o.id)?" member":""}" href="${opts.route?opts.route(o.id):href(o.id)}"><title>${esc(o.name.ar)}</title><circle cx="${X(o.lon)}" cy="${Y(o.lat)}" r="${(o.id===opts.focus?9:MAJOR.has(o.id)?7:4.5)*k}" fill="${fill}"${o.id===opts.focus?" stroke=\"var(--accent)\" stroke-width=\""+(3*k)+"\"":""}/>${label?`<text x="${X(o.lon)+9*k}" y="${Y(o.lat)+4*k}" font-size="${11*k}">${esc(o.name.ar)}</text>`:""}</a>`;}).join("")}
+      const label=opts.labels==="all"||MAJOR.has(o.id)||o.id===opts.focus||members.has(o.id);if(opts.only&&!opts.only.has(o.id))return "";return `<a class="city ${exists?"":"dim"}${members.has(o.id)?" member":""}${opts.deathNodes&&opts.deathNodes.has(o.id)?" death-node":""}" href="${opts.route?opts.route(o.id):href(o.id)}"><title>${esc(o.name.ar)}</title><circle cx="${X(o.lon)}" cy="${Y(o.lat)}" r="${(o.id===opts.focus?9:MAJOR.has(o.id)?7:4.5)*k}" fill="${fill}"${o.id===opts.focus?" stroke=\"var(--accent)\" stroke-width=\""+(3*k)+"\"":""}/>${label?`<text x="${X(o.lon)+9*k}" y="${Y(o.lat)+4*k}" font-size="${11*k}">${esc(o.name.ar)}</text>`:""}</a>`;}).join("")}
     ${battles.filter(b=>typeof b.lat==="number"&&Math.abs((b.founded||b.year||0)-y)<=40).map(b=>`<a class="battle" href="${href(b.id)}"><path d="M${X(b.lon)},${Y(b.lat)-8} l7,12 h-14z"/><text x="${X(b.lon)+9}" y="${Y(b.lat)+4}" class="note">⚔ ${esc(b.name.ar)} ${b.founded}</text></a>`).join("")}
     ${pathSvg}
     <text x="${vb[0]+12*k}" y="${vb[1]+vb[3]-12*k}" class="note" font-size="${10.5*k}">الإحداثيات مراسٍ حديثة تقريبية (مركز المدينة الحالية غالبًا)؛ لا تُعرض حدود سياسية تاريخية (القاعدة 7).</text>
@@ -421,12 +425,17 @@ V.figures=(q)=>{
   const o=E[sel];const ppl=figPeopleOf(sel).sort((a,b)=>(E[a.id].born??E[a.id].died??9999)-(E[b.id].born??E[b.id].died??9999));
   const onlySet=new Set(figPlaces.map(p=>p.id));const route=id=>`#/figures?place=${encodeURIComponent(id)}`;
   const total=new Set(figPlaces.flatMap(p=>figPeopleOf(p.id).map(x=>x.id))).size;
-  const pchip=x=>`<a class="chip" href="${href(x.id)}">${esc(E[x.id].name.ar)} <small>${esc(x.rels.join("، "))} · ${yr(E[x.id].born)}–${yr(E[x.id].died)}م</small></a>`;
+  // حواف الوفاة: خط من موضع النشاط/الأصل إلى موضع الوفاة لكل عَلَم من أعلام المدينة المختارة
+  const placeLinksOf=pid=>{const L=[];EDGES.forEach(e=>{if(e.from===pid&&E[e.to]&&E[e.to].type==="Place"&&typeof E[e.to].lat==="number")L.push({place:e.to,rel:e.rel});});return L;};
+  const deathEdges=[],deathSet=new Set();
+  ppl.forEach(x=>{const L=placeLinksOf(x.id);const deaths=L.filter(l=>l.rel==="died_in").map(l=>l.place);const lifes=L.filter(l=>l.rel!=="died_in").map(l=>l.place);deaths.forEach(dp=>{deathSet.add(dp);lifes.forEach(lp=>{if(lp!==dp)deathEdges.push({from:lp,to:dp});});});});
+  const pchip=x=>{const dead=x.rels.includes(REL.died_in);return `<a class="chip${dead?" death":""}" href="${href(x.id)}">${esc(E[x.id].name.ar)} <small>${esc(x.rels.join("، "))} · ${yr(E[x.id].born)}–${yr(E[x.id].died)}م</small></a>`;};
   return `<section><p class="eyebrow">الأعلام على الخريطة</p><h2>مَن نبغ في كل مدينة؟</h2>
   <p class="sub">وحدة تفاعلية تجمع أعلام الأندلس على مواضعهم: اختر مدينةً من الخريطة أو القائمة فتظهر أعلامها (وزراء وعلماء وأطباء وفلاسفة)، وكل رابط عَلَم↔موضع مسنَد إلى ادعاء موثّق وفِقرة موضعية مقابَلة حرفيًا في القاعدة. المراسي حديثة تقريبية (القاعدة 7)، والعرض موضوعي لا مقيَّد بسنة.</p>
   <div class="atlas"><div>
-    <div class="panel">${mapSvg(1100,{only:onlySet,focus:sel,route,labels:"all",bbox:[-10,30.5,4,44]})}<ul class="sr-only" aria-label="المدن التي عليها أعلام">${figPlaces.map(p=>`<li><a href="${route(p.id)}">${esc(p.name.ar)} (${figPeopleOf(p.id).length})</a></li>`).join("")}</ul></div>
-    <p class="note">${figPlaces.length} مدينة عليها أعلام مربوطون، و${total} عَلَمًا مرتبطًا. انقر أي مدينة لعرض أعلامها. الإطار يشمل محطات مغربية (فاس، مراكش) توفي بها أعلام أندلسيون؛ المراسي تقريبية (القاعدة 7).</p>
+    <div class="panel">${mapSvg(1100,{only:onlySet,focus:sel,route,labels:"all",bbox:[-10,30.5,4,44],edges:deathEdges,deathNodes:deathSet})}<ul class="sr-only" aria-label="المدن التي عليها أعلام">${figPlaces.map(p=>`<li><a href="${route(p.id)}">${esc(p.name.ar)} (${figPeopleOf(p.id).length})</a></li>`).join("")}</ul></div>
+    <p class="note"><span style="color:var(--death)">▬</span> حواف الوفاة (خط أحمر متقطّع) تصل موضع نشاط/أصل العَلَم بموضع وفاته، ومرساة الوفاة محاطة بحلقة حمراء. ${deathEdges.length?`في «${esc(o.name.ar)}»: ${deathEdges.length} حافة وفاة.`:"اختر مدينةً بها وفاةُ عَلَم (مثل مراكش أو ألمرية) لرؤية حواف الوفاة."}</p>
+    <p class="note">${figPlaces.length} مدينة عليها أعلام مربوطون، و${total} عَلَمًا مرتبطًا. الإطار يشمل محطات مغربية (فاس، مراكش) توفي بها أعلام أندلسيون؛ المراسي تقريبية (القاعدة 7).</p>
   </div><div>
     <div class="panel"><p class="eyebrow">${esc(o.kind||"مكان")}</p><h3><a href="${href(o.id)}">${esc(o.name.ar)}</a> <small style="color:var(--muted)">${esc(o.name.en||"")}</small></h3>
     <p class="note">أعلامها المربوطون (${ppl.length}):</p><div class="chips">${ppl.map(pchip).join("")}</div>
