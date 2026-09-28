@@ -291,6 +291,10 @@ def main():
         raise SystemExit("مشكلات اتساق:\n" + "\n".join(problems))
 
     J = lambda x: json.dumps(x, ensure_ascii=False)
+    # تقطيع الأداء: الشواهد الثقيلة (sources/counter) تُصدَّر في ملف منفصل يُحمَّل كسولًا؛
+    # حالة الادعاء ونصّه يبقيان في graph.js لتلوين الشارات وعرضها عند الإقلاع.
+    claims_light = {cid: {k: v for k, v in c.items() if k not in ("sources", "counter")} for cid, c in claims.items()}
+    claims_ev = {cid: {"sources": c.get("sources", []), "counter": c.get("counter", [])} for cid, c in claims.items()}
     out = f"""/* =========================================================
    طبقة بيانات منصة الأندلس — مولَّدة آليًا من قاعدة {release[0]['version'] if release else '؟'} (تاريخ الإصدار {release[0]['release_date'] if release else '؟'}).
    لا تُحرَّر يدويًا: عدّل القاعدة عبر مهارة andalus-evidence ثم شغّل platform/tools/export_static.py.
@@ -299,7 +303,7 @@ def main():
 const RELEASE = {J(release[0] if release else {})};
 const ERAS = {J(eras)};
 const SOURCES = {J(sources)};
-const CLAIMS = {J(claims)};
+const CLAIMS = {J(claims_light)};  /* الشواهد (sources/counter) في graph.evidence.js تُحمَّل كسولًا */
 const ENTITIES = {J(entities)};
 const STORIES = {J(stories)};
 const MODULES = {J(modules)};
@@ -310,6 +314,12 @@ function add(o) {{ E[o.id] = o; return o; }}
 """
     os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
     open(a.out, "w", encoding="utf-8").write(out)
+    # ملف الشواهد المنفصل (يُحمَّل كسولًا من الواجهة بعد graph.js)
+    ev_path = os.path.join(os.path.dirname(os.path.abspath(a.out)), "graph.evidence.js")
+    ev_out = ("/* شواهد ادعاءات منصة الأندلس (sources/counter) — مولَّدة آليًا، تُحمَّل كسولًا بعد graph.js.\n"
+              "   لا تُحرَّر يدويًا: عدّل القاعدة عبر مهارة andalus-evidence ثم شغّل platform/tools/export_static.py. */\n"
+              f"const CLAIM_EV = {J(claims_ev)};\n")
+    open(ev_path, "w", encoding="utf-8").write(ev_out)
     print(json.dumps({"eras": len(eras), "sources": len(sources), "claims": len(claims), "entities": len(entities), "stories": len(stories), "modules": len(modules), "quiz": len(quiz),
                       "by_type": {t: sum(1 for o in entities if o["type"] == t) for t in sorted({o["type"] for o in entities})},
                       "by_status": {s: sum(1 for c in claims.values() if c["status"] == s) for s in sorted({c["status"] for c in claims.values()})}}, ensure_ascii=False))

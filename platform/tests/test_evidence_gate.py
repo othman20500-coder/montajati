@@ -5,6 +5,7 @@ import os, re, sqlite3, unittest
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 DB = os.environ.get("ANDALUS_DB", os.path.join(ROOT, "platform", "db", "andalus.sqlite"))
 GRAPH = os.path.join(ROOT, "andalus", "data", "graph.js")
+GRAPH_EV = os.path.join(ROOT, "andalus", "data", "graph.evidence.js")
 HIJACKED = ["ibntufayl.org", "relmin.eu"]
 PUBLISHABLE = {"موثّق", "صُحح وموثّق", "حُسم الخلاف", "موثّق جزئيًا"}
 ALLOWED_STATUSES = PUBLISHABLE | {"متعارض", "متعارض — يحتاج قرارًا", "ينتظر شاهدًا"}
@@ -45,17 +46,27 @@ class EvidenceGate(unittest.TestCase):
         self.assertIn("مولَّدة آليًا", js, "graph.js يجب أن يكون مولَّدًا لا محرّرًا يدويًا")
         for s in ["ينتظر شاهدًا", "متعارض — يحتاج قرارًا"]:
             self.assertNotIn(f'"v12_status": "{s}"', js)
+        # النطاقات المستولى عليها ممنوعة في طبقتي الواجهة معًا (الشواهد وروابطها الآن في graph.evidence.js)
+        self.assertTrue(os.path.exists(GRAPH_EV), "graph.evidence.js مفقود؛ شغّل export_static.py")
+        ev = open(GRAPH_EV, encoding="utf-8").read()
         for d in HIJACKED:
             self.assertNotIn(d, js)
+            self.assertNotIn(d, ev)
 
     def test_exported_claims_all_have_sources(self):
-        js = open(GRAPH, encoding="utf-8").read()
-        m = re.search(r"const CLAIMS = (\{.*?\});\nconst ENTITIES", js, re.S)
-        self.assertIsNotNone(m)
+        # الشواهد (sources) تُصدَّر منفصلة كسولًا في graph.evidence.js تحت CLAIM_EV؛
+        # البوابة: كل ادعاء منشور في CLAIMS له مدخل شواهد غير فارغ في CLAIM_EV.
         import json
-        claims = json.loads(m.group(1))
-        empty = [k for k, v in claims.items() if not v.get("sources")]
-        self.assertEqual(empty, [], "ادعاءات مصدَّرة بلا مصادر")
+        cjs = open(GRAPH, encoding="utf-8").read()
+        mc = re.search(r"const CLAIMS = (\{.*?\});", cjs, re.S)
+        self.assertIsNotNone(mc, "تعذّر استخراج CLAIMS من graph.js")
+        claims = json.loads(mc.group(1))
+        ejs = open(GRAPH_EV, encoding="utf-8").read()
+        me = re.search(r"const CLAIM_EV = (\{.*\});", ejs, re.S)
+        self.assertIsNotNone(me, "تعذّر استخراج CLAIM_EV من graph.evidence.js")
+        ev = json.loads(me.group(1))
+        empty = [k for k in claims if not (ev.get(k) or {}).get("sources")]
+        self.assertEqual(empty, [], "ادعاءات مصدَّرة بلا مصادر في graph.evidence.js")
 
 
 if __name__ == "__main__":

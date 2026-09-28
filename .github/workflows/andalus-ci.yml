@@ -28,6 +28,7 @@ jobs:
         run: |
           python platform/tools/export_static.py --db platform/db/andalus.sqlite --out /tmp/graph.js
           diff -q /tmp/graph.js andalus/data/graph.js || (echo "andalus/data/graph.js غير محدث؛ شغّل export_static.py" && exit 1)
+          diff -q /tmp/graph.evidence.js andalus/data/graph.evidence.js || (echo "andalus/data/graph.evidence.js غير محدث؛ شغّل export_static.py" && exit 1)
       - name: اختبارات الانحدار (22)، بوابة الأدلة، الترحيل، خاصية المراجعة (14 + اختبارات الخدمة)
         run: python -m unittest discover -s platform/tests -v
       - uses: actions/upload-artifact@v4
