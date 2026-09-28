@@ -157,6 +157,17 @@
   .strip .card>p{flex:1;min-height:0;overflow-y:auto;margin-top:8px;padding-inline-end:6px}
   .strip .card>p::-webkit-scrollbar{width:6px}
   .strip .card>p::-webkit-scrollbar-thumb{background:var(--line);border-radius:6px}
+  /* المتحف: مرساة زخرفية + شارة رخصة، بطاقاتٌ متساوية الإطار (القاعدة 6) */
+  .mcard{padding:0;overflow:hidden;display:flex;flex-direction:column}
+  .mtile{background:color-mix(in srgb,var(--tc) 9%,var(--card));border-bottom:1px solid var(--line);display:grid;place-items:center;padding:16px}
+  .mtile svg{width:82px;height:82px;opacity:.85}
+  .mcard .mbody{padding:12px 16px 14px;display:flex;flex-direction:column;flex:1}
+  .mcard .mbody h3{margin-top:4px}
+  .grid .mcard .mbody p{-webkit-line-clamp:3;margin-bottom:10px}
+  .mcard .mfoot{margin-top:auto}
+  .lic{font-size:12px;display:inline-flex;gap:5px;align-items:center;border:1px solid var(--line);border-radius:999px;padding:2px 9px;background:var(--card)}
+  .lic.ok{border-color:var(--fact);color:var(--fact)}
+  .lic.ref{color:var(--muted)}
   .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:18px}
   .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:start}
   @media (max-width:860px){.cols{grid-template-columns:1fr}}
@@ -497,7 +508,22 @@ V.figures=(q)=>{
     <h3 style="margin:14px 0 8px;font-size:15px">المدن (${figPlaces.length})</h3>
     <div class="chips">${figPlaces.map(p=>`<a class="chip" href="${route(p.id)}" ${p.id===sel?'style="border-color:var(--accent);font-weight:700"':""}>${esc(p.name.ar)} <small>${figPeopleOf(p.id).length} عَلَم</small></a>`).join("")}</div>
   </div></div></section>`;};
-V.museum=()=>`<section><p class="eyebrow">المتحف الرقمي</p><h2>الآثار والمخطوطات والمصنفات والموارد</h2><p class="sub">لا تُعرض صورة أو نص طويل إلا برخصة تسمح (القاعدة 6)؛ وما عداه يُحال إليه برابط من لوحة الشواهد.</p><div class="grid">${Object.values(E).filter(o=>["Artifact","Document","Work","Resource","Language"].includes(o.type)).map(card).join("")}</div></section>`;
+// مرساة بصرية للمتحف: زخرفة هندسية (نجمة زليج) بلون النوع — زينةٌ لا صورةُ مصدر، فلا تخالف القاعدة 6
+const museumTile=o=>{const c=(TYPE[o.type]||["","var(--brand)"])[1];return `<div class="mtile" style="--tc:${c}"><svg viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="var(--tc)" stroke-width="2.2"><rect x="24" y="24" width="52" height="52"/><rect x="24" y="24" width="52" height="52" transform="rotate(45 50 50)"/><circle cx="50" cy="50" r="15"/></g></svg></div>`;};
+// رخصةٌ محقّقةٌ تسمح بالعرض؟ (القاعدة 6). البيانات الحالية «غير معروف»، فكلها تُحال إلى المصدر بصدق
+const licOK=s=>!!s&&!/غير\s*معروف|غير\s*محقّ?ق|unknown|^—$/i.test(String(s).trim());
+const museumCard=o=>{const [tn,tc]=TYPE[o.type]||["","var(--brand)"];const lic=o.holding&&o.holding.license;const ok=licOK(lic);
+  const rights=ok?`<span class="lic ok">🟢 ${esc(lic)}</span>`:`<span class="lic ref">↗ الحقوق تُوثّق — يُحال إلى المصدر</span>`;
+  const sub=(o.summary&&o.summary[0])?esc(stripCodes(o.summary[0][0])):"";
+  // النقحرة الإنجليزية تُنظَّف من الرموز الداخلية: تُزال وسوم الأقواس المختصرة (مثل «(EEA)») ولا يُعرض اسمٌ هو اختصارٌ بحت (مثل «AMOI»)
+  let en=(o.name.en||"").replace(/\s*\([A-Z]{2,6}\)\s*/g," ").trim();if(/^[A-Z0-9]{2,6}$/.test(en))en="";
+  return `<a class="card mcard" href="${href(o.id)}" style="--c:${tc}">${museumTile(o)}<div class="mbody"><div class="type"><i></i>${tn}${o.year?` · ${o.year}م`:""}</div><h3>${esc(o.name.ar)}</h3>${en?`<div class="d">${esc(en)}</div>`:""}<p>${sub}</p><div class="mfoot">${rights}</div></div></a>`;};
+V.museum=(q)=>{const kinds=["Artifact","Document","Work","Resource","Language"];const filt=(q&&q.t&&kinds.includes(q.t))?q.t:"";
+  const items=Object.values(E).filter(o=>kinds.includes(o.type)).filter(o=>!filt||o.type===filt);
+  const chips=[["","الكل"],...kinds.map(k=>[k,TYPE[k][0]])].map(([k,l])=>`<a class="chip" href="#/museum${k?`?t=${encodeURIComponent(k)}`:""}"${filt===k?' style="border-color:var(--accent);font-weight:700"':""}>${esc(l)}${k?` <small>${Object.values(E).filter(o=>o.type===k).length}</small>`:""}</a>`).join("");
+  return `<section><p class="eyebrow">المتحف الرقمي</p><h2>الآثار والمخطوطات والمصنفات والموارد</h2><p class="sub">لا تُعرض صورة أو نص طويل إلا برخصة تسمح (القاعدة 6)؛ وما عداه يُحال إليه برابط من لوحة الشواهد. الزخرفة الهندسية مرساةٌ بصرية لا صورةُ مصدر.</p>
+  <div class="chips" style="margin-bottom:14px">${chips}</div>
+  <div class="grid">${items.map(museumCard).join("")||"<p class='sub'>لا عناصر في هذا التصنيف ضمن ما هو منشور.</p>"}</div></section>`;};
 
 V.stories=()=>`<section><p class="eyebrow">قصص الأطلس</p><h2>${STORIES.length} قصص من قاعدة v1.2</h2><p class="sub">كل محطة تشير إلى مكان وادعاء في القاعدة؛ وكل قصة تحمل تنبيهها.</p>
   ${STORIES.map(st=>`<div class="panel" style="margin-bottom:14px"><p class="eyebrow">${esc(st.period||"")}</p><h3>${esc(st.title)}</h3><p style="color:var(--muted)">${esc(st.summary||"")}</p><p><a class="chip" href="#/atlas?model=all&story=${st.id}&step=1&tab=sto" style="border-color:var(--accent)">▶ على الخريطة مرحلةً مرحلة</a></p>${st.warning?`<p class="note">${esc(st.warning)}</p>`:""}
