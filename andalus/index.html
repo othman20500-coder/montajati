@@ -6,7 +6,9 @@
 <meta name="robots" content="noindex,nofollow"><!-- إصدار تجريبي: يُحذف هذا الوسم عند الإطلاق بعد اكتمال المراجعة -->
 <title>الأندلس: أطلس ومرجع موثّق</title>
 <meta name="description" content="نموذج تفاعلي لتصور منصة الأندلس الرقمية: خريطة زمنية، خط زمني، صفحات كيانات مترابطة، ثلاثة اتجاهات بصرية، ونظام ادعاء ومصدر.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600&family=Tajawal:wght@300;400;500;700&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- خطوط سمة الأساس (الزليج) فقط تُحمَّل مقدمًا؛ خطوط المخطوط/الليل تُحمَّل كسولًا عند اختيار السمة (ensureThemeFont) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap">
 <style>
   /* ===== الرموز الوظيفية الثابتة عبر السمات ===== */
   :root{
@@ -805,8 +807,11 @@ document.getElementById("q").addEventListener("keydown",e=>{if(e.key==="ArrowDow
 
 /* ===== السمات والجمهور ===== */
 const state={y:960};
-function seg(id,attr,key){const el=document.getElementById(id);el.onclick=e=>{const b=e.target.closest("button");if(!b)return;el.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));document.documentElement.setAttribute(attr,b.dataset[key]);try{localStorage.setItem(attr,b.dataset[key]);}catch(_){}};
-  let saved=null;try{saved=localStorage.getItem(attr);}catch(_){}if(saved){document.documentElement.setAttribute(attr,saved);el.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x.dataset[key]===saved));}}
+// تحميل خطوط سمتَي المخطوط/الليل كسولًا عند اختيارهما فقط (سمة الأساس محمّلة مقدمًا)
+const THEME_FONTS={manuscript:"https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600&display=swap",night:"https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap"};
+const _tf={};function ensureThemeFont(t){const u=THEME_FONTS[t];if(!u||_tf[t])return;_tf[t]=1;const l=document.createElement("link");l.rel="stylesheet";l.href=u;document.head.appendChild(l);}
+function seg(id,attr,key){const el=document.getElementById(id);el.onclick=e=>{const b=e.target.closest("button");if(!b)return;el.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));document.documentElement.setAttribute(attr,b.dataset[key]);if(attr==="data-theme")ensureThemeFont(b.dataset[key]);try{localStorage.setItem(attr,b.dataset[key]);}catch(_){}};
+  let saved=null;try{saved=localStorage.getItem(attr);}catch(_){}if(saved){document.documentElement.setAttribute(attr,saved);if(attr==="data-theme")ensureThemeFont(saved);el.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x.dataset[key]===saved));}}
 seg("theme","data-theme","t");seg("aud","data-audience","a");
 // تنقّل مجمَّع: زر القائمة للجوال، وفتح محورٍ واحد يغلق البقية، وإغلاق القوائم عند النقر خارجها
 (function(){const mb=document.getElementById("menuBtn"),ti=document.querySelector(".top .in");if(mb&&ti)mb.onclick=()=>{const o=ti.classList.toggle("open");mb.setAttribute("aria-expanded",o);};
