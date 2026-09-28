@@ -6,3 +6,6 @@ office.html
 
 # مجلد أداة Netlify المحلية (يُنشئه netlify link على جهاز صاحب المشروع)
 .netlify/
+
+# ناتج بناء حزمة النشر اليدوي لـ cPanel (يُولَّد بـ deploy/cpanel/build_zip.py)
+deploy/cpanel/dist/
