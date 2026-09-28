@@ -441,7 +441,7 @@ const chip=id=>{const o=E[id];if(!o)return `<span class="chip">${esc(id)}</span>
 const related=id=>{const out={};EDGES.forEach(e=>{if(e.from===id){(out[E[e.to]?.type]??=[]).push({id:e.to,rel:REL[e.rel]||e.rel,role:e.role});}if(e.to===id){(out[E[e.from]?.type]??=[]).push({id:e.from,rel:REL[e.rel]||e.rel,role:e.role,rev:true});}});return out;};
 const rail=id=>{const r=related(id);const order=["Person","Place","Event","Polity","Work","Document","Artifact"];return `<div class="rail">${order.filter(t=>r[t]?.length).map(t=>`<h3 style="--c:${TYPE[t][1]}">${typeIcon(t)}${TYPE[t][0]}</h3><div class="chips">${r[t].map(x=>`<a class="chip" href="${href(x.id)}">${esc(E[x.id].name.ar)} <small>${x.rev?"":x.rel} ${x.role?"· "+esc(x.role):""}</small></a>`).join("")}</div>`).join("")}</div>`;};
 const ribbon=(y,e,h)=>{const er=eraOf(y);return `<div class="ribbon" style="--era:${er.c}"><b>${er.name}</b><span class="dual">${dual(y,e,h)}</span><a href="#/timeline?y=${y}" class="chip">افتح على خط الزمن</a><a href="#/map?y=${y}" class="chip">افتح على الخريطة</a></div>`;};
-const audienceBox=o=>`${o.kids?`<div class="kids-only panel" style="margin-top:14px;font-size:18px">🧭 ${esc(o.kids)}</div>`:""}${o.scholar?`<div class="scholar-only scholar-box">ملاحظة للباحث: ${esc(o.scholar)}</div>`:""}<div class="scholar-only scholar-box">أدوات الباحث: <a href="#" onclick="andExport('${o.id}');return false">تصدير JSON</a> · <a href="https://github.com/othman20500-coder/montajati/issues/new?title=${encodeURIComponent("تصحيح: "+((o.name&&o.name.ar)||o.id))}" target="_blank" rel="noopener">الإبلاغ عن خطأ ↗</a> · <span style="opacity:.55">BibTeX (قريبًا)</span> · <span style="opacity:.55">تاريخ التعديلات (قريبًا)</span> · المعرّفات: Wikidata، VIAF، PUA (تُضاف عند المواءمة)</div>`;
+const audienceBox=o=>`${o.kids?`<div class="kids-only panel" style="margin-top:14px;font-size:18px">🧭 ${esc(o.kids)}</div>`:""}${o.scholar?`<div class="scholar-only scholar-box">ملاحظة للباحث: ${esc(o.scholar)}</div>`:""}<div class="scholar-only scholar-box">أدوات الباحث: <a href="#" onclick="andExport('${o.id}');return false">تصدير JSON</a> · <a href="#" onclick="andExportBib('${o.id}');return false">BibTeX</a> · <a href="https://github.com/othman20500-coder/montajati/issues/new?title=${encodeURIComponent("تصحيح: "+((o.name&&o.name.ar)||o.id))}" target="_blank" rel="noopener">الإبلاغ عن خطأ ↗</a> · <span style="opacity:.55">تاريخ التعديلات (قريبًا)</span> · المعرّفات: Wikidata، VIAF، PUA (تُضاف عند المواءمة)</div>`;
 
 /* ===== الخريطة ===== */
 const X=lon=>(lon+10)*60, Y=lat=>(44-lat)*65;
@@ -738,6 +738,16 @@ function openProv(cid){const c=CLAIMS[cid];if(!c)return;const [sn,sc]=STATUS[c.s
 function closeProv(){document.getElementById("prov").classList.remove("open");document.getElementById("veil").classList.remove("on");}
 // تصدير الكيان بصيغة JSON محليًا (بلا خادم): أداة باحث حقيقية بدل رابط معطّل
 function andExport(id){const o=E[id];if(!o)return;try{const blob=new Blob([JSON.stringify(o,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=(o.id||"entity")+".json";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}catch(_){}}
+// تصدير استشهادات BibTeX لمصادر الصفحة (بلا خادم)، من بيانات SOURCES القائمة؛ الحقول الناقصة تُترك ولا تُختلق
+function _dl(name,text,type){try{const b=new Blob([text],{type});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}catch(_){}}
+function _bf(k,v){v=String(v==null?"":v).replace(/[{}]/g,"");return v?`  ${k} = {${v}},\n`:"";}
+function andExportBib(id){const o=E[id];if(!o)return;
+  const srcIds=[...new Set((o.summary||[]).flatMap(([,c])=>(CLAIMS[c]?.sources||[]).map(s=>s.src)))].filter(s=>SOURCES[s]);
+  const entries=srcIds.map(sid=>{const S=SOURCES[sid];const key=String(sid).replace(/[^A-Za-z0-9]/g,"")||"src";
+    const note=[S.tier==="أولي"?"مصدر أولي":(S.tier?"مرتبة "+S.tier:""),S.pub||""].filter(Boolean).join(" — ");
+    return `@book{${key},\n${_bf("author",S.author)}${_bf("title",S.title)}${_bf("note",note)}${_bf("url",S.url)}}`;});
+  const header=`% استشهادات المصادر المستخدمة في صفحة «${((o.name&&o.name.ar)||o.id)}» — منصة الأندلس\n% مولّدة آليًا من بيانات المصادر؛ راجِع بيانات الطبعة قبل الاعتماد.\n`;
+  _dl((o.id||"entity")+".bib",header+(entries.length?entries.join("\n\n"):"% لا مصادر مسندة لهذه الصفحة بعد.")+"\n","application/x-bibtex");}
 document.getElementById("veil").onclick=closeProv;
 document.addEventListener("click",e=>{const b=e.target.closest(".b[data-c]");if(b){e.preventDefault();openProv(b.dataset.c);}});
 document.addEventListener("keydown",e=>{const b=e.target.closest?.(".b[data-c]");if(b&&(e.key==="Enter"||e.key===" ")){e.preventDefault();openProv(b.dataset.c);}if(e.key==="Escape"){closeProv();document.getElementById("cmd").classList.remove("on");}if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){e.preventDefault();openCmd();}});
