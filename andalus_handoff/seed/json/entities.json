@@ -92,8 +92,8 @@
  {
   "entity_id": "MS-IBN-LUYUN-EEA",
   "entity_type": "Manuscript",
-  "preferred_name_ar": "مخطوط ابن ليون الزراعي في EEA",
-  "preferred_name_latn": "Ibn Luyun agricultural manuscript (EEA)",
+  "preferred_name_ar": "مخطوط ابن ليون الزراعي",
+  "preferred_name_latn": "Ibn Luyun agricultural manuscript",
   "start_date": null,
   "end_date": null,
   "notes": "النسخة الكاملة الوحيدة بحسب EEA؛ تحتوي حواشي هامشية."
@@ -129,7 +129,7 @@
   "entity_id": "RES-AMOI",
   "entity_type": "DigitalResource",
   "preferred_name_ar": "الأندلس والمغرب في المشرق الإسلامي",
-  "preferred_name_latn": "AMOI",
+  "preferred_name_latn": "al-Andalus wa-l-Maghrib fi l-Mashriq al-Islami",
   "start_date": null,
   "end_date": null,
   "notes": "مشروع انتقال المعرفة المبني على HATA والربط مع PUA."
