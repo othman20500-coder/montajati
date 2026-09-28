@@ -208,6 +208,16 @@
   .zoomctl button{border:1px solid var(--line);background:var(--card);border-radius:var(--r-s);min-width:32px;height:30px;font-size:15px;color:var(--brand);line-height:1;display:inline-flex;align-items:center;justify-content:center}
   .zoomctl button:hover{background:var(--soft)}
   .zoomctl .zlvl{font-size:12.5px;color:var(--muted);margin-inline-start:2px;min-width:44px}
+  /* Scrollytelling للقصص: عمود محطّات يُمرَّر وخريطةٌ لزِجة */
+  .scrolly{display:grid;grid-template-columns:1.05fr 1fr;gap:24px;align-items:stretch;margin-top:14px}
+  .scrolly-map{position:relative}
+  .scrolly-map .sticky{position:sticky;top:74px}
+  .scrolly-map .note{margin-top:8px}
+  .scrollystep{min-height:58vh;display:flex;flex-direction:column;justify-content:center;padding:14px 0;border-bottom:1px solid var(--line);opacity:.45;transition:opacity .3s}
+  .scrollystep.active{opacity:1}
+  .scrollystep .type{color:var(--brand-2);font-weight:600}
+  .scrollystep h3{margin:6px 0}
+  @media (max-width:860px){.scrolly{display:flex;flex-direction:column;gap:0}.scrolly-map{order:-1}.scrolly-map .sticky{position:sticky;top:60px;z-index:5;background:var(--bg);padding-bottom:8px}.scrollystep{min-height:auto;padding:16px 0}}
   .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:18px}
   .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:start}
   @media (max-width:860px){.cols{grid-template-columns:1fr}}
@@ -582,9 +592,19 @@ V.museum=(q)=>{const kinds=["Artifact","Document","Work","Resource","Language"];
   <div class="chips" style="margin-bottom:14px">${chips}</div>
   <div class="grid">${items.map(museumCard).join("")||"<p class='sub'>لا عناصر في هذا التصنيف ضمن ما هو منشور.</p>"}</div></section>`;};
 
-V.stories=()=>`<section><p class="eyebrow">قصص الأطلس</p><h2>${STORIES.length} قصص من قاعدة v1.2</h2><p class="sub">كل محطة تشير إلى مكان وادعاء في القاعدة؛ وكل قصة تحمل تنبيهها.</p>
-  ${STORIES.map(st=>`<div class="panel" style="margin-bottom:14px"><p class="eyebrow">${esc(st.period||"")}</p><h3>${esc(st.title)}</h3><p style="color:var(--muted)">${esc(st.summary||"")}</p><p><a class="chip" href="#/atlas?model=all&story=${st.id}&step=1&tab=sto" style="border-color:var(--accent)">▶ على الخريطة مرحلةً مرحلة</a></p>${st.warning?`<p class="note">${esc(st.warning)}</p>`:""}
-    <div class="strip">${st.steps.map((x,i)=>`<div class="card" style="--era:var(--brand);min-width:280px"><div class="type">محطة ${i+1}</div><h3>${esc(x.title)}</h3><p>${x.claim&&CLAIMS[x.claim]?claimSpan(x.text||"",x.claim):esc(x.text||"")}</p>${x.place&&E[x.place]?`<div class="chips" style="margin-top:8px">${chip(x.place)}</div>`:""}</div>`).join("")}</div></div>`).join("")}</section>`;
+V.stories=(q)=>{const story=(q&&q.s)?STORIES.find(s=>s.id===q.s):null;
+  if(story){const steps=story.steps;const placeIds=steps.map(x=>x.place).filter(Boolean);
+    const sev=Object.values(E).find(o=>o.type==="Event"&&(o.stories||[]).includes(story.id));const pm=(story.period||"").match(/(\d{3,4})م/);const SY=sev?sev.year:(pm?+pm[1]:1000);
+    return `<section><nav class="crumb"><button class="back" type="button" onclick="if(history.length>1){history.back()}else{location.hash='#/stories'}">↩ رجوع</button><span class="trail"><a href="#/">الأندلس</a><b>‹</b><a href="#/stories">القصص</a><b>‹</b><span>${esc(story.title)}</span></span></nav>
+    <p class="eyebrow">${esc(story.period||"")}</p><h2>${esc(story.title)}</h2><p class="sub">${esc(story.summary||"")}</p>${story.warning?`<p class="note">${esc(story.warning)}</p>`:""}
+    <div class="scrolly" data-year="${SY}" data-places="${esc(JSON.stringify(placeIds))}">
+      <div class="scrolly-steps">${steps.map((x,i)=>`<div class="scrollystep" data-i="${i}" data-place="${esc(x.place||"")}"><div class="type">محطة ${i+1} من ${steps.length}</div><h3>${esc(x.title)}</h3><p>${x.claim&&CLAIMS[x.claim]?claimSpan(x.text||"",x.claim):esc(x.text||"")}</p>${x.place&&E[x.place]?`<div class="chips" style="margin-top:8px">${chip(x.place)}</div>`:""}</div>`).join("")}</div>
+      <div class="scrolly-map"><div class="sticky"><div class="panel" id="scrollyMap">${mapSvg(SY,{focus:steps[0].place,path:placeIds,pathActive:1,bbox:[-10,30.5,4,44]})}</div><p class="note" id="scrollyCap">المحطة 1 من ${steps.length}: ${esc(steps[0].title)}</p></div></div>
+    </div>
+    <p class="note">مرّر لتتحرك الخريطة مع المحطات؛ كل ادعاء يفتح شواهده بنصّها الحرفي. المراسي تقريبية (القاعدة 7).</p></section>`;}
+  return `<section><p class="eyebrow">قصص الأطلس</p><h2>${STORIES.length} قصص من قاعدة v1.2</h2><p class="sub">كل محطة تشير إلى مكان وادعاء في القاعدة؛ وكل قصة تحمل تنبيهها. اقرأها سرديًّا فتتحرك الخريطة مع المحطات، أو على الأطلس مرحلةً مرحلة.</p>
+  ${STORIES.map(st=>`<div class="panel" style="margin-bottom:14px"><p class="eyebrow">${esc(st.period||"")}</p><h3>${esc(st.title)}</h3><p style="color:var(--muted)">${esc(st.summary||"")}</p><div class="chips" style="margin:8px 0"><a class="chip" href="#/stories?s=${st.id}" style="border-color:var(--accent)">▶ اقرأ سرديًّا (${st.steps.length} محطات)</a><a class="chip" href="#/atlas?model=all&story=${st.id}&step=1&tab=sto">على الأطلس</a></div>${st.warning?`<p class="note">${esc(st.warning)}</p>`:""}
+    <div class="strip">${st.steps.map((x,i)=>`<div class="card" style="--era:var(--brand);min-width:280px"><div class="type">محطة ${i+1}</div><h3>${esc(x.title)}</h3><p>${x.claim&&CLAIMS[x.claim]?claimSpan(x.text||"",x.claim):esc(x.text||"")}</p>${x.place&&E[x.place]?`<div class="chips" style="margin-top:8px">${chip(x.place)}</div>`:""}</div>`).join("")}</div></div>`).join("")}</section>`;};
 
 // نصوص الوحدات في حزمة v1.2 فيها رموز داخلية بالإنجليزية؛ تُعرَّب عند العرض فقط (القاعدة: لا رموز داخلية للمستخدم)
 const PLAIN_AR=[[/Claim canonical/g,"الادعاء المعتمد"],[/\bClaim\b/g,"الادعاء"],[/Source Genealogy/g,"سلسلة المصدر"],[/\bEvidence\b/g,"الدليل"],[/\bMyth\b/g,"أسطورة"],[/\bNarrative\b/g,"سردية"],[/\broute\b/g,"المسار"],[/\bLegacy\b/g,"طبقة الإرث"],[/\bheritage\b/g,"التراث"],[/\breuse\b/g,"إعادة الاستخدام"],[/UNESCO/g,"اليونسكو"],[/\bconvivencia\b/g,"«التعايش» (convivencia)"]];
@@ -829,6 +849,13 @@ function route(){const h=location.hash||"#/";const [path,qs]=h.slice(1).split("?
     mz.onpointerdown=e=>{if(e.target.closest("a,button"))return;dr={x:e.clientX,y:e.clientY,l:mz.scrollLeft,t:mz.scrollTop};try{mz.setPointerCapture(e.pointerId);}catch(_){}mz.classList.add("grabbing");};
     mz.onpointermove=e=>{if(!dr)return;mz.scrollLeft=dr.l-(e.clientX-dr.x);mz.scrollTop=dr.t-(e.clientY-dr.y);};
     mz.onpointerup=mz.onpointercancel=()=>{dr=null;mz.classList.remove("grabbing");};}
+  // Scrollytelling للقصص: الخريطة اللزِجة تتحرك مع تمرير المحطات (تحديثٌ موضعيّ لا إعادة توجيه)
+  const scw=document.querySelector(".scrolly");
+  if(scw&&("IntersectionObserver" in window)){const year=+scw.dataset.year||1000;let places=[];try{places=JSON.parse(scw.dataset.places||"[]");}catch(_){}
+    const steps=[...scw.querySelectorAll(".scrollystep")];const mapEl=document.getElementById("scrollyMap"),cap=document.getElementById("scrollyCap");let cur=-1;
+    const paint=i=>{if(i===cur||!steps[i])return;cur=i;const s=steps[i];if(mapEl)mapEl.innerHTML=mapSvg(year,{focus:s.dataset.place,path:places,pathActive:i+1,bbox:[-10,30.5,4,44]});if(cap)cap.textContent=`المحطة ${i+1} من ${steps.length}: ${s.querySelector("h3").textContent}`;steps.forEach((x,j)=>x.classList.toggle("active",j===i));};
+    const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)paint(+e.target.dataset.i);});},{rootMargin:"-45% 0px -45% 0px"});
+    steps.forEach(s=>io.observe(s));paint(0);}
   bind("mapY",y=>{document.getElementById("mapBox").innerHTML=mapSvg(y,{labels:"all"});document.getElementById("mapSnap").innerHTML=yearSnapshot(y);document.getElementById("mapYear").textContent=y;});
   if(q.y)state.y=+q.y;
   document.querySelectorAll(".quiz").forEach(qz=>{qz.querySelector(".opts").onclick=e=>{const b=e.target.closest("button");if(!b)return;qz.querySelectorAll("button").forEach(x=>x.disabled=true);b.classList.add(+b.dataset.i===+qz.dataset.correct?"ok":"no");qz.querySelectorAll("button")[+qz.dataset.correct].classList.add("ok");qz.querySelector(".note").hidden=false;};});
