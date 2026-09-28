@@ -1,0 +1,36 @@
+# منصة الأندلس على cPanel/Apache — يُنسخ إلى public_html عبر .cpanel.yml.
+# مكافئ لملف andalus/_headers في Netlify، مع ما يلزم Apache. لا يعمل _headers/_redirects
+# على cPanel، ولذلك تُترجم قواعدهما هنا. الموقع ذاتي الاحتواء (سكربت وأنماط داخلية)،
+# ولم يُضَف CSP صارم لأنه يحتاج تدقيقًا مستقلًا (كما في _headers).
+
+# رؤوس الأمان (لا تعطّل عرض الموقع)
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=()"
+  Header set Cross-Origin-Opener-Policy "same-origin"
+</IfModule>
+
+# ترميز UTF-8 افتراضيًا (النص عربي)
+AddDefaultCharset UTF-8
+
+# أنواع MIME الصريحة (لبعض الخوادم التي لا تعرفها افتراضيًا)
+<IfModule mod_mime.c>
+  AddType application/javascript .js
+  AddType application/json .json
+</IfModule>
+
+# التخزين المؤقت: أسماء الملفات ثابتة (graph.js/graph.evidence.js) وتتغيّر مع كل تحديث،
+# فيُطلب من المتصفح التحقق دائمًا؛ يعيد الخادم 304 حين لا تتغيّر فلا يُعاد التنزيل.
+<IfModule mod_headers.c>
+  Header set Cache-Control "no-cache"
+</IfModule>
+
+# ضغط النصوص لتسريع التحميل
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html application/javascript application/json image/svg+xml text/css
+</IfModule>
+
+# منع تصفّح فهارس المجلدات
+Options -Indexes
