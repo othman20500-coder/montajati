@@ -145,6 +145,8 @@
   .card h3{margin-top:4px;color:var(--brand)}
   .card .d{font-size:13px;color:var(--muted)}
   .card p{margin:6px 0 0;font-size:14px;color:var(--ink);opacity:.9}
+  /* توحيد ارتفاع بطاقات الشبكة: قصّ المقتطف إلى أربعة أسطر (النص الكامل في صفحة الكيان/الوحدة). بطاقات الشريط (الخط الزمني/القصص) لا تُقصّ */
+  .grid .card p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}
   .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:18px}
   .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:start}
   @media (max-width:860px){.cols{grid-template-columns:1fr}}
@@ -316,6 +318,17 @@ const TYPE={Person:["شخص","var(--era-khilafa)"],Place:["مكان","var(--era-
 
 /* ===== أدوات ===== */
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+// القاعدة: لا تظهر للمستخدم رموز داخلية بالإنجليزية. تُزال معرّفات السجلات (مثل CLM-… وAST-… وAMOI-II) من النص المعروض فقط، وتُنظَّف الأقواس الناتجة. لا يمسّ هذا البيانات ولا الأسماء.
+const stripCodes=s=>String(s??"")
+  .replace(/\b(?:PLC|PER|POL|PRD|TEN|EVT|CLM|AST|ATT|LIB|REL|CHG|EDU|SCOPE|AMOI|ATLAS)-[0-9A-Za-z][0-9A-Za-z./-]*/g,"")
+  .replace(/\bQ-\d[\d./-]*/g,"")
+  .replace(/\(\s*(?:[،,]\s*)*\)/g,"")
+  .replace(/\s*[،,]\s*(?=[)،])/g,"")
+  .replace(/\(\s*[،,]+\s*/g,"(")
+  .replace(/\s{2,}/g," ")
+  .replace(/\s+([)،.])/g,"$1")
+  .replace(/\(\s+/g,"(")
+  .trim();
 const hijri=g=>Math.round((g-622)*33/32); // تقريب للنموذج فقط؛ المنصة تخزّن التاريخين معًا
 const dual=(g,e,h)=>{if(g==null)return "؟";if(h)return `${g}م${e?`–${e}م`:""} / ${esc(h)}`;return `${g}م / ${hijri(g)}هـ${e?` – ${e}م / ${hijri(e)}هـ`:""} <small title="الهجري هنا بالحساب الجدولي التقريبي (سنة واحدة)">(هجري تقريبي)</small>`;};
 const TOP=ERAS.filter(e=>!e.sub);
@@ -325,13 +338,13 @@ const href=id=>`#/x/${encodeURIComponent(id)}`;
 const claimSpan=(text,cid)=>{const c=CLAIMS[cid];return `<span class="claim">${esc(text)}<i class="b ${c?c.status:"myth"}" data-c="${cid}" title="كيف نعرف هذا؟" role="button" tabindex="0"></i></span>`;};
 const summaryHtml=o=>(o.summary||[]).map(([t,c])=>claimSpan(t,c)).join(" ");
 const yr=v=>v==null?"؟":v;
-const card=o=>{const [tn,tc]=TYPE[o.type]||["",""];const d=o.type==="Person"?`${yr(o.born)}–${yr(o.died)}م`:o.type==="Event"?dual(o.year,o.end,o.hijri):o.type==="Polity"?`${yr(o.from)}–${yr(o.to)}م`:o.year?`${o.year}م`:o.kind||"";
-  return `<a class="card" href="${href(o.id)}" style="--c:${tc}"><div class="type"><i></i>${tn}</div><h3>${esc(o.name.ar)}</h3><div class="d">${d}</div><p>${(o.summary||[]).slice(0,1).map(([t])=>esc(t)).join("")}</p></a>`;};
+const card=o=>{const [tn,tc]=TYPE[o.type]||["",""];const d=o.type==="Person"?`${yr(o.born)}–${yr(o.died)}م`:o.type==="Event"?dual(o.year,o.end,o.hijri):o.type==="Polity"?`${yr(o.from)}–${yr(o.to)}م`:o.year?`${o.year}م`:"";
+  return `<a class="card" href="${href(o.id)}" style="--c:${tc}"><div class="type"><i></i>${tn}</div><h3>${esc(o.name.ar)}</h3><div class="d">${d}</div><p>${(o.summary||[]).slice(0,1).map(([t])=>esc(stripCodes(t))).join("")}</p></a>`;};
 const chip=id=>{const o=E[id];if(!o)return `<span class="chip">${esc(id)}</span>`;return `<a class="chip" href="${href(id)}">${esc(o.name.ar)} <small>${TYPE[o.type][0]}</small></a>`;};
 const related=id=>{const out={};EDGES.forEach(e=>{if(e.from===id){(out[E[e.to]?.type]??=[]).push({id:e.to,rel:REL[e.rel]||e.rel,role:e.role});}if(e.to===id){(out[E[e.from]?.type]??=[]).push({id:e.from,rel:REL[e.rel]||e.rel,role:e.role,rev:true});}});return out;};
 const rail=id=>{const r=related(id);const order=["Person","Place","Event","Polity","Work","Document","Artifact"];return `<div class="rail">${order.filter(t=>r[t]?.length).map(t=>`<h3 style="--c:${TYPE[t][1]}"><i></i>${TYPE[t][0]}</h3><div class="chips">${r[t].map(x=>`<a class="chip" href="${href(x.id)}">${esc(E[x.id].name.ar)} <small>${x.rev?"":x.rel} ${x.role?"· "+esc(x.role):""}</small></a>`).join("")}</div>`).join("")}</div>`;};
 const ribbon=(y,e,h)=>{const er=eraOf(y);return `<div class="ribbon" style="--era:${er.c}"><b>${er.name}</b><span class="dual">${dual(y,e,h)}</span><a href="#/timeline?y=${y}" class="chip">افتح على خط الزمن</a><a href="#/map?y=${y}" class="chip">افتح على الخريطة</a></div>`;};
-const audienceBox=o=>`${o.kids?`<div class="kids-only panel" style="margin-top:14px;font-size:18px">🧭 ${esc(o.kids)}</div>`:""}${o.scholar?`<div class="scholar-only scholar-box">ملاحظة للباحث: ${esc(o.scholar)}</div>`:""}<div class="scholar-only scholar-box">أدوات الباحث: <a href="#" onclick="return false">تصدير JSON</a> · <a href="#" onclick="return false">BibTeX</a> · <a href="#" onclick="return false">تاريخ التعديلات</a> · <a href="#" onclick="return false">الإبلاغ عن خطأ</a> · المعرّفات: Wikidata، VIAF، PUA (تُضاف عند المواءمة)</div>`;
+const audienceBox=o=>`${o.kids?`<div class="kids-only panel" style="margin-top:14px;font-size:18px">🧭 ${esc(o.kids)}</div>`:""}${o.scholar?`<div class="scholar-only scholar-box">ملاحظة للباحث: ${esc(o.scholar)}</div>`:""}<div class="scholar-only scholar-box">أدوات الباحث: <a href="#" onclick="andExport('${o.id}');return false">تصدير JSON</a> · <a href="https://github.com/othman20500-coder/montajati/issues/new?title=${encodeURIComponent("تصحيح: "+((o.name&&o.name.ar)||o.id))}" target="_blank" rel="noopener">الإبلاغ عن خطأ ↗</a> · <span style="opacity:.55">BibTeX (قريبًا)</span> · <span style="opacity:.55">تاريخ التعديلات (قريبًا)</span> · المعرّفات: Wikidata، VIAF، PUA (تُضاف عند المواءمة)</div>`;
 
 /* ===== الخريطة ===== */
 const X=lon=>(lon+10)*60, Y=lat=>(44-lat)*65;
@@ -451,7 +464,7 @@ V.stories=()=>`<section><p class="eyebrow">قصص الأطلس</p><h2>${STORIES.
 
 // نصوص الوحدات في حزمة v1.2 فيها رموز داخلية بالإنجليزية؛ تُعرَّب عند العرض فقط (القاعدة: لا رموز داخلية للمستخدم)
 const PLAIN_AR=[[/Claim canonical/g,"الادعاء المعتمد"],[/\bClaim\b/g,"الادعاء"],[/Source Genealogy/g,"سلسلة المصدر"],[/\bEvidence\b/g,"الدليل"],[/\bMyth\b/g,"أسطورة"],[/\bNarrative\b/g,"سردية"],[/\broute\b/g,"المسار"],[/\bLegacy\b/g,"طبقة الإرث"],[/\bheritage\b/g,"التراث"],[/\breuse\b/g,"إعادة الاستخدام"],[/UNESCO/g,"اليونسكو"],[/\bconvivencia\b/g,"«التعايش» (convivencia)"]];
-const plainAr=t=>PLAIN_AR.reduce((a,[re,ar])=>a.replace(re,ar),String(t??""));
+const plainAr=t=>stripCodes(PLAIN_AR.reduce((a,[re,ar])=>a.replace(re,ar),String(t??"")));
 const STEP_AR={concept:"مفهوم",evidence:"دليل",genealogy:"سلسلة المصدر",method:"منهج",myth:"أسطورة تُفحص",place:"مكان",person:"شخص",text:"نص",politics:"سياسة",economy:"اقتصاد",architecture:"عمارة",urban:"عمران",rural:"ريف",craft:"حِرفة",language:"لغة",translation:"ترجمة",network:"شبكة",legacy:"إرث"};
 const stepKind=k=>STEP_AR[k]||"خطوة";
 const quizCard=q=>`<div class="game quiz" data-correct="${q.correct}"><div class="type">سؤال · ${esc(q.difficulty||"")}</div><h3>${esc(plainAr(q.prompt))}</h3><div class="opts">${q.choices.map((c,i)=>`<button data-i="${i}">${esc(plainAr(typeof c==="string"?c:(c.text||JSON.stringify(c))))}</button>`).join("")}</div><p class="note" hidden>${esc(plainAr(q.explanation||""))}${q.claim&&CLAIMS[q.claim]?` ${claimSpan("الادعاء المرتبط",q.claim)}`:""}</p></div>`;
@@ -543,7 +556,7 @@ V.atlas=(q)=>{const st=atlasState;if(q.model&&MODEL_META[q.model])st.model=q.mod
     <div class="tabs" role="tablist">${tabs.map(([k,l])=>`<button role="tab" aria-selected="${st.tab===k}" data-tab="${k}">${l}</button>`).join("")}</div>
     <div id="atlasPanel">${panel[st.tab]()}</div>
     <h3 style="margin:14px 0 8px;font-size:15px">الأماكن (${listPlaces.length})</h3>
-    <div class="plist">${listPlaces.map(o=>`<button data-place="${esc(o.id)}" aria-pressed="${o.id===st.place}"><span>${esc(o.name.ar)}</span><small>${esc(o.kind||"")}${members.has(o.id)?" · في الطبقة":""}</small></button>`).join("")}</div>
+    <div class="plist">${listPlaces.map(o=>`<button data-place="${esc(o.id)}" aria-pressed="${o.id===st.place}"><span>${esc(o.name.ar)}</span><small>${o.period_group?esc(geoP(o.period_group)):""}${members.has(o.id)?" · في الطبقة":""}</small></button>`).join("")}</div>
   </div></div></section>`;};
 
 V.sources=()=>{const all=Object.entries(SOURCES).map(([id,S])=>({id,...S}));const prim=all.filter(x=>x.tier==="أولي"),rest=all.filter(x=>x.tier!=="أولي").sort((a,b)=>String(a.tier).localeCompare(String(b.tier)));
@@ -580,7 +593,7 @@ V.design=()=>`<section><p class="eyebrow">نظام التصميم</p><h2>ثلا�
     <div class="wire"><b>صفحة حدث</b><div>EraRibbon + التاريخ بشارة</div><div class="row"><div>ملخص + الأطراف</div><div>خريطة المعركة ▶ + تنبيه الأعداد</div></div><div>قبل ← بعد</div><div>الروايات: مصادر أولية وقراءات حديثة</div><div>RelationRail</div></div>
   </div></section>`;
 
-V.entity=(id)=>{const o=E[id];if(!o)return `<section><h2>لم أجد هذا الكيان</h2><p class="sub"><a href="#/">العودة</a></p></section>`;const [tn,tc]=TYPE[o.type];
+V.entity=(id)=>{const o=E[id];if(!o)return `<section><p class="eyebrow">لم يُعثر عليه</p><h2>لم نعثر على هذا الكيان ضمن ما هو منشور</h2><p class="sub">قد يكون المعرّف قديمًا أو غير منشور بعد. ابحث (⌘K) أو ابدأ من أحد هذه المداخل:</p><div class="chips">${["PLC-CORDOBA","PER-016","EVT-003","PLC-GRANADA"].filter(x=>E[x]).map(x=>`<a class="chip" href="${href(x)}">${esc(E[x].name.ar)} <small>${TYPE[E[x].type][0]}</small></a>`).join("")}<a class="chip" href="#/atlas" style="border-color:var(--accent)">الأطلس</a><a class="chip" href="#/people">الأشخاص</a><a class="chip" href="#/places">الأماكن</a></div><p class="note" style="margin-top:12px"><a href="#/">العودة إلى الرئيسية</a></p></section>`;const [tn,tc]=TYPE[o.type];
   let head="",extra="";
   if(o.type==="Place"){head=ribbon(state.y);extra=`<div class="cols"><div><div class="names"><b>${esc(o.name.ar)}</b>${o.name.en?`<span>${esc(o.name.en)}</span>`:""}${(o.name.variants||[]).map(v=>`<span>${esc(v)}</span>`).join("")}<span>${esc(o.kind||"")}</span>${typeof o.lat==="number"?`<span>${o.lat.toFixed(3)}°, ${o.lon.toFixed(3)}° · ${esc(geoQ(o.spatial_quality))} · ${esc(geoA(o.anchor_type))} <small>(تقريبية)</small></span>`:"<span>لا إحداثية معروفة</span>"}${o.historical_status?`<span>${esc(geoS(o.historical_status))}</span>`:""}${o.period_group?`<span>${esc(geoP(o.period_group))}</span>`:""}</div>${geoT(o.theme).length?`<div class="chips">${geoT(o.theme).map(t=>`<span class="chip">${esc(t)}</span>`).join("")}</div>`:""}${o.place_note?`<p class="note">${esc(o.place_note)}</p>`:""}<p style="margin-top:10px">${summaryHtml(o)}</p>${audienceBox(o)}
       <h3 style="margin-top:18px">شريط زمن المكان</h3><div class="tl">${Object.values(E).filter(e=>e.type==="Event"&&e.place===id).sort((a,b)=>a.year-b.year).map(e=>`<div style="--era:${eraOf(e.year).c}"><b><a href="${href(e.id)}">${esc(e.name.ar)}</a></b> <small>${dual(e.year,e.end,e.hijri)}</small></div>`).join("")||"<div>لا أحداث مسندة لهذا المكان في القاعدة</div>"}</div></div>
@@ -607,10 +620,12 @@ function openProv(cid){const c=CLAIMS[cid];if(!c)return;const [sn,sc]=STATUS[c.s
     ${c.sources.map(s=>{const S=SOURCES[s.src]||{title:s.src};return `<div class="src"><b>${esc(S.title)}${S.tier?`<span class="tier">مرتبة ${esc(S.tier)}</span>`:""}${kindBadge(s.source_kind)}${s.stance?`<span class="tier">${esc(s.stance)}</span>`:""}</b>${S.author?esc(S.author)+" · ":""}${esc(S.pub||"")}${S.rights&&S.rights!=="غير معروف"?` · الحقوق: ${esc(S.rights)}`:""}${s.review_status==="معتمد بالعين"?`<div style="margin-top:6px"><span class="tier" style="border-color:var(--fact);color:var(--fact);background:color-mix(in srgb,var(--fact) 12%,transparent)">✓ مطابق بالعين</span> <small style="color:var(--muted)">${(s.eye_reviewers||[]).map(esc).join("، ")}</small></div>`:s.review_status&&s.review_status!=="لم يُراجع"?`<div style="margin-top:6px"><span class="tier">${esc(s.review_status)}</span></div>`:""}${s.quote?`<q>«${esc(s.quote)}»</q>`:""}<div style="margin-top:4px;color:var(--muted)">الموضع: ${esc(s.loc||"—")}${s.verbatim?` · المطابقة: ${esc(s.verbatim)}`:""}${s.checked_on?` · فُحص ${esc(s.checked_on)}`:""}${s.url?` · <a href="${esc(s.url)}" target="_blank" rel="noopener">الرابط</a>`:""}</div>${s.note?`<div style="margin-top:4px;color:var(--muted)">ملاحظة: ${esc(s.note)}</div>`:""}</div>`;}).join("")}
     ${c.counter&&c.counter.length?`<div class="counter"><b>شواهد مخالفة</b>${c.counter.map(k=>`<p style="margin:6px 0">«${esc(k.position)}»<br><small style="color:var(--muted)">${k.sources.map(s=>esc((SOURCES[s.src]||{}).title||s.src)+" · "+esc(s.loc)).join(" ؛ ")}</small></p>`).join("")}</div>`:""}
     ${c.todo?`<p class="note">ما يلزم بعد: ${esc(c.todo)}</p>`:""}
-    <p class="note">آخر تحقق: ${esc(c.last_verified||"—")} · المصدر: قاعدة v1.2 عبر مهارة andalus-evidence · <a href="#" onclick="return false">الإبلاغ عن خطأ</a></p>
+    <p class="note">آخر تحقق: ${esc(c.last_verified||"—")} · المصدر: قاعدة v1.2 عبر مهارة andalus-evidence · <a href="https://github.com/othman20500-coder/montajati/issues/new?title=${encodeURIComponent("تصحيح ادعاء: "+cid)}" target="_blank" rel="noopener">الإبلاغ عن خطأ ↗</a></p>
     <div class="scholar-only scholar-box">معرّف الإسناد/الادعاء: <code>${esc(cid)}</code> · الهدف: <code>${esc(c.target||"—")}</code> · الحقل: ${esc(c.field||"—")}</div>`;
   document.getElementById("prov").classList.add("open");document.getElementById("veil").classList.add("on");document.getElementById("provX").onclick=closeProv;}
 function closeProv(){document.getElementById("prov").classList.remove("open");document.getElementById("veil").classList.remove("on");}
+// تصدير الكيان بصيغة JSON محليًا (بلا خادم): أداة باحث حقيقية بدل رابط معطّل
+function andExport(id){const o=E[id];if(!o)return;try{const blob=new Blob([JSON.stringify(o,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=(o.id||"entity")+".json";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}catch(_){}}
 document.getElementById("veil").onclick=closeProv;
 document.addEventListener("click",e=>{const b=e.target.closest(".b[data-c]");if(b){e.preventDefault();openProv(b.dataset.c);}});
 document.addEventListener("keydown",e=>{const b=e.target.closest?.(".b[data-c]");if(b&&(e.key==="Enter"||e.key===" ")){e.preventDefault();openProv(b.dataset.c);}if(e.key==="Escape"){closeProv();document.getElementById("cmd").classList.remove("on");}if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){e.preventDefault();openCmd();}});
