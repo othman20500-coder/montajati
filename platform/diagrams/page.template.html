@@ -1,0 +1,57 @@
+<title>مخططات منصة الأندلس</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+{{CSS}}
+</style>
+<div class="wrap" dir="rtl" lang="ar">
+  <header>
+    <p class="eyebrow">منصة الأندلس الرقمية · مخططات النظام</p>
+    <h1>كيف تصل المعلومة من المصدر إلى الأطلس</h1>
+    <p class="lede">ثلاثة مخططات تشرح ما يجري خلف الواجهة: مسار البيانات، ومراجعة الشواهد بالعين، والعصور بحدودها كما هي في القاعدة. رُسمت بنظام Diagram Design بعد تكييفه للعربية وهوية المنصة.</p>
+  </header>
+
+  <section id="pipeline">
+    <div class="fig-head"><span class="fig-no">١</span><h2>من المصدر إلى الأطلس</h2></div>
+    <div class="frame">{{SVG_PIPELINE}}</div>
+    <p class="note">يدخل كل محتوى تاريخي من <b>مهارة الإسناد</b>، ويُكتب في ملفات البذور، ثم يُرحَّل إلى القاعدة. <b>بوابة الجودة</b> هي نقطة الحسم: إن فشل فحص واحد مُنع الدمج، ولا يُعاد التصدير. والتصدير لا يأخذ إلا الحالات القابلة للنشر، وملف <code>graph.js</code> مولَّد لا يُحرَّر يدويًا.</p>
+  </section>
+
+  <section id="review">
+    <div class="fig-head"><span class="fig-no">٢</span><h2>حالة الشاهد في المراجعة بالعين</h2></div>
+    <div class="frame">{{SVG_REVIEW}}</div>
+    <p class="note">تُحسب الحالة من جديد بعد كل حكم، ومن أحكام المراجعين المعتمدين حاليًا فقط. <b>«غير مطابق» تغلب كل ما سواها</b>، ثم «بفرق يسير»، فلا يصل شاهد إلى «معتمد بالعين» وعليه حكم مخالف. وسحب اعتماد مراجع يُسقط أحكامه من الحساب دون أن يحذفها.</p>
+  </section>
+
+  <section id="eras">
+    <div class="fig-head"><span class="fig-no">٣</span><h2>عصور الأندلس بحدودها غير القاطعة</h2></div>
+    <div class="frame">{{SVG_ERAS}}</div>
+    <p class="note">الحدود مأخوذة من جدول <code>periods</code> بقيمتيه: أبكر بداية وأبعد نهاية. المنطقة المخططة هي المدى الذي يختلف فيه تعريف الحد، ومنها <b>نهاية الخلافة</b> التي تُعرَّف ببداية الفتنة أو بإلغاء الخلافة رسميًا. الزمن يجري من اليمين إلى اليسار.</p>
+  </section>
+
+  <div class="cards">
+    <div class="card">
+      <h3><span class="dot7"></span>ما أُخذ من Diagram Design كما هو</h3>
+      <ul>
+        <li>لون تركيز واحد على عنصر أو عنصرين في كل مخطط.</li>
+        <li>حدود رفيعة بلا ظلال، وزوايا لا تتجاوز 8px.</li>
+        <li>كل الأبعاد على شبكة 4px، وأسهم أفقية أو رأسية بمنعطفات مستديرة.</li>
+        <li>قناع خلف كل عنوان سهم، ومفتاح في شريط أسفل المخطط.</li>
+        <li>حد أقصى 9 عقد، و<code>title</code> و<code>desc</code> لقارئ الشاشة.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><span class="dot7 accent"></span>ما كُيّف للعربية</h3>
+      <ul>
+        <li>الاتجاه من اليمين، والزمن يجري إلى اليسار.</li>
+        <li>خط <bdi>Amiri</bdi> للعناوين والحواشي بدل <bdi>Instrument Serif</bdi>.</li>
+        <li>خط <bdi>IBM Plex Sans Arabic</bdi> للعقد والمتن بدل <bdi>Geist</bdi>.</li>
+        <li>لا أحرف كبيرة ولا تباعد بين الحروف.</li>
+        <li>حجم الخط أكبر بنقطة إلى نقطتين.</li>
+        <li>الخط الثابت العرض للمعرّفات والملفات فقط.</li>
+        <li>ألوان «الزليج» للنهار و«الليل الأندلسي» للوضع الداكن.</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>المصدر: مستودع <code>othman20500-coder/montajati</code> — <code>platform/README.md</code> و<code>andalus_handoff/spec/review/README.md</code> وجدول <code>periods</code> في <code>platform/db/andalus.sqlite</code>. أُعدّت في 28 سبتمبر 2026.</footer>
+</div>
