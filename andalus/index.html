@@ -177,6 +177,11 @@
   .crumb .trail a:hover{color:var(--brand);text-decoration:underline}
   .crumb .trail b{color:var(--line);font-weight:400}
   .crumb .trail>span{color:var(--ink)}
+  /* أيقونات الأنواع الخطّية (بديل مربّع النوع) */
+  .ti{width:16px;height:16px;flex:none;color:var(--c,var(--brand));vertical-align:-3px}
+  .card .type .ti,.rail h3 .ti{color:var(--c)}
+  .rail h3 .ti{width:18px;height:18px}
+  .cmd .res a .ti{width:17px;height:17px;color:var(--c,var(--muted))}
   .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:18px}
   .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:start}
   @media (max-width:860px){.cols{grid-template-columns:1fr}}
@@ -374,6 +379,19 @@ Object.values(E).filter(o=>o.type==="Event").forEach(ev=>pushEdge({from:ev.id,re
 Object.values(E).filter(o=>o.type==="Work"&&E[o.author]).forEach(w=>pushEdge({from:w.author,rel:"authored",to:w.id}));
 const REL={ruled:"حكم",born_in:"وُلد في",died_in:"توفي في",lived_in:"عاش في",participated_in:"شارك في",authored:"ألّف",authored_by:"ألّفه",patron_of:"رعى",took_place_at:"وقع في",part_of:"جزء من",located_in:"يقع في",active_in:"نشط في",commissioned:"أمر بصنع",translated:"ترجم",copy_of:"نسخة من",made_for:"صُنع لـ",produced_in:"أُنتج في",mother_of:"أم",collaborated_with:"تعاون مع",associated_with:"مرتبط بـ",built_on:"بُني على",addressed_to:"موجّه إلى",planned_link_to:"صلة مخططة بـ",part_of_historic_urban_context:"ضمن النسيج التاريخي لـ","near/within cultural landscape of":"ضمن المشهد الثقافي لـ"};
 const TYPE={Person:["شخص","var(--era-khilafa)"],Place:["مكان","var(--era-imara)"],Event:["حدث","var(--era-muwahhid)"],Polity:["دولة","var(--era-murabit)"],Document:["مخطوط","var(--era-wulat)"],Work:["مصنَّف","var(--era-tawaif)"],Artifact:["أثر","var(--era-nasrid)"],Language:["لغة","var(--muted)"],Resource:["مورد رقمي","var(--muted)"]};
+// أيقونات الأنواع: خطّيّةٌ بلون النوع، تُسرّع المسح البصري وتبني هويّة (بديل مربّع النوع الصغير)
+const ICON={
+ Person:'<circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-3.6 3.3-5.5 7-5.5s7 1.9 7 5.5"/>',
+ Place:'<path d="M12 21.5S5.5 15 5.5 9.5A6.5 6.5 0 0 1 18.5 9.5C18.5 15 12 21.5 12 21.5z"/><circle cx="12" cy="9.5" r="2.3"/>',
+ Event:'<path d="M6 3v18"/><path d="M6 4h11l-2.6 4L17 12H6"/>',
+ Polity:'<path d="M4 8l4 3.5 4-6.5 4 6.5 4-3.5v10H4z"/>',
+ Work:'<path d="M12 6.5C10 5 6.8 5 4.5 5.6V18c2.3-.6 5.5-.6 7.5.9 2-1.5 5.2-1.5 7.5-.9V5.6C17.2 5 14 5 12 6.5z"/><path d="M12 6.5V19"/>',
+ Document:'<path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12.5h6M9.5 16h6"/>',
+ Artifact:'<path d="M9 3.5h6M10 3.5c0 3-3 3-3 7 0 5 2 8 5 8s5-3 5-8c0-4-3-4-3-7"/>',
+ Language:'<path d="M4 5h16v10H9l-4 4z"/><path d="M8.5 9.5h7M8.5 12.5h4"/>',
+ Resource:'<ellipse cx="12" cy="6" rx="7" ry="2.8"/><path d="M5 6v12c0 1.6 3.1 2.8 7 2.8s7-1.2 7-2.8V6"/><path d="M5 12c0 1.6 3.1 2.8 7 2.8s7-1.2 7-2.8"/>'
+};
+const typeIcon=t=>`<svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[t]||'<circle cx="12" cy="12" r="8"/>'}</svg>`;
 
 /* ===== أدوات ===== */
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -403,10 +421,10 @@ const CRUMB={Person:["#/people","الأشخاص"],Place:["#/places","الأما�
 const crumb=o=>{const [u,l]=CRUMB[o.type]||["#/","الأندلس"];return `<nav class="crumb" aria-label="مسار التنقّل"><button class="back" type="button" onclick="if(history.length>1){history.back()}else{location.hash='${u}'}">↩ رجوع</button><span class="trail"><a href="#/">الأندلس</a><b>‹</b><a href="${u}">${esc(l)}</a><b>‹</b><span>${esc(o.name.ar)}</span></span></nav>`;};
 const yr=v=>v==null?"؟":v;
 const card=o=>{const [tn,tc]=TYPE[o.type]||["",""];const d=o.type==="Person"?`${yr(o.born)}–${yr(o.died)}م`:o.type==="Event"?dual(o.year,o.end,o.hijri):o.type==="Polity"?`${yr(o.from)}–${yr(o.to)}م`:o.year?`${o.year}م`:"";
-  return `<a class="card" href="${href(o.id)}" style="--c:${tc}"><div class="type"><i></i>${tn}</div><h3>${esc(o.name.ar)}</h3><div class="d">${d}</div><p>${(o.summary||[]).slice(0,1).map(([t])=>esc(stripCodes(t))).join("")}</p></a>`;};
+  return `<a class="card" href="${href(o.id)}" style="--c:${tc}"><div class="type">${typeIcon(o.type)}${tn}</div><h3>${esc(o.name.ar)}</h3><div class="d">${d}</div><p>${(o.summary||[]).slice(0,1).map(([t])=>esc(stripCodes(t))).join("")}</p></a>`;};
 const chip=id=>{const o=E[id];if(!o)return `<span class="chip">${esc(id)}</span>`;return `<a class="chip" href="${href(id)}">${esc(o.name.ar)} <small>${TYPE[o.type][0]}</small></a>`;};
 const related=id=>{const out={};EDGES.forEach(e=>{if(e.from===id){(out[E[e.to]?.type]??=[]).push({id:e.to,rel:REL[e.rel]||e.rel,role:e.role});}if(e.to===id){(out[E[e.from]?.type]??=[]).push({id:e.from,rel:REL[e.rel]||e.rel,role:e.role,rev:true});}});return out;};
-const rail=id=>{const r=related(id);const order=["Person","Place","Event","Polity","Work","Document","Artifact"];return `<div class="rail">${order.filter(t=>r[t]?.length).map(t=>`<h3 style="--c:${TYPE[t][1]}"><i></i>${TYPE[t][0]}</h3><div class="chips">${r[t].map(x=>`<a class="chip" href="${href(x.id)}">${esc(E[x.id].name.ar)} <small>${x.rev?"":x.rel} ${x.role?"· "+esc(x.role):""}</small></a>`).join("")}</div>`).join("")}</div>`;};
+const rail=id=>{const r=related(id);const order=["Person","Place","Event","Polity","Work","Document","Artifact"];return `<div class="rail">${order.filter(t=>r[t]?.length).map(t=>`<h3 style="--c:${TYPE[t][1]}">${typeIcon(t)}${TYPE[t][0]}</h3><div class="chips">${r[t].map(x=>`<a class="chip" href="${href(x.id)}">${esc(E[x.id].name.ar)} <small>${x.rev?"":x.rel} ${x.role?"· "+esc(x.role):""}</small></a>`).join("")}</div>`).join("")}</div>`;};
 const ribbon=(y,e,h)=>{const er=eraOf(y);return `<div class="ribbon" style="--era:${er.c}"><b>${er.name}</b><span class="dual">${dual(y,e,h)}</span><a href="#/timeline?y=${y}" class="chip">افتح على خط الزمن</a><a href="#/map?y=${y}" class="chip">افتح على الخريطة</a></div>`;};
 const audienceBox=o=>`${o.kids?`<div class="kids-only panel" style="margin-top:14px;font-size:18px">🧭 ${esc(o.kids)}</div>`:""}${o.scholar?`<div class="scholar-only scholar-box">ملاحظة للباحث: ${esc(o.scholar)}</div>`:""}<div class="scholar-only scholar-box">أدوات الباحث: <a href="#" onclick="andExport('${o.id}');return false">تصدير JSON</a> · <a href="https://github.com/othman20500-coder/montajati/issues/new?title=${encodeURIComponent("تصحيح: "+((o.name&&o.name.ar)||o.id))}" target="_blank" rel="noopener">الإبلاغ عن خطأ ↗</a> · <span style="opacity:.55">BibTeX (قريبًا)</span> · <span style="opacity:.55">تاريخ التعديلات (قريبًا)</span> · المعرّفات: Wikidata، VIAF، PUA (تُضاف عند المواءمة)</div>`;
 
@@ -529,7 +547,7 @@ const museumCard=o=>{const [tn,tc]=TYPE[o.type]||["","var(--brand)"];const lic=o
   const sub=(o.summary&&o.summary[0])?esc(stripCodes(o.summary[0][0])):"";
   // النقحرة الإنجليزية تُنظَّف من الرموز الداخلية: تُزال وسوم الأقواس المختصرة (مثل «(EEA)») ولا يُعرض اسمٌ هو اختصارٌ بحت (مثل «AMOI»)
   let en=(o.name.en||"").replace(/\s*\([A-Z]{2,6}\)\s*/g," ").trim();if(/^[A-Z0-9]{2,6}$/.test(en))en="";
-  return `<a class="card mcard" href="${href(o.id)}" style="--c:${tc}">${museumTile(o)}<div class="mbody"><div class="type"><i></i>${tn}${o.year?` · ${o.year}م`:""}</div><h3>${esc(o.name.ar)}</h3>${en?`<div class="d">${esc(en)}</div>`:""}<p>${sub}</p><div class="mfoot">${rights}</div></div></a>`;};
+  return `<a class="card mcard" href="${href(o.id)}" style="--c:${tc}">${museumTile(o)}<div class="mbody"><div class="type">${typeIcon(o.type)}${tn}${o.year?` · ${o.year}م`:""}</div><h3>${esc(o.name.ar)}</h3>${en?`<div class="d">${esc(en)}</div>`:""}<p>${sub}</p><div class="mfoot">${rights}</div></div></a>`;};
 V.museum=(q)=>{const kinds=["Artifact","Document","Work","Resource","Language"];const filt=(q&&q.t&&kinds.includes(q.t))?q.t:"";
   const items=Object.values(E).filter(o=>kinds.includes(o.type)).filter(o=>!filt||o.type===filt);
   const chips=[["","الكل"],...kinds.map(k=>[k,TYPE[k][0]])].map(([k,l])=>`<a class="chip" href="#/museum${k?`?t=${encodeURIComponent(k)}`:""}"${filt===k?' style="border-color:var(--accent);font-weight:700"':""}>${esc(l)}${k?` <small>${Object.values(E).filter(o=>o.type===k).length}</small>`:""}</a>`).join("");
@@ -715,7 +733,7 @@ document.getElementById("kbtn").onclick=openCmd;document.getElementById("cmd").o
 document.getElementById("q").oninput=e=>search(e.target.value);
 function search(s){s=s.trim();const res=document.getElementById("res");if(/^\d{3,4}$/.test(s)){const y=+s;res.innerHTML=`<a href="#/map?y=${y}"><i style="--c:var(--accent)"></i>ماذا كان يحدث سنة ${y}م؟<small>الخريطة</small></a><a href="#/timeline?y=${y}"><i style="--c:var(--accent)"></i>سنة ${y}م على خط الزمن<small>الزمن</small></a>`;return;}
   const hits=Object.values(E).filter(o=>!s||o.name.ar.includes(s)||(o.name.en||"").toLowerCase().includes(s.toLowerCase())||(o.name.es||"").toLowerCase().includes(s.toLowerCase())).slice(0,12);
-  res.innerHTML=hits.map(o=>`<a href="${href(o.id)}" style="--c:${TYPE[o.type][1]}"><i></i>${esc(o.name.ar)}<small>${TYPE[o.type][0]}</small></a>`).join("")||`<a href="#/"><i></i>لا نتائج<small></small></a>`;}
+  res.innerHTML=hits.map(o=>`<a href="${href(o.id)}" style="--c:${TYPE[o.type][1]}">${typeIcon(o.type)}${esc(o.name.ar)}<small>${TYPE[o.type][0]}</small></a>`).join("")||`<a href="#/"><i></i>لا نتائج<small></small></a>`;}
 document.getElementById("res").onclick=()=>document.getElementById("cmd").classList.remove("on");
 
 /* ===== السمات والجمهور ===== */
