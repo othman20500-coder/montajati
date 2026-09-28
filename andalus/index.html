@@ -168,6 +168,15 @@
   .lic{font-size:12px;display:inline-flex;gap:5px;align-items:center;border:1px solid var(--line);border-radius:999px;padding:2px 9px;background:var(--card)}
   .lic.ok{border-color:var(--fact);color:var(--fact)}
   .lic.ref{color:var(--muted)}
+  /* فتات تنقّل و«رجوع» لصفحة الكيان (لا طريق مسدود) */
+  .crumb{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:13px;color:var(--muted);margin-bottom:12px}
+  .crumb .back{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 13px;font-size:13px;color:var(--brand)}
+  .crumb .back:hover{background:var(--soft)}
+  .crumb .trail{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+  .crumb .trail a{color:var(--brand-2)}
+  .crumb .trail a:hover{color:var(--brand);text-decoration:underline}
+  .crumb .trail b{color:var(--line);font-weight:400}
+  .crumb .trail>span{color:var(--ink)}
   .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:18px}
   .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:start}
   @media (max-width:860px){.cols{grid-template-columns:1fr}}
@@ -389,6 +398,9 @@ const claimSpan=(text,cid)=>{const c=CLAIMS[cid];return `<span class="claim">${e
 const summaryHtml=o=>(o.summary||[]).map(([t,c])=>claimSpan(t,c)).join(" ");
 // متن الكيان مقطّعًا: كل ادعاءٍ فقرةٌ مستقلة بشارتها، بدل جدارِ نصٍّ واحد (تحسين قابلية القراءة)
 const summaryBlock=o=>{const items=(o.summary||[]);if(!items.length)return "";return `<div class="body">${items.map(([t,c])=>`<p>${claimSpan(t,c)}</p>`).join("")}</div>`;};
+// فتات تنقّل و«رجوع» لصفحة الكيان: لا صفحةً مسدودة. القائمة تُربط بأقرب وجهةٍ قائمة لنوع الكيان
+const CRUMB={Person:["#/people","الأشخاص"],Place:["#/places","الأماكن"],Event:["#/timeline","الزمن"],Work:["#/museum","المتحف"],Document:["#/museum","المتحف"],Artifact:["#/museum","المتحف"],Resource:["#/museum","المتحف"],Language:["#/museum","المتحف"],Polity:["#/timeline","الزمن"]};
+const crumb=o=>{const [u,l]=CRUMB[o.type]||["#/","الأندلس"];return `<nav class="crumb" aria-label="مسار التنقّل"><button class="back" type="button" onclick="if(history.length>1){history.back()}else{location.hash='${u}'}">↩ رجوع</button><span class="trail"><a href="#/">الأندلس</a><b>‹</b><a href="${u}">${esc(l)}</a><b>‹</b><span>${esc(o.name.ar)}</span></span></nav>`;};
 const yr=v=>v==null?"؟":v;
 const card=o=>{const [tn,tc]=TYPE[o.type]||["",""];const d=o.type==="Person"?`${yr(o.born)}–${yr(o.died)}م`:o.type==="Event"?dual(o.year,o.end,o.hijri):o.type==="Polity"?`${yr(o.from)}–${yr(o.to)}م`:o.year?`${o.year}م`:"";
   return `<a class="card" href="${href(o.id)}" style="--c:${tc}"><div class="type"><i></i>${tn}</div><h3>${esc(o.name.ar)}</h3><div class="d">${d}</div><p>${(o.summary||[]).slice(0,1).map(([t])=>esc(stripCodes(t))).join("")}</p></a>`;};
@@ -672,7 +684,7 @@ V.entity=(id)=>{const o=E[id];if(!o)return `<section><p class="eyebrow">لم ي�
       ${(o.before||o.after)?`<h3 style="margin-top:14px">قبل ← بعد</h3><div class="chips">${(o.before||[]).map(chip).join("")}<span class="chip" style="border-color:var(--accent)">${esc(o.name.ar)}</span>${(o.after||[]).map(chip).join("")}</div>`:""}
       ${audienceBox(o)}</div><div class="panel"><p class="eyebrow">المكان</p>${mapSvg(o.year,{focus:o.place})}${o.kind==="معركة"?`<p class="note">خريطة المعركة على مراحل ▶ تُضاف في المنصة، مع تنبيه ثابت: أعداد الجيوش تُعرض كمدى بمصادره.</p>`:""}</div></div>`;}
   else {extra=`${o.author&&!E[o.author]?`<div class="names"><span>المؤلف: <b>${esc(o.author)}</b></span>${o.year?`<span>${o.year}م</span>`:""}</div>`:""}${summaryBlock(o)}${o.holding?`<div class="panel" style="margin-top:12px"><b>مكان الحفظ:</b> ${esc(o.holding.institution)}${o.holding.license?` · <b>الرخصة:</b> ${esc(o.holding.license)}`:""}${o.holding.iiif?` · IIIF`:` · <span class="scholar-only" style="display:inline">الرقم المكتبي ورابط IIIF يُضافان عند التوثيق</span>`}</div>`:""}${o.type==="Polity"?`<div class="chips" style="margin-top:12px"><span class="chip">${yr(o.from)}–${yr(o.to)}م</span></div>${(o.rulers||[]).length?`<h3 style="margin-top:14px">الولايات المسندة</h3><div class="tl">${o.rulers.map(r=>`<div><b><a href="${href(r.person)}">${esc((E[r.person]||{name:{ar:r.person}}).name.ar)}</a></b> <small>${esc(r.role||"")} · ${yr(r.from)}–${yr(r.to)}م · دقة: ${esc(r.precision||"")}</small></div>`).join("")}</div>`:""}`:""}${audienceBox(o)}`;}
-  return `<section><p class="eyebrow" style="color:${tc}">${tn}</p><h2>${esc(o.name.ar)}</h2>${head}${extra}${rail(id)}
+  return `<section>${crumb(o)}<p class="eyebrow" style="color:${tc}">${tn}</p><h2>${esc(o.name.ar)}</h2>${head}${extra}${rail(id)}
   <h3 style="margin-top:22px">المصادر المستخدمة في هذه الصفحة</h3><div class="chips">${[...new Set((o.summary||[]).flatMap(([,c])=>(CLAIMS[c]?.sources||[]).map(s=>s.src)))].filter(s=>SOURCES[s]).map(s=>`<span class="chip">${esc(SOURCES[s].title)} <small>${SOURCES[s].tier==="أولي"?"مصدر أولي":"مرتبة "+esc(SOURCES[s].tier)}</small></span>`).join("")}</div>
   <p class="note">اقترح تصحيحًا · البيانات من قاعدة v1.2 (${esc(RELEASE.release_date||"")}) · كل إضافة تمر بمنهج الإسناد والشاهد، انظر <a href="#/about">عن المنصة</a></p></section>`;};
 
