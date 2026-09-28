@@ -200,6 +200,14 @@
   .cmd .res a.sel{background:var(--soft)}
   .cmd .reshdr{padding:9px 16px 4px;font-size:11.5px;color:var(--brand-2);font-weight:600}
   .cmd .reshdr:first-child{padding-top:12px}
+  /* تكبير/تحريك خريطة الأطلس: حاوية تمرير + تحجيم CSS */
+  .mapzoom{overflow:auto;max-height:68vh;direction:ltr;border-radius:var(--r-s);cursor:grab;touch-action:pan-x pan-y;overscroll-behavior:contain}
+  .mapzoom.grabbing{cursor:grabbing}
+  .mapscale{width:100%;transition:width .12s ease}
+  .zoomctl{display:flex;gap:6px;align-items:center;margin-top:8px;flex-wrap:wrap}
+  .zoomctl button{border:1px solid var(--line);background:var(--card);border-radius:var(--r-s);min-width:32px;height:30px;font-size:15px;color:var(--brand);line-height:1;display:inline-flex;align-items:center;justify-content:center}
+  .zoomctl button:hover{background:var(--soft)}
+  .zoomctl .zlvl{font-size:12.5px;color:var(--muted);margin-inline-start:2px;min-width:44px}
   .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:18px}
   .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:start}
   @media (max-width:860px){.cols{grid-template-columns:1fr}}
@@ -622,7 +630,7 @@ const geoA=s=>s?(GEO_AR.anchor[s]||"مرساة حديثة"):"—";
 const geoS=s=>s?(GEO_AR.status[s]||"حالة غير مصنّفة"):"";
 const geoP=s=>s?(GEO_AR.period[s]||"عصر غير محدد"):"";
 const geoT=s=>s?s.split(",").map(t=>GEO_AR.theme[t.trim()]).filter(Boolean):[];
-const atlasState={model:"cordoba",y:null,place:null,tab:"year",layers:new Set(),story:null,step:1};
+const atlasState={model:"cordoba",y:null,place:null,tab:"year",layers:new Set(),story:null,step:1,zoom:1,_sc:null};
 const stripDia=s=>String(s||"").replace(/[\u064B-\u0652\u0670\u0640]/g,"");
 function modelOf(id){return ATLAS.models.find(m=>m.id===id);}
 V.atlas=(q)=>{const st=atlasState;if(q.model&&MODEL_META[q.model])st.model=q.model;const m=st.model==="all"?null:modelOf(st.model);
@@ -666,7 +674,7 @@ V.atlas=(q)=>{const st=atlasState;if(q.model&&MODEL_META[q.model])st.model=q.mod
     ${timeBar(y,"atlasY")}
     <div class="chips" style="margin:8px 0">${jumps.map(([yy,l])=>`<a class="chip" href="#/atlas?model=${st.model}&y=${yy}" ${yy===y?'style="border-color:var(--accent)"':""}>${esc(l)} <small>${yy}</small></a>`).join("")}</div>
     <div class="lyr">${ATLAS.layers.map(l=>`<label title="${esc(l.description_ar)} — ${esc(carto(l.cartographic_status))}"><input type="checkbox" data-lyr="${l.layer_id}" ${st.layers.has(l.layer_id)?"checked":""}> ${esc(l.label_ar)}</label>`).join("")}<label title="مظاريف تحليلية، ليست حدودًا تاريخية (SCOPE-004)"><input type="checkbox" data-lyr="zones" ${st.layers.has("zones")?"checked":""}> المظاريف التحليلية</label></div>
-    <div class="panel" id="atlasMap">${mapSvg(y,{bbox:meta.bbox,members:[...members],zones:st.layers.has("zones")?ATLAS.zones:[],focus:story?story.steps[st.step-1].place:st.place,route,path:story?story.steps.map(x=>x.place):null,pathActive:st.step})}<ul class="sr-only" aria-label="الأماكن على الخريطة نصيًا">${listPlaces.map(o=>`<li><a href="${route(o.id)}">${esc(o.name.ar)}</a></li>`).join("")}</ul></div>
+    <div class="panel" id="atlasMap"><div class="mapzoom" id="mapZoom"><div class="mapscale" id="mapScale">${mapSvg(y,{bbox:meta.bbox,members:[...members],zones:st.layers.has("zones")?ATLAS.zones:[],focus:story?story.steps[st.step-1].place:st.place,route,path:story?story.steps.map(x=>x.place):null,pathActive:st.step})}</div></div><div class="zoomctl"><button type="button" data-z="out" aria-label="تصغير">－</button><button type="button" data-z="reset" aria-label="إعادة الضبط">⟲</button><button type="button" data-z="in" aria-label="تكبير">＋</button><span class="zlvl" id="zlvl"></span> <span style="font-size:12px;color:var(--muted)">اسحب للتحريك · Ctrl+عجلة للتكبير</span></div><ul class="sr-only" aria-label="الأماكن على الخريطة نصيًا">${listPlaces.map(o=>`<li><a href="${route(o.id)}">${esc(o.name.ar)}</a></li>`).join("")}</ul></div>
     <p class="note">الطبقات: ${ATLAS.layers.map(l=>carto(l.cartographic_status)).filter((v,i,a)=>a.indexOf(v)===i).map(esc).join(" · ")}. المظاريف: ${esc(carto(ATLAS.zones[0]?.status||""))} (سياسة الإصدار SCOPE-004).</p>
   </div><div>
     <div class="tabs" role="tablist">${tabs.map(([k,l])=>`<button role="tab" aria-selected="${st.tab===k}" data-tab="${k}">${l}</button>`).join("")}</div>
@@ -810,6 +818,17 @@ function route(){const h=location.hash||"#/";const [path,qs]=h.slice(1).split("?
   const ap=document.getElementById("atlasPanel");if(ap){document.querySelectorAll(".tabs [data-tab]").forEach(b=>b.onclick=()=>{atlasState.tab=b.dataset.tab;route();});
     document.querySelectorAll(".plist [data-place]").forEach(b=>b.onclick=()=>{atlasState.place=b.dataset.place;atlasState.tab="place";route();});
     document.querySelectorAll(".lyr input").forEach(c=>c.onchange=()=>{c.checked?atlasState.layers.add(c.dataset.lyr):atlasState.layers.delete(c.dataset.lyr);route();});}
+  // تكبير/تحريك خريطة الأطلس: تحجيمٌ بالـCSS داخل حاوية تمرير، وحالةٌ محفوظة تقاوم إعادة الرسم (لا تغيير في الإحداثيات؛ القاعدة 7)
+  const mz=document.getElementById("mapZoom"),ms=document.getElementById("mapScale");
+  if(mz&&ms){const applyZoom=()=>{atlasState.zoom=Math.min(4,Math.max(1,Math.round((atlasState.zoom||1)*2)/2));ms.style.width=(100*atlasState.zoom)+"%";const zl=document.getElementById("zlvl");if(zl)zl.textContent=Math.round(atlasState.zoom*100)+"%";};
+    applyZoom();if(atlasState._sc){mz.scrollLeft=atlasState._sc.l;mz.scrollTop=atlasState._sc.t;}
+    document.querySelectorAll(".zoomctl [data-z]").forEach(btn=>btn.onclick=()=>{const z=btn.dataset.z;atlasState.zoom=z==="in"?(atlasState.zoom||1)+0.5:z==="out"?(atlasState.zoom||1)-0.5:1;applyZoom();});
+    mz.onscroll=()=>{atlasState._sc={l:mz.scrollLeft,t:mz.scrollTop};};
+    mz.onwheel=e=>{if(e.ctrlKey||e.metaKey){e.preventDefault();atlasState.zoom=(atlasState.zoom||1)+(e.deltaY<0?0.5:-0.5);applyZoom();}};
+    let dr=null;
+    mz.onpointerdown=e=>{if(e.target.closest("a,button"))return;dr={x:e.clientX,y:e.clientY,l:mz.scrollLeft,t:mz.scrollTop};try{mz.setPointerCapture(e.pointerId);}catch(_){}mz.classList.add("grabbing");};
+    mz.onpointermove=e=>{if(!dr)return;mz.scrollLeft=dr.l-(e.clientX-dr.x);mz.scrollTop=dr.t-(e.clientY-dr.y);};
+    mz.onpointerup=mz.onpointercancel=()=>{dr=null;mz.classList.remove("grabbing");};}
   bind("mapY",y=>{document.getElementById("mapBox").innerHTML=mapSvg(y,{labels:"all"});document.getElementById("mapSnap").innerHTML=yearSnapshot(y);document.getElementById("mapYear").textContent=y;});
   if(q.y)state.y=+q.y;
   document.querySelectorAll(".quiz").forEach(qz=>{qz.querySelector(".opts").onclick=e=>{const b=e.target.closest("button");if(!b)return;qz.querySelectorAll("button").forEach(x=>x.disabled=true);b.classList.add(+b.dataset.i===+qz.dataset.correct?"ok":"no");qz.querySelectorAll("button")[+qz.dataset.correct].classList.add("ok");qz.querySelector(".note").hidden=false;};});
