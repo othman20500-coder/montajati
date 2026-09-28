@@ -271,7 +271,7 @@
   <header class="top"><div class="in">
     <a class="skip" href="#app">تخطَّ إلى المحتوى</a><a class="brand" href="#/"><i></i> الأندلس <small style="font-family:var(--body);font-weight:400;font-size:12px;color:var(--muted)">إصدار تجريبي</small></a>
     <nav class="nav" id="nav">
-      <a href="#/atlas">الأطلس</a><a href="#/map">الخريطة</a><a href="#/timeline">الزمن</a><a href="#/people">الأشخاص</a><a href="#/places">الأماكن</a><a href="#/museum">المتحف</a><a href="#/stories">القصص</a><a href="#/learn">تعلّم</a><a href="#/play">ألعاب</a><a href="#/sources">المصادر</a><a href="#/about">عن المنصة</a>
+      <a href="#/atlas">الأطلس</a><a href="#/map">الخريطة</a><a href="#/timeline">الزمن</a><a href="#/people">الأشخاص</a><a href="#/places">الأماكن</a><a href="#/figures">أعلام على الخريطة</a><a href="#/museum">المتحف</a><a href="#/stories">القصص</a><a href="#/learn">تعلّم</a><a href="#/play">ألعاب</a><a href="#/sources">المصادر</a><a href="#/about">عن المنصة</a>
     </nav>
     <div class="tools">
       <div class="seg" id="theme" title="الاتجاه البصري">
@@ -412,6 +412,28 @@ V.timeline=(q)=>{const y=+(q.y||0);const d=q.d||"read";const evs=Object.values(E
 
 V.people=()=>`<section><p class="eyebrow">الأشخاص</p><h2>حكام وعلماء وأدباء</h2><div class="grid">${Object.values(E).filter(o=>o.type==="Person").sort((a,b)=>(a.born??a.died??9999)-(b.born??b.died??9999)).map(card).join("")}</div></section>`;
 V.places=()=>`<section><p class="eyebrow">الأماكن</p><h2>مدن ومعالم وميادين</h2><div class="grid">${Object.values(E).filter(o=>o.type==="Place").map(card).join("")}</div></section>`;
+/* ===== وحدة تفاعلية: الأعلام على الخريطة ===== */
+const figPeopleOf=id=>{const seen={};EDGES.forEach(e=>{if(e.to===id&&E[e.from]&&E[e.from].type==="Person"){(seen[e.from]=seen[e.from]||[]).push(REL[e.rel]||e.rel);}});return Object.keys(seen).map(pid=>({id:pid,rels:[...new Set(seen[pid])]}));};
+V.figures=(q)=>{
+  const figPlaces=Object.values(E).filter(o=>o.type==="Place"&&typeof o.lat==="number"&&figPeopleOf(o.id).length).sort((a,b)=>figPeopleOf(b.id).length-figPeopleOf(a.id).length||a.name.ar.localeCompare(b.name.ar,"ar"));
+  if(!figPlaces.length)return `<section><p class="eyebrow">الأعلام على الخريطة</p><h2>الأعلام على الخريطة</h2><p class="sub">لا رابط عَلَم↔موضع منشور بعد.</p></section>`;
+  const sel=(q.place&&E[q.place]&&figPeopleOf(q.place).length)?q.place:figPlaces[0].id;
+  const o=E[sel];const ppl=figPeopleOf(sel).sort((a,b)=>(E[a.id].born??E[a.id].died??9999)-(E[b.id].born??E[b.id].died??9999));
+  const onlySet=new Set(figPlaces.map(p=>p.id));const route=id=>`#/figures?place=${encodeURIComponent(id)}`;
+  const total=new Set(figPlaces.flatMap(p=>figPeopleOf(p.id).map(x=>x.id))).size;
+  const pchip=x=>`<a class="chip" href="${href(x.id)}">${esc(E[x.id].name.ar)} <small>${esc(x.rels.join("، "))} · ${yr(E[x.id].born)}–${yr(E[x.id].died)}م</small></a>`;
+  return `<section><p class="eyebrow">الأعلام على الخريطة</p><h2>مَن نبغ في كل مدينة؟</h2>
+  <p class="sub">وحدة تفاعلية تجمع أعلام الأندلس على مواضعهم: اختر مدينةً من الخريطة أو القائمة فتظهر أعلامها (وزراء وعلماء وأطباء وفلاسفة)، وكل رابط عَلَم↔موضع مسنَد إلى ادعاء موثّق وفِقرة موضعية مقابَلة حرفيًا في القاعدة. المراسي حديثة تقريبية (القاعدة 7)، والعرض موضوعي لا مقيَّد بسنة.</p>
+  <div class="atlas"><div>
+    <div class="panel">${mapSvg(1100,{only:onlySet,focus:sel,route,labels:"all"})}<ul class="sr-only" aria-label="المدن التي عليها أعلام">${figPlaces.map(p=>`<li><a href="${route(p.id)}">${esc(p.name.ar)} (${figPeopleOf(p.id).length})</a></li>`).join("")}</ul></div>
+    <p class="note">${figPlaces.length} مدينة عليها أعلام مربوطون، و${total} عَلَمًا مرتبطًا. انقر أي مدينة لعرض أعلامها.</p>
+  </div><div>
+    <div class="panel"><p class="eyebrow">${esc(o.kind||"مكان")}</p><h3><a href="${href(o.id)}">${esc(o.name.ar)}</a> <small style="color:var(--muted)">${esc(o.name.en||"")}</small></h3>
+    <p class="note">أعلامها المربوطون (${ppl.length}):</p><div class="chips">${ppl.map(pchip).join("")}</div>
+    <p class="note" style="margin-top:10px">لون البادئة يدل على العلاقة (نشط في / يقع في / توفي في)؛ افتح العَلَم لرؤية شواهده الحرفية.</p></div>
+    <h3 style="margin:14px 0 8px;font-size:15px">المدن (${figPlaces.length})</h3>
+    <div class="chips">${figPlaces.map(p=>`<a class="chip" href="${route(p.id)}" ${p.id===sel?'style="border-color:var(--accent);font-weight:700"':""}>${esc(p.name.ar)} <small>${figPeopleOf(p.id).length} عَلَم</small></a>`).join("")}</div>
+  </div></div></section>`;};
 V.museum=()=>`<section><p class="eyebrow">المتحف الرقمي</p><h2>الآثار والمخطوطات والمصنفات والموارد</h2><p class="sub">لا تُعرض صورة أو نص طويل إلا برخصة تسمح (القاعدة 6)؛ وما عداه يُحال إليه برابط من لوحة الشواهد.</p><div class="grid">${Object.values(E).filter(o=>["Artifact","Document","Work","Resource","Language"].includes(o.type)).map(card).join("")}</div></section>`;
 
 V.stories=()=>`<section><p class="eyebrow">قصص الأطلس</p><h2>${STORIES.length} قصص من قاعدة v1.2</h2><p class="sub">كل محطة تشير إلى مكان وادعاء في القاعدة؛ وكل قصة تحمل تنبيهها.</p>
