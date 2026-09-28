@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>مخططات منصة الأندلس</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500&family=Amiri:wght@400&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
 <style>
 :root{
   --paper:#F7F5EF; --card:#FFFFFF; --ink:#14202E; --muted:#5B6673; --soft:#8A939E;
@@ -13,6 +13,7 @@
   --f-store:rgba(20,32,46,.05); --f-ext:rgba(20,32,46,.03); --s-ext:rgba(20,32,46,.32);
   --f-user:rgba(91,102,115,.10); --f-opt:rgba(20,32,46,.02); --s-opt:rgba(20,32,46,.38);
   --bar:rgba(20,32,46,.78); --hatch:rgba(20,32,46,.45);
+  --head:"Reem Kufi","IBM Plex Sans Arabic",sans-serif;
   --serif:"Amiri","Noto Naskh Arabic",serif;
   --sans:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
@@ -42,8 +43,8 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
 .wrap{max-width:1120px;margin:0 auto;padding-inline:clamp(16px,4vw,48px);padding-block:48px 32px;display:grid;gap:56px}
 header{display:grid;gap:8px;max-width:760px}
 .eyebrow{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--muted);margin:0}
-h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,48px);line-height:1.3;margin:0;text-wrap:balance}
-h2{font-family:var(--serif);font-weight:700;font-size:26px;line-height:1.35;margin:0;text-wrap:balance}
+h1{font-family:var(--head);font-weight:500;font-size:clamp(34px,5vw,48px);line-height:1.3;margin:0;text-wrap:balance}
+h2{font-family:var(--head);font-weight:500;font-size:26px;line-height:1.35;margin:0;text-wrap:balance}
 .lede{color:var(--muted);margin:0;max-width:68ch}
 section{display:grid;gap:14px}
 .fig-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px}
@@ -279,73 +280,73 @@ svg.dd .t-subperiod{font:500 11px var(--sans);fill:var(--muted)}
 <title id="andalus-eras-title">عصور الأندلس بحدودها غير القاطعة</title>
 <desc id="andalus-eras-desc">العصور الثمانية من 711 إلى 1614 كما في جدول periods، مع هامش لكل حدّ له أكثر من تعريف، كنهاية الخلافة بين 1009 و1031، والمراحل الانتقالية الثلاث في صف مستقل.</desc>
 <defs><pattern id="tl-hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" class="hatch-bg"/><line x1="0" y1="0" x2="0" y2="5" class="hatch-line"/></pattern><pattern id="tl-hatch-accent" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" class="hatch-bg-accent"/><line x1="0" y1="0" x2="0" y2="5" class="hatch-line-accent"/></pattern></defs>
-<line class="axis" x1="48" y1="268" x2="912" y2="268"/>
-<line class="axis" x1="912.0" y1="268" x2="912.0" y2="273"/>
-<text class="t-tick" x="912.0" y="287" text-anchor="middle">711</text>
-<line class="axis" x1="826.8" y1="268" x2="826.8" y2="273"/>
-<text class="t-tick" x="826.8" y="287" text-anchor="middle">800</text>
-<line class="axis" x1="731.2" y1="268" x2="731.2" y2="273"/>
-<text class="t-tick" x="731.2" y="287" text-anchor="middle">900</text>
-<line class="axis" x1="635.5" y1="268" x2="635.5" y2="273"/>
-<text class="t-tick" x="635.5" y="287" text-anchor="middle">1000</text>
-<line class="axis" x1="539.8" y1="268" x2="539.8" y2="273"/>
-<text class="t-tick" x="539.8" y="287" text-anchor="middle">1100</text>
-<line class="axis" x1="444.1" y1="268" x2="444.1" y2="273"/>
-<text class="t-tick" x="444.1" y="287" text-anchor="middle">1200</text>
-<line class="axis" x1="348.4" y1="268" x2="348.4" y2="273"/>
-<text class="t-tick" x="348.4" y="287" text-anchor="middle">1300</text>
-<line class="axis" x1="252.8" y1="268" x2="252.8" y2="273"/>
-<text class="t-tick" x="252.8" y="287" text-anchor="middle">1400</text>
-<line class="axis" x1="164.7" y1="268" x2="164.7" y2="273"/>
-<text class="t-tick" x="164.7" y="287" text-anchor="middle">1492</text>
+<line class="axis" x1="912" y1="268" x2="48" y2="268"/>
 <line class="axis" x1="48.0" y1="268" x2="48.0" y2="273"/>
-<text class="t-tick" x="48.0" y="287" text-anchor="middle">1614</text>
+<text class="t-tick" x="48.0" y="287" text-anchor="middle">711</text>
+<line class="axis" x1="133.2" y1="268" x2="133.2" y2="273"/>
+<text class="t-tick" x="133.2" y="287" text-anchor="middle">800</text>
+<line class="axis" x1="228.8" y1="268" x2="228.8" y2="273"/>
+<text class="t-tick" x="228.8" y="287" text-anchor="middle">900</text>
+<line class="axis" x1="324.5" y1="268" x2="324.5" y2="273"/>
+<text class="t-tick" x="324.5" y="287" text-anchor="middle">1000</text>
+<line class="axis" x1="420.2" y1="268" x2="420.2" y2="273"/>
+<text class="t-tick" x="420.2" y="287" text-anchor="middle">1100</text>
+<line class="axis" x1="515.9" y1="268" x2="515.9" y2="273"/>
+<text class="t-tick" x="515.9" y="287" text-anchor="middle">1200</text>
+<line class="axis" x1="611.6" y1="268" x2="611.6" y2="273"/>
+<text class="t-tick" x="611.6" y="287" text-anchor="middle">1300</text>
+<line class="axis" x1="707.2" y1="268" x2="707.2" y2="273"/>
+<text class="t-tick" x="707.2" y="287" text-anchor="middle">1400</text>
+<line class="axis" x1="795.3" y1="268" x2="795.3" y2="273"/>
+<text class="t-tick" x="795.3" y="287" text-anchor="middle">1492</text>
+<line class="axis" x1="912.0" y1="268" x2="912.0" y2="273"/>
+<text class="t-tick" x="912.0" y="287" text-anchor="middle">1614</text>
 <text class="t-eyebrow" x="912" y="304" text-anchor="start">السنة الميلادية</text>
-<rect class="bar" x="868.9" y="96" width="43.1" height="16" rx="1"/>
-<text class="t-period" x="890.5" y="88" text-anchor="middle">الفتح والولاة</text>
-<text class="t-hijri" x="890.5" y="72" text-anchor="middle">92–138هـ</text>
-<rect class="bar" x="703.4" y="128" width="165.5" height="16" rx="1"/>
-<text class="t-period" x="786.1" y="160" text-anchor="middle">الإمارة الأموية</text>
-<text class="t-hijri" x="786.1" y="176" text-anchor="middle">138–316هـ</text>
-<rect class="bar" x="626.9" y="96" width="76.5" height="16" rx="1"/>
-<rect x="605.8" y="96" width="21.1" height="16" fill="url(#tl-hatch-accent)" class="fuzzy-outline-accent"/>
-<text class="t-period" x="654.6" y="88" text-anchor="middle">الخلافة الأموية</text>
-<text class="t-hijri" x="654.6" y="72" text-anchor="middle">316–399/422هـ</text>
-<rect class="bar" x="553.2" y="128" width="52.6" height="16" rx="1"/>
-<rect x="605.8" y="128" width="21.1" height="16" fill="url(#tl-hatch-accent)" class="fuzzy-outline-accent"/>
-<rect x="548.4" y="128" width="4.8" height="16" fill="url(#tl-hatch)" class="fuzzy-outline"/>
-<text class="t-period" x="587.6" y="160" text-anchor="middle">الطوائف الأولى</text>
-<text class="t-hijri" x="587.6" y="176" text-anchor="middle">القرن الخامس الهجري</text>
-<rect class="bar" x="496.7" y="96" width="51.7" height="16" rx="1"/>
-<rect x="548.4" y="96" width="4.8" height="16" fill="url(#tl-hatch)" class="fuzzy-outline"/>
-<rect x="494.8" y="96" width="1.9" height="16" fill="url(#tl-hatch)" class="fuzzy-outline"/>
-<text class="t-period" x="524.0" y="88" text-anchor="middle">المرابطون</text>
-<text class="t-hijri" x="524.0" y="72" text-anchor="middle">479/484–540/542هـ</text>
-<rect class="bar" x="417.3" y="128" width="77.5" height="16" rx="1"/>
-<rect x="413.5" y="128" width="3.8" height="16" fill="url(#tl-hatch)" class="fuzzy-outline"/>
-<text class="t-period" x="454.1" y="160" text-anchor="middle">الموحدون</text>
-<text class="t-hijri" x="454.1" y="176" text-anchor="middle">541–625/629هـ</text>
-<rect class="bar" x="164.7" y="96" width="243.1" height="16" rx="1"/>
-<rect x="407.8" y="96" width="5.7" height="16" fill="url(#tl-hatch)" class="fuzzy-outline"/>
-<text class="t-period" x="289.1" y="88" text-anchor="middle">غرناطة النصرية</text>
-<text class="t-hijri" x="289.1" y="72" text-anchor="middle">629/635–897هـ</text>
-<rect class="bar" x="52.8" y="128" width="102.4" height="16" rx="1"/>
-<rect x="155.2" y="128" width="9.5" height="16" fill="url(#tl-hatch)" class="fuzzy-outline"/>
-<rect x="48.0" y="128" width="4.8" height="16" fill="url(#tl-hatch)" class="fuzzy-outline"/>
-<text class="t-period" x="106.3" y="160" text-anchor="middle">المدجنون والموريسكيون</text>
-<text class="t-hijri" x="106.3" y="176" text-anchor="middle">897–1023هـ</text>
-<rect class="bar sub" x="605.8" y="200" width="21.1" height="7" rx="1"/>
-<text class="t-subperiod" x="616.3" y="224" text-anchor="middle">الفتنة</text>
-<rect class="bar sub" x="494.8" y="200" width="1.9" height="7" rx="1"/>
-<rect x="496.7" y="200" width="1.0" height="7" fill="url(#tl-hatch)" class="fuzzy-outline"/>
-<rect x="470.9" y="200" width="23.9" height="7" fill="url(#tl-hatch)" class="fuzzy-outline"/>
-<text class="t-subperiod" x="484.3" y="240" text-anchor="middle">الطوائف الثانية</text>
-<rect class="bar sub" x="407.8" y="200" width="9.5" height="7" rx="1"/>
-<rect x="398.2" y="200" width="9.6" height="7" fill="url(#tl-hatch)" class="fuzzy-outline"/>
-<text class="t-subperiod" x="407.8" y="224" text-anchor="middle">الطوائف الثالثة</text>
+<rect class="bar" x="48.0" y="96" width="43.1" height="16" rx="1"/>
+<text class="t-period" x="69.5" y="88" text-anchor="middle">الفتح والولاة</text>
+<text class="t-hijri" x="69.5" y="72" text-anchor="middle">92–138هـ</text>
+<rect class="bar" x="91.1" y="128" width="165.5" height="16" rx="1"/>
+<text class="t-period" x="173.9" y="160" text-anchor="middle">الإمارة الأموية</text>
+<text class="t-hijri" x="173.9" y="176" text-anchor="middle">138–316هـ</text>
+<rect class="bar" x="256.6" y="96" width="76.5" height="16" rx="1"/>
+<rect x="333.1" y="96" width="21.1" height="16" fill="url(#tl-hatch-accent)" class="fuzzy-outline-accent"/>
+<text class="t-period" x="305.4" y="88" text-anchor="middle">الخلافة الأموية</text>
+<text class="t-hijri" x="305.4" y="72" text-anchor="middle">316–399/422هـ</text>
+<rect class="bar" x="354.2" y="128" width="52.6" height="16" rx="1"/>
+<rect x="333.1" y="128" width="21.1" height="16" fill="url(#tl-hatch-accent)" class="fuzzy-outline-accent"/>
+<rect x="406.8" y="128" width="4.8" height="16" fill="url(#tl-hatch)" class="fuzzy-outline"/>
+<text class="t-period" x="372.4" y="160" text-anchor="middle">الطوائف الأولى</text>
+<text class="t-hijri" x="372.4" y="176" text-anchor="middle">القرن الخامس الهجري</text>
+<rect class="bar" x="411.6" y="96" width="51.7" height="16" rx="1"/>
+<rect x="406.8" y="96" width="4.8" height="16" fill="url(#tl-hatch)" class="fuzzy-outline"/>
+<rect x="463.3" y="96" width="1.9" height="16" fill="url(#tl-hatch)" class="fuzzy-outline"/>
+<text class="t-period" x="436.0" y="88" text-anchor="middle">المرابطون</text>
+<text class="t-hijri" x="436.0" y="72" text-anchor="middle">479/484–540/542هـ</text>
+<rect class="bar" x="465.2" y="128" width="77.5" height="16" rx="1"/>
+<rect x="542.7" y="128" width="3.8" height="16" fill="url(#tl-hatch)" class="fuzzy-outline"/>
+<text class="t-period" x="505.9" y="160" text-anchor="middle">الموحدون</text>
+<text class="t-hijri" x="505.9" y="176" text-anchor="middle">541–625/629هـ</text>
+<rect class="bar" x="552.2" y="96" width="243.1" height="16" rx="1"/>
+<rect x="546.5" y="96" width="5.7" height="16" fill="url(#tl-hatch)" class="fuzzy-outline"/>
+<text class="t-period" x="670.9" y="88" text-anchor="middle">غرناطة النصرية</text>
+<text class="t-hijri" x="670.9" y="72" text-anchor="middle">629/635–897هـ</text>
+<rect class="bar" x="804.8" y="128" width="102.4" height="16" rx="1"/>
+<rect x="795.3" y="128" width="9.5" height="16" fill="url(#tl-hatch)" class="fuzzy-outline"/>
+<rect x="907.2" y="128" width="4.8" height="16" fill="url(#tl-hatch)" class="fuzzy-outline"/>
+<text class="t-period" x="853.6" y="160" text-anchor="middle">المدجنون والموريسكيون</text>
+<text class="t-hijri" x="853.6" y="176" text-anchor="middle">897–1023هـ</text>
+<rect class="bar sub" x="333.1" y="200" width="21.1" height="7" rx="1"/>
+<text class="t-subperiod" x="343.6" y="224" text-anchor="middle">الفتنة</text>
+<rect class="bar sub" x="463.3" y="200" width="1.9" height="7" rx="1"/>
+<rect x="462.3" y="200" width="1.0" height="7" fill="url(#tl-hatch)" class="fuzzy-outline"/>
+<rect x="465.2" y="200" width="23.9" height="7" fill="url(#tl-hatch)" class="fuzzy-outline"/>
+<text class="t-subperiod" x="475.7" y="240" text-anchor="middle">الطوائف الثانية</text>
+<rect class="bar sub" x="542.7" y="200" width="9.5" height="7" rx="1"/>
+<rect x="552.2" y="200" width="9.6" height="7" fill="url(#tl-hatch)" class="fuzzy-outline"/>
+<text class="t-subperiod" x="552.2" y="224" text-anchor="middle">الطوائف الثالثة</text>
 <text class="t-eyebrow" x="912" y="192" text-anchor="start">مراحل فرعية وانتقالية</text>
-<path class="leader" d="M616 36 V94"/>
-<text class="t-aside" x="608" y="30" text-anchor="start">نهاية الخلافة بتعريفين: 1009 بداية الفتنة، أو 1031 إلغاؤها رسميًا</text>
+<path class="leader" d="M344 36 V94"/>
+<text class="t-aside" x="352" y="30" text-anchor="end">نهاية الخلافة بتعريفين: 1009 بداية الفتنة، أو 1031 إلغاؤها رسميًا</text>
 <line class="rule" x1="24" y1="308" x2="936" y2="308"/>
 <text class="t-eyebrow" x="936" y="332" text-anchor="start">مفتاح</text>
 <rect class="bar" x="854" y="322" width="22" height="12" rx="1"/>
@@ -357,7 +358,7 @@ svg.dd .t-subperiod{font:500 11px var(--sans);fill:var(--muted)}
 <rect class="bar sub" x="232" y="325" width="22" height="6" rx="1"/>
 <text class="t-leg" x="224" y="332" text-anchor="start">مرحلة فرعية</text>
 </svg></div>
-    <p class="note">الحدود مأخوذة من جدول <code>periods</code> بقيمتيه: أبكر بداية وأبعد نهاية. المنطقة المخططة هي المدى الذي يختلف فيه تعريف الحد، ومنها <b>نهاية الخلافة</b> التي تُعرَّف ببداية الفتنة أو بإلغاء الخلافة رسميًا. الزمن يجري من اليمين إلى اليسار.</p>
+    <p class="note">الحدود مأخوذة من جدول <code>periods</code> بقيمتيه: أبكر بداية وأبعد نهاية. المنطقة المخططة هي المدى الذي يختلف فيه تعريف الحد، ومنها <b>نهاية الخلافة</b> التي تُعرَّف ببداية الفتنة أو بإلغاء الخلافة رسميًا. الزمن داخل المخطط من اليسار إلى اليمين، كخط زمن المنصة.</p>
   </section>
 
   <div class="cards">
@@ -374,8 +375,8 @@ svg.dd .t-subperiod{font:500 11px var(--sans);fill:var(--muted)}
     <div class="card">
       <h3><span class="dot7 accent"></span>ما كُيّف للعربية</h3>
       <ul>
-        <li>الاتجاه من اليمين، والزمن يجري إلى اليسار.</li>
-        <li>خط <bdi>Amiri</bdi> للعناوين والحواشي بدل <bdi>Instrument Serif</bdi>.</li>
+        <li>الصفحة والمخططات من اليمين، وخط الزمن من اليسار كما في المنصة.</li>
+        <li>خط <bdi>Reem Kufi</bdi> للعناوين، و<bdi>Amiri</bdi> للحواشي بدل <bdi>Instrument Serif</bdi>.</li>
         <li>خط <bdi>IBM Plex Sans Arabic</bdi> للعقد والمتن بدل <bdi>Geist</bdi>.</li>
         <li>لا أحرف كبيرة ولا تباعد بين الحروف.</li>
         <li>حجم الخط أكبر بنقطة إلى نقطتين.</li>

@@ -148,7 +148,7 @@ def diagram_timeline():
     rows = con.execute("select period_id,label_ar,start_earliest,start_latest,end_earliest,end_latest,hijri,parent_id "
                        "from periods order by start_earliest, period_id").fetchall()
     W, H = 960, 344
-    X0, X1, Y0, Y1 = 912, 48, 711, 1614
+    X0, X1, Y0, Y1 = 48, 912, 711, 1614  # الزمن من اليسار إلى اليمين (قاعدة المنصة)
     x = lambda yr: round(X0 - (yr - Y0) * (X0 - X1) / (Y1 - Y0), 1)
     main = [r for r in rows if "a" not in r[0]]
     subs = [r for r in rows if "a" in r[0]]
@@ -167,7 +167,7 @@ def diagram_timeline():
     for t in ticks:
         e.append(f'<line class="axis" x1="{x(t)}" y1="{ay}" x2="{x(t)}" y2="{ay+5}"/>')
         e.append(f'<text class="t-tick" x="{x(t)}" y="{ay+19}" text-anchor="middle">{t}</text>')
-    e.append(f'<text class="t-eyebrow" x="{X0}" y="{ay+36}" text-anchor="start">السنة الميلادية</text>')
+    e.append(f'<text class="t-eyebrow" x="{X1}" y="{ay+36}" text-anchor="start">السنة الميلادية</text>')
 
     def bar(r, y, hgt, sub=False):
         pid, name, se, sl, ee, el = r[:6]
@@ -175,13 +175,13 @@ def diagram_timeline():
         focal_start = pid == "PRD-04"
         out = []
         cls = "bar sub" if sub else "bar"
-        out.append(f'<rect class="{cls}" x="{x(ee)}" y="{y}" width="{round(x(sl)-x(ee),1)}" height="{hgt}" rx="1"/>')
+        out.append(f'<rect class="{cls}" x="{x(sl)}" y="{y}" width="{round(x(ee)-x(sl),1)}" height="{hgt}" rx="1"/>')
         if sl > se:
             fill, oc = ("tl-hatch-accent", "fuzzy-outline-accent") if focal_start else ("tl-hatch", "fuzzy-outline")
-            out.append(f'<rect x="{x(sl)}" y="{y}" width="{round(x(se)-x(sl),1)}" height="{hgt}" fill="url(#{fill})" class="{oc}"/>')
+            out.append(f'<rect x="{x(se)}" y="{y}" width="{round(x(sl)-x(se),1)}" height="{hgt}" fill="url(#{fill})" class="{oc}"/>')
         if el > ee:
             fill, oc = ("tl-hatch-accent", "fuzzy-outline-accent") if focal_end else ("tl-hatch", "fuzzy-outline")
-            out.append(f'<rect x="{x(el)}" y="{y}" width="{round(x(ee)-x(el),1)}" height="{hgt}" fill="url(#{fill})" class="{oc}"/>')
+            out.append(f'<rect x="{x(ee)}" y="{y}" width="{round(x(el)-x(ee),1)}" height="{hgt}" fill="url(#{fill})" class="{oc}"/>')
         return out
 
     laneA, laneB = 96, 128
@@ -205,11 +205,11 @@ def diagram_timeline():
         cx = round((x(r[2]) + x(r[5])) / 2, 1)
         ly = laneC + 24 + (16 if pid == "PRD-05a" else 0)
         e.append(f'<text class="t-subperiod" x="{cx}" y="{ly}" text-anchor="middle">{short.get(pid, r[1])}</text>')
-    e.append(f'<text class="t-eyebrow" x="{X0}" y="{laneC-8}" text-anchor="start">مراحل فرعية وانتقالية</text>')
+    e.append(f'<text class="t-eyebrow" x="{X1}" y="{laneC-8}" text-anchor="start">مراحل فرعية وانتقالية</text>')
     # الحاشية التحريرية على الحد المختلف فيه
     lx = round((x(1009) + x(1031)) / 2)
     e.append(f'<path class="leader" d="M{lx} 36 V{laneA-2}"/>')
-    e.append(f'<text class="t-aside" x="{lx-8}" y="30" text-anchor="start">نهاية الخلافة بتعريفين: 1009 بداية الفتنة، أو 1031 إلغاؤها رسميًا</text>')
+    e.append(f'<text class="t-aside" x="{lx+8}" y="30" text-anchor="end">نهاية الخلافة بتعريفين: 1009 بداية الفتنة، أو 1031 إلغاؤها رسميًا</text>')
     e.append(legend(318, W, [("bar", "مدة مستقرة"), ("hatch", "هامش الحدّ غير القاطع"),
                              ("hatch-accent", "الحدّ المقصود بالحاشية"), ("subbar", "مرحلة فرعية")]))
     body = "\n".join(e)
