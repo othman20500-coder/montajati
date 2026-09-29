@@ -21,6 +21,8 @@ FILES = [
     ("andalus/data/graph.js", "data/graph.js"),
     ("andalus/data/graph.evidence.js", "data/graph.evidence.js"),
     ("andalus/data/schema.json", "data/schema.json"),
+    ("andalus/data/geo/land.geojson", "data/geo/land.geojson"),
+    ("andalus/data/geo/rivers.geojson", "data/geo/rivers.geojson"),
     ("deploy/cpanel/.htaccess", ".htaccess"),
 ]
 
