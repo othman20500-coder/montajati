@@ -29,7 +29,7 @@
     --brand:#173F7A; --brand-2:#1E9C8B; --accent:#E4B33B; --soft:#E6EEF7;
     --head:"Reem Kufi","IBM Plex Sans Arabic",sans-serif; --body:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
     --pattern:radial-gradient(circle at 1px 1px, rgba(23,63,122,.08) 1px, transparent 0); --pattern-size:22px 22px;
-    --hero-bg:linear-gradient(135deg,#173F7A 0%,#1E9C8B 100%); --hero-ink:#fff;
+    --hero-bg:linear-gradient(180deg,#EAF0F6 0%,#F7F5EF 72%); --hero-ink:#14202E;
     --shadow:0 18px 36px -22px rgba(23,63,122,.45); color-scheme:light;
   }
   /* ===== الاتجاه أ: المخطوط ===== */
@@ -97,12 +97,14 @@
   .hero .in{max-width:1140px;margin-inline:auto;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
   @media (max-width:860px){.hero .in{grid-template-columns:1fr}}
   .hero h1{font-size:clamp(32px,5.5vw,56px);font-weight:700;line-height:1.2}
-  .hero h1 b{color:var(--accent);font-weight:700}
+  .hero h1 b{color:inherit;font-weight:700}
   .hero p{font-weight:300;font-size:17px;opacity:.85;max-width:56ch;margin:12px 0 0}
   .hero .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
-  .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid transparent;border-radius:999px;padding:10px 20px;font-weight:600;font-size:14.5px;background:var(--accent);color:#14202E}
+  .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid transparent;border-radius:var(--r-s);padding:10px 20px;font-weight:600;font-size:var(--fs-sm);background:var(--brand);color:#fff}
+  .btn:hover{filter:brightness(1.08)} .btn:active{transform:translateY(1px) scale(.99)}
+  :root[data-theme="night"] .btn{color:#14202E}
   .btn.ghost{background:transparent;color:inherit;border-color:currentColor;opacity:.9}
-  .hero .mapbox{background:rgba(0,0,0,.12);border:1px solid rgba(255,255,255,.18);border-radius:var(--r-m);padding:10px}
+  .hero .mapbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:10px}
   :root[data-theme="manuscript"] .hero .mapbox{background:rgba(43,29,18,.05);border-color:var(--accent)}
 
   /* ===== شريط الزمن ===== */
@@ -549,7 +551,7 @@ const V={};
 V.home=()=>`
 <section class="hero"><div class="in">
   <div>
-    <p class="eyebrow" style="color:var(--accent)">موسوعة · أطلس زمني · متحف رقمي · تجربة تعليمية</p>
+    <p class="eyebrow" style="color:var(--brand)">موسوعة · أطلس زمني · متحف رقمي · تجربة تعليمية</p>
     <h1>قِف في الأندلس، <b>في أي سنة تختار</b></h1>
     <p>حرّك الزمن فتتغير الخريطة والحكام والمدن والوثائق. كل جملة هنا إسناد له شاهد حرفي بموضعه؛ ولا يُنشر إلا الموثّق والمصحح والمحسوم.</p>
     <div class="cta"><a class="btn" href="#/stories">ابدأ برحلة سردية</a><a class="btn ghost" href="#/map">استكشف الخريطة</a><a class="btn ghost" href="#/learn">ابدأ وحدة تعليمية</a></div>
