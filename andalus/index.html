@@ -112,6 +112,14 @@
 
   /* ===== الخريطة ===== */
   .map{width:100%;height:auto;display:block}
+  /* خريطة MapLibre (عرض الخريطة): تحلّ محلّ SVG مع رجوعٍ تلقائيّ إليها عند تعذّر المحرّك */
+  .glmap{height:520px;border-radius:var(--r-m,14px);overflow:hidden;position:relative;border:1px solid rgba(0,0,0,.12)}
+  .glpin{display:flex;align-items:center;gap:5px;transform:translate(-50%,-50%);cursor:pointer;text-decoration:none;white-space:nowrap}
+  .glpin i{width:9px;height:9px;border-radius:50%;box-shadow:0 0 0 2px #fff;display:block}
+  .glpin.major i{width:12px;height:12px}
+  .glpin span{font-size:12px;color:#14202e;background:rgba(255,255,255,.82);padding:0 4px;border-radius:4px;font-family:var(--body)}
+  .glpin.dim{opacity:.45}
+  .glpin.battle b{color:#8C2F39;font-style:normal}
   .map .land{fill:color-mix(in srgb,var(--card) 70%,var(--soft));stroke:var(--line);stroke-width:1.2}
   :root[data-theme="night"] .map .land{fill:#1B2536;stroke:#34405A}
   .map .sea{fill:transparent}
@@ -505,6 +513,27 @@ function mapSvg(y,opts={}){
     <text x="${vb[0]+12*k}" y="${vb[1]+vb[3]-12*k}" class="note" font-size="${10.5*k}">الإحداثيات مراسٍ حديثة تقريبية (مركز المدينة الحالية غالبًا)؛ لا تُعرض حدود سياسية تاريخية (القاعدة 7).</text>
   </svg>`;
 }
+/* ===== محرّك الخريطة MapLibre GL JS (04-architecture §4.7) =====
+   خريطة أساس تاريخية من Natural Earth (ملك عام): يابسة وأنهار فقط، بلا طرق ولا حدود سياسية.
+   التسميات علامات DOM (المتصفح يصل الحروف العربية سليمة، فلا حاجة لإضافة RTL في GL).
+   عند تعذّر المحرّك (لا شبكة/لا WebGL) يُرجَع تلقائيًّا إلى mapSvg، فلا ينكسر العرض.
+   القاعدة 7: الإحداثيات مراسٍ حديثة تقريبية، ولا يُشتقّ منها حدٌّ سياسيّ. */
+const MAP_STYLE={version:8,sources:{land:{type:"geojson",data:"data/geo/land.geojson"},rivers:{type:"geojson",data:"data/geo/rivers.geojson"}},layers:[{id:"sea",type:"background",paint:{"background-color":"#e6ecf1"}},{id:"land",type:"fill",source:"land",paint:{"fill-color":"#ece4d2","fill-outline-color":"#d9cdb2"}},{id:"rivers",type:"line",source:"rivers",paint:{"line-color":"#9db9c9","line-width":1.1}}]};
+let _mlP=null;
+function ensureMapLibre(){if(_mlP)return _mlP;_mlP=new Promise((res,rej)=>{if(window.maplibregl)return res(window.maplibregl);const css=document.createElement("link");css.rel="stylesheet";css.href="https://cdn.jsdelivr.net/npm/maplibre-gl@4/dist/maplibre-gl.css";document.head.appendChild(css);const s=document.createElement("script");s.src="https://cdn.jsdelivr.net/npm/maplibre-gl@4/dist/maplibre-gl.min.js";s.onload=()=>window.maplibregl?res(window.maplibregl):rej(new Error("no maplibregl"));s.onerror=()=>rej(new Error("maplibre load failed"));document.head.appendChild(s);});return _mlP;}
+function glPins(map,y){const gl=window.maplibregl;(map._pins||[]).forEach(m=>m.remove());const pins=[];
+  Object.values(E).filter(o=>o.type==="Place"&&!o.battle&&typeof o.lat==="number"&&typeof o.lon==="number").forEach(o=>{const c=ctrl(o,y);const exists=o.founded==null||y>=o.founded;const fill=c==="muslim"?eraOf(y).c:c==="christian"?"var(--christian)":"var(--brand)";const major=MAJOR.has(o.id);const el=document.createElement("a");el.href=href(o.id);el.className="glpin"+(exists?"":" dim")+(major?" major":"");el.title=o.name.ar;el.innerHTML=`<i style="background:${fill}"></i>${major?`<span>${esc(o.name.ar)}</span>`:""}`;pins.push(new gl.Marker({element:el,anchor:"center"}).setLngLat([o.lon,o.lat]).addTo(map));});
+  Object.values(E).filter(o=>o.type==="Place"&&o.battle&&typeof o.lat==="number"&&Math.abs((o.founded||o.year||0)-y)<=40).forEach(b=>{const el=document.createElement("a");el.href=href(b.id);el.className="glpin battle";el.title=b.name.ar;el.innerHTML=`<b>⚔</b><span>${esc(b.name.ar)} ${b.founded||""}</span>`;pins.push(new gl.Marker({element:el,anchor:"center"}).setLngLat([b.lon,b.lat]).addTo(map));});
+  map._pins=pins;}
+async function mapGL(elId,y){const gl=await ensureMapLibre();const el=document.getElementById(elId);if(!el)return null;if(el._map)return el._map;
+  const map=new gl.Map({container:el,style:MAP_STYLE,center:[-4.2,37.6],zoom:5.1,minZoom:4,maxZoom:9,attributionControl:false,dragRotate:false,pitchWithRotate:false});el._map=map;
+  map.addControl(new gl.NavigationControl({showCompass:false}),"top-left");
+  map.addControl(new gl.AttributionControl({compact:true,customAttribution:"مراسٍ حديثة تقريبية؛ لا حدود سياسية تاريخية (القاعدة 7) · يابسة/أنهار: Natural Earth (ملك عام)"}),"bottom-right");
+  map.on("load",()=>{try{map.fitBounds([[-10.5,30],[4.5,44]],{padding:20,duration:0});}catch(_){}glPins(map,y);});
+  return map;}
+/* يُهيّئ خريطة عرض الخريطة: MapLibre إن أمكن، وإلا رجوعٌ إلى mapSvg. يستدعى بعد رسم V.map */
+function initMapView(y){const el=document.getElementById("mapBox");if(!el||!el.classList.contains("glmap"))return;
+  mapGL("mapBox",y).catch(()=>{el.classList.remove("glmap");el.classList.add("panel");el.innerHTML=mapSvg(y,{labels:"all"});el._fallback=true;});}
 const erasBar=()=>`<div class="eras">${TOP.map((e,i)=>{const a=e.from,b=TOP[i+1]?TOP[i+1].from:1614;return `<span style="width:${(b-a)/(1614-711)*100}%;background:${e.c}" title="${e.name} ${eraSpan(e)}"></span>`;}).join("")}</div><div class="eralegend">${TOP.map(e=>`<span><i style="background:${e.c}"></i>${e.name} ${eraSpan(e)}</span>`).join("")}</div>`;
 const timeBar=(y,id)=>`<div class="timebar"><span>711</span><input type="range" min="711" max="1614" value="${y}" id="${id}" aria-label="السنة"><span>1614</span></div><div class="year" id="${id}-y" style="text-align:center;font-family:var(--head);font-size:22px;margin-top:6px">${y}م <small style="font-family:var(--body);font-size:12px;opacity:.75">${hijri(y)}هـ تقريبًا · ${eraOf(y).name}</small></div>${erasBar()}`;
 function yearSnapshot(y){const evs=Object.values(E).filter(o=>o.type==="Event").sort((a,b)=>Math.abs(a.year-y)-Math.abs(b.year-y)).slice(0,3);const rulers=Object.values(E).filter(o=>o.type==="Polity"&&typeof o.from==="number"&&typeof o.to==="number"&&y>=o.from&&y<o.to);const people=Object.values(E).filter(o=>o.type==="Person"&&typeof o.born==="number"&&typeof o.died==="number"&&y>=o.born&&y<=o.died);
@@ -535,7 +564,7 @@ V.home=()=>`
   </div><p class="note">انقر على أي نقطة ملونة في الموقع لفتح لوحة «كيف نعرف هذا؟».</p></section>`;
 
 V.map=(q)=>{const y=+(q.y||960);return `<section><p class="eyebrow">الخريطة الزمنية</p><h2>الأندلس سنة <span id="mapYear">${y}</span>م</h2><p class="sub">الأماكن من جدول place_geometry في v1.2 بمراسٍ حديثة تقريبية؛ لا تُعرض حدود سياسية تاريخية (القاعدة 7). حرّك الزمن لترى العصر والأحداث والأحياء في تلك السنة.</p>
-  ${timeBar(y,"mapY")}<div class="panel" id="mapBox" style="margin-top:14px">${mapSvg(y,{labels:"all"})}</div><div id="mapSnap" style="margin-top:14px">${yearSnapshot(y)}</div>
+  ${timeBar(y,"mapY")}<div style="margin-top:14px"><div id="mapBox" class="glmap"></div><ul class="sr-only" aria-label="أماكن هذه السنة على الخريطة">${Object.values(E).filter(o=>o.type==="Place"&&typeof o.lat==="number"&&(o.founded==null||y>=o.founded)).map(o=>`<li><a href="${href(o.id)}">${esc(o.name.ar)}</a></li>`).join("")}</ul></div><div id="mapSnap" style="margin-top:14px">${yearSnapshot(y)}</div>
   <div class="scholar-only scholar-box">للباحث: البديل النصي للخريطة هو قائمة الأماكن بحالتها في السنة المختارة (تُولَّد تلقائيًا)، وتصدير GeoJSON للقطة الزمنية.</div></section>`;};
 
 V.timeline=(q)=>{const y=+(q.y||0);const d=q.d||"read";const evs=Object.values(E).filter(o=>o.type==="Event").filter(e=>d==="glance"?e.weight===3:true).sort((a,b)=>a.year-b.year);
@@ -868,7 +897,8 @@ function route(){const h=location.hash||"#/";const [path,qs]=h.slice(1).split("?
     const paint=i=>{if(i===cur||!steps[i])return;cur=i;const s=steps[i];if(mapEl)mapEl.innerHTML=mapSvg(year,{focus:s.dataset.place,path:places,pathActive:i+1,bbox:[-10,30.5,4,44]});if(cap)cap.textContent=`المحطة ${i+1} من ${steps.length}: ${s.querySelector("h3").textContent}`;steps.forEach((x,j)=>x.classList.toggle("active",j===i));};
     const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)paint(+e.target.dataset.i);});},{rootMargin:"-45% 0px -45% 0px"});
     steps.forEach(s=>io.observe(s));paint(0);}
-  bind("mapY",y=>{document.getElementById("mapBox").innerHTML=mapSvg(y,{labels:"all"});document.getElementById("mapSnap").innerHTML=yearSnapshot(y);document.getElementById("mapYear").textContent=y;});
+  {const mbEl=document.getElementById("mapBox");if(mbEl&&mbEl.classList.contains("glmap")){const my=document.getElementById("mapY");initMapView(my?+my.value:960);}}
+  bind("mapY",y=>{const mb=document.getElementById("mapBox");if(mb&&mb._map)glPins(mb._map,y);else if(mb)mb.innerHTML=mapSvg(y,{labels:"all"});document.getElementById("mapSnap").innerHTML=yearSnapshot(y);const myy=document.getElementById("mapYear");if(myy)myy.textContent=y;});
   if(q.y)state.y=+q.y;
   document.querySelectorAll(".quiz").forEach(qz=>{qz.querySelector(".opts").onclick=e=>{const b=e.target.closest("button");if(!b)return;qz.querySelectorAll("button").forEach(x=>x.disabled=true);b.classList.add(+b.dataset.i===+qz.dataset.correct?"ok":"no");qz.querySelectorAll("button")[+qz.dataset.correct].classList.add("ok");qz.querySelector(".note").hidden=false;};});
   const g=document.getElementById("g1");if(g)g.onclick=e=>{const b=e.target.closest("button");if(!b)return;g.querySelectorAll("button").forEach(x=>x.disabled=true);b.classList.add(b.dataset.ok==="true"?"ok":"no");document.getElementById("g1n").innerHTML=(b.dataset.ok==="true"?"صحيح. ":"ليس كذلك. ")+"المصدر: حدود العصور في الرسم المعرفي (Kennedy 1996، EI2). في المنصة تُعرض شارة الادعاء هنا.";};
