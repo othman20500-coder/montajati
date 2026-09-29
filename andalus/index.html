@@ -17,7 +17,12 @@
     --era-murabit:#5B3F8C; --era-muwahhid:#8C2F39; --era-nasrid:#B8912E; --era-morisco:#5C6B73;
     --christian:#C9C2B3;
     --r-s:8px; --r-m:14px; --r-l:24px; --ease:cubic-bezier(.2,.7,.2,1);
+    /* سلّم الطباعة الموحّد (DESIGN.md §2): 6 أحجام لا سابع */
+    --fs-display:clamp(30px,5vw,40px); --fs-h1:26px; --fs-h2:20px; --fs-body:16px; --fs-sm:14px; --fs-xs:12.5px;
+    /* إيقاع الأقسام (DESIGN.md §3): فراغ بينيّ ~96 سطح المكتب / ~64 الجوال (نصفه لكل جهة) */
+    --sec-pad:48px;
   }
+  @media (max-width:640px){:root{--sec-pad:32px}}
   /* ===== الاتجاه ب: الزليج (الأساس) ===== */
   :root, :root[data-theme="zellij"]{
     --bg:#F7F5EF; --card:#FFFFFF; --ink:#14202E; --muted:#5B6673; --line:#DCD8CC;
@@ -67,10 +72,10 @@
   [hidden]{display:none!important}
   .wrap{max-width:1140px;margin-inline:auto}
   h1,h2,h3,h4{font-family:var(--head);font-weight:500;line-height:1.3;margin:0}
-  h2{font-size:26px;color:var(--brand)} h3{font-size:19px}
-  .eyebrow{font-size:12.5px;letter-spacing:.04em;color:var(--brand-2);font-weight:600;margin:0 0 6px}
+  h2{font-size:var(--fs-h1);color:var(--brand)} h3{font-size:var(--fs-h2)}
+  .eyebrow{font-size:var(--fs-xs);letter-spacing:.04em;color:var(--brand-2);font-weight:600;margin:0 0 6px}
   .sub{color:var(--muted);margin:6px 0 20px;max-width:64ch}
-  section{padding-block:40px;border-bottom:1px solid var(--line)} section:last-of-type{border-bottom:0}
+  section{padding-block:var(--sec-pad);border-bottom:1px solid var(--line)} section:last-of-type{border-bottom:0}
 
   /* ===== الترويسة ===== */
   .top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-inline:-16px;padding-inline:16px}
@@ -555,7 +560,7 @@ V.home=()=>`
 <section><div id="heroSnap">${yearSnapshot(960)}</div></section>
 <section><p class="eyebrow">ثلاثة مداخل</p><h2>كل كيان بوابة إلى غيره</h2><p class="sub">الشخص يقودك إلى المكان، والمكان إلى الحدث، والحدث إلى الوثيقة، والوثيقة إلى الأثر. لا صفحة مسدودة.</p>
   <div class="grid">${["PER-006","PLC-CORDOBA","EVT-003","PER-034","PLC-G01","POL-008"].filter(id=>E[id]).map(id=>card(E[id])).join("")}</div></section>
-<section><p class="eyebrow">كيف نتحقق؟</p><h2>إسناد ← شاهد حرفي ← ادعاء</h2><p class="sub">كل جملة تاريخية هنا إسناد له شاهد واحد أو أكثر بنص حرفي وموضعه وموقفه وطريقة مطابقته (قواعد v1.2). لا يُنشر إلا الموثّق والمصحح والمحسوم، ويُعرض الموثّق جزئيًا بتنبيه.</p>
+<section><p class="eyebrow">كيف نتحقق؟</p><h2>إسناد ← شاهد حرفي ← ادعاء</h2><p class="sub">كل جملة تاريخية هنا إسناد له شاهد واحد أو أكثر بنص حرفي وموضعه وموقفه وطريقة مطابقته. لا يُنشر إلا الموثّق والمصحح والمحسوم، ويُعرض الموثّق جزئيًا بتنبيه.</p>
   <div class="grid">
     <div class="card"><h3><i class="b fact"></i> موثّق / صُحح وموثّق / حُسم الخلاف</h3><p>مثال: ${CLAIMS["AST-012"]?claimSpan("إعلان الخلافة 316هـ (حُسم خلاف 316/317)","AST-012"):""}</p></div>
     <div class="card"><h3><i class="b partial"></i> موثّق جزئيًا</h3><p>يُعرض بتنبيه. مثال: ${CLAIMS["AST-004"]?claimSpan("نهاية الخلافة 1009–1031 بتعريفين","AST-004"):""}</p></div>
@@ -563,7 +568,7 @@ V.home=()=>`
     <div class="card"><h3><i class="b unverified"></i> متعارض أو ينتظر شاهدًا</h3><p>لا يُصدَّر إلى هذه الواجهة أصلًا؛ يبقى في القاعدة حتى يُحسم أو يُشهد له.</p></div>
   </div><p class="note">انقر على أي نقطة ملونة في الموقع لفتح لوحة «كيف نعرف هذا؟».</p></section>`;
 
-V.map=(q)=>{const y=+(q.y||960);return `<section><p class="eyebrow">الخريطة الزمنية</p><h2>الأندلس سنة <span id="mapYear">${y}</span>م</h2><p class="sub">الأماكن من جدول place_geometry في v1.2 بمراسٍ حديثة تقريبية؛ لا تُعرض حدود سياسية تاريخية (القاعدة 7). حرّك الزمن لترى العصر والأحداث والأحياء في تلك السنة.</p>
+V.map=(q)=>{const y=+(q.y||960);return `<section><p class="eyebrow">الخريطة الزمنية</p><h2>الأندلس سنة <span id="mapYear">${y}</span>م</h2><p class="sub">الأماكن بمراسٍ حديثة تقريبية؛ لا تُعرض حدود سياسية تاريخية (القاعدة 7). حرّك الزمن لترى العصر والأحداث والأحياء في تلك السنة.</p>
   ${timeBar(y,"mapY")}<div style="margin-top:14px"><div id="mapBox" class="glmap"></div><ul class="sr-only" aria-label="أماكن هذه السنة على الخريطة">${Object.values(E).filter(o=>o.type==="Place"&&typeof o.lat==="number"&&(o.founded==null||y>=o.founded)).map(o=>`<li><a href="${href(o.id)}">${esc(o.name.ar)}</a></li>`).join("")}</ul></div><div id="mapSnap" style="margin-top:14px">${yearSnapshot(y)}</div>
   <div class="scholar-only scholar-box">للباحث: البديل النصي للخريطة هو قائمة الأماكن بحالتها في السنة المختارة (تُولَّد تلقائيًا)، وتصدير GeoJSON للقطة الزمنية.</div></section>`;};
 
@@ -633,7 +638,7 @@ V.stories=(q)=>{const story=(q&&q.s)?STORIES.find(s=>s.id===q.s):null;
       <div class="scrolly-map"><div class="sticky"><div class="panel" id="scrollyMap">${mapSvg(SY,{focus:steps[0].place,path:placeIds,pathActive:1,bbox:[-10,30.5,4,44]})}</div><p class="note" id="scrollyCap">المحطة 1 من ${steps.length}: ${esc(steps[0].title)}</p></div></div>
     </div>
     <p class="note">مرّر لتتحرك الخريطة مع المحطات؛ كل ادعاء يفتح شواهده بنصّها الحرفي. المراسي تقريبية (القاعدة 7).</p></section>`;}
-  return `<section><p class="eyebrow">قصص الأطلس</p><h2>${STORIES.length} قصص من قاعدة v1.2</h2><p class="sub">كل محطة تشير إلى مكان وادعاء في القاعدة؛ وكل قصة تحمل تنبيهها. اقرأها سرديًّا فتتحرك الخريطة مع المحطات، أو على الأطلس مرحلةً مرحلة.</p>
+  return `<section><p class="eyebrow">قصص الأطلس</p><h2>${STORIES.length} قصص موثّقة</h2><p class="sub">كل محطة تشير إلى مكان وادعاء في القاعدة؛ وكل قصة تحمل تنبيهها. اقرأها سرديًّا فتتحرك الخريطة مع المحطات، أو على الأطلس مرحلةً مرحلة.</p>
   ${STORIES.map(st=>`<div class="panel" style="margin-bottom:14px"><p class="eyebrow">${esc(st.period||"")}</p><h3>${esc(st.title)}</h3><p style="color:var(--muted)">${esc(st.summary||"")}</p><div class="chips" style="margin:8px 0"><a class="chip" href="#/stories?s=${st.id}" style="border-color:var(--accent)">▶ اقرأ سرديًّا (${st.steps.length} محطات)</a><a class="chip" href="#/atlas?model=all&story=${st.id}&step=1&tab=sto">على الأطلس</a></div>${st.warning?`<p class="note">${esc(st.warning)}</p>`:""}
     <div class="strip">${st.steps.map((x,i)=>`<div class="card" style="--era:var(--brand);min-width:280px"><div class="type">محطة ${i+1}</div><h3>${esc(x.title)}</h3><p>${x.claim&&CLAIMS[x.claim]?claimSpan(x.text||"",x.claim):esc(x.text||"")}</p>${x.place&&E[x.place]?`<div class="chips" style="margin-top:8px">${chip(x.place)}</div>`:""}</div>`).join("")}</div></div>`).join("")}</section>`;};
 
@@ -645,7 +650,7 @@ const stepKind=k=>STEP_AR[k]||"خطوة";
 const quizCard=q=>`<div class="game quiz" data-correct="${q.correct}"><div class="type">سؤال · ${esc(q.difficulty||"")}</div><h3>${esc(plainAr(q.prompt))}</h3><div class="opts">${q.choices.map((c,i)=>`<button data-i="${i}">${esc(plainAr(typeof c==="string"?c:(c.text||JSON.stringify(c))))}</button>`).join("")}</div><p class="note" hidden>${esc(plainAr(q.explanation||""))}${q.claim&&CLAIMS[q.claim]?` ${claimSpan("الادعاء المرتبط",q.claim)}`:""}</p></div>`;
 const LEARN_ORDER=["EDU-08","EDU-01","EDU-07","EDU-02","EDU-06","EDU-03","EDU-04","EDU-05","EDU-10","EDU-09","EDU-11","EDU-12","EDU-13"];const learnSorted=()=>MODULES.slice().sort((a,b)=>{const ia=LEARN_ORDER.indexOf(a.id),ib=LEARN_ORDER.indexOf(b.id);return (ia<0?99:ia)-(ib<0?99:ib);});
 V.learn=(q)=>{const mod=q.m?MODULES.find(m=>m.id===q.m):null;
-  if(!mod)return `<section><p class="eyebrow">المسار التعليمي</p><h2>${MODULES.length} وحدات تعليمية جاهزة</h2><p class="sub">كل وحدة سلسلة خطوات قصيرة، وكل خطوة تشير إلى ادعاء في القاعدة بشواهده ومكانه على الخريطة، وتُختم بأسئلة. الوحدات من حزمة v1.2 وملحقاتها بالحالة «جاهز»، مرتبة على ترتيب المادة التعليمية: من الخريطة إلى الفتح فالدولة فالمدن فالمجتمع.</p>
+  if(!mod)return `<section><p class="eyebrow">المسار التعليمي</p><h2>${MODULES.length} وحدات تعليمية جاهزة</h2><p class="sub">كل وحدة سلسلة خطوات قصيرة، وكل خطوة تشير إلى ادعاء في القاعدة بشواهده ومكانه على الخريطة، وتُختم بأسئلة. الوحدات الجاهزة، مرتبة على ترتيب المادة التعليمية: من الخريطة إلى الفتح فالدولة فالمدن فالمجتمع.</p>
     <div class="grid">${learnSorted().map((m,i)=>`<a class="card" href="#/learn?m=${m.id}" style="--era:var(--brand)"><div class="type">الوحدة ${i+1} · ${esc(m.level)} · ${m.minutes} دقيقة · ${esc(m.period||"")}</div><h3>${esc(m.title)}</h3><p>${esc(plainAr(m.summary))}</p><div class="d">${m.steps.length} خطوات · ${QUIZ.filter(x=>x.module===m.id).length} أسئلة</div></a>`).join("")}</div>
     <p class="note">ما تعرضه الوحدات جمل موثقة أو موثقة جزئيًا (بتنبيه)؛ والمتعارض وما ينتظر شاهدًا لا يصل إلى هنا.</p></section>`;
   const step=Math.max(1,Math.min(+q.step||1,mod.steps.length));const x=mod.steps[step-1];const mq=QUIZ.filter(z=>z.module===mod.id);const link=n=>`#/learn?m=${mod.id}&step=${n}`;
@@ -660,9 +665,9 @@ V.learn=(q)=>{const mod=q.m?MODULES.find(m=>m.id===q.m):null;
     <p class="note" style="margin-top:14px">النقطة الملونة بجانب كل جملة تفتح لوحة «كيف نعرف هذا؟» بشواهدها.</p></section>`;};
 
 V.play=()=>{const y=[800,960,1100,1300][Math.floor(Math.random()*4)];const ans=eraOf(y).name;const opts=[...new Set([ans,...TOP.map(e=>e.name).sort(()=>Math.random()-.5).slice(0,3)])].sort(()=>Math.random()-.5);
-  return `<section><p class="eyebrow">تقويم وألعاب</p><h2>${QUIZ.length} سؤالًا مربوطة بادعاءات القاعدة</h2><p class="sub">كل سؤال يعرض بعد الإجابة شرحه وادعاءه بشواهده. الأسئلة من الوحدات التعليمية الجاهزة في v1.2.</p>
+  return `<section><p class="eyebrow">تقويم وألعاب</p><h2>${QUIZ.length} سؤالًا مربوطة بادعاءات القاعدة</h2><p class="sub">كل سؤال يعرض بعد الإجابة شرحه وادعاءه بشواهده. الأسئلة من الوحدات التعليمية الجاهزة.</p>
   <div class="grid">
-    <div class="game"><div class="type">أين أنت؟</div><h3>سنة ${y}م، أنت في قرطبة. ما العصر؟</h3><div class="opts" id="g1">${opts.map(o=>`<button data-ok="${o===ans}">${o}</button>`).join("")}</div><p class="note" id="g1n">المصدر: حدود العصور في جدول periods (v1.2).</p></div>
+    <div class="game"><div class="type">أين أنت؟</div><h3>سنة ${y}م، أنت في قرطبة. ما العصر؟</h3><div class="opts" id="g1">${opts.map(o=>`<button data-ok="${o===ans}">${o}</button>`).join("")}</div><p class="note" id="g1n">المصدر: حدود العصور الموثّقة في المنصة.</p></div>
     ${QUIZ.filter(q=>q.type!=="open"&&q.choices.length).slice(0,9).map(q=>`<div class="game quiz" data-correct="${q.correct}"><div class="type">${esc(q.module)} · ${esc(q.difficulty||"")}</div><h3>${esc(plainAr(q.prompt))}</h3><div class="opts">${q.choices.map((c,i)=>`<button data-i="${i}">${esc(plainAr(typeof c==="string"?c:(c.text||JSON.stringify(c))))}</button>`).join("")}</div><p class="note" hidden>${esc(q.explanation||"")} ${q.claim&&CLAIMS[q.claim]?claimSpan("الادعاء المرتبط",q.claim):""}</p></div>`).join("")}
   </div></section>`;};
 
@@ -752,7 +757,7 @@ V.about=()=>`<section><p class="eyebrow">عن المنصة</p><h2>مرجع رق�
     <p><b>محتوى المنصة</b> (الصياغات التحريرية والبيانات المهيكلة والتصميم): الحقوق محفوظة لصاحب المشروع حتى اعتماد رخصة النشر، والمقترح رخصة نسب المصنّف (CC BY 4.0) للنصوص والبيانات.</p>
     <p><b>الخط:</b> Reem Kufi وIBM Plex Sans Arabic برخصة الخطوط المفتوحة.</p>
     <h3 style="margin-top:14px">التصحيح والتواصل</h3><p>وجدت خطأً أو شاهدًا أقوى؟ كل تصحيح يمر بالمنهج نفسه: نص حرفي من مصدر يُذكر موضعه. أرسل ملاحظتك عبر <a href="https://github.com/othman20500-coder/montajati/issues" target="_blank" rel="noopener">صفحة الملاحظات في المستودع ↗</a> أو عبر <a href="https://montajati.netlify.app/#/about" target="_blank" rel="noopener">صفحة التواصل في موقع «منتجاتي» ↗</a>.</p>
-    <p class="note">الإصدار: بيانات v1.2 مع ملحق الزلاقة (${RELEASE?esc(RELEASE.version||""):""}، ${RELEASE?esc(RELEASE.release_date||""):""}).</p>
+    <p class="note">الإصدار: بيانات المنصة الموثّقة مع ملحق الزلاقة (${RELEASE?esc(RELEASE.version||""):""}، ${RELEASE?esc(RELEASE.release_date||""):""}).</p>
   </div></div></section>`;
 V.design=()=>`<section><p class="eyebrow">نظام التصميم</p><h2>ثلاثة اتجاهات، رموز واحدة</h2><p class="sub">بدّل الاتجاه من الترويسة (الزليج / المخطوط / الليل) لترى الصفحة كلها تتغير. الألوان الوظيفية (حالات الادعاء والعصور) ثابتة عبر الاتجاهات كي لا يتغير معنى اللون.</p>
   <h3>ألوان الحالة</h3><div class="swatches"><div class="sw"><i style="background:var(--fact)"></i><span>حقيقة مستقرة</span></div><div class="sw"><i style="background:var(--disputed)"></i><span>مختلف عليها</span></div><div class="sw"><i style="background:var(--inference)"></i><span>استنتاج</span></div><div class="sw"><i style="background:var(--myth)"></i><span>شائعة غير مثبتة</span></div></div>
@@ -782,7 +787,7 @@ V.entity=(id)=>{const o=E[id];if(!o)return `<section><p class="eyebrow">لم ي�
   else {extra=`${o.author&&!E[o.author]?`<div class="names"><span>المؤلف: <b>${esc(o.author)}</b></span>${o.year?`<span>${o.year}م</span>`:""}</div>`:""}${summaryBlock(o)}${o.holding?`<div class="panel" style="margin-top:12px"><b>مكان الحفظ:</b> ${esc(o.holding.institution)}${o.holding.license?` · <b>الرخصة:</b> ${esc(o.holding.license)}`:""}${o.holding.iiif?` · IIIF`:` · <span class="scholar-only" style="display:inline">الرقم المكتبي ورابط IIIF يُضافان عند التوثيق</span>`}</div>`:""}${o.type==="Polity"?`<div class="chips" style="margin-top:12px"><span class="chip">${yr(o.from)}–${yr(o.to)}م</span></div>${(o.rulers||[]).length?`<h3 style="margin-top:14px">الولايات المسندة</h3><div class="tl">${o.rulers.map(r=>`<div><b><a href="${href(r.person)}">${esc((E[r.person]||{name:{ar:r.person}}).name.ar)}</a></b> <small>${esc(r.role||"")} · ${yr(r.from)}–${yr(r.to)}م · دقة: ${esc(r.precision||"")}</small></div>`).join("")}</div>`:""}`:""}${audienceBox(o)}`;}
   return `<section>${crumb(o)}<p class="eyebrow" style="color:${tc}">${tn}</p><h2>${esc(o.name.ar)}</h2>${head}${extra}${rail(id)}
   <h3 style="margin-top:22px">المصادر المستخدمة في هذه الصفحة</h3><div class="chips">${[...new Set((o.summary||[]).flatMap(([,c])=>(CLAIMS[c]?.sources||[]).map(s=>s.src)))].filter(s=>SOURCES[s]).map(s=>`<span class="chip">${esc(SOURCES[s].title)} <small>${SOURCES[s].tier==="أولي"?"مصدر أولي":"مرتبة "+esc(SOURCES[s].tier)}</small></span>`).join("")}</div>
-  <p class="note">اقترح تصحيحًا · البيانات من قاعدة v1.2 (${esc(RELEASE.release_date||"")}) · كل إضافة تمر بمنهج الإسناد والشاهد، انظر <a href="#/about">عن المنصة</a></p></section>`;};
+  <p class="note">اقترح تصحيحًا · البيانات من قاعدة المنصة الموثّقة (${esc(RELEASE.release_date||"")}) · كل إضافة تمر بمنهج الإسناد والشاهد، انظر <a href="#/about">عن المنصة</a></p></section>`;};
 
 /* ===== لوحة المصدر ===== */
 const PLAIN={fact:"هذه المعلومة موثّقة: لها شاهد نصي واحد على الأقل قوبل مع مصدره حرفيًا، ولا يعارضه شاهد مرجّح.",partial:"موثّقة جزئيًا: الشواهد تدعم بعض ما ورد لا كله، أو استُنتج جزء منها من السياق؛ لذلك تُعرض بتنبيه.",disputed:"الشواهد متعارضة ولم يُرجَّح بينها بعد، فلا تُنشر معلومةً.",inference:"استنتاج من القرائن لا نص صريح به.",myth:"رواية شائعة لم يثبتها شاهد موثوق، وتُعرض للتنبيه لا للتصديق.",unverified:"لم يُتحقق منها بعد."};
@@ -802,7 +807,7 @@ function openProv(cid){const c=CLAIMS[cid];if(!c)return;const [sn,sc]=STATUS[c.s
     ${cs.map(s=>{const S=SOURCES[s.src]||{title:s.src};return `<div class="src"><b>${esc(S.title)}${S.tier?`<span class="tier">مرتبة ${esc(S.tier)}</span>`:""}${kindBadge(s.source_kind)}${s.stance?`<span class="tier">${esc(s.stance)}</span>`:""}</b>${S.author?esc(S.author)+" · ":""}${esc(S.pub||"")}${S.rights&&S.rights!=="غير معروف"?` · الحقوق: ${esc(S.rights)}`:""}${s.review_status==="معتمد بالعين"?`<div style="margin-top:6px"><span class="tier" style="border-color:var(--fact);color:var(--fact);background:color-mix(in srgb,var(--fact) 12%,transparent)">✓ مطابق بالعين</span> <small style="color:var(--muted)">${(s.eye_reviewers||[]).map(esc).join("، ")}</small></div>`:s.review_status&&s.review_status!=="لم يُراجع"?`<div style="margin-top:6px"><span class="tier">${esc(s.review_status)}</span></div>`:""}${s.quote?`<q>«${esc(s.quote)}»</q>`:""}<div style="margin-top:4px;color:var(--muted)">الموضع: ${esc(s.loc||"—")}${s.verbatim?` · المطابقة: ${esc(s.verbatim)}`:""}${s.checked_on?` · فُحص ${esc(s.checked_on)}`:""}${s.url?` · <a href="${esc(s.url)}" target="_blank" rel="noopener">الرابط</a>`:""}</div>${s.note?`<div style="margin-top:4px;color:var(--muted)">ملاحظة: ${esc(s.note)}</div>`:""}</div>`;}).join("")}
     ${c.counter&&c.counter.length?`<div class="counter"><b>شواهد مخالفة</b>${c.counter.map(k=>`<p style="margin:6px 0">«${esc(k.position)}»<br><small style="color:var(--muted)">${k.sources.map(s=>esc((SOURCES[s.src]||{}).title||s.src)+" · "+esc(s.loc)).join(" ؛ ")}</small></p>`).join("")}</div>`:""}
     ${c.todo?`<p class="note">ما يلزم بعد: ${esc(c.todo)}</p>`:""}
-    <p class="note">آخر تحقق: ${esc(c.last_verified||"—")} · المصدر: قاعدة v1.2 عبر مهارة andalus-evidence · <a href="https://github.com/othman20500-coder/montajati/issues/new?title=${encodeURIComponent("تصحيح ادعاء: "+cid)}" target="_blank" rel="noopener">الإبلاغ عن خطأ ↗</a></p>
+    <p class="note">آخر تحقق: ${esc(c.last_verified||"—")} · المصدر: قاعدة المنصة الموثّقة عبر منهج الإسناد والشاهد · <a href="https://github.com/othman20500-coder/montajati/issues/new?title=${encodeURIComponent("تصحيح ادعاء: "+cid)}" target="_blank" rel="noopener">الإبلاغ عن خطأ ↗</a></p>
     <div class="scholar-only scholar-box">معرّف الإسناد/الادعاء: <code>${esc(cid)}</code> · الهدف: <code>${esc(c.target||"—")}</code> · الحقل: ${esc(c.field||"—")}</div>`;
   document.getElementById("prov").classList.add("open");document.getElementById("veil").classList.add("on");document.getElementById("provX").onclick=closeProv;}
 function closeProv(){document.getElementById("prov").classList.remove("open");document.getElementById("veil").classList.remove("on");}
