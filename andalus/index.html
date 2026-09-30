@@ -127,6 +127,13 @@
   .glpin span{font-size:12px;color:#14202e;background:rgba(255,255,255,.82);padding:0 4px;border-radius:4px;font-family:var(--body)}
   .glpin.dim{opacity:.45}
   .glpin.battle b{color:#8C2F39;font-style:normal}
+  /* مرساة بصرية للكيان: صورة مرخّصة إن وُجدت (القاعدة 6)، وإلا زخرفة زليج مولّدة (لا حقوق) */
+  .vanchor{margin:14px 0 6px;border-radius:var(--r-m);overflow:hidden;border:1px solid var(--line)}
+  .vanchor.art{position:relative;height:150px;display:grid;place-items:center;background:radial-gradient(circle at 1px 1px, color-mix(in srgb,var(--c) 20%,transparent) 1px, transparent 0) 0 0/16px 16px, linear-gradient(180deg, color-mix(in srgb,var(--c) 13%,var(--card)) 0%, var(--card) 100%)}
+  .vanchor.art svg{width:118px;height:118px;opacity:.9}
+  .vanchor img{display:block;width:100%;max-height:340px;object-fit:cover}
+  .vanchor .lic{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:var(--fs-xs);color:var(--muted);padding:8px 12px;background:var(--card);border-top:1px solid var(--line)}
+  .vanchor .lic.ok{color:var(--fact)}
   .map .land{fill:color-mix(in srgb,var(--card) 70%,var(--soft));stroke:var(--line);stroke-width:1.2}
   :root[data-theme="night"] .map .land{fill:#1B2536;stroke:#34405A}
   .map .sea{fill:transparent}
@@ -418,6 +425,7 @@
 <div class="cmd" id="cmd"><div class="box"><input id="q" placeholder="ابحث في الأشخاص والأماكن والأحداث والوثائق… أو اكتب سنة مثل 1085"><div class="res" id="res"></div></div></div>
 <div class="keydock"><div class="keypanel" id="keyPanel" hidden></div><button class="keybtn" id="keyBtn" aria-expanded="false" aria-controls="keyPanel"><span class="kdot"></span> مفتاح الألوان</button></div>
 
+<script src="data/media.js"></script>
 <script src="data/graph.js"></script>
 <script>
 /* =========================================================
@@ -614,7 +622,17 @@ V.figures=(q)=>{
     <div class="chips">${figPlaces.map(p=>`<a class="chip" href="${route(p.id)}" ${p.id===sel?'style="border-color:var(--accent);font-weight:700"':""}>${esc(p.name.ar)} <small>${figPeopleOf(p.id).length} عَلَم</small></a>`).join("")}</div>
   </div></div></section>`;};
 // مرساة بصرية للمتحف: زخرفة هندسية (نجمة زليج) بلون النوع — زينةٌ لا صورةُ مصدر، فلا تخالف القاعدة 6
-const museumTile=o=>{const c=(TYPE[o.type]||["","var(--brand)"])[1];return `<div class="mtile" style="--tc:${c}"><svg viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="var(--tc)" stroke-width="2.2"><rect x="24" y="24" width="52" height="52"/><rect x="24" y="24" width="52" height="52" transform="rotate(45 50 50)"/><circle cx="50" cy="50" r="15"/></g></svg></div>`;};
+// زخرفة زليج مولّدة (نجمة ثمانية + حلقات)، لونها متغيّر --c، ودورانها من بصمة المعرّف (تنويع متناسق)
+function zellijMotif(seed){const r=(seed%24);return `<svg viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="var(--c)" stroke-width="2"><g transform="rotate(${r} 50 50)"><rect x="22" y="22" width="56" height="56"/><rect x="22" y="22" width="56" height="56" transform="rotate(45 50 50)"/></g><circle cx="50" cy="50" r="16"/><circle cx="50" cy="50" r="27" stroke-dasharray="3 5"/></g></svg>`;}
+function hashCode(s){let h=0;s=String(s||"");for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))|0;return Math.abs(h);}
+function entityAccent(o){try{if(o.type==="Person"&&typeof o.born==="number")return eraOf(o.born).c;if(o.type==="Event"&&typeof o.year==="number")return eraOf(o.year).c;if(o.type==="Polity"&&typeof o.from==="number")return eraOf(o.from).c;}catch(_){}return (TYPE[o.type]||["","var(--brand)"])[1];}
+// مرساة بصرية: صورة مرخّصة (MEDIA أو o.image) إن سمحت الرخصة، وإلا زخرفة مولّدة
+function visualAnchor(o){const m=(typeof MEDIA!=="undefined"&&MEDIA[o.id])||o.image;const c=entityAccent(o);
+  if(m&&m.src&&licOK(m.license)){const auth=m.author?` · ${esc(m.author)}`:"";const link=m.source?` · <a href="${esc(m.source)}" target="_blank" rel="noopener">المصدر ↗</a>`:"";return `<figure class="vanchor has-img" style="--c:${c}"><img src="${esc(m.src)}" loading="lazy" alt="${esc(o.name.ar)}"><figcaption class="lic ok">🟢 ${esc(m.license)}${auth}${link}</figcaption></figure>`;}
+  return `<div class="vanchor art" style="--c:${c}">${zellijMotif(hashCode(o.id))}</div>`;}
+const museumTile=o=>{const c=(TYPE[o.type]||["","var(--brand)"])[1];const m=(typeof MEDIA!=="undefined"&&MEDIA[o.id])||(o.holding&&o.holding.image?{src:o.holding.image,license:o.holding.license}:null);
+  if(m&&m.src&&licOK(m.license))return `<div class="mtile"><img src="${esc(m.src)}" loading="lazy" alt="${esc(o.name.ar)}" style="width:100%;height:100%;object-fit:cover"></div>`;
+  return `<div class="mtile" style="--tc:${c}"><svg viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="var(--tc)" stroke-width="2.2"><rect x="24" y="24" width="52" height="52"/><rect x="24" y="24" width="52" height="52" transform="rotate(45 50 50)"/><circle cx="50" cy="50" r="15"/></g></svg></div>`;};
 // رخصةٌ محقّقةٌ تسمح بالعرض؟ (القاعدة 6). البيانات الحالية «غير معروف»، فكلها تُحال إلى المصدر بصدق
 const licOK=s=>!!s&&!/غير\s*معروف|غير\s*محقّ?ق|unknown|^—$/i.test(String(s).trim());
 const museumCard=o=>{const [tn,tc]=TYPE[o.type]||["","var(--brand)"];const lic=o.holding&&o.holding.license;const ok=licOK(lic);
@@ -787,7 +805,7 @@ V.entity=(id)=>{const o=E[id];if(!o)return `<section><p class="eyebrow">لم ي�
       ${(o.before||o.after)?`<h3 style="margin-top:14px">قبل ← بعد</h3><div class="chips">${(o.before||[]).map(chip).join("")}<span class="chip" style="border-color:var(--accent)">${esc(o.name.ar)}</span>${(o.after||[]).map(chip).join("")}</div>`:""}
       ${audienceBox(o)}</div><div class="panel"><p class="eyebrow">المكان</p>${mapSvg(o.year,{focus:o.place})}${o.kind==="معركة"?`<p class="note">خريطة المعركة على مراحل ▶ تُضاف في المنصة، مع تنبيه ثابت: أعداد الجيوش تُعرض كمدى بمصادره.</p>`:""}</div></div>`;}
   else {extra=`${o.author&&!E[o.author]?`<div class="names"><span>المؤلف: <b>${esc(o.author)}</b></span>${o.year?`<span>${o.year}م</span>`:""}</div>`:""}${summaryBlock(o)}${o.holding?`<div class="panel" style="margin-top:12px"><b>مكان الحفظ:</b> ${esc(o.holding.institution)}${o.holding.license?` · <b>الرخصة:</b> ${esc(o.holding.license)}`:""}${o.holding.iiif?` · IIIF`:` · <span class="scholar-only" style="display:inline">الرقم المكتبي ورابط IIIF يُضافان عند التوثيق</span>`}</div>`:""}${o.type==="Polity"?`<div class="chips" style="margin-top:12px"><span class="chip">${yr(o.from)}–${yr(o.to)}م</span></div>${(o.rulers||[]).length?`<h3 style="margin-top:14px">الولايات المسندة</h3><div class="tl">${o.rulers.map(r=>`<div><b><a href="${href(r.person)}">${esc((E[r.person]||{name:{ar:r.person}}).name.ar)}</a></b> <small>${esc(r.role||"")} · ${yr(r.from)}–${yr(r.to)}م · دقة: ${esc(r.precision||"")}</small></div>`).join("")}</div>`:""}`:""}${audienceBox(o)}`;}
-  return `<section>${crumb(o)}<p class="eyebrow" style="color:${tc}">${tn}</p><h2>${esc(o.name.ar)}</h2>${head}${extra}${rail(id)}
+  return `<section>${crumb(o)}<p class="eyebrow" style="color:${tc}">${tn}</p><h2>${esc(o.name.ar)}</h2>${visualAnchor(o)}${head}${extra}${rail(id)}
   <h3 style="margin-top:22px">المصادر المستخدمة في هذه الصفحة</h3><div class="chips">${[...new Set((o.summary||[]).flatMap(([,c])=>(CLAIMS[c]?.sources||[]).map(s=>s.src)))].filter(s=>SOURCES[s]).map(s=>`<span class="chip">${esc(SOURCES[s].title)} <small>${SOURCES[s].tier==="أولي"?"مصدر أولي":"مرتبة "+esc(SOURCES[s].tier)}</small></span>`).join("")}</div>
   <p class="note">اقترح تصحيحًا · البيانات من قاعدة المنصة الموثّقة (${esc(RELEASE.release_date||"")}) · كل إضافة تمر بمنهج الإسناد والشاهد، انظر <a href="#/about">عن المنصة</a></p></section>`;};
 

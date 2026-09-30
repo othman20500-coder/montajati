@@ -17,6 +17,7 @@ deployment:
     - /bin/cp -f andalus/data/graph.js "$DEPLOYPATH/data/graph.js"
     - /bin/cp -f andalus/data/graph.evidence.js "$DEPLOYPATH/data/graph.evidence.js"
     - /bin/cp -f andalus/data/schema.json "$DEPLOYPATH/data/schema.json"
+    - /bin/cp -f andalus/data/media.js "$DEPLOYPATH/data/media.js"
     - /bin/mkdir -p "$DEPLOYPATH/data/geo"
     - /bin/cp -f andalus/data/geo/land.geojson "$DEPLOYPATH/data/geo/land.geojson"
     - /bin/cp -f andalus/data/geo/rivers.geojson "$DEPLOYPATH/data/geo/rivers.geojson"
