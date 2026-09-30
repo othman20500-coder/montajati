@@ -26,7 +26,7 @@
   /* ===== الاتجاه ب: الزليج (الأساس) ===== */
   :root, :root[data-theme="zellij"]{
     --bg:#F7F5EF; --card:#FFFFFF; --ink:#14202E; --muted:#5B6673; --line:#DCD8CC;
-    --brand:#173F7A; --brand-2:#1E9C8B; --accent:#E4B33B; --soft:#E6EEF7;
+    --brand:#173F7A; --brand-2:#12786A; --accent:#E4B33B; --soft:#E6EEF7;
     --head:"Reem Kufi","IBM Plex Sans Arabic",sans-serif; --body:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
     --pattern:radial-gradient(circle at 1px 1px, rgba(23,63,122,.08) 1px, transparent 0); --pattern-size:22px 22px;
     --hero-bg:linear-gradient(180deg,#EAF0F6 0%,#F7F5EF 72%); --hero-ink:#14202E;
@@ -46,7 +46,7 @@
   /* ===== الاتجاه ج: الليل الأندلسي ===== */
   :root[data-theme="night"]{
     --bg:#0E1420; --card:#151D2B; --ink:#DCE3EA; --muted:#94A0AE; --line:#26303F;
-    --brand:#C77D3A; --brand-2:#4E6B4A; --accent:#E3A65A; --soft:#1B2536;
+    --brand:#C77D3A; --brand-2:#79A673; --accent:#E3A65A; --soft:#1B2536;
     --head:"Tajawal","IBM Plex Sans Arabic",sans-serif; --body:"Tajawal","IBM Plex Sans Arabic",sans-serif;
     --pattern:radial-gradient(ellipse at 50% 0%, rgba(199,125,58,.14), transparent 60%); --pattern-size:100% 100%;
     --hero-bg:radial-gradient(ellipse at 30% 20%, #2B2418 0%, #0E1420 60%); --hero-ink:#F1E9DC;
@@ -103,7 +103,7 @@
   .hero .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
   .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid transparent;border-radius:var(--r-s);padding:10px 20px;font-weight:600;font-size:var(--fs-sm);background:var(--brand);color:#fff}
   .btn:hover{filter:brightness(1.08)} .btn:active{transform:translateY(1px) scale(.99)}
-  :root[data-theme="night"] .btn{color:#14202E}
+  :root[data-theme="night"] .btn:not(.ghost){color:#14202E}
   .btn.ghost{background:transparent;color:inherit;border-color:currentColor;opacity:.9}
   .hero .mapbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:10px}
   :root[data-theme="manuscript"] .hero .mapbox{background:rgba(43,29,18,.05);border-color:var(--accent)}
@@ -137,7 +137,8 @@
   .vanchor .lic.ok{color:var(--fact)}
   /* أهداف اللمس 44px لأجهزة اللمس فقط (WCAG 2.5.5)، دون تضخيم سطح المكتب (DESIGN.md §7) */
   @media (pointer:coarse){
-    .nav a,.seg button,.kbtn,.btn,.chip,.tabs [data-tab],.zoomctl button,.mfilter .chip,.seg-year a{min-block-size:44px;display:inline-flex;align-items:center;justify-content:center}
+    .nav a,.seg button,.kbtn,.btn,.chip,.tabs [data-tab],.zoomctl button,.mfilter .chip,.seg-year a,.menu-btn{min-block-size:44px;display:inline-flex;align-items:center;justify-content:center}
+    .menu-btn{min-inline-size:44px}
     input[type="range"]{block-size:28px}
   }
   .map .land{fill:color-mix(in srgb,var(--card) 70%,var(--soft));stroke:var(--line);stroke-width:1.2}
@@ -243,6 +244,7 @@
   .zoomctl{display:flex;gap:6px;align-items:center;margin-top:8px;flex-wrap:wrap}
   .zoomctl button{border:1px solid var(--line);background:var(--card);border-radius:var(--r-s);min-width:32px;height:30px;font-size:15px;color:var(--brand);line-height:1;display:inline-flex;align-items:center;justify-content:center}
   .zoomctl button:hover{background:var(--soft)}
+  @media (pointer:coarse){.zoomctl button{min-width:44px}}
   .zoomctl .zlvl{font-size:12.5px;color:var(--muted);margin-inline-start:2px;min-width:44px}
   /* Scrollytelling للقصص: عمود محطّات يُمرَّر وخريطةٌ لزِجة */
   .scrolly{display:grid;grid-template-columns:1.05fr 1fr;gap:24px;align-items:stretch;margin-top:14px}
