@@ -62,10 +62,11 @@
   .skip{position:absolute;inset-inline-start:8px;top:-60px;background:var(--accent);color:#fff;padding:8px 14px;border-radius:8px;z-index:200}
   .skip:focus{top:8px}
   .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-  .rights{display:grid;gap:10px}
-  .rights .src{padding:12px 14px}
-  .rights .src h4{margin:0 0 4px;font-size:15px;font-family:var(--head)}
-  .rights .src p{margin:2px 0;font-size:13.5px;color:var(--muted)}
+  .rights{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;align-items:start}
+  .rights .src{padding:14px 16px;margin-top:0}
+  .rights .src h4{margin:0 0 6px;font-size:15px;font-family:var(--head)}
+  .rights .src p{margin:3px 0;font-size:13.5px;line-height:1.65;color:var(--muted);max-inline-size:64ch}
+  .rights .src p a{color:var(--brand)}
   .legend-st{display:grid;gap:6px;margin:8px 0 0}
   .legend-st span{display:flex;gap:8px;align-items:flex-start;font-size:14px}
   .legend-st i.b{margin-top:8px;flex:none}
