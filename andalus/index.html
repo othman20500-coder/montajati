@@ -225,6 +225,12 @@
   .keypanel .keras .ke{display:inline-flex;align-items:center;gap:6px}
   .keypanel .keras .ke i{width:11px;height:11px;border-radius:2px;display:inline-block;flex:none}
   @media print{.keydock{display:none!important}}
+  /* على الجوال: زر مفتاح الألوان أيقونةٌ مدمجة لا يغطّي المحتوى (#6)، واللوحة قابلة للتمرير */
+  @media (max-width:640px){
+    .keybtn{padding:11px;gap:0;font-size:0}
+    .keybtn .kdot{width:16px;height:16px}
+    .keypanel{max-height:68vh;overflow:auto;width:min(320px,82vw)}
+  }
   /* تحسين لوحة البحث: إبراز العنصر النشط بلوحة المفاتيح، وترويسات المقترحات */
   .cmd .res a.sel{background:var(--soft)}
   .cmd .reshdr{padding:9px 16px 4px;font-size:11.5px;color:var(--brand-2);font-weight:600}
@@ -428,7 +434,7 @@
 <div class="veil" id="veil"></div>
 <aside class="prov" id="prov" aria-label="كيف نعرف هذا؟"></aside>
 <div class="cmd" id="cmd"><div class="box"><input id="q" placeholder="ابحث في الأشخاص والأماكن والأحداث والوثائق… أو اكتب سنة مثل 1085"><div class="res" id="res"></div></div></div>
-<div class="keydock"><div class="keypanel" id="keyPanel" hidden></div><button class="keybtn" id="keyBtn" aria-expanded="false" aria-controls="keyPanel"><span class="kdot"></span> مفتاح الألوان</button></div>
+<div class="keydock"><div class="keypanel" id="keyPanel" hidden></div><button class="keybtn" id="keyBtn" aria-expanded="false" aria-controls="keyPanel" aria-label="مفتاح الألوان"><span class="kdot"></span> مفتاح الألوان</button></div>
 
 <script src="data/media.js"></script>
 <script src="data/graph.js"></script>
