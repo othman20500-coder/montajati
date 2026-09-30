@@ -134,6 +134,11 @@
   .vanchor img{display:block;width:100%;max-height:340px;object-fit:cover}
   .vanchor .lic{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:var(--fs-xs);color:var(--muted);padding:8px 12px;background:var(--card);border-top:1px solid var(--line)}
   .vanchor .lic.ok{color:var(--fact)}
+  /* أهداف اللمس 44px لأجهزة اللمس فقط (WCAG 2.5.5)، دون تضخيم سطح المكتب (DESIGN.md §7) */
+  @media (pointer:coarse){
+    .nav a,.seg button,.kbtn,.btn,.chip,.tabs [data-tab],.zoomctl button,.mfilter .chip,.seg-year a{min-block-size:44px;display:inline-flex;align-items:center;justify-content:center}
+    input[type="range"]{block-size:28px}
+  }
   .map .land{fill:color-mix(in srgb,var(--card) 70%,var(--soft));stroke:var(--line);stroke-width:1.2}
   :root[data-theme="night"] .map .land{fill:#1B2536;stroke:#34405A}
   .map .sea{fill:transparent}
@@ -284,7 +289,7 @@
 
   /* ===== الخط الزمني السينمائي ===== */
   .strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px 4px 18px}
-  .strip .card{min-width:260px;scroll-snap-align:start;border-top:6px solid var(--era)}
+  .strip .card{min-width:260px;scroll-snap-align:start;border-inline-start:4px solid var(--era)}
   .density{display:inline-flex;gap:4px}
   .density button{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--muted)}
   .density button[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
