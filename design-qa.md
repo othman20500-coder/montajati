@@ -39,4 +39,8 @@ This is targeted visual and interaction QA, not a full WCAG certification. SVG m
 
 No unresolved P0/P1/P2 issue identified within the tested identity/template scope.
 
+## Follow-up: Andalusian language, 2026-10-01
+
+Scoped implementation on home, Cordoba and Subh pyxis: converging-path SVG motif becomes functional section navigation; manuscript-style claim margin; bounded architectural curvature for place photos; artifact display surface and mobile image-first order. Six current screenshots in `design/andalus-language-step-2026-10-01/screens.zip`. Reviewed desktop Cordoba and artifact, mobile artifact and combined detail. Mobile widths all 375/375 (no overflow). Section button focuses the sources panel while preserving route; image viewer opens/closes on mobile. No application console errors in final check. JS syntax passed; historical data unchanged. CSS/JS cache revision 08. This incremental pass does not redo the full earlier 34-screen audit. Not deployed live.
+
 passed
