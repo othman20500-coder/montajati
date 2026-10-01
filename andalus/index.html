@@ -408,7 +408,7 @@
   }
 </style>
 <link rel="stylesheet" href="atlas-light.css">
-<link rel="stylesheet" href="identity.css?v=20261001-08">
+<link rel="stylesheet" href="identity.css?v=20261001-09">
 <link rel="icon" type="image/png" href="assets/andalus-mark.png">
 </head>
 <body>
@@ -982,6 +982,6 @@ window.addEventListener("hashchange",route);
 /* بعد أول رسم: حمّل الشواهد كسولًا ثم أعد رسم الواجهة الحالية لتكتمل مصادرها */
 if("requestIdleCallback"in window)requestIdleCallback(()=>loadEvidence(()=>{if(window.AndalusUI)route();}),{timeout:2500});else setTimeout(()=>loadEvidence(()=>{if(window.AndalusUI)route();}),300);
 </script>
-<script src="identity.js?v=20261001-08"></script>
+<script src="identity.js?v=20261001-09"></script>
 </body>
 </html>

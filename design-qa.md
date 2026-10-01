@@ -43,4 +43,10 @@ No unresolved P0/P1/P2 issue identified within the tested identity/template scop
 
 Scoped implementation on home, Cordoba and Subh pyxis: converging-path SVG motif becomes functional section navigation; manuscript-style claim margin; bounded architectural curvature for place photos; artifact display surface and mobile image-first order. Six current screenshots in `design/andalus-language-step-2026-10-01/screens.zip`. Reviewed desktop Cordoba and artifact, mobile artifact and combined detail. Mobile widths all 375/375 (no overflow). Section button focuses the sources panel while preserving route; image viewer opens/closes on mobile. No application console errors in final check. JS syntax passed; historical data unchanged. CSS/JS cache revision 08. This incremental pass does not redo the full earlier 34-screen audit. Not deployed live.
 
+## Follow-up: universal identity and time atlas, revision 09
+
+Home, atlas, map, people, person, places, place, stories, learning, games, museum, artifact, sources, about, figures, event and polity carry the shared functional pathway. Timeline uses its own era navigation and measured axis. Eighteen mobile route DOM checks reported 375px scroll/client width; event and polity now use the new historical profile. Inspected desktop timeline and both new entity templates, plus mobile timeline. Period, decade, single-year and all-duration transitions verified after route-specific headings appeared: year 929 disables the range; all duration exposes 25 published events. Selecting the 929 marker expands its event. Final timeline proof screenshots captured after navigation settled. Earlier rapid sweep screenshots are diagnostics, not image-load certification.
+
+Canonical data unchanged. Node syntax and 13-file cPanel archive passed. Attempted cPanel access; the old session was expired. Refresh displayed the actual username/password wall. Backup creation was not verified, and no new package was uploaded or extracted. Publication requires secure authentication. This supersedes previous references to legacy Event/Polity templates. Full WCAG and all external media checks remain outside this pass.
+
 passed
