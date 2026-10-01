@@ -19,6 +19,9 @@ import zipfile
 FILES = [
     ("andalus/index.html", "index.html"),
     ("andalus/atlas-light.css", "atlas-light.css"),
+    ("andalus/identity.css", "identity.css"),
+    ("andalus/identity.js", "identity.js"),
+    ("andalus/assets/andalus-mark.png", "assets/andalus-mark.png"),
     ("andalus/data/cartography.js", "data/cartography.js"),
     ("andalus/data/graph.js", "data/graph.js"),
     ("andalus/data/graph.evidence.js", "data/graph.evidence.js"),

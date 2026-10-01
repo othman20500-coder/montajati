@@ -8,7 +8,7 @@
 <meta name="description" content="نموذج تفاعلي لتصور منصة الأندلس الرقمية: خريطة زمنية، خط زمني، صفحات كيانات مترابطة، ثلاثة اتجاهات بصرية، ونظام ادعاء ومصدر.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- خطوط سمة الأساس (الزليج) فقط تُحمَّل مقدمًا؛ خطوط المخطوط/الليل تُحمَّل كسولًا عند اختيار السمة (ensureThemeFont) -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
 <style>
   /* ===== الرموز الوظيفية الثابتة عبر السمات ===== */
   :root{
@@ -408,34 +408,35 @@
   }
 </style>
 <link rel="stylesheet" href="atlas-light.css">
+<link rel="stylesheet" href="identity.css?v=20261001-07">
+<link rel="icon" type="image/png" href="assets/andalus-mark.png">
 </head>
 <body>
 <div class="wrap">
   <header class="top"><div class="in">
-    <a class="skip" href="#app">تخطَّ إلى المحتوى</a><a class="brand" href="#/"><i></i> الأندلس <small style="font-family:var(--body);font-weight:400;font-size:12px;color:var(--muted)">إصدار تجريبي</small></a>
+    <a class="skip" href="#app">تخطَّ إلى المحتوى</a><a class="brand" href="#/"><img src="assets/andalus-mark.png" alt="" width="44" height="44"><span class="brand-copy">الأندلس<small>منصة الأندلس الرقمية</small></span></a>
     <nav class="nav" id="nav" aria-label="التنقّل الرئيسي">
-      <details class="ng"><summary><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg><span>استكشف</span></summary><div class="ngmenu"><a href="#/">الرئيسة</a><a href="#/atlas">الأطلس</a><a href="#/map">الخريطة</a><a href="#/timeline">الزمن</a></div></details>
-      <details class="ng"><summary><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>الأعلام</span></summary><div class="ngmenu"><a href="#/people">الأشخاص</a><a href="#/places">الأماكن</a><a href="#/figures">أعلام على الخريطة</a></div></details>
-      <details class="ng"><summary><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg><span>اروِ</span></summary><div class="ngmenu"><a href="#/stories">القصص</a><a href="#/learn">تعلّم</a><a href="#/play">ألعاب</a></div></details>
-      <details class="ng"><summary><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg><span>الأرشيف</span></summary><div class="ngmenu"><a href="#/museum">المتحف</a><a href="#/sources">المصادر</a></div></details>
-      <a class="navlink" href="#/about">عن المنصة</a>
+      <details class="ng"><summary>استكشف</summary><div class="ngmenu"><a href="#/">الرئيسة</a><a href="#/atlas">الأطلس</a><a href="#/map">الخريطة</a><a href="#/timeline">الزمن</a></div></details>
+      <details class="ng"><summary>المجموعات</summary><div class="ngmenu"><a href="#/people">الأشخاص</a><a href="#/places">الأماكن</a><a href="#/figures">أعلام على الخريطة</a><a href="#/museum">المتحف</a></div></details>
+      <details class="ng"><summary>تعلّم</summary><div class="ngmenu"><a href="#/stories">القصص</a><a href="#/learn">التعلّم</a><a href="#/play">اختبر معرفتك</a></div></details>
+      <a class="navlink" href="#/sources">المصادر</a>
     </nav>
-    <div class="tools" id="tools">
+    <details class="prefs"><summary>العرض</summary><div class="tools" id="tools"><span class="prefs-label">المظهر</span>
       <div class="seg" id="theme" title="الاتجاه البصري">
         <button data-t="zellij" aria-pressed="true">الفاتح</button><button data-t="manuscript" aria-pressed="false">المخطوط</button><button data-t="night" aria-pressed="false">الليل</button>
       </div>
-      <div class="seg" id="aud" title="الجمهور">
+      <span class="prefs-label">مستوى القراءة</span><div class="seg" id="aud" title="الجمهور">
         <button data-a="kids" aria-pressed="false">استكشاف</button><button data-a="general" aria-pressed="true">عام</button><button data-a="scholar" aria-pressed="false">باحث</button>
       </div>
-    </div>
+    </div></details>
     <button class="kbtn" id="kbtn" aria-label="البحث في الأطلس"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg> <span>ابحث في الأطلس</span> <kbd>⌘K</kbd></button>
-    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav" aria-label="فتح القائمة">☰</button>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav" aria-label="فتح القائمة">القائمة</button>
   </div></header>
 
-  <main id="app"></main>
+  <main id="app" tabindex="-1"><section class="startup-state" role="status"><p>جارٍ فتح الأندلس…</p><noscript>فعّل JavaScript لعرض الأطلس والتصفح.</noscript></section></main>
 
   <footer>
-    منصة الأندلس الرقمية · إصدار تجريبي · كل جملة تفتح شواهدها، ولا يُعرض إلا الموثّق والمصحح والمحسوم · <a href="#/sources">المصادر وحقوقها</a> · <a href="#/about">عن المنصة والتصحيحات</a> · <a href="#/design">نظام التصميم</a> · جزء من مشروع «منتجاتي».
+    منصة الأندلس الرقمية · إصدار تجريبي · الشواهد ومصادر الصور مصاحبة للمحتوى · <a href="#/sources">المصادر وحقوقها</a> · <a href="#/about">عن المنصة والتصحيحات</a> · <a href="#/design">نظام التصميم</a> · جزء من مشروع «منتجاتي».
   </footer>
 </div>
 
@@ -537,7 +538,7 @@ const summaryHtml=o=>(o.summary||[]).map(([t,c])=>claimSpan(t,c)).join(" ");
 const summaryBlock=o=>{const items=(o.summary||[]);if(!items.length)return "";return `<div class="body">${items.map(([t,c])=>`<p>${claimSpan(t,c)}</p>`).join("")}</div>`;};
 // فتات تنقّل و«رجوع» لصفحة الكيان: لا صفحةً مسدودة. القائمة تُربط بأقرب وجهةٍ قائمة لنوع الكيان
 const CRUMB={Person:["#/people","الأشخاص"],Place:["#/places","الأماكن"],Event:["#/timeline","الزمن"],Work:["#/museum","المتحف"],Document:["#/museum","المتحف"],Artifact:["#/museum","المتحف"],Resource:["#/museum","المتحف"],Language:["#/museum","المتحف"],Polity:["#/timeline","الزمن"]};
-const crumb=o=>{const [u,l]=CRUMB[o.type]||["#/","الأندلس"];return `<nav class="crumb" aria-label="مسار التنقّل"><button class="back" type="button" onclick="if(history.length>1){history.back()}else{location.hash='${u}'}">↩ رجوع</button><span class="trail"><a href="#/">الأندلس</a><b>‹</b><a href="${u}">${esc(l)}</a><b>‹</b><span>${esc(o.name.ar)}</span></span></nav>`;};
+const crumb=o=>{const [u,l]=CRUMB[o.type]||["#/","الأندلس"];return `<nav class="crumb" aria-label="مسار التنقّل"><button class="back" type="button" onclick="if(history.length>1){history.back()}else{location.hash='${u}'}">${uiIcon("arrow-left")} رجوع</button><span class="trail"><a href="#/">الأندلس</a><b>‹</b><a href="${u}">${esc(l)}</a><b>‹</b><span>${esc(o.name.ar)}</span></span></nav>`;};
 const yr=v=>v==null?"؟":v;
 const card=o=>{const [tn,tc]=TYPE[o.type]||["",""];const d=o.type==="Person"?`${yr(o.born)}–${yr(o.died)}م`:o.type==="Event"?dual(o.year,o.end,o.hijri):o.type==="Polity"?`${yr(o.from)}–${yr(o.to)}م`:o.year?`${o.year}م`:"";
   const m=typeof MEDIA!=="undefined"?MEDIA[o.id]:null;
@@ -548,7 +549,7 @@ const chip=id=>{const o=E[id];if(!o)return `<span class="chip">${esc(id)}</span>
 const related=id=>{const out={};EDGES.forEach(e=>{if(e.from===id){(out[E[e.to]?.type]??=[]).push({id:e.to,rel:REL[e.rel]||e.rel,role:e.role});}if(e.to===id){(out[E[e.from]?.type]??=[]).push({id:e.from,rel:REL[e.rel]||e.rel,role:e.role,rev:true});}});return out;};
 const rail=id=>{const r=related(id);const order=["Person","Place","Event","Polity","Work","Document","Artifact"];return `<div class="rail">${order.filter(t=>r[t]?.length).map(t=>`<h3 style="--c:${TYPE[t][1]}">${typeIcon(t)}${TYPE[t][0]}</h3><div class="chips">${r[t].map(x=>`<a class="chip" href="${href(x.id)}">${esc(E[x.id].name.ar)} <small>${x.rev?"":x.rel} ${x.role?"· "+esc(x.role):""}</small></a>`).join("")}</div>`).join("")}</div>`;};
 const ribbon=(y,e,h)=>{const er=eraOf(y);return `<div class="ribbon" style="--era:${er.c}"><b>${er.name}</b><span class="dual">${dual(y,e,h)}</span><a href="#/timeline?y=${y}" class="chip">افتح على خط الزمن</a><a href="#/map?y=${y}" class="chip">افتح على الخريطة</a></div>`;};
-const audienceBox=o=>`${o.kids?`<div class="kids-only panel" style="margin-top:14px;font-size:18px">🧭 ${esc(o.kids)}</div>`:""}${o.scholar?`<div class="scholar-only scholar-box">ملاحظة للباحث: ${esc(o.scholar)}</div>`:""}<div class="scholar-only scholar-box">أدوات الباحث: <a href="#" onclick="andExport('${o.id}');return false">تصدير JSON</a> · <a href="#" onclick="andExportBib('${o.id}');return false">BibTeX</a> · <a href="https://github.com/othman20500-coder/montajati/issues/new?title=${encodeURIComponent("تصحيح: "+((o.name&&o.name.ar)||o.id))}" target="_blank" rel="noopener">الإبلاغ عن خطأ ↗</a> · <span style="opacity:.55">تاريخ التعديلات (قريبًا)</span> · المعرّفات: Wikidata، VIAF، PUA (تُضاف عند المواءمة)</div>`;
+const audienceBox=o=>`${o.kids?`<div class="kids-only panel" style="margin-top:14px;font-size:18px">${uiIcon("map")} ${esc(o.kids)}</div>`:""}${o.scholar?`<div class="scholar-only scholar-box">ملاحظة للباحث: ${esc(o.scholar)}</div>`:""}<div class="scholar-only scholar-box">أدوات الباحث: <a href="#" onclick="andExport('${o.id}');return false">تصدير JSON</a> · <a href="#" onclick="andExportBib('${o.id}');return false">BibTeX</a> · <a href="https://github.com/othman20500-coder/montajati/issues/new?title=${encodeURIComponent("تصحيح: "+((o.name&&o.name.ar)||o.id))}" target="_blank" rel="noopener">الإبلاغ عن خطأ ↗</a></div>`;
 
 /* ===== الخريطة ===== */
 const X=lon=>(lon+10)*60, Y=lat=>(44-lat)*65;
@@ -569,23 +570,23 @@ function mapSvg(y,opts={}){
   const bb=opts.bbox;const vb=bb?[X(bb[0]),Y(bb[3]),X(bb[2])-X(bb[0]),Y(bb[1])-Y(bb[3])]:[0,0,840,700];const k=bb?Math.max(vb[2]/840,vb[3]/700):1;
   const members=new Set(opts.members||[]);
   const zonesSvg=(opts.zones||[]).filter(z=>z.geometry&&z.geometry.type==="Polygon"&&y>=z.from&&y<=z.to).map(z=>{const ring=z.geometry.coordinates[0];const d=ring.map((p,i)=>`${i?"L":"M"}${X(p[0]).toFixed(1)},${Y(p[1]).toFixed(1)}`).join("")+"Z";const cx=X((ring[0][0]+ring[2][0])/2),cy=Y(ring[0][1]);return `<path class="zone" d="${d}"><title>${esc(z.label)} — ${esc(CARTO_AR[z.status]||z.status)}</title></path><text class="zone-label" x="${cx}" y="${cy-4*k}" text-anchor="middle" font-size="${10*k}">${esc(z.label)} (مظروف تحليلي)</text>`;}).join("");
-  const cities=Object.values(E).filter(o=>o.type==="Place"&&!o.battle&&typeof o.lat==="number"&&typeof o.lon==="number");
+  const cities=Object.values(E).filter(o=>o.type==="Place"&&!o.battle&&typeof o.lat==="number"&&typeof o.lon==="number").sort((a,b)=>(a.id===opts.focus)-(b.id===opts.focus));
   const battles=Object.values(E).filter(o=>o.type==="Place"&&o.battle);
   const cid="land"+(++mapSvg.n);
   // مسار على مراحل: خط منقّط بين المحطات (تنظيم سردي لا مسار سير مقيس) وأرقام المحطات؛ المفعّل منها حتى المرحلة الحالية
   const pathSvg=(()=>{const ids=opts.path||[];if(!ids.length)return "";const act=opts.pathActive||ids.length;const pts=ids.map(id=>E[id]).map(o=>o&&typeof o.lat==="number"?o:null);
     const seen={};let out="";for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i];if(!a||!b)continue;out+=`<line class="route${i<act?" on":""}" x1="${X(a.lon)}" y1="${Y(a.lat)}" x2="${X(b.lon)}" y2="${Y(b.lat)}" stroke-width="${2*k}"/>`;}
     out+=pts.map((o,i)=>{if(!o)return "";const rep=seen[o.id]=(seen[o.id]||0)+1;const dx=(rep-1)*16*k;return `<g class="stop${i<act?" on":""}"><title>المحطة ${i+1}: ${esc(o.name.ar)}</title><circle cx="${X(o.lon)+dx}" cy="${Y(o.lat)-14*k}" r="${9*k}"/><text x="${X(o.lon)+dx}" y="${Y(o.lat)-10.5*k}" text-anchor="middle" font-size="${10*k}">${i+1}</text></g>`;}).join("");return out;})();
-  return `<svg class="map" viewBox="${vb.map(v=>v.toFixed(1)).join(" ")}" role="img" aria-label="خريطة الأندلس سنة ${y}">
+  return `<svg class="map" viewBox="${vb.map(v=>v.toFixed(1)).join(" ")}" role="group" aria-label="خريطة الأندلس سنة ${y}">
     <defs><clipPath id="${cid}"><path d="${path(IBERIA)}"/><path d="${path(MAGHREB)}"/></clipPath></defs>
     ${typeof CARTOGRAPHY!=="undefined"?`<path class="land" d="${CARTOGRAPHY.land}"/><path class="river" d="${CARTOGRAPHY.rivers}"/>`:`<path class="land" d="${path(IBERIA)}"/><path class="land" d="${path(MAGHREB)}"/>`}
     <g class="zones" clip-path="url(#${cid})">${zones(y)}</g>${zonesSvg}
     ${(opts.edges||[]).map(e=>{const a=E[e.from],b=E[e.to];if(!a||!b||typeof a.lat!=="number"||typeof b.lat!=="number")return "";return `<line class="death-edge" x1="${X(a.lon)}" y1="${Y(a.lat)}" x2="${X(b.lon)}" y2="${Y(b.lat)}" stroke-width="${2*k}"><title>رحلة إلى الوفاة: ${esc(a.name.ar)} ← ${esc(b.name.ar)}</title></line>`;}).join("")}
     ${cities.map(o=>{const c=ctrl(o,y);const exists=o.founded==null||y>=o.founded;const fill=c==="muslim"?eraOf(y).c:c==="christian"?"var(--christian)":"var(--brand)";
-      const label=opts.labels==="all"||MAJOR.has(o.id)||o.id===opts.focus||members.has(o.id);if(opts.only&&!opts.only.has(o.id))return "";return `<a class="city ${exists?"":"dim"}${members.has(o.id)?" member":""}${opts.deathNodes&&opts.deathNodes.has(o.id)?" death-node":""}" href="${opts.route?opts.route(o.id):href(o.id)}"><title>${esc(o.name.ar)}</title><circle cx="${X(o.lon)}" cy="${Y(o.lat)}" r="${(o.id===opts.focus?9:MAJOR.has(o.id)?7:4.5)*k}" fill="${fill}"${o.id===opts.focus?" stroke=\"var(--accent)\" stroke-width=\""+(3*k)+"\"":""}/>${label?`<text x="${X(o.lon)+9*k}" y="${Y(o.lat)+(o.id==="PLC-MADINAT-ZAHRA"?-12:o.id==="PLC-CORDOBA"?18:4)*k}" font-size="${11*k}">${esc(o.name.ar)}</text>`:""}</a>`;}).join("")}
-    ${battles.filter(b=>typeof b.lat==="number"&&Math.abs((b.founded||b.year||0)-y)<=40).map(b=>`<a class="battle" href="${href(b.id)}"><path d="M${X(b.lon)},${Y(b.lat)-8} l7,12 h-14z"/><text x="${X(b.lon)+9}" y="${Y(b.lat)+4}" class="note">⚔ ${esc(b.name.ar)} ${b.founded}</text></a>`).join("")}
+      const label=opts.labelIds?opts.labelIds.has(o.id):opts.labels==="all"||MAJOR.has(o.id)||o.id===opts.focus||members.has(o.id);if(opts.only&&!opts.only.has(o.id))return "";return `<a aria-label="${esc(o.name.ar)}" class="city${o.id===opts.focus?" selected":""} ${exists?"":"dim"}${members.has(o.id)?" member":""}${opts.deathNodes&&opts.deathNodes.has(o.id)?" death-node":""}" href="${opts.route?opts.route(o.id):href(o.id)}"><title>${esc(o.name.ar)}</title><circle class="map-hit" cx="${X(o.lon)}" cy="${Y(o.lat)}" r="${52*k}"/><circle cx="${X(o.lon)}" cy="${Y(o.lat)}" r="${(o.id===opts.focus?9:MAJOR.has(o.id)?7:4.5)*k}" fill="${fill}"${o.id===opts.focus?" stroke=\"var(--accent)\" stroke-width=\""+(3*k)+"\"":""}/>${label?`<text text-anchor="end" x="${X(o.lon)+14*k}" y="${Y(o.lat)+(o.id==="PLC-MADINAT-ZAHRA"?-12:o.id==="PLC-CORDOBA"?18:4)*k}" font-size="${18*k}">${esc(o.name.ar)}</text>`:""}</a>`;}).join("")}
+    ${battles.filter(b=>typeof b.lat==="number"&&Math.abs((b.founded||b.year||0)-y)<=40).map(b=>`<a class="battle" href="${href(b.id)}"><path d="M${X(b.lon)},${Y(b.lat)-8} l7,12 h-14z"/><text x="${X(b.lon)+9}" y="${Y(b.lat)+4}" class="note">معركة · ${esc(b.name.ar)} ${b.founded}</text></a>`).join("")}
     ${pathSvg}
-    <text x="${vb[0]+12*k}" y="${vb[1]+vb[3]-12*k}" class="note" font-size="${10.5*k}">الإحداثيات مراسٍ حديثة تقريبية (مركز المدينة الحالية غالبًا)؛ لا تُعرض حدود سياسية تاريخية (القاعدة 7).</text>
+    <text x="${vb[0]+12*k}" y="${vb[1]+vb[3]-12*k}" class="note" font-size="${10.5*k}">الإحداثيات مراسٍ حديثة تقريبية (مركز المدينة الحالية غالبًا)؛ لا تُعرض حدود سياسية تاريخية.</text>
   </svg>`;
 }
 /* ===== محرّك الخريطة MapLibre GL JS (04-architecture §4.7) =====
@@ -593,18 +594,20 @@ function mapSvg(y,opts={}){
    التسميات علامات DOM (المتصفح يصل الحروف العربية سليمة، فلا حاجة لإضافة RTL في GL).
    عند تعذّر المحرّك (لا شبكة/لا WebGL) يُرجَع تلقائيًّا إلى mapSvg، فلا ينكسر العرض.
    القاعدة 7: الإحداثيات مراسٍ حديثة تقريبية، ولا يُشتقّ منها حدٌّ سياسيّ. */
-const MAP_STYLE={version:8,sources:{land:{type:"geojson",data:"data/geo/land.geojson"},rivers:{type:"geojson",data:"data/geo/rivers.geojson"}},layers:[{id:"sea",type:"background",paint:{"background-color":"#e6ecf1"}},{id:"land",type:"fill",source:"land",paint:{"fill-color":"#ece4d2","fill-outline-color":"#d9cdb2"}},{id:"rivers",type:"line",source:"rivers",paint:{"line-color":"#9db9c9","line-width":1.1}}]};
+const MAP_STYLE={version:8,sources:{land:{type:"geojson",data:"data/geo/land.geojson"},rivers:{type:"geojson",data:"data/geo/rivers.geojson"}},layers:[{id:"sea",type:"background",paint:{"background-color":"#e1eff6"}},{id:"land",type:"fill",source:"land",paint:{"fill-color":"#f0f3ed","fill-outline-color":"#bdcbd0"}},{id:"rivers",type:"line",source:"rivers",paint:{"line-color":"#b8cfd7","line-width":1.1}}]};
+function applyMapTheme(map){if(!map?.isStyleLoaded())return;const s=getComputedStyle(document.documentElement);for(const [id,p,v] of [['sea','background-color','--map-water'],['land','fill-color','--map-land'],['land','fill-outline-color','--map-border'],['rivers','line-color','--map-river']])map.setPaintProperty(id,p,s.getPropertyValue(v).trim());}
+new MutationObserver(()=>{const m=document.getElementById('mapBox')?._map;if(m)applyMapTheme(m);}).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
 let _mlP=null;
 function ensureMapLibre(){if(_mlP)return _mlP;_mlP=new Promise((res,rej)=>{if(window.maplibregl)return res(window.maplibregl);const css=document.createElement("link");css.rel="stylesheet";css.href="https://cdn.jsdelivr.net/npm/maplibre-gl@4/dist/maplibre-gl.css";document.head.appendChild(css);const s=document.createElement("script");s.src="https://cdn.jsdelivr.net/npm/maplibre-gl@4/dist/maplibre-gl.min.js";s.onload=()=>window.maplibregl?res(window.maplibregl):rej(new Error("no maplibregl"));s.onerror=()=>rej(new Error("maplibre load failed"));document.head.appendChild(s);});return _mlP;}
 function glPins(map,y){const gl=window.maplibregl;(map._pins||[]).forEach(m=>m.remove());const pins=[];
   Object.values(E).filter(o=>o.type==="Place"&&!o.battle&&typeof o.lat==="number"&&typeof o.lon==="number").forEach(o=>{const c=ctrl(o,y);const exists=o.founded==null||y>=o.founded;const fill=c==="muslim"?eraOf(y).c:c==="christian"?"var(--christian)":"var(--brand)";const major=MAJOR.has(o.id);const el=document.createElement("a");el.href=href(o.id);el.className="glpin"+(exists?"":" dim")+(major?" major":"");el.title=o.name.ar;el.innerHTML=`<i style="background:${fill}"></i>${major?`<span>${esc(o.name.ar)}</span>`:""}`;pins.push(new gl.Marker({element:el,anchor:"center"}).setLngLat([o.lon,o.lat]).addTo(map));});
-  Object.values(E).filter(o=>o.type==="Place"&&o.battle&&typeof o.lat==="number"&&Math.abs((o.founded||o.year||0)-y)<=40).forEach(b=>{const el=document.createElement("a");el.href=href(b.id);el.className="glpin battle";el.title=b.name.ar;el.innerHTML=`<b>⚔</b><span>${esc(b.name.ar)} ${b.founded||""}</span>`;pins.push(new gl.Marker({element:el,anchor:"center"}).setLngLat([b.lon,b.lat]).addTo(map));});
+  Object.values(E).filter(o=>o.type==="Place"&&o.battle&&typeof o.lat==="number"&&Math.abs((o.founded||o.year||0)-y)<=40).forEach(b=>{const el=document.createElement("a");el.href=href(b.id);el.className="glpin battle";el.title=b.name.ar;el.innerHTML=`${uiIcon("flag")}<span>${esc(b.name.ar)} ${b.founded||""}</span>`;pins.push(new gl.Marker({element:el,anchor:"center"}).setLngLat([b.lon,b.lat]).addTo(map));});
   map._pins=pins;}
 async function mapGL(elId,y){const gl=await ensureMapLibre();const el=document.getElementById(elId);if(!el)return null;if(el._map)return el._map;
   const map=new gl.Map({container:el,style:MAP_STYLE,center:[-4.2,37.6],zoom:5.1,minZoom:4,maxZoom:9,attributionControl:false,dragRotate:false,pitchWithRotate:false});el._map=map;
   map.addControl(new gl.NavigationControl({showCompass:false}),"top-left");
-  map.addControl(new gl.AttributionControl({compact:true,customAttribution:"مراسٍ حديثة تقريبية؛ لا حدود سياسية تاريخية (القاعدة 7) · يابسة/أنهار: Natural Earth (ملك عام)"}),"bottom-right");
-  map.on("load",()=>{try{map.fitBounds([[-10.5,30],[4.5,44]],{padding:20,duration:0});}catch(_){}glPins(map,y);});
+  map.addControl(new gl.AttributionControl({compact:true,customAttribution:"مراسٍ حديثة تقريبية؛ لا حدود سياسية تاريخية · يابسة/أنهار: Natural Earth (ملك عام)"}),"bottom-right");
+  map.on("load",()=>{applyMapTheme(map);try{map.fitBounds([[-10.5,30],[4.5,44]],{padding:20,duration:0});}catch(_){}glPins(map,y);});
   return map;}
 /* يُهيّئ خريطة عرض الخريطة: MapLibre إن أمكن، وإلا رجوعٌ إلى mapSvg. يستدعى بعد رسم V.map */
 function initMapView(y){const el=document.getElementById("mapBox");if(!el||!el.classList.contains("glmap"))return;
@@ -623,7 +626,7 @@ V.home=(q={})=>{const y=Math.max(711,Math.min(1614,+(q.y||state.y||960)));state.
 <section class="home-more"><div class="section-heading"><h2>أعلام وآثار</h2><a href="#/people">استكشف الأعلام ${uiIcon("arrow-left")}</a></div><div class="grid">${["PER-012","PER-006","PER-016","OBJ-SUBH-PYXIS"].filter(id=>E[id]).map(id=>card(E[id])).join("")}</div></section>
 <section class="home-more"><div class="section-heading"><h2>كل معلومة تقودك إلى شواهدها</h2><a href="#/about">كيف نتحقق؟ ${uiIcon("arrow-left")}</a></div><p class="sub">افتح شارة الحالة بجوار المعلومة للاطلاع على النص الحرفي وموضعه في المصدر. المعلومة الموثّقة جزئيًا تُعرض بتنبيه.</p><div class="chips"><a class="chip" href="#/stories">القصص والمحطات</a><a class="chip" href="#/learn">الوحدات التعليمية</a><a class="chip" href="#/sources">المصادر وحقوقها</a></div></section>`;};
 
-V.map=(q)=>{const y=+(q.y||960);return `<section><p class="eyebrow">الخريطة الزمنية</p><h2>الأندلس سنة <span id="mapYear">${y}</span>م</h2><p class="sub">الأماكن بمراسٍ حديثة تقريبية؛ لا تُعرض حدود سياسية تاريخية (القاعدة 7). حرّك الزمن لترى العصر والأحداث والأحياء في تلك السنة.</p>
+V.map=(q)=>{const y=+(q.y||960);return `<section><p class="eyebrow">الخريطة الزمنية</p><h2>الأندلس سنة <span id="mapYear">${y}</span>م</h2><p class="sub">الأماكن بمراسٍ حديثة تقريبية؛ لا تُعرض حدود سياسية تاريخية. حرّك الزمن لترى العصر والأحداث والأحياء في تلك السنة.</p>
   ${timeBar(y,"mapY")}<div style="margin-top:14px"><div id="mapBox" class="glmap"></div><ul class="sr-only" aria-label="أماكن هذه السنة على الخريطة">${Object.values(E).filter(o=>o.type==="Place"&&typeof o.lat==="number"&&(o.founded==null||y>=o.founded)).map(o=>`<li><a href="${href(o.id)}">${esc(o.name.ar)}</a></li>`).join("")}</ul></div><div id="mapSnap" style="margin-top:14px">${yearSnapshot(y)}</div>
   <div class="scholar-only scholar-box">للباحث: البديل النصي للخريطة هو قائمة الأماكن بحالتها في السنة المختارة (تُولَّد تلقائيًا)، وتصدير GeoJSON للقطة الزمنية.</div></section>`;};
 
@@ -654,11 +657,11 @@ V.figures=(q)=>{
   ppl.forEach(x=>{const L=placeLinksOf(x.id);const deaths=L.filter(l=>l.rel==="died_in").map(l=>l.place);const lifes=L.filter(l=>l.rel!=="died_in").map(l=>l.place);deaths.forEach(dp=>{deathSet.add(dp);lifes.forEach(lp=>{if(lp!==dp)deathEdges.push({from:lp,to:dp});});});});
   const pchip=x=>{const dead=x.rels.includes(REL.died_in);return `<a class="chip${dead?" death":""}" href="${href(x.id)}">${esc(E[x.id].name.ar)} <small>${esc(x.rels.join("، "))} · ${yr(E[x.id].born)}–${yr(E[x.id].died)}م</small></a>`;};
   return `<section><p class="eyebrow">الأعلام على الخريطة</p><h2>مَن نبغ في كل مدينة؟</h2>
-  <p class="sub">وحدة تفاعلية تجمع أعلام الأندلس على مواضعهم: اختر مدينةً من الخريطة أو القائمة فتظهر أعلامها (وزراء وعلماء وأطباء وفلاسفة)، وكل رابط عَلَم↔موضع مسنَد إلى ادعاء موثّق وفِقرة موضعية مقابَلة حرفيًا في القاعدة. المراسي حديثة تقريبية (القاعدة 7)، والعرض موضوعي لا مقيَّد بسنة.</p>
+  <p class="sub">وحدة تفاعلية تجمع أعلام الأندلس على مواضعهم: اختر مدينةً من الخريطة أو القائمة فتظهر أعلامها (وزراء وعلماء وأطباء وفلاسفة)، وكل رابط عَلَم↔موضع مسنَد إلى ادعاء موثّق وفِقرة موضعية مقابَلة حرفيًا في القاعدة. المراسي حديثة تقريبية، والعرض موضوعي لا مقيَّد بسنة.</p>
   <div class="atlas"><div>
     <div class="panel">${mapSvg(1100,{only:onlySet,focus:sel,route,labels:"all",bbox:[-10,30.5,4,44],edges:deathEdges,deathNodes:deathSet})}<ul class="sr-only" aria-label="المدن التي عليها أعلام">${figPlaces.map(p=>`<li><a href="${route(p.id)}">${esc(p.name.ar)} (${figPeopleOf(p.id).length})</a></li>`).join("")}</ul></div>
     <p class="note"><span style="color:var(--death)">▬</span> حواف الوفاة (خط أحمر متقطّع) تصل موضع نشاط/أصل العَلَم بموضع وفاته، ومرساة الوفاة محاطة بحلقة حمراء. ${deathEdges.length?`في «${esc(o.name.ar)}»: ${deathEdges.length} حافة وفاة.`:"اختر مدينةً بها وفاةُ عَلَم (مثل مراكش أو ألمرية) لرؤية حواف الوفاة."}</p>
-    <p class="note">${figPlaces.length} مدينة عليها أعلام مربوطون، و${total} عَلَمًا مرتبطًا. الإطار يشمل محطات مغربية (فاس، مراكش) توفي بها أعلام أندلسيون؛ المراسي تقريبية (القاعدة 7).</p>
+    <p class="note">${figPlaces.length} مدينة عليها أعلام مربوطون، و${total} عَلَمًا مرتبطًا. الإطار يشمل محطات مغربية (فاس، مراكش) توفي بها أعلام أندلسيون؛ المراسي تقريبية.</p>
   </div><div>
     <div class="panel"><p class="eyebrow">${esc(o.kind||"مكان")}</p><h3><a href="${href(o.id)}">${esc(o.name.ar)}</a> <small style="color:var(--muted)">${esc(o.name.en||"")}</small></h3>
     <p class="note">أعلامها المربوطون (${ppl.length}):</p><div class="chips">${ppl.map(pchip).join("")}</div>
@@ -671,10 +674,10 @@ V.figures=(q)=>{
 function zellijMotif(seed){const r=(seed%24);return `<svg viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="var(--c)" stroke-width="2"><g transform="rotate(${r} 50 50)"><rect x="22" y="22" width="56" height="56"/><rect x="22" y="22" width="56" height="56" transform="rotate(45 50 50)"/></g><circle cx="50" cy="50" r="16"/><circle cx="50" cy="50" r="27" stroke-dasharray="3 5"/></g></svg>`;}
 function hashCode(s){let h=0;s=String(s||"");for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))|0;return Math.abs(h);}
 function entityAccent(o){try{if(o.type==="Person"&&typeof o.born==="number")return eraOf(o.born).c;if(o.type==="Event"&&typeof o.year==="number")return eraOf(o.year).c;if(o.type==="Polity"&&typeof o.from==="number")return eraOf(o.from).c;}catch(_){}return (TYPE[o.type]||["","var(--brand)"])[1];}
-// مرساة بصرية: صورة مرخّصة (MEDIA أو o.image) إن سمحت الرخصة، وإلا زخرفة مولّدة
+// مرساة بصرية: صورة مرخّصة، أو حالة واضحة عند غياب الصورة
 function visualAnchor(o){const m=(typeof MEDIA!=="undefined"&&MEDIA[o.id])||o.image;const c=entityAccent(o);
-  if(m&&m.src&&licOK(m.license)){const auth=m.author?` · ${esc(m.author)}`:"";const link=m.source?` · <a href="${esc(m.source)}" target="_blank" rel="noopener">المصدر ↗</a>`:"";const note=m.note?`<span class="mnote">${esc(m.note)}</span>`:"";return `<figure class="vanchor has-img" style="--c:${c}"><img src="${esc(m.src)}" loading="lazy" alt="${esc(o.name.ar)}" referrerpolicy="no-referrer" onerror="this.style.display='none'"><figcaption class="lic ok">🟢 ${esc(m.license)}${auth}${link}${note}</figcaption></figure>`;}
-  return `<div class="vanchor art" style="--c:${c}">${zellijMotif(hashCode(o.id))}</div>`;}
+  if(m&&m.src&&licOK(m.license)){const auth=m.author?` · ${esc(m.author)}`:"";const link=m.source?` · <a href="${esc(m.source)}" target="_blank" rel="noopener">المصدر ↗</a>`:"";const note=m.note?`<span class="mnote">${esc(m.note)}</span>`:"";return `<figure class="vanchor has-img" style="--c:${c}"><img src="${esc(m.src)}" loading="lazy" alt="${esc(o.name.ar)}" referrerpolicy="no-referrer" onerror="this.style.display='none'"><figcaption class="lic ok">${esc(m.license)}${auth}${link}${note}</figcaption></figure>`;}
+  return `<div class="media-unavailable">لا تتوفر صورة مرخّصة لهذا السجل.</div>`;}
 const museumTile=o=>{const c=(TYPE[o.type]||["","var(--brand)"])[1];const m=(typeof MEDIA!=="undefined"&&MEDIA[o.id])||(o.holding&&o.holding.image?{src:o.holding.image,license:o.holding.license}:null);
   const orn=`<svg viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="var(--tc)" stroke-width="2.2"><rect x="24" y="24" width="52" height="52"/><rect x="24" y="24" width="52" height="52" transform="rotate(45 50 50)"/><circle cx="50" cy="50" r="15"/></g></svg>`;
   if(m&&m.src&&licOK(m.license))return `<div class="mtile has-img" style="--tc:${c}">${orn}<img src="${esc(m.src)}" loading="lazy" alt="${esc(o.name.ar)}" referrerpolicy="no-referrer" onerror="this.remove()"></div>`;
@@ -682,7 +685,7 @@ const museumTile=o=>{const c=(TYPE[o.type]||["","var(--brand)"])[1];const m=(typ
 // رخصةٌ محقّقةٌ تسمح بالعرض؟ (القاعدة 6). البيانات الحالية «غير معروف»، فكلها تُحال إلى المصدر بصدق
 const licOK=s=>!!s&&!/غير\s*معروف|غير\s*محقّ?ق|unknown|^—$/i.test(String(s).trim());
 const museumCard=o=>{const [tn,tc]=TYPE[o.type]||["","var(--brand)"];const lic=o.holding&&o.holding.license;const ok=licOK(lic);
-  const rights=ok?`<span class="lic ok">🟢 ${esc(lic)}</span>`:`<span class="lic ref">↗ الحقوق تُوثّق — يُحال إلى المصدر</span>`;
+  const rights=ok?`<span class="lic ok">${esc(lic)}</span>`:`<span class="lic ref">↗ الحقوق تُوثّق — يُحال إلى المصدر</span>`;
   const sub=(o.summary&&o.summary[0])?esc(stripCodes(o.summary[0][0])):"";
   // النقحرة الإنجليزية تُنظَّف من الرموز الداخلية: تُزال وسوم الأقواس المختصرة (مثل «(EEA)») ولا يُعرض اسمٌ هو اختصارٌ بحت (مثل «AMOI»)
   let en=(o.name.en||"").replace(/\s*\([A-Z]{2,6}\)\s*/g," ").trim();if(/^[A-Z0-9]{2,6}$/.test(en))en="";
@@ -697,13 +700,13 @@ V.museum=(q)=>{const kinds=["Artifact","Document","Work","Resource","Language"];
 V.stories=(q)=>{const story=(q&&q.s)?STORIES.find(s=>s.id===q.s):null;
   if(story){const steps=story.steps;const placeIds=steps.map(x=>x.place).filter(Boolean);
     const sev=Object.values(E).find(o=>o.type==="Event"&&(o.stories||[]).includes(story.id));const pm=(story.period||"").match(/(\d{3,4})م/);const SY=sev?sev.year:(pm?+pm[1]:1000);
-    return `<section><nav class="crumb"><button class="back" type="button" onclick="if(history.length>1){history.back()}else{location.hash='#/stories'}">↩ رجوع</button><span class="trail"><a href="#/">الأندلس</a><b>‹</b><a href="#/stories">القصص</a><b>‹</b><span>${esc(story.title)}</span></span></nav>
+    return `<section><nav class="crumb"><button class="back" type="button" onclick="if(history.length>1){history.back()}else{location.hash='#/stories'}">${uiIcon("arrow-left")} رجوع</button><span class="trail"><a href="#/">الأندلس</a><b>‹</b><a href="#/stories">القصص</a><b>‹</b><span>${esc(story.title)}</span></span></nav>
     <p class="eyebrow">${esc(story.period||"")}</p><h2>${esc(story.title)}</h2><p class="sub">${esc(story.summary||"")}</p>${story.warning?`<p class="note">${esc(story.warning)}</p>`:""}
     <div class="scrolly" data-year="${SY}" data-places="${esc(JSON.stringify(placeIds))}">
       <div class="scrolly-steps">${steps.map((x,i)=>`<div class="scrollystep" data-i="${i}" data-place="${esc(x.place||"")}"><div class="type">محطة ${i+1} من ${steps.length}</div><h3>${esc(x.title)}</h3><p>${x.claim&&CLAIMS[x.claim]?claimSpan(x.text||"",x.claim):esc(x.text||"")}</p>${x.place&&E[x.place]?`<div class="chips" style="margin-top:8px">${chip(x.place)}</div>`:""}</div>`).join("")}</div>
       <div class="scrolly-map"><div class="sticky"><div class="panel" id="scrollyMap">${mapSvg(SY,{focus:steps[0].place,path:placeIds,pathActive:1,bbox:[-10,30.5,4,44]})}</div><p class="note" id="scrollyCap">المحطة 1 من ${steps.length}: ${esc(steps[0].title)}</p></div></div>
     </div>
-    <p class="note">مرّر لتتحرك الخريطة مع المحطات؛ كل ادعاء يفتح شواهده بنصّها الحرفي. المراسي تقريبية (القاعدة 7).</p></section>`;}
+    <p class="note">مرّر لتتحرك الخريطة مع المحطات؛ كل ادعاء يفتح شواهده بنصّها الحرفي. المراسي تقريبية.</p></section>`;}
   return `<section><p class="eyebrow">قصص الأطلس</p><h2>${STORIES.length} قصص موثّقة</h2><p class="sub">كل محطة تشير إلى مكان وادعاء في القاعدة؛ وكل قصة تحمل تنبيهها. اقرأها سرديًّا فتتحرك الخريطة مع المحطات، أو على الأطلس مرحلةً مرحلة.</p>
   ${STORIES.map(st=>`<div class="panel" style="margin-bottom:14px"><p class="eyebrow">${esc(st.period||"")}</p><h3>${esc(st.title)}</h3><p style="color:var(--muted)">${esc(st.summary||"")}</p><div class="chips" style="margin:8px 0"><a class="chip" href="#/stories?s=${st.id}" style="border-color:var(--accent)">▶ اقرأ سرديًّا (${st.steps.length} محطات)</a><a class="chip" href="#/atlas?model=all&story=${st.id}&step=1&tab=sto">على الأطلس</a></div>${st.warning?`<p class="note">${esc(st.warning)}</p>`:""}
     <div class="strip">${st.steps.map((x,i)=>`<div class="card" style="--era:var(--brand);min-width:280px"><div class="type">محطة ${i+1}</div><h3>${esc(x.title)}</h3><p>${x.claim&&CLAIMS[x.claim]?claimSpan(x.text||"",x.claim):esc(x.text||"")}</p>${x.place&&E[x.place]?`<div class="chips" style="margin-top:8px">${chip(x.place)}</div>`:""}</div>`).join("")}</div></div>`).join("")}</section>`;};
@@ -782,7 +785,7 @@ V.atlas=(q)=>{const st=atlasState;if(q.model&&MODEL_META[q.model])st.model=q.mod
       const prim=x=>(x.source_kind||"").startsWith("مصدر أولي");ev=[...ev].sort((a,b)=>(prim(b)?1:0)-(prim(a)?1:0));
       return `<div class="panel"><p class="eyebrow">${esc(story.title)} · المرحلة ${i} من ${N}</p>
         <div class="stepper">${story.steps.map((x,j)=>`<a class="dot${j+1<i?" done":""}" href="${slink(story.id,j+1)}" ${j+1===i?'aria-current="step"':""} title="${esc(x.title)}">${j+1}</a>`).join("")}</div>
-        <h3>${i}. ${esc(step.title)}</h3>${pl?`<p class="note">المحطة: <a href="${href(pl.id)}">${esc(pl.name.ar)}</a> — مرساة حديثة تقريبية (القاعدة 7)</p>`:""}<p>${esc(step.text||"")}</p>
+        <h3>${i}. ${esc(step.title)}</h3>${pl?`<p class="note">المحطة: <a href="${href(pl.id)}">${esc(pl.name.ar)}</a> — مرساة حديثة تقريبية</p>`:""}<p>${esc(step.text||"")}</p>
         ${c?`<p style="margin:8px 0 4px"><b>الادعاء:</b> ${claimSpan(c.text,step.claim)} <small style="color:var(--muted)">${esc(c.v12_status||"")}</small></p>
         <p class="eyebrow" style="margin-top:8px">${filtered?"الشواهد التي تسمي هذه المحطة":"شواهد المرحلة"} (${ev.length}) — المصدر الأولي مقدَّم</p>
         <div class="tl">${ev.map(x=>`<div style="--era:${prim(x)?"var(--fact)":"var(--muted)"}"><b>${esc(SOURCES[x.src]?.title||x.src)}</b> <small>${esc(x.loc||"")} · ${esc(x.stance||"")}${prim(x)?' · <span style="color:var(--fact)">مصدر أولي</span>':""}${x.review_status==="معتمد بالعين"?' · <span style="color:var(--fact)">✓ مطابق بالعين</span>':""}</small><span class="quote">«${esc(x.quote)}»</span>${x.note?`<small style="color:var(--muted)">${esc(x.note)}</small>`:""}</div>`).join("")}</div>`:""}
@@ -797,7 +800,7 @@ V.atlas=(q)=>{const st=atlasState;if(q.model&&MODEL_META[q.model])st.model=q.mod
     <div class="chips" style="margin:8px 0">${jumps.map(([yy,l])=>`<a class="chip" href="#/atlas?model=${st.model}&y=${yy}" ${yy===y?'style="border-color:var(--accent)"':""}>${esc(l)} <small>${yy}</small></a>`).join("")}</div>
     <div class="lyr">${ATLAS.layers.map(l=>`<label title="${esc(l.description_ar)} — ${esc(carto(l.cartographic_status))}"><input type="checkbox" data-lyr="${l.layer_id}" ${st.layers.has(l.layer_id)?"checked":""}> ${esc(l.label_ar)}</label>`).join("")}<label title="مظاريف تحليلية، ليست حدودًا تاريخية (SCOPE-004)"><input type="checkbox" data-lyr="zones" ${st.layers.has("zones")?"checked":""}> المظاريف التحليلية</label></div>
     <div class="panel" id="atlasMap"><div class="mapzoom" id="mapZoom"><div class="mapscale" id="mapScale">${mapSvg(y,{bbox:meta.bbox,members:[...members],zones:st.layers.has("zones")?ATLAS.zones:[],focus:story?story.steps[st.step-1].place:st.place,route,path:story?story.steps.map(x=>x.place):null,pathActive:st.step})}</div></div><div class="zoomctl"><button type="button" data-z="out" aria-label="تصغير">－</button><button type="button" data-z="reset" aria-label="إعادة الضبط">⟲</button><button type="button" data-z="in" aria-label="تكبير">＋</button><span class="zlvl" id="zlvl"></span> <span style="font-size:12px;color:var(--muted)">اسحب للتحريك · Ctrl+عجلة للتكبير</span></div><ul class="sr-only" aria-label="الأماكن على الخريطة نصيًا">${listPlaces.map(o=>`<li><a href="${route(o.id)}">${esc(o.name.ar)}</a></li>`).join("")}</ul></div>
-    <p class="note">الطبقات: ${ATLAS.layers.map(l=>carto(l.cartographic_status)).filter((v,i,a)=>a.indexOf(v)===i).map(esc).join(" · ")}. المظاريف: ${esc(carto(ATLAS.zones[0]?.status||""))} (سياسة الإصدار SCOPE-004).</p>
+    <p class="note">الطبقات: ${ATLAS.layers.map(l=>carto(l.cartographic_status)).filter((v,i,a)=>a.indexOf(v)===i).map(esc).join(" · ")}. المظاريف: ${esc(carto(ATLAS.zones[0]?.status||""))}.</p>
   </div><div>
     <div class="tabs" role="tablist">${tabs.map(([k,l])=>`<button role="tab" aria-selected="${st.tab===k}" data-tab="${k}">${l}</button>`).join("")}</div>
     <div id="atlasPanel">${panel[st.tab]()}</div>
@@ -821,7 +824,7 @@ V.about=()=>`<section><p class="eyebrow">عن المنصة</p><h2>مرجع رق�
   </div><div class="panel">
     <h3>الحقوق</h3><p><b>المصادر:</b> لكل مصدر سطر حقوق في <a href="#/sources">صفحة المصادر</a>؛ النصوص التراثية في الملك العام، وحقوق التحقيق والحواشي لأصحابها ولا تُعاد نشرها؛ الدراسات والمراجع يُحال إليها برابط.</p>
     <p><b>محتوى المنصة</b> (الصياغات التحريرية والبيانات المهيكلة والتصميم): الحقوق محفوظة لصاحب المشروع حتى اعتماد رخصة النشر، والمقترح رخصة نسب المصنّف (CC BY 4.0) للنصوص والبيانات.</p>
-    <p><b>الخط:</b> Reem Kufi وIBM Plex Sans Arabic برخصة الخطوط المفتوحة.</p>
+    <p><b>الخط:</b> IBM Plex Sans Arabic للواجهة، وNoto Naskh Arabic للمتن الوثائقي.</p>
     <h3 style="margin-top:14px">التصحيح والتواصل</h3><p>وجدت خطأً أو شاهدًا أقوى؟ كل تصحيح يمر بالمنهج نفسه: نص حرفي من مصدر يُذكر موضعه. أرسل ملاحظتك عبر <a href="https://github.com/othman20500-coder/montajati/issues" target="_blank" rel="noopener">صفحة الملاحظات في المستودع ↗</a> أو عبر <a href="https://montajati.netlify.app/#/about" target="_blank" rel="noopener">صفحة التواصل في موقع «منتجاتي» ↗</a>.</p>
     <p class="note">الإصدار: بيانات المنصة الموثّقة مع ملحق الزلاقة (${RELEASE?esc(RELEASE.version||""):""}، ${RELEASE?esc(RELEASE.release_date||""):""}).</p>
   </div></div></section>`;
@@ -867,7 +870,7 @@ function loadEvidence(cb){if(window.__evReady){cb&&cb();return;}if(window._evGav
 function openProv(cid){const c=CLAIMS[cid];if(!c)return;const [sn,sc]=STATUS[c.status]||STATUS.unverified;
   const evLoading=!window.__evReady&&!window._evGaveUp;if(evLoading)loadEvidence(()=>{const p=document.getElementById("prov");if(p&&p.classList.contains("open"))openProv(cid);});const cs=c.sources||[];
   const kindBadge=k=>k&&k.startsWith("مصدر أولي")?`<span class="tier" style="border-color:var(--fact);color:var(--fact)">مصدر أولي</span>`:k?`<span class="tier">${esc(k)}</span>`:"";
-  document.getElementById("prov").innerHTML=`<button class="x" id="provX" aria-label="إغلاق">✕</button><p class="eyebrow">كيف نعرف هذا؟${document.documentElement.dataset.audience==="scholar"?` · <span dir="ltr">${esc(cid)}</span>`:""}</p><h3>${esc(c.text)}</h3><span class="st" style="color:${sc}"><i class="b ${c.status}"></i>${sn}</span><p class="note" style="margin-top:6px">${esc(PLAIN[c.status]||"")}</p>${c.v12_status?` <small style="color:var(--muted)">الحالة في القاعدة: ${esc(c.v12_status)}</small>`:""}
+  document.getElementById("prov").innerHTML=`<button class="x" id="provX" aria-label="إغلاق">إغلاق</button><p class="eyebrow">كيف نعرف هذا؟${document.documentElement.dataset.audience==="scholar"?` · <span dir="ltr">${esc(cid)}</span>`:""}</p><h3>${esc(c.text)}</h3><span class="st" style="color:${sc}"><i class="b ${c.status}"></i>${sn}</span><p class="note" style="margin-top:6px">${esc(PLAIN[c.status]||"")}</p>${c.v12_status?` <small style="color:var(--muted)">الحالة في القاعدة: ${esc(c.v12_status)}</small>`:""}
     ${c.value_before?`<p class="note">القيمة قبل التصحيح: ${esc(c.value_before)}</p>`:""}${c.resolution?`<div class="counter"><b>حجة الحسم</b><p style="margin:6px 0">${esc(c.resolution)}</p></div>`:""}
     <h3 style="margin-top:14px;font-size:15px">الشواهد (${cs.length})${evLoading?` <small style="color:var(--muted)">— جارٍ التحميل…</small>`:""}</h3>
     ${cs.map(s=>{const S=SOURCES[s.src]||{title:s.src};return `<div class="src"><b>${esc(S.title)}${S.tier?`<span class="tier">مرتبة ${esc(S.tier)}</span>`:""}${kindBadge(s.source_kind)}${s.stance?`<span class="tier">${esc(s.stance)}</span>`:""}</b>${S.author?esc(S.author)+" · ":""}${esc(S.pub||"")}${S.rights&&S.rights!=="غير معروف"?` · الحقوق: ${esc(S.rights)}`:""}${s.review_status==="معتمد بالعين"?`<div style="margin-top:6px"><span class="tier" style="border-color:var(--fact);color:var(--fact);background:color-mix(in srgb,var(--fact) 12%,transparent)">✓ مطابق بالعين</span> <small style="color:var(--muted)">${(s.eye_reviewers||[]).map(esc).join("، ")}</small></div>`:s.review_status&&s.review_status!=="لم يُراجع"?`<div style="margin-top:6px"><span class="tier">${esc(s.review_status)}</span></div>`:""}${s.quote?`<q>«${esc(s.quote)}»</q>`:""}<div style="margin-top:4px;color:var(--muted)">الموضع: ${esc(s.loc||"—")}${s.verbatim?` · المطابقة: ${esc(s.verbatim)}`:""}${s.checked_on?` · فُحص ${esc(s.checked_on)}`:""}${s.url?` · <a href="${esc(s.url)}" target="_blank" rel="noopener">الرابط</a>`:""}</div>${s.note?`<div style="margin-top:4px;color:var(--muted)">ملاحظة: ${esc(s.note)}</div>`:""}</div>`;}).join("")}
@@ -915,7 +918,7 @@ document.getElementById("q").addEventListener("keydown",e=>{if(e.key==="ArrowDow
 /* ===== السمات والجمهور ===== */
 const state={y:960};
 // تحميل خطوط سمتَي المخطوط/الليل كسولًا عند اختيارهما فقط (سمة الأساس محمّلة مقدمًا)
-const THEME_FONTS={manuscript:"https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600&display=swap",night:"https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap"};
+const THEME_FONTS={};
 const _tf={};function ensureThemeFont(t){const u=THEME_FONTS[t];if(!u||_tf[t])return;_tf[t]=1;const l=document.createElement("link");l.rel="stylesheet";l.href=u;document.head.appendChild(l);}
 function seg(id,attr,key){const el=document.getElementById(id);el.onclick=e=>{const b=e.target.closest("button");if(!b)return;el.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));document.documentElement.setAttribute(attr,b.dataset[key]);if(attr==="data-theme")ensureThemeFont(b.dataset[key]);try{localStorage.setItem(attr,b.dataset[key]);}catch(_){}};
   let saved=null;try{saved=localStorage.getItem(attr);}catch(_){}if(saved){document.documentElement.setAttribute(attr,saved);if(attr==="data-theme")ensureThemeFont(saved);el.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x.dataset[key]===saved));}}
@@ -945,8 +948,8 @@ function route(){const h=location.hash||"#/";const [path,qs]=h.slice(1).split("?
   else html=V.home();
   app.innerHTML=html;app.dataset.view=seg[0]||"home";window.scrollTo({top:0});
   const bind=(id,onY)=>{const r=document.getElementById(id);if(!r)return;r.oninput=()=>{const y=+r.value;state.y=y;document.getElementById(id+"-y").innerHTML=`${y}م <small style="font-family:var(--body);font-size:12px;opacity:.75">${hijri(y)}هـ تقريبًا · ${eraOf(y).name}</small>`;onY(y);};};
-  bind("heroY",y=>{const map=document.getElementById("heroMap");const selected=map.dataset.place;map.innerHTML=mapSvg(y,{bbox:[-10,30,4,44],focus:selected,route:id=>`#/?place=${encodeURIComponent(id)}&y=${y}`});document.getElementById("heroSnap").innerHTML=homeContext(y);});
-  bind("atlasY",y=>{atlasState.y=y;location.hash=`#/atlas?model=${atlasState.model}&y=${y}`;});
+  bind("heroY",y=>{const map=document.getElementById("heroMap");const selected=map.dataset.place;map.innerHTML=mapSvg(y,{bbox:[-10,33.2,4,44],focus:selected,only:new Set([...MAJOR,selected]),route:id=>`#/?place=${encodeURIComponent(id)}&y=${y}`});const snap=document.getElementById("heroSnap");if(snap)snap.innerHTML=homeContext(y);});
+  bind("atlasY",y=>{atlasState.y=y;location.hash=`#/atlas?model=${atlasState.model}&y=${y}&place=${encodeURIComponent(atlasState.place||"PLC-CORDOBA")}&tab=${atlasState.tab}`;});
   const ap=document.getElementById("atlasPanel");if(ap){document.querySelectorAll(".tabs [data-tab]").forEach(b=>b.onclick=()=>{atlasState.tab=b.dataset.tab;route();});
     document.querySelectorAll(".plist [data-place]").forEach(b=>b.onclick=()=>{atlasState.place=b.dataset.place;atlasState.tab="place";route();});
     document.querySelectorAll(".lyr input").forEach(c=>c.onchange=()=>{c.checked?atlasState.layers.add(c.dataset.lyr):atlasState.layers.delete(c.dataset.lyr);route();});}
@@ -973,10 +976,12 @@ function route(){const h=location.hash||"#/";const [path,qs]=h.slice(1).split("?
   if(q.y)state.y=+q.y;
   document.querySelectorAll(".quiz").forEach(qz=>{qz.querySelector(".opts").onclick=e=>{const b=e.target.closest("button");if(!b)return;qz.querySelectorAll("button").forEach(x=>x.disabled=true);b.classList.add(+b.dataset.i===+qz.dataset.correct?"ok":"no");qz.querySelectorAll("button")[+qz.dataset.correct].classList.add("ok");qz.querySelector(".note").hidden=false;};});
   const g=document.getElementById("g1");if(g)g.onclick=e=>{const b=e.target.closest("button");if(!b)return;g.querySelectorAll("button").forEach(x=>x.disabled=true);b.classList.add(b.dataset.ok==="true"?"ok":"no");document.getElementById("g1n").innerHTML=(b.dataset.ok==="true"?"صحيح. ":"ليس كذلك. ")+"المصدر: حدود العصور في الرسم المعرفي (Kennedy 1996، EI2). في المنصة تُعرض شارة الادعاء هنا.";};
+  window.AndalusUI?.enhance();
 }
-window.addEventListener("hashchange",route);route();
+window.addEventListener("hashchange",route);
 /* بعد أول رسم: حمّل الشواهد كسولًا ثم أعد رسم الواجهة الحالية لتكتمل مصادرها */
-if("requestIdleCallback"in window)requestIdleCallback(()=>loadEvidence(route),{timeout:2500});else setTimeout(()=>loadEvidence(route),300);
+if("requestIdleCallback"in window)requestIdleCallback(()=>loadEvidence(()=>{if(window.AndalusUI)route();}),{timeout:2500});else setTimeout(()=>loadEvidence(()=>{if(window.AndalusUI)route();}),300);
 </script>
+<script src="identity.js?v=20261001-07"></script>
 </body>
 </html>
