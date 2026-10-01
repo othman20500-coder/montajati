@@ -7,9 +7,9 @@
 التشغيل من أي مكان:  python3 deploy/cpanel/build_zip.py
 الناتج:              deploy/cpanel/dist/andalus-site.zip
 
-الرفع: File Manager ← public_html ← Upload، ثم استخرج الحزمة هناك (Extract).
-عند فك الضغط تظهر الملفات مباشرةً في public_html (لا داخل مجلد فرعي).
-لا يعمل بايثون قياسي فقط؛ بلا اعتماديات خارجية (يوافق قاعدة platform/CLAUDE.md).
+الرفع: File Manager ← public_html/andalus ← Upload، ثم استخرج الحزمة هناك (Extract).
+عند فك الضغط تظهر الملفات مباشرةً في public_html/andalus؛ لا تستبدل صفحة الجذر.
+يعمل ببايثون قياسي فقط؛ بلا اعتماديات خارجية (يوافق قاعدة platform/CLAUDE.md).
 """
 import os
 import sys
@@ -18,6 +18,8 @@ import zipfile
 # نفس مجموعة الملفات العامة في .cpanel.yml بالضبط: (المصدر النسبي من جذر المستودع، المسار داخل الحزمة)
 FILES = [
     ("andalus/index.html", "index.html"),
+    ("andalus/atlas-light.css", "atlas-light.css"),
+    ("andalus/data/cartography.js", "data/cartography.js"),
     ("andalus/data/graph.js", "data/graph.js"),
     ("andalus/data/graph.evidence.js", "data/graph.evidence.js"),
     ("andalus/data/schema.json", "data/schema.json"),

@@ -407,27 +407,28 @@
     .nav .navlink{font-weight:600;color:var(--brand)}
   }
 </style>
+<link rel="stylesheet" href="atlas-light.css">
 </head>
 <body>
 <div class="wrap">
   <header class="top"><div class="in">
     <a class="skip" href="#app">تخطَّ إلى المحتوى</a><a class="brand" href="#/"><i></i> الأندلس <small style="font-family:var(--body);font-weight:400;font-size:12px;color:var(--muted)">إصدار تجريبي</small></a>
     <nav class="nav" id="nav" aria-label="التنقّل الرئيسي">
-      <details class="ng"><summary>استكشف</summary><div class="ngmenu"><a href="#/atlas">الأطلس</a><a href="#/map">الخريطة</a><a href="#/timeline">الزمن</a></div></details>
-      <details class="ng"><summary>الأعلام</summary><div class="ngmenu"><a href="#/people">الأشخاص</a><a href="#/places">الأماكن</a><a href="#/figures">أعلام على الخريطة</a></div></details>
-      <details class="ng"><summary>اروِ</summary><div class="ngmenu"><a href="#/stories">القصص</a><a href="#/learn">تعلّم</a><a href="#/play">ألعاب</a></div></details>
-      <details class="ng"><summary>الأرشيف</summary><div class="ngmenu"><a href="#/museum">المتحف</a><a href="#/sources">المصادر</a></div></details>
+      <details class="ng"><summary><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg><span>استكشف</span></summary><div class="ngmenu"><a href="#/">الرئيسة</a><a href="#/atlas">الأطلس</a><a href="#/map">الخريطة</a><a href="#/timeline">الزمن</a></div></details>
+      <details class="ng"><summary><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>الأعلام</span></summary><div class="ngmenu"><a href="#/people">الأشخاص</a><a href="#/places">الأماكن</a><a href="#/figures">أعلام على الخريطة</a></div></details>
+      <details class="ng"><summary><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg><span>اروِ</span></summary><div class="ngmenu"><a href="#/stories">القصص</a><a href="#/learn">تعلّم</a><a href="#/play">ألعاب</a></div></details>
+      <details class="ng"><summary><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg><span>الأرشيف</span></summary><div class="ngmenu"><a href="#/museum">المتحف</a><a href="#/sources">المصادر</a></div></details>
       <a class="navlink" href="#/about">عن المنصة</a>
     </nav>
     <div class="tools" id="tools">
       <div class="seg" id="theme" title="الاتجاه البصري">
-        <button data-t="zellij" aria-pressed="true">الزليج</button><button data-t="manuscript" aria-pressed="false">المخطوط</button><button data-t="night" aria-pressed="false">الليل</button>
+        <button data-t="zellij" aria-pressed="true">الفاتح</button><button data-t="manuscript" aria-pressed="false">المخطوط</button><button data-t="night" aria-pressed="false">الليل</button>
       </div>
       <div class="seg" id="aud" title="الجمهور">
         <button data-a="kids" aria-pressed="false">استكشاف</button><button data-a="general" aria-pressed="true">عام</button><button data-a="scholar" aria-pressed="false">باحث</button>
       </div>
     </div>
-    <button class="kbtn" id="kbtn">ابحث <kbd>⌘K</kbd></button>
+    <button class="kbtn" id="kbtn" aria-label="البحث في الأطلس"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg> <span>ابحث في الأطلس</span> <kbd>⌘K</kbd></button>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav" aria-label="فتح القائمة">☰</button>
   </div></header>
 
@@ -444,6 +445,7 @@
 <div class="keydock"><div class="keypanel" id="keyPanel" hidden></div><button class="keybtn" id="keyBtn" aria-expanded="false" aria-controls="keyPanel" aria-label="مفتاح الألوان"><span class="kdot"></span> مفتاح الألوان</button></div>
 
 <script src="data/media.js"></script>
+<script src="data/cartography.js"></script>
 <script src="data/graph.js"></script>
 <script>
 /* =========================================================
@@ -460,18 +462,55 @@ Object.values(E).filter(o=>o.type==="Work"&&E[o.author]).forEach(w=>pushEdge({fr
 const REL={ruled:"حكم",born_in:"وُلد في",died_in:"توفي في",lived_in:"عاش في",participated_in:"شارك في",authored:"ألّف",authored_by:"ألّفه",patron_of:"رعى",took_place_at:"وقع في",part_of:"جزء من",located_in:"يقع في",active_in:"نشط في",commissioned:"أمر بصنع",translated:"ترجم",copy_of:"نسخة من",made_for:"صُنع لـ",produced_in:"أُنتج في",mother_of:"أم",collaborated_with:"تعاون مع",associated_with:"مرتبط بـ",built_on:"بُني على",addressed_to:"موجّه إلى",planned_link_to:"صلة مخططة بـ",part_of_historic_urban_context:"ضمن النسيج التاريخي لـ","near/within cultural landscape of":"ضمن المشهد الثقافي لـ"};
 const TYPE={Person:["شخص","var(--era-khilafa)"],Place:["مكان","var(--era-imara)"],Event:["حدث","var(--era-muwahhid)"],Polity:["دولة","var(--era-murabit)"],Document:["مخطوط","var(--era-wulat)"],Work:["مصنَّف","var(--era-tawaif)"],Artifact:["أثر","var(--era-nasrid)"],Language:["لغة","var(--muted)"],Resource:["مورد رقمي","var(--muted)"]};
 // أيقونات الأنواع: خطّيّةٌ بلون النوع، تُسرّع المسح البصري وتبني هويّة (بديل مربّع النوع الصغير)
-const ICON={
- Person:'<circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-3.6 3.3-5.5 7-5.5s7 1.9 7 5.5"/>',
- Place:'<path d="M12 21.5S5.5 15 5.5 9.5A6.5 6.5 0 0 1 18.5 9.5C18.5 15 12 21.5 12 21.5z"/><circle cx="12" cy="9.5" r="2.3"/>',
- Event:'<path d="M6 3v18"/><path d="M6 4h11l-2.6 4L17 12H6"/>',
- Polity:'<path d="M4 8l4 3.5 4-6.5 4 6.5 4-3.5v10H4z"/>',
- Work:'<path d="M12 6.5C10 5 6.8 5 4.5 5.6V18c2.3-.6 5.5-.6 7.5.9 2-1.5 5.2-1.5 7.5-.9V5.6C17.2 5 14 5 12 6.5z"/><path d="M12 6.5V19"/>',
- Document:'<path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12.5h6M9.5 16h6"/>',
- Artifact:'<path d="M9 3.5h6M10 3.5c0 3-3 3-3 7 0 5 2 8 5 8s5-3 5-8c0-4-3-4-3-7"/>',
- Language:'<path d="M4 5h16v10H9l-4 4z"/><path d="M8.5 9.5h7M8.5 12.5h4"/>',
- Resource:'<ellipse cx="12" cy="6" rx="7" ry="2.8"/><path d="M5 6v12c0 1.6 3.1 2.8 7 2.8s7-1.2 7-2.8V6"/><path d="M5 12c0 1.6 3.1 2.8 7 2.8s7-1.2 7-2.8"/>'
-};
-const typeIcon=t=>`<svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[t]||'<circle cx="12" cy="12" r="8"/>'}</svg>`;
+/* Lucide icon library license:
+ISC License
+
+Copyright (c) 2026 Lucide Icons and Contributors
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+---
+
+The following Lucide icons are derived from the Feather project:
+
+airplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out
+
+The MIT License (MIT) (for the icons listed above)
+
+Copyright (c) 2013-present Cole Bemis
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+*/
+const UI_ICONS={"map":"<path d=\"M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z\"/><path d=\"M15 5.764v15\"/><path d=\"M9 3.236v15\"/>","user":"<path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"/><circle cx=\"12\" cy=\"7\" r=\"4\"/>","book-open":"<path d=\"M12 7v14\"/><path d=\"M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z\"/>","folder":"<path d=\"M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z\"/>","search":"<path d=\"m21 21-4.34-4.34\"/><circle cx=\"11\" cy=\"11\" r=\"8\"/>","map-pin":"<path d=\"M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/>","flag":"<path d=\"M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528\"/>","landmark":"<path d=\"M10 18v-7\"/><path d=\"M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z\"/><path d=\"M14 18v-7\"/><path d=\"M18 18v-7\"/><path d=\"M3 22h18\"/><path d=\"M6 18v-7\"/>","scroll-text":"<path d=\"M15 12h-5\"/><path d=\"M15 8h-5\"/><path d=\"M19 17V5a2 2 0 0 0-2-2H4\"/><path d=\"M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3\"/>","amphora":"<path d=\"M10 2v5.632c0 .424-.272.795-.653.982A6 6 0 0 0 6 14c.006 4 3 7 5 8\"/><path d=\"M10 5H8a2 2 0 0 0 0 4h.68\"/><path d=\"M14 2v5.632c0 .424.272.795.652.982A6 6 0 0 1 18 14c0 4-3 7-5 8\"/><path d=\"M14 5h2a2 2 0 0 1 0 4h-.68\"/><path d=\"M18 22H6\"/><path d=\"M9 2h6\"/>","languages":"<path d=\"m5 8 6 6\"/><path d=\"m4 14 6-6 2-3\"/><path d=\"M2 5h12\"/><path d=\"M7 2h1\"/><path d=\"m22 22-5-10-5 10\"/><path d=\"M14 18h6\"/>","database":"<ellipse cx=\"12\" cy=\"5\" rx=\"9\" ry=\"3\"/><path d=\"M3 5V19A9 3 0 0 0 21 19V5\"/><path d=\"M3 12A9 3 0 0 0 21 12\"/>","arrow-left":"<path d=\"m12 19-7-7 7-7\"/><path d=\"M19 12H5\"/>"};
+const uiIcon=n=>`<svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${UI_ICONS[n]||""}</svg>`;
+const typeIcon=t=>uiIcon(({Person:"user",Place:"map-pin",Event:"flag",Polity:"landmark",Work:"book-open",Document:"scroll-text",Artifact:"amphora",Language:"languages",Resource:"database"})[t]||"book-open");
 
 /* ===== أدوات ===== */
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -501,7 +540,10 @@ const CRUMB={Person:["#/people","الأشخاص"],Place:["#/places","الأما�
 const crumb=o=>{const [u,l]=CRUMB[o.type]||["#/","الأندلس"];return `<nav class="crumb" aria-label="مسار التنقّل"><button class="back" type="button" onclick="if(history.length>1){history.back()}else{location.hash='${u}'}">↩ رجوع</button><span class="trail"><a href="#/">الأندلس</a><b>‹</b><a href="${u}">${esc(l)}</a><b>‹</b><span>${esc(o.name.ar)}</span></span></nav>`;};
 const yr=v=>v==null?"؟":v;
 const card=o=>{const [tn,tc]=TYPE[o.type]||["",""];const d=o.type==="Person"?`${yr(o.born)}–${yr(o.died)}م`:o.type==="Event"?dual(o.year,o.end,o.hijri):o.type==="Polity"?`${yr(o.from)}–${yr(o.to)}م`:o.year?`${o.year}م`:"";
-  return `<a class="card" href="${href(o.id)}" style="--c:${tc}"><div class="type">${typeIcon(o.type)}${tn}</div><h3>${esc(o.name.ar)}</h3><div class="d">${d}</div><p>${(o.summary||[]).slice(0,1).map(([t])=>esc(stripCodes(t))).join("")}</p></a>`;};
+  const m=typeof MEDIA!=="undefined"?MEDIA[o.id]:null;
+  const image=m?`<img class="card-photo" src="${esc(m.src)}" alt="${esc(m.note?m.note:o.name.ar)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.hidden=true">`:"";
+  const credit=m?`<div class="card-credit"><span dir="auto">${esc(m.license)} · ${esc(m.author)}</span> · <a href="${esc(m.source)}" target="_blank" rel="noopener">المصدر ↗</a>${m.note?`<span class="mnote">${esc(m.note)}</span>`:""}</div>`:"";
+  return `<article class="card entity-card" style="--c:${tc}"><a class="card-link" href="${href(o.id)}">${image}<div class="card-copy"><div class="type">${typeIcon(o.type)}${tn}</div><h3>${esc(o.name.ar)}</h3>${d?`<div class="d">${d}</div>`:""}<p>${(o.summary||[]).slice(0,1).map(([t])=>esc(stripCodes(t))).join("")}</p><span class="card-action">استكشف ${tn} ${uiIcon("arrow-left")}</span></div></a>${credit}</article>`;};
 const chip=id=>{const o=E[id];if(!o)return `<span class="chip">${esc(id)}</span>`;return `<a class="chip" href="${href(id)}">${esc(o.name.ar)} <small>${TYPE[o.type][0]}</small></a>`;};
 const related=id=>{const out={};EDGES.forEach(e=>{if(e.from===id){(out[E[e.to]?.type]??=[]).push({id:e.to,rel:REL[e.rel]||e.rel,role:e.role});}if(e.to===id){(out[E[e.from]?.type]??=[]).push({id:e.from,rel:REL[e.rel]||e.rel,role:e.role,rev:true});}});return out;};
 const rail=id=>{const r=related(id);const order=["Person","Place","Event","Polity","Work","Document","Artifact"];return `<div class="rail">${order.filter(t=>r[t]?.length).map(t=>`<h3 style="--c:${TYPE[t][1]}">${typeIcon(t)}${TYPE[t][0]}</h3><div class="chips">${r[t].map(x=>`<a class="chip" href="${href(x.id)}">${esc(E[x.id].name.ar)} <small>${x.rev?"":x.rel} ${x.role?"· "+esc(x.role):""}</small></a>`).join("")}</div>`).join("")}</div>`;};
@@ -536,11 +578,11 @@ function mapSvg(y,opts={}){
     out+=pts.map((o,i)=>{if(!o)return "";const rep=seen[o.id]=(seen[o.id]||0)+1;const dx=(rep-1)*16*k;return `<g class="stop${i<act?" on":""}"><title>المحطة ${i+1}: ${esc(o.name.ar)}</title><circle cx="${X(o.lon)+dx}" cy="${Y(o.lat)-14*k}" r="${9*k}"/><text x="${X(o.lon)+dx}" y="${Y(o.lat)-10.5*k}" text-anchor="middle" font-size="${10*k}">${i+1}</text></g>`;}).join("");return out;})();
   return `<svg class="map" viewBox="${vb.map(v=>v.toFixed(1)).join(" ")}" role="img" aria-label="خريطة الأندلس سنة ${y}">
     <defs><clipPath id="${cid}"><path d="${path(IBERIA)}"/><path d="${path(MAGHREB)}"/></clipPath></defs>
-    <path class="land" d="${path(IBERIA)}"/><path class="land" d="${path(MAGHREB)}"/>
+    ${typeof CARTOGRAPHY!=="undefined"?`<path class="land" d="${CARTOGRAPHY.land}"/><path class="river" d="${CARTOGRAPHY.rivers}"/>`:`<path class="land" d="${path(IBERIA)}"/><path class="land" d="${path(MAGHREB)}"/>`}
     <g class="zones" clip-path="url(#${cid})">${zones(y)}</g>${zonesSvg}
     ${(opts.edges||[]).map(e=>{const a=E[e.from],b=E[e.to];if(!a||!b||typeof a.lat!=="number"||typeof b.lat!=="number")return "";return `<line class="death-edge" x1="${X(a.lon)}" y1="${Y(a.lat)}" x2="${X(b.lon)}" y2="${Y(b.lat)}" stroke-width="${2*k}"><title>رحلة إلى الوفاة: ${esc(a.name.ar)} ← ${esc(b.name.ar)}</title></line>`;}).join("")}
     ${cities.map(o=>{const c=ctrl(o,y);const exists=o.founded==null||y>=o.founded;const fill=c==="muslim"?eraOf(y).c:c==="christian"?"var(--christian)":"var(--brand)";
-      const label=opts.labels==="all"||MAJOR.has(o.id)||o.id===opts.focus||members.has(o.id);if(opts.only&&!opts.only.has(o.id))return "";return `<a class="city ${exists?"":"dim"}${members.has(o.id)?" member":""}${opts.deathNodes&&opts.deathNodes.has(o.id)?" death-node":""}" href="${opts.route?opts.route(o.id):href(o.id)}"><title>${esc(o.name.ar)}</title><circle cx="${X(o.lon)}" cy="${Y(o.lat)}" r="${(o.id===opts.focus?9:MAJOR.has(o.id)?7:4.5)*k}" fill="${fill}"${o.id===opts.focus?" stroke=\"var(--accent)\" stroke-width=\""+(3*k)+"\"":""}/>${label?`<text x="${X(o.lon)+9*k}" y="${Y(o.lat)+4*k}" font-size="${11*k}">${esc(o.name.ar)}</text>`:""}</a>`;}).join("")}
+      const label=opts.labels==="all"||MAJOR.has(o.id)||o.id===opts.focus||members.has(o.id);if(opts.only&&!opts.only.has(o.id))return "";return `<a class="city ${exists?"":"dim"}${members.has(o.id)?" member":""}${opts.deathNodes&&opts.deathNodes.has(o.id)?" death-node":""}" href="${opts.route?opts.route(o.id):href(o.id)}"><title>${esc(o.name.ar)}</title><circle cx="${X(o.lon)}" cy="${Y(o.lat)}" r="${(o.id===opts.focus?9:MAJOR.has(o.id)?7:4.5)*k}" fill="${fill}"${o.id===opts.focus?" stroke=\"var(--accent)\" stroke-width=\""+(3*k)+"\"":""}/>${label?`<text x="${X(o.lon)+9*k}" y="${Y(o.lat)+(o.id==="PLC-MADINAT-ZAHRA"?-12:o.id==="PLC-CORDOBA"?18:4)*k}" font-size="${11*k}">${esc(o.name.ar)}</text>`:""}</a>`;}).join("")}
     ${battles.filter(b=>typeof b.lat==="number"&&Math.abs((b.founded||b.year||0)-y)<=40).map(b=>`<a class="battle" href="${href(b.id)}"><path d="M${X(b.lon)},${Y(b.lat)-8} l7,12 h-14z"/><text x="${X(b.lon)+9}" y="${Y(b.lat)+4}" class="note">⚔ ${esc(b.name.ar)} ${b.founded}</text></a>`).join("")}
     ${pathSvg}
     <text x="${vb[0]+12*k}" y="${vb[1]+vb[3]-12*k}" class="note" font-size="${10.5*k}">الإحداثيات مراسٍ حديثة تقريبية (مركز المدينة الحالية غالبًا)؛ لا تُعرض حدود سياسية تاريخية (القاعدة 7).</text>
@@ -574,27 +616,12 @@ function yearSnapshot(y){const evs=Object.values(E).filter(o=>o.type==="Event").
 
 /* ===== الصفحات ===== */
 const V={};
-V.home=()=>`
-<section class="hero"><div class="in">
-  <div>
-    <p class="eyebrow" style="color:var(--brand)">موسوعة · أطلس زمني · متحف رقمي · تجربة تعليمية</p>
-    <h1>قِف في الأندلس، <b>في أي سنة تختار</b></h1>
-    <p>حرّك الزمن فتتغير الخريطة والحكام والمدن والوثائق. كل جملة هنا إسناد له شاهد حرفي بموضعه؛ ولا يُنشر إلا الموثّق والمصحح والمحسوم.</p>
-    <div class="cta"><a class="btn" href="#/stories">ابدأ برحلة سردية</a><a class="btn ghost" href="#/map">استكشف الخريطة</a><a class="btn ghost" href="#/learn">ابدأ وحدة تعليمية</a></div>
-    <div style="margin-top:22px">${timeBar(960,"heroY")}</div>
-  </div>
-  <div class="mapbox" id="heroMap">${mapSvg(960)}</div>
-</div></section>
-<section><div id="heroSnap">${yearSnapshot(960)}</div></section>
-<section><p class="eyebrow">ثلاثة مداخل</p><h2>كل كيان بوابة إلى غيره</h2><p class="sub">الشخص يقودك إلى المكان، والمكان إلى الحدث، والحدث إلى الوثيقة، والوثيقة إلى الأثر. لا صفحة مسدودة.</p>
-  <div class="grid">${["PER-006","PLC-CORDOBA","EVT-003","PER-034","PLC-G01","POL-008"].filter(id=>E[id]).map(id=>card(E[id])).join("")}</div></section>
-<section><p class="eyebrow">كيف نتحقق؟</p><h2>إسناد ← شاهد حرفي ← ادعاء</h2><p class="sub">كل جملة تاريخية هنا إسناد له شاهد واحد أو أكثر بنص حرفي وموضعه وموقفه وطريقة مطابقته. لا يُنشر إلا الموثّق والمصحح والمحسوم، ويُعرض الموثّق جزئيًا بتنبيه.</p>
-  <div class="grid">
-    <div class="card"><h3><i class="b fact"></i> موثّق / صُحح وموثّق / حُسم الخلاف</h3><p>مثال: ${CLAIMS["AST-012"]?claimSpan("إعلان الخلافة 316هـ (حُسم خلاف 316/317)","AST-012"):""}</p></div>
-    <div class="card"><h3><i class="b partial"></i> موثّق جزئيًا</h3><p>يُعرض بتنبيه. مثال: ${CLAIMS["AST-004"]?claimSpan("نهاية الخلافة 1009–1031 بتعريفين","AST-004"):""}</p></div>
-    <div class="card"><h3><i class="b myth"></i> غير مثبت / لا يُنشر كحقيقة</h3><p>يُذكر لتُبيَّن حاله. مثال: ${CLAIMS["CLM-002"]?claimSpan("حرق طارق للسفن","CLM-002"):""}</p></div>
-    <div class="card"><h3><i class="b unverified"></i> متعارض أو ينتظر شاهدًا</h3><p>لا يُصدَّر إلى هذه الواجهة أصلًا؛ يبقى في القاعدة حتى يُحسم أو يُشهد له.</p></div>
-  </div><p class="note">انقر على أي نقطة ملونة في الموقع لفتح لوحة «كيف نعرف هذا؟».</p></section>`;
+function homeSpotlight(id){const o=E[id]||E["PLC-CORDOBA"];return `<article class="spotlight-card"><div class="spotlight-info"><span class="eyebrow">مكان على الخريطة</span><h1>${esc(o.name.ar)}</h1><p>${(o.summary||[]).slice(0,1).map(([t,c])=>claimSpan(t,c)).join(" " )||esc(o.kind||"مكان")}</p><a class="btn" href="${href(o.id)}">افتح المكان ${uiIcon("map-pin")}</a></div>${visualAnchor(o)}</article>`;}
+function homeContext(y){const evs=Object.values(E).filter(o=>o.type==="Event"&&typeof o.year==="number").sort((a,b)=>Math.abs(a.year-y)-Math.abs(b.year-y)).slice(0,2);const person=Object.values(E).find(o=>o.type==="Person"&&typeof o.born==="number"&&typeof o.died==="number"&&o.born<=y&&o.died>=y);const items=[...evs,...(person?[person]:[])];return items.map(o=>`<a class="context-card" href="${href(o.id)}">${typeIcon(o.type)}<div><h3>${esc(o.name.ar)} ${o.year?`<span class="context-year">${o.year}م</span>`:""}</h3><p>${(o.summary||[]).slice(0,1).map(([t])=>esc(stripCodes(t))).join("")||TYPE[o.type][0]}</p></div></a>`).join("");}
+V.home=(q={})=>{const y=Math.max(711,Math.min(1614,+(q.y||state.y||960)));state.y=y;const selected=E[q.place]?.type==="Place"?q.place:"PLC-CORDOBA";return `<section class="atlas-home"><div class="map-stage"><div class="map-toolbar">${timeBar(y,"heroY")}<details><summary>العصور ومفتاح الزمن</summary>${erasBar()}</details></div><div class="home-map" id="heroMap" data-place="${selected}">${mapSvg(y,{bbox:[-10,30,4,44],focus:selected,route:id=>`#/?place=${encodeURIComponent(id)}&y=${y}`})}</div><div class="home-spotlight" id="homeSpotlight">${homeSpotlight(selected)}</div><p class="home-map-note">المواضع مراسٍ حديثة تقريبية · لا تُعرض حدود سياسية تاريخية · يابسة وأنهار: Natural Earth (ملك عام)</p></div><div class="home-context" id="heroSnap">${homeContext(y)}</div></section>
+<section class="home-more"><div class="section-heading"><h2>مدن ومعالم الأندلس</h2><a href="#/places">عرض كل الأماكن ${uiIcon("arrow-left")}</a></div><div class="grid">${["PLC-CORDOBA","PLC-MADINAT-ZAHRA","PLC-G01","PLC-SEVILLE"].filter(id=>E[id]).map(id=>card(E[id])).join("")}</div></section>
+<section class="home-more"><div class="section-heading"><h2>أعلام وآثار</h2><a href="#/people">استكشف الأعلام ${uiIcon("arrow-left")}</a></div><div class="grid">${["PER-012","PER-006","PER-016","OBJ-SUBH-PYXIS"].filter(id=>E[id]).map(id=>card(E[id])).join("")}</div></section>
+<section class="home-more"><div class="section-heading"><h2>كل معلومة تقودك إلى شواهدها</h2><a href="#/about">كيف نتحقق؟ ${uiIcon("arrow-left")}</a></div><p class="sub">افتح شارة الحالة بجوار المعلومة للاطلاع على النص الحرفي وموضعه في المصدر. المعلومة الموثّقة جزئيًا تُعرض بتنبيه.</p><div class="chips"><a class="chip" href="#/stories">القصص والمحطات</a><a class="chip" href="#/learn">الوحدات التعليمية</a><a class="chip" href="#/sources">المصادر وحقوقها</a></div></section>`;};
 
 V.map=(q)=>{const y=+(q.y||960);return `<section><p class="eyebrow">الخريطة الزمنية</p><h2>الأندلس سنة <span id="mapYear">${y}</span>م</h2><p class="sub">الأماكن بمراسٍ حديثة تقريبية؛ لا تُعرض حدود سياسية تاريخية (القاعدة 7). حرّك الزمن لترى العصر والأحداث والأحياء في تلك السنة.</p>
   ${timeBar(y,"mapY")}<div style="margin-top:14px"><div id="mapBox" class="glmap"></div><ul class="sr-only" aria-label="أماكن هذه السنة على الخريطة">${Object.values(E).filter(o=>o.type==="Place"&&typeof o.lat==="number"&&(o.founded==null||y>=o.founded)).map(o=>`<li><a href="${href(o.id)}">${esc(o.name.ar)}</a></li>`).join("")}</ul></div><div id="mapSnap" style="margin-top:14px">${yearSnapshot(y)}</div>
@@ -824,7 +851,7 @@ V.entity=(id)=>{const o=E[id];if(!o)return `<section><p class="eyebrow">لم ي�
       ${(o.before||o.after)?`<h3 style="margin-top:14px">قبل ← بعد</h3><div class="chips">${(o.before||[]).map(chip).join("")}<span class="chip" style="border-color:var(--accent)">${esc(o.name.ar)}</span>${(o.after||[]).map(chip).join("")}</div>`:""}
       ${audienceBox(o)}</div><div class="panel"><p class="eyebrow">المكان</p>${mapSvg(o.year,{focus:o.place})}${o.kind==="معركة"?`<p class="note">خريطة المعركة على مراحل ▶ تُضاف في المنصة، مع تنبيه ثابت: أعداد الجيوش تُعرض كمدى بمصادره.</p>`:""}</div></div>`;}
   else {extra=`${o.author&&!E[o.author]?`<div class="names"><span>المؤلف: <b>${esc(o.author)}</b></span>${o.year?`<span>${o.year}م</span>`:""}</div>`:""}${summaryBlock(o)}${o.holding?`<div class="panel" style="margin-top:12px"><b>مكان الحفظ:</b> ${esc(o.holding.institution)}${o.holding.license?` · <b>الرخصة:</b> ${esc(o.holding.license)}`:""}${o.holding.iiif?` · IIIF`:` · <span class="scholar-only" style="display:inline">الرقم المكتبي ورابط IIIF يُضافان عند التوثيق</span>`}</div>`:""}${o.type==="Polity"?`<div class="chips" style="margin-top:12px"><span class="chip">${yr(o.from)}–${yr(o.to)}م</span></div>${(o.rulers||[]).length?`<h3 style="margin-top:14px">الولايات المسندة</h3><div class="tl">${o.rulers.map(r=>`<div><b><a href="${href(r.person)}">${esc((E[r.person]||{name:{ar:r.person}}).name.ar)}</a></b> <small>${esc(r.role||"")} · ${yr(r.from)}–${yr(r.to)}م · دقة: ${esc(r.precision||"")}</small></div>`).join("")}</div>`:""}`:""}${audienceBox(o)}`;}
-  return `<section>${crumb(o)}<p class="eyebrow" style="color:${tc}">${tn}</p><h2>${esc(o.name.ar)}</h2>${visualAnchor(o)}${head}${extra}${rail(id)}
+  return `<section class="entity-page">${crumb(o)}<p class="eyebrow" style="color:${tc}">${tn}</p><h2>${esc(o.name.ar)}</h2>${visualAnchor(o)}${head}${extra}${rail(id)}
   <h3 style="margin-top:22px">المصادر المستخدمة في هذه الصفحة</h3><div class="chips">${[...new Set((o.summary||[]).flatMap(([,c])=>(CLAIMS[c]?.sources||[]).map(s=>s.src)))].filter(s=>SOURCES[s]).map(s=>`<span class="chip">${esc(SOURCES[s].title)} <small>${SOURCES[s].tier==="أولي"?"مصدر أولي":"مرتبة "+esc(SOURCES[s].tier)}</small></span>`).join("")}</div>
   <p class="note">اقترح تصحيحًا · البيانات من قاعدة المنصة الموثّقة (${esc(RELEASE.release_date||"")}) · كل إضافة تمر بمنهج الإسناد والشاهد، انظر <a href="#/about">عن المنصة</a></p></section>`;};
 
@@ -912,13 +939,13 @@ function route(){const h=location.hash||"#/";const [path,qs]=h.slice(1).split("?
   document.querySelectorAll("#nav .ng").forEach(d=>{d.open=false;d.classList.toggle("act",!!d.querySelector("a.on"));});
   {const ti=document.querySelector(".top .in"),mb=document.getElementById("menuBtn");if(ti)ti.classList.remove("open");if(mb)mb.setAttribute("aria-expanded","false");}
   let html="";
-  if(!seg.length)html=V.home();
+  if(!seg.length)html=V.home(q);
   else if(V[seg[0]]&&seg.length===1)html=V[seg[0]](q);
   else if(seg[0]==="x"&&seg.length===2){const eid=decodeURIComponent(seg[1]);html=V.entity(eid);pushRecent(eid);}
   else html=V.home();
-  app.innerHTML=html;window.scrollTo({top:0});
+  app.innerHTML=html;app.dataset.view=seg[0]||"home";window.scrollTo({top:0});
   const bind=(id,onY)=>{const r=document.getElementById(id);if(!r)return;r.oninput=()=>{const y=+r.value;state.y=y;document.getElementById(id+"-y").innerHTML=`${y}م <small style="font-family:var(--body);font-size:12px;opacity:.75">${hijri(y)}هـ تقريبًا · ${eraOf(y).name}</small>`;onY(y);};};
-  bind("heroY",y=>{document.getElementById("heroMap").innerHTML=mapSvg(y);document.getElementById("heroSnap").innerHTML=yearSnapshot(y);});
+  bind("heroY",y=>{const map=document.getElementById("heroMap");const selected=map.dataset.place;map.innerHTML=mapSvg(y,{bbox:[-10,30,4,44],focus:selected,route:id=>`#/?place=${encodeURIComponent(id)}&y=${y}`});document.getElementById("heroSnap").innerHTML=homeContext(y);});
   bind("atlasY",y=>{atlasState.y=y;location.hash=`#/atlas?model=${atlasState.model}&y=${y}`;});
   const ap=document.getElementById("atlasPanel");if(ap){document.querySelectorAll(".tabs [data-tab]").forEach(b=>b.onclick=()=>{atlasState.tab=b.dataset.tab;route();});
     document.querySelectorAll(".plist [data-place]").forEach(b=>b.onclick=()=>{atlasState.place=b.dataset.place;atlasState.tab="place";route();});
