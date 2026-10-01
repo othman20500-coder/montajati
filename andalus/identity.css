@@ -70,3 +70,9 @@ body.modal-open{overflow:hidden}h1,h2,h3,h4{font-family:var(--head);font-weight:
 .historical-profile[data-kind="Polity"] .profile-context{background:var(--soft);padding:24px;max-height:70svh;overflow:auto;border-top:1px solid var(--brand)}.polity-rulers h2{margin-top:0;font-size:24px}.polity-rulers small{font-size:13px;color:var(--muted)}@media(max-width:900px){.historical-profile[data-kind="Polity"] .profile-context{max-height:none;position:static}}
 
 @media(max-width:600px){.chronicle-axis text{font-size:34px}.chronicle-axis a circle:first-of-type{r:20px}.window-controls strong small{max-width:160px;line-height:1.6}.knowledge-path .path-label{font-size:13px}}
+
+/* Timeline discovery: same editorial controls, compact on touch screens. */
+.timeline-filter{margin-block:16px 24px;padding-block:16px;flex-wrap:wrap}.timeline-filter input[type=hidden]{display:none}.timeline-filter select{max-width:260px}.timeline-return{margin-block:12px 20px}.place-chronicle>.text-link{margin-bottom:16px}.event-duration{opacity:.7}
+@media(max-width:600px){.timeline-filter{gap:12px}.timeline-filter label{flex:1 1 100%;min-width:0}.timeline-filter select{width:100%;max-width:none}.timeline-filter button{flex:1}.timeline-filter>a{padding:12px}.event-duration{stroke-width:7px}}
+
+.timeline-tools{border-block:1px solid var(--line);margin-block:16px 24px}.timeline-tools>summary{cursor:pointer;list-style:none;padding:16px 0;color:var(--brand);display:flex;align-items:center;gap:10px;font-size:14px}.timeline-tools>summary::-webkit-details-marker{display:none}.timeline-tools>summary:after{content:"+";margin-inline-start:auto;font-size:20px}.timeline-tools[open]>summary:after{content:"−"}.timeline-tools .timeline-filter{border:0;margin:0;padding:0 0 16px}

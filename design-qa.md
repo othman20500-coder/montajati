@@ -49,4 +49,12 @@ Home, atlas, map, people, person, places, place, stories, learning, games, museu
 
 Canonical data unchanged. Node syntax and 13-file cPanel archive passed. Secure sign-in renewed the expired cPanel session. Compression report confirmed the old site backup at /deploy/andalus-before-identity-20261001.zip. Uploaded and extracted all 13 package entries into public_html/andalus; moved the ZIP into /deploy afterward. Live verification on 2026-10-01 confirmed the 25-event timeline, decade zoom, the new event profile with map/relations/sources, and al-Zahrawi attribution and historical note. Proof: design/timeline-universal-2026-10-01/live-timeline.jpg. Public URL: https://othmana.sa/andalus/?v=55aa32b#/timeline?y=929&scope=all. Root files were not deployment targets. This supersedes previous publication and legacy Event/Polity notes. Full WCAG and all external media checks remain outside this pass.
 
+## Follow-up: timeline discovery, revision 10
+
+Added name/place/kind search, canonical-place filter, duration segments clipped to the visible interval, descriptive full-date labels, and URL-preserved filters across scale/period/year changes. Event profiles receive a whitelisted return link that restores year/scale/place/search/event. Event-to-atlas year uses the event date. Place profiles link to a complete place-specific timeline.
+
+Checked search for الخلافة + قرطبة (two events over full duration, one overlapping event in 1010–1019), empty results and reset, decade zoom retaining filters, event navigation and explicit return. Mobile iframe 390px/usable375px has no horizontal document overflow; collapsed search tools keep the axis visible in the first screen. Desktop and mobile inspected. No application-origin console errors in final live check. JavaScript syntax and exact ZIP integrity passed; canonical data unchanged.
+
+Published all 13 allowed files to public_html/andalus via cPanel, confirmed extraction report, and moved andalus-discovery-20261001.zip to /deploy. The previous revision package remains in /deploy/andalus-site.zip, and the earlier site backup remains outside public_html. Live search and event-return tested. Proof: design/timeline-discovery-2026-10-01/live-desktop.jpg and mobile.jpg. Publication does not imply full external-image or WCAG certification.
+
 passed
