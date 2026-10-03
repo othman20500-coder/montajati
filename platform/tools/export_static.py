@@ -19,6 +19,16 @@ TYPE_MAP = {"Person": "Person", "Place": "Place", "Polity": "Polity", "Work": "W
             "DigitalResource": "Resource", "Language": "Language"}
 
 
+EYE_APPROVED = "معتمد بالعين"
+# طرق المطابقة التي تُراجع بالعين قبل النشر العام (القاعدة 10)؛ النمط نفسه في NEEDS_EYE_SQL بخدمة المراجعة
+NEEDS_EYE_MARKERS = ("WebFetch", "صورة", "OCR", "PDF", "بصري")
+
+
+def needs_eye(verbatim_check: str | None) -> bool:
+    v = verbatim_check or ""
+    return v.startswith("مطابق بالعين") or any(m in v for m in NEEDS_EYE_MARKERS)
+
+
 def tier_of(source_class: str | None) -> str:
     s = (source_class or "").lower()
     if s == "primary_text" or s.startswith("primary"): return "أولي"   # «Curated primary-source guide» دليل حديث لا نص أولي
@@ -83,6 +93,9 @@ def main():
             rnames.setdefault(r["attestation_id"], []).append(f'{r["full_name"]} ({r["field"]})')
     atts = {}
     for t in R("SELECT * FROM attestations ORDER BY attestation_id"):
+        # القاعدة 10: ما طوبق بـWebFetch أو OCR أو قراءة صورة لا يُنشر قبل اعتماده بالعين بحكم مراجعَين
+        if needs_eye(t["verbatim_check"]) and rstatus.get(t["attestation_id"]) != EYE_APPROVED:
+            continue
         atts.setdefault(t["assertion_id"], []).append({"id": t["attestation_id"], "src": t["source_id"], "loc": t["locator"], "quote": t["quote"],
                                                        "stance": t["stance"], "source_kind": t["source_kind"], "verbatim": t["verbatim_check"],
                                                        "note": t["note_ar"], "url": t["url"], "checked_on": t["checked_on"],
@@ -93,6 +106,8 @@ def main():
         st = PUBLISHABLE.get(A["status"])
         if not st:
             continue  # متعارض / ينتظر شاهدًا: لا يُنشر
+        if not any((x["stance"] or "").startswith("يدعم") for x in atts.get(A["assertion_id"], [])):
+            continue  # لم يبقَ له شاهد داعم قابل للنشر (شواهده كلها تنتظر المراجعة بالعين)
         claims[A["assertion_id"]] = {"text": f'{A["kind"]}: {A["value_ar"]}', "status": st, "v12_status": A["status"], "field": A["field"],
                                      "target": A["target_id"], "value_before": A["value_before"], "resolution": A["resolution_ar"], "todo": A["todo_ar"],
                                      "model": A["model"], "last_verified": A["last_verified"],

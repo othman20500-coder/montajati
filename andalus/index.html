@@ -707,7 +707,7 @@ V.play=()=>{const y=[800,960,1100,1300][Math.floor(Math.random()*4)];const ans=e
   return `<section><p class="eyebrow">تقويم وألعاب</p><h2>${QUIZ.length} سؤالًا مربوطة بادعاءات القاعدة</h2><p class="sub">كل سؤال يعرض بعد الإجابة شرحه وادعاءه بشواهده. الأسئلة من الوحدات التعليمية الجاهزة.</p>
   <div class="grid">
     <div class="game"><div class="type">أين أنت؟</div><h3>سنة ${y}م، أنت في قرطبة. ما العصر؟</h3><div class="opts" id="g1">${opts.map(o=>`<button data-ok="${o===ans}">${o}</button>`).join("")}</div><p class="note" id="g1n">المصدر: حدود العصور الموثّقة في المنصة.</p></div>
-    ${QUIZ.filter(q=>q.type!=="open"&&q.choices.length).slice(0,9).map(q=>`<div class="game quiz" data-correct="${q.correct}"><div class="type">${esc(q.module)} · ${esc(q.difficulty||"")}</div><h3>${esc(plainAr(q.prompt))}</h3><div class="opts">${q.choices.map((c,i)=>`<button data-i="${i}">${esc(plainAr(typeof c==="string"?c:(c.text||JSON.stringify(c))))}</button>`).join("")}</div><p class="note" hidden>${esc(q.explanation||"")} ${q.claim&&CLAIMS[q.claim]?claimSpan("الادعاء المرتبط",q.claim):""}</p></div>`).join("")}
+    ${QUIZ.filter(q=>q.type!=="open"&&q.choices.length).slice(0,9).map(q=>`<div class="game quiz" data-correct="${q.correct}"><div class="type">${esc((MODULES.find(m=>m.id===q.module)||{}).title||"")} · ${esc(q.difficulty||"")}</div><h3>${esc(plainAr(q.prompt))}</h3><div class="opts">${q.choices.map((c,i)=>`<button data-i="${i}">${esc(plainAr(typeof c==="string"?c:(c.text||JSON.stringify(c))))}</button>`).join("")}</div><p class="note" hidden>${esc(q.explanation||"")} ${q.claim&&CLAIMS[q.claim]?claimSpan("الادعاء المرتبط",q.claim):""}</p></div>`).join("")}
   </div></section>`;};
 
 const MODEL_META={cordoba:{name:"قرطبة الأموية",bbox:[-7.2,36.3,-2.4,40.4]},granada:{name:"غرناطة النصرية",bbox:[-6.2,35.6,-1.2,38.6]},all:{name:"الأطلس العام",bbox:null}};
@@ -728,9 +728,9 @@ const geoT=s=>s?s.split(",").map(t=>GEO_AR.theme[t.trim()]).filter(Boolean):[];
 const atlasState={model:"cordoba",y:null,place:null,tab:"year",layers:new Set(),story:null,step:1,zoom:1,_sc:null};
 const stripDia=s=>String(s||"").replace(/[\u064B-\u0652\u0670\u0640]/g,"");
 function modelOf(id){return ATLAS.models.find(m=>m.id===id);}
-V.atlas=(q)=>{const st=atlasState;if(q.model&&MODEL_META[q.model])st.model=q.model;const m=st.model==="all"?null:modelOf(st.model);
+V.atlas=(q)=>{const st=atlasState;const fresh=location.hash!==st._h;st._h=location.hash;/* معاملات الرابط تُطبَّق عند التنقل فقط، لا عند إعادة الرسم بعد نقرة داخلية */if(q.model&&MODEL_META[q.model])st.model=q.model;const m=st.model==="all"?null:modelOf(st.model);
   const years=m?m.years:[711,1614];const range=[Math.min(...years),Math.max(...years)];
-  const story=q.story?STORIES.find(s2=>s2.id===q.story)||null:null;st.story=story?story.id:null;st.step=story?Math.max(1,Math.min(+q.step||1,story.steps.length)):1;if(story)st.tab="sto";
+  const story=q.story?STORIES.find(s2=>s2.id===q.story)||null:null;st.story=story?story.id:null;st.step=story?Math.max(1,Math.min(+q.step||1,story.steps.length)):1;if(story&&fresh)st.tab="sto";
   const storyEv=story?Object.values(E).find(o=>o.type==="Event"&&(o.stories||[]).includes(story.id)):null;if(story&&!q.y&&storyEv)st.y=storyEv.year;
   if(q.y)st.y=+q.y;if(st.y==null||st.y<711||st.y>1614)st.y=range[0];const y=st.y;const meta=MODEL_META[st.model];
   const activeLayers=ATLAS.layers.filter(l=>st.layers.has(l.layer_id)&&y>=l.min_year&&y<=l.max_year);const members=new Set(activeLayers.flatMap(l=>l.members.map(x=>x.place)));
@@ -739,8 +739,8 @@ V.atlas=(q)=>{const st=atlasState;if(q.model&&MODEL_META[q.model])st.model=q.mod
   const listPlaces=Object.values(E).filter(o=>o.type==="Place"&&typeof o.lat==="number"&&(!meta.bbox||(o.lon>=meta.bbox[0]&&o.lon<=meta.bbox[2]&&o.lat>=meta.bbox[1]&&o.lat<=meta.bbox[3]))).sort((a,b)=>inModel(b)-inModel(a)||(b.display_priority||0)-(a.display_priority||0)||a.name.ar.localeCompare(b.name.ar,"ar"));
   if(!st.place||!E[st.place])st.place=listPlaces[0]?.id;
   const jumps=(m?m.years:Object.values(E).filter(o=>o.type==="Event"&&o.weight===3).map(o=>o.year)).map(yy=>{const ev=Object.values(E).find(o=>o.type==="Event"&&o.year===yy);return [yy,ev?ev.name.ar:""+yy];});
-  const route=id=>`#/atlas?model=${st.model}&y=${y}&place=${encodeURIComponent(id)}`;if(q.place&&E[q.place])st.place=q.place;
-  const tabs=[["year","السنة"],["place","المكان"],["evd","الأدلة"],["src","المصادر"],["sto","القصص"],["lim","حدود المعرفة"]];if(q.tab)st.tab=q.tab;
+  const route=id=>`#/atlas?model=${st.model}&y=${y}&place=${encodeURIComponent(id)}`;if(fresh&&q.place&&E[q.place])st.place=q.place;
+  const tabs=[["year","السنة"],["place","المكان"],["evd","الأدلة"],["src","المصادر"],["sto","القصص"],["lim","حدود المعرفة"]];if(fresh&&q.tab)st.tab=q.tab;if(!tabs.some(t=>t[0]===st.tab))st.tab="year";
   const asts=(m?m.assertions:Object.keys(CLAIMS).filter(c=>CLAIMS[c].field!=="claim"));
   const panel={
     year:()=>yearSnapshot(y),
@@ -911,7 +911,7 @@ function route(){const h=location.hash||"#/";const [path,qs]=h.slice(1).split("?
   document.querySelectorAll("#nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#/"+(seg[0]||"")));
   document.querySelectorAll("#nav .ng").forEach(d=>{d.open=false;d.classList.toggle("act",!!d.querySelector("a.on"));});
   {const ti=document.querySelector(".top .in"),mb=document.getElementById("menuBtn");if(ti)ti.classList.remove("open");if(mb)mb.setAttribute("aria-expanded","false");}
-  let html="";
+  let html="";if(seg[0]!=="atlas")atlasState._h=null;
   if(!seg.length)html=V.home();
   else if(V[seg[0]]&&seg.length===1)html=V[seg[0]](q);
   else if(seg[0]==="x"&&seg.length===2){const eid=decodeURIComponent(seg[1]);html=V.entity(eid);pushRecent(eid);}

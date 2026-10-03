@@ -68,6 +68,17 @@ class EvidenceGate(unittest.TestCase):
         empty = [k for k in claims if not (ev.get(k) or {}).get("sources")]
         self.assertEqual(empty, [], "ادعاءات مصدَّرة بلا مصادر في graph.evidence.js")
 
+    def test_exported_attestations_passed_eye_review_when_required(self):
+        # القاعدة 10: ما طوبق بـWebFetch أو OCR أو قراءة صورة لا يُنشر قبل اعتماده بالعين
+        import json, sys
+        sys.path.insert(0, os.path.join(ROOT, "platform", "tools"))
+        from export_static import needs_eye, EYE_APPROVED
+        ejs = open(GRAPH_EV, encoding="utf-8").read()
+        ev = json.loads(re.search(r"const CLAIM_EV = (\{.*\});", ejs, re.S).group(1))
+        bad = sorted({s.get("att") for c in ev.values() for s in c["sources"]
+                      if s.get("att") and needs_eye(s.get("verbatim")) and s.get("review_status") != EYE_APPROVED})
+        self.assertEqual(bad, [], "شواهد تنتظر المراجعة بالعين منشورة في graph.evidence.js")
+
 
 if __name__ == "__main__":
     unittest.main()
