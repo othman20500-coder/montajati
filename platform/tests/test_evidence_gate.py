@@ -68,6 +68,20 @@ class EvidenceGate(unittest.TestCase):
         empty = [k for k in claims if not (ev.get(k) or {}).get("sources")]
         self.assertEqual(empty, [], "ادعاءات مصدَّرة بلا مصادر في graph.evidence.js")
 
+    def test_warn_exported_claims_without_attestation_chain(self):
+        # القاعدة 3 تشترط لكل ادعاء منشور سلسلة إسناد ← شاهد بنص وموضع. ادعاءات النواة التي لها مصدر بلا شاهد
+        # تُعرض هنا تنبيهًا لا يُفشل البوابة (قرار صاحب المشروع بتأجيل حجبها حتى تُضاف شواهدها).
+        import json
+        cjs = open(GRAPH, encoding="utf-8").read()
+        claims = json.loads(re.search(r"const CLAIMS = (\{.*?\});", cjs, re.S).group(1))
+        ejs = open(GRAPH_EV, encoding="utf-8").read()
+        ev = json.loads(re.search(r"const CLAIM_EV = (\{.*\});", ejs, re.S).group(1))
+        bare = sorted(k for k in claims if not any((s.get("quote") or "").strip() and s.get("att")
+                                                   for s in (ev.get(k) or {}).get("sources", [])))
+        if bare:
+            # سطر ::warning:: يظهر تنبيهًا في واجهة GitHub Actions
+            print(f"::warning title=بوابة الأدلة::{len(bare)} ادعاءً منشورًا بلا شاهد نصي (القاعدة 3، حجبها مؤجَّل): {' '.join(bare)}")
+
     def test_exported_attestations_passed_eye_review_when_required(self):
         # القاعدة 10: ما طوبق بـWebFetch أو OCR أو قراءة صورة لا يُنشر قبل اعتماده بالعين
         import json, sys
