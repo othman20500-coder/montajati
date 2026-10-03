@@ -82,3 +82,16 @@ body.modal-open{overflow:hidden}h1,h2,h3,h4{font-family:var(--head);font-weight:
 @media(max-width:900px){.spatial-workbench{grid-template-columns:1fr;gap:24px}.spatial-context{padding-inline-start:16px}.spatial-year-label{flex-wrap:wrap}.spatial-canvas .map{max-height:50svh}}
 
 .spatial-canvas .battle.selected path{fill:var(--accent);stroke:var(--brand);stroke-width:2}
+/* Keep the spatial controls visible and distinguish scope selections. */
+#app>.spatial-exploration{padding-block:24px}
+#app .spatial-exploration .page-lead{margin-bottom:16px}
+#app .spatial-exploration .page-lead h1{font-size:30px;margin-bottom:6px}
+.spatial-exploration .knowledge-path{padding-block:8px;margin-bottom:12px}
+.spatial-exploration .timeline-return{margin-block:0 12px}
+.spatial-canvas .density{display:flex;gap:8px;flex-wrap:wrap}
+.spatial-canvas .density a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 20px;border:1px solid var(--line);color:var(--brand);border-radius:4px}
+.spatial-canvas .density a[aria-current]{background:var(--brand);color:var(--card);border-color:var(--brand)}
+.spatial-canvas .map{max-height:42svh}
+.spatial-canvas>.note{margin-block:8px;font-size:13px}
+.spatial-year-label{margin-block:8px}
+@media(max-width:600px){#app .spatial-exploration .page-lead h1{font-size:26px}.spatial-canvas .density a{flex:1;padding-inline:12px}.spatial-canvas .map{max-height:36svh}}
