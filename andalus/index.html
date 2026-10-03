@@ -408,7 +408,7 @@
   }
 </style>
 <link rel="stylesheet" href="atlas-light.css">
-<link rel="stylesheet" href="identity.css?v=20261001-10">
+<link rel="stylesheet" href="identity.css?v=20261003-11">
 <link rel="icon" type="image/png" href="assets/andalus-mark.png">
 </head>
 <body>
@@ -584,7 +584,7 @@ function mapSvg(y,opts={}){
     ${(opts.edges||[]).map(e=>{const a=E[e.from],b=E[e.to];if(!a||!b||typeof a.lat!=="number"||typeof b.lat!=="number")return "";return `<line class="death-edge" x1="${X(a.lon)}" y1="${Y(a.lat)}" x2="${X(b.lon)}" y2="${Y(b.lat)}" stroke-width="${2*k}"><title>رحلة إلى الوفاة: ${esc(a.name.ar)} ← ${esc(b.name.ar)}</title></line>`;}).join("")}
     ${cities.map(o=>{const c=ctrl(o,y);const exists=o.founded==null||y>=o.founded;const fill=c==="muslim"?eraOf(y).c:c==="christian"?"var(--christian)":"var(--brand)";
       const label=opts.labelIds?opts.labelIds.has(o.id):opts.labels==="all"||MAJOR.has(o.id)||o.id===opts.focus||members.has(o.id);if(opts.only&&!opts.only.has(o.id))return "";return `<a aria-label="${esc(o.name.ar)}" class="city${o.id===opts.focus?" selected":""} ${exists?"":"dim"}${members.has(o.id)?" member":""}${opts.deathNodes&&opts.deathNodes.has(o.id)?" death-node":""}" href="${opts.route?opts.route(o.id):href(o.id)}"><title>${esc(o.name.ar)}</title><circle class="map-hit" cx="${X(o.lon)}" cy="${Y(o.lat)}" r="${52*k}"/><circle cx="${X(o.lon)}" cy="${Y(o.lat)}" r="${(o.id===opts.focus?9:MAJOR.has(o.id)?7:4.5)*k}" fill="${fill}"${o.id===opts.focus?" stroke=\"var(--accent)\" stroke-width=\""+(3*k)+"\"":""}/>${label?`<text text-anchor="end" x="${X(o.lon)+14*k}" y="${Y(o.lat)+(o.id==="PLC-MADINAT-ZAHRA"?-12:o.id==="PLC-CORDOBA"?18:4)*k}" font-size="${18*k}">${esc(o.name.ar)}</text>`:""}</a>`;}).join("")}
-    ${battles.filter(b=>typeof b.lat==="number"&&Math.abs((b.founded||b.year||0)-y)<=40).map(b=>`<a class="battle" href="${href(b.id)}"><path d="M${X(b.lon)},${Y(b.lat)-8} l7,12 h-14z"/><text x="${X(b.lon)+9}" y="${Y(b.lat)+4}" class="note">معركة · ${esc(b.name.ar)} ${b.founded}</text></a>`).join("")}
+    ${battles.filter(b=>typeof b.lat==="number"&&(b.id===opts.focus||Math.abs((b.founded||b.year||0)-y)<=40)).map(b=>`<a class="battle${b.id===opts.focus?' selected':''}" aria-label="${esc(b.name.ar)}" href="${href(b.id)}"><path d="M${X(b.lon)},${Y(b.lat)-8} l7,12 h-14z"/><text x="${X(b.lon)+9}" y="${Y(b.lat)+4}" class="note">معركة · ${esc(b.name.ar)} ${b.founded}</text></a>`).join("")}
     ${pathSvg}
     <text x="${vb[0]+12*k}" y="${vb[1]+vb[3]-12*k}" class="note" font-size="${10.5*k}">الإحداثيات مراسٍ حديثة تقريبية (مركز المدينة الحالية غالبًا)؛ لا تُعرض حدود سياسية تاريخية.</text>
   </svg>`;
@@ -982,6 +982,6 @@ window.addEventListener("hashchange",route);
 /* بعد أول رسم: حمّل الشواهد كسولًا ثم أعد رسم الواجهة الحالية لتكتمل مصادرها */
 if("requestIdleCallback"in window)requestIdleCallback(()=>loadEvidence(()=>{if(window.AndalusUI)route();}),{timeout:2500});else setTimeout(()=>loadEvidence(()=>{if(window.AndalusUI)route();}),300);
 </script>
-<script src="identity.js?v=20261001-10"></script>
+<script src="identity.js?v=20261003-11"></script>
 </body>
 </html>
