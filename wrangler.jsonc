@@ -1,0 +1,12 @@
+{
+  // منتجاتي على Cloudflare Workers (أصول ثابتة فقط، بلا كود ولا بناء).
+  // يُنشر index.html وassets/ وحدهما؛ والقائمة في .assetsignore.
+  "name": "montajati",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  },
+  "workers_dev": true
+}

@@ -2,7 +2,7 @@
 
 موقع ثابت بلا بناء ولا خادم. تعديل المحتوى في كتلة `PROJECTS` و`SITE` داخل `index.html`، وكتلة `DATA` داخل `office.html`.
 
-- `index.html` هو النسخة العامة وتُنشر على Netlify (montajati.netlify.app) مع `assets/` فقط.
+- `index.html` هو النسخة العامة وتُنشر مع `assets/` فقط على Cloudflare Workers (عامل `montajati`، على montajati.othmana.sa)، تلقائيًا عند كل دمج في `main`. ما يُنشر محدد في `.assetsignore`، والإعداد في `wrangler.jsonc`. رابط Netlify القديم (montajati.netlify.app) يتحول إليه.
 - `office.html` نسخة شخصية فيها مسارات محلية على جهاز عثمان. تبقى على جهازه خارج المستودع (مدرجة في `.gitignore` منذ جعل المستودع عامًا)، ولا تُنشر ولا تُعدَّل روابطها المحلية.
 - لا تضف أدوات بناء أو حزم npm أو خادمًا.
 - الصور في `assets/` مأخوذة من صفحات المنتجات نفسها.
