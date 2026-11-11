@@ -13,7 +13,7 @@
 - كل منتج له رابط مستقل بصيغة `#/p/<slug>`، وزر «حفظ PDF» يطبع صفحته فقط.
 
 ## النشر
-النسخة التسويقية منشورة على https://montajati.netlify.app من `index.html` و`assets/` فقط (نشر يدوي بأداة Netlify؛ ملف `_redirects` في الجذر يمنع نشر `office.html` والمواد البحثية وطبقة الخدمة إن رُبط الموقع بالمستودع).
+النسخة التسويقية تُنشر على Cloudflare Workers (عامل `montajati`) من `index.html` و`assets/` فقط، تلقائيًا مع كل دمج في `main`. القائمة في `.assetsignore` تستبعد كل ما عداهما (`office.html` والمواد البحثية وطبقة الخدمة)، والإعداد في `wrangler.jsonc`. حُذف ملف `_redirects` من الجذر لأن صيغة Netlify فيه (حالة 404!) يرفضها Cloudflare.
 
 منصة الأندلس تُنشر موقعًا مستقلًا على https://andalus-atlas.netlify.app من مجلد `andalus/` وحده، تلقائيًا مع كل دمج في `main` (في Netlify: مجلد النشر `andalus`، بلا أمر بناء)؛ الصفحة `andalus/index.html` وبياناتها المولَّدة `andalus/data/graph.js`، وملف `andalus/_redirects` يمنع نشر النموذج البحثي القديم والوثائق البحثية.
 
