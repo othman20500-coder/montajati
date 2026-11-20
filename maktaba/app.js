@@ -13,10 +13,22 @@
 
   let books = load();
   function load() {
-    try { const s = JSON.parse(localStorage.getItem(KEY)); if (s && Array.isArray(s.books)) return s.books; } catch (e) {}
+    try { const s = JSON.parse(window.localStorage.getItem(KEY)); if (s && Array.isArray(s.books)) return s.books; } catch (e) {}
     return structuredClone(ORIG.books);
   }
-  function save() { localStorage.setItem(KEY, JSON.stringify({ savedAt: new Date().toISOString(), books })); renderAll(); }
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify({ savedAt: new Date().toISOString(), books })); }
+    catch (e) { const m = $('#dataMsg'); if (m) m.textContent = 'تعذّر الحفظ في هذا المتصفح؛ صدّر الفهرس حتى لا تضيع التعديلات.'; }
+    renderAll();
+  }
+  // نافذة تأكيد داخل الصفحة (confirm() لا يعمل في بعض العارضات)
+  function askConfirm(msg) {
+    return new Promise(res => {
+      const d = $('#confirmDlg'); $('#confirmMsg').textContent = msg;
+      d.onclose = () => res(d.returnValue === 'yes'); d.returnValue = ''; d.showModal();
+    });
+  }
+  const store = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} }, del: k => { try { localStorage.removeItem(k); } catch (e) {} } };
 
   // ---------- تطبيع العربية ----------
   function norm(s) {
@@ -284,7 +296,7 @@
     return { shelves, moves };
   }
   function renderPlan() {
-    const { shelves, moves } = computePlan(); const done = new Set(JSON.parse(localStorage.getItem(PLAN_DONE) || '[]'));
+    const { shelves, moves } = computePlan(); const done = new Set(JSON.parse(store.get(PLAN_DONE) || '[]'));
     const sk = Object.fromEntries(shelfKeys());
     $('#plan').innerHTML = `<div class="callout"><strong>اقتراح فقط.</strong> هذه الخطة لا تغيّر خريطة الرفوف. اضغط «نقلته فعلًا» بعد نقل الكتاب بيدك ليُحدَّث مكانه في الفهرس.
       تبقى الكتب غير المقروءة وغير المصنفة في مكانها حتى تُراجع.</div>
@@ -300,7 +312,7 @@
     const b = books.find(x => x.id === id); const c = to[0], s = +to.slice(1);
     const max = Math.max(0, ...slots().filter(x => x.p.case === c && +x.p.shelf === s).map(x => x.p.pos || 0));
     b.places.forEach((p, i) => { p.case = c; p.shelf = s; p.pos = max + i + 1; p.movedByPlan = true; p.photoNote = 'نُقل حسب خطة إعادة الترتيب؛ الصورة تُظهر المكان القديم'; });
-    recount(); const d = new Set(JSON.parse(localStorage.getItem(PLAN_DONE) || '[]')); d.add(id); localStorage.setItem(PLAN_DONE, JSON.stringify([...d])); save();
+    recount(); const d = new Set(JSON.parse(store.get(PLAN_DONE) || '[]')); d.add(id); store.set(PLAN_DONE, JSON.stringify([...d])); save();
   }
   function recount() { // يعيد ترقيم المواضع متتابعة في كل رف، ويقدّم المعدَّل حديثًا عند التساوي
     const by = {}; slots().forEach(x => { if (x.p.pos) (by[x.p.case + x.p.shelf] ||= []).push(x.p); });
@@ -323,10 +335,10 @@
     $('#delBtn').hidden = !b;
     $('#editDlg').showModal();
   }
-  $('#editForm').addEventListener('submit', e => {
+  $('#editForm').addEventListener('submit', async e => {
     const act = e.submitter?.value; const f = e.target;
     if (act === 'cancel') return;
-    if (act === 'delete') { if (confirm('حذف هذا السجل من الفهرس؟')) { books = books.filter(x => x.id !== editing.id); recount(); save(); $('#drawer').hidden = true; } return; }
+    if (act === 'delete') { if (await askConfirm('حذف هذا السجل من الفهرس؟')) { books = books.filter(x => x.id !== editing.id); recount(); save(); $('#drawer').hidden = true; } return; }
     const split = s => s.split(/[،,]/).map(x => x.trim()).filter(Boolean);
     let b = editing.id ? books.find(x => x.id === editing.id) : null;
     if (!b) {
@@ -346,7 +358,17 @@
   });
 
   // ---------- الاستيراد والتصدير ----------
-  function download(name, text, type) { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000); }
+  function download(name, text, type) {
+    try { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000); } catch (e) {}
+    // بديل حين يمنع العارض التنزيل: النص في مربع مع زر نسخ
+    $('#exportBox').hidden = false; $('#exportText').value = text; $('#exportName').textContent = name;
+    $('#dataMsg').textContent = `جُهّز ${name}. إن لم يبدأ التنزيل فانسخ النص من المربع واحفظه ملفًا بهذا الاسم.`;
+  }
+  $('#copyExport').onclick = async () => {
+    const t = $('#exportText');
+    try { await navigator.clipboard.writeText(t.value); $('#dataMsg').textContent = 'نُسخ النص.'; }
+    catch (e) { t.select(); $('#dataMsg').textContent = 'حدّدت النص؛ انسخه يدويًا.'; }
+  };
   const CSV_COLS = ['id', 'title', 'author', 'publisher', 'status', 'kind', 'case', 'shelf', 'pos', 'vols', 'topics', 'suggested', 'note', 'photo', 'box', 'color', 'addedBy'];
   function toCsv() {
     const q = v => `"${String(v ?? '').replace(/"/g, '""')}"`;
@@ -380,12 +402,12 @@
     try {
       const nb = file.name.endsWith('.csv') ? parseCsv(text) : (JSON.parse(text).books || JSON.parse(text));
       if (!Array.isArray(nb) || !nb.every(b => b.title && Array.isArray(b.places))) throw new Error('بنية غير متوقعة');
-      if (!confirm(`سيُستبدل الفهرس الحالي بـ ${nb.length} سجلًا من الملف. متابعة؟`)) return;
+      if (!await askConfirm(`سيُستبدل الفهرس الحالي بـ ${nb.length} سجلًا من الملف. متابعة؟`)) return;
       books = nb; recount(); save(); $('#dataMsg').textContent = `استُورد ${ar(nb.length)} سجلًا.`;
     } catch (err) { $('#dataMsg').textContent = 'تعذّر الاستيراد: ' + err.message; }
     e.target.value = '';
   };
-  $('#resetData').onclick = () => { if (confirm('سيُحذف كل تعديل محفوظ في هذا المتصفح ويعود الفهرس كما استُخرج من الصور. متابعة؟')) { localStorage.removeItem(KEY); localStorage.removeItem(PLAN_DONE); books = structuredClone(ORIG.books); renderAll(); $('#dataMsg').textContent = 'عاد الفهرس إلى أصله.'; } };
+  $('#resetData').onclick = async () => { if (await askConfirm('سيُحذف كل تعديل محفوظ في هذا المتصفح ويعود الفهرس كما استُخرج من الصور. متابعة؟')) { store.del(KEY); store.del(PLAN_DONE); books = structuredClone(ORIG.books); renderAll(); $('#dataMsg').textContent = 'عاد الفهرس إلى أصله.'; } };
   $('#addBook').onclick = () => openEdit(null);
 
   // ---------- التبويبات والأحداث ----------

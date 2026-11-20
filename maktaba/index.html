@@ -73,6 +73,12 @@
         <button id="resetData" class="btn danger">الرجوع إلى فهرس الصور الأصلي</button>
       </div>
       <p id="dataMsg" class="msg" role="status"></p>
+      <div id="exportBox" hidden>
+        <p class="muted small">الملف: <strong id="exportName"></strong></p>
+        <textarea id="exportText" rows="6" readonly dir="ltr"></textarea>
+        <button id="copyExport" class="btn">نسخ النص</button>
+      </div>
+      <p class="muted small">للاستيراد من نص منسوخ: الصقه في ملف نصي باسم ينتهي بـ ‎.json أو ‎.csv ثم اختره بزر الاستيراد.</p>
       <h2>إضافة كتاب يدويًا</h2>
       <p class="muted">الكتاب المضاف يدويًا يُعلَّم «أضيف يدويًا» ولا يظهر على أنه مأخوذ من صورة.</p>
       <button id="addBook" class="btn primary">إضافة كتاب</button>
@@ -114,6 +120,11 @@
       <button value="delete" class="btn danger" id="delBtn" formnovalidate>حذف السجل</button>
     </div>
   </form>
+</dialog>
+
+<dialog id="confirmDlg" class="edit-dlg">
+  <form method="dialog"><p id="confirmMsg"></p>
+    <div class="row"><button value="yes" class="btn danger">نعم، تابع</button><button value="no" class="btn">إلغاء</button></div></form>
 </dialog>
 
 <script src="data/books.js"></script>
