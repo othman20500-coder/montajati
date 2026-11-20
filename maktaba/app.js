@@ -4,7 +4,7 @@
   const ORIG = window.LIBRARY;
   const KEY = 'maktaba-hoqbi-v1';
   const PHOTOS = ORIG.photos, CASES = ORIG.cases, TOPICS = ORIG.topics;
-  const PHOTO_SCALE = { P2: 1, P3: 1, P5: 1, P6: 1, P4: 1, P7: .5, P8: .55, P9: .55, P12: .55, P10: .6, P13: .8, P14: .8, P15: .8, P11: .3, P1: 1 };
+  const PHOTO_SCALE = { P2: 1, P3: 1, P5: 1, P6: 1, P4: 1, P7: .5, P8: .55, P9: .55, P12: .55, P10: .6, P13: .8, P14: .8, P15: .8, P11: .3, P1: 1, P16: .6, P17: .6, P18: .6 };
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const AR = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
