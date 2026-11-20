@@ -9,3 +9,6 @@ office.html
 
 # ناتج بناء حزمة النشر اليدوي لـ cPanel (يُولَّد بـ deploy/cpanel/build_zip.py)
 deploy/cpanel/dist/
+
+# صور مكتبة الحقبي: صور من داخل المنزل، تبقى على الجهاز ولا تُرفع إلى المستودع العام
+maktaba/photos/

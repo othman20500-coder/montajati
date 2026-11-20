@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مكتبة الحقبي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <h1>مكتبة الحقبي</h1>
+    <p id="stats" class="stats"></p>
+  </div>
+  <div class="searchbox">
+    <label for="q" class="sr">ابحث في المكتبة</label>
+    <input id="q" type="search" autocomplete="off" placeholder="ابحث بعنوان أو مؤلف أو موضوع… مثل: ما الكتب الموجودة عندي عن القيم؟">
+  </div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-tab="shelves" aria-selected="true">الرفوف كما هي الآن</button>
+    <button role="tab" data-tab="catalog">فهرس الكتب</button>
+    <button role="tab" data-tab="photos">المكتبة الفعلية</button>
+    <button role="tab" data-tab="review">يحتاج مراجعة <span id="reviewCount" class="pill"></span></button>
+    <button role="tab" data-tab="plan">خطة إعادة الترتيب</button>
+    <button role="tab" data-tab="data">التحرير والبيانات</button>
+  </nav>
+</header>
+
+<main>
+  <section id="results" class="results" hidden></section>
+
+  <section id="tab-shelves" class="tab">
+    <p class="hint">الرسم يحاكي الترتيب الفعلي: الموضع ١ أقصى يسار الرف كما في الصورة. اضغط أي كتاب لعرض بطاقته ومكانه في الصورة.</p>
+    <div id="cabinets" class="cabinets"></div>
+  </section>
+
+  <section id="tab-catalog" class="tab" hidden>
+    <div class="filters">
+      <label>الرف <select id="fShelf"></select></label>
+      <label>الموضوع <select id="fTopic"></select></label>
+      <label>الحالة <select id="fStatus">
+        <option value="">الكل</option><option>مؤكد</option><option>يحتاج مراجعة</option></select></label>
+      <span id="catCount" class="muted"></span>
+    </div>
+    <div id="catalog" class="table-wrap"></div>
+  </section>
+
+  <section id="tab-photos" class="tab" hidden>
+    <p class="hint">الصور الأصلية التي بُني منها الفهرس. اضغط صورة لتكبيرها.</p>
+    <div id="photoGrid" class="photo-grid"></div>
+  </section>
+
+  <section id="tab-review" class="tab" hidden>
+    <p class="hint">سجلات لم تُقرأ بثقة، مرتبة بالخزانة ثم الرف ثم الموضع. صحّح العنوان من «تحرير» ثم اضغط «تم التحقق».</p>
+    <div id="reviewList" class="review-list"></div>
+  </section>
+
+  <section id="tab-plan" class="tab" hidden>
+    <div id="plan"></div>
+  </section>
+
+  <section id="tab-data" class="tab" hidden>
+    <div class="data-panel">
+      <h2>حفظ الفهرس ونقله</h2>
+      <p class="muted">تعديلاتك تُحفظ في هذا المتصفح تلقائيًا. صدّرها ملفًا حتى لا تضيع، واستوردها على جهاز آخر.</p>
+      <div class="row">
+        <button id="exportJson" class="btn">تصدير JSON</button>
+        <button id="exportCsv" class="btn">تصدير CSV</button>
+        <label class="btn file">استيراد JSON أو CSV<input id="importFile" type="file" accept=".json,.csv,application/json,text/csv"></label>
+        <button id="resetData" class="btn danger">الرجوع إلى فهرس الصور الأصلي</button>
+      </div>
+      <p id="dataMsg" class="msg" role="status"></p>
+      <h2>إضافة كتاب يدويًا</h2>
+      <p class="muted">الكتاب المضاف يدويًا يُعلَّم «أضيف يدويًا» ولا يظهر على أنه مأخوذ من صورة.</p>
+      <button id="addBook" class="btn primary">إضافة كتاب</button>
+    </div>
+  </section>
+</main>
+
+<div id="drawer" class="drawer" hidden role="dialog" aria-modal="false" aria-labelledby="dTitle">
+  <button class="close" id="drawerClose" aria-label="إغلاق">×</button>
+  <div id="drawerBody"></div>
+</div>
+
+<dialog id="photoDlg" class="photo-dlg">
+  <form method="dialog"><button class="close" aria-label="إغلاق">×</button></form>
+  <p id="photoCap" class="cap"></p>
+  <div class="photo-stage"><img id="photoImg" alt=""><div id="photoMarks"></div></div>
+</dialog>
+
+<dialog id="editDlg" class="edit-dlg">
+  <form id="editForm" method="dialog">
+    <h2 id="editHead">تحرير الكتاب</h2>
+    <label>العنوان <input name="title" required></label>
+    <label>المؤلف <input name="author"></label>
+    <label>الناشر <input name="publisher"></label>
+    <div class="grid3">
+      <label>الخزانة <select name="case"><option value="A">أ</option><option value="B">ب</option></select></label>
+      <label>الرف <input name="shelf" type="number" min="1" max="6"></label>
+      <label>الموضع من اليسار <input name="pos" type="number" min="0"></label>
+    </div>
+    <label>الحالة <select name="status"><option>مؤكد</option><option>يحتاج مراجعة</option></select></label>
+    <label>موضوعات مثبتة (افصل بفاصلة) <input name="topics" list="topicList"></label>
+    <label>موضوعات مقترحة تحتاج مراجعة (افصل بفاصلة) <input name="suggested"></label>
+    <label>ملاحظة <textarea name="note" rows="2"></textarea></label>
+    <datalist id="topicList"></datalist>
+    <p class="muted small" id="editPlaceNote"></p>
+    <div class="row">
+      <button value="save" class="btn primary">حفظ</button>
+      <button value="cancel" class="btn" formnovalidate>إلغاء</button>
+      <button value="delete" class="btn danger" id="delBtn" formnovalidate>حذف السجل</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="data/books.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
