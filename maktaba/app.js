@@ -272,47 +272,88 @@
   }
 
   // ---------- خطة إعادة الترتيب ----------
-  const PLAN_ORDER = ['القرآن وعلومه', 'السيرة والحديث', 'العقيدة والإيمان', 'الفقه والشريعة', 'الدعوة', 'القيم والأخلاق', 'التربية والأسرة', 'الوقف والعمل الخيري',
-    'الفكر والثقافة', 'التاريخ والحضارة', 'أدب ورواية', 'القيادة', 'الإدارة والعمل المؤسسي', 'الإبداع والابتكار', 'تطوير الذات', 'علم النفس والدماغ', 'المال والاقتصاد', 'القراءة والتعلم'];
-  const PLAN_DONE = 'maktaba-hoqbi-plan-done';
+  // الخطة: لكل رف موضوعاته، وكل كتاب مؤكد مصنف يذهب إلى رف موضوعه. غير المصنف يبقى مكانه.
+  const PLAN_DONE = 'maktaba-hoqbi-plan-done-v2';
+  const PLAN_SHELVES = [
+    { k: 'A1', label: 'التفسير والحديث: المجلدات الكبيرة', why: 'المجلدات الثقيلة في الأعلى: «في ظلال القرآن» و«قصص الأنبياء» و«معالم الدعوة» و«رياض الصالحين» و«الموسوعة الميسرة».' },
+    { k: 'A2', label: '«التفسير البسيط» من المجلد ١ إلى ١٧', why: 'رتّب المجلدات بأرقامها من اليمين.' },
+    { k: 'A3', label: '«التفسير البسيط» ١٨–٢٥، ثم علوم القرآن، ثم الوقف', why: 'تكملة «التفسير البسيط» أولًا، ثم كتب علوم القرآن الصغيرة، ثم «مجموعة الأميرة العنود» وكتب الوقف.' },
+    { k: 'A4', label: 'العقيدة والفقه والمقاصد، ثم السيرة', why: '' },
+    { k: 'A5', label: 'الدعوة والتربية والقيم', why: 'فيه فراغ الآن، فيصلح أن يكون أول رف تنقل إليه.' },
+    { k: 'A6', label: 'الفكر والتاريخ والحضارة', why: '' },
+    { k: 'B1', label: 'الدفاتر والملفات وأوراق العمل', why: 'يبقى كما هو.' },
+    { k: 'B2', label: 'القيادة والإدارة والعمل الخيري', why: '' },
+    { k: 'B3', label: 'تطوير الذات والإبداع وعلم النفس', why: '' },
+    { k: 'B4', label: 'الأدب والرواية والشعر، والكتيبات، والنسخ المكررة', why: 'الأدب في جهة، والكتيبات الرفيعة في الأخرى، والنسخ الثانية في الطرف حتى تقرر ما تفعل بها.' },
+  ];
+  const TOPIC_SHELF = {
+    'القرآن وعلومه': 'A3', 'العقيدة والإيمان': 'A4', 'الفقه والشريعة': 'A4', 'السيرة والحديث': 'A4',
+    'الدعوة': 'A5', 'التربية والأسرة': 'A5', 'القيم والأخلاق': 'A5', 'الفكر والثقافة': 'A6', 'التاريخ والحضارة': 'A6',
+    'القيادة': 'B2', 'الإدارة والعمل المؤسسي': 'B2', 'المال والاقتصاد': 'B2',
+    'تطوير الذات': 'B3', 'الإبداع والابتكار': 'B3', 'علم النفس والدماغ': 'B3', 'القراءة والتعلم': 'B3', 'أدب ورواية': 'B4'
+  };
+  const A1_TITLES = ['في ظلال القران', 'قصص الانبياء', 'معالم الدعوه في قصص', 'رياض الصالحين', 'الموسوعه الميسره'];
+  const volNum = p => +String(p.vols || '').replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d));
   function primaryTopic(b) { const t = b.topics[0] || b.suggested[0]; return t ? t.t : null; }
+  function planTarget(b, p) { // يعيد [الرف، السبب] أو null إن بقي مكانه
+    if (isUnread(b) || b.status !== 'مؤكد' || b.kind === 'وثيقة' || b.kind === 'دفاتر') return null;
+    const nt = norm(b.title);
+    if (/^التفسير البسيط/.test(b.title) && p.vols) return volNum(p) <= 17 ? ['A2', 'التفسير البسيط'] : ['A3', 'التفسير البسيط'];
+    if (A1_TITLES.some(t => nt.startsWith(norm(t)))) return ['A1', 'مجلد كبير في التفسير والحديث'];
+    if (/^نسخة ثانية/.test(b.note || '') || /^نسخة ثانية/.test(b.copyNote || '')) return ['B4', 'نسخة مكررة'];
+    let t = primaryTopic(b); if (!t) return null;
+    if (t === 'القرآن وعلومه' && b.topics[1]) t = b.topics[1].t; // «السيرة في ظلال القرآن» سيرة لا تفسير
+    if (t === 'الوقف والعمل الخيري') return /وقف|اوقاف/.test(nt) ? ['A3', 'الوقف'] : ['B2', 'العمل الخيري'];
+    return TOPIC_SHELF[t] ? [TOPIC_SHELF[t], t] : null;
+  }
   function computePlan() {
-    const shelves = shelfKeys().map(([k, n]) => ({ k, n, cap: slots().filter(x => x.p.case + x.p.shelf === k && x.p.pos).length, items: [] }));
-    const movable = books.filter(b => !isUnread(b) && b.status === 'مؤكد' && primaryTopic(b));
-    const groups = PLAN_ORDER.map(t => ({ t, list: movable.filter(b => primaryTopic(b) === t) })).filter(g => g.list.length);
-    const others = movable.filter(b => !PLAN_ORDER.includes(primaryTopic(b)));
-    if (others.length) groups.push({ t: 'موضوعات أخرى', list: others });
-    // السعة المتاحة لكل رف = ما فيه الآن ناقص ما سيبقى مكانه (غير المقروء/غير المصنف)
-    const stay = b => !movable.includes(b);
-    shelves.forEach(s => { s.free = s.cap - slots().filter(x => x.p.case + x.p.shelf === s.k && x.p.pos && stay(x.b)).length; });
-    let si = 0; const moves = [];
-    for (const g of groups) for (const b of g.list) {
-      const need = b.places.filter(p => p.pos).length || 1;
-      while (si < shelves.length && shelves[si].free < need && shelves[si].free < 4) si++;
-      const s = shelves[Math.min(si, shelves.length - 1)]; s.free -= need; s.items.push({ b, t: g.t });
-      const cur = [...new Set(b.places.map(p => p.case + p.shelf))];
-      if (cur.length !== 1 || cur[0] !== s.k) moves.push({ b, from: cur, to: s.k, toName: s.n, t: g.t });
+    const moves = [], stay = {}, unk = {}, cur = {};
+    for (const x of slots()) {
+      if (!x.p.pos) continue; const k = x.p.case + x.p.shelf; cur[k] = (cur[k] || 0) + 1;
+      const tg = planTarget(x.b, x.p);
+      if (!tg) { unk[k] = (unk[k] || 0) + 1; continue; }
+      if (tg[0] === k) { stay[k] = (stay[k] || 0) + 1; continue; }
+      moves.push({ b: x.b, pi: x.i, p: x.p, from: k, to: tg[0], why: tg[1] });
     }
-    return { shelves, moves };
+    return { moves, stay, unk, cur };
   }
   function renderPlan() {
-    const { shelves, moves } = computePlan(); const done = new Set(JSON.parse(store.get(PLAN_DONE) || '[]'));
-    const sk = Object.fromEntries(shelfKeys());
-    $('#plan').innerHTML = `<div class="callout"><strong>اقتراح فقط.</strong> هذه الخطة لا تغيّر خريطة الرفوف. اضغط «نقلته فعلًا» بعد نقل الكتاب بيدك ليُحدَّث مكانه في الفهرس.
-      تبقى الكتب غير المقروءة وغير المصنفة في مكانها حتى تُراجع.</div>
-      <h2>الوضع الحالي والتصنيف المقترح</h2>
-      <p class="muted">الترتيب المقترح يبدأ بالقرآن وعلومه في أعلى الخزانة أ وينتهي بتطوير الذات والقراءة في الخزانة ب، مع إبقاء كل مجموعة متعددة المجلدات في رف واحد متصل قدر المستطاع. عدد الكتب التي ستنتقل: ${ar(moves.length)}.</p>
-      ${shelves.map(s => { const ts = [...new Set(s.items.map(i => i.t))]; const mv = moves.filter(m => m.to === s.k); return `
-      <div class="plan-shelf"><h3>${esc(s.n)} ← ${ts.length ? ts.map(esc).join('، ') : '<span class="muted">يبقى كما هو</span>'}</h3>
-      <p class="muted small">${ar(s.items.length)} سجلًا مصنفًا مقترحًا لهذا الرف، منها ${ar(mv.length)} تنتقل إليه.</p>
-      ${mv.map(m => `<div class="move${done.has(m.b.id) ? ' done' : ''}"><span><strong>${esc(m.b.title)}</strong> <span class="muted small">من ${m.from.map(f => esc(sk[f])).join(' و')} · ${esc(m.t)}</span></span>
-        ${done.has(m.b.id) ? '<span class="badge ok">نُقل</span>' : `<button class="btn" data-moved="${m.b.id}" data-to="${m.to}">نقلته فعلًا</button>`}</div>`).join('')}</div>`; }).join('')}`;
+    const { moves, stay, unk, cur } = computePlan(); const done = new Set(JSON.parse(store.get(PLAN_DONE) || '[]'));
+    const sk = Object.fromEntries(shelfKeys()); const out = k => moves.filter(m => m.from === k).length; const inn = k => moves.filter(m => m.to === k);
+    const key = m => m.b.id + ':' + m.pi;
+    const scatter = {}; slots().forEach(x => { const t = primaryTopic(x.b); if (t && x.p.pos) (scatter[t] ||= new Set()).add(x.p.case + x.p.shelf); });
+    const worst = Object.entries(scatter).sort((a, b) => b[1].size - a[1].size).slice(0, 4).map(([t, s]) => `${t} (${ar(s.size)} رفوف)`).join('، ');
+    const totalUnk = Object.values(unk).reduce((a, b) => a + b, 0);
+    $('#plan').innerHTML = `<div class="callout"><strong>اقتراح فقط.</strong> الخطة لا تغيّر خريطة الرفوف. بعد أن تنقل كتابًا بيدك اضغط «نقلته فعلًا» ليُحدَّث مكانه في الفهرس.
+      الكتب غير المؤكدة وغير المصنفة (${ar(totalUnk)} موضعًا) تبقى مكانها حتى تُراجع، فالحدود بين الرفوف أولية.</div>
+      <h2>الفكرة</h2>
+      <p>الخزانة أ للعلوم الشرعية والدعوة والتربية، ثم الفكر والتاريخ في رفها الأخير. والخزانة ب للقيادة والإدارة وتطوير الذات، ثم الأدب.
+      المجلدات الثقيلة في الأعلى، والكتيبات في الأسفل. داخل كل رف رتّب الكتب حسب المؤلف، وأبقِ كل مجموعة متعددة المجلدات متصلة بترتيب أرقامها.</p>
+      <p class="muted">أكثر الموضوعات تشتتًا الآن: ${esc(worst)}. عدد المواضع التي تنتقل في الخطة: ${ar(moves.length)}، نُقل منها ${ar(moves.filter(m => done.has(key(m))).length)}.</p>
+      <h2>ابدأ بهذه الرفوف</h2>
+      <ol class="prio">
+        <li><strong>الخزانة أ، الرفوف ١ و٢ و٣: «التفسير البسيط».</strong> مجلداته الـ٢٥ موزعة على ثلاثة رفوف وغير مرتبة. أسهل خطوة وأوضحها أثرًا.</li>
+        <li><strong>الخزانة أ، الرف ٥.</strong> فيه فراغ؛ انقل إليه كتب الدعوة والتربية والقيم (يدخله ${ar(inn('A5').length)}).</li>
+        <li><strong>الخزانة أ، الرفان ٦ و٤.</strong> أكبر رفين وأكثرهما خلطًا (يخرج منهما ${ar(out('A6') + out('A4'))} موضعًا).</li>
+        <li><strong>الخزانة ب، الرف ٤.</strong> روايات وكتيبات ونسخ مكررة مختلطة؛ افرزه ليصير للأدب.</li>
+      </ol>
+      <h2>الرفوف بعد الترتيب</h2>
+      ${PLAN_SHELVES.map(s => { const mv = inn(s.k).sort((a, b) => (a.b.author || '').localeCompare(b.b.author || '', 'ar') || volNum(a.p) - volNum(b.p));
+        const after = (cur[s.k] || 0) - out(s.k) + mv.length; const full = after > (cur[s.k] || 0) * 1.15 + 3;
+        return `<div class="plan-shelf"><h3>${esc(sk[s.k])} ← ${esc(s.label)}</h3>
+        ${s.why ? `<p class="small">${esc(s.why)}</p>` : ''}
+        <p class="muted small">فيه الآن ${ar(cur[s.k] || 0)}: يبقى ${ar(stay[s.k] || 0)}، ويخرج ${ar(out(s.k))}، ويبقى غير مصنف ${ar(unk[s.k] || 0)}. يدخله ${ar(mv.length)}، فيصير نحو ${ar(after)}.
+        ${full ? '<strong class="warn">قد يضيق؛ انقل الكتيبات أو النسخ المكررة منه أولًا.</strong>' : ''}</p>
+        ${mv.length ? `<details${s.k === 'A2' || s.k === 'A5' ? ' open' : ''}><summary>الكتب التي تنتقل إليه (${ar(mv.length)})، مرتبة حسب المؤلف</summary>
+        ${mv.map(m => `<div class="move${done.has(key(m)) ? ' done' : ''}"><span><strong>${esc(m.b.title)}${m.p.vols ? ' — المجلد ' + esc(m.p.vols) : ''}</strong>
+          <span class="muted small">${esc(m.b.author || '')}${m.b.author ? ' · ' : ''}من ${esc(sk[m.from])} · ${esc(m.why)}</span></span>
+          ${done.has(key(m)) ? '<span class="badge ok">نُقل</span>' : `<button class="btn" data-moved="${m.b.id}" data-pi="${m.pi}" data-to="${m.to}">نقلته فعلًا</button>`}</div>`).join('')}</details>` : ''}</div>`; }).join('')}`;
   }
-  function applyMove(id, to) {
-    const b = books.find(x => x.id === id); const c = to[0], s = +to.slice(1);
+  function applyMove(id, pi, to) {
+    const b = books.find(x => x.id === id); const c = to[0], s = +to.slice(1); const p = b.places[pi];
     const max = Math.max(0, ...slots().filter(x => x.p.case === c && +x.p.shelf === s).map(x => x.p.pos || 0));
-    b.places.forEach((p, i) => { p.case = c; p.shelf = s; p.pos = max + i + 1; p.movedByPlan = true; p.photoNote = 'نُقل حسب خطة إعادة الترتيب؛ الصورة تُظهر المكان القديم'; });
-    recount(); const d = new Set(JSON.parse(store.get(PLAN_DONE) || '[]')); d.add(id); store.set(PLAN_DONE, JSON.stringify([...d])); save();
+    p.case = c; p.shelf = s; p.pos = max + 1; p.movedByPlan = true; p.photoNote = 'نُقل حسب خطة إعادة الترتيب؛ الصورة تُظهر المكان القديم';
+    recount(); const d = new Set(JSON.parse(store.get(PLAN_DONE) || '[]')); d.add(id + ':' + pi); store.set(PLAN_DONE, JSON.stringify([...d])); save();
   }
   function recount() { // يعيد ترقيم المواضع متتابعة في كل رف، ويقدّم المعدَّل حديثًا عند التساوي
     const by = {}; slots().forEach(x => { if (x.p.pos) (by[x.p.case + x.p.shelf] ||= []).push(x.p); });
@@ -421,9 +462,9 @@
   $('#drawerClose').onclick = () => { $('#drawer').hidden = true; $$('.hl').forEach(e => e.classList.remove('hl')); };
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#drawer').hidden && !$('dialog[open]')) $('#drawerClose').click(); });
   document.addEventListener('click', e => {
-    const t = e.target.closest('[data-id],[data-photo],[data-edit],[data-verify],[data-open],[data-moved]');
+    const t = e.target.closest('[data-moved],[data-id],[data-photo],[data-edit],[data-verify],[data-open]');
     if (!t) return;
-    if (t.dataset.moved) return applyMove(t.dataset.moved, t.dataset.to);
+    if (t.dataset.moved) return applyMove(t.dataset.moved, +t.dataset.pi, t.dataset.to);
     if (t.dataset.edit) return openEdit(t.dataset.edit);
     if (t.dataset.verify) { const b = books.find(x => x.id === t.dataset.verify); b.status = 'مؤكد'; return save(); }
     if (t.dataset.open) { showTab('shelves'); return openBook(t.dataset.open, 0); }

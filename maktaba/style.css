@@ -134,3 +134,4 @@ tr.clk{cursor:pointer} tr.clk:hover{background:#faf6ea}
 .data-panel h2{font-size:1.1rem;margin-top:.8em}
 #exportText{width:100%;font:12px/1.4 ui-monospace,monospace;border:1px solid var(--line);border-radius:8px;padding:8px;margin:6px 0}
 :root{color-scheme:light}
+.prio li{margin-bottom:6px}.warn{color:var(--warn)}details summary{cursor:pointer;color:var(--green);margin:6px 0}
