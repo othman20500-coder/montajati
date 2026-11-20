@@ -1,0 +1,66 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&family=Reem+Kufi:wght@600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#ece7dc;font-family:"IBM Plex Sans Arabic",sans-serif;color:#1f2a24}
+.wrap{width:1700px;padding:36px 40px 30px}
+h1{font-family:"Reem Kufi";font-size:40px;margin:0;color:#1f5a3a}
+.sub{margin:4px 0 22px;color:#5d625c;font-size:17px}
+.cases{display:flex;gap:46px;align-items:flex-start;direction:rtl}
+.case{background:#fff;border:14px solid #fafafa;outline:1px solid #d8d2c4;box-shadow:0 30px 40px -24px rgba(50,40,20,.45);width:780px}
+.cname{direction:rtl;font-family:"Reem Kufi";font-size:22px;padding:6px 12px;color:#1f5a3a;background:#fafafa}
+.shelf{direction:rtl;position:relative;height:150px;border-top:10px solid #f1eee6;background:linear-gradient(#f7f5ef,#efebe1);display:flex;align-items:flex-end;padding:0 8px;gap:1.5px;overflow:hidden}
+.shelf.tall{height:178px}
+.sp{flex:0 0 auto;border-radius:2px 2px 0 0;box-shadow:inset -2px 0 0 rgba(0,0,0,.14),inset 1px 0 0 rgba(255,255,255,.3);position:relative;writing-mode:vertical-rl;font-size:9px;line-height:1;text-align:center;overflow:hidden;padding-top:6px}
+.sp.u{opacity:.55;background-image:repeating-linear-gradient(45deg,transparent 0 5px,rgba(255,255,255,.45) 5px 7px)}
+.sp b{font-weight:600;font-size:12px;writing-mode:horizontal-tb;display:block;margin-top:4px;width:100%;text-align:center}
+.tag{position:absolute;top:6px;left:8px;direction:rtl;background:rgba(255,255,255,.92);border:1px solid #e2dccd;border-radius:8px;padding:2px 9px;font-size:13px;font-weight:600;color:#1f2a24;z-index:2;max-width:70%}
+.tag i{font-style:normal;color:#8a6d2f;margin-inline-start:6px;font-weight:400}
+.sep{flex:0 0 14px;align-self:stretch;margin-top:40px;border-inline-start:2px dashed #c9bfa8}
+.foot{display:flex;gap:26px;margin-top:22px;font-size:15px;color:#5d625c;direction:rtl}
+.foot span i{display:inline-block;width:14px;height:18px;vertical-align:middle;margin-left:6px;border-radius:2px;background:#7a8a7a}
+.foot span i.u{opacity:.55;background-image:repeating-linear-gradient(45deg,transparent 0 5px,rgba(255,255,255,.45) 5px 7px)}
+</style></head><body><div class="wrap">
+<h1>مكتبة الحقبي بعد الترتيب المقترح</h1>
+<p class="sub" id="sub"></p>
+<div class="cases" id="cases"></div>
+<div class="foot"><span><i></i>كتاب مصنف في رف موضوعه</span><span><i class="u"></i>غير مصنف بعد: يبقى في الرف نفسه، في طرفه</span><span>الخطوط الرأسية الفاصلة تفصل الأقسام داخل الرف</span></div>
+</div>
+<script src="../data/books.js"></script>
+<script>
+const L=window.LIBRARY, books=L.books;
+const norm=s=>String(s||'').replace(/[ً-ْٰـ]/g,'').replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/ؤ/g,'و').replace(/ئ/g,'ي');
+const isUnread=b=>/غير مقروء/.test(b.title)||b.kind==='مجموعة غير مفهرسة'||b.kind==='دفاتر';
+const volNum=p=>+String(p.vols||'').replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d));
+const TS={'القرآن وعلومه':'A3','العقيدة والإيمان':'A4','الفقه والشريعة':'A4','السيرة والحديث':'A4','الدعوة':'A5','التربية والأسرة':'A5','القيم والأخلاق':'A5','الفكر والثقافة':'A6','التاريخ والحضارة':'A6','القيادة':'B2','الإدارة والعمل المؤسسي':'B2','المال والاقتصاد':'B2','تطوير الذات':'B3','الإبداع والابتكار':'B3','علم النفس والدماغ':'B3','القراءة والتعلم':'B3','أدب ورواية':'B4'};
+const A1T=['في ظلال القران','قصص الانبياء','معالم الدعوه في قصص','رياض الصالحين','الموسوعه الميسره'];
+function target(b,p){ if(isUnread(b)||b.status!=='مؤكد'||b.kind==='وثيقة'||b.kind==='دفاتر')return null; const nt=norm(b.title);
+ if(/^التفسير البسيط/.test(b.title)&&p.vols)return volNum(p)<=17?['A2','البسيط']:['A3','البسيط'];
+ if(A1T.some(t=>nt.startsWith(norm(t))))return['A1','كبار'];
+ if(/^نسخة ثانية/.test(b.note||'')||/^نسخة ثانية/.test(b.copyNote||''))return['B4','مكرر'];
+ let t=(b.topics[0]||b.suggested[0]||{}).t; if(!t)return null; if(t==='القرآن وعلومه'&&b.topics[1])t=b.topics[1].t;
+ if(t==='الوقف والعمل الخيري')return /وقف|اوقاف/.test(nt)?['A3','الوقف']:['B2','الإدارة والعمل المؤسسي'];
+ return TS[t]?[TS[t],t]:null;}
+// ترتيب الأقسام داخل كل رف
+const SEC={A1:['كبار'],A2:['البسيط'],A3:['البسيط','القرآن وعلومه','الوقف'],A4:['العقيدة والإيمان','الفقه والشريعة','السيرة والحديث'],A5:['الدعوة','التربية والأسرة','القيم والأخلاق'],A6:['الفكر والثقافة','التاريخ والحضارة'],B2:['القيادة','الإدارة والعمل المؤسسي','المال والاقتصاد'],B3:['تطوير الذات','الإبداع والابتكار','علم النفس والدماغ','القراءة والتعلم'],B4:['أدب ورواية','مكرر']};
+const LAB={A1:['التفسير والحديث','المجلدات الكبيرة'],A2:['«التفسير البسيط»','المجلدات ١–١٧'],A3:['«البسيط» ١٨–٢٥، علوم القرآن، الوقف',''],A4:['العقيدة والفقه والمقاصد، ثم السيرة',''],A5:['الدعوة والتربية والقيم',''],A6:['الفكر والتاريخ والحضارة',''],B1:['الدفاتر والملفات','كما هي'],B2:['القيادة والإدارة والعمل الخيري',''],B3:['تطوير الذات والإبداع وعلم النفس',''],B4:['الأدب والرواية، ثم النسخ المكررة','والكتيبات']};
+const shelves={}; let moved=0;
+for(const b of books)b.places.forEach(p=>{ if(!p.pos)return; const k=p.case+p.shelf; const tg=target(b,p);
+  const to=tg?tg[0]:k; if(tg&&to!==k)moved++; (shelves[to]||=[]).push({b,p,sec:tg?tg[1]:null});});
+const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
+const tc=h=>{h=h.replace('#','');if(h.length===3)h=h.split('').map(c=>c+c).join('');const[r,g,b]=[0,2,4].map(i=>parseInt(h.substr(i,2),16));return(r*299+g*587+b*114)/1000>150?'#222':'#fff'};
+const SC={P7:.5,P8:.55,P9:.55,P12:.55,P10:.6,P13:.8,P14:.8,P15:.8,P11:.3,P16:.6,P17:.6,P18:.6};
+const W=x=>Math.max(7,Math.min(36,(x.p.box[2]-x.p.box[0])*(SC[x.p.photo]||1)/4));
+function shelfHTML(k){ let it=shelves[k]||[]; const sec=SEC[k]||[];
+  const cl=it.filter(x=>x.sec).sort((a,b)=>sec.indexOf(a.sec)-sec.indexOf(b.sec)||(a.sec==='البسيط'||a.sec==='كبار'?(a.b.title.localeCompare(b.b.title,'ar')||volNum(a.p)-volNum(b.p)):(a.b.author||'').localeCompare(b.b.author||'','ar')));
+  const un=it.filter(x=>!x.sec);
+  let tot=cl.concat(un).reduce((s,x)=>s+W(x)+1.5,0); const f=Math.min(1,(780-16-20)/tot);
+  let html='',last=null;
+  for(const x of cl.concat(un)){ const s=x.sec||'_u'; if(last!==null&&s!==last)html+='<span class="sep"></span>'; last=s;
+    const big=x.sec==='البسيط'||x.sec==='كبار'; const h=big?132:92+((x.b.id.charCodeAt(3)*7+(x.p.pos||1)*13)%34);
+    const lab=x.p.vols&&big?`<b>${x.p.vols}</b>`:''; 
+    html+=`<span class="sp${x.sec?'':' u'}" style="width:${W(x)*f}px;height:${h}px;background-color:${x.b.color};color:${tc(x.b.color)}">${lab}</span>`;}
+  const [a,b]=LAB[k]; return `<div class="shelf${k==='A1'||k==='A2'?' tall':''}"><span class="tag">الرف ${ar(k.slice(1))} · ${a}${b?`<i>${b}</i>`:''}</span>${html}</div>`;}
+document.getElementById('cases').innerHTML=Object.entries(L.cases).map(([c,cs])=>`<div class="case"><div class="cname">${cs.name}</div>${Object.keys(cs.shelves).map(s=>shelfHTML(c+s)).join('')}</div>`).join('');
+const uc=Object.values(shelves).flat().filter(x=>!x.sec).length;
+document.getElementById('sub').textContent=`رسم توضيحي مبني على الفهرس: كل كعب بلونه الحقيقي تقريبًا، ينتقل منها ${ar(moved)} موضعًا، ويبقى ${ar(uc)} غير مصنف في مكانه. يُقرأ كل رف من اليمين: المجلدات بأرقامها، وداخل كل قسم حسب المؤلف.`;
+</script></body></html>
