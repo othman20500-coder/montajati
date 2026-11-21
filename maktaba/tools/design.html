@@ -1,0 +1,121 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1d2621;--mut:#5f655f;--paper:#fffdf8;--bg:#ece7dc;
+--q:#1f6b45;--f:#17707f;--d:#c98a1b;--h:#8c2b3a;--m:#2d4c8c;--s:#d4612a;--l:#6b3f8c;--n:#8d8a83}
+body{margin:0;background:var(--bg);font-family:"IBM Plex Sans Arabic",sans-serif;color:var(--ink)}
+.wrap{width:1760px;padding:34px 40px}
+h1{font-family:"Reem Kufi";font-size:40px;margin:0;color:var(--q)}
+.sub{color:var(--mut);margin:4px 0 22px;font-size:17px}
+.grid{display:grid;grid-template-columns:600px 500px 528px;gap:26px;align-items:start}
+.card{background:var(--paper);border:1px solid #ddd5c4;border-radius:18px;padding:18px 20px}
+h2{font-family:"Reem Kufi";font-weight:500;font-size:22px;margin:0 0 4px}
+.n{color:var(--mut);font-size:14px;margin:0 0 12px}
+/* واجهة الخزانة */
+.cabs{display:flex;gap:18px}
+.cab{flex:1;background:#fff;border:9px solid #f6f6f4;outline:1px solid #d6d0c2;box-shadow:0 18px 26px -18px #5a4a2a}
+.cab .t{font-family:"Reem Kufi";font-size:16px;padding:4px 8px;color:var(--q)}
+.sh{height:80px;border-top:7px solid #f0ece3;position:relative;display:flex;align-items:flex-end;padding:0 5px;gap:1px;background:linear-gradient(#faf8f3,#efebe2)}
+.sh .edge{position:absolute;bottom:0;right:0;left:0;height:9px}
+.sh .lab{position:absolute;top:3px;right:6px;font-size:11px;font-weight:600;background:#fffd;border-radius:6px;padding:0 6px}
+.sh .lab em{font-style:normal;font-weight:400;color:var(--mut)}
+.b{flex:0 0 auto;border-radius:1px 1px 0 0;margin-bottom:9px}
+.cabwrap{}
+.flag{background:#fbefe2;border-inline-start:4px solid #a4501b;border-radius:8px;padding:8px 12px;font-size:14px;margin-top:12px}
+/* اللافتة والملصق */
+.sign{border-radius:12px;color:#fff;padding:14px 16px;display:flex;gap:14px;align-items:center;background:var(--f)}
+.sign .code{font-family:"Reem Kufi";font-size:44px;line-height:1;background:#fff2;border-radius:10px;padding:6px 12px}
+.sign .nm{font-size:22px;font-weight:600}.sign .sm{font-size:13px;opacity:.9}
+.qr{width:74px;height:74px;background:#fff;border-radius:8px;margin-inline-start:auto;display:grid;grid-template-columns:repeat(7,1fr);padding:5px;gap:1px}
+.qr i{background:#222}.qr i:nth-child(3n),.qr i:nth-child(7n+2){background:#fff}
+.spines{display:flex;gap:10px;justify-content:center;margin:14px 0 6px;align-items:flex-end}
+.spn{width:56px;height:250px;border-radius:3px 3px 0 0;position:relative;writing-mode:vertical-rl;font-size:14px;padding:12px 0;text-align:center;color:#222;background:#f3efe6;box-shadow:inset -3px 0 0 #0001}
+.spn.dk{background:#2a2a2a;color:#eee}
+.spn .stk{position:absolute;bottom:14px;right:7px;left:7px;height:40px;border-radius:6px;writing-mode:horizontal-tb;color:#fff;font-size:12px;font-weight:600;line-height:1.15;display:grid;place-items:center}
+.legend{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;font-size:14px;margin-top:10px}
+.legend span i{display:inline-block;width:16px;height:16px;border-radius:4px;vertical-align:-3px;margin-left:6px}
+/* الجوال */
+.phone{width:370px;margin:0 auto;border:12px solid #1c1c1c;border-radius:44px;background:#fbf9f4;overflow:hidden;box-shadow:0 30px 40px -24px #000a}
+.ph{padding:14px 16px 18px}
+.top{display:flex;justify-content:space-between;align-items:center}
+.top b{font-family:"Reem Kufi";font-size:22px;color:var(--q)}
+.srch{margin:10px 0;border:2px solid var(--q);border-radius:14px;padding:10px 12px;font-size:15px;background:#fff}
+.chips{display:flex;gap:6px;flex-wrap:wrap;font-size:12px}.chips span{border:1px solid #d9d2c2;border-radius:99px;padding:2px 9px;background:#fff}
+.res{background:#fff;border:1px solid #e4ddcd;border-radius:16px;padding:12px;margin-top:12px}
+.loc{display:flex;align-items:center;gap:10px;margin:8px 0}
+.loc .code{background:var(--h);color:#fff;font-family:"Reem Kufi";font-size:30px;border-radius:10px;padding:2px 12px}
+.loc .t2{font-size:13px;color:var(--mut)}
+.mini{display:flex;gap:8px;margin-top:8px}
+.mc{flex:1;border:2px solid #ddd;border-radius:4px;background:#fff}
+.mc div{height:15px;border-top:2px solid #eee}
+.mc .on{background:#f6d9de;outline:2px solid var(--h);position:relative}
+.mc .on::after{content:"";position:absolute;right:36%;top:3px;width:9px;height:9px;border-radius:50%;background:#e23a1f;box-shadow:0 0 0 2px #fff}
+.btns{display:flex;gap:6px;margin-top:10px}.btns span{flex:1;text-align:center;font-size:13px;border-radius:10px;padding:7px;background:var(--q);color:#fff}.btns span+span{background:#fff;color:var(--q);border:1px solid var(--q)}
+.ask{margin-top:12px;background:#fff;border:1px solid #e4ddcd;border-radius:16px;padding:12px;font-size:13px}
+.ask .row{display:flex;justify-content:space-between;border-top:1px dashed #e4ddcd;padding:5px 0}
+.ok{color:var(--q);font-weight:600}.rv{color:#a4501b;font-weight:600}
+.notes{font-size:14px;line-height:1.65;margin-top:16px}
+.notes li{margin-bottom:4px}
+.src{font-size:13px;color:var(--mut);margin-top:20px}
+</style></head><body><div class="wrap">
+<h1>مكتبة الحقبي: تصميم الرفوف والواجهة</h1>
+<p class="sub">تصور مقترح مبني على ممارسات التصنيف بالأقسام في المكتبات، وقواعد سلامة الرفوف، وخرائط مواقع الكتب في المكتبات الجامعية. لون القسم واحد على الرف والملصق والشاشة.</p>
+<div class="grid">
+
+<div class="card"><h2>١. واجهة الخزانتين</h2><p class="n">الثقيل في الأسفل، والأكثر استعمالًا بين الكتف والورك، والخفيف قليل الاستعمال في الأعلى.</p>
+<div class="cabwrap"><div class="cabs" id="cabs"></div></div>
+<div class="flag"><b>تعديل على الخطة الحالية:</b> كانت تضع المجلدات الثقيلة في الأعلى، ومراجع السلامة توصي بالعكس. هنا ينزل «التفسير البسيط» والمجلدات الكبيرة إلى الرفين ٥ و٦، ويصعد الفكر والتاريخ إلى الرف ١، وتُثبَّت الخزانتان بالجدار.</div>
+</div>
+
+<div class="card"><h2>٢. لافتة الرف وملصق الكعب</h2><p class="n">لافتة على حافة كل رف، وملصق صغير أسفل الكعب لا يغطي العنوان. اللون مع اسم القسم ورقمه، فلا يعتمد على اللون وحده.</p>
+<div class="sign"><div class="code">أ٣</div><div><div class="nm">العقيدة والفقه والسيرة</div><div class="sm">الكتب مرتبة حسب المؤلف من اليمين</div></div><div class="qr" id="qr"></div></div>
+<div class="spines">
+ <div class="spn">محاضرات في مقاصد الشريعة<div class="stk" style="background:var(--f)">أ٣<br>فقه</div></div>
+ <div class="spn dk">فقه السيرة<div class="stk" style="background:var(--f)">أ٣<br>سيرة</div></div>
+ <div class="spn">القوقعة<div class="stk" style="background:var(--l)">ب٤<br>أدب</div></div>
+ <div class="spn dk">حياة في الإدارة<div class="stk" style="background:var(--m)">ب٢<br>إدارة</div></div>
+ <div class="spn">قوة العادات<div class="stk" style="background:var(--s)">ب٣<br>ذات</div></div>
+</div>
+<div class="legend" id="legend"></div>
+<p class="n" style="margin-top:12px">رمز QR في اللافتة يفتح صفحة الرف في الموقع: ماذا فيه، وما الذي يحتاج مراجعة.</p>
+</div>
+
+<div class="card"><h2>٣. الواجهة على الجوال</h2><p class="n">البحث أولًا، ثم الموقع رمزًا كبيرًا، ثم الخريطة. والسؤال الموضوعي يفصل المؤكد عن المقترح.</p>
+<div class="phone"><div class="ph">
+ <div class="top"><b>مكتبة الحقبي</b><span style="font-size:12px;color:var(--mut)">٣٢٣ كتابًا</span></div>
+ <div class="srch">القوقعه</div>
+ <div class="chips"><span>كل الرفوف</span><span>كل الأقسام</span><span>مؤكد فقط</span></div>
+ <div class="res"><b style="font-size:17px">القوقعة</b> <span style="font-size:12px;color:var(--mut)">مصطفى خليفة · دار الآداب</span>
+  <div class="loc"><span class="code" style="background:var(--l)">ب٤</span><div><b>الخزانة ب، الرف الرابع</b><div class="t2">قسم الأدب · السابع من اليمين تقريبًا</div></div></div>
+  <div class="mini"><div class="mc" id="mA"></div><div class="mc" id="mB"></div></div>
+  <div class="btns"><span>عرض في صورة الرف</span><span>تحرير</span></div>
+ </div>
+ <div class="ask"><b>ما الكتب الموجودة عندي عن القيم؟</b>
+  <div class="row"><span class="ok">مؤكد من العنوان</span><span>٣</span></div>
+  <div class="row"><span>القيم الخلقية المشتركة</span><span>أ٢</span></div>
+  <div class="row"><span>خلق المؤمن</span><span>أ٢</span></div>
+  <div class="row"><span class="rv">مقترح للمراجعة</span><span>٧</span></div>
+ </div>
+</div></div>
+<ul class="notes">
+<li><b>«اعرضه على الخريطة» بجانب كل نتيجة</b> مع إبراز الرف ثم نقطة الكتاب، كما تفعل خرائط المكتبات الجامعية.</li>
+<li><b>نفس ألوان الأقسام</b> في البطاقة والخريطة واللافتة والملصق.</li>
+<li><b>تنبيه الموضع</b>: «تقريبي» حين يأتي من صورة قديمة أو بعد نقل لم يُصوَّر.</li>
+</ul></div>
+</div>
+<p class="src">المراجع (مفصلة في الرد): Book Riot — how to genrefy a library; National Library of NZ — arranging fiction by genre; Comcare (AU) — shelving hazards; U. Oregon EHS — shelving safety; Villanova Library — map feature; WMU Libraries — interactive wayfinding maps; U. Manchester — Locate This Book.</p>
+</div>
+<script>
+const C={q:'القرآن وعلومه',f:'العقيدة والفقه والسيرة',d:'الدعوة والتربية والقيم',h:'الفكر والتاريخ',m:'القيادة والإدارة والعمل الخيري',s:'تطوير الذات والإبداع',l:'الأدب والرواية',n:'دفاتر ومكررات'};
+const col=k=>`var(--${k})`;
+document.getElementById('legend').innerHTML=Object.entries(C).map(([k,v])=>`<span><i style="background:${col(k)}"></i>${v}</span>`).join('');
+// [القسم, الوصف, المنطقة, ثقيل؟]
+const A=[['h','الفكر والتاريخ','أعلى'],['d','الدعوة والتربية والقيم والوقف','أعلى'],['f','العقيدة والفقه والسيرة','مستوى العين'],['q','علوم القرآن والتفسير','مستوى العين'],['q','«البسيط» ١–١٧','أسفل، ثقيل',1],['q','«البسيط» ١٨–٢٥ والمجلدات الكبيرة','أسفل، ثقيل',1]];
+const B=[['n','الدفاتر والملفات','كما هي'],['m','القيادة والإدارة والعمل الخيري',''],['s','تطوير الذات والإبداع',''],['l','الأدب، ثم الكتيبات والمكررات','']];
+function sh(rows,zones){return rows.map((r,i)=>{let bs='';let w=0;let seed=i*7+3;while(w<215){seed=(seed*37+11)%97;const bw=r[3]?15:5+seed%9;const h=r[3]?40:22+seed%18;bs+=`<span class="b" style="width:${bw}px;height:${h}px;background:${col(r[0])};opacity:${r[3]?1:.55+(seed%5)/12}"></span>`;w+=bw+1}
+ return `<div class="sh"><span class="lab">${(zones?'أ':'ب')+'١٢٣٤٥٦'[i]} · ${r[1]}${r[2]?` <em>${r[2]}</em>`:''}</span>${bs}<span class="edge" style="background:${col(r[0])}"></span></div>`}).join('')}
+document.getElementById('cabs').innerHTML=`<div class="cab"><div class="t">الخزانة أ</div>${sh(A,1)}</div><div class="cab" style="align-self:flex-start"><div class="t">الخزانة ب</div>${sh(B)}</div>`;
+document.getElementById('qr').innerHTML='<i></i>'.repeat(49);
+const mini=(id,on,n)=>document.getElementById(id).innerHTML=Array.from({length:n},(_,i)=>`<div${i===on?' class="on"':''}></div>`).join('');
+mini('mA',-1,6);mini('mB',3,4);
+</script></body></html>
