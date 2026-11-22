@@ -1,0 +1,12 @@
+{
+  // منصة الأندلس على Cloudflare Workers (أصول ثابتة فقط، بلا كود ولا بناء).
+  // جذر المشروع في Cloudflare هو مجلد andalus/، وما يُنشر محدد في .assetsignore.
+  "name": "andalus",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  },
+  "workers_dev": true
+}
