@@ -15,7 +15,7 @@
 ## النشر
 النسخة التسويقية تُنشر على Cloudflare Workers (عامل `montajati`) من `index.html` و`assets/` فقط، تلقائيًا مع كل دمج في `main`. القائمة في `.assetsignore` تستبعد كل ما عداهما (`office.html` والمواد البحثية وطبقة الخدمة)، والإعداد في `wrangler.jsonc`. حُذف ملف `_redirects` من الجذر لأن صيغة Netlify فيه (حالة 404!) يرفضها Cloudflare.
 
-منصة الأندلس تُنشر موقعًا مستقلًا على https://andalus-atlas.netlify.app من مجلد `andalus/` وحده، تلقائيًا مع كل دمج في `main` (في Netlify: مجلد النشر `andalus`، بلا أمر بناء)؛ الصفحة `andalus/index.html` وبياناتها المولَّدة `andalus/data/graph.js`، وملف `andalus/_redirects` يمنع نشر النموذج البحثي القديم والوثائق البحثية.
+منصة الأندلس تُنشر موقعًا مستقلًا على Cloudflare Workers (عامل `andalus`، على andalus.othmana.sa) من مجلد `andalus/` وحده، تلقائيًا مع كل دمج في `main` (في Cloudflare: المجلد الجذر `andalus`، بلا أمر بناء)؛ الإعداد في `andalus/wrangler.jsonc`، والقائمة في `andalus/.assetsignore` تنشر الصفحة وملفات البيانات التي تحمّلها فقط، فالنموذج البحثي القديم والوثائق البحثية لا تُنشر وتعطي 404. حُذف `andalus/_redirects` لأن صيغة Netlify فيه (حالة 404!) يرفضها Cloudflare. رابط Netlify القديم (andalus-atlas.netlify.app) يُحوَّل إلى الجديد بعد التحقق.
 
 ## تصور منصة الأندلس
 مجلد `andalus/` يحوي تصورًا تأسيسيًا لمنصة رقمية مرجعية عن الأندلس (وثيقة من ثمانية فصول + نموذج تفاعلي `andalus/index.html` بلا بناء ولا خادم). ابدأ من `andalus/00-README.md`. حزمة التسليم البحثية v1.2 في `andalus_handoff/`، وقاعدة المنصة وسكربتات الترحيل والاختبارات وبوابة CI في `platform/` (مستثنى من قاعدة «بلا خادم»؛ انظر `CLAUDE.md`).

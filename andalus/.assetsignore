@@ -1,0 +1,14 @@
+# ما يُنشر على Cloudflare: الصفحة وبياناتها التي تحمّلها فقط.
+# كل ما عداها مستبعد، ومنه النموذج البحثي القديم (data/graph.prototype.js)
+# والوثائق البحثية والتخطيطية (*.md) وأدوات التوليد؛ فتعطي 404 بلا قواعد إعادة توجيه.
+/*
+!/index.html
+!/data/
+/data/*
+!/data/graph.js
+!/data/graph.evidence.js
+!/data/media.js
+!/data/geo/
+/data/geo/*
+!/data/geo/land.geojson
+!/data/geo/rivers.geojson
