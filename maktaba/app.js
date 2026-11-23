@@ -462,8 +462,8 @@
     }
     return Object.values(map);
   }
-  $('#exportJson').onclick = () => download('maktaba-hoqbi.json', JSON.stringify({ version: 1, exportedAt: new Date().toISOString(), books }, null, 1), 'application/json');
-  $('#exportCsv').onclick = () => download('maktaba-hoqbi.csv', toCsv(), 'text/csv');
+  $('#exportJson').onclick = () => download('maktaba-al-othman.json', JSON.stringify({ version: 1, exportedAt: new Date().toISOString(), books }, null, 1), 'application/json');
+  $('#exportCsv').onclick = () => download('maktaba-al-othman.csv', toCsv(), 'text/csv');
   $('#importFile').onchange = async e => {
     const file = e.target.files[0]; if (!file) return; const text = await file.text();
     try {
