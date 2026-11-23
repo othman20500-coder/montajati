@@ -44,7 +44,17 @@
     const pos = p.pos ? `الموضع ${ar(p.pos)} من اليسار (من ${ar(p.of || '?')})` : 'موضوع أفقيًا فوق الصف';
     return `${where} · ${pos}` + (p.vols ? ` · المجلد ${p.vols}` : '');
   }
-  const shortPlace = p => `${caseName(p.case).replace('الخزانة ', 'خ')}/ر${ar(p.shelf)}` + (p.pos ? `/م${ar(p.pos)}` : '/فوق');
+  const caseLetter = c => caseName(c).replace('الخزانة ', '');
+  const shortPlace = p => `خزانة ${caseLetter(p.case)} · الرف ${ar(p.shelf)} · ` + (p.pos ? `الكتاب ${ar(p.pos)} من اليسار` : 'فوق الصف');
+  const booksWord = n => n === 1 ? 'كتاب واحد' : n === 2 ? 'كتابان' : (n >= 3 && n <= 10) ? `${ar(n)} كتب` : `${ar(n)} كتابًا`;
+  function neighbours(b, p) { // الكتابان المجاوران في الرف، لتسهيل التعرّف عليه واقفًا أمامه
+    if (!p.pos) return '';
+    const on = slots().filter(x => x.p.case === p.case && +x.p.shelf === +p.shelf && x.p.pos);
+    const at = k => on.find(x => x.p.pos === k);
+    const nm = x => x && x.b.status === "مؤكد" && !/غير مقروء|^قراءة|^عنوان/.test(x.b.title) ? `«${x.b.title}${x.p.vols ? ' ' + x.p.vols : ''}»` : null;
+    const l = nm(at(p.pos - 1)), r = nm(at(p.pos + 1));
+    return l && r ? `بين ${l} على يساره و${r} على يمينه` : l ? `يساره ${l}` : r ? `يمينه ${r}` : '';
+  }
 
   // ---------- الإحصاءات ----------
   function renderStats() {
@@ -56,10 +66,11 @@
 
   // ---------- رسم الخزانات ----------
   function spineWidth(p) { const w = (p.box[2] - p.box[0]) * (PHOTO_SCALE[p.photo] || 1) / 3.4; return Math.max(11, Math.min(44, w)); }
-  function textColor(hex) {
-    const h = hex.replace('#', ''); const f = h.length === 3 ? h.split('').map(c => c + c).join('') : h;
-    const [r, g, b] = [0, 2, 4].map(i => parseInt(f.substr(i, 2), 16));
-    return (r * 299 + g * 587 + b * 114) / 1000 > 150 ? '#222' : '#fff';
+  function textColor(hex) { // يختار الأسود أو الأبيض بأعلى تباين وفق WCAG
+    const hh = hex.replace('#', ''); const ff = hh.length === 3 ? hh.split('').map(c => c + c).join('') : hh;
+    const L = [0, 2, 4].map(i => parseInt(ff.substr(i, 2), 16) / 255).map(c => c <= .03928 ? c / 12.92 : ((c + .055) / 1.055) ** 2.4);
+    const lum = .2126 * L[0] + .7152 * L[1] + .0722 * L[2];
+    return (1.05 / (lum + .05)) >= ((lum + .05) / (.0144 + .05)) ? '#fff' : '#1c1c1c';
   }
   function slots() { // كل موضع (place) مع سجله
     const out = [];
@@ -75,12 +86,12 @@
         const items = all.filter(x => x.p.case === c && +x.p.shelf === +s);
         const up = items.filter(x => x.p.pos).sort((a, b) => a.p.pos - b.p.pos);
         const ly = items.filter(x => !x.p.pos);
-        return `<div class="shelf" data-shelf="${c}${s}"><span class="shelf-label">الرف ${ar(s)} · ${ar(up.length)}</span>
+        return `<div class="shelf" data-shelf="${c}${s}"><span class="shelf-label">الرف ${ar(s)} · ${booksWord(up.length)}</span>
           <div class="lying">${ly.map(x => `<button data-id="${x.b.id}" data-pi="${x.i}" style="background:${x.b.color};color:${textColor(x.b.color)};width:${Math.min(70, 25 + x.b.title.length)}%" title="${esc(x.b.title)}">${esc(x.b.title)}</button>`).join('')}</div>
-          <div class="row-books">${up.map(x => {
+          <div class="row-books" role="group" aria-label="${esc(cs.name)}، الرف ${ar(s)}">${up.map((x, j) => {
             const h = 110 + ((x.b.id.charCodeAt(3) * 7 + x.p.pos * 13) % 30);
             const label = (x.p.vols ? x.p.vols + ' · ' : '') + x.b.title;
-            return `<button class="spine${x.b.status === 'مؤكد' ? '' : ' review'}" data-id="${x.b.id}" data-pi="${x.i}" style="--w:${spineWidth(x.p)}px;--h:${h}px;background-color:${x.b.color};color:${textColor(x.b.color)}" title="${esc(label)} — ${esc(placeText(x.p))}" aria-label="${esc(label)}"><span>${esc(label)}</span></button>`;
+            return `<button tabindex="${j ? -1 : 0}" class="spine${x.b.status === 'مؤكد' ? '' : ' review'}" data-id="${x.b.id}" data-pi="${x.i}" style="--w:${spineWidth(x.p)}px;--h:${h}px;background-color:${x.b.color};color:${textColor(x.b.color)}" title="${esc(label)} — ${esc(placeText(x.p))}" aria-label="${esc(label)}"><span>${esc(label)}</span></button>`;
           }).join('')}</div></div>`;
       }).join('')}</div>`).join('');
   }
@@ -143,7 +154,7 @@
   }
   function statusBadge(b) {
     return (b.addedBy === 'يدوي' ? '<span class="badge man">أضيف يدويًا</span>' : '') +
-      (b.status === 'مؤكد' ? '<span class="badge ok">مؤكد</span>' : '<span class="badge rv">يحتاج مراجعة</span>');
+      (b.status === 'مؤكد' ? '<span class="badge ok">العنوان مقروء</span>' : '<span class="badge rv">العنوان غير مؤكد</span>');
   }
   function runSearch() {
     const q = $('#q').value.trim(); const box = $('#results');
@@ -154,7 +165,7 @@
       const conf = books.filter(b => b.topics.some(t => t.t === topic));
       const sug = books.filter(b => !conf.includes(b) && b.suggested.some(t => t.t === topic));
       html += `<h2>كتب عن «${esc(topic)}» في مكتبتك</h2>
-        <p class="muted">${ar(conf.length)} كتابًا ثابت الصلة من عنوانه، و${ar(sug.length)} مقترحًا يحتاج مراجعة. لا يُعدّ كل كتاب في التربية أو الدين كتابًا عن هذا الموضوع تلقائيًا.</p>
+        <p class="muted">ثابت الصلة من العنوان: ${ar(conf.length)}، ومقترح للمراجعة: ${ar(sug.length)}. لا يُعدّ كل كتاب في التربية أو الدين كتابًا عن هذا الموضوع تلقائيًا.</p>
         <div class="res-group"><h3>ثابت الصلة من العنوان (${ar(conf.length)})</h3>${conf.map(b => resRow({ b }, b.topics.find(t => t.t === topic).basis)).join('') || '<p class="empty">لا يوجد.</p>'}</div>
         <div class="res-group sug"><h3>مقترح يحتاج مراجعة (${ar(sug.length)})</h3>${sug.map(b => resRow({ b }, b.suggested.find(t => t.t === topic).reason)).join('') || '<p class="empty">لا يوجد.</p>'}</div>`;
     }
@@ -184,25 +195,31 @@
     if (p.pos && p.of) { const x = sb[0] + (sb[2] - sb[0]) * ((p.pos - .5) / p.of); dot = `<span class="dot" style="left:${x / ph.w * 100}%;top:${(sb[1] + sb[3]) / 2 / ph.h * 100}%"></span>`; }
     return `<div class="mini-over" data-photo="${cs.photo}" data-mark="${sb.join(',')}"><img src="photos/${cs.photo}.jpg" alt="${esc(cs.name)}"><span class="mark" style="${sm}"></span>${dot}</div>`;
   }
+  let lastFocus = null;
   function openBook(id, pi = 0, scroll = true) {
     const b = books.find(x => x.id === id); if (!b) return;
+    document.body.classList.add('sheet');
     const p = b.places[pi] || b.places[0];
     highlight(b, pi, scroll);
     const crop = p.photo ? cropStyle(p) : null;
     $('#drawerBody').innerHTML = `
-      <h2 id="dTitle">${esc(b.title)}</h2>${statusBadge(b)}
+      <h2 id="dTitle" tabindex="-1">${esc(b.title)}</h2>${statusBadge(b)}
+      <div class="where"><span class="wcode">${esc(caseLetter(p.case))}${ar(p.shelf)}</span>
+        <div><strong>${esc(caseName(p.case))}، الرف ${ar(p.shelf)}</strong>
+        <span>${p.pos ? `الكتاب ${ar(p.pos)} من اليسار، من ${ar(p.of || '?')}` : 'موضوع أفقيًا فوق الصف'}${p.vols ? ` · المجلد ${esc(p.vols)}` : ''}</span>
+        ${neighbours(b, p) ? `<span class="nb">${esc(neighbours(b, p))}</span>` : ''}</div></div>
       <dl class="kv card-sec">
         <dt>المؤلف</dt><dd>${esc(b.author) || '<span class="muted">غير مقروء في الصورة</span>'}</dd>
         ${b.publisher ? `<dt>الناشر</dt><dd>${esc(b.publisher)}</dd>` : ''}
         <dt>النوع</dt><dd>${esc(b.kind)}${b.places.length > 1 ? ` · ${ar(b.places.length)} مجلدات ظاهرة` : ''}</dd>
-        <dt>المكان</dt><dd>${b.places.map((q, i) => `<a href="#" data-pi="${i}" class="plink"${i === pi ? ' style="font-weight:700"' : ''}>${esc(placeText(q))}</a>`).join('<br>')}</dd>
+        ${b.places.length > 1 ? `<dt>المجلدات</dt><dd>${b.places.map((q, i) => `<a href="#" data-pi="${i}" class="plink"${i === pi ? ' aria-current="true"' : ''}>${esc(placeText(q))}</a>`).join('<br>')}</dd>` : ''}
         <dt>الموضوعات</dt><dd>${b.topics.map(t => `<span class="tag" title="${esc(t.basis)}">${esc(t.t)}</span>`).join('') || '<span class="muted">لم يُثبت موضوع من العنوان</span>'}</dd>
         ${b.suggested.length ? `<dt>مقترح</dt><dd>${b.suggested.map(t => `<span class="tag s" title="${esc(t.reason)}">${esc(t.t)} (يحتاج مراجعة)</span>`).join('')}</dd>` : ''}
         <dt>الثقة</dt><dd>${b.status === 'مؤكد' ? 'مقروء من الصورة' : 'قراءة غير مؤكدة'}${b.addedBy === 'يدوي' ? ' · أضيف يدويًا' : ''}</dd>
         ${b.note ? `<dt>ملاحظة</dt><dd>${esc(b.note)}</dd>` : ''}
         ${b.copyNote ? `<dt>نسخ</dt><dd>${esc(b.copyNote)}</dd>` : ''}
       </dl>
-      ${crop ? `<div class="card-sec"><h3 class="small">موضعه في الصورة (${esc(PHOTOS[p.photo].file)})</h3>
+      ${crop ? `<div class="card-sec"><h3 class="small">موضعه في الصورة: ${esc(PHOTOS[p.photo].label)}</h3>
         <div class="crop" style="${crop.bg}" data-photo="${p.photo}" data-mark="${p.box.join(',')}"><span class="mark" style="${crop.mark}"></span></div>
         <p class="muted small">الإطار تقريبي، رُسم يدويًا من الصورة.${p.photoNote ? ' ' + esc(p.photoNote) + '.' : ''}</p></div>` : ''}
       <div class="card-sec"><h3 class="small">الرف في صورة الخزانة كاملة</h3>${overviewMark(p)}</div>
@@ -210,32 +227,39 @@
         <button class="btn primary" id="dEdit">تحرير</button>
         ${b.status !== 'مؤكد' ? '<button class="btn" id="dVerify">تم التحقق</button>' : ''}
       </div>`;
-    $('#drawer').hidden = false;
+    if ($('#drawer').hidden) lastFocus = document.activeElement;
+    $('#drawer').hidden = false; document.body.classList.add('sheet'); $('#dTitle').focus({ preventScroll: true });
     $('#dEdit').onclick = () => openEdit(b.id, pi);
     const v = $('#dVerify'); if (v) v.onclick = () => { b.status = 'مؤكد'; save(); openBook(b.id, pi, false); };
     $$('.plink', $('#drawerBody')).forEach(a => a.onclick = e => { e.preventDefault(); openBook(b.id, +a.dataset.pi); });
   }
   function highlight(b, pi, scroll) {
-    if (!$('#tab-shelves').hidden || true) {
-      $$('.spine.hl,.lying button.hl,.shelf.hl').forEach(e => e.classList.remove('hl'));
-      const p = b.places[pi] || b.places[0];
-      const sh = $(`.shelf[data-shelf="${p.case}${p.shelf}"]`); if (sh) sh.classList.add('hl');
-      const el = $(`[data-id="${b.id}"][data-pi="${pi}"]`, $('#cabinets'));
-      if (el) { el.classList.add('hl'); if (scroll && !$('#tab-shelves').hidden) el.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' }); }
-    }
+    $$('.spine.hl,.lying button.hl,.shelf.hl').forEach(e => e.classList.remove('hl'));
+    const p = b.places[pi] || b.places[0];
+    const sh = $(`.shelf[data-shelf="${p.case}${p.shelf}"]`); if (sh) sh.classList.add('hl');
+    const el = $(`[data-id="${b.id}"][data-pi="${pi}"]`, $('#cabinets'));
+    if (!el) return; el.classList.add('hl');
+    if (!scroll || $('#tab-shelves').hidden) return;
+    if (matchMedia('(max-width: 720px)').matches) { // اللوحة تغطي أسفل الشاشة: اجعل الرف تحت الرأس مباشرة
+      el.scrollIntoView({ block: 'nearest', inline: 'center' });
+      requestAnimationFrame(() => { // بعد ظهور اللوحة: أسفل الكتاب فوق حافتها العليا مباشرة
+        const d = $('#drawer'); const edge = d.hidden ? innerHeight : d.getBoundingClientRect().top;
+        window.scrollBy({ top: el.getBoundingClientRect().bottom - (edge - 10), behavior: 'smooth' });
+      });
+    } else el.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
   }
 
   // ---------- عارض الصور ----------
   function openPhoto(id, mark) {
     const ph = PHOTOS[id];
     $('#photoImg').src = `photos/${id}.jpg`; $('#photoImg').alt = ph.label;
-    $('#photoCap').textContent = `${ph.file} — ${ph.label}`;
+    $('#photoCap').textContent = `${ph.label} (${ph.file})`;
     $('#photoMarks').innerHTML = mark ? (() => { const [x0, y0, x1, y1] = mark.split(',').map(Number); return `<span class="mark" style="left:${x0 / ph.w * 100}%;top:${y0 / ph.h * 100}%;width:${(x1 - x0) / ph.w * 100}%;height:${(y1 - y0) / ph.h * 100}%"></span>`; })() : '';
     $('#photoDlg').showModal();
   }
   function renderPhotos() {
     $('#photoGrid').innerHTML = Object.entries(PHOTOS).sort((a, b) => a[1].file.localeCompare(b[1].file)).map(([id, p]) =>
-      `<figure data-photo="${id}"><img loading="lazy" src="photos/${id}.jpg" alt="${esc(p.label)}"><figcaption><strong>${esc(p.file)}</strong><br>${esc(p.label)}</figcaption></figure>`).join('');
+      `<figure data-photo="${id}" tabindex="0" role="button" aria-label="تكبير ${esc(p.label)}"><img loading="lazy" src="photos/${id}.jpg" alt=""><figcaption><strong>${esc(p.label)}</strong><span class="muted small"> ${esc(p.file)}</span></figcaption></figure>`).join('');
   }
 
   // ---------- الفهرس ----------
@@ -256,7 +280,7 @@
       (!fst || b.status === fst)).sort((a, b) => orderKey(a) - orderKey(b));
     $('#catCount').textContent = `${ar(list.length)} سجلًا`;
     $('#catalog').innerHTML = `<table><thead><tr><th>العنوان</th><th>المؤلف</th><th>المكان</th><th>الموضوعات</th><th>الحالة</th></tr></thead><tbody>${list.map(b => `
-      <tr class="clk" data-id="${b.id}"><td><span style="display:inline-block;width:8px;height:18px;background:${b.color};vertical-align:middle;margin-left:6px;border-radius:2px"></span>${esc(b.title)}</td>
+      <tr class="clk" data-id="${b.id}" tabindex="0"><td><span style="display:inline-block;width:8px;height:18px;background:${b.color};vertical-align:middle;margin-left:6px;border-radius:2px"></span>${esc(b.title)}</td>
       <td>${esc(b.author)}</td><td class="small">${b.places.map(p => esc(shortPlace(p)) + (p.vols ? ` (مج ${p.vols})` : '')).join('، ')}</td>
       <td>${b.topics.map(t => `<span class="tag">${esc(t.t)}</span>`).join('')}${b.suggested.map(t => `<span class="tag s">${esc(t.t)}؟</span>`).join('')}</td>
       <td>${statusBadge(b)}</td></tr>`).join('')}</tbody></table>`;
@@ -276,7 +300,7 @@
   const PLAN_DONE = 'maktaba-hoqbi-plan-done-v2';
   const PLAN_SHELVES = [
     { k: 'A1', label: 'التفسير والحديث: المجلدات الكبيرة', why: 'المجلدات الثقيلة في الأعلى: «في ظلال القرآن» و«قصص الأنبياء» و«معالم الدعوة» و«رياض الصالحين» و«الموسوعة الميسرة».' },
-    { k: 'A2', label: '«التفسير البسيط» من المجلد ١ إلى ١٧', why: 'رتّب المجلدات بأرقامها من اليمين.' },
+    { k: 'A2', label: '«التفسير البسيط» من المجلد ١ إلى ١٧', why: 'رتّب المجلدات متتالية بأرقامها.' },
     { k: 'A3', label: '«التفسير البسيط» ١٨–٢٥، ثم علوم القرآن، ثم الوقف', why: 'تكملة «التفسير البسيط» أولًا، ثم كتب علوم القرآن الصغيرة، ثم «مجموعة الأميرة العنود» وكتب الوقف.' },
     { k: 'A4', label: 'العقيدة والفقه والمقاصد، ثم السيرة', why: '' },
     { k: 'A5', label: 'الدعوة والتربية والقيم', why: 'فيه فراغ الآن، فيصلح أن يكون أول رف تنقل إليه.' },
@@ -374,6 +398,8 @@
     f.note.value = b?.note || '';
     $('#editPlaceNote').textContent = b && b.places.length > 1 ? `هذه مجموعة لها ${ar(b.places.length)} مواضع؛ تعديل المكان يخص المجلد ${b.places[pi].vols || ''} فقط.` : 'الموضع ٠ يعني «فوق الصف أفقيًا».';
     $('#delBtn').hidden = !b;
+    const setMax = () => { f.shelf.max = Object.keys(CASES[f.case.value].shelves).length; };
+    setMax(); f.case.onchange = setMax;
     $('#editDlg').showModal();
   }
   $('#editForm').addEventListener('submit', async e => {
@@ -457,9 +483,18 @@
     $$('.tab').forEach(s => s.hidden = s.id !== 'tab-' + t);
   }
   $$('.tabs button').forEach(b => b.onclick = () => showTab(b.dataset.tab));
-  let tmr; $('#q').addEventListener('input', () => { clearTimeout(tmr); tmr = setTimeout(runSearch, 120); });
+  let tmr; $('#q').addEventListener('input', () => { clearTimeout(tmr); tmr = setTimeout(() => { runSearch(); if (window.scrollY > 0) window.scrollTo({ top: 0, behavior: 'smooth' }); }, 120); });
+  document.addEventListener('keydown', e => { // «/» يضع المؤشر في البحث
+    if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName) && !$('dialog[open]')) { e.preventDefault(); $('#q').focus(); }
+  });
+  $('#cabinets').addEventListener('keydown', e => { // الأسهم تتنقل بين كتب الرف الواحد
+    const t = e.target; if (!t.classList.contains('spine') || !/Arrow(Left|Right)|Home|End/.test(e.key)) return;
+    const row = [...t.parentNode.children];
+    const n = e.key === 'Home' ? row[0] : e.key === 'End' ? row[row.length - 1] : e.key === 'ArrowRight' ? t.nextElementSibling : t.previousElementSibling;
+    if (n) { e.preventDefault(); t.tabIndex = -1; n.tabIndex = 0; n.focus(); }
+  });
   ['#fShelf', '#fTopic', '#fStatus'].forEach(s => $(s).onchange = renderCatalog);
-  $('#drawerClose').onclick = () => { $('#drawer').hidden = true; $$('.hl').forEach(e => e.classList.remove('hl')); };
+  $('#drawerClose').onclick = () => { $('#drawer').hidden = true; $$('.hl').forEach(e => e.classList.remove('hl')); document.body.classList.remove('sheet'); const back = lastFocus && document.contains(lastFocus) ? lastFocus : ($('.spine[tabindex="0"]', $('.shelf.hl') || document) || $('#q')); if (back) back.focus({ preventScroll: true }); };
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#drawer').hidden && !$('dialog[open]')) $('#drawerClose').click(); });
   document.addEventListener('click', e => {
     const t = e.target.closest('[data-moved],[data-id],[data-photo],[data-edit],[data-verify],[data-open]');
@@ -474,7 +509,7 @@
       openBook(t.dataset.id, +(t.dataset.pi || 0));
     }
   });
-  document.addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.classList.contains('res')) e.target.click(); });
+  document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('.res, tr.clk, figure[data-photo]')) { e.preventDefault(); e.target.click(); } });
 
   function renderAll() { renderStats(); renderCabinets(); renderFilters(); renderCatalog(); renderReview(); renderPlan(); runSearch(); }
   renderPhotos(); renderAll();

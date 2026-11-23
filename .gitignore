@@ -12,3 +12,6 @@ deploy/cpanel/dist/
 
 # صور مكتبة الحقبي: صور من داخل المنزل، تبقى على الجهاز ولا تُرفع إلى المستودع العام
 maktaba/photos/
+
+# سجل نقد مهارة impeccable (محلي)
+.impeccable/
