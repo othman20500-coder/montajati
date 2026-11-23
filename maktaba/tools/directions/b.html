@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مكتبة الحقبي · التصميم ب: حافة الرف</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Readex+Pro:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: عملي وواضح، كمتجر كتب كبير يعرف فيه كل زائر طريقه.
+   IDEA: ملصقات حافة الرف في المكتبات التجارية: شريط ملوّن بالقسم على حافة كل رف، وبطاقة صغيرة تحت الكتاب.
+   PICTURE: الرف المختار كبيرًا، وحافته مقسّمة بألوان الأقسام، وبطاقة معلّقة تحت الكتاب المطلوب.
+   COLOUR and TYPE: أبيض وحبر داكن، وألوان الأقسام السبعة هي اللون الوحيد؛ Readex Pro للأرقام والرموز، IBM Plex للنص.
+   LAYOUT: شريط جانبي بالرفوف العشرة كتنقّل، والبحث أعلى المساحة الرئيسية، والرف المختار تحته. */
+:root{--ink:#15181c;--mut:#5b6168;--line:#e3e5e8;--bg:#fff;--rail:#f4f5f7;
+--q:#1f6b45;--f:#17707f;--d:#b77a12;--h:#8c2b3a;--m:#2d4c8c;--s:#c4531f;--l:#6b3f8c;--n:#9aa0a6}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "IBM Plex Sans Arabic",system-ui,sans-serif}
+.app{display:grid;grid-template-columns:260px minmax(0,1fr);min-height:100vh}
+.rail{background:var(--rail);border-inline-end:1px solid var(--line);padding:18px 14px}
+.brand{font:700 22px/1.2 "Readex Pro";margin:2px 6px 16px}
+.brand small{display:block;font:400 13px "IBM Plex Sans Arabic";color:var(--mut)}
+.case{font-size:13px;color:var(--mut);margin:14px 8px 6px;font-weight:500}
+.sh{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:10px;padding:7px 8px;border-radius:8px;text-decoration:none;color:var(--ink)}
+.sh:hover{background:#e9ebee}.sh[aria-current]{background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.08),0 4px 14px -6px rgba(0,0,0,.18)}
+.sh .code{font:700 17px "Readex Pro";text-align:center}
+.sh .edge{display:flex;height:8px;border-radius:2px;overflow:hidden}
+.sh .edge i{display:block}
+.sh .ct{font:500 13px "Readex Pro";color:var(--mut)}
+.links{margin-top:20px;border-top:1px solid var(--line);padding-top:12px}
+.links a{display:block;padding:8px;color:var(--ink);text-decoration:none;border-radius:8px;font-size:15px}
+.links a .n{font:500 12px "Readex Pro";background:#fde8d7;color:#8a3d0c;border-radius:99px;padding:0 7px;margin-inline-start:4px}
+.main{padding:20px clamp(16px,3vw,36px) 40px}
+.search{display:flex;gap:10px;align-items:center}
+.search input{flex:1;height:50px;border:1.5px solid #c9cdd2;border-radius:10px;padding:0 16px;font:17px "IBM Plex Sans Arabic"}
+.search input:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px #d9dde2}
+.chips{display:flex;gap:8px;margin:12px 0 22px;flex-wrap:wrap}
+.chip{border:1px solid #c9cdd2;border-radius:99px;padding:4px 12px;font-size:14px;background:#fff}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+h1{font:700 26px/1.25 "Readex Pro";margin:0}
+.sub{color:var(--mut);margin:2px 0 16px}
+.bay{border:1px solid var(--line);border-radius:12px;padding:18px 18px 0;background:linear-gradient(#fafbfc,#f3f4f6)}
+.books{direction:ltr;display:flex;align-items:flex-end;gap:1.5px;height:170px}
+.books span{flex:1 1 0;border-radius:2px 2px 0 0;position:relative}
+.books span.on{flex:0 0 22px;box-shadow:0 0 0 3px #fff,0 0 0 5px var(--ink)}
+.ledge{direction:ltr;display:flex;height:34px;margin:0 -18px;border-top:3px solid #d8dbe0}
+.ledge div{display:flex;align-items:center;justify-content:center;color:#fff;font:500 12.5px "IBM Plex Sans Arabic";white-space:nowrap;overflow:hidden;padding:0 4px}
+.ledge div.n{color:var(--ink);background:repeating-linear-gradient(45deg,#e4e6ea 0 4px,#f2f3f5 4px 8px)}
+.talker{direction:rtl;position:relative;margin:0 auto;width:max-content;max-width:100%;background:#fff;border:2px solid var(--ink);border-radius:8px;padding:10px 14px;display:flex;gap:14px;align-items:center;margin-top:16px}
+.talker::before{content:"";position:absolute;top:-10px;width:14px;height:14px;background:#fff;border-left:2px solid var(--ink);border-top:2px solid var(--ink);transform:rotate(45deg)}
+.talker .code{font:700 34px/1 "Readex Pro";background:var(--l);color:#fff;border-radius:6px;padding:6px 10px}
+.talker b{font-size:20px;display:block}
+.talker span{font-size:15px;color:var(--mut)}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:22px}
+.box{border:1px solid var(--line);border-radius:12px;padding:16px}
+.box h2{font:700 16px "Readex Pro";margin:0 0 8px}
+.crop{position:relative;aspect-ratio:4/3;border-radius:8px;background-repeat:no-repeat;overflow:hidden}
+.crop .mk{position:absolute;border:3px solid #fff;outline:2px solid var(--ink);border-radius:3px}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+td{padding:7px 4px;border-bottom:1px solid var(--line)}td:first-child{color:var(--mut);width:7em}
+.key{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--mut);margin-top:12px}
+.key i{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-1px;margin-inline-end:5px}
+.note{font-size:13px;color:var(--mut);margin-top:16px}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr}
+  .rail{order:2;padding:12px}.rail .case,.links{display:none}
+  .shelves{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+  .sh{grid-template-columns:1fr;gap:3px;padding:6px 2px;text-align:center}.sh .ct{display:none}
+  .brand{display:none}
+  .main{padding-top:14px}.grid{grid-template-columns:1fr}.books{height:120px}
+  .ledge div{font-size:12px}
+}
+</style></head><body>
+<div class="app">
+  <aside class="rail" aria-label="الرفوف">
+    <div class="brand">مكتبة الحقبي<small id="stat"></small></div>
+    <div class="shelves" id="shelves"></div>
+    <div class="links"><a href="#">فهرس الكتب</a><a href="#">يحتاج مراجعة <span class="n" id="rv"></span></a><a href="#">خطة الترتيب</a><a href="#">الصور والبيانات</a></div>
+  </aside>
+  <section class="main">
+    <div class="search"><input value="سمرقند" aria-label="ابحث بعنوان أو مؤلف أو موضوع"></div>
+    <div class="chips"><span class="chip on">كل الرفوف</span><span class="chip">العنوان مقروء فقط</span><span class="chip">كل الأقسام</span></div>
+    <h1 id="h"></h1><p class="sub" id="sub"></p>
+    <div class="bay"><div class="books" id="books"></div><div class="ledge" id="ledge"></div></div>
+    <div class="talker" id="talker"></div>
+    <div class="grid"><div class="box"><h2>في الصورة</h2><div class="crop" id="crop"></div></div>
+      <div class="box"><h2>بيانات الكتاب</h2><table id="meta"></table><div class="key" id="key"></div></div></div>
+    <p class="note">نموذج تصميم مبني على الفهرس الحقيقي؛ الأزرار للعرض.</p>
+  </section>
+</div>
+<script src="../../data/books.js"></script><script src="common.js"></script>
+<script>
+{
+const {ar,caseL,find,shelf,neighbours,crop,sec,SEC,total,conf}=M;
+document.getElementById('stat').textContent=`${ar(total)} سجلًا في خزانتين`;document.getElementById('rv').textContent=ar(total-conf);
+const b=find('سمرقند'),p=b.places[0];
+const ed=row=>{const c={};row.forEach(x=>c[sec(x.b)]=(c[sec(x.b)]||0)+1);return Object.entries(c).map(([k,v])=>`<i style="flex:${v};background:var(--${k})"></i>`).join('')};
+const cases=[['A',6],['B',4]];
+document.getElementById('shelves').innerHTML=cases.map(([c,n])=>`<div class="case">الخزانة ${caseL(c)}</div>`+Array.from({length:n},(_,i)=>{const row=shelf(c,i+1);const cur=c===p.case&&i+1===+p.shelf;
+ return `<a class="sh" href="#" ${cur?'aria-current="true"':''}><span class="code">${caseL(c)}${ar(i+1)}</span><span class="edge">${ed(row)}</span><span class="ct">${ar(row.length)}</span></a>`}).join('')).join('');
+const row=shelf(p.case,p.shelf),nb=neighbours(p);
+document.getElementById('h').textContent=`الخزانة ${caseL(p.case)}، الرف ${ar(p.shelf)}`;
+document.getElementById('sub').textContent=`${ar(row.length)} كتابًا مرتبة من اليسار كما تراها واقفًا أمام الرف`;
+document.getElementById('books').innerHTML=row.map(x=>`<span class="${x.b===b?'on':''}" style="height:${98+((x.p.pos*37)%60)}px;background:${x.b.color}"></span>`).join('');
+// شريط الحافة: مقاطع متتالية بحسب قسم كل كتاب
+const runs=[];row.forEach(x=>{const s=sec(x.b);const l=runs[runs.length-1];if(l&&l.s===s)l.n++;else runs.push({s,n:1})});
+document.getElementById('ledge').innerHTML=runs.map(r=>`<div class="${r.s}" style="flex:${r.n};${r.s==='n'?'':'background:var(--'+r.s+')'}">${r.n>=4?SEC[r.s]:''}</div>`).join('');
+document.getElementById('talker').innerHTML=`<span class="code">${caseL(p.case)}${ar(p.shelf)}</span><div><b>${b.title} · الكتاب ${ar(p.pos)} من اليسار</b><span>بين «${nb.left}» و«${nb.right}»</span></div>`;
+// موضع البطاقة تحت الكتاب
+requestAnimationFrame(()=>{const on=document.querySelector('.books .on'),t=document.getElementById('talker'),bay=document.querySelector('.bay');
+ const x=on.getBoundingClientRect(),bx=bay.getBoundingClientRect();const mid=x.left+x.width/2-bx.left;
+ const left=Math.max(0,Math.min(bx.width-t.offsetWidth,mid-t.offsetWidth/2));
+ t.style.margin='16px 0 0 auto';t.style.marginRight=(bx.width-left-t.offsetWidth)+'px';
+ const s=document.createElement('style');s.textContent=`.talker::before{left:${mid-left-9}px}`;document.head.append(s);});
+const cr=crop(p,4/3,.8);document.getElementById('crop').setAttribute('style',cr.bg);document.getElementById('crop').innerHTML=`<span class="mk" style="${cr.mark}"></span>`;
+document.getElementById('meta').innerHTML=`<tr><td>العنوان</td><td>${b.title}</td></tr><tr><td>المؤلف</td><td>${b.author}</td></tr><tr><td>القسم</td><td>أدب ورواية (مقترح)</td></tr><tr><td>القراءة</td><td>العنوان مقروء من الصورة</td></tr>`;
+document.getElementById('key').innerHTML=Object.entries(SEC).map(([k,v])=>`<span><i style="background:var(--${k})"></i>${v}</span>`).join('');
+}
+</script></body></html>

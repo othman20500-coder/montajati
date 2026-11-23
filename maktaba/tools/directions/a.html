@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مكتبة الحقبي · التصميم أ: المجلد المذهّب</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: هادئ ومقروء، كمكتبة بيت فيها كتب علم.
+   IDEA: كعب المجلد المذهّب في الرف الأول (التفسير البسيط، في ظلال القرآن) يصير لغة الموقع.
+   PICTURE: لوحة الموقع كلوحة كعب مذهّبة، ثم قصاصة الصورة، ثم الرف نفسه.
+   COLOUR and TYPE: أخضر التجليد، ذهب للإطار فقط، ورق فاتح؛ Amiri للعناوين والأرقام، IBM Plex للنص.
+   LAYOUT: شريط علوي أخضر بالبحث والتبويبات، والنتائج يمينًا والموقع يسارًا. */
+:root{--bind:#173d2b;--bind2:#1f5138;--gold:#c9a24a;--gold-ink:#7a5a14;--paper:#fbf8f1;--card:#fff;--ink:#1b241f;--mut:#56605a;--line:#e5ddcc;--warn:#9a4a12}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 "IBM Plex Sans Arabic",system-ui,sans-serif}
+::selection{background:#e9d9a8}
+.bar{background:var(--bind);color:#f3ecd8;padding:14px clamp(14px,3vw,36px) 0}
+.bar .row1{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.brand{font:700 30px/1 Amiri,serif;letter-spacing:0;color:#fff;display:flex;align-items:center;gap:10px}
+.brand i{width:38px;height:30px;background:linear-gradient(90deg,#9c7c34 0 10px,transparent 10px 14px,var(--gold) 14px 24px,transparent 24px 28px,var(--gold) 28px);border-radius:2px}
+.search{flex:1 1 380px;display:flex;align-items:center;background:#fff;border-radius:10px;border:2px solid transparent;padding:0 14px;height:48px}
+.search:focus-within{border-color:var(--gold)}
+.search input{flex:1;border:0;font:16px "IBM Plex Sans Arabic";outline:none;background:none;color:var(--ink)}
+.search kbd{font:12px "IBM Plex Sans Arabic";color:var(--mut);border:1px solid var(--line);border-radius:5px;padding:0 6px}
+.stat{font-size:13.5px;color:#cfdccf}
+nav{display:flex;gap:2px;margin-top:12px;overflow-x:auto}
+nav a{flex:none;color:#cfdccf;text-decoration:none;padding:10px 14px;border-radius:8px 8px 0 0;white-space:nowrap;font-size:15px}
+nav a[aria-current]{background:var(--paper);color:var(--bind);font-weight:600}
+nav a .n{background:#e9b05e;color:#3a2405;border-radius:99px;padding:0 7px;font-size:12px;margin-inline-start:4px}
+main{max-width:1280px;margin:0 auto;padding:24px clamp(14px,3vw,36px) 48px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:28px}
+h2{font:700 22px/1.3 Amiri,serif;margin:0 0 10px}
+.muted{color:var(--mut)}
+.res{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.res li{display:grid;grid-template-columns:8px 1fr;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line);cursor:pointer}
+.res li[aria-selected]{background:#f3ecd9}
+.res .sw{border-radius:2px}
+.res b{font:700 19px/1.3 Amiri,serif}
+.res .loc{display:block;font-size:14px;color:var(--bind2);font-weight:600}
+.res .by{font-size:14px;color:var(--mut)}
+.tag{font-size:12px;border-radius:99px;padding:1px 8px;margin-inline-start:6px;background:#e7efe6;color:var(--bind)}
+.tag.rv{background:#fbeadb;color:var(--warn)}
+.panel{padding:4px 0 0;border-top:3px double var(--gold)}
+.head{display:flex;gap:18px;align-items:stretch}
+.plate{flex:none;width:112px;background:linear-gradient(var(--bind2),var(--bind));color:#f6e7b8;border-radius:6px;padding:10px 8px;text-align:center;
+  box-shadow:inset 0 0 0 2px var(--bind),inset 0 0 0 3px var(--gold),inset 0 0 0 6px var(--bind),inset 0 0 0 7px #9c7c34}
+.plate .c{font:700 44px/1 Amiri,serif;color:#fff}
+.plate .p{font:700 26px/1.1 Amiri,serif;margin-top:6px}
+.plate small{display:block;font-size:12px;color:#d9c78f;margin-top:2px}
+.who h3{font:700 30px/1.2 Amiri,serif;margin:2px 0 4px}
+.who .w{font-size:17px;font-weight:600;color:var(--bind)}
+.who .nb{font-size:14px;color:var(--mut);margin-top:4px}
+.crop{position:relative;margin:18px 0 6px;aspect-ratio:16/9;border-radius:10px;background-repeat:no-repeat;background-color:#ddd;overflow:hidden}
+.crop .mk{position:absolute;border:3px solid var(--gold);border-radius:3px;box-shadow:0 0 0 999px rgba(15,25,18,.35)}
+.cap{font-size:13px;color:var(--mut)}
+.strip{margin-top:18px}
+.strip .lab{font-size:13px;color:var(--mut);display:flex;justify-content:space-between}
+.books{direction:ltr;display:flex;align-items:flex-end;gap:1px;height:96px;border-bottom:7px solid #e6dcc6;overflow:hidden;padding:0 2px}
+.books span{flex:1 1 0;border-radius:1px 1px 0 0;min-width:3px}
+.books span.on{flex:0 0 18px;outline:3px solid var(--gold);outline-offset:1px;position:relative;z-index:1}
+.meta{display:grid;grid-template-columns:7em 1fr;gap:4px 12px;font-size:15px;margin-top:16px}
+.meta dt{color:var(--mut)}.meta dd{margin:0}
+.btns{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.btn{font:600 15px "IBM Plex Sans Arabic";border-radius:9px;padding:10px 16px;border:1px solid var(--line);background:#fff;color:var(--ink);min-height:44px}
+.btn.pri{background:var(--bind);border-color:var(--bind);color:#fff}
+.note{grid-column:1/-1;font-size:13px;color:var(--mut)}
+@media (max-width:760px){
+  .bar{padding-top:10px}.panel{padding-top:12px}.brand{font-size:24px}.stat{display:none}
+  main{grid-template-columns:1fr;padding-top:16px;gap:18px}
+  .side{order:2}
+  .plate{width:86px}.plate .c{font-size:34px}.plate .p{font-size:21px}.who h3{font-size:24px}
+}
+</style></head><body>
+<header class="bar">
+  <div class="row1">
+    <div class="brand"><i></i>مكتبة الحقبي</div>
+    <label class="search"><input id="q" value="سمرقند" aria-label="ابحث في المكتبة"><kbd>/</kbd></label>
+    <span class="stat" id="stat"></span>
+  </div>
+  <nav aria-label="أقسام الموقع"><a href="#" aria-current="page">الرفوف</a><a href="#">الفهرس</a><a href="#">الصور</a><a href="#">يحتاج مراجعة <span class="n" id="rv"></span></a><a href="#">خطة الترتيب</a><a href="#">البيانات</a></nav>
+</header>
+<main>
+  <section class="side" aria-label="نتائج البحث">
+    <h2>نتائج «سمرقند»</h2>
+    <ul class="res" id="res"></ul>
+    <p class="muted" style="font-size:14px;margin-top:14px">جرّب سؤالًا: «ما الكتب الموجودة عندي عن القيم؟»</p>
+  </section>
+  <article class="panel" id="panel" aria-label="مكان الكتاب"></article>
+  <p class="note">نموذج تصميم مبني على الفهرس الحقيقي؛ الأزرار للعرض.</p>
+</main>
+<script src="../../data/books.js"></script><script src="common.js"></script>
+<script>
+{
+const {ar,caseL,find,shelf,neighbours,crop,books,total,conf}=M;
+document.getElementById('stat').textContent=`${ar(total)} سجلًا · ${ar(conf)} عنوانًا مقروءًا`;
+document.getElementById('rv').textContent=ar(total-conf);
+const hits=[find('سمرقند'),find('من وحي القلم'),find('عزازيل')];
+document.getElementById('res').innerHTML=hits.map((b,i)=>{const p=b.places[0];return `<li ${i?'':'aria-selected="true"'}><span class="sw" style="background:${b.color}"></span><div><b>${b.title}</b><span class="tag">العنوان مقروء</span><div class="by">${b.author}</div><span class="loc">الخزانة ${caseL(p.case)} · الرف ${ar(p.shelf)} · الكتاب ${ar(p.pos)} من اليسار</span></div></li>`}).join('');
+const b=hits[0],p=b.places[0],nb=neighbours(p),cr=crop(p,16/9,.9),row=shelf(p.case,p.shelf);
+document.getElementById('panel').innerHTML=`
+ <div class="head"><div class="plate"><div class="c">${caseL(p.case)}${ar(p.shelf)}</div><div class="p">${ar(p.pos)}</div><small>من اليسار</small></div>
+ <div class="who"><h3>${b.title}</h3><div class="w">الخزانة ${caseL(p.case)}، الرف ${ar(p.shelf)}، الكتاب ${ar(p.pos)} من ${ar(p.of)} عدًّا من اليسار</div>
+ <div class="nb">بين «${nb.left}» على يساره و«${nb.right}» على يمينه</div></div></div>
+ <div class="crop" style="${cr.bg}"><span class="mk" style="${cr.mark}"></span></div>
+ <div class="cap">من صورة الرف (${M.L.photos[p.photo].label}). الإطار تقريبي.</div>
+ <div class="strip"><div class="lab"><span>الرف ${ar(p.shelf)} من الخزانة ${caseL(p.case)} · ${ar(row.length)} كتابًا</span><span>اليسار ← اليمين</span></div>
+ <div class="books">${row.map(x=>`<span class="${x.b===b?'on':''}" style="height:${62+((x.p.pos*37)%34)}px;background:${x.b.color}"></span>`).join('')}</div></div>
+ <dl class="meta"><dt>المؤلف</dt><dd>${b.author}</dd><dt>الموضوع</dt><dd>أدب ورواية <span class="tag rv">مقترح للمراجعة</span></dd></dl>
+ <div class="btns"><button class="btn pri">عرض الصورة كاملة</button><button class="btn">تحرير</button></div>`;
+}
+</script></body></html>
