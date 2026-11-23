@@ -13,7 +13,7 @@ web
 
 ## Product Purpose
 
-«مكتبة الحقبي» indexes one real home library (two white bookcases: A with six shelves, B with four) from photos of its shelves. It answers: do I own this book, which shelf, and where on the shelf; which books do I own on a topic (e.g. «القيم»), with the count and why each is related. Success: a family member finds a physical book in seconds, and the owner trusts the catalog because it never claims more than the photos show.
+«مكتبة آل عثمان» indexes one real home library (two white bookcases: A with six shelves, B with four) from photos of its shelves. It answers: do I own this book, which shelf, and where on the shelf; which books do I own on a topic (e.g. «القيم»), with the count and why each is related. Success: a family member finds a physical book in seconds, and the owner trusts the catalog because it never claims more than the photos show.
 
 ## Positioning
 

@@ -1,4 +1,4 @@
-// مكتبة الحقبي — منطق الصفحة. البيانات في data/books.js، والتعديلات تُحفظ في localStorage.
+// مكتبة آل عثمان — منطق الصفحة. البيانات في data/books.js، والتعديلات تُحفظ في localStorage.
 (function () {
   'use strict';
   const ORIG = window.LIBRARY;
