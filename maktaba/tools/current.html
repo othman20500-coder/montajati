@@ -1,0 +1,61 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&family=Reem+Kufi:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--q:#1f6b45;--f:#17707f;--d:#c98a1b;--h:#8c2b3a;--m:#2d4c8c;--s:#d4612a;--l:#6b3f8c;--n:#b9b3a6}
+body{margin:0;background:#ece7dc;font-family:"IBM Plex Sans Arabic",sans-serif;color:#1d2621}
+.wrap{width:1700px;padding:32px 40px 28px}
+h1{font-family:"Reem Kufi";font-size:38px;margin:0;color:#1f5a3a}
+.sub{color:#5f655f;margin:4px 0 18px;font-size:16px;max-width:1300px}
+.cases{display:flex;gap:40px;align-items:flex-start}
+.case{background:#fff;border:12px solid #fafafa;outline:1px solid #d8d2c4;box-shadow:0 26px 36px -24px rgba(50,40,20,.45);width:800px}
+.cname{font-family:"Reem Kufi";font-size:21px;padding:4px 10px;color:#1f5a3a;background:#fafafa}
+.shelf{border-top:9px solid #f1eee6;background:linear-gradient(#f8f6f0,#efebe2)}
+.row{direction:ltr;display:flex;align-items:flex-end;gap:1px;height:132px;padding:0 6px;overflow:hidden}
+.sp{flex:0 0 auto;position:relative;border-radius:2px 2px 0 0;box-shadow:inset 1.5px 0 0 rgba(255,255,255,.2),inset -2px 0 0 rgba(0,0,0,.14)}
+.sp i{position:absolute;left:1px;right:1px;bottom:6px;height:14px;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.7)}
+.sp i.n{background:repeating-linear-gradient(45deg,#d8d3c8 0 3px,#f4f1ea 3px 6px)!important}
+.sign{display:flex;align-items:center;gap:8px;padding:5px 8px;border-top:3px solid #e6e1d4;background:#fbfaf6;min-height:30px;flex-wrap:wrap}
+.sign b{font-family:"Reem Kufi";font-size:17px;color:#fff;border-radius:7px;padding:0 9px;line-height:24px}
+.chip{font-size:12.5px;display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+.chip i{width:11px;height:11px;border-radius:3px;display:inline-block}
+.chip.n i{background:repeating-linear-gradient(45deg,#d8d3c8 0 2px,#f4f1ea 2px 4px)}
+.mix{margin-inline-start:auto;font-size:12px;color:#8a5a1c;font-weight:600}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;font-size:14px}
+.legend span{display:inline-flex;align-items:center;gap:6px}.legend i{width:16px;height:16px;border-radius:4px;display:inline-block}
+.note{font-size:13.5px;color:#5f655f;margin-top:10px}
+</style></head><body><div class="wrap">
+<h1>مكتبة الحقبي كما هي الآن، بنظام الألوان المقترح</h1>
+<p class="sub" id="sub"></p>
+<div class="cases" id="cases"></div>
+<div class="legend" id="legend"></div>
+<p class="note">الملصق أسفل الكعب بلون القسم، ولافتة كل رف تذكر رمزه وأقسامه بالعدد. الملصق المخطط: كتاب لم يُصنّف بعد أو عنوانه غير مؤكد. الترتيب داخل الرف من اليسار كما في الصور.</p>
+</div>
+<script src="../data/books.js"></script>
+<script>
+const L=window.LIBRARY, books=L.books;
+const SEC={q:'القرآن وعلومه',f:'العقيدة والفقه والسيرة',d:'الدعوة والتربية والقيم والوقف',h:'الفكر والتاريخ',m:'القيادة والإدارة والعمل الخيري',s:'تطوير الذات والإبداع',l:'الأدب والرواية',n:'غير مصنف بعد'};
+const T2S={'القرآن وعلومه':'q','العقيدة والإيمان':'f','الفقه والشريعة':'f','السيرة والحديث':'f','الدعوة':'d','التربية والأسرة':'d','القيم والأخلاق':'d','الفكر والثقافة':'h','التاريخ والحضارة':'h','القيادة':'m','الإدارة والعمل المؤسسي':'m','المال والاقتصاد':'m','تطوير الذات':'s','الإبداع والابتكار':'s','علم النفس والدماغ':'s','القراءة والتعلم':'s','أدب ورواية':'l'};
+const norm=s=>String(s||'').replace(/[أإآ]/g,'ا').replace(/ة/g,'ه');
+function sec(b){ if(b.status!=='مؤكد'||/غير مقروء/.test(b.title)||b.kind==='دفاتر')return 'n';
+  let t=(b.topics[0]||b.suggested[0]||{}).t; if(!t)return 'n'; if(t==='القرآن وعلومه'&&b.topics[1])t=b.topics[1].t;
+  if(t==='الوقف والعمل الخيري')return /وقف|اوقاف/.test(norm(b.title))?'d':'m'; return T2S[t]||'n';}
+const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
+const SC={P7:.5,P8:.55,P9:.55,P12:.55,P10:.6,P13:.8,P14:.8,P15:.8,P11:.3,P16:.6,P17:.6,P18:.6};
+const W=p=>Math.max(6,Math.min(34,(p.box[2]-p.box[0])*(SC[p.photo]||1)/4));
+const shelves={}; let all=0,cls=0;
+books.forEach(b=>b.places.forEach(p=>{ if(!p.pos)return; (shelves[p.case+p.shelf]||=[]).push({b,p,s:sec(b)}); all++; if(sec(b)!=='n')cls++; }));
+function shelf(k){ const it=(shelves[k]||[]).sort((a,b)=>a.p.pos-b.p.pos);
+  const tot=it.reduce((s,x)=>s+W(x.p)+1,0), f=Math.min(1,(800-24-12)/tot);
+  const big=k==='A1'||k==='A2'; let spines=it.map((x,i)=>{const h=big?118:70+((x.b.id.charCodeAt(3)*7+x.p.pos*13)%42);
+    return `<span class="sp" style="width:${W(x.p)*f}px;height:${h}px;background:${x.b.color}"><i class="${x.s}" style="background:var(--${x.s})"></i></span>`}).join('');
+  const cnt={}; it.forEach(x=>cnt[x.s]=(cnt[x.s]||0)+1);
+  const ord=Object.entries(cnt).filter(([s])=>s!=='n').sort((a,b)=>b[1]-a[1]);
+  const top=ord[0]?ord[0][0]:'n';
+  const chips=ord.slice(0,4).map(([s,n])=>`<span class="chip"><i style="background:var(--${s})"></i>${SEC[s]} ${ar(n)}</span>`).join('')+(ord.length>4?`<span class="chip">${(r=>r===1?"وقسم آخر":r===2?"وقسمان آخران":"و"+ar(r)+" أقسام أخرى")(ord.length-4)}</span>`:'')+(cnt.n?`<span class="chip n"><i></i>غير مصنف ${ar(cnt.n)}</span>`:'');
+  const mixed=ord.length>=3?`<span class="mix">مختلط: ${ar(ord.length)} أقسام</span>`:'';
+  return `<div class="shelf"><div class="row">${spines}</div><div class="sign"><b style="background:var(--${top})">${(k[0]==='A'?'أ':'ب')+ar(k.slice(1))}</b>${chips}${mixed}</div></div>`;}
+document.getElementById('cases').innerHTML=Object.entries(L.cases).map(([c,cs])=>`<div class="case"><div class="cname">${cs.name}</div>${Object.keys(cs.shelves).map(s=>shelf(c+s)).join('')}</div>`).join('');
+document.getElementById('legend').innerHTML=Object.entries(SEC).map(([k,v])=>`<span><i style="background:${k==='n'?'repeating-linear-gradient(45deg,#d8d3c8 0 3px,#f4f1ea 3px 6px)':'var(--'+k+')'}"></i>${v}</span>`).join('');
+const mixedCount=Object.keys(shelves).filter(k=>{const s=new Set(shelves[k].map(x=>x.s).filter(x=>x!=='n'));return s.size>=3}).length;
+document.getElementById('sub').textContent=`كل كتاب في موضعه الحالي بلون كعبه الحقيقي. صُنّف منها ${ar(cls)} من ${ar(all)} موضعًا، و${ar(mixedCount)} رفوف من ١٠ تضم ثلاثة أقسام أو أكثر.`;
+</script></body></html>
