@@ -204,7 +204,7 @@
     const crop = p.photo ? cropStyle(p) : null;
     $('#drawerBody').innerHTML = `
       <h2 id="dTitle" tabindex="-1">${esc(b.title)}</h2>${statusBadge(b)}
-      <div class="where"><span class="wcode">${esc(caseLetter(p.case))}${ar(p.shelf)}</span>
+      <div class="where"><span class="wcode"><b>${esc(caseLetter(p.case))}${ar(p.shelf)}</b>${p.pos ? `<em>${ar(p.pos)}</em><small>من اليسار</small>` : '<small>فوق الصف</small>'}</span>
         <div><strong>${esc(caseName(p.case))}، الرف ${ar(p.shelf)}</strong>
         <span>${p.pos ? `الكتاب ${ar(p.pos)} من اليسار، من ${ar(p.of || '?')}` : 'موضوع أفقيًا فوق الصف'}${p.vols ? ` · المجلد ${esc(p.vols)}` : ''}</span>
         ${neighbours(b, p) ? `<span class="nb">${esc(neighbours(b, p))}</span>` : ''}</div></div>

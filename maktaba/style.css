@@ -1,8 +1,13 @@
+/* VOICE: هادئ ومقروء، كمكتبة بيت فيها كتب علم.
+   IDEA: كعب المجلد المذهّب في الرف الأول يصير لغة الموقع.
+   PICTURE: لوحة موقع مذهّبة كلوحة الكعب، ثم قصاصة الصورة، ثم الرف.
+   COLOUR and TYPE: أخضر التجليد، والذهب للإطارات فقط، وورق فاتح؛ Amiri للعناوين والأرقام، IBM Plex للنص.
+   LAYOUT: شريط علوي أخضر بالبحث والتبويبات، والمحتوى على الورق. */
 :root{
-  --bg:#f5f2ea; --paper:#fffdf8; --ink:#1f2a24; --muted:#6b706a; --line:#e2ddd0;
-  --green:#1f5a3a; --green-soft:#e3eee6; --gold:#b8954a; --warn:#a4501b; --warn-soft:#fbeee2;
-  --wood:#ffffff; --shelf:#ece8de;
-  --kufi:"Reem Kufi","IBM Plex Sans Arabic",system-ui,sans-serif;
+  --bg:#fbf8f1; --paper:#fffdf8; --ink:#1b241f; --muted:#56605a; --line:#e5ddcc;
+  --green:#173d2b; --green2:#1f5138; --green-soft:#e7efe6; --gold:#c9a24a; --gold-dk:#9c7c34; --warn:#9a4a12; --warn-soft:#fbeadb;
+  --wood:#ffffff; --shelf:#e6dcc6;
+  --kufi:"Amiri","IBM Plex Sans Arabic",serif;
   --text:"IBM Plex Sans Arabic","Segoe UI",Tahoma,system-ui,sans-serif;
 }
 *{box-sizing:border-box}
@@ -13,15 +18,20 @@ h1,h2,h3{font-family:var(--kufi);font-weight:700;margin:0 0 .4em}
 .hint{color:var(--muted);margin:.2em 0 1em}
 button{font:inherit;cursor:pointer}
 
-.top{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line);padding:14px clamp(12px,3vw,32px) 0;
+.top{position:sticky;top:0;z-index:20;background:var(--green);color:#f3ecd8;padding:14px clamp(12px,3vw,32px) 0;
   display:grid;grid-template-columns:auto 1fr;gap:8px 24px;align-items:center}
-.brand h1{font-size:1.7rem;color:var(--green);margin:0}
-.stats{margin:0;color:var(--muted);font-size:.85rem}
-.searchbox input{width:100%;padding:12px 16px;font:inherit;border:1.5px solid var(--line);border-radius:12px;background:#fff}
-.searchbox input:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--green-soft)}
+.brand h1{font-size:1.95rem;line-height:1.1;color:#fff;margin:0;display:flex;align-items:center;gap:12px}
+.brand .mark{width:38px;height:28px;flex:none;border-radius:2px;background:linear-gradient(90deg,var(--gold-dk) 0 10px,transparent 10px 14px,var(--gold) 14px 24px,transparent 24px 28px,var(--gold) 28px)}
+.stats{margin:2px 0 0;color:#cfdccf;font-size:.85rem}
+.searchbox{position:relative}
+.searchbox .kbd{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:0 6px;pointer-events:none}
+.searchbox input{width:100%;padding:12px 16px 12px 44px;font:inherit;border:2px solid transparent;border-radius:10px;background:#fff;color:var(--ink)}
+.searchbox input:focus{outline:none;border-color:var(--gold)}
 .tabs{grid-column:1/-1;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
-.tabs button{background:none;border:0;border-bottom:3px solid transparent;padding:10px 12px;color:var(--muted);white-space:nowrap}
-.tabs button[aria-selected=true]{color:var(--green);border-bottom-color:var(--green);font-weight:600}
+.tabs button{flex:none;background:none;border:0;border-radius:9px 9px 0 0;padding:10px 14px;color:#cfdccf;white-space:nowrap}
+.tabs button:hover{color:#fff}
+.tabs button[aria-selected=true]{background:var(--bg);color:var(--green);font-weight:600}
+.tabs .pill{background:#e9b05e;color:#3a2405}
 .pill{display:inline-block;background:var(--warn-soft);color:var(--warn);border-radius:99px;padding:0 8px;font-size:.8em}
 @media (max-width:720px){.top{grid-template-columns:1fr}.brand{display:flex;gap:12px;align-items:baseline}}
 
@@ -32,7 +42,7 @@ main{padding:16px clamp(12px,3vw,32px) 80px;max-width:1400px;margin:0 auto}
 @media (max-width:1000px){.cabinets{grid-template-columns:minmax(0,1fr)}}
 .cabinet{min-width:0}
 .cabinet{background:var(--wood);border:10px solid #fff;border-radius:6px;box-shadow:0 1px 0 #d9d4c7,0 12px 30px -18px rgba(40,40,30,.45);outline:1px solid #ddd8cb}
-.cabinet h2{font-size:1.05rem;padding:8px 10px 2px;color:var(--green)}
+.cabinet h2{font-size:1.35rem;padding:8px 10px 2px;color:var(--green)}
 .cabinet .cnote{font-size:.8rem;color:var(--muted);padding:0 10px 6px;margin:0}
 .shelf{position:relative;border-top:1px solid #eee;padding:8px 8px 0 8px;background:linear-gradient(#fbfaf6,#f3f0e8)}
 .shelf.hl{background:linear-gradient(#fff7df,#f8ecc8);box-shadow:inset 0 0 0 2px var(--gold)}
@@ -143,9 +153,13 @@ tr.clk{cursor:pointer} tr.clk:hover{background:#faf6ea}
 ::selection{background:#cfe3d6;color:var(--ink)}
 .edit-dlg input:focus,.edit-dlg select:focus,.edit-dlg textarea:focus,.filters select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--green-soft)}
 tr.clk:focus-visible{outline-offset:-2px}
-.where{display:flex;gap:12px;align-items:center;margin:12px 0 4px;padding:10px 12px;background:var(--green-soft);border-radius:12px}
-.where .wcode{font-family:var(--kufi);font-size:1.9rem;line-height:1;color:#fff;background:var(--green);border-radius:10px;padding:6px 12px;flex:none}
-.where strong{display:block;font-size:1.05rem}
+.where{display:flex;gap:16px;align-items:stretch;margin:14px 0 6px;padding:0 0 14px;border-bottom:3px double var(--gold)}
+.where .wcode{flex:none;width:96px;text-align:center;font-family:var(--kufi);color:#f6e7b8;background:linear-gradient(var(--green2),var(--green));border-radius:6px;padding:10px 6px;
+  box-shadow:inset 0 0 0 2px var(--green),inset 0 0 0 3px var(--gold),inset 0 0 0 6px var(--green),inset 0 0 0 7px var(--gold-dk)}
+.where .wcode b{display:block;font-size:2.4rem;line-height:1;color:#fff}
+.where .wcode em{display:block;font-style:normal;font-size:1.5rem;line-height:1.2;margin-top:4px}
+.where .wcode small{display:block;font:500 .72rem var(--text);color:#d9c78f}
+.where strong{display:block;font-size:1.05rem;color:var(--green2)}
 .where span{display:block;font-size:.9rem}
 .where .nb{color:var(--muted);font-size:.85rem;margin-top:2px}
 .plink[aria-current]{font-weight:700}
@@ -167,3 +181,6 @@ tr.clk:focus-visible{outline-offset:-2px}
   .res .loc{grid-column:2;text-align:right}
 }
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+#dTitle{font-size:1.9rem;line-height:1.2}
+.drawer{border-inline-end:3px double var(--gold)}
+@media (max-width:720px){#dTitle{font-size:1.5rem}.drawer{border-inline-end:0;border-top:3px double var(--gold)}.where .wcode{width:82px}.where .wcode b{font-size:2rem}}
