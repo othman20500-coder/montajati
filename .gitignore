@@ -15,3 +15,12 @@ maktaba/photos/
 
 # سجل نقد مهارة impeccable (محلي)
 .impeccable/
+
+# مهارة design-taste-frontend (Leonxlnx/taste-skill، نحو ٤٠ م.ب): تُركَّب محليًا ولا تُرفع
+.claude/skills/design-taste-frontend/
+.taste-skill/
+maktaba/welcome/.taste-skill/
+maktaba/welcome/assets/
+maktaba/welcome/shots/
+maktaba/welcome/img/
+maktaba/welcome/share.jpg
