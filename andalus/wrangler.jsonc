@@ -8,5 +8,7 @@
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "none"
   },
-  "workers_dev": true
+  "workers_dev": true,
+  // لازم لمعاينات طلبات الدمج (`wrangler preview`)، وفارغ عمدًا
+  "previews": {}
 }
