@@ -50,22 +50,13 @@
   .h3{font-size:18px;color:var(--green-2);margin-bottom:10px}
 
   /* ===== المقدمة ===== */
-  .hero{padding-block:64px 44px;margin-inline:-20px;padding-inline:20px;background:linear-gradient(135deg,var(--green) 0%,var(--green-2) 60%,var(--green-deep) 100%);color:#fff;border-radius:0 0 26px 26px}
+  .hero{padding-block:56px 48px;margin-inline:-20px;padding-inline:20px;background:linear-gradient(135deg,var(--green) 0%,var(--green-2) 60%,var(--green-deep) 100%);color:#fff;border-radius:0 0 26px 26px}
   .hero .in{direction:rtl;max-width:1100px;margin-inline:auto}
   .hero h1{font-weight:700;font-size:clamp(34px,6vw,62px);line-height:1.2}
   .hero h1 b{color:var(--saffron);font-weight:700}
   .hero p{font-weight:300;font-size:18px;color:rgba(255,255,255,.82);max-width:60ch;margin:14px 0 0}
   .hero .eyebrow{color:var(--saffron)}
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:30px;max-width:720px}
-  @media (max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
-  .stats div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px 14px}
-  .stats b{display:block;font-family:var(--head);font-size:30px;line-height:1.1;font-variant-numeric:tabular-nums}
-  .stats span{font-size:13px;color:rgba(255,255,255,.75)}
-
   /* ===== البطاقات ===== */
-  .sectors{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 20px}
-  .sectors button{font-size:13px;padding:5px 13px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted)}
-  .sectors button[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s;cursor:pointer}
   .card:hover{transform:translateY(-4px);box-shadow:0 18px 36px -22px rgba(15,95,76,.45)}
@@ -178,13 +169,7 @@
 const SITE = {
   name: "عثمان الشهري",
   office: "office.html",   // النسخة الشخصية (المكتب الخاص)
-  line: "أبني منصات وأدوات رقمية عربية من الفكرة حتى الإطلاق، مع القطاع الحكومي وغير الربحي وللاستخدام الشخصي.",
   mail: "mailto:othman20500@gmail.com",
-  // عناوين othmana.sa التي ليست منتجًا بعينه؛ عناوين المنتجات تُقرأ من روابطها في PROJECTS
-  addresses: [
-    { href: "https://www.othmana.sa", name: "الموقع الشخصي", d: "تعريف بعثمان: مدير تطوير وتخطيط استراتيجي.", access: "public" },
-    { href: "https://montajati.othmana.sa", name: "منتجاتي", d: "هذه الصفحة: المنتجات والمنصات بقصصها وروابطها.", access: "public" },
-  ],
 };
 
 const SECTORS = {
@@ -317,37 +302,16 @@ function cardHtml(p){
   </article>`;
 }
 
-/* ----- الصفحة الواحدة: مقدمة، ثم الأعمال، ثم العناوين، ثم عن عثمان ----- */
-function statsHtml(){
-  const live = PROJECTS.filter(p=>p.status==="live").length;
-  const secs = new Set(PROJECTS.flatMap(p=>p.sectors)).size;
-  return [[PROJECTS.length,"منتجًا ومنصة"],[live,"منشورة ومكتملة"],[addresses().length,countWord(addresses().length)+" على othmana.sa"],[secs,"مجالات"]].map(([n,l])=>`<div><b>${n}</b><span>${l}</span></div>`).join("");
-}
-
-let sector = "all";
-const worksGrid = () => PROJECTS.filter(p=>sector==="all"||p.sectors.includes(sector)).map(cardHtml).join("");
-const sectorBtns = () => [["all","الكل"],...Object.entries(SECTORS).map(([k,v])=>[k,v.name])].map(([k,n])=>`<button data-s="${k}" aria-pressed="${k===sector}">${n}</button>`).join("");
-
-/* ----- العناوين: كل ما يفتح على othmana.sa، من SITE.addresses وروابط المنتجات نفسها ----- */
-function addresses(){
-  const own = u => { try{ const h=new URL(u).hostname; return h==="othmana.sa"||h.endsWith(".othmana.sa"); }catch{ return false; } };
-  const fromProjects = PROJECTS.flatMap(p=>p.links.filter(l=>l.t==="live"&&l.href&&own(l.href)&&l.access!=="internal").map(l=>({ href:l.href, name:p.name, d:p.summary, access:l.access, slug:p.slug })));
-  return [...SITE.addresses, ...fromProjects];
-}
-const countWord = n => n>=3&&n<=10 ? "عناوين" : "عنوانًا";
-
+/* ----- الصفحة الواحدة: مقدمة، ثم الأعمال ----- */
 function pageHtml(){
   return `
   <div class="hero" id="top"><div class="in">
     <p class="eyebrow">عثمان الشهري · منتجات رقمية عربية</p>
     <h1>من <b>الفكرة</b> إلى <b>الأثر</b>.</h1>
-    <p>${esc(SITE.line)}</p>
-    <div class="stats">${statsHtml()}</div>
   </div></div>
 
-  <section id="works"><p class="eyebrow">الأعمال</p><h2>المنتجات والمنصات</h2><p class="sub">في كل بطاقة عنوان المنتج: «عام» يفتح للجميع، و«بدخول» يفتح صفحة تسجيل دخول. اختر مجالًا أو اعرض الكل، والوضع «موسّع» يُظهر التحدي والدور والنتيجة.</p>
-    <div class="sectors" id="secBtns">${sectorBtns()}</div>
-    <div class="grid" id="worksGrid">${worksGrid()}</div>
+  <section id="works"><p class="eyebrow">الأعمال</p><h2>المنتجات والمنصات</h2><p class="sub">في كل بطاقة عنوان المنتج: «عام» يفتح للجميع، و«بدخول» يفتح صفحة تسجيل دخول، والوضع «موسّع» يُظهر التحدي والدور والنتيجة.</p>
+    <div class="grid" id="worksGrid">${PROJECTS.map(cardHtml).join("")}</div>
   </section>`;
 }
 
@@ -408,9 +372,7 @@ const app = document.getElementById("app");
 app.innerHTML = pageHtml();
 function wireWorks(){
   app.querySelectorAll("#worksGrid .card").forEach(c=>{ const go=()=>location.hash="#/p/"+c.dataset.slug; c.addEventListener("click",go); c.addEventListener("keydown",e=>{if(e.key==="Enter")go();}); });
-  app.querySelectorAll("#secBtns button").forEach(b=>b.onclick=()=>setSector(b.dataset.s));
 }
-function setSector(k){ sector=k; document.getElementById("secBtns").innerHTML=sectorBtns(); document.getElementById("worksGrid").innerHTML=worksGrid(); wireWorks(); }
 wireWorks();
 
 /* ----- الوضعان ----- */
@@ -424,7 +386,6 @@ applyMode();
 const goTo = id => { closeStory(); if(location.hash.startsWith("#/p/")) history.pushState(null,"",location.pathname); document.getElementById(id)?.scrollIntoView({behavior:reduced?"auto":"smooth"}); };
 const cmds=[
   ...PROJECTS.map(p=>({t:`افتح ${p.name}`,s:"منتج",go:()=>location.hash="#/p/"+p.slug,k:`${p.name} ${p.en} ${p.summary}`})),
-  ...Object.entries(SECTORS).map(([k,v])=>({t:`اعرض أعمال ${v.name}`,s:"مجال",go:()=>{setSector(k);goTo("works");},k:v.name})),
   {t:"الأعمال",s:"قسم",go:()=>goTo("works"),k:"works منتجات"},
   {t:"راسلني",s:"تواصل",go:()=>location.href=SITE.mail,k:"mail بريد تواصل راسلني"},
   {t:"الموقع الشخصي www.othmana.sa",s:"رابط",go:()=>open("https://www.othmana.sa","_blank"),k:"othmana عن عثمان"},
@@ -435,7 +396,7 @@ const cmds=[
 ];
 let modal=null; const closeModal=()=>{modal?.remove();modal=null;};
 function openK(){
-  closeModal(); modal=el(`<div class="modal"><div class="box"><input id="kq" placeholder="اكتب: افتح مِراس، اعرض أعمال النقل، راسلني…" autocomplete="off"><ul id="kl"></ul><div class="hint">↑↓ للتنقل · Enter للتنفيذ · Esc للإغلاق</div></div></div>`);
+  closeModal(); modal=el(`<div class="modal"><div class="box"><input id="kq" placeholder="اكتب: افتح مِراس، الأعمال، راسلني…" autocomplete="off"><ul id="kl"></ul><div class="hint">↑↓ للتنقل · Enter للتنفيذ · Esc للإغلاق</div></div></div>`);
   document.body.append(modal); const q=modal.querySelector("#kq"), ul=modal.querySelector("#kl"); let sel=0, cur=[];
   const norm=s=>s.toLowerCase().replace(/[ً-ْ]/g,"").replace(/[أإآ]/g,"ا").replace(/ة/g,"ه").replace(/ى/g,"ي");
   const render=()=>{ const v=norm(q.value.trim()); cur=cmds.filter(c=>!v||norm(c.t+" "+c.k).includes(v)).slice(0,10); sel=Math.min(sel,Math.max(0,cur.length-1)); ul.innerHTML=cur.map((c,i)=>`<li class="${i===sel?"sel":""}">${esc(c.t)}<small>${esc(c.s)}</small></li>`).join("")||`<li><small>لا نتائج</small></li>`; ul.querySelectorAll("li").forEach((li,i)=>li.onclick=()=>{cur[i]&&(closeModal(),cur[i].go());}); };
