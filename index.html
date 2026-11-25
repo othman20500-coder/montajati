@@ -151,6 +151,16 @@
   .share{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
   .share button,.share a{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 12px;font-size:13.5px}
   .legend{font-size:12.5px;color:var(--muted);margin-top:14px}
+  .addr{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+  .addr li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+  .addr a.h{direction:ltr;unicode-bidi:isolate;justify-self:start;font-family:ui-monospace,Consolas,monospace;font-size:15px;color:var(--green-2);font-weight:600}
+  .addr a.h:hover{text-decoration:underline}
+  .addr b{font-family:var(--head);font-weight:600;font-size:16px}
+  .addr span{font-size:13.5px;color:var(--muted)}
+  .addr .tag{grid-row:1 / span 3;grid-column:2;font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+  .addr .tag.pub{background:var(--green-soft);border-color:var(--green-soft);color:var(--green-2)}
+  .addr .story-a{font-size:12.5px;color:var(--green)}
+  @media (max-width:560px){ .addr li{grid-template-columns:1fr} .addr .tag{grid-row:auto;grid-column:auto;justify-self:start} }
   .legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-inline-end:4px;vertical-align:-1px}
 
   /* ===== عن / الأثر / الآن ===== */
@@ -216,6 +226,7 @@
     <a href="#/about" data-r="about">عن عثمان</a>
     <a href="#/impact" data-r="impact">الأثر</a>
     <a href="#/now" data-r="now">الآن</a>
+    <a href="#/links" data-r="links">العناوين</a>
     <a href="" id="officeLink" target="_blank" rel="noopener">المكتب الخاص</a>
   </nav>
   <div class="tools">
@@ -242,10 +253,15 @@ const SITE = {
   ],
   roles: [
     { t: "تصميم المنتج", d: "من تعريف المشكلة إلى النموذج التفاعلي والهوية البصرية." },
-    { t: "التطوير والنشر", d: "واجهات عربية RTL، خدمات خلفية، ونشر على Netlify وRender وخوادم خاصة." },
+    { t: "التطوير والنشر", d: "واجهات عربية RTL، خدمات خلفية، ونشر على Cloudflare وRender بنطاقات othmana.sa." },
     { t: "التحليل والوثائق", d: "وثائق تعريف ونطاق، دراسات مقارنة، وتصميم معماري قبل أي سطر كود." },
   ],
   caps: ["Next.js","Node","PHP/MySQL","Python","Tailwind","تصميم RTL","الهوية البصرية","الوثائق التنفيذية","التقويم الهجري","الأتمتة"],
+  // عناوين othmana.sa التي ليست منتجًا بعينه؛ عناوين المنتجات تُقرأ من روابطها في PROJECTS
+  addresses: [
+    { href: "https://www.othmana.sa", name: "الموقع الشخصي", d: "تعريف بعثمان: مدير تطوير وتخطيط استراتيجي.", access: "public" },
+    { href: "https://montajati.othmana.sa", name: "منتجاتي", d: "هذه الصفحة: المنتجات والمنصات بقصصها وروابطها.", access: "public" },
+  ],
   partners: ["وزارة النقل والخدمات اللوجستية","مؤسسة مجتمع روشن","جمعية صناعة القدرات الشبابية"],
   now: [
     { k: "أعمل الآن على", v: "فرص: نموذج تفاعلي منشور وهوية معتمدة، بانتظار قرار الاعتماد.", d: "سبتمبر 2026" },
@@ -265,27 +281,27 @@ const SECTORS = {
   know:  { name: "المنتجات المعرفية",    d: "حزم تدريبية، عروض، وأدلة ميسّرين." },
 };
 
-// access: public | restricted (يحتاج صلاحية) | internal (لا يظهر للزائر)
+// access: public | login (رابط عام بصفحة دخول) | restricted (يحتاج صلاحية، بلا رابط) | internal (لا يظهر للزائر)
 const PROJECTS = [
   { slug:"andalus", name:"الأندلس", en:"Al-Andalus Platform", status:"concept", sectors:["know","social"], year:"2026",
     logo:"assets/logo-andalus.svg", shot:"assets/andalus.png",
     summary:"تصور منصة رقمية مرجعية عن الأندلس: موسوعة وأطلس زمني ومتحف رقمي وتجربة تعليمية، بالعربية أولًا وبتوثيق أكاديمي.",
     story:{ challenge:"لا توجد منصة بأي لغة تجمع الموسوعة والخريطة الزمنية والمتحف والتعليم عن الأندلس بمعرّفات مشتركة، والمحتوى العربي سردي بلا توثيق.", idea:"«الزمن هو الواجهة»: سنة واحدة تحرّك الخريطة والحكام والمدن والوثائق، وكل جملة تحمل مصدرها وحالتها: حقيقة، أو رواية مختلف عليها، أو استنتاج.", role:"البحث المرجعي (Benchmark والمصادر)، خريطة المحتوى، المعمارية ونموذج البيانات، تجربة الإخراج، الهوية ونظام التصميم، والنموذج التفاعلي.", done:"وثيقة من سبعة فصول، مخطط بيانات JSON، ونموذج تفاعلي بلا خادم بثلاث سمات بصرية وثلاثة أوضاع جمهور ولوحة «كيف نعرف هذا؟».", impact:"تصور تأسيسي بانتظار قرار الانطلاق في مرحلة MVP." },
     stages:[ ["البحث المرجعي وخريطة المحتوى","سبتمبر 2026"],["المعمارية ونموذج الادعاء والمصدر","سبتمبر 2026"],["الهوية والنموذج التفاعلي","21 سبتمبر 2026"],["MVP: عصر الخلافة بعمق","قادم"] ],
-    links:[ {t:"live",label:"النموذج التفاعلي",href:"andalus/",access:"public"}, {t:"report",label:"وثيقة التصور",href:"https://github.com/othman20500-coder/montajati/tree/main/andalus",access:"restricted"} ] },
+    links:[ {t:"live",label:"الأطلس",href:"https://andalus.othmana.sa",access:"public"}, {t:"report",label:"وثيقة التصور",href:"https://github.com/othman20500-coder/montajati/tree/main/andalus",access:"restricted"} ] },
   { slug:"furas", name:"فرص", en:"Furas", status:"concept", sectors:["gov","social"], year:"2026",
     logo:"assets/logo-furas.png", shot:"assets/furas.png",
     summary:"شراكات تصنع أثرًا: منصة مقترحة لوزارة النقل تعرض 32 فرصة شراكة مجتمعية على القطاع الخاص.",
     story:{ challenge:"فرص الشراكة المجتمعية في قطاع النقل غير معروضة للشركات بصيغة موحدة، فتضيع بين المراسلات.", idea:"منصة واحدة تعرض الفرص بحقول موحدة، وتتيح التصفية والمقارنة وطلب الشراكة حتى تقرير الأثر.", role:"الفكرة، وثيقة التعريف والنطاق، الدراسة المقارنة، النموذج التفاعلي، والهوية البصرية.", done:"وثيقتان معتمدتان للعرض، ونموذج تفاعلي منشور يعرض 32 فرصة بفلاتر عاملة، وهوية «فرص» كاملة.", impact:"مقترح مرفوع للاعتماد. قاعدته: لا يُعرض رقم غير موثّق." },
     stages:[ ["وثيقة التعريف والنطاق","2026"],["الدراسة المقارنة ومواصفات التصميم","2026"],["النموذج التفاعلي","سبتمبر 2026"],["الهوية البصرية والنشر","15 سبتمبر 2026"],["قرار الاعتماد","قادم"] ],
-    links:[ {t:"live",label:"النموذج المنشور",href:"https://furas.netlify.app",access:"public"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/Furas",access:"restricted"}, {t:"report",label:"وثيقة التعريف",href:"",access:"internal"} ] },
+    links:[ {t:"live",label:"النموذج المنشور",href:"https://furas.othmana.sa",access:"public"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/Furas",access:"restricted"}, {t:"report",label:"وثيقة التعريف",href:"",access:"internal"} ] },
 
   { slug:"maras", name:"مِراس", en:"Maras Lab", status:"live", sectors:["npo","know"], year:"2026",
     logo:"assets/logo-maras.png", logoBg:"#0B1020", shot:"assets/maras.png",
     summary:"مختبر الفاعلية: برنامج تدريبي تفاعلي لمؤسسة مجتمع روشن يحوّل المعرفة إلى فعل.",
-    story:{ challenge:"المشكلة ليست نقص المعرفة بل وهم المعرفة: المتدرب يعرف ما يجب أن يفعله ولا يفعله.", idea:"مختبر لا قاعة: مهام ميدانية، جواز سفر، بروتوكولات، ونظام ألعاب يقيس الفعل لا الحضور.", role:"تصميم التجربة والمحتوى، وبناء الحزمة التقنية كاملة، ونظام الميسّرين.", done:"نحو خمسين صفحة تفاعلية، حزمة ميسّر بعروض قابلة للتحرير، نسخة تعمل دون إنترنت، ونشر على Netlify.", impact:"جاهز للتشغيل مع الدفعة الأولى." },
+    story:{ challenge:"المشكلة ليست نقص المعرفة بل وهم المعرفة: المتدرب يعرف ما يجب أن يفعله ولا يفعله.", idea:"مختبر لا قاعة: مهام ميدانية، جواز سفر، بروتوكولات، ونظام ألعاب يقيس الفعل لا الحضور.", role:"تصميم التجربة والمحتوى، وبناء الحزمة التقنية كاملة، ونظام الميسّرين.", done:"نحو خمسين صفحة تفاعلية، حزمة ميسّر بعروض قابلة للتحرير، نسخة تعمل دون إنترنت، ونشر على Cloudflare.", impact:"جاهز للتشغيل مع الدفعة الأولى." },
     stages:[ ["الإطار والمفهوم","أغسطس 2026"],["الحزمة التفاعلية v1","18 أغسطس 2026"],["حزمة الميسّر والعروض","25 أغسطس 2026"],["تحديثات التطبيق","11 سبتمبر 2026"] ],
-    links:[ {t:"live",label:"المختبر",href:"https://maras-lab.netlify.app",access:"public"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/Maras",access:"restricted"}, {t:"deck",label:"عروض الميسّر",href:"",access:"restricted"} ] },
+    links:[ {t:"live",label:"المختبر",href:"https://maras.othmana.sa",access:"public"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/maras-lab",access:"restricted"}, {t:"deck",label:"عروض الميسّر",href:"",access:"restricted"} ] },
 
   { slug:"youth", name:"منصة الأندية الشبابية", en:"Youth Clubs", status:"wip", sectors:["youth","npo"], year:"2026",
     logo:"assets/logo-youth.png", shot:"assets/shot-youth.png",
@@ -297,16 +313,16 @@ const PROJECTS = [
   { slug:"rasd", name:"منظومة رَصْد", en:"Rasd v7.3", status:"live", sectors:["mgmt"], year:"2026",
     logo:"assets/logo-rasd.png", shot:"assets/shot-rasd.png",
     summary:"منظومة للقيادة الاستراتيجية: مهام ومشاريع وفريق ومؤشرات أداء في شاشة واحدة.",
-    story:{ challenge:"متابعة المهام والمشاريع والمؤشرات موزعة بين جداول ورسائل، فتغيب الصورة الكاملة عن القيادة.", idea:"منظومة ويب خفيفة بواجهة عربية تربط المهام بالمشاريع بالفريق بالمؤشرات.", role:"التصميم والتطوير والنشر والتشغيل.", done:"الإصدار 7.3 منشور على خادم خاص بواجهة PHP/MySQL، ونسخة تشغيل محلية.", impact:"نسخة إنتاجية عاملة محمية بكلمة مرور." },
+    story:{ challenge:"متابعة المهام والمشاريع والمؤشرات موزعة بين جداول ورسائل، فتغيب الصورة الكاملة عن القيادة.", idea:"منظومة ويب خفيفة بواجهة عربية تربط المهام بالمشاريع بالفريق بالمؤشرات.", role:"التصميم والتطوير والنشر والتشغيل.", done:"الإصدار 7.3 بواجهة PHP/MySQL، منشور على Render بعنوان مستقل، ونسخة تشغيل محلية.", impact:"نسخة إنتاجية عاملة محمية بكلمة مرور." },
     stages:[ ["النسخة الأولى","مايو 2026"],["ربط قاعدة البيانات والصلاحيات","2026"],["الإصدار 7.3","2026"] ],
-    links:[ {t:"live",label:"المنظومة",href:"https://othmana.sa/rasd/",access:"restricted"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/Rasd",access:"restricted"} ] },
+    links:[ {t:"live",label:"المنظومة",href:"https://rasd.othmana.sa",access:"login"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/Rasd",access:"restricted"} ] },
 
-  { slug:"ailatna", name:"عائلتنا", en:"Ailatna", status:"wip", sectors:["digital","social"], year:"2026",
+  { slug:"ailatna", name:"عائلتنا", en:"Ailatna", status:"archived", sectors:["digital","social"], year:"2026",
     logo:"assets/logo-family.png", shot:"assets/family.png",
     summary:"عالمنا الأسري التفاعلي: مهام ونقاط، رحلة قيم، تحديات، مكتبة، وبنك عائلي.",
-    story:{ challenge:"تربية القيم في البيت تحتاج تكرارًا ومتابعة، والتطبيقات المتاحة إما ألعاب أو قوائم مهام جافة.", idea:"عالم كرتوني للأسرة: كل مهمة صغيرة تنمّي شجرة الأسرة وتقرّبها من هدف الأسبوع.", role:"الفكرة والتصميم والتطوير كاملًا: الواجهة والخادم ومحرك النمو القيمي.", done:"واجهة تعمل محليًا بلا خادم، وخادم Node + MySQL للحسابات والمزامنة والنقاط والمهام، منشور على نطاق خاص.", impact:"يُختبر داخل الأسرة أولًا قبل أي توسّع." },
+    story:{ challenge:"تربية القيم في البيت تحتاج تكرارًا ومتابعة، والتطبيقات المتاحة إما ألعاب أو قوائم مهام جافة.", idea:"عالم كرتوني للأسرة: كل مهمة صغيرة تنمّي شجرة الأسرة وتقرّبها من هدف الأسبوع.", role:"الفكرة والتصميم والتطوير كاملًا: الواجهة والخادم ومحرك النمو القيمي.", done:"واجهة تعمل محليًا بلا خادم، وخادم Node + MySQL للحسابات والمزامنة والنقاط والمهام.", impact:"مؤرشف: لا نسخة منشورة الآن، والكود محفوظ." },
     stages:[ ["الواجهة الكرتونية","2026"],["الخادم ومحرك الرحلات","2026"],["النشر الخاص","2026"] ],
-    links:[ {t:"live",label:"المنصة",href:"https://app.othmana.sa",access:"public"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/ailatna",access:"restricted"} ] },
+    links:[ {t:"live",label:"المنصة",href:"",access:"internal"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/ailatna",access:"restricted"} ] },
 
   { slug:"mizan", name:"ميزان", en:"Mizan", status:"wip", sectors:["digital"], year:"2026",
     logo:"assets/logo-mizan.png", shot:"assets/shot-mizan.png",
@@ -320,7 +336,25 @@ const PROJECTS = [
     summary:"مساحة عربية واحدة للمهام والقرارات والاستحقاقات: «يومي» لتنفيذ اليوم، و«مكتب الصباح» لفرز البريد والقرارات، وتنبيه بكل ما له تاريخ انتهاء.",
     story:{ challenge:"المهام والمواعيد والرسائل التي تنتظر ردًا والوثائق التي تنتهي موزعة بين تطبيقات لا يكلم بعضها بعضًا.", idea:"تطبيق واحد يبدأ بالصباح: تقرير البريد يصل مصنفًا بما يحتاجه، وتُقترح أهم ثلاثة أشياء اليوم بأسبابها، ثم يُنفَّذ اليوم في «يومي».", role:"التصميم والتطوير كاملًا.", done:"تطبيق ويب يعمل على الجوال والحاسوب بحساب ومزامنة: «يومي» بشريط اليوم وأوقات الصلاة، و«مكتب الصباح» بالأولويات ونافذة التركيز ومسودات الردود، والاستحقاقات بتقويمين هجري وميلادي.", impact:"قيد الاستخدام اليومي الشخصي، والدخول بدعوة." },
     stages:[ ["الاستحقاقات: النسخة الأولى","2026"],["الدمج مع «يومي 2» و«مكتب الصباح»","سبتمبر 2026"],["مكتب الصباح الذكي","أكتوبر 2026"] ],
-    links:[ {t:"live",label:"التطبيق (بدعوة)",href:"https://muhla.othmana.sa",access:"public"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/yawmi",access:"restricted"} ] },
+    links:[ {t:"live",label:"التطبيق (بدعوة)",href:"https://muhla.othmana.sa",access:"login"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/yawmi",access:"restricted"} ] },
+
+  { slug:"radar", name:"رادار المانحين", en:"Donor Radar", status:"live", sectors:["npo","mgmt"], year:"2026",
+    summary:"مساحة عمل مشتركة لفريق جمعية التنمية الأهلية بالمعذر: المشاريع وعروضها والجهات المانحة والفرص والمتابعة في مكان واحد.",
+    story:{ challenge:"ملفات المشاريع والجهات المانحة ومتابعة التقديم موزعة، فلا يعرف الفريق بسرعة: ما المشروع، ما ملفه، من المسؤول، وما الخطوة التالية.", idea:"رادار واحد يربط كل مشروع بعروضه المعتمدة والجهات المناسبة، ولكل متابعة مسؤول وخطوة تالية وموعد.", role:"تعريف المنتج والتصميم والتطوير والنشر.", done:"تطبيق بحسابات وثلاثة أدوار (مدير، محرر، مشاهد)، ومكتبة عروض مانحين ومرفقات محمية بالدخول، منشور على Cloudflare.", impact:"يستخدمه فريق الجمعية بحسابات يصدرها المدير." },
+    stages:[ ["نسخة الفريق 10","2026"],["الإصدار 13 على Cloudflare","نوفمبر 2026"] ],
+    links:[ {t:"live",label:"الرادار",href:"https://radar.othmana.sa",access:"login"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/donor-radar",access:"restricted"} ] },
+
+  { slug:"tanmia", name:"استراتيجية التنمية الأهلية", en:"Tanmia Strategy", status:"live", sectors:["npo","mgmt"], year:"2026",
+    summary:"الخطة الاستراتيجية 2027–2031م (الإصدار المحدّث) لجمعية التنمية الأهلية بالمعذر، في صفحة واحدة منشورة.",
+    story:{ challenge:"وثيقة الخطة الاستراتيجية تحتاج أن تُقرأ وتُشارك بسهولة، لا أن تبقى ملفًا مرفقًا.", idea:"صفحة ويب واحدة تعرض الخطة كاملة ويُشارك رابطها.", role:"الإعداد والتصميم والنشر.", done:"صفحة منشورة على Cloudflare بعنوان مستقل.", impact:"متاحة برابط عام." },
+    stages:[ ["النشر الأول","أكتوبر 2026"],["الإصدار المحدّث على Cloudflare","نوفمبر 2026"] ],
+    links:[ {t:"live",label:"الخطة",href:"https://tanmia.othmana.sa",access:"public"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/tanmia-strategy",access:"restricted"} ] },
+
+  { slug:"itqan", name:"إتقان", en:"Itqan", status:"live", sectors:["know","social"], year:"2026",
+    summary:"منصة مراجعة للتحضير لاختبارات «الممارس المعتمد في الابتكار الاجتماعي»، في ملف واحد يعمل دون إنترنت.",
+    story:{ challenge:"المتقدمون لاختبار الممارس المعتمد في الابتكار الاجتماعي يحتاجون مراجعة منظمة في مكان واحد.", idea:"منصة مراجعة واحدة بالنصوص والصور مدمجة، تعمل حتى دون إنترنت.", role:"الإعداد والتصميم والتطوير.", done:"منصة في ملف HTML واحد منشورة على Cloudflare، والدخول إليها محمي.", impact:"متاحة لمن يُمنح الدخول." },
+    stages:[ ["المنصة","2026"],["النشر المحمي على Cloudflare","نوفمبر 2026"] ],
+    links:[ {t:"live",label:"المنصة",href:"https://itqan.othmana.sa",access:"login"}, {t:"repo",label:"GitHub",href:"https://github.com/othman20500-coder/itqan",access:"restricted"} ] },
 ];
 /* ================================================================== */
 
@@ -346,6 +380,7 @@ const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 function linksHtml(p){
   return p.links.map(l => {
     if (l.access === "internal") return "";
+    if (l.access === "login" && l.href) return `<a class="${l.t==="live"?"pri":""}" href="${esc(l.href)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="يحتاج تسجيل الدخول">${IC.lock}${esc(l.label||LT[l.t])}</a>`;
     if (l.access === "restricted" || !l.href) return `<span title="يحتاج صلاحية">${IC.lock}${esc(l.label||LT[l.t])} · يحتاج صلاحية</span>`;
     return `<a class="${l.t==="live"?"pri":""}" href="${esc(l.href)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${IC[l.t]||IC.report}${esc(l.label||LT[l.t])}</a>`;
   }).join("");
@@ -426,12 +461,21 @@ V.about = () => `<section class="about">
 function numsHtml(){
   const live = PROJECTS.filter(p=>p.status==="live").length;
   const secs = new Set(PROJECTS.flatMap(p=>p.sectors)).size;
-  const pub = PROJECTS.filter(p=>p.links.some(l=>l.access==="public"&&l.href)).length;
+  const pub = PROJECTS.filter(p=>p.links.some(l=>(l.access==="public"||l.access==="login")&&l.href)).length;
   return [[PROJECTS.length,"منتجات ومنصات"],[live,"منشورة ومكتملة"],[pub,"متاحة برابط عام"],[secs,"مجالات عمل"],[SITE.partners.length,"جهات شريكة"]].map(([n,l])=>`<div class="num"><b data-n="${n}">0</b><span>${l}</span></div>`).join("");
 }
 const nowHtml = () => SITE.now.map(n=>`<div><b>${esc(n.k)}</b><p>${esc(n.v)}</p>${n.d?`<small>${esc(n.d)}</small>`:""}</div>`).join("");
 V.impact = () => `<section><p class="eyebrow">الأثر</p><h2>الأثر بالأرقام</h2><p class="sub">كل رقم هنا محسوب من بيانات المنتجات في هذه الصفحة، ولا يُضاف رقم عن مستفيدين أو جهات إلا بمصدر موثّق.</p><div class="nums" id="nums">${numsHtml()}</div>
   <h3 style="font-size:18px;color:var(--green-2);margin:30px 0 10px">حسب المجال</h3><div class="grid">${Object.entries(SECTORS).map(([k,v])=>{const ps=PROJECTS.filter(p=>p.sectors.includes(k)); return `<div class="mapinfo" style="min-height:0"><h3>${esc(v.name)}</h3><p>${esc(v.d)}</p><div class="chips">${ps.map(chip).join("")||"<span class='legend'>لا منتجات بعد</span>"}</div></div>`;}).join("")}</div></section>`;
+/* ----- العناوين: كل ما يفتح على othmana.sa، من SITE.addresses وروابط المنتجات نفسها ----- */
+function addresses(){
+  const own = u => { try{ const h=new URL(u).hostname; return h==="othmana.sa"||h.endsWith(".othmana.sa"); }catch{ return false; } };
+  const fromProjects = PROJECTS.flatMap(p=>p.links.filter(l=>l.t==="live"&&l.href&&own(l.href)&&l.access!=="internal").map(l=>({ href:l.href, name:p.name, d:p.summary, access:l.access, slug:p.slug })));
+  return [...SITE.addresses, ...fromProjects];
+}
+const hostOf = u => new URL(u).hostname;
+V.links = () => { const list=addresses(); return `<section><p class="eyebrow">العناوين</p><h2>كل ما يفتح على othmana.sa</h2><p class="sub">${list.length} ${list.length>=3&&list.length<=10?"عناوين":"عنوانًا"}، كلٌّ منها منتج أو صفحة. «بدخول» يعني أن الرابط يفتح صفحة تسجيل دخول.</p>
+  <ul class="addr">${list.map(a=>`<li><a class="h" href="${esc(a.href)}" target="_blank" rel="noopener">${esc(hostOf(a.href))}</a><span class="tag ${a.access==="public"?"pub":""}">${a.access==="public"?"عام":"بدخول"}</span><b>${esc(a.name)}</b><span>${esc(a.d)}${a.slug?` <a class="story-a" href="#/p/${a.slug}">القصة ←</a>`:""}</span></li>`).join("")}</ul></section>`; };
 V.now = () => `<section><p class="eyebrow">الآن</p><h2>ماذا أعمل هذه الأيام؟</h2><p class="sub">قسم يتجدد كل أسبوعين تقريبًا.</p><div class="now">${nowHtml()}</div></section>`;
 
 const chip = p => `<a class="chip" href="#/p/${p.slug}">${p.logo?`<img src="${esc(p.logo)}" alt=""${p.logoBg?` style="background:${p.logoBg}"`:""}>`:`<span class="ini">${esc(ini(p))}</span>`}${esc(p.name)}</a>`;
@@ -496,9 +540,10 @@ const cmds=[
   {t:"عن عثمان",s:"صفحة",go:()=>location.hash="#/about",k:"about خبرات"},
   {t:"الأثر بالأرقام",s:"صفحة",go:()=>location.hash="#/impact",k:"impact"},
   {t:"ماذا أعمل الآن",s:"صفحة",go:()=>location.hash="#/now",k:"now الآن"},
+  {t:"كل العناوين على othmana.sa",s:"صفحة",go:()=>location.hash="#/links",k:"links عناوين روابط نطاقات othmana"},
   {t:"وضع موسّع",s:"عرض",go:()=>{localStorage.setItem("mode","deep");route();},k:"deep"},
   {t:"وضع مختصر",s:"عرض",go:()=>{localStorage.setItem("mode","brief");route();},k:"brief"},
-  ...PROJECTS.flatMap(p=>p.links.filter(l=>l.access==="public"&&l.href).map(l=>({t:`${l.label||LT[l.t]} · ${p.name}`,s:"رابط عام",go:()=>open(l.href,"_blank"),k:`${p.name} ${l.label}`}))),
+  ...PROJECTS.flatMap(p=>p.links.filter(l=>(l.access==="public"||l.access==="login")&&l.href).map(l=>({t:`${l.label||LT[l.t]} · ${p.name}`,s:"رابط عام",go:()=>open(l.href,"_blank"),k:`${p.name} ${l.label}`}))),
 ];
 let modal=null; const closeModal=()=>{modal?.remove();modal=null;};
 function openK(){
