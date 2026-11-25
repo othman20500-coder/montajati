@@ -19,20 +19,6 @@
   .wrap{direction:rtl;max-width:1100px;margin-inline:auto}
   [hidden]{display:none!important}
 
-  /* ===== الافتتاحية ===== */
-  #intro{position:fixed;inset:0;z-index:100;background:var(--green-deep);color:#fff;display:grid;place-items:center;direction:rtl;text-align:center;transition:opacity .6s var(--ease),visibility .6s}
-  #intro.done{opacity:0;visibility:hidden;pointer-events:none}
-  #intro .tl{width:min(70vw,520px);height:2px;background:rgba(255,255,255,.15);position:relative;margin:0 auto 34px;overflow:hidden}
-  #intro .tl::after{content:"";position:absolute;inset:0;background:var(--saffron);transform:translateX(100%);animation:tl 2.2s var(--ease) forwards .2s}
-  @keyframes tl{to{transform:translateX(0)}}
-  #intro .ph{font-family:var(--head);font-weight:700;font-size:clamp(30px,6vw,60px);line-height:1.3;margin:0;opacity:0;transform:translateY(10px);animation:up .9s var(--ease) forwards 1.4s}
-  #intro .ph b{color:var(--saffron);font-weight:700}
-  #intro .sub{font-weight:300;color:rgba(255,255,255,.75);margin:12px 0 0;opacity:0;animation:up .8s var(--ease) forwards 2.2s}
-  #intro .go{margin-top:30px;display:inline-flex;gap:10px;align-items:center;background:var(--saffron);color:var(--ink);border:0;border-radius:999px;padding:12px 26px;font-weight:600;font-size:16px;opacity:0;animation:up .8s var(--ease) forwards 2.9s}
-  #intro .skip{position:absolute;top:20px;inset-inline-start:22px;background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:6px 14px;font-size:13px}
-  @keyframes up{to{opacity:1;transform:none}}
-  @media (prefers-reduced-motion:reduce){#intro .tl::after,#intro .ph,#intro .sub,#intro .go{animation:none;opacity:1;transform:none}}
-
   /* ===== الترويسة ===== */
   .top{position:sticky;top:0;z-index:50;background:rgba(238,243,238,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-inline:-20px;padding-inline:20px}
   .top .in{direction:rtl;max-width:1100px;margin-inline:auto;display:flex;align-items:center;gap:14px;min-height:60px;flex-wrap:wrap}
@@ -60,40 +46,21 @@
   .pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:3px 10px;border-radius:999px;border:1px solid currentColor;color:var(--c,var(--muted));background:#fff}
   .pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
 
-  /* ===== البطل ===== */
-  .hero{padding-block:70px 50px;position:relative;overflow:hidden;margin-inline:-20px;padding-inline:20px;background:linear-gradient(135deg,var(--green) 0%,var(--green-2) 60%,var(--green-deep) 100%);color:#fff;border-radius:0 0 26px 26px}
-  .hero .light{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(233,162,59,.28),transparent 60%);top:-200px;inset-inline-start:-160px;pointer-events:none;transition:transform .6s var(--ease)}
-  .hero .in{direction:rtl;max-width:1100px;margin-inline:auto;position:relative}
+  section,.hero{scroll-margin-top:72px}
+  .h3{font-size:18px;color:var(--green-2);margin-bottom:10px}
+
+  /* ===== المقدمة ===== */
+  .hero{padding-block:64px 44px;margin-inline:-20px;padding-inline:20px;background:linear-gradient(135deg,var(--green) 0%,var(--green-2) 60%,var(--green-deep) 100%);color:#fff;border-radius:0 0 26px 26px}
+  .hero .in{direction:rtl;max-width:1100px;margin-inline:auto}
   .hero h1{font-weight:700;font-size:clamp(34px,6vw,62px);line-height:1.2}
   .hero h1 b{color:var(--saffron);font-weight:700}
   .hero p{font-weight:300;font-size:18px;color:rgba(255,255,255,.82);max-width:60ch;margin:14px 0 0}
-  .paths{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}
-  @media (max-width:760px){.paths{grid-template-columns:1fr}}
-  .path{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:18px;color:#fff;transition:transform .3s var(--ease),background .3s}
-  .path:hover{transform:translateY(-4px);background:rgba(255,255,255,.14)}
-  .path b{display:block;font-family:var(--head);font-size:19px;font-weight:500;margin-bottom:4px}
-  .path span{font-size:13.5px;color:rgba(255,255,255,.75)}
-  .path em{display:block;font-style:normal;color:var(--saffron);margin-top:10px;font-size:13px}
-
-  /* ===== الخريطة ===== */
-  .map{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
-  @media (max-width:820px){.map{grid-template-columns:1fr}}
-  .map svg{width:100%;height:auto;display:block;max-width:100%}
-  .map .node{cursor:pointer}
-  .map .node circle{fill:#fff;stroke:var(--line);stroke-width:1.5;transition:all .3s}
-  .map .node text{font-family:var(--body);font-size:12.5px;fill:var(--ink);text-anchor:middle;pointer-events:none}
-  .map .node.on circle,.map .node:hover circle{fill:var(--green);stroke:var(--green)}
-  .map .node.on text,.map .node:hover text{fill:#fff}
-  .map line{stroke:var(--line);stroke-width:1.5;transition:stroke .3s}
-  .map line.on{stroke:var(--saffron);stroke-width:2.5}
-  .mapinfo{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;min-height:220px}
-  .mapinfo h3{font-size:20px;color:var(--green-2)}
-  .mapinfo p{color:var(--muted);font-size:14px;margin:6px 0 14px}
-  .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:6px 10px 6px 12px;font-size:13.5px;background:#fff;transition:border-color .2s,transform .2s}
-  .chip:hover{border-color:var(--green);transform:translateY(-2px)}
-  .chip img{width:22px;height:22px;object-fit:contain;border-radius:6px}
-  .chip .ini{width:22px;height:22px;border-radius:6px;background:var(--green-soft);color:var(--green);font-family:var(--head);font-size:12px;display:grid;place-items:center}
+  .hero .eyebrow{color:var(--saffron)}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:30px;max-width:720px}
+  @media (max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stats div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px 14px}
+  .stats b{display:block;font-family:var(--head);font-size:30px;line-height:1.1;font-variant-numeric:tabular-nums}
+  .stats span{font-size:13px;color:rgba(255,255,255,.75)}
 
   /* ===== البطاقات ===== */
   .sectors{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 20px}
@@ -125,9 +92,11 @@
   .lk span{color:var(--muted);border-style:dashed}
   .lk svg{width:14px;height:14px}
 
-  /* ===== صفحة المشروع ===== */
-  .proj{max-width:900px}
-  .proj .back{font-size:14px;color:var(--muted);display:inline-flex;gap:6px;align-items:center;margin-bottom:18px}
+  /* ===== قصة المنتج (لوحة فوق الصفحة) ===== */
+  .sheet{position:fixed;inset:0;z-index:80;background:rgba(7,50,42,.55);overflow-y:auto;overscroll-behavior:contain;padding:4vh 16px;direction:rtl}
+  .sheet .in{max-width:900px;margin-inline:auto;background:var(--bg);border-radius:18px;padding:22px clamp(16px,4vw,36px) 30px;box-shadow:0 30px 80px -30px rgba(0,0,0,.5)}
+  body.story-open{overflow:hidden}
+  .proj .back{font:inherit;font-size:14px;color:var(--muted);display:inline-flex;gap:6px;align-items:center;margin-bottom:18px;background:transparent;border:0;padding:0}
   .proj .cover{aspect-ratio:16/8;border-radius:16px;overflow:hidden;background:var(--green-soft);border:1px solid var(--line);position:relative}
   .proj .cover img{width:100%;height:100%;object-fit:cover;display:block}
   .proj .cover .pill{position:absolute;top:14px;inset-inline-start:14px}
@@ -163,7 +132,7 @@
   @media (max-width:560px){ .addr li{grid-template-columns:1fr} .addr .tag{grid-row:auto;grid-column:auto;justify-self:start} }
   .legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-inline-end:4px;vertical-align:-1px}
 
-  /* ===== عن / الأثر / الآن ===== */
+  /* ===== عن عثمان ===== */
   .about{display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
   @media (max-width:820px){.about{grid-template-columns:1fr}}
   .roles{display:grid;gap:10px}
@@ -175,16 +144,6 @@
   .contact{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
   .contact a{padding:10px 18px;border-radius:10px;border:1px solid var(--line);background:#fff;font-size:14px}
   .contact a.main{background:var(--saffron);border-color:var(--saffron);color:var(--ink);font-weight:600}
-  .nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
-  .num{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 16px;text-align:center}
-  .num b{display:block;font-family:var(--head);font-size:40px;color:var(--green);line-height:1.1;font-variant-numeric:tabular-nums}
-  .num span{font-size:13.5px;color:var(--muted)}
-  .now{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-  .now div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
-  .now b{display:block;font-size:12.5px;color:var(--saffron);font-weight:600;margin-bottom:4px}
-  .now p{margin:0;font-size:14.5px}
-  .now small{color:var(--muted);font-size:12.5px}
-
   /* ===== النوافذ ===== */
   .modal{position:fixed;inset:0;z-index:90;background:rgba(7,50,42,.55);display:grid;place-items:start center;padding:8vh 16px;direction:rtl}
   .box{background:#fff;border-radius:16px;width:min(640px,100%);box-shadow:0 30px 80px -30px rgba(0,0,0,.5);overflow:hidden}
@@ -201,7 +160,10 @@
   footer{color:var(--muted);font-size:12.5px;padding-top:28px;direction:rtl;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 
   @media print{
-    #intro,.top,.share,.back,footer,.toast,.modal{display:none!important}
+    .top,.share,.back,footer,.toast,.modal{display:none!important}
+    body.story-open #app{display:none}
+    .sheet{position:static;background:none;padding:0;overflow:visible}
+    .sheet .in{box-shadow:none;padding:0}
     body{background:#fff;padding:0}
     .proj .cover{aspect-ratio:16/7}
     section{border:0;padding-block:12px}
@@ -209,34 +171,22 @@
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.reveal{transform:none}}
 </style>
 
-<div id="intro" role="dialog" aria-label="افتتاحية">
-  <button class="skip" id="skip">تجاوز</button>
-  <div>
-    <div class="tl"></div>
-    <p class="ph">من <b>الفكرة</b> إلى <b>الأثر</b>.</p>
-    <p class="sub">منتجات رقمية عربية تُصنع لتُستخدم.</p>
-    <button class="go" id="go">استكشف الأعمال ←</button>
-  </div>
-</div>
-
 <header class="top"><div class="in">
-  <a class="brand" href="#/"><i></i>عثمان الشهري</a>
-  <nav class="nav" id="nav">
-    <a href="#/works" data-r="works">الأعمال</a>
-    <a href="#/about" data-r="about">عن عثمان</a>
-    <a href="#/impact" data-r="impact">الأثر</a>
-    <a href="#/now" data-r="now">الآن</a>
-    <a href="#/links" data-r="links">العناوين</a>
-    <a href="" id="officeLink" target="_blank" rel="noopener">المكتب الخاص</a>
+  <a class="brand" href="#top"><i></i>عثمان الشهري</a>
+  <nav class="nav" id="nav" aria-label="أقسام الصفحة">
+    <a href="#works" data-r="works">الأعمال</a>
+    <a href="#links" data-r="links">العناوين</a>
+    <a href="#about" data-r="about">عن عثمان</a>
+    <a href="" id="officeLink" target="_blank" rel="noopener" hidden>المكتب الخاص</a>
   </nav>
   <div class="tools">
     <div class="mode" role="group" aria-label="وضع العرض"><button id="mBrief" aria-pressed="true">مختصر</button><button id="mDeep" aria-pressed="false">موسّع</button></div>
     <button class="kbtn" id="kOpen">بحث وأوامر <kbd>⌘K</kbd></button>
-    <button class="kbtn" id="askOpen">اسأل</button>
   </div>
 </div></header>
 
 <main id="app" class="wrap"></main>
+<div class="sheet" id="story" role="dialog" aria-modal="true" aria-label="قصة المنتج" hidden><div class="in"></div></div>
 <footer class="wrap"><span>© <span id="yr"></span> عثمان الشهري · من الفكرة إلى الأثر</span><span>المحتوى يُحدَّث من ملف بيانات واحد.</span></footer>
 <div class="toast" id="toast" role="status"></div>
 
@@ -263,12 +213,6 @@ const SITE = {
     { href: "https://montajati.othmana.sa", name: "منتجاتي", d: "هذه الصفحة: المنتجات والمنصات بقصصها وروابطها.", access: "public" },
   ],
   partners: ["وزارة النقل والخدمات اللوجستية","مؤسسة مجتمع روشن","جمعية صناعة القدرات الشبابية"],
-  now: [
-    { k: "أعمل الآن على", v: "فرص: نموذج تفاعلي منشور وهوية معتمدة، بانتظار قرار الاعتماد.", d: "سبتمبر 2026" },
-    { k: "آخر تحديث", v: "مِراس: مزامنة تطبيق المختبر مع آخر نسخة تشغيل.", d: "11 سبتمبر 2026" },
-    { k: "أختبر", v: "ميزان: محرك مالي يحسب المحفظة والزكاة وإعادة التوازن من دفتر واحد.", d: "قيد التطوير" },
-    { k: "القادم", v: "توحيد ملفات المنتجات كلها في مكتب رقمي واحد قابل للبحث.", d: "" },
-  ],
 };
 
 const SECTORS = {
@@ -395,40 +339,61 @@ function cardHtml(p){
   </article>`;
 }
 
-/* ----- الصفحات ----- */
-const V = {};
-V.home = () => `
-  <div class="hero" id="hero"><div class="light" id="light"></div><div class="in">
+/* ----- الصفحة الواحدة: مقدمة، ثم الأعمال، ثم العناوين، ثم عن عثمان ----- */
+function statsHtml(){
+  const live = PROJECTS.filter(p=>p.status==="live").length;
+  const secs = new Set(PROJECTS.flatMap(p=>p.sectors)).size;
+  return [[PROJECTS.length,"منتجًا ومنصة"],[live,"منشورة ومكتملة"],[addresses().length,countWord(addresses().length)+" على othmana.sa"],[secs,"مجالات"]].map(([n,l])=>`<div><b>${n}</b><span>${l}</span></div>`).join("");
+}
+
+let sector = "all";
+const worksGrid = () => PROJECTS.filter(p=>sector==="all"||p.sectors.includes(sector)).map(cardHtml).join("");
+const sectorBtns = () => [["all","الكل"],...Object.entries(SECTORS).map(([k,v])=>[k,v.name])].map(([k,n])=>`<button data-s="${k}" aria-pressed="${k===sector}">${n}</button>`).join("");
+
+/* ----- العناوين: كل ما يفتح على othmana.sa، من SITE.addresses وروابط المنتجات نفسها ----- */
+function addresses(){
+  const own = u => { try{ const h=new URL(u).hostname; return h==="othmana.sa"||h.endsWith(".othmana.sa"); }catch{ return false; } };
+  const fromProjects = PROJECTS.flatMap(p=>p.links.filter(l=>l.t==="live"&&l.href&&own(l.href)&&l.access!=="internal").map(l=>({ href:l.href, name:p.name, d:p.summary, access:l.access, slug:p.slug })));
+  return [...SITE.addresses, ...fromProjects];
+}
+const hostOf = u => new URL(u).hostname;
+const countWord = n => n>=3&&n<=10 ? "عناوين" : "عنوانًا";
+
+function pageHtml(){
+  const list = addresses();
+  return `
+  <div class="hero" id="top"><div class="in">
     <p class="eyebrow">عثمان الشهري · منتجات رقمية عربية</p>
     <h1>من <b>الفكرة</b> إلى <b>الأثر</b>.</h1>
     <p>${esc(SITE.line)}</p>
-    <div class="paths">
-      <a class="path" href="#/about"><b>تعرّف عليّ</b><span>الأدوار، المجالات، وطريقة العمل.</span><em>عن عثمان ←</em></a>
-      <a class="path" href="#/works"><b>استكشف الأعمال</b><span>${PROJECTS.length} منتجات بقصصها وروابطها.</span><em>الأعمال ←</em></a>
-      <a class="path" href="${esc(SITE.office)}" target="_blank" rel="noopener"><b>ادخل إلى المكتب</b><span>الملفات والمجلدات والروابط الخاصة.</span><em>النسخة الشخصية ←</em></a>
-    </div>
+    <div class="stats">${statsHtml()}</div>
   </div></div>
-  <section class="reveal"><p class="eyebrow">خريطة الأعمال</p><h2>منظومة واحدة، ستة مجالات</h2><p class="sub">مرّر على مجال لترى منتجاته. كل منتج قد ينتمي لأكثر من مجال.</p>
-    <div class="map"><div id="mapSvg"></div><div class="mapinfo" id="mapInfo"></div></div>
-  </section>
-  <section class="reveal"><p class="eyebrow">مختارات</p><h2>ثلاثة أعمال تلخّص الطريقة</h2><p class="sub">تحدٍّ واضح، فكرة محددة، ونتيجة قابلة للتحقق.</p>
-    <div class="grid">${["furas","maras","youth"].map(s=>cardHtml(PROJECTS.find(p=>p.slug===s))).join("")}</div>
-  </section>
-  <section class="reveal"><p class="eyebrow">الأثر بالأرقام</p><h2>أرقام محسوبة من المحتوى نفسه</h2><div class="nums" id="nums">${numsHtml()}</div></section>
-  <section class="reveal"><p class="eyebrow">الآن</p><h2>ماذا أعمل هذه الأيام؟</h2><div class="now">${nowHtml()}</div></section>`;
 
-let sector = "all";
-V.works = () => `
-  <section><p class="eyebrow">الأعمال</p><h2>المنتجات والمنصات</h2><p class="sub">اختر مجالًا أو اعرض الكل. الوضع «موسّع» في الأعلى يُظهر التحدي والدور والنتيجة داخل كل بطاقة.</p>
-    <div class="sectors" id="secBtns">${[["all","الكل"],...Object.entries(SECTORS).map(([k,v])=>[k,v.name])].map(([k,n])=>`<button data-s="${k}" aria-pressed="${k===sector}">${n}</button>`).join("")}</div>
-    <div class="grid" id="worksGrid">${PROJECTS.filter(p=>sector==="all"||p.sectors.includes(sector)).map(cardHtml).join("")}</div>
+  <section id="works"><p class="eyebrow">الأعمال</p><h2>المنتجات والمنصات</h2><p class="sub">اختر مجالًا أو اعرض الكل. الوضع «موسّع» في الأعلى يُظهر التحدي والدور والنتيجة داخل كل بطاقة.</p>
+    <div class="sectors" id="secBtns">${sectorBtns()}</div>
+    <div class="grid" id="worksGrid">${worksGrid()}</div>
+  </section>
+
+  <section id="links"><p class="eyebrow">العناوين</p><h2>كل ما يفتح على othmana.sa</h2><p class="sub">${list.length} ${countWord(list.length)}، كلٌّ منها منتج أو صفحة. «بدخول» يعني أن الرابط يفتح صفحة تسجيل دخول.</p>
+    <ul class="addr">${list.map(a=>`<li><a class="h" href="${esc(a.href)}" target="_blank" rel="noopener">${esc(hostOf(a.href))}</a><span class="tag ${a.access==="public"?"pub":""}">${a.access==="public"?"عام":"بدخول"}</span><b>${esc(a.name)}</b><span>${esc(a.d)}${a.slug?` <a class="story-a" href="#/p/${a.slug}">القصة ←</a>`:""}</span></li>`).join("")}</ul>
+  </section>
+
+  <section id="about" class="about">
+    <div><p class="eyebrow">عن عثمان</p><h2>أصنع منتجات تُستخدم، لا عروضًا تُنسى</h2><p class="sub">${esc(SITE.line)}</p>
+      <div class="roles">${SITE.roles.map(r=>`<div class="role"><b>${esc(r.t)}</b><span>${esc(r.d)}</span></div>`).join("")}</div>
+      <div class="contact">${SITE.contact.map(c=>`<a href="${esc(c.href)}" class="${c.main?"main":""}">${esc(c.label)}</a>`).join("")}</div>
+    </div>
+    <div><h3 class="h3">القدرات</h3><div class="caps">${SITE.caps.map(c=>`<span>${esc(c)}</span>`).join("")}</div>
+      <h3 class="h3" style="margin-top:22px">جهات عملت معها</h3><div class="caps">${SITE.partners.map(c=>`<span>${esc(c)}</span>`).join("")}</div>
+    </div>
   </section>`;
+}
 
-V.project = slug => {
-  const p = PROJECTS.find(x=>x.slug===slug); if(!p) return `<section><h2>لم أجد هذا المنتج</h2><p class="sub"><a href="#/works">العودة إلى الأعمال</a></p></section>`;
+/* ----- قصة المنتج: لوحة فوق الصفحة، ورابطها #/p/<slug> يُشارَك ----- */
+function storyHtml(p){
   const st = p.story;
-  return `<section class="proj">
-    <a class="back" href="#/works">${IC.back} كل الأعمال</a>
+  return `<div class="proj">
+    <button class="back" id="closeStory">${IC.back} العودة إلى الصفحة</button>
     <div class="cover">${p.shot?`<img src="${esc(p.shot)}" alt="">`:""}${pill(p.status)}</div>
     <div class="title">${logoHtml(p)}<div><h1>${esc(p.name)}</h1><div class="meta">${esc(p.en)} · ${p.sectors.map(s=>SECTORS[s].name).join(" · ")} · ${esc(p.year)}</div></div></div>
     <p class="lead">${esc(p.summary)}</p>
@@ -440,114 +405,80 @@ V.project = slug => {
       <div><b>الأثر</b><span>${esc(st.impact)}</span></div>
     </div>
     <h2 style="font-size:20px;margin-bottom:12px">المراحل</h2>
-    <ol class="stages" id="stages">${p.stages.map(([l,d])=>`<li>${esc(l)}<small>${esc(d)}</small></li>`).join("")}</ol>
+    <ol class="stages in">${p.stages.map(([l,d])=>`<li>${esc(l)}<small>${esc(d)}</small></li>`).join("")}</ol>
     <h2 style="font-size:20px;margin-bottom:10px">الروابط</h2>
     <div class="lk" style="padding:0">${linksHtml(p)}</div>
     <p class="legend"><i style="background:var(--green)"></i>رابط عام &nbsp; <i style="background:#fff;border:1px dashed var(--muted)"></i>يحتاج صلاحية &nbsp; الملفات الداخلية لا تظهر في هذه النسخة.</p>
     <div class="share"><button id="copyLink">نسخ رابط هذا المنتج</button><button id="printBtn">حفظ PDF مختصر</button><a href="mailto:?subject=${encodeURIComponent(p.name)}&body=${encodeURIComponent(location.href)}">إرسال بالبريد</a></div>
-  </section>`;
-};
-
-V.about = () => `<section class="about">
-  <div><p class="eyebrow">عن عثمان</p><h2>أصنع منتجات تُستخدم، لا عروضًا تُنسى</h2><p class="sub">${esc(SITE.line)}</p>
-    <div class="roles">${SITE.roles.map(r=>`<div class="role"><b>${esc(r.t)}</b><span>${esc(r.d)}</span></div>`).join("")}</div>
-    <div class="contact">${SITE.contact.map(c=>`<a href="${esc(c.href)}" class="${c.main?"main":""}">${esc(c.label)}</a>`).join("")}</div>
-  </div>
-  <div><h3 style="font-size:18px;color:var(--green-2);margin-bottom:10px">المجالات</h3><div class="chips" style="margin-bottom:22px">${Object.entries(SECTORS).map(([k,v])=>`<a class="chip" href="#/works" onclick="sector='${k}'">${esc(v.name)}</a>`).join("")}</div>
-    <h3 style="font-size:18px;color:var(--green-2);margin-bottom:10px">القدرات</h3><div class="caps">${SITE.caps.map(c=>`<span>${esc(c)}</span>`).join("")}</div>
-    <h3 style="font-size:18px;color:var(--green-2);margin:22px 0 10px">جهات عملت معها</h3><div class="caps">${SITE.partners.map(c=>`<span>${esc(c)}</span>`).join("")}</div>
-  </div></section>`;
-
-function numsHtml(){
-  const live = PROJECTS.filter(p=>p.status==="live").length;
-  const secs = new Set(PROJECTS.flatMap(p=>p.sectors)).size;
-  const pub = PROJECTS.filter(p=>p.links.some(l=>(l.access==="public"||l.access==="login")&&l.href)).length;
-  return [[PROJECTS.length,"منتجات ومنصات"],[live,"منشورة ومكتملة"],[pub,"متاحة برابط عام"],[secs,"مجالات عمل"],[SITE.partners.length,"جهات شريكة"]].map(([n,l])=>`<div class="num"><b data-n="${n}">0</b><span>${l}</span></div>`).join("");
+  </div>`;
 }
-const nowHtml = () => SITE.now.map(n=>`<div><b>${esc(n.k)}</b><p>${esc(n.v)}</p>${n.d?`<small>${esc(n.d)}</small>`:""}</div>`).join("");
-V.impact = () => `<section><p class="eyebrow">الأثر</p><h2>الأثر بالأرقام</h2><p class="sub">كل رقم هنا محسوب من بيانات المنتجات في هذه الصفحة، ولا يُضاف رقم عن مستفيدين أو جهات إلا بمصدر موثّق.</p><div class="nums" id="nums">${numsHtml()}</div>
-  <h3 style="font-size:18px;color:var(--green-2);margin:30px 0 10px">حسب المجال</h3><div class="grid">${Object.entries(SECTORS).map(([k,v])=>{const ps=PROJECTS.filter(p=>p.sectors.includes(k)); return `<div class="mapinfo" style="min-height:0"><h3>${esc(v.name)}</h3><p>${esc(v.d)}</p><div class="chips">${ps.map(chip).join("")||"<span class='legend'>لا منتجات بعد</span>"}</div></div>`;}).join("")}</div></section>`;
-/* ----- العناوين: كل ما يفتح على othmana.sa، من SITE.addresses وروابط المنتجات نفسها ----- */
-function addresses(){
-  const own = u => { try{ const h=new URL(u).hostname; return h==="othmana.sa"||h.endsWith(".othmana.sa"); }catch{ return false; } };
-  const fromProjects = PROJECTS.flatMap(p=>p.links.filter(l=>l.t==="live"&&l.href&&own(l.href)&&l.access!=="internal").map(l=>({ href:l.href, name:p.name, d:p.summary, access:l.access, slug:p.slug })));
-  return [...SITE.addresses, ...fromProjects];
+const sheet = document.getElementById("story");
+let lastFocus = null;
+function openStory(slug){
+  const p = PROJECTS.find(x=>x.slug===slug); if(!p){ closeStory(); return; }
+  if(sheet.hidden) lastFocus = document.activeElement;
+  sheet.querySelector(".in").innerHTML = storyHtml(p);
+  sheet.hidden = false; document.body.classList.add("story-open"); sheet.scrollTop = 0;
+  document.getElementById("closeStory").onclick = () => leaveStory();
+  document.getElementById("copyLink").onclick = async()=>{ try{await navigator.clipboard.writeText(location.href); toast("تم نسخ الرابط.");}catch{toast(location.href);} };
+  document.getElementById("printBtn").onclick = ()=>window.print();
+  document.getElementById("closeStory").focus({preventScroll:true});
 }
-const hostOf = u => new URL(u).hostname;
-V.links = () => { const list=addresses(); return `<section><p class="eyebrow">العناوين</p><h2>كل ما يفتح على othmana.sa</h2><p class="sub">${list.length} ${list.length>=3&&list.length<=10?"عناوين":"عنوانًا"}، كلٌّ منها منتج أو صفحة. «بدخول» يعني أن الرابط يفتح صفحة تسجيل دخول.</p>
-  <ul class="addr">${list.map(a=>`<li><a class="h" href="${esc(a.href)}" target="_blank" rel="noopener">${esc(hostOf(a.href))}</a><span class="tag ${a.access==="public"?"pub":""}">${a.access==="public"?"عام":"بدخول"}</span><b>${esc(a.name)}</b><span>${esc(a.d)}${a.slug?` <a class="story-a" href="#/p/${a.slug}">القصة ←</a>`:""}</span></li>`).join("")}</ul></section>`; };
-V.now = () => `<section><p class="eyebrow">الآن</p><h2>ماذا أعمل هذه الأيام؟</h2><p class="sub">قسم يتجدد كل أسبوعين تقريبًا.</p><div class="now">${nowHtml()}</div></section>`;
+function closeStory(){ if(sheet.hidden) return; sheet.hidden = true; document.body.classList.remove("story-open"); lastFocus?.focus?.({preventScroll:true}); }
+// الإغلاق يمسح #/p/… من الرابط دون أن يقفز بالصفحة
+const leaveStory = () => { history.pushState(null,"",location.pathname+location.search); closeStory(); };
+sheet.addEventListener("click", e=>{ if(e.target===sheet) leaveStory(); });
 
-const chip = p => `<a class="chip" href="#/p/${p.slug}">${p.logo?`<img src="${esc(p.logo)}" alt=""${p.logoBg?` style="background:${p.logoBg}"`:""}>`:`<span class="ini">${esc(ini(p))}</span>`}${esc(p.name)}</a>`;
-
-/* ----- الخريطة ----- */
-function buildMap(){
-  const host=document.getElementById("mapSvg"), info=document.getElementById("mapInfo"); if(!host) return;
-  const keys=Object.keys(SECTORS), W=520, H=420, cx=W/2, cy=H/2, R=150;
-  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="خريطة الأعمال">`;
-  const pos=keys.map((k,i)=>{const a=-Math.PI/2+i*2*Math.PI/keys.length; return [k,cx+R*Math.cos(a),cy+R*Math.sin(a)];});
-  pos.forEach(([k,x,y])=>s+=`<line data-k="${k}" x1="${cx}" y1="${cy}" x2="${x}" y2="${y}"/>`);
-  s+=`<circle cx="${cx}" cy="${cy}" r="46" fill="var(--green)"/><text x="${cx}" y="${cy+5}" text-anchor="middle" style="font-family:var(--head);font-size:15px;fill:#fff">عثمان</text>`;
-  pos.forEach(([k,x,y])=>s+=`<g class="node" data-k="${k}" tabindex="0"><circle cx="${x}" cy="${y}" r="42"/><text x="${x}" y="${y+4}">${SECTORS[k].name.split(" ").length>2?SECTORS[k].name.replace(" ", " "):SECTORS[k].name}</text></g>`);
-  s+=`</svg>`; host.innerHTML=s;
-  const show=k=>{ host.querySelectorAll(".node").forEach(n=>n.classList.toggle("on",n.dataset.k===k)); host.querySelectorAll("line").forEach(l=>l.classList.toggle("on",l.dataset.k===k)); const ps=PROJECTS.filter(p=>p.sectors.includes(k)); info.innerHTML=`<h3>${esc(SECTORS[k].name)}</h3><p>${esc(SECTORS[k].d)}</p><div class="chips">${ps.map(chip).join("")}</div>`; };
-  host.querySelectorAll(".node").forEach(n=>{ n.addEventListener("mouseenter",()=>show(n.dataset.k)); n.addEventListener("focus",()=>show(n.dataset.k)); n.addEventListener("click",()=>{sector=n.dataset.k; location.hash="#/works";}); });
-  show("gov");
-}
-
-/* ----- التوجيه ----- */
-const app=document.getElementById("app");
+/* ----- التوجيه: الروابط القديمة (#/works …) تنزل إلى أقسامها ----- */
+const OLD = { works:"works", about:"about", links:"links", impact:"top", now:"top", home:"top" };
 function route(){
-  const h=location.hash.replace(/^#\/?/,""); const [r,arg]=h.split("/");
-  document.body.classList.toggle("brief", localStorage.getItem("mode")!=="deep");
-  document.getElementById("mBrief").setAttribute("aria-pressed", document.body.classList.contains("brief"));
-  document.getElementById("mDeep").setAttribute("aria-pressed", !document.body.classList.contains("brief"));
-  let html;
-  if(r==="p") html=V.project(arg); else if(V[r]) html=V[r](); else html=V.home();
-  app.innerHTML=html; window.scrollTo({top:0,behavior:"instant"});
-  document.querySelectorAll("#nav a[data-r]").forEach(a=>a.classList.toggle("on",a.dataset.r===r));
-  app.querySelectorAll(".card").forEach(c=>{ const go=()=>location.hash="#/p/"+c.dataset.slug; c.addEventListener("click",go); c.addEventListener("keydown",e=>{if(e.key==="Enter")go();}); });
-  app.querySelectorAll("#secBtns button").forEach(b=>b.onclick=()=>{sector=b.dataset.s; route();});
-  const cp=document.getElementById("copyLink"); if(cp) cp.onclick=async()=>{ try{await navigator.clipboard.writeText(location.href); toast("تم نسخ الرابط.");}catch{toast(location.href);} };
-  const pr=document.getElementById("printBtn"); if(pr) pr.onclick=()=>window.print();
-  if(r===""||r===undefined||r==="home") buildMap();
-  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); if(e.target.id==="nums"||e.target.querySelector?.("[data-n]")) countUp(e.target); io.unobserve(e.target);} }),{threshold:.2});
-  app.querySelectorAll(".reveal,.stages,#nums").forEach(x=>io.observe(x));
-  const hero=document.getElementById("hero"), light=document.getElementById("light");
-  if(hero&&!reduced) hero.addEventListener("pointermove",e=>{ const b=hero.getBoundingClientRect(); light.style.transform=`translate(${e.clientX-b.left-260+160}px,${e.clientY-b.top-260+200}px)`; });
+  const h = location.hash;
+  const m = h.match(/^#\/p\/([\w-]+)/);
+  if(m){ openStory(m[1]); return; }
+  closeStory();
+  const old = h.match(/^#\/(\w+)/);
+  if(old){ const id = OLD[old[1]]||"top"; history.replaceState(null,"","#"+id); document.getElementById(id)?.scrollIntoView(); }
 }
-function countUp(root){ root.querySelectorAll("[data-n]").forEach(b=>{ const n=+b.dataset.n; if(reduced){b.textContent=n;return;} const t0=performance.now(); const step=t=>{const k=Math.min(1,(t-t0)/900); b.textContent=Math.round(n*(1-Math.pow(1-k,3))); if(k<1) requestAnimationFrame(step);}; requestAnimationFrame(step); }); }
-addEventListener("hashchange",route);
+addEventListener("hashchange", route);
+addEventListener("popstate", route);
+
+const app = document.getElementById("app");
+app.innerHTML = pageHtml();
+function wireWorks(){
+  app.querySelectorAll("#worksGrid .card").forEach(c=>{ const go=()=>location.hash="#/p/"+c.dataset.slug; c.addEventListener("click",go); c.addEventListener("keydown",e=>{if(e.key==="Enter")go();}); });
+  app.querySelectorAll("#secBtns button").forEach(b=>b.onclick=()=>setSector(b.dataset.s));
+}
+function setSector(k){ sector=k; document.getElementById("secBtns").innerHTML=sectorBtns(); document.getElementById("worksGrid").innerHTML=worksGrid(); wireWorks(); }
+wireWorks();
+
+/* ----- القائمة تظلّل القسم المقروء ----- */
+const navLinks = [...document.querySelectorAll("#nav a[data-r]")];
+const spy = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) navLinks.forEach(a=>a.classList.toggle("on", a.dataset.r===e.target.id)); }), { rootMargin:"-45% 0px -50% 0px" });
+["top","works","links","about"].forEach(id=>{ const s=document.getElementById(id); if(s) spy.observe(s); });
 
 /* ----- الوضعان ----- */
-document.getElementById("mBrief").onclick=()=>{localStorage.setItem("mode","brief");route();};
-document.getElementById("mDeep").onclick=()=>{localStorage.setItem("mode","deep");route();};
-
-/* ----- الافتتاحية ----- */
-const intro=document.getElementById("intro");
-const endIntro=()=>{intro.classList.add("done"); try{sessionStorage.setItem("intro","1");}catch{}};
-document.getElementById("skip").onclick=endIntro;
-document.getElementById("go").onclick=()=>{endIntro(); location.hash="#/works";};
-let seen=false; try{seen=sessionStorage.getItem("intro")==="1";}catch{}
-if(seen||reduced||(location.hash&&location.hash!=="#/")) intro.classList.add("done"); else setTimeout(endIntro,6500);
+function setMode(m){ localStorage.setItem("mode",m); applyMode(); }
+function applyMode(){ const brief = localStorage.getItem("mode")!=="deep"; document.body.classList.toggle("brief",brief); document.getElementById("mBrief").setAttribute("aria-pressed",brief); document.getElementById("mDeep").setAttribute("aria-pressed",!brief); }
+document.getElementById("mBrief").onclick=()=>setMode("brief");
+document.getElementById("mDeep").onclick=()=>setMode("deep");
+applyMode();
 
 /* ----- ⌘K ----- */
+const goTo = id => { closeStory(); if(location.hash.startsWith("#/p/")) history.pushState(null,"",location.pathname); document.getElementById(id)?.scrollIntoView({behavior:reduced?"auto":"smooth"}); };
 const cmds=[
   ...PROJECTS.map(p=>({t:`افتح ${p.name}`,s:"منتج",go:()=>location.hash="#/p/"+p.slug,k:`${p.name} ${p.en} ${p.summary}`})),
-  ...Object.entries(SECTORS).map(([k,v])=>({t:`اعرض أعمال ${v.name}`,s:"مجال",go:()=>{sector=k;location.hash="#/works";},k:v.name})),
+  ...Object.entries(SECTORS).map(([k,v])=>({t:`اعرض أعمال ${v.name}`,s:"مجال",go:()=>{setSector(k);goTo("works");},k:v.name})),
+  {t:"الأعمال",s:"قسم",go:()=>goTo("works"),k:"works منتجات"},
+  {t:"كل العناوين على othmana.sa",s:"قسم",go:()=>goTo("links"),k:"links عناوين روابط نطاقات othmana"},
+  {t:"عن عثمان والتواصل",s:"قسم",go:()=>goTo("about"),k:"about خبرات تواصل"},
   {t:"اذهب إلى GitHub",s:"رابط",go:()=>open("https://github.com/othman20500-coder","_blank"),k:"github"},
-  {t:"افتح المكتب الخاص",s:"رابط",go:()=>open(SITE.office,"_blank"),k:"office مكتب ملفات"},
-  {t:"عن عثمان",s:"صفحة",go:()=>location.hash="#/about",k:"about خبرات"},
-  {t:"الأثر بالأرقام",s:"صفحة",go:()=>location.hash="#/impact",k:"impact"},
-  {t:"ماذا أعمل الآن",s:"صفحة",go:()=>location.hash="#/now",k:"now الآن"},
-  {t:"كل العناوين على othmana.sa",s:"صفحة",go:()=>location.hash="#/links",k:"links عناوين روابط نطاقات othmana"},
-  {t:"وضع موسّع",s:"عرض",go:()=>{localStorage.setItem("mode","deep");route();},k:"deep"},
-  {t:"وضع مختصر",s:"عرض",go:()=>{localStorage.setItem("mode","brief");route();},k:"brief"},
-  ...PROJECTS.flatMap(p=>p.links.filter(l=>(l.access==="public"||l.access==="login")&&l.href).map(l=>({t:`${l.label||LT[l.t]} · ${p.name}`,s:"رابط عام",go:()=>open(l.href,"_blank"),k:`${p.name} ${l.label}`}))),
+  {t:"وضع موسّع",s:"عرض",go:()=>setMode("deep"),k:"deep"},
+  {t:"وضع مختصر",s:"عرض",go:()=>setMode("brief"),k:"brief"},
+  ...PROJECTS.flatMap(p=>p.links.filter(l=>(l.access==="public"||l.access==="login")&&l.href).map(l=>({t:`${l.label||LT[l.t]} · ${p.name}`,s:"رابط",go:()=>open(l.href,"_blank"),k:`${p.name} ${l.label}`}))),
 ];
 let modal=null; const closeModal=()=>{modal?.remove();modal=null;};
 function openK(){
-  closeModal(); modal=el(`<div class="modal"><div class="box"><input id="kq" placeholder="اكتب: افتح مِراس، اعرض أعمال النقل، اذهب إلى GitHub…" autocomplete="off"><ul id="kl"></ul><div class="hint">↑↓ للتنقل · Enter للتنفيذ · Esc للإغلاق</div></div></div>`);
+  closeModal(); modal=el(`<div class="modal"><div class="box"><input id="kq" placeholder="اكتب: افتح مِراس، اعرض أعمال النقل، العناوين…" autocomplete="off"><ul id="kl"></ul><div class="hint">↑↓ للتنقل · Enter للتنفيذ · Esc للإغلاق</div></div></div>`);
   document.body.append(modal); const q=modal.querySelector("#kq"), ul=modal.querySelector("#kl"); let sel=0, cur=[];
   const norm=s=>s.toLowerCase().replace(/[ً-ْ]/g,"").replace(/[أإآ]/g,"ا").replace(/ة/g,"ه").replace(/ى/g,"ي");
   const render=()=>{ const v=norm(q.value.trim()); cur=cmds.filter(c=>!v||norm(c.t+" "+c.k).includes(v)).slice(0,10); sel=Math.min(sel,Math.max(0,cur.length-1)); ul.innerHTML=cur.map((c,i)=>`<li class="${i===sel?"sel":""}">${esc(c.t)}<small>${esc(c.s)}</small></li>`).join("")||`<li><small>لا نتائج</small></li>`; ul.querySelectorAll("li").forEach((li,i)=>li.onclick=()=>{cur[i]&&(closeModal(),cur[i].go());}); };
@@ -555,35 +486,10 @@ function openK(){
   modal.onclick=e=>{if(e.target===modal)closeModal();}; render(); q.focus();
 }
 document.getElementById("kOpen").onclick=openK;
-addEventListener("keydown",e=>{ if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){e.preventDefault();openK();} if(e.key==="Escape")closeModal(); });
+addEventListener("keydown",e=>{ if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){e.preventDefault();openK();} if(e.key==="Escape"){ if(modal) closeModal(); else if(!sheet.hidden) leaveStory(); } });
 
-/* ----- اسأل (يجيب من محتوى الصفحة فقط) ----- */
-function answer(qs){
-  const norm=s=>s.toLowerCase().replace(/[ً-ْ]/g,"").replace(/[أإآ]/g,"ا").replace(/ة/g,"ه").replace(/ى/g,"ي");
-  const q=norm(qs);
-  const has=(...ws)=>ws.some(w=>q.includes(norm(w)));
-  if(has("تواصل","تعاون","اتصال","بريد","ايميل","كيف اتواصل")) return {t:"للتعاون أو الاستفسار:", ps:[], links:SITE.contact};
-  if(has("خبره","خبرات","من هو","من عثمان","مجالات","ادوار","دور")) return {t:`يعمل عثمان في ${Object.keys(SECTORS).length} مجالات: ${Object.values(SECTORS).map(s=>s.name).join("، ")}. أدواره: ${SITE.roles.map(r=>r.t).join("، ")}.`, ps:[]};
-  if(has("شريك","شركاء","جهات","عمل مع")) return {t:`الجهات التي عمل معها بحسب المنتجات: ${SITE.partners.join("، ")}.`, ps:[]};
-  if(has("الان","حاليا","هذه الايام","تعمل على")) return {t:SITE.now.map(n=>`${n.k}: ${n.v}`).join(" "), ps:[]};
-  const secHits=Object.entries(SECTORS).filter(([k,v])=>has(v.name, ...v.name.split(" ").filter(w=>w.length>3)));
-  const extra={gov:["حكومي","وزاره","نقل"],npo:["جمعيه","مؤسسه","غير ربحي","الربحي"],youth:["شباب","انديه","نادي"],digital:["تطبيق","رقمي","منتجات"],social:["اسره","عائله","مجتمع","اثر"],mgmt:["قياده","اداره","مهام","مؤشرات"],know:["تدريب","عرض","دليل","معرفي"]};
-  Object.entries(extra).forEach(([k,ws])=>{ if(has(...ws)&&!secHits.some(([kk])=>kk===k)) secHits.push([k,SECTORS[k]]); });
-  const pHits=PROJECTS.filter(p=>has(p.name,p.en,p.slug));
-  if(pHits.length) return {t:pHits.map(p=>`${p.name}: ${p.summary} التحدي: ${p.story.challenge} النتيجة: ${p.story.impact}`).join("\n"), ps:pHits};
-  if(secHits.length){ const ps=PROJECTS.filter(p=>p.sectors.some(s=>secHits.some(([k])=>k===s))); return {t:`المنتجات المرتبطة بـ${secHits.map(([,v])=>v.name).join(" و")} (${ps.length}):`, ps}; }
-  if(has("ابرز","اهم","افضل","منشور","مكتمل")) return {t:"المنتجات المنشورة والمكتملة:", ps:PROJECTS.filter(p=>p.status==="live")};
-  return {t:"لا أجد إجابة عن هذا في المحتوى المعتمد في الصفحة. جرّب: «ما خبرة عثمان في القطاع غير الربحي؟» أو «اعرض المنتجات المرتبطة بالنقل» أو «كيف أتعاون معه؟»", ps:[]};
-}
-function openAsk(){
-  closeModal(); modal=el(`<div class="modal"><div class="box"><input id="aq" placeholder="اسأل عن الخبرات أو المنتجات أو التعاون…" autocomplete="off"><div class="ans" id="aa">أجيب من محتوى هذه الصفحة فقط. أمثلة: ما خبرة عثمان في القطاع غير الربحي؟ · اعرض المنتجات المرتبطة بالنقل · ما أبرز المنتجات الرقمية؟ · كيف يمكن التعاون معه؟</div></div></div>`);
-  document.body.append(modal); const q=modal.querySelector("#aq"), out=modal.querySelector("#aa");
-  q.onkeydown=e=>{ if(e.key!=="Enter"||!q.value.trim()) return; const a=answer(q.value); out.innerHTML=`<div>${esc(a.t).replace(/\n/g,"<br>")}</div>${a.ps?.length?`<div class="chips">${a.ps.map(chip).join("")}</div>`:""}${a.links?`<div class="chips">${a.links.map(c=>`<a class="chip" href="${esc(c.href)}">${esc(c.label)}</a>`).join("")}</div>`:""}`; out.querySelectorAll("a").forEach(x=>x.addEventListener("click",closeModal)); };
-  modal.onclick=e=>{if(e.target===modal)closeModal();}; q.focus();
-}
-document.getElementById("askOpen").onclick=openAsk;
-
-document.getElementById("officeLink").href=SITE.office;
+/* «المكتب الخاص» نسخة شخصية على جهاز عثمان فقط (office.html لا يُنشر)، فيظهر رابطه حين تُفتح الصفحة من الجهاز وحده */
+if(location.protocol==="file:"){ const o=document.getElementById("officeLink"); o.href=SITE.office; o.hidden=false; }
 document.getElementById("yr").textContent=new Date().getFullYear();
 route();
 </script>
